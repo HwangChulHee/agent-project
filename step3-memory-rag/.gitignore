@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# RAG artifacts (재생성 가능)
+chroma_db/
+data/wikipedia/*.txt
+data/wikipedia/*.json
+
+# Env
+.env.local

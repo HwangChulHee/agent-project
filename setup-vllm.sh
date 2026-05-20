@@ -1,30 +1,19 @@
 #!/bin/bash
 # ==============================================================================
-# vLLM 학습 환경 셋업 스크립트
+# vLLM 학습 환경 셋업 + 자동 실행 스크립트
 # ------------------------------------------------------------------------------
-# 이 스크립트는 런팟 인스턴스에서 처음부터 vLLM + Gemma 4 환경을 재구축합니다.
-#
-# 사전 조건 (README 참고):
-#   1. 런팟 PyTorch 2.x 템플릿 + GPU (RTX 6000 Ada 48GB 추천)
-#   2. Network Volume 200GB+ /workspace에 마운트
-#   3. HuggingFace 계정 + 토큰 + Gemma 4 라이선스 동의
-#
 # 사용법:
-#   bash setup-vllm.sh           # 인터랙티브 (각 단계 확인)
-#   bash setup-vllm.sh --auto    # 자동 실행 (확인 없이 전부)
+#   bash setup-vllm.sh           # 인터랙티브
+#   bash setup-vllm.sh --auto    # 자동 진행
 # ==============================================================================
 
-set -e  # 에러 발생 시 즉시 종료
+set -e
 
 AUTO_MODE=false
-if [[ "$1" == "--auto" || "$1" == "-y" ]]; then
-    AUTO_MODE=true
-fi
+[[ "$1" == "--auto" || "$1" == "-y" ]] && AUTO_MODE=true
 
-# ------------------------------------------------------------------------------
-# 헬퍼 함수
-# ------------------------------------------------------------------------------
-print_section() {
+# ── 헬퍼 ─────────────────────────────────────────────────────────
+section() {
     echo ""
     echo "=============================================================="
     echo "$1"
@@ -32,76 +21,81 @@ print_section() {
 }
 
 confirm() {
-    if [ "$AUTO_MODE" = true ]; then
-        return 0
-    fi
-    read -p "$1 [Y/n] " response
-    case "$response" in
-        [nN][oO]|[nN])
-            return 1
-            ;;
-        *)
-            return 0
-            ;;
-    esac
+    [ "$AUTO_MODE" = true ] && return 0
+    read -p "$1 [Y/n] " r
+    case "$r" in [nN]*) return 1 ;; *) return 0 ;; esac
 }
 
-# ------------------------------------------------------------------------------
-# 사전 확인
-# ------------------------------------------------------------------------------
-print_section "사전 환경 확인"
+# ── 0단계: 사전 확인 ────────────────────────────────────────────
+section "사전 환경 확인"
 
-if [ ! -d "/workspace" ]; then
-    echo "ERROR: /workspace가 존재하지 않습니다. 런팟 볼륨이 마운트됐는지 확인하세요."
-    exit 1
-fi
+[ ! -d "/workspace" ] && { echo "ERROR: /workspace 없음"; exit 1; }
+command -v nvidia-smi >/dev/null || { echo "ERROR: GPU 인스턴스 아님"; exit 1; }
 
 echo "✓ /workspace 존재"
 df -h /workspace | tail -1
-
-if ! command -v nvidia-smi &> /dev/null; then
-    echo "ERROR: nvidia-smi 명령을 찾을 수 없습니다. GPU 인스턴스인지 확인하세요."
-    exit 1
-fi
-
 echo ""
-echo "GPU 정보:"
+echo "GPU:"
 nvidia-smi --query-gpu=name,memory.total,driver_version --format=csv,noheader
 
 confirm "환경 확인 OK. 계속 진행할까요?" || exit 0
 
-# ------------------------------------------------------------------------------
-# 1. uv 설치 (볼륨에 영구화)
-# ------------------------------------------------------------------------------
-print_section "1단계: uv 설치 및 볼륨 영구화"
+# ── 1단계: HuggingFace 토큰 입력 ────────────────────────────────
+section "1단계: HuggingFace 토큰"
+
+TOKEN_FILE="/workspace/.hf-token"
+
+if [ -f "$TOKEN_FILE" ]; then
+    HF_TOKEN=$(cat "$TOKEN_FILE")
+    echo "✓ 저장된 토큰 사용 ($TOKEN_FILE)"
+elif [ -f "/workspace/hf-cache/token" ]; then
+    HF_TOKEN=$(cat "/workspace/hf-cache/token")
+    cp "/workspace/hf-cache/token" "$TOKEN_FILE"
+    chmod 600 "$TOKEN_FILE"
+    echo "✓ HF 캐시 토큰 발견 → $TOKEN_FILE 백업"
+elif [ -f "$HOME/.cache/huggingface/token" ]; then
+    HF_TOKEN=$(cat "$HOME/.cache/huggingface/token")
+    cp "$HOME/.cache/huggingface/token" "$TOKEN_FILE"
+    chmod 600 "$TOKEN_FILE"
+    echo "✓ ~/.cache 토큰 발견 → $TOKEN_FILE 백업"
+else
+    echo "HuggingFace 토큰이 필요합니다 (Read 권한)."
+    echo "  발급: https://huggingface.co/settings/tokens"
+    echo "  Gemma 라이선스: https://huggingface.co/google/gemma-4-26B-A4B-it"
+    echo ""
+    read -s -p "토큰 붙여넣기 (입력 중 표시 안 됨): " HF_TOKEN
+    echo ""
+    [ -z "$HF_TOKEN" ] && { echo "ERROR: 토큰이 비어있음"; exit 1; }
+
+    echo "$HF_TOKEN" > "$TOKEN_FILE"
+    chmod 600 "$TOKEN_FILE"
+    echo "✓ 토큰 저장됨 ($TOKEN_FILE)"
+fi
+export HF_TOKEN
+
+# ── 2단계: uv 설치 ──────────────────────────────────────────────
+section "2단계: uv 설치 및 볼륨 영구화"
 
 if [ -f "/workspace/.local/bin/uv" ]; then
-    echo "✓ uv가 이미 /workspace/.local/bin/uv에 있습니다."
+    echo "✓ uv 이미 설치됨"
     /workspace/.local/bin/uv --version
 else
-    confirm "uv를 설치하고 /workspace에 영구화합니다. 진행할까요?" || exit 0
-    
+    confirm "uv 설치?" || exit 0
     curl -LsSf https://astral.sh/uv/install.sh | sh
-    
     mkdir -p /workspace/.local/bin
     cp $HOME/.local/bin/uv /workspace/.local/bin/
     cp $HOME/.local/bin/uvx /workspace/.local/bin/
-    
-    echo "✓ uv 설치 완료: $(/workspace/.local/bin/uv --version)"
+    echo "✓ uv 설치 완료"
 fi
-
 export PATH="/workspace/.local/bin:$PATH"
 
-# ------------------------------------------------------------------------------
-# 2. .bashrc 환경변수 영구 등록
-# ------------------------------------------------------------------------------
-print_section "2단계: 환경변수 영구 등록"
+# ── 3단계: .bashrc 환경변수 ─────────────────────────────────────
+section "3단계: .bashrc 환경변수 영구 등록"
 
 if grep -q "vLLM 학습 환경" ~/.bashrc 2>/dev/null; then
-    echo "✓ 환경변수가 이미 .bashrc에 등록돼 있습니다."
+    echo "✓ 환경변수 이미 등록됨"
 else
-    confirm ".bashrc에 환경변수 블록을 추가합니다. 진행할까요?" || exit 0
-    
+    confirm ".bashrc에 환경변수 추가?" || exit 0
     cat >> ~/.bashrc << 'BASHRC_EOF'
 
 # === vLLM 학습 환경 (workspace 영구화) ===
@@ -111,76 +105,55 @@ export UV_CACHE_DIR=/workspace/.uv-cache
 export HF_HOME=/workspace/hf-cache
 export HF_HUB_CACHE=/workspace/hf-cache/hub
 BASHRC_EOF
-    
     cp ~/.bashrc /workspace/.bashrc.backup
-    echo "✓ .bashrc 업데이트 + /workspace/.bashrc.backup 저장"
+    echo "✓ .bashrc 업데이트"
 fi
 
-# 현재 셸에 환경변수 적용
 export UV_PYTHON_INSTALL_DIR=/workspace/.python
 export UV_CACHE_DIR=/workspace/.uv-cache
 export HF_HOME=/workspace/hf-cache
 export HF_HUB_CACHE=/workspace/hf-cache/hub
 
-# ------------------------------------------------------------------------------
-# 3. Python 3.12 설치 (볼륨)
-# ------------------------------------------------------------------------------
-print_section "3단계: Python 3.12 설치 (볼륨에)"
+# ── 4단계: Python 3.12 ──────────────────────────────────────────
+section "4단계: Python 3.12 설치"
 
 if uv python list --only-installed 2>/dev/null | grep -q "/workspace/.python/cpython-3.12"; then
-    echo "✓ Python 3.12가 이미 /workspace/.python에 설치돼 있습니다."
+    echo "✓ Python 3.12 이미 설치됨"
 else
-    confirm "Python 3.12를 /workspace/.python에 설치합니다. 진행할까요?" || exit 0
-    
+    confirm "Python 3.12 설치?" || exit 0
     uv python install 3.12
-    echo "✓ Python 3.12 설치 완료"
 fi
 
-# ------------------------------------------------------------------------------
-# 4. vllm-env 가상환경 + vLLM 설치
-# ------------------------------------------------------------------------------
-print_section "4단계: vllm-env 가상환경 + vLLM nightly 설치"
+# ── 5단계: vllm-env + vLLM ──────────────────────────────────────
+section "5단계: vllm-env 가상환경 + vLLM nightly"
 
 if [ -d "/workspace/vllm-env" ]; then
-    echo "/workspace/vllm-env가 이미 존재합니다."
-    if confirm "기존 환경을 지우고 다시 설치할까요? (no면 그대로 둠)"; then
+    echo "✓ vllm-env 이미 존재"
+    if confirm "지우고 재설치?"; then
         rm -rf /workspace/vllm-env
-    else
-        echo "→ 기존 환경 유지, 4단계 건너뜀"
     fi
 fi
 
 if [ ! -d "/workspace/vllm-env" ]; then
-    confirm "vllm-env를 만들고 vLLM nightly + transformers를 설치합니다. (5~15분 소요) 진행할까요?" || exit 0
-    
+    confirm "vllm-env + vLLM nightly 설치 (5~15분)?" || exit 0
     uv venv --python 3.12 /workspace/vllm-env
     source /workspace/vllm-env/bin/activate
-    
-    echo ""
-    echo "→ vLLM nightly + PyTorch cu129 설치 중... (시간 걸림)"
+
     uv pip install -U vllm --pre \
         --extra-index-url https://wheels.vllm.ai/nightly/cu129 \
         --extra-index-url https://download.pytorch.org/whl/cu129 \
         --index-strategy unsafe-best-match
-    
-    echo "→ HuggingFace CLI 설치 중..."
     uv pip install -U "huggingface_hub[cli]" || uv pip install -U huggingface_hub
-    
     echo "✓ vLLM 설치 완료"
 fi
 
 source /workspace/vllm-env/bin/activate
 
-# ------------------------------------------------------------------------------
-# 5. 설치 검증
-# ------------------------------------------------------------------------------
-print_section "5단계: 설치 검증"
+# ── 6단계: 설치 검증 ────────────────────────────────────────────
+section "6단계: 설치 검증"
 
 python << 'PYEOF'
-import torch
-import vllm
-import transformers
-
+import torch, vllm, transformers
 print(f"PyTorch:        {torch.__version__}")
 print(f"vLLM:           {vllm.__version__}")
 print(f"Transformers:   {transformers.__version__}")
@@ -190,103 +163,142 @@ if torch.cuda.is_available():
     print(f"VRAM:           {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB")
 PYEOF
 
-# ------------------------------------------------------------------------------
-# 6. HuggingFace 로그인 안내
-# ------------------------------------------------------------------------------
-print_section "6단계: HuggingFace 로그인"
+# ── 7단계: HF 자동 로그인 ───────────────────────────────────────
+section "7단계: HuggingFace 자동 로그인"
 
-if [ -f "/workspace/hf-cache/token" ]; then
-    echo "✓ HF 토큰이 /workspace/hf-cache/token에 이미 저장돼 있습니다."
-    hf auth whoami 2>/dev/null || huggingface-cli whoami 2>/dev/null || echo "(인증 정보 확인 실패)"
+if hf auth whoami 2>/dev/null || huggingface-cli whoami 2>/dev/null; then
+    echo "✓ 이미 로그인됨"
 else
-    echo "HuggingFace 토큰이 필요합니다."
-    echo "사전 조건:"
-    echo "  1) https://huggingface.co/settings/tokens 에서 Read 토큰 발급"
-    echo "  2) https://huggingface.co/google/gemma-4-26B-A4B-it 라이선스 동의"
-    echo "  3) 사용할 양자화 모델 페이지도 라이선스 확인"
-    echo ""
-    if confirm "지금 hf auth login을 실행할까요?"; then
-        hf auth login || huggingface-cli login
+    if command -v hf >/dev/null 2>&1; then
+        hf auth login --token "$HF_TOKEN" --add-to-git-credential 2>/dev/null || \
+            huggingface-cli login --token "$HF_TOKEN" --add-to-git-credential
     else
-        echo "→ 나중에 수동으로 'hf auth login' 실행하세요."
+        huggingface-cli login --token "$HF_TOKEN" --add-to-git-credential
     fi
+    echo "✓ 로그인 완료"
 fi
 
-# ------------------------------------------------------------------------------
-# 7. 모델 다운로드 (옵션)
-# ------------------------------------------------------------------------------
-print_section "7단계: 모델 다운로드 (옵션)"
+# ── 8단계: 모델 다운로드 ────────────────────────────────────────
+section "8단계: 모델 다운로드"
 
 MODEL_26B="cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit"
-MODEL_31B="QuantTrio/gemma-4-31B-it-AWQ"
-
 CACHE_DIR="${HF_HUB_CACHE:-/workspace/hf-cache/hub}"
 
 check_model() {
     local repo="$1"
     local repo_path="${repo//\//--}"
-    if [ -d "$CACHE_DIR/models--$repo_path" ]; then
-        return 0
-    else
-        return 1
-    fi
+    [ -d "$CACHE_DIR/models--$repo_path" ]
 }
-
-echo "다운로드 가능한 모델:"
-echo "  - $MODEL_26B (~17GB, 추천)"
-echo "  - $MODEL_31B (~18GB, 옵션)"
-echo ""
 
 if check_model "$MODEL_26B"; then
     echo "✓ $MODEL_26B 이미 다운로드됨"
 else
-    if confirm "26B AWQ 모델을 다운로드할까요? (~17GB, 1~5분)"; then
-        hf download "$MODEL_26B" || huggingface-cli download "$MODEL_26B"
+    if confirm "$MODEL_26B 다운로드 (~17GB)?"; then
+        hf download "$MODEL_26B" 2>/dev/null || huggingface-cli download "$MODEL_26B"
     fi
 fi
 
-if check_model "$MODEL_31B"; then
-    echo "✓ $MODEL_31B 이미 다운로드됨"
+# ── 9단계: vLLM 서버 백그라운드 실행 + 헬스체크 ────────────────
+section "9단계: vLLM 서버 백그라운드 실행"
+
+VLLM_LOG=/workspace/vllm.log
+VLLM_PID_FILE=/workspace/vllm.pid
+
+if curl -s http://localhost:8000/health > /dev/null 2>&1; then
+    echo "✓ vLLM 서버가 이미 실행 중입니다"
+    [ -f "$VLLM_PID_FILE" ] && echo "  PID: $(cat $VLLM_PID_FILE)"
 else
-    if confirm "31B AWQ 모델도 다운로드할까요? (~18GB, 옵션)"; then
-        hf download "$MODEL_31B" || huggingface-cli download "$MODEL_31B"
+    # 죽은 PID 정리
+    if [ -f "$VLLM_PID_FILE" ]; then
+        OLD_PID=$(cat "$VLLM_PID_FILE")
+        if kill -0 "$OLD_PID" 2>/dev/null; then
+            echo "기존 프로세스 ($OLD_PID) 종료..."
+            kill "$OLD_PID" || true
+            sleep 3
+        fi
+        rm -f "$VLLM_PID_FILE"
+    fi
+
+    confirm "vLLM 서버를 백그라운드로 띄울까요?" || exit 0
+
+    echo "vLLM 서버 시작 (로그: $VLLM_LOG)..."
+
+    nohup vllm serve "$MODEL_26B" \
+        --max-model-len 32768 \
+        --max-num-batched-tokens 8192 \
+        --gpu-memory-utilization 0.90 \
+        --enable-auto-tool-choice \
+        --reasoning-parser gemma4 \
+        --tool-call-parser gemma4 \
+        --limit-mm-per-prompt '{"image": 0, "audio": 0}' \
+        --host 0.0.0.0 --port 8000 \
+        > "$VLLM_LOG" 2>&1 &
+
+    VLLM_PID=$!
+    echo $VLLM_PID > "$VLLM_PID_FILE"
+    disown $VLLM_PID
+
+    echo "✓ 서버 시작됨 (PID: $VLLM_PID)"
+    echo ""
+    echo "헬스체크 대기 (5~10분 예상, 최대 15분 타임아웃)..."
+    echo ""
+
+    SUCCESS=false
+    for i in $(seq 1 180); do
+        if curl -s http://localhost:8000/health > /dev/null 2>&1; then
+            ELAPSED=$((i * 5))
+            echo "✓ vLLM 준비 완료 (${ELAPSED}초 소요)"
+            SUCCESS=true
+            break
+        fi
+
+        if ! kill -0 "$VLLM_PID" 2>/dev/null; then
+            echo "ERROR: vLLM 프로세스가 종료됨"
+            echo "----- 로그 마지막 50줄 -----"
+            tail -50 "$VLLM_LOG"
+            exit 1
+        fi
+
+        if [ $((i % 6)) -eq 0 ]; then
+            ELAPSED=$((i * 5))
+            echo "  ... 대기 중 (${ELAPSED}초 경과)"
+        fi
+
+        sleep 5
+    done
+
+    if [ "$SUCCESS" = false ]; then
+        echo ""
+        echo "ERROR: 15분 타임아웃. 로그 확인:"
+        echo "  tail -100 $VLLM_LOG"
+        exit 1
     fi
 fi
 
-# ------------------------------------------------------------------------------
-# 8. vLLM 서버 실행 명령어 안내
-# ------------------------------------------------------------------------------
-print_section "셋업 완료!"
+# ── 완료 ────────────────────────────────────────────────────────
+section "✅ 셋업 완료!"
 
-cat << 'INFO_EOF'
+VLLM_PID_DISPLAY=$(cat "$VLLM_PID_FILE" 2>/dev/null || echo "N/A")
 
-다음 단계:
+cat << INFO_EOF
 
-1) vLLM 서버 띄우기 (별도 터미널 권장):
+vLLM 서버 정보:
+  URL:       http://localhost:8000
+  PID:       $VLLM_PID_DISPLAY
+  로그 파일: $VLLM_LOG
+  모델:      $MODEL_26B
 
-   source /workspace/vllm-env/bin/activate
-   
-   vllm serve cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit \
-     --max-model-len 32768 \
-     --max-num-batched-tokens 8192 \
-     --gpu-memory-utilization 0.90 \
-     --enable-auto-tool-choice \
-     --reasoning-parser gemma4 \
-     --tool-call-parser gemma4 \
-     --limit-mm-per-prompt '{"image": 0, "audio": 0}' \
-     --host 0.0.0.0 --port 8000
-   
-   첫 로딩에 5~10분, "Application startup complete" 뜨면 준비 완료.
+유용한 명령어:
+  로그 실시간:  tail -f $VLLM_LOG
+  로그 최근:    tail -100 $VLLM_LOG
+  헬스체크:     curl http://localhost:8000/health
+  모델 목록:    curl http://localhost:8000/v1/models
+  서버 종료:    kill \$(cat $VLLM_PID_FILE)
+  서버 재시작:  bash $0 --auto
 
-2) 동작 확인 (또 다른 터미널):
-
-   curl http://localhost:8000/health
-   # → 200
-
-3) 에이전트 코드 실행:
-
-   cd /workspace/agent-project/step1-react
-   source .venv/bin/activate  # 첫 실행이면 uv sync 먼저
-   python run.py
+다음 단계 - step3 진입:
+  cd /workspace/agent-project
+  mkdir -p step3-memory-rag && cd step3-memory-rag
+  # 이후 step3 디렉토리 셋업 진행
 
 INFO_EOF
