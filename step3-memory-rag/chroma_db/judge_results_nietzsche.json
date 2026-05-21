@@ -1,0 +1,1730 @@
+{
+  "nietzsche_hierarchical_en|0|2": {
+    "score": 1,
+    "reason": "The retrieved context contains no information regarding Zarathustra's age or when he left his home.",
+    "label": "StageA-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|0|1": {
+    "score": 1,
+    "reason": "The retrieved context contains no information regarding Zarathustra's age or when he left his home.",
+    "label": "StageA-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_baseline_en|0|1": {
+    "score": 1,
+    "reason": "The retrieved context contains no information regarding Zarathustra's age or when he left his home.",
+    "label": "Baseline-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_baseline_en|0|2": {
+    "score": 1,
+    "reason": "The context describes Zarathustra's decision to leave the mountains, but contains no mention of his age or how long he had been there.",
+    "label": "Baseline-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|0|0": {
+    "score": 5,
+    "reason": "The context explicitly states Zarathustra was thirty years old when he left his home and spent ten years in the mountains, matching the ground truth perfectly.",
+    "label": "StageA-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|0|0": {
+    "score": 5,
+    "reason": "The context explicitly states Zarathustra was thirty years old when he left his home and spent ten years in the mountains, matching the ground truth perfectly.",
+    "label": "Baseline-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|1|0": {
+    "score": 4,
+    "reason": "The context identifies the eagle and the serpent as his animals, but it does not mention their symbolic meanings of pride and wisdom.",
+    "label": "Baseline-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|1|1": {
+    "score": 5,
+    "reason": "The context explicitly identifies the eagle and serpent as Zarathustra's animals and explains their symbolic connection to pride and wisdom.",
+    "label": "Baseline-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_baseline_en|1|2": {
+    "score": 2,
+    "reason": "The context mentions an eagle and two lambs, but it does not mention the serpent or the symbolic meanings required to answer the query fully.",
+    "label": "Baseline-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|1|1": {
+    "score": 4,
+    "reason": "The context identifies the eagle and the serpent as his animals, but it does not mention their symbolic meanings of pride and wisdom.",
+    "label": "StageA-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_en|1|2": {
+    "score": 2,
+    "reason": "The context mentions an eagle and two lambs, but it does not mention the serpent or the symbolic meanings required by the ground truth.",
+    "label": "StageA-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|1|0": {
+    "score": 4,
+    "reason": "The context identifies the eagle and the serpent as Zarathustra's animals, but it does not mention their symbolic meanings of pride and wisdom.",
+    "label": "StageA-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|2|1": {
+    "score": 1,
+    "reason": "The retrieved context discusses a conversation between Zarathustra and a youth by a tree, but contains no mention of a saint in the forest.",
+    "label": "Baseline-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_baseline_en|2|0": {
+    "score": 5,
+    "reason": "The context contains both the saint's actions (making hymns to praise God) and the fact that Zarathustra leaves without telling him God is dead.",
+    "label": "Baseline-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|2|2": {
+    "score": 4,
+    "reason": "The context explicitly states the saint praised God with singing and mumbling, though it describes the saint as dead rather than Zarathustra leaving him.",
+    "label": "Baseline-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|2|1": {
+    "score": 4,
+    "reason": "The context explicitly states the saint praised God with singing and mumbling, though it describes the saint as dead rather than Zarathustra leaving him.",
+    "label": "StageA-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_en|2|0": {
+    "score": 5,
+    "reason": "The context contains both the saint's actions (making hymns to praise God) and the fact that Zarathustra leaves without telling him God is dead.",
+    "label": "StageA-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_en|2|2": {
+    "score": 5,
+    "reason": "The context contains both the saint's actions (making hymns to praise God) and the fact that Zarathustra leaves without telling him God is dead.",
+    "label": "StageA-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_baseline_en|3|0": {
+    "score": 5,
+    "reason": "The context explicitly states the sequence of transformations from camel to lion and then to child, covering all parts of the ground truth.",
+    "label": "Baseline-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_en|3|0": {
+    "score": 5,
+    "reason": "The context explicitly states the sequence of transformations from camel to lion and then to child, matching the ground truth perfectly.",
+    "label": "StageA-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|3|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses the Superman and the relationship between man and ape, but contains no mention of the camel or its transformations.",
+    "label": "Baseline-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|3|1": {
+    "score": 5,
+    "reason": "The context explicitly states the sequence of transformations from camel to lion and then to child, matching the ground truth perfectly.",
+    "label": "StageA-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_baseline_en|3|1": {
+    "score": 1,
+    "reason": "The retrieved context discusses Zarathustra's honey sacrifice and does not mention the three metamorphoses or the transformation of the camel.",
+    "label": "Baseline-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_en|3|2": {
+    "score": 5,
+    "reason": "The context explicitly states the sequence of transformations from camel to lion and then to child, covering all parts of the ground truth.",
+    "label": "StageA-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_baseline_ko|4|0": {
+    "score": 5,
+    "reason": "The context explicitly states that Zarathustra entered the mountains at the age of thirty, matching the ground truth perfectly.",
+    "label": "Baseline-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_baseline_ko|4|2": {
+    "score": 1,
+    "reason": "The retrieved context does not contain any information regarding the age at which Zarathustra entered the mountains.",
+    "label": "Baseline-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_ko|4|0": {
+    "score": 5,
+    "reason": "The context explicitly states that Zarathustra entered the mountains at the age of thirty, matching the ground truth perfectly.",
+    "label": "StageA-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_baseline_ko|4|1": {
+    "score": 2,
+    "reason": "The context discusses Zarathustra's wandering and his philosophical reflections, but it does not mention his age or the specific timing of when he entered the mountains.",
+    "label": "Baseline-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|4|1": {
+    "score": 2,
+    "reason": "The context discusses Zarathustra's wandering and his philosophical reflections, but it does not mention his age or the specific timing of when he entered the mountains.",
+    "label": "StageA-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|4|2": {
+    "score": 2,
+    "reason": "The context discusses Zarathustra's wandering and his philosophical reflections, but it does not mention his age or the specific timing of when he entered the mountains.",
+    "label": "StageA-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_baseline_ko|5|0": {
+    "score": 3,
+    "reason": "The context mentions the eagle as a companion, but it does not mention the snake or its symbolic meaning found in the ground truth.",
+    "label": "Baseline-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_baseline_ko|5|1": {
+    "score": 3,
+    "reason": "The context mentions the eagle and 'his beasts' (짐승들), but it does not mention the snake or its symbolic meaning.",
+    "label": "Baseline-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_baseline_ko|5|2": {
+    "score": 2,
+    "reason": "The context mentions 'beasts' (짐승들) following Zarathustra, but it does not identify them as the eagle and the serpent, nor does it explain their symbolism.",
+    "label": "Baseline-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_ko|5|1": {
+    "score": 3,
+    "reason": "The context mentions the eagle as a companion, but it does not mention the snake or its symbolic meaning found in the ground truth.",
+    "label": "StageA-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|5|0": {
+    "score": 4,
+    "reason": "The context identifies the eagle and snake as Zarathustra's noble animals, though it does not explicitly state their symbolic meanings (pride and wisdom).",
+    "label": "StageA-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_ko|5|2": {
+    "score": 2,
+    "reason": "The context mentions 'birds' and 'beasts' in a general sense, but does not identify the specific animals (eagle and snake) or their symbolism required by the ground truth.",
+    "label": "StageA-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_baseline_ko|6|0": {
+    "score": 5,
+    "reason": "The context contains all the necessary information to answer both parts of the ground truth: the saint's actions (singing hymns to praise God) and Zarathustra's realization (that the saint does not know God is dead).",
+    "label": "Baseline-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_baseline_ko|6|1": {
+    "score": 1,
+    "reason": "The retrieved context describes Zarathustra's return to his cave and his interaction with guests, but it contains no mention of the 'Forest Saint' or his actions.",
+    "label": "Baseline-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_baseline_ko|6|2": {
+    "score": 2,
+    "reason": "The context mentions an 'unknown being' watching Zarathustra, but it does not describe the 'forest saint' composing hymns as specified in the ground truth.",
+    "label": "Baseline-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_ko|6|1": {
+    "score": 3,
+    "reason": "The context mentions the saint's death and his nature, but it does not explicitly state he was composing hymns to praise God as required by the ground truth.",
+    "label": "StageA-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|6|0": {
+    "score": 5,
+    "reason": "The context contains both the saint's action (singing hymns to praise God) and Zarathustra's realization (that the saint does not know God is dead), matching the ground truth perfectly.",
+    "label": "StageA-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_ko|6|2": {
+    "score": 5,
+    "reason": "The context contains both the saint's action (singing hymns to praise God) and Zarathustra's realization (that the saint does not know God is dead), matching the ground truth perfectly.",
+    "label": "StageA-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_baseline_ko|7|0": {
+    "score": 5,
+    "reason": "The context explicitly describes the three stages of mental transformation: camel becoming lion, and lion becoming child, which perfectly matches the ground truth.",
+    "label": "Baseline-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_baseline_ko|7|1": {
+    "score": 1,
+    "reason": "The retrieved context discusses solitude and human noise but does not mention the three metamorphoses or the camel, lion, and child.",
+    "label": "Baseline-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|7|0": {
+    "score": 5,
+    "reason": "The context explicitly describes the three stages of mental transformation: camel becoming a lion, and lion becoming a child.",
+    "label": "StageA-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_ko|7|1": {
+    "score": 5,
+    "reason": "The context explicitly describes the three stages of mental transformation: camel becoming a lion, and lion becoming a child.",
+    "label": "StageA-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_baseline_ko|7|2": {
+    "score": 2,
+    "reason": "The context mentions the camel (낙타) as a metaphor for carrying burdens, but it does not describe the three stages of transformation (camel to lion to child).",
+    "label": "Baseline-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_ko|7|2": {
+    "score": 5,
+    "reason": "The context explicitly describes the three stages of mental transformation: camel becoming lion, and lion becoming child, which perfectly matches the ground truth.",
+    "label": "StageA-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_baseline_en|8|0": {
+    "score": 3,
+    "reason": "The context identifies the Superman as the goal to surpass man, but it lacks the specific detail about creating new values mentioned in the ground truth.",
+    "label": "Baseline-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|8|2": {
+    "score": 2,
+    "reason": "The text discusses Zarathustra's thoughts on God and the ego, but never mentions or defines the 'Übermensch'.",
+    "label": "Baseline-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|8|0": {
+    "score": 2,
+    "reason": "The text discusses Zarathustra's thoughts on God and the ego, but never mentions or defines the 'Übermensch'.",
+    "label": "StageA-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|8|1": {
+    "score": 3,
+    "reason": "The context mentions that man must be surpassed, but it does not explicitly define or name the 'Übermensch' as the goal/being that creates new values.",
+    "label": "Baseline-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_en|8|2": {
+    "score": 3,
+    "reason": "The context identifies the Superman as the goal to surpass man, but it lacks the specific detail about creating new values mentioned in the ground truth.",
+    "label": "StageA-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|8|1": {
+    "score": 3,
+    "reason": "The context identifies the Superman as the goal to surpass man, but it lacks the specific detail about creating new values mentioned in the ground truth.",
+    "label": "StageA-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_baseline_en|9|0": {
+    "score": 5,
+    "reason": "The context provides a detailed description of the last man's pursuit of comfort, happiness, and lack of aspiration, directly matching the ground truth.",
+    "label": "Baseline-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|9|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses Zarathustra's recovery and philosophical musings on speech and existence, but contains no mention of the 'last man'.",
+    "label": "Baseline-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_baseline_en|9|1": {
+    "score": 2,
+    "reason": "The context describes 'The Ugliest Man' and the 'Murderer of God,' but it does not mention or define 'the last man' as requested by the query.",
+    "label": "Baseline-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_en|9|0": {
+    "score": 5,
+    "reason": "The context provides a detailed description of the last man's pursuit of comfort, happiness, and lack of aspiration, directly matching the ground truth.",
+    "label": "StageA-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_en|9|1": {
+    "score": 1,
+    "reason": "The retrieved context discusses the Superman (Übermensch) and Zarathustra's teachings on redemption, but it contains no mention of the 'last man'.",
+    "label": "StageA-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_en|9|2": {
+    "score": 5,
+    "reason": "The context provides a detailed description of the last man's pursuit of comfort, happiness, and lack of aspiration, directly matching the ground truth.",
+    "label": "StageA-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_baseline_en|10|0": {
+    "score": 3,
+    "reason": "The text poetically describes the concept of things returning and being eternal, but it lacks the explicit definition and the specific philosophical test regarding the affirmation of life mentioned in the ground truth.",
+    "label": "Baseline-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|10|1": {
+    "score": 1,
+    "reason": "The retrieved context discusses Zarathustra's interactions with cripples and 'reversed cripples' but contains no mention of the doctrine of eternal recurrence.",
+    "label": "Baseline-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_baseline_en|10|2": {
+    "score": 3,
+    "reason": "The context describes the cyclical nature of existence (eternal return), but it lacks the specific philosophical interpretation regarding the 'heaviest weight' on one's affirmation of life.",
+    "label": "Baseline-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|10|0": {
+    "score": 3,
+    "reason": "The context describes the cyclical nature of existence (eternal return), but it lacks the specific philosophical interpretation regarding the 'heaviest weight' on one's affirmation of life.",
+    "label": "StageA-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_en|10|1": {
+    "score": 3,
+    "reason": "The context describes the cyclical nature of existence (eternal return), but it lacks the specific philosophical interpretation regarding the 'heaviest weight' on one's affirmation of life.",
+    "label": "StageA-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_en|10|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses Zarathustra's interactions with 'cripples' and 'reversed cripples' but contains no mention of the doctrine of eternal recurrence.",
+    "label": "StageA-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_baseline_en|11|0": {
+    "score": 2,
+    "reason": "The context mentions that Zarathustra realizes 'God is dead', but it provides no explanation of what that phrase means or its implications for human values.",
+    "label": "Baseline-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_en|11|0": {
+    "score": 2,
+    "reason": "The context mentions that Zarathustra realizes 'GOD IS DEAD', but it provides no explanation of what that means or the resulting need to create new values.",
+    "label": "StageA-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|11|2": {
+    "score": 1,
+    "reason": "The context discusses the concept of 'voluntary death' and dying at the right time, but contains no information regarding the phrase 'God is dead' or the collapse of metaphysical absolutes.",
+    "label": "Baseline-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_baseline_en|11|1": {
+    "score": 2,
+    "reason": "The context discusses characters debating the nature of God and mentions the phrase 'God's death' as a prejudice, but it does not explain the philosophical meaning regarding the collapse of metaphysical absolutes or the creation of new values.",
+    "label": "Baseline-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_en|11|1": {
+    "score": 3,
+    "reason": "The context mentions the phrase 'DEAD ARE ALL THE GODS' and the desire for the Superman, but it lacks the explicit explanation regarding the collapse of metaphysical absolutes and the need to create new values.",
+    "label": "StageA-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_en|11|2": {
+    "score": 1,
+    "reason": "The context describes a scene with a rope-dancer and Zarathustra's interaction with a fallen man, but it contains no mention of the phrase 'God is dead' or its philosophical meaning.",
+    "label": "StageA-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_baseline_ko|12|0": {
+    "score": 5,
+    "reason": "The context explicitly defines the Übermensch as a goal to be overcome and mentions the creation of new values/futures, matching the ground truth perfectly.",
+    "label": "Baseline-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_baseline_ko|12|1": {
+    "score": 5,
+    "reason": "The context directly defines the Übermensch as something humans must overcome and implies the creation of new values/paths, matching the ground truth.",
+    "label": "Baseline-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_baseline_ko|12|2": {
+    "score": 5,
+    "reason": "The context explicitly defines the Übermensch as something humans must overcome and as the meaning of the earth, covering all key points of the ground truth.",
+    "label": "Baseline-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_ko|12|1": {
+    "score": 5,
+    "reason": "The context explicitly defines the Übermensch as something humans must overcome and as the meaning of the earth, covering all key points of the ground truth.",
+    "label": "StageA-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|12|0": {
+    "score": 4,
+    "reason": "The context explicitly defines the 'Übermensch' (초인) as the one who transcends their soul, which aligns with the ground truth of overcoming oneself to create new values.",
+    "label": "StageA-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_ko|12|2": {
+    "score": 5,
+    "reason": "The context explicitly defines the Übermensch (초인) as a creative goal to be achieved after the death of God, aligning perfectly with the ground truth.",
+    "label": "StageA-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_baseline_ko|13|1": {
+    "score": 4,
+    "reason": "The context describes the 'lowly masters' who seek comfort and happiness as the greatest danger to the Overman, which directly aligns with the definition of the Last Man.",
+    "label": "Baseline-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_baseline_ko|13|0": {
+    "score": 2,
+    "reason": "The context describes the 'most ugly human' and his interaction with Zarathustra, but it does not explicitly define the 'Last Man' (종말인) or his characteristics as stated in the ground truth.",
+    "label": "Baseline-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_baseline_ko|13|2": {
+    "score": 1,
+    "reason": "The context discusses Zarathustra's recovery and his reflections on human nature and suffering, but it does not mention the 'Last Man' (종말인) or his characteristics.",
+    "label": "Baseline-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_ko|13|0": {
+    "score": 1,
+    "reason": "The context describes Zarathustra's greeting to his guests and his character, but it does not mention the 'Last Man' (종말인) or his characteristics at all.",
+    "label": "StageA-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_ko|13|1": {
+    "score": 2,
+    "reason": "The context mentions 'last humans' (마지막 인간) in passing, but fails to provide the specific characteristics (seeking comfort/happiness, loss of longing, opposite of the Overman) required by the ground truth.",
+    "label": "StageA-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|13|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses the 'prudence of a man' and the relationship between humans and the Superman, but it does not mention the 'Last Man' (종말인) at all.",
+    "label": "StageA-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_baseline_ko|14|0": {
+    "score": 2,
+    "reason": "The context discusses Nietzschean themes of will and salvation but does not define the concept of 'Eternal Recurrence' (영원회귀) or its nature as a test of life affirmation.",
+    "label": "Baseline-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_baseline_ko|14|1": {
+    "score": 1,
+    "reason": "The retrieved context discusses 'Lust', 'Will to Power', and 'Virtue', but contains no mention of the 'Eternal Recurrence' (영원회귀).",
+    "label": "Baseline-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_baseline_ko|14|2": {
+    "score": 3,
+    "reason": "The context describes the cyclical nature of existence ('everything goes, everything returns'), but it lacks the specific definition of 'Eternal Recurrence' as a test of life affirmation ('the heaviest burden') mentioned in the ground truth.",
+    "label": "Baseline-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_ko|14|1": {
+    "score": 2,
+    "reason": "The context mentions the 'ring of return' (회귀의 고리) but fails to define the concept of eternal recurrence or its significance as a test of life affirmation.",
+    "label": "StageA-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|14|0": {
+    "score": 3,
+    "reason": "The context describes the cyclical nature of existence ('everything goes, everything returns'), but it lacks the specific definition of 'Eternal Recurrence' as a test of life affirmation ('the heaviest burden') mentioned in the ground truth.",
+    "label": "StageA-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_ko|14|2": {
+    "score": 3,
+    "reason": "The context describes the cyclical nature of existence ('everything goes, everything returns'), but it lacks the specific definition of 'Eternal Recurrence' as a test of life affirmation ('the heaviest burden') mentioned in the ground truth.",
+    "label": "StageA-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_baseline_ko|15|0": {
+    "score": 3,
+    "reason": "The context captures the dramatic essence and the transition to the 'Superman', but lacks the explicit philosophical explanation of the collapse of metaphysical absolutism and the necessity of self-created values.",
+    "label": "Baseline-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_baseline_ko|15|2": {
+    "score": 2,
+    "reason": "The context discusses Zarathustra's recovery and human nature but does not explain the meaning of 'God is dead' or the collapse of metaphysical absolutes.",
+    "label": "Baseline-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_ko|15|0": {
+    "score": 3,
+    "reason": "The context captures the dramatic essence and the transition to the 'Superman', but lacks the explicit philosophical explanation of the collapse of metaphysical absolutism and the necessity of self-created values.",
+    "label": "StageA-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_ko|15|1": {
+    "score": 2,
+    "reason": "The context mentions that 'God is dead' but fails to explain its metaphysical meaning or the necessity for humans to create their own values as specified in the ground truth.",
+    "label": "StageA-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_baseline_ko|15|1": {
+    "score": 4,
+    "reason": "The context explains that God is a 'thought' or 'conjecture' and that its absence leads to the necessity of human creation and the emergence of the 'Übermensch' (Overman).",
+    "label": "Baseline-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|15|2": {
+    "score": 2,
+    "reason": "The context mentions the death of a god in a narrative sense, but it does not explain the philosophical meaning of 'God is dead' regarding the collapse of metaphysical absolutes or human value creation.",
+    "label": "StageA-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|16|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses Zarathustra and his shadow, but contains no mention of a tightrope walker or its symbolism.",
+    "label": "StageA-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|16|1": {
+    "score": 1,
+    "reason": "The retrieved context discusses the concept of 'The Moment' and eternal recurrence, but it does not mention a tightrope walker or its symbolism.",
+    "label": "StageA-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_baseline_en|16|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses the concept of 'The Moment' and eternal recurrence, but it does not mention a tightrope walker or its symbolism.",
+    "label": "Baseline-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_baseline_en|16|1": {
+    "score": 2,
+    "reason": "The context mentions a rope-dancer's performance, but it does not contain the symbolic meaning of the tightrope walker described in the ground truth.",
+    "label": "Baseline-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_baseline_en|16|0": {
+    "score": 3,
+    "reason": "The context explains that man is a rope between animal and Superman, but it never explicitly mentions a 'tightrope walker' or the importance of the act of crossing over the destination.",
+    "label": "Baseline-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_en|16|0": {
+    "score": 3,
+    "reason": "The context explains that man is a rope between animal and Superman, but it never explicitly mentions a 'tightrope walker' to link the symbol to the metaphor.",
+    "label": "StageA-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|17|1": {
+    "score": 2,
+    "reason": "The context discusses the concept of falling and decay but does not mention 'going under' or the specific meaning of Zarathustra's descent.",
+    "label": "Baseline-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_baseline_en|17|0": {
+    "score": 4,
+    "reason": "The context provides the philosophical meaning of 'down-going' as a sacrifice for the Superman, though it does not explicitly mention the physical 'descent from the mountain' mentioned in the ground truth.",
+    "label": "Baseline-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_en|17|0": {
+    "score": 4,
+    "reason": "The context provides the philosophical meaning of 'down-going' as a sacrifice for the Superman, though it does not explicitly mention the physical 'descent from the mountain' mentioned in the ground truth.",
+    "label": "StageA-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|17|2": {
+    "score": 1,
+    "reason": "The context discusses the concept of flux and stability using metaphors of streams and ice, but does not mention 'going under' or 'down-going' in the context of Zarathustra's descent.",
+    "label": "Baseline-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|17|1": {
+    "score": 4,
+    "reason": "The context provides the philosophical meaning of 'down-going' as a sacrifice for the Superman, though it does not explicitly mention the physical 'descent from the mountain' mentioned in the ground truth.",
+    "label": "StageA-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_en|17|2": {
+    "score": 5,
+    "reason": "The context explicitly defines 'going down' as Zarathustra's descent to distribute his wisdom, matching the ground truth's essence of transition and sacrifice.",
+    "label": "StageA-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_baseline_en|18|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses virtue, the earth, and the Superman, but never mentions the 'spirit of gravity' or its meaning.",
+    "label": "Baseline-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_baseline_en|18|1": {
+    "score": 2,
+    "reason": "The context discusses the three metamorphoses and the 'great dragon' of 'Thou shalt', but it does not mention or define the 'spirit of gravity'.",
+    "label": "Baseline-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_en|18|0": {
+    "score": 3,
+    "reason": "The context mentions the spirit of gravity in relation to heaviness and self-love, but it lacks the specific definition of it being the demon of seriousness and conventional morality found in the ground truth.",
+    "label": "StageA-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|18|0": {
+    "score": 3,
+    "reason": "The context mentions the spirit of gravity in relation to heaviness and the difficulty of self-love, but it lacks the specific definition of it being the 'demon of seriousness, conventional morality, and self-contempt'.",
+    "label": "Baseline-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_en|18|1": {
+    "score": 2,
+    "reason": "The context identifies the spirit of gravity as Zarathustra's 'old arch-enemy' but fails to define its symbolic meaning (seriousness, morality, self-contempt) provided in the ground truth.",
+    "label": "StageA-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_en|18|2": {
+    "score": 4,
+    "reason": "The context explicitly identifies the spirit of gravity as a serious, profound, and solemn devil that causes things to fall, though it lacks the specific mention of 'conventional morality' and 'self-contempt' found in the ground truth.",
+    "label": "StageA-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_baseline_en|19|0": {
+    "score": 5,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' and shows him as a weight/presence that Zarathustra must contend with.",
+    "label": "Baseline-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_baseline_en|19|1": {
+    "score": 1,
+    "reason": "The retrieved context discusses the three metamorphoses (camel, lion, child) but does not mention the dwarf or the vision at all.",
+    "label": "Baseline-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_baseline_en|19|2": {
+    "score": 5,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' that draws Zarathustra downwards and describes it as a paralyzing force acting upon him.",
+    "label": "Baseline-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|19|0": {
+    "score": 5,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' and shows him as a weight/presence that Zarathustra must contend with.",
+    "label": "StageA-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_en|19|2": {
+    "score": 5,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' and shows him as a weight/presence that Zarathustra must contend with.",
+    "label": "StageA-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_en|19|1": {
+    "score": 5,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' and shows him as a weight/presence that Zarathustra must contend with.",
+    "label": "StageA-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_baseline_ko|20|0": {
+    "score": 2,
+    "reason": "The context mentions the tightrope walker's performance, but it does not explain the symbolic meaning of the tightrope walker as the bridge between beast and overman.",
+    "label": "Baseline-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_baseline_ko|20|1": {
+    "score": 1,
+    "reason": "The context discusses a madman and a city in Nietzsche's Zarathustra, but contains no mention of a tightrope walker (줄타기 광대) or its symbolism.",
+    "label": "Baseline-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_baseline_ko|20|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses 'Tarantulas' and 'equality,' but contains no mention of the 'tightrope walker' (줄타기 광대) or its symbolism.",
+    "label": "Baseline-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_ko|20|0": {
+    "score": 2,
+    "reason": "The context mentions the tightrope walker's performance, but it does not explain the symbolic meaning of the tightrope walker as the bridge between beast and overman.",
+    "label": "StageA-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_ko|20|1": {
+    "score": 2,
+    "reason": "The context mentions the tightrope walker's performance, but it does not explain the symbolic meaning of the tightrope walker as the bridge between beast and overman.",
+    "label": "StageA-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|20|2": {
+    "score": 1,
+    "reason": "The context discusses a madman and a city in Nietzsche's Zarathustra, but contains no mention of a tightrope walker (줄타기 광대) or its symbolism.",
+    "label": "StageA-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_baseline_ko|21|0": {
+    "score": 1,
+    "reason": "The retrieved context discusses failure and noble humans but does not mention the specific meaning of '몰락' (Untergang) as defined in the ground truth.",
+    "label": "Baseline-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_baseline_ko|21|1": {
+    "score": 2,
+    "reason": "The context discusses 'lust', 'will to power', and 'ego', but does not contain the definition or meaning of '몰락' (Untergang).",
+    "label": "Baseline-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_baseline_ko|21|2": {
+    "score": 3,
+    "reason": "The context mentions '몰락' as the time of descent/going down, but lacks the explicit meaning of 'voluntary sacrifice for overcoming and creation' found in the ground truth.",
+    "label": "Baseline-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_ko|21|1": {
+    "score": 2,
+    "reason": "The context discusses themes of rising, suffering, and destruction, but it does not define '몰락' (Untergang) as the act of descending or as a voluntary sacrifice for creation.",
+    "label": "StageA-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|21|0": {
+    "score": 2,
+    "reason": "The context discusses Zarathustra's departure and the nature of virtue, but it does not define the specific meaning of '몰락' (Untergang) as described in the ground truth.",
+    "label": "StageA-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_ko|21|2": {
+    "score": 1,
+    "reason": "The context discusses Zarathustra's departure and the nature of virtue, but it does not define or mention the specific meaning of '몰락' (Untergang) as described in the ground truth.",
+    "label": "StageA-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_baseline_ko|22|0": {
+    "score": 1,
+    "reason": "The retrieved context discusses the relationship between the body, soul, and self, but does not mention 'the spirit of gravity' (중력의 영) at all.",
+    "label": "Baseline-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_baseline_ko|22|1": {
+    "score": 1,
+    "reason": "The retrieved context discusses the three metamorphoses of the spirit (camel, lion, child) but does not mention 'the spirit of gravity' or its definition.",
+    "label": "Baseline-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_baseline_ko|22|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses 'Lust', 'Will to Power', 'Virtue', and 'Evil', but contains no mention of 'Spirit of Gravity' (중력의 영).",
+    "label": "Baseline-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_hierarchical_ko|22|1": {
+    "score": 4,
+    "reason": "The context explicitly defines the 'spirit of gravity' as being serious, thorough, profound, and solemn, causing everything to fall, which covers the core meaning of the ground truth.",
+    "label": "StageA-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|22|0": {
+    "score": 1,
+    "reason": "The retrieved context discusses 'Lust', 'Will to Power', 'Virtue', and 'Evil', but contains no mention of 'Spirit of Gravity' (중력의 영).",
+    "label": "StageA-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_ko|22|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses themes of virtue, giving, and the relationship between body and spirit, but it contains no mention of 'the spirit of gravity' (중력의 영).",
+    "label": "StageA-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_baseline_ko|23|2": {
+    "score": 1,
+    "reason": "The context describes a banquet scene and does not mention the 'dwarf' or its symbolic meaning regarding gravity and resistance to overcoming.",
+    "label": "Baseline-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_baseline_ko|23|1": {
+    "score": 1,
+    "reason": "The retrieved context discusses 'lust', 'will to power', and 'ego', but does not mention the 'dwarf' or its meaning at all.",
+    "label": "Baseline-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_baseline_ko|23|0": {
+    "score": 4,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' (중력의 정신), which covers the core meaning, though it doesn't explicitly use the phrase 'aspect that resists overcoming'.",
+    "label": "Baseline-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_ko|23|0": {
+    "score": 4,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' (중력의 정신), which covers the core meaning, though it doesn't explicitly use the phrase 'aspect that resists overcoming'.",
+    "label": "StageA-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_hierarchical_ko|23|1": {
+    "score": 4,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' (중력의 정신), which covers the core meaning, though it doesn't explicitly use the phrase 'aspect that resists overcoming'.",
+    "label": "StageA-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_hierarchical_ko|23|2": {
+    "score": 4,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' (중력의 정신), which covers the core meaning, though it doesn't explicitly use the phrase 'aspect that resists overcoming'.",
+    "label": "StageA-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_contextual_en|0|1": {
+    "score": 1,
+    "reason": "The retrieved context contains no information regarding Zarathustra's age or when he left his home.",
+    "label": "StageB-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_contextual_en|1|2": {
+    "score": 3,
+    "reason": "The context identifies the eagle as an animal companion, but it does not mention the serpent or its symbolic meaning.",
+    "label": "StageB-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_contextual_en|1|0": {
+    "score": 4,
+    "reason": "The context identifies the eagle and serpent as his animals, but it does not mention their symbolic meanings of pride and wisdom.",
+    "label": "StageB-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|0|2": {
+    "score": 1,
+    "reason": "The retrieved context describes Zarathustra's decision to leave the mountains, but contains no information regarding his age.",
+    "label": "StageB-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_contextual_en|1|1": {
+    "score": 5,
+    "reason": "The context explicitly identifies the eagle and serpent as Zarathustra's animals and links them to pride and wisdom.",
+    "label": "StageB-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_contextual_en|2|1": {
+    "score": 4,
+    "reason": "The context explicitly states the saint praised God with singing and mumbling, though it describes the saint as dead rather than Zarathustra leaving him.",
+    "label": "StageB-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_contextual_en|0|0": {
+    "score": 5,
+    "reason": "The context explicitly states Zarathustra was thirty years old when he left his home and spent ten years in the mountains, matching the ground truth perfectly.",
+    "label": "StageB-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|2|0": {
+    "score": 5,
+    "reason": "The context contains both the saint's actions (making hymns to praise God) and the fact that Zarathustra leaves without telling him God is dead.",
+    "label": "StageB-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|3|0": {
+    "score": 5,
+    "reason": "The context explicitly states the sequence of transformations from camel to lion and then to child, matching the ground truth perfectly.",
+    "label": "StageB-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|3|1": {
+    "score": 5,
+    "reason": "The context explicitly states the sequence of transformations from camel to lion and then to child, matching the ground truth perfectly.",
+    "label": "StageB-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_contextual_en|3|2": {
+    "score": 5,
+    "reason": "The context explicitly states the sequence of transformations from camel to lion and then to child, matching the ground truth perfectly.",
+    "label": "StageB-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|4|0": {
+    "score": 5,
+    "reason": "The context explicitly states that Zarathustra entered the mountains at the age of thirty, matching the ground truth perfectly.",
+    "label": "StageB-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|2|2": {
+    "score": 5,
+    "reason": "The context contains both the saint's actions (making hymns to praise God) and the fact that Zarathustra leaves without telling him God is dead.",
+    "label": "StageB-EN",
+    "category": "factoid",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|4|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses the conversation between Zarathustra and the hermit but does not mention his age or when he entered the mountains.",
+    "label": "StageB-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|5|0": {
+    "score": 4,
+    "reason": "The context identifies the eagle and the snake as Zarathustra's animals, but it does not mention their symbolic meanings (pride and wisdom).",
+    "label": "StageB-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_contextual_ko|4|1": {
+    "score": 2,
+    "reason": "The context discusses Zarathustra's wandering and his philosophical reflections, but it does not mention his age or the specific timing of when he entered the mountains.",
+    "label": "StageB-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|5|2": {
+    "score": 3,
+    "reason": "The context mentions the eagle as a companion, but it does not mention the snake or its symbolic meaning as required by the ground truth.",
+    "label": "StageB-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|5|1": {
+    "score": 4,
+    "reason": "The context identifies the eagle and the snake as Zarathustra's animals, but it does not mention their symbolic meanings (pride and wisdom).",
+    "label": "StageB-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|6|2": {
+    "score": 2,
+    "reason": "The context describes the encounter between Zarathustra and the voluntary beggar, but it does not mention the forest saint composing hymns to praise God.",
+    "label": "StageB-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|7|0": {
+    "score": 5,
+    "reason": "The context explicitly describes the three stages of mental transformation: camel to lion, and lion to child, directly matching the ground truth.",
+    "label": "StageB-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_contextual_ko|7|2": {
+    "score": 5,
+    "reason": "The context explicitly describes the three stages of mental transformation: camel becoming a lion, and lion becoming a child.",
+    "label": "StageB-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|7|1": {
+    "score": 5,
+    "reason": "The context explicitly describes the three stages of mental transformation: camel becoming lion, and lion becoming child, which directly matches the ground truth.",
+    "label": "StageB-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|6|1": {
+    "score": 5,
+    "reason": "The context contains both the saint's action (singing hymns to praise God) and Zarathustra's realization (that the saint does not know God is dead), matching the ground truth perfectly.",
+    "label": "StageB-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|6|0": {
+    "score": 5,
+    "reason": "The context contains all the necessary information to answer both parts of the ground truth: the saint's actions (singing hymns to praise God) and Zarathustra's realization (that the saint does not know God is dead).",
+    "label": "StageB-KO",
+    "category": "factoid",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|8|1": {
+    "score": 3,
+    "reason": "The context identifies the Superman as the goal to surpass man, but it lacks the specific detail about creating new values.",
+    "label": "StageB-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_contextual_en|9|0": {
+    "score": 5,
+    "reason": "The context provides a detailed description of the last man's pursuit of comfort, happiness, and lack of aspiration, directly matching the ground truth.",
+    "label": "StageB-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|8|2": {
+    "score": 4,
+    "reason": "The context explicitly defines the Superman as something to be surpassed and describes the process of creating/redeeming the future, which aligns with the ground truth.",
+    "label": "StageB-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_contextual_en|9|1": {
+    "score": 5,
+    "reason": "The context provides a detailed description of the last man's pursuit of comfort, happiness, and lack of aspiration, directly matching the ground truth.",
+    "label": "StageB-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_contextual_en|8|0": {
+    "score": 3,
+    "reason": "The context mentions that 'man is something that is to be surpassed', which relates to the concept, but it does not explicitly define or name the 'Übermensch' or its role in creating new values.",
+    "label": "StageB-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|10|0": {
+    "score": 4,
+    "reason": "The context describes the cyclical nature of existence (everything returns, the wheel rolls eternally), which directly addresses the concept of eternal recurrence.",
+    "label": "StageB-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|9|2": {
+    "score": 5,
+    "reason": "The context provides a detailed description of the last man's pursuit of comfort, happiness, and lack of aspiration, directly matching the ground truth.",
+    "label": "StageB-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_contextual_en|10|1": {
+    "score": 3,
+    "reason": "The text poetically describes the concept of things returning and being eternal, but it lacks the explicit definition of 'eternal recurrence' and the specific philosophical test regarding the affirmation of life.",
+    "label": "StageB-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_contextual_en|10|2": {
+    "score": 2,
+    "reason": "The text uses poetic metaphors about eternity and a 'ring of return' but never explicitly defines the doctrine of eternal recurrence or its role as a test of life affirmation.",
+    "label": "StageB-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_contextual_en|11|0": {
+    "score": 2,
+    "reason": "The context mentions the phrase 'GOD IS DEAD', but it provides no explanation of its meaning or the collapse of metaphysical absolutes.",
+    "label": "StageB-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|11|1": {
+    "score": 2,
+    "reason": "The context mentions the 'old God no longer liveth' but does not explain the philosophical meaning or the necessity of creating new values.",
+    "label": "StageB-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_contextual_en|11|2": {
+    "score": 2,
+    "reason": "The context mentions the 'old God no longer liveth' but does not explain the philosophical meaning or the necessity of creating new values.",
+    "label": "StageB-EN",
+    "category": "concept",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|12|0": {
+    "score": 4,
+    "reason": "The context explicitly defines the Übermensch as something humans must overcome and as the meaning of the earth, covering most of the ground truth.",
+    "label": "StageB-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_contextual_ko|12|2": {
+    "score": 5,
+    "reason": "The context directly defines the Übermensch as something humans must overcome and mentions moving toward new values/horizons, matching the ground truth.",
+    "label": "StageB-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|12|1": {
+    "score": 4,
+    "reason": "The context explicitly defines the 'Übermensch' (초인) as the one who transcends their soul/self, which aligns with the ground truth of overcoming oneself to create new values.",
+    "label": "StageB-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|13|0": {
+    "score": 1,
+    "reason": "The context describes Zarathustra's greeting to his guests and his character, but it does not mention the 'Last Man' (종말인) or his characteristics at all.",
+    "label": "StageB-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_contextual_ko|13|1": {
+    "score": 1,
+    "reason": "The retrieved context discusses the 'man's prudence' and the relationship between humans and the Superman, but it does not mention the 'Last Man' (종말인) or his characteristics at all.",
+    "label": "StageB-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|14|0": {
+    "score": 2,
+    "reason": "The context mentions the 'ring of return' (회귀의 고리) but fails to define the concept of eternal recurrence or its philosophical significance as described in the ground truth.",
+    "label": "StageB-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_contextual_ko|13|2": {
+    "score": 2,
+    "reason": "The context discusses Zarathustra's awakening and his interaction with animals and 'noble humans', but it does not define or describe the 'Last Man' (종말인).",
+    "label": "StageB-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|14|1": {
+    "score": 3,
+    "reason": "The context describes the emotional essence of eternal recurrence (wanting things to return), but it does not explicitly define the concept as 'all events repeating eternally' or mention the 'heaviest burden'.",
+    "label": "StageB-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|14|2": {
+    "score": 2,
+    "reason": "The context mentions the 'ring of return' and longing for eternity, but it does not explain the concept of eternal recurrence or its significance as a test of life affirmation.",
+    "label": "StageB-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|15|1": {
+    "score": 2,
+    "reason": "The context mentions the phrase 'God is dead' at the end, but it does not explain its philosophical meaning or the collapse of metaphysical absolutes.",
+    "label": "StageB-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|15|0": {
+    "score": 2,
+    "reason": "The context mentions the death of a specific god in a narrative sense, but it does not explain the philosophical meaning of 'God is dead' regarding the collapse of metaphysical absolutes or human value creation.",
+    "label": "StageB-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_contextual_ko|15|2": {
+    "score": 2,
+    "reason": "The context mentions that 'God is dead' but fails to explain its philosophical meaning regarding the collapse of metaphysical absolutes or the need for humans to create their own values.",
+    "label": "StageB-KO",
+    "category": "concept",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_contextual_en|16|0": {
+    "score": 2,
+    "reason": "The context describes the event of the tightrope walker falling, but it does not explicitly state the symbolic meaning of the walker as humanity or the bridge between beast and Übermensch.",
+    "label": "StageB-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|16|1": {
+    "score": 2,
+    "reason": "The context describes the event of the tightrope walker falling, but it does not explicitly state the symbolic meaning of the walker as humanity or the bridge between beast and Übermensch.",
+    "label": "StageB-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_contextual_en|16|2": {
+    "score": 2,
+    "reason": "The context describes the event of the tightrope walker falling, but it does not explicitly state the symbolic meaning of the walker as humanity or the bridge between beast and Übermensch.",
+    "label": "StageB-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_contextual_en|17|0": {
+    "score": 5,
+    "reason": "The context explicitly defines 'going down' as Zarathustra's descent to distribute his wisdom, matching the ground truth's essence of a transition/descent.",
+    "label": "StageB-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|17|1": {
+    "score": 4,
+    "reason": "The context provides the philosophical meaning of 'down-going' as a sacrifice for the Superman, though it does not explicitly mention the physical 'descent from the mountain' mentioned in the ground truth.",
+    "label": "StageB-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_contextual_en|17|2": {
+    "score": 4,
+    "reason": "The context provides the philosophical meaning of 'down-going' as a sacrifice for the Superman, though it does not explicitly mention the physical 'descent from the mountain' mentioned in the ground truth.",
+    "label": "StageB-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_contextual_en|18|0": {
+    "score": 2,
+    "reason": "The context mentions the spirit of gravity as a force that makes life heavy and prevents self-love, but it does not define it as the demon of seriousness, conventional morality, or self-contempt.",
+    "label": "StageB-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|18|1": {
+    "score": 3,
+    "reason": "The context mentions the spirit of gravity as a force that makes life heavy and prevents self-love, but it lacks the specific definition of it being the 'demon of seriousness, conventional morality, and self-contempt'.",
+    "label": "StageB-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_contextual_en|19|0": {
+    "score": 5,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' and shows him as a weight/presence that Zarathustra must contend with.",
+    "label": "StageB-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|19|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses a soothsayer and a dream about death, but it does not mention a dwarf or the spirit of gravity.",
+    "label": "StageB-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_contextual_en|19|1": {
+    "score": 5,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' that draws Zarathustra downwards and describes it as a paralyzing force acting upon him.",
+    "label": "StageB-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|20|0": {
+    "score": 2,
+    "reason": "The context mentions the tightrope walker's performance, but it does not explain the symbolic meaning of the tightrope walker as the bridge between beast and overman.",
+    "label": "StageB-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_contextual_en|18|2": {
+    "score": 4,
+    "reason": "The context explicitly identifies the spirit of gravity as the 'old devil and arch-enemy' that creates 'constraint, law, necessity and consequence and purpose and will and good and evil', which aligns with the essence of the ground truth.",
+    "label": "StageB-EN",
+    "category": "metaphor",
+    "lang": "en",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|20|2": {
+    "score": 1,
+    "reason": "The retrieved context discusses 'Tarantulas' and 'equality,' but contains no mention of the 'tightrope walker' (줄타기 광대) or its symbolism.",
+    "label": "StageB-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|20|1": {
+    "score": 1,
+    "reason": "The context discusses a madman and a city in Nietzsche's Zarathustra, but contains no mention of a tightrope walker (줄타기 광대) or its symbolism.",
+    "label": "StageB-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|21|0": {
+    "score": 1,
+    "reason": "The context discusses Zarathustra's departure and the nature of virtue, but it does not define or mention the specific meaning of '몰락' (Untergang) as described in the ground truth.",
+    "label": "StageB-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_contextual_ko|21|2": {
+    "score": 3,
+    "reason": "The context mentions '몰락' as the time of descent/going down, but lacks the explicit meaning of 'voluntary sacrifice for overcoming and creation' found in the ground truth.",
+    "label": "StageB-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|22|0": {
+    "score": 2,
+    "reason": "The context mentions the 'spirit of gravity' is retreating, but it does not define what it means (seriousness, conventional morality, self-contempt) as required by the ground truth.",
+    "label": "StageB-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_contextual_ko|21|1": {
+    "score": 2,
+    "reason": "The context discusses themes of rising, suffering, and destruction, but it does not define '몰락' (Untergang) as the specific act of descending or a voluntary sacrifice for creation as stated in the ground truth.",
+    "label": "StageB-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|22|2": {
+    "score": 4,
+    "reason": "The context explicitly defines the 'spirit of gravity' as being serious, thorough, profound, and solemn, leading to everything falling, which covers the core essence of the ground truth.",
+    "label": "StageB-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 2
+  },
+  "nietzsche_contextual_ko|22|1": {
+    "score": 2,
+    "reason": "The context mentions the 'spirit of gravity' is retreating, but it does not define what it means (seriousness, conventional morality, self-contempt) as required by the ground truth.",
+    "label": "StageB-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|23|0": {
+    "score": 4,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' (중력의 정신), which covers the core meaning, though it doesn't explicitly use the phrase 'aspect that resists overcoming'.",
+    "label": "StageB-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 0
+  },
+  "nietzsche_contextual_ko|23|1": {
+    "score": 4,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' (중력의 정신), which covers the core meaning, though it doesn't explicitly use the phrase 'aspect that resists overcoming'.",
+    "label": "StageB-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 1
+  },
+  "nietzsche_contextual_ko|23|2": {
+    "score": 4,
+    "reason": "The context explicitly identifies the dwarf as the 'spirit of gravity' (중력의 정신), which covers the core meaning, though it doesn't explicitly use the phrase 'aspect that resists overcoming'.",
+    "label": "StageB-KO",
+    "category": "metaphor",
+    "lang": "ko",
+    "rank": 2
+  }
+}

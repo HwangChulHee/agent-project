@@ -1,0 +1,578 @@
+{
+  "wikipedia_contextual|0|0": {
+    "score": 5,
+    "reason": "The context directly identifies the specific Nobel Prize Einstein won and the reason for it."
+  },
+  "wikipedia_hierarchical|0|0": {
+    "score": 5,
+    "reason": "The context directly identifies the specific Nobel Prize Einstein won and the reason for it."
+  },
+  "wikipedia|0|2": {
+    "score": 5,
+    "reason": "The context explicitly states which Nobel Prize Einstein received and the specific reason for the award."
+  },
+  "wikipedia_hierarchical|0|1": {
+    "score": 1,
+    "reason": "The context discusses Einstein's early scientific papers and PhD but contains no mention of the Nobel Prize."
+  },
+  "wikipedia_contextual|0|1": {
+    "score": 4,
+    "reason": "The context explicitly discusses the Nobel citation, its contents, and the scientific skepticism surrounding it at the time."
+  },
+  "wikipedia|0|0": {
+    "score": 4,
+    "reason": "The context explicitly states that Einstein was awarded the 1921 Nobel Prize in 1922."
+  },
+  "wikipedia|0|1": {
+    "score": 2,
+    "reason": "The context mentions Einstein's 1905 papers but does not mention his Nobel Prize or the year he won it."
+  },
+  "wikipedia_hierarchical|0|2": {
+    "score": 5,
+    "reason": "The context explicitly states that Einstein received the 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect."
+  },
+  "wikipedia|1|2": {
+    "score": 3,
+    "reason": "The context discusses Einstein's application of general relativity to cosmology, but lacks a fundamental explanation of the theory itself."
+  },
+  "wikipedia_hierarchical|1|0": {
+    "score": 4,
+    "reason": "The context provides detailed historical and scientific information regarding Einstein's development and testing of the general theory of relativity."
+  },
+  "wikipedia_hierarchical|1|1": {
+    "score": 5,
+    "reason": "The context explicitly mentions both special and general relativity and provides key details such as the mass-energy equivalence formula."
+  },
+  "wikipedia|1|0": {
+    "score": 4,
+    "reason": "The context directly identifies Einstein as the developer of the theory of relativity and mentions the mass-energy equivalence formula related to special relativity."
+  },
+  "wikipedia|1|1": {
+    "score": 4,
+    "reason": "The context provides a clear definition and explanation of Einstein's general theory of relativity, though it is slightly cut off at the end."
+  },
+  "wikipedia_contextual|0|2": {
+    "score": 3,
+    "reason": "The context mentions Einstein's Nobel prize ceremony and his absence, but does not state what prize he won or why he won it."
+  },
+  "wikipedia_hierarchical|1|2": {
+    "score": 3,
+    "reason": "The context discusses a specific prediction of relativity (gravitational waves) but does not explain the core concepts of the theory itself."
+  },
+  "wikipedia_contextual|1|0": {
+    "score": 4,
+    "reason": "The context provides specific historical details and mathematical foundations of Einstein's general relativity, though it focuses more on its development and testing than a general definition."
+  },
+  "wikipedia|2|0": {
+    "score": 5,
+    "reason": "The context explicitly discusses the discovery and isolation process of both polonium and radium by the Curies."
+  },
+  "wikipedia_contextual|1|2": {
+    "score": 4,
+    "reason": "The context directly discusses Einstein's general theory of relativity and its implications, though it also includes other physics contributions."
+  },
+  "wikipedia_hierarchical|2|0": {
+    "score": 3,
+    "reason": "The context explains the research process and the discovery of thorium, but it cuts off before mentioning the discovery of radium and polonium."
+  },
+  "wikipedia|2|2": {
+    "score": 2,
+    "reason": "The context discusses the impact and applications of radium's discovery but does not explain how the Curies discovered radium or polonium."
+  },
+  "wikipedia_contextual|1|1": {
+    "score": 3,
+    "reason": "The context discusses specific aspects of general relativity like the equivalence principle and light deflection, but lacks a general definition or comprehensive explanation of the theory itself."
+  },
+  "wikipedia|2|1": {
+    "score": 4,
+    "reason": "The context provides specific details about the isolation of radium and mentions the difficulty in isolating polonium, directly addressing the discovery aspect of the query."
+  },
+  "wikipedia_hierarchical|2|1": {
+    "score": 1,
+    "reason": "The context discusses Marie Curie's postwar activities and honors, but contains no information regarding the actual discovery of radium or polonium."
+  },
+  "wikipedia_hierarchical|2|2": {
+    "score": 3,
+    "reason": "The context explains the research process and the discovery of thorium, but it cuts off before mentioning the discovery of radium and polonium."
+  },
+  "wikipedia_contextual|2|0": {
+    "score": 5,
+    "reason": "The context explicitly details the discovery dates and naming of both polonium and radium by the Curies."
+  },
+  "wikipedia|3|0": {
+    "score": 2,
+    "reason": "The context provides a bibliography of books about Marie Curie but does not list the specific elements she discovered."
+  },
+  "wikipedia|3|2": {
+    "score": 1,
+    "reason": "The context discusses Marie Curie's presence on currency and stamps but does not mention any chemical elements."
+  },
+  "wikipedia_contextual|2|2": {
+    "score": 2,
+    "reason": "The context discusses the discovery of radioactivity and uranium rays but does not mention the discovery of radium or polonium."
+  },
+  "wikipedia|3|1": {
+    "score": 2,
+    "reason": "The context mentions a book title about elements, but does not list the actual elements discovered by Marie Curie."
+  },
+  "wikipedia_contextual|2|1": {
+    "score": 3,
+    "reason": "The context discusses the isolation of radium and mentions polonium, but it does not explicitly state the discovery of polonium, only that she never succeeded in isolating it."
+  },
+  "wikipedia_hierarchical|3|0": {
+    "score": 2,
+    "reason": "The context is a list of bibliographic references about Marie Curie, but it does not contain the actual names of the elements she discovered."
+  },
+  "wikipedia_hierarchical|3|1": {
+    "score": 2,
+    "reason": "The context is a list of bibliographic references about Marie Curie, but it does not contain the actual names of the elements she discovered."
+  },
+  "wikipedia_contextual|3|0": {
+    "score": 5,
+    "reason": "The context explicitly identifies the elements radium and polonium discovered by Marie Curie."
+  },
+  "wikipedia_hierarchical|3|2": {
+    "score": 5,
+    "reason": "The context explicitly mentions the element named after her (curium, symbol Cm) and radioactive minerals named after the Curies."
+  },
+  "wikipedia_contextual|3|2": {
+    "score": 5,
+    "reason": "The context explicitly mentions polonium and curium as elements associated with Marie Curie."
+  },
+  "wikipedia_contextual|3|1": {
+    "score": 1,
+    "reason": "The context consists of bibliographic references about Marie Curie's life but does not mention any chemical elements."
+  },
+  "wikipedia|4|1": {
+    "score": 2,
+    "reason": "The context discusses Newton's work on fluid mechanics and orbital mechanics rather than the three fundamental laws of motion."
+  },
+  "wikipedia|4|0": {
+    "score": 4,
+    "reason": "The context explicitly mentions that Newton stated the three universal laws of motion and describes their purpose, though it does not list the specific laws themselves."
+  },
+  "wikipedia|4|2": {
+    "score": 2,
+    "reason": "The context discusses Newton's specific work on fluid resistance and motion under drag rather than the fundamental three laws of motion."
+  },
+  "wikipedia_hierarchical|4|0": {
+    "score": 3,
+    "reason": "The context mentions that Newton stated the three laws of motion in the Principia, but it does not actually list or describe what those three laws are."
+  },
+  "wikipedia_hierarchical|4|2": {
+    "score": 2,
+    "reason": "The context discusses how special relativity relates to Newtonian mechanics but does not state the actual laws of motion."
+  },
+  "wikipedia_hierarchical|4|1": {
+    "score": 1,
+    "reason": "The context discusses Newton's legacy and achievements but does not state or explain the actual laws of motion."
+  },
+  "wikipedia_contextual|4|0": {
+    "score": 4,
+    "reason": "The context explicitly states that Newton stated the three universal laws of motion and explains their purpose, though it does not list the specific text of each law."
+  },
+  "wikipedia_contextual|4|1": {
+    "score": 2,
+    "reason": "The context discusses Newton's work on fluid resistance and motion under drag, but does not state the three fundamental laws of motion."
+  },
+  "wikipedia_contextual|4|2": {
+    "score": 2,
+    "reason": "The context discusses Newton's contributions to gravity and physics generally, but does not state or explain the three laws of motion."
+  },
+  "wikipedia|5|0": {
+    "score": 1,
+    "reason": "The context discusses Newton's understanding of limits and calculus, but contains no information regarding universal gravitation (만유인력)."
+  },
+  "wikipedia|5|1": {
+    "score": 3,
+    "reason": "The context discusses Newton's reaction to criticisms of his theory of gravity, but lacks the actual definition or formula of universal gravitation requested."
+  },
+  "wikipedia|5|2": {
+    "score": 4,
+    "reason": "The context mentions Newton's discovery of gravity and his influence on mechanics, which directly addresses the query."
+  },
+  "wikipedia_hierarchical|5|0": {
+    "score": 1,
+    "reason": "The context focuses on Newton's personality and personal life rather than the physical law of universal gravitation."
+  },
+  "wikipedia_hierarchical|5|1": {
+    "score": 2,
+    "reason": "The context discusses Newton's greatness and his work on planets, comets, and tides, but does not explain the principle of universal gravitation (만유인력)."
+  },
+  "wikipedia_contextual|5|1": {
+    "score": 1,
+    "reason": "The context focuses on Newton's personality and library contents rather than the law of universal gravitation."
+  },
+  "wikipedia_hierarchical|5|2": {
+    "score": 4,
+    "reason": "The context explicitly mentions Newton's formulation of the law of universal gravitation and its applications, though it lacks the specific mathematical formula."
+  },
+  "wikipedia_contextual|5|2": {
+    "score": 1,
+    "reason": "The context discusses Newton's intellectual greatness and historical significance but contains no information about the law of universal gravitation."
+  },
+  "wikipedia_contextual|5|0": {
+    "score": 1,
+    "reason": "The context discusses Newton's genius and his work on light and planetary motion, but does not explain the law of universal gravitation (만유인력)."
+  },
+  "wikipedia|6|0": {
+    "score": 4,
+    "reason": "The context directly identifies natural selection as the basic mechanism of evolution and mentions Darwin's discovery as a unifying theory."
+  },
+  "wikipedia|6|2": {
+    "score": 4,
+    "reason": "The context directly defines Darwin's role and explains his theory of natural selection, though it is truncated at the end."
+  },
+  "wikipedia|6|1": {
+    "score": 4,
+    "reason": "The context explains the relationship between Darwin's natural selection and the modern evolutionary synthesis, though it includes some tangential geographical information."
+  },
+  "wikipedia_hierarchical|6|0": {
+    "score": 5,
+    "reason": "The context directly defines Darwin's theory of evolution and explains the mechanism of natural selection as requested."
+  },
+  "wikipedia_hierarchical|6|1": {
+    "score": 2,
+    "reason": "The context discusses Darwin's legacy and historical impact rather than explaining the mechanisms of evolution or natural selection."
+  },
+  "wikipedia_hierarchical|6|2": {
+    "score": 3,
+    "reason": "The context provides historical details about the publication of the theory, but lacks a definition or explanation of the mechanisms of natural selection itself."
+  },
+  "wikipedia_contextual|6|1": {
+    "score": 5,
+    "reason": "The context explains the mechanism of natural selection, including the role of Malthusian population pressure and favorable variations in survival."
+  },
+  "wikipedia_contextual|6|0": {
+    "score": 3,
+    "reason": "The context discusses Darwin's views on evolution and the history of the term, but lacks a specific explanation of the mechanism of natural selection."
+  },
+  "wikipedia|7|1": {
+    "score": 4,
+    "reason": "The context explains Darwin's theory of natural selection and its evolution into modern synthesis, directly addressing the query."
+  },
+  "wikipedia_contextual|6|2": {
+    "score": 2,
+    "reason": "The context discusses the historical timeline of Darwin's writing and his correspondence with Wallace, but does not explain the mechanisms of Darwinian evolution or natural selection."
+  },
+  "wikipedia|7|0": {
+    "score": 4,
+    "reason": "The context explains that natural selection is the basic mechanism of evolution and mentions Darwin's discovery as a unifying theory, though it lacks specific details on the mechanism itself."
+  },
+  "wikipedia|7|2": {
+    "score": 5,
+    "reason": "The context directly explains Darwin's theory of natural selection and how favorable variations are preserved to form new species."
+  },
+  "wikipedia_hierarchical|7|1": {
+    "score": 4,
+    "reason": "The context provides specific historical details about the development and research process of Darwin's theory of natural selection."
+  },
+  "wikipedia_hierarchical|7|2": {
+    "score": 5,
+    "reason": "The context directly explains Darwin's theory of evolution and the specific mechanism of natural selection as requested."
+  },
+  "wikipedia_hierarchical|7|0": {
+    "score": 3,
+    "reason": "The context mentions natural selection and Darwin's theory, but it focuses more on his legacy and historical impact rather than explaining the mechanism of natural selection itself."
+  },
+  "wikipedia_contextual|7|0": {
+    "score": 3,
+    "reason": "The context discusses Darwin's views on evolution and the history of the term, but lacks a specific explanation of the mechanism of natural selection requested by the query."
+  },
+  "wikipedia_contextual|7|1": {
+    "score": 2,
+    "reason": "The context discusses the historical and theological debates surrounding Darwin's theories rather than explaining the mechanism of natural selection itself."
+  },
+  "wikipedia|8|0": {
+    "score": 4,
+    "reason": "The context provides a strong theoretical definition and historical significance of Turing machines in relation to computation."
+  },
+  "wikipedia_contextual|7|2": {
+    "score": 3,
+    "reason": "The context mentions Darwin's theory and its synthesis with genetics, but lacks a detailed explanation of the mechanism of natural selection requested by the query."
+  },
+  "wikipedia|8|1": {
+    "score": 3,
+    "reason": "The context mentions the Turing machine as a model of computation but lacks the technical details required to explain how the computation actually works."
+  },
+  "wikipedia|8|2": {
+    "score": 4,
+    "reason": "The context provides direct information about Turing machine computation, specifically the halting problem and the concept of a universal Turing machine."
+  },
+  "wikipedia_hierarchical|8|0": {
+    "score": 3,
+    "reason": "The context mentions the Turing machine as a formalization of computation, but lacks technical details on how the computation actually works."
+  },
+  "wikipedia_hierarchical|8|1": {
+    "score": 2,
+    "reason": "The context is a bibliography of books about Turing and computer history rather than technical information explaining how Turing machine computation works."
+  },
+  "wikipedia_hierarchical|8|2": {
+    "score": 1,
+    "reason": "The context is a list of external links and archives about Alan Turing's life and papers, but contains no information regarding the mechanics or theory of Turing machine computation."
+  },
+  "wikipedia_contextual|8|0": {
+    "score": 4,
+    "reason": "The context provides a high-level overview of Turing machines, their significance, and their role in the theory of computation, though it lacks technical mechanics."
+  },
+  "wikipedia_contextual|8|2": {
+    "score": 2,
+    "reason": "The context discusses Turing's work on computer design (ACE) and his biography, but does not explain the concept or mechanics of Turing machine computation."
+  },
+  "wikipedia_contextual|8|1": {
+    "score": 5,
+    "reason": "The context provides a comprehensive overview of Turing machines, their purpose, their relationship to algorithms, and their role in proving the undecidability of the halting problem."
+  },
+  "wikipedia|9|0": {
+    "score": 4,
+    "reason": "The context explains the undecidability of the halting problem and the concept of a universal Turing machine, which are core to Turing machine computability."
+  },
+  "wikipedia|9|1": {
+    "score": 1,
+    "reason": "The context discusses Ada Lovelace and the analytical engine, but contains no information regarding Turing machines or computability."
+  },
+  "wikipedia|9|2": {
+    "score": 4,
+    "reason": "The context explains the Church-Turing thesis and the capability of Turing machines to compute anything computable, which directly addresses the concept of computability."
+  },
+  "wikipedia_hierarchical|9|0": {
+    "score": 1,
+    "reason": "The context discusses Ada Lovelace and the Analytical Engine, but does not mention Turing machines or the concept of computability (computability theory)."
+  },
+  "wikipedia_hierarchical|9|1": {
+    "score": 1,
+    "reason": "The context discusses Ada Lovelace and the Analytical Engine, but does not mention Turing machines or the concept of computability (computability theory)."
+  },
+  "wikipedia_hierarchical|9|2": {
+    "score": 1,
+    "reason": "The context discusses Turing's work in mathematical biology and morphogenesis, which is unrelated to the concept of Turing machine computability (계산 가능성)."
+  },
+  "wikipedia_contextual|9|0": {
+    "score": 1,
+    "reason": "The context discusses Ada Lovelace and Babbage's Analytical Engine, but does not mention Turing machines or the concept of computability."
+  },
+  "wikipedia_contextual|9|2": {
+    "score": 1,
+    "reason": "The context discusses Ada Lovelace and the Analytical Engine, which is unrelated to Turing machines and the concept of computability."
+  },
+  "wikipedia|10|0": {
+    "score": 5,
+    "reason": "The context directly explains Ada Lovelace's work with the Analytical Engine, including her notes and the first computer program."
+  },
+  "wikipedia|10|1": {
+    "score": 1,
+    "reason": "The context mentions various entities named after Ada Lovelace but contains no information regarding the Analytical Engine."
+  },
+  "wikipedia_contextual|9|1": {
+    "score": 2,
+    "reason": "The context mentions Alan Turing and his paper, but it focuses on the transition to general-purpose computation and Ada Lovelace's views rather than explaining Turing machine computability."
+  },
+  "wikipedia|10|2": {
+    "score": 5,
+    "reason": "The context directly identifies Ada Lovelace's work on the Analytical Engine and her role as the first computer programmer."
+  },
+  "wikipedia_hierarchical|10|1": {
+    "score": 1,
+    "reason": "The context lists various entities named after Ada Lovelace but contains no information regarding the Analytical Engine."
+  },
+  "wikipedia_hierarchical|10|0": {
+    "score": 5,
+    "reason": "The context provides a comprehensive explanation of Ada Lovelace's relationship with the Analytical Engine, her specific contributions to it, and its significance."
+  },
+  "wikipedia_hierarchical|10|2": {
+    "score": 5,
+    "reason": "The context directly explains Ada Lovelace's specific work and contribution regarding the Analytical Engine through her translation and extensive notes."
+  },
+  "wikipedia_contextual|10|0": {
+    "score": 5,
+    "reason": "The context explains Ada Lovelace's specific insights regarding the Analytical Engine's ability to manipulate symbols beyond just numbers."
+  },
+  "wikipedia_contextual|10|1": {
+    "score": 3,
+    "reason": "The context mentions her work on the Analytical Engine and its distinction from the Difference Engine, but lacks specific details about the engine itself."
+  },
+  "wikipedia|11|0": {
+    "score": 5,
+    "reason": "The context explicitly describes her work on the analytical engine and her creation of what is considered the first published computer program."
+  },
+  "wikipedia|11|1": {
+    "score": 1,
+    "reason": "The context discusses Isaac Newton and has no mention of Ada Lovelace or her role as a programmer."
+  },
+  "wikipedia_contextual|10|2": {
+    "score": 5,
+    "reason": "The context directly identifies Ada Lovelace's work on Charles Babbage's analytical engine and her role as the first computer programmer."
+  },
+  "wikipedia|11|2": {
+    "score": 1,
+    "reason": "The context describes Maria Skłodowska (Marie Curie) instead of Ada Lovelace."
+  },
+  "wikipedia_hierarchical|11|0": {
+    "score": 2,
+    "reason": "The context lists various entities and awards named after her, but does not provide biographical information defining her as a programmer."
+  },
+  "wikipedia_hierarchical|11|1": {
+    "score": 4,
+    "reason": "The context identifies her as the author of notes on the Analytical Engine, which directly supports her role as a programmer."
+  },
+  "wikipedia_hierarchical|11|2": {
+    "score": 2,
+    "reason": "The context discusses commemorations and honors named after her, but does not explicitly state that she was a programmer."
+  },
+  "wikipedia|12|0": {
+    "score": 4,
+    "reason": "The context explains how Tesla developed the Tesla coil to produce high-frequency alternating-current electricity."
+  },
+  "wikipedia_contextual|11|0": {
+    "score": 2,
+    "reason": "The context lists various institutions and awards named after her, but does not explain who she was or her role as a programmer."
+  },
+  "wikipedia_contextual|11|1": {
+    "score": 4,
+    "reason": "The context explains her insight into programming the Analytical Engine to solve complex problems beyond mere calculation, directly addressing her role as a programmer."
+  },
+  "wikipedia_contextual|11|2": {
+    "score": 4,
+    "reason": "The context identifies Ada Lovelace's role in transitioning from calculation to computation and her specific views on the Analytical Engine."
+  },
+  "wikipedia|12|1": {
+    "score": 2,
+    "reason": "The context mentions Tesla's use of alternating current for wireless experiments, but it does not explain his fundamental work or theories regarding alternating current itself."
+  },
+  "wikipedia_hierarchical|12|0": {
+    "score": 4,
+    "reason": "The context explains how Tesla developed the Tesla coil to produce high-frequency alternating-current electricity."
+  },
+  "wikipedia|12|2": {
+    "score": 4,
+    "reason": "The context explains Tesla's specific method for generating alternating current using a steam-powered reciprocating generator."
+  },
+  "wikipedia_contextual|12|1": {
+    "score": 1,
+    "reason": "The context mentions the Tesla coil and his professional roles but provides no information regarding alternating current."
+  },
+  "wikipedia_hierarchical|12|1": {
+    "score": 3,
+    "reason": "The context explains a specific method Tesla used to generate alternating current, but it is a niche technical detail rather than a general overview of his work with AC."
+  },
+  "wikipedia_contextual|12|2": {
+    "score": 4,
+    "reason": "The context explains Tesla's development and demonstration of the AC motor and its relationship to the alternating current system."
+  },
+  "wikipedia_hierarchical|12|2": {
+    "score": 5,
+    "reason": "The context provides detailed information about Tesla's development of the induction motor, its use of alternating current, and its commercialization via Westinghouse."
+  },
+  "wikipedia_contextual|12|0": {
+    "score": 2,
+    "reason": "The context discusses specific technical implementation conflicts regarding AC frequency and motors, but does not explain what Tesla's alternating current is or its general significance."
+  },
+  "wikipedia|13|1": {
+    "score": 4,
+    "reason": "The context explains Tesla's steam-powered generator and how it produces alternating current, directly addressing the query."
+  },
+  "wikipedia|13|2": {
+    "score": 4,
+    "reason": "The context explains the development of the Tesla coil and its use in producing high-frequency alternating-current electricity."
+  },
+  "wikipedia|13|0": {
+    "score": 3,
+    "reason": "The context mentions Tesla's work with high-voltage alternating current and wireless lighting, but lacks a general or foundational explanation of 'Tesla AC electricity' itself."
+  },
+  "wikipedia_hierarchical|13|1": {
+    "score": 1,
+    "reason": "The context is a bibliography of books mostly about computer science and Alan Turing, providing no information about Tesla or alternating current."
+  },
+  "wikipedia_hierarchical|13|2": {
+    "score": 2,
+    "reason": "The context discusses Tesla's wireless power transmission experiments but does not explain the principles or details of alternating current (AC)."
+  },
+  "wikipedia_hierarchical|13|0": {
+    "score": 3,
+    "reason": "The context mentions Tesla's work with high AC voltages and wireless power transmission, but lacks a direct explanation of his fundamental AC electrical systems."
+  },
+  "wikipedia_contextual|13|0": {
+    "score": 2,
+    "reason": "The context discusses Tesla's wireless power transmission experiments but does not explain the principles or details of alternating current (AC)."
+  },
+  "wikipedia_contextual|13|1": {
+    "score": 3,
+    "reason": "The context mentions Tesla's experiments with alternating current (AC) and his use of the El Paso Electric Light Company, but it lacks a detailed explanation of his theories or inventions regarding AC electricity."
+  },
+  "wikipedia|14|1": {
+    "score": 4,
+    "reason": "The context contains a direct citation for Feynman's seminal paper on operator calculus in quantum electrodynamics."
+  },
+  "wikipedia|14|0": {
+    "score": 3,
+    "reason": "The context provides historical context about the presentation of Feynman's QED, but lacks the actual scientific principles or formulation of the theory itself."
+  },
+  "wikipedia_contextual|13|2": {
+    "score": 1,
+    "reason": "The context discusses Isaac Newton's historical theories on static electricity and its relation to light and nerves, which is entirely unrelated to Tesla's alternating current."
+  },
+  "wikipedia_hierarchical|14|0": {
+    "score": 4,
+    "reason": "The context provides a list of highly relevant seminal papers by Feynman specifically addressing quantum electrodynamics and its mathematical formulations."
+  },
+  "wikipedia_hierarchical|14|2": {
+    "score": 4,
+    "reason": "The context provides a list of highly relevant seminal papers by Feynman specifically addressing quantum electrodynamics."
+  },
+  "wikipedia|14|2": {
+    "score": 4,
+    "reason": "The context explains the origins of Feynman's work in QED, specifically mentioning the path integral formulation and Feynman diagrams."
+  },
+  "wikipedia_hierarchical|14|1": {
+    "score": 4,
+    "reason": "The context explicitly mentions Feynman's Nobel Prize-winning work in quantum electrodynamics and his book on the subject."
+  },
+  "wikipedia_contextual|14|0": {
+    "score": 3,
+    "reason": "The context provides historical context regarding the development and presentation of Feynman's QED, but lacks the actual scientific principles or mathematical formulations of the theory."
+  },
+  "wikipedia_contextual|14|1": {
+    "score": 3,
+    "reason": "The context mentions Feynman diagrams and their role in quantum field theory, but lacks technical details about the actual theory of quantum electrodynamics."
+  },
+  "wikipedia|15|2": {
+    "score": 1,
+    "reason": "The context lists academic papers by Richard Feynman but does not contain information about his quantum mechanics lectures."
+  },
+  "wikipedia|15|0": {
+    "score": 1,
+    "reason": "The context discusses Feynman's views on quarks and quantum gravity, but does not mention or provide information about his quantum mechanics lectures."
+  },
+  "wikipedia_contextual|14|2": {
+    "score": 3,
+    "reason": "The context provides bibliographic references to Feynman's foundational QED papers but does not contain the actual technical content or explanations required to answer a conceptual query."
+  },
+  "wikipedia|15|1": {
+    "score": 2,
+    "reason": "The context lists several books by Feynman, but it does not contain the specific 'Feynman Lectures on Physics' (Quantum Mechanics) requested."
+  },
+  "wikipedia_hierarchical|15|0": {
+    "score": 2,
+    "reason": "The context lists scientific papers and dissertations by Feynman, but does not contain information about his famous 'Lectures on Physics' (Feynman Lectures on Physics)."
+  },
+  "wikipedia_hierarchical|15|1": {
+    "score": 2,
+    "reason": "The context lists scientific papers and dissertations by Feynman, but does not contain information about his famous 'Lectures on Physics' (Feynman Lectures on Physics)."
+  },
+  "wikipedia_contextual|15|0": {
+    "score": 2,
+    "reason": "The context mentions Feynman's contributions to physics and quantum computing, but does not contain information about his specific quantum mechanics lectures."
+  },
+  "wikipedia_contextual|15|1": {
+    "score": 1,
+    "reason": "The context contains academic citations involving Richard Feynman, but none of them refer to his famous quantum mechanics lectures."
+  },
+  "wikipedia_contextual|15|2": {
+    "score": 2,
+    "reason": "The context discusses Feynman's physics research and theories but does not mention his famous quantum mechanics lectures."
+  },
+  "wikipedia_hierarchical|15|2": {
+    "score": 2,
+    "reason": "The context lists scientific papers and dissertations by Feynman, but does not contain information about his famous 'Lectures on Physics' (Feynman Lectures on Physics)."
+  }
+}

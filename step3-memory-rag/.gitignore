@@ -1,13 +1,20 @@
 # Python
 __pycache__/
-*.py[cod]
+*.pyc
 .venv/
-*.egg-info/
 
-# RAG artifacts (재생성 가능)
-chroma_db/
-data/wikipedia/*.txt
-data/wikipedia/*.json
+# ChromaDB binaries (재생성 가능)
+chroma_db/chroma.sqlite3
+chroma_db/*/
 
-# Env
-.env.local
+# JSON 결과는 보존 — chroma_db/ 전체 ignore에 negation
+!chroma_db/*.json
+
+# Backup files
+*.bak
+*.before_postprocess
+
+# Editor/OS
+.DS_Store
+.vscode/
+.idea/
