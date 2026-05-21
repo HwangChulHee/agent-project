@@ -31,7 +31,7 @@ data/wikipedia_md/*.md
     │
     ▼ scripts/build_index_hierarchical.py
     │   ├─ MarkdownNodeParser  → 292 section parents
-    │   ├─ SentenceSplitter    → 421 leaves (MIN_LEAF_CHARS=80 필터)
+    │   ├─ SentenceSplitter    → 584 leaves (MIN_LEAF_CHARS=80 필터)
     │   └─ SentenceTransformer → 384-dim 임베딩
     ▼
 chroma_db/                    (collection: wikipedia_hierarchical)
@@ -61,7 +61,7 @@ chroma_db/hier_nodes.json     (parent 사이드카)
 | | Baseline | Stage A |
 |---|---|---|
 | 청킹 기준 | 800자 고정 | 섹션 헤더 + 256자 sentence-split |
-| 임베딩 청크 수 | 729 | 421 |
+| 임베딩 청크 수 | 729 | 584 |
 | 평균 청크 길이 | ~800자 | ~250-500자 (가변) |
 | 메타데이터 | `doc_id` 누락 | `doc_id`, `parent_id` 보존 |
 | Parent 사이드카 | — | 292 sections |
