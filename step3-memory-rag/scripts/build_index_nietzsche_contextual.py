@@ -7,7 +7,7 @@ import shutil
 import tempfile
 from pathlib import Path
 import chromadb
-from sentence_transformers import SentenceTransformer
+from rag.embed_api import SentenceTransformer
 from rag.leaves import build_leaves
 
 DB_DIR = Path("chroma_db")

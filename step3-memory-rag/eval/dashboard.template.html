@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Zarathustra RAG Eval Dashboard</title>
+<style>
+  :root {
+    --fg: #222; --muted: #666; --border: #ddd; --bg-soft: #f7f7f7;
+    --factoid: #2563eb; --concept: #059669; --metaphor: #7c3aed;
+    --score-high: #16a34a; --score-mid: #ca8a04; --score-low: #dc2626;
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+         color: var(--fg); margin: 0 auto; padding: 24px; max-width: 1500px; }
+  h1 { font-size: 18px; margin: 0 0 4px 0; }
+  .summary { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+  .picker { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 16px;
+            padding: 8px; background: var(--bg-soft); border-radius: 6px; }
+  .picker button { padding: 4px 8px; font-size: 12px; border: 1px solid var(--border);
+                   background: white; cursor: pointer; border-radius: 4px;
+                   font-family: ui-monospace, monospace; }
+  .picker button.active { background: #222; color: white; border-color: #222; }
+  .picker button .dot { display: inline-block; width: 6px; height: 6px;
+                        border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+  .cat-factoid { background: var(--factoid); }
+  .cat-concept { background: var(--concept); }
+  .cat-metaphor { background: var(--metaphor); }
+  .query-card { border: 1px solid var(--border); border-radius: 6px;
+                padding: 14px; margin-bottom: 16px; background: var(--bg-soft); }
+  .qtext { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .qmeta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .gt { font-size: 13px; padding: 8px; background: white;
+        border-left: 3px solid #16a34a; border-radius: 3px; }
+  .gt-label { font-weight: 600; color: var(--muted); font-size: 11px;
+              text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .columns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .col { border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+         background: white; }
+  .col-header { padding: 10px 12px; background: var(--bg-soft);
+                border-bottom: 1px solid var(--border); }
+  .col-header .name { font-weight: 600; font-size: 14px; }
+  .col-header .scores { font-size: 11px; color: var(--muted); margin-top: 2px;
+                        font-family: ui-monospace, monospace; }
+  .toggle { display: inline-flex; margin-top: 6px; border: 1px solid var(--border);
+            border-radius: 3px; overflow: hidden; }
+  .toggle button { padding: 2px 8px; font-size: 11px; border: none; background: white;
+                   cursor: pointer; font-family: ui-monospace, monospace; }
+  .toggle button.active { background: #222; color: white; }
+  .result { padding: 10px 12px; border-top: 1px solid var(--border); font-size: 12px; }
+  .result-head { display: flex; justify-content: space-between; align-items: baseline;
+                 margin-bottom: 6px; }
+  .rank { font-weight: 600; color: var(--muted); font-family: ui-monospace, monospace; }
+  .score-badge { font-family: ui-monospace, monospace; font-weight: 700;
+                 padding: 1px 6px; border-radius: 3px; font-size: 11px; }
+  .score-5, .score-4 { background: #dcfce7; color: var(--score-high); }
+  .score-3 { background: #fef3c7; color: var(--score-mid); }
+  .score-2, .score-1, .score-0 { background: #fee2e2; color: var(--score-low); }
+  .reason { color: var(--muted); font-style: italic; margin-bottom: 6px; line-height: 1.5; }
+  .chunk { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px;
+           white-space: pre-wrap; background: #fafafa; padding: 8px; border-radius: 3px;
+           border: 1px solid #eee; line-height: 1.5; max-height: 400px; overflow-y: auto; }
+  .borrowed { color: var(--muted); font-size: 10px; margin-top: 4px; font-style: italic; }
+
+  .stats { margin-bottom: 16px; }
+  .stats h2 { font-size: 13px; margin: 12px 0 6px 0; color: var(--muted);
+              text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+  .stats table { border-collapse: collapse; font-size: 12px;
+                 font-family: ui-monospace, monospace; }
+  .stats th, .stats td { padding: 4px 10px; text-align: right;
+                         border-bottom: 1px solid var(--border); }
+  .stats th { font-weight: 600; color: var(--muted); background: var(--bg-soft); }
+  .stats td.label { text-align: left; font-weight: 600; color: var(--fg); }
+  .stats td.best { background: #dcfce7; color: var(--score-high); font-weight: 700; }
+  .stats td.dim { color: var(--muted); }
+</style>
+</head>
+<body>
+  <h1>Zarathustra RAG Eval Dashboard</h1>
+  <div class="summary" id="summary">…</div>
+  <div class="stats" id="stats"></div>
+  <div class="picker" id="picker"></div>
+  <div class="query-card" id="query-card"></div>
+  <div class="columns" id="columns"></div>
+
+<script id="DATA" type="application/json">
+/* __DATA_PLACEHOLDER__ */
+</script>
+
+<script>
+const DATA = JSON.parse(document.getElementById('DATA').textContent);
+const QUERIES = DATA.queries;
+const state = { queryIdx: 0, toggles: {} };
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c => (
+    {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
+  ));
+}
+
+function scoreClass(s) {
+  if (s == null) return '';
+  return 'score-' + Math.max(0, Math.min(5, Math.round(s)));
+}
+
+function renderSummary() {
+  const langs = [...new Set(QUERIES.map(q => q.lang))].join('/');
+  const cats = [...new Set(QUERIES.map(q => q.category))].join(', ');
+  document.getElementById('summary').textContent =
+    `${QUERIES.length} queries · langs: ${langs} · categories: ${cats} · 4 stages (Baseline / StageA / StageB / StageC)`;
+}
+
+function renderPicker() {
+  const picker = document.getElementById('picker');
+  picker.innerHTML = QUERIES.map((q, i) => `
+    <button data-i="${i}" class="${i === state.queryIdx ? 'active' : ''}"
+            title="${esc(q.category)} — ${esc(q.text)}">
+      <span class="dot cat-${q.category}"></span>Q${q.idx}·${q.lang}
+    </button>
+  `).join('');
+  picker.querySelectorAll('button').forEach(b => {
+    b.onclick = () => { state.queryIdx = +b.dataset.i; render(); };
+  });
+}
+
+function renderQueryCard(q) {
+  document.getElementById('query-card').innerHTML = `
+    <div class="qtext">Q${q.idx}: ${esc(q.text)}</div>
+    <div class="qmeta">
+      <span class="dot cat-${q.category}"></span>
+      ${q.lang.toUpperCase()} · ${esc(q.category)} · chapter: ${esc(q.answer_chapter || '—')}
+    </div>
+    <div class="gt">
+      <div class="gt-label">Ground truth</div>
+      ${esc(q.answer_concept || '—')}
+    </div>
+  `;
+}
+
+function renderColumn(stageName, stage) {
+  const anyParent = stage.results.some(r => r.parent || r.parent_borrowed);
+  const anyBorrowed = stage.results.some(r => !r.parent && r.parent_borrowed);
+  if (state.toggles[stageName] === undefined) state.toggles[stageName] = 'leaf';
+  const mode = state.toggles[stageName];
+
+  let toggleHtml = '';
+  if (anyParent) {
+    const parentLabel = anyBorrowed ? 'parent*' : 'parent';
+    toggleHtml = `
+      <div class="toggle" data-stage="${esc(stageName)}">
+        <button data-mode="leaf" class="${mode==='leaf'?'active':''}">leaf</button>
+        <button data-mode="parent" class="${mode==='parent'?'active':''}">${parentLabel}</button>
+      </div>
+    `;
+  }
+
+  const top1 = stage.top1_score != null ? Number(stage.top1_score).toFixed(2) : '—';
+  const topk = stage.topk_avg != null ? Number(stage.topk_avg).toFixed(2) : '—';
+
+  const resultsHtml = stage.results.map(r => {
+    let text, headerLine = '', borrowedNote = '';
+    if (mode === 'parent') {
+      if (r.parent) {
+        text = r.parent;
+        if (r.header) headerLine = `<div class="gt-label">${esc(r.header)}</div>`;
+      } else if (r.parent_borrowed) {
+        text = r.parent_borrowed;
+        if (r.header_borrowed) headerLine = `<div class="gt-label">${esc(r.header_borrowed)}</div>`;
+        borrowedNote = '<div class="borrowed">* parent borrowed via same leaf from another stage</div>';
+      } else {
+        text = '(parent unavailable for this result)';
+      }
+    } else {
+      text = r.leaf || '';
+      if (r.header) headerLine = `<div class="gt-label">${esc(r.header)}</div>`;
+    }
+    return `
+      <div class="result">
+        <div class="result-head">
+          <span class="rank">rank ${r.rank}</span>
+          <span class="score-badge ${scoreClass(r.score)}">score ${r.score}</span>
+        </div>
+        <div class="reason">${esc(r.reason || '')}</div>
+        ${headerLine}
+        <div class="chunk">${esc(text)}</div>
+        ${borrowedNote}
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="col">
+      <div class="col-header">
+        <div class="name">${esc(stageName)}</div>
+        <div class="scores">top1: ${top1} · topk_avg: ${topk}</div>
+        ${toggleHtml}
+      </div>
+      ${resultsHtml}
+    </div>
+  `;
+}
+
+function renderColumns(q) {
+  const lang = q.lang.toUpperCase();
+  const cols = document.getElementById('columns');
+  cols.innerHTML = ['Baseline', 'StageA', 'StageB', 'StageC'].map(s => {
+    const name = `${s}-${lang}`;
+    const stage = q.stages[name];
+    if (!stage) {
+      return `<div class="col"><div class="col-header"><div class="name">${name}</div><div class="scores">no data</div></div></div>`;
+    }
+    return renderColumn(name, stage);
+  }).join('');
+
+  cols.querySelectorAll('.toggle').forEach(t => {
+    const stage = t.dataset.stage;
+    t.querySelectorAll('button').forEach(b => {
+      b.onclick = () => { state.toggles[stage] = b.dataset.mode; render(); };
+    });
+  });
+}
+
+
+function renderStatsTable(rows, metric) {
+  // Highlight max value per metric across all 6 rows.
+  const vals = rows.map(r => r[metric]).filter(v => v != null);
+  const maxV = vals.length ? Math.max(...vals) : null;
+  const head = `<tr><th class="label" style="text-align:left">collection</th>
+                    <th>top1</th><th>topk_avg</th><th>n</th></tr>`;
+  const body = rows.map(r => {
+    const t1 = r.top1 == null ? '—' : r.top1.toFixed(2);
+    const tk = r.topk == null ? '—' : r.topk.toFixed(2);
+    const t1Cls = r.top1 != null && r.top1 === maxV && metric === 'top1' ? 'best' : '';
+    const tkCls = r.topk != null && r.topk === maxV && metric === 'topk' ? 'best' : '';
+    return `<tr>
+      <td class="label">${esc(r.label)}</td>
+      <td class="${t1Cls}">${t1}</td>
+      <td class="${tkCls}">${tk}</td>
+      <td class="dim">${r.n}</td>
+    </tr>`;
+  }).join('');
+  return `<table>${head}${body}</table>`;
+}
+
+function renderStats() {
+  const stats = DATA.stats;
+  if (!stats) return;
+  // Two highlight passes — one per metric — easiest is to render twice but show one table.
+  // Compromise: highlight topk_avg (the actual signal of interest for ranking quality).
+  let html = '<h2>Overall</h2>' + renderStatsTable(stats.overall, 'topk');
+  for (const cat of Object.keys(stats.by_category)) {
+    html += `<h2>By category — ${esc(cat)}</h2>` +
+            renderStatsTable(stats.by_category[cat], 'topk');
+  }
+  document.getElementById('stats').innerHTML = html;
+}
+
+function render() {
+  renderPicker();
+  const q = QUERIES[state.queryIdx];
+  renderQueryCard(q);
+  renderColumns(q);
+}
+
+renderSummary();
+renderStats();
+render();
+</script>
+</body>
+</html>

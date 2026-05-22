@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 import statistics
 import chromadb
-from sentence_transformers import SentenceTransformer
+from rag.embed_api import SentenceTransformer
 
 DB_DIR = Path("chroma_db")
 EMBED_MODEL = "BAAI/bge-m3"
