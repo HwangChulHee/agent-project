@@ -28,22 +28,31 @@ COLLECTIONS = [
     ("nietzsche_contextual_ko",   "StageB-KO",     "ko", "chroma_db/hier_nodes_by_leaf_ko.json"),
 ]
 
-JUDGE_PROMPT = """You are evaluating retrieved context against a user query in a RAG system.
+JUDGE_PROMPT = """You are evaluating whether a retrieved chunk is useful as research material for an LLM answering the user's query.
 
 User query: {query}
-Ground truth (what the answer should convey): {ground_truth}
 
-Retrieved context (what will be passed to the answering LLM):
+Topic anchor (reference only, NOT a strict matching template):
+{ground_truth}
+
+Retrieved chunk:
 \"\"\"
 {chunk}
 \"\"\"
 
-Rate how well this retrieved context lets the LLM answer the query, on a 1-5 scale:
-1 = completely irrelevant
-2 = weakly related, no real answer to the query
-3 = partially relevant, missing key info from the ground truth
-4 = directly relevant, contains the answer (matches ground truth)
-5 = ideal — directly and completely answers, with full ground truth coverage
+Rate the chunk's USEFULNESS as material for answering the query, on a 1-5 scale:
+
+1 = USELESS — irrelevant to the query topic, may mislead the answer
+2 = WEAK — tangentially related, contributes little to answering
+3 = SUPPLEMENTARY — provides context, background, or partial info; useful when combined with other chunks
+4 = USEFUL — contains direct answer material, primary-source quotation, or clear conceptual explanation
+5 = IDEAL — multi-layered usefulness: direct answer + context + authoritative framing
+
+Important judgment rules:
+- A primary-text quotation (direct passage from Nietzsche\'s work) is valuable even if not phrased as an "answer".
+- A commentary explanation is valuable even if it uses different wording from the topic anchor.
+- Judge USEFULNESS for answer generation, NOT literal anchor-matching.
+- The topic anchor is just a hint about what the query is about; the chunk does not need to repeat its wording.
 
 Respond with ONLY a JSON object on a single line:
 {{"score": <1-5>, "reason": "<one short sentence>"}}"""
