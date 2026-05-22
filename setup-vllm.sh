@@ -182,6 +182,7 @@ fi
 section "8단계: 모델 다운로드"
 
 MODEL_26B="cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit"
+EMBED_MODEL="BAAI/bge-m3"
 CACHE_DIR="${HF_HUB_CACHE:-/workspace/hf-cache/hub}"
 
 check_model() {
@@ -190,6 +191,7 @@ check_model() {
     [ -d "$CACHE_DIR/models--$repo_path" ]
 }
 
+# LLM 모델
 if check_model "$MODEL_26B"; then
     echo "✓ $MODEL_26B 이미 다운로드됨"
 else
@@ -198,14 +200,23 @@ else
     fi
 fi
 
-# ── 9단계: vLLM 서버 백그라운드 실행 + 헬스체크 ────────────────
-section "9단계: vLLM 서버 백그라운드 실행"
+# 임베딩 모델
+if check_model "$EMBED_MODEL"; then
+    echo "✓ $EMBED_MODEL 이미 다운로드됨"
+else
+    if confirm "$EMBED_MODEL 다운로드 (~2.3GB)?"; then
+        hf download "$EMBED_MODEL" 2>/dev/null || huggingface-cli download "$EMBED_MODEL"
+    fi
+fi
+
+# ── 9단계: vLLM LLM 서버 백그라운드 실행 + 헬스체크 ────────────
+section "9단계: vLLM LLM 서버 백그라운드 실행 (포트 8000)"
 
 VLLM_LOG=/workspace/vllm.log
 VLLM_PID_FILE=/workspace/vllm.pid
 
 if curl -s http://localhost:8000/health > /dev/null 2>&1; then
-    echo "✓ vLLM 서버가 이미 실행 중입니다"
+    echo "✓ vLLM LLM 서버가 이미 실행 중입니다"
     [ -f "$VLLM_PID_FILE" ] && echo "  PID: $(cat $VLLM_PID_FILE)"
 else
     # 죽은 PID 정리
@@ -219,14 +230,16 @@ else
         rm -f "$VLLM_PID_FILE"
     fi
 
-    confirm "vLLM 서버를 백그라운드로 띄울까요?" || exit 0
+    confirm "vLLM LLM 서버를 백그라운드로 띄울까요?" || exit 0
 
-    echo "vLLM 서버 시작 (로그: $VLLM_LOG)..."
+    echo "vLLM LLM 서버 시작 (로그: $VLLM_LOG)..."
+    echo "  GPU 메모리 점유: 0.70 (임베딩 서버 자리 확보)"
 
+    # 0.90 → 0.70: 임베딩 서버를 위해 약 10GB 공간 양보
     nohup vllm serve "$MODEL_26B" \
         --max-model-len 32768 \
         --max-num-batched-tokens 8192 \
-        --gpu-memory-utilization 0.90 \
+        --gpu-memory-utilization 0.70 \
         --enable-auto-tool-choice \
         --reasoning-parser gemma4 \
         --tool-call-parser gemma4 \
@@ -247,7 +260,7 @@ else
     for i in $(seq 1 180); do
         if curl -s http://localhost:8000/health > /dev/null 2>&1; then
             ELAPSED=$((i * 5))
-            echo "✓ vLLM 준비 완료 (${ELAPSED}초 소요)"
+            echo "✓ vLLM LLM 준비 완료 (${ELAPSED}초 소요)"
             SUCCESS=true
             break
         fi
@@ -275,30 +288,121 @@ else
     fi
 fi
 
+# ── 9.5단계: 임베딩 서버 (bge-m3) 백그라운드 실행 ──────────────
+section "9.5단계: 임베딩 서버 백그라운드 실행 (포트 8001)"
+
+EMBED_LOG=/workspace/embed.log
+EMBED_PID_FILE=/workspace/embed.pid
+
+if curl -s http://localhost:8001/health > /dev/null 2>&1; then
+    echo "✓ 임베딩 서버가 이미 실행 중"
+    [ -f "$EMBED_PID_FILE" ] && echo "  PID: $(cat $EMBED_PID_FILE)"
+else
+    # 죽은 PID 정리
+    if [ -f "$EMBED_PID_FILE" ]; then
+        OLD_PID=$(cat "$EMBED_PID_FILE")
+        if kill -0 "$OLD_PID" 2>/dev/null; then
+            echo "기존 임베딩 프로세스 ($OLD_PID) 종료..."
+            kill "$OLD_PID" || true
+            sleep 3
+        fi
+        rm -f "$EMBED_PID_FILE"
+    fi
+
+    confirm "임베딩 서버를 백그라운드로 띄울까요?" || exit 0
+
+    echo "임베딩 서버 시작 (로그: $EMBED_LOG)..."
+    echo "  모델: $EMBED_MODEL"
+    echo "  GPU 메모리 점유: 0.15 (약 7GB)"
+
+    nohup vllm serve "$EMBED_MODEL" \
+        --task embed \
+        --gpu-memory-utilization 0.15 \
+        --host 0.0.0.0 --port 8001 \
+        > "$EMBED_LOG" 2>&1 &
+
+    EMBED_PID=$!
+    echo $EMBED_PID > "$EMBED_PID_FILE"
+    disown $EMBED_PID
+
+    echo "✓ 임베딩 서버 시작됨 (PID: $EMBED_PID)"
+    echo ""
+    echo "헬스체크 대기 (1~3분 예상, 최대 5분 타임아웃)..."
+    echo ""
+
+    SUCCESS=false
+    for i in $(seq 1 60); do
+        if curl -s http://localhost:8001/health > /dev/null 2>&1; then
+            ELAPSED=$((i * 5))
+            echo "✓ 임베딩 서버 준비 완료 (${ELAPSED}초 소요)"
+            SUCCESS=true
+            break
+        fi
+
+        if ! kill -0 "$EMBED_PID" 2>/dev/null; then
+            echo "ERROR: 임베딩 프로세스가 종료됨"
+            echo "----- 로그 마지막 50줄 -----"
+            tail -50 "$EMBED_LOG"
+            exit 1
+        fi
+
+        if [ $((i % 6)) -eq 0 ]; then
+            ELAPSED=$((i * 5))
+            echo "  ... 대기 중 (${ELAPSED}초 경과)"
+        fi
+
+        sleep 5
+    done
+
+    if [ "$SUCCESS" = false ]; then
+        echo ""
+        echo "ERROR: 5분 타임아웃. 로그 확인:"
+        echo "  tail -100 $EMBED_LOG"
+        exit 1
+    fi
+fi
+
 # ── 완료 ────────────────────────────────────────────────────────
 section "✅ 셋업 완료!"
 
 VLLM_PID_DISPLAY=$(cat "$VLLM_PID_FILE" 2>/dev/null || echo "N/A")
+EMBED_PID_DISPLAY=$(cat "$EMBED_PID_FILE" 2>/dev/null || echo "N/A")
 
 cat << INFO_EOF
 
-vLLM 서버 정보:
+━━━ vLLM LLM 서버 ━━━
   URL:       http://localhost:8000
   PID:       $VLLM_PID_DISPLAY
   로그 파일: $VLLM_LOG
   모델:      $MODEL_26B
+  GPU util:  0.70
 
-유용한 명령어:
-  로그 실시간:  tail -f $VLLM_LOG
-  로그 최근:    tail -100 $VLLM_LOG
-  헬스체크:     curl http://localhost:8000/health
-  모델 목록:    curl http://localhost:8000/v1/models
-  서버 종료:    kill \$(cat $VLLM_PID_FILE)
-  서버 재시작:  bash $0 --auto
+━━━ 임베딩 서버 ━━━
+  URL:       http://localhost:8001
+  PID:       $EMBED_PID_DISPLAY
+  로그 파일: $EMBED_LOG
+  모델:      $EMBED_MODEL
+  GPU util:  0.15
 
-다음 단계 - step3 진입:
-  cd /workspace/agent-project
-  mkdir -p step3-memory-rag && cd step3-memory-rag
-  # 이후 step3 디렉토리 셋업 진행
+━━━ 유용한 명령어 ━━━
+  LLM 로그:        tail -f $VLLM_LOG
+  Embed 로그:      tail -f $EMBED_LOG
+  LLM 헬스체크:    curl http://localhost:8000/health
+  Embed 헬스체크:  curl http://localhost:8001/health
+  모델 목록(LLM):  curl http://localhost:8000/v1/models
+  GPU 점유 확인:   nvidia-smi
+
+━━━ 서버 종료 ━━━
+  LLM 종료:    kill \$(cat $VLLM_PID_FILE)
+  Embed 종료:  kill \$(cat $EMBED_PID_FILE)
+  둘 다:       kill \$(cat $VLLM_PID_FILE) \$(cat $EMBED_PID_FILE)
+
+━━━ 재시작 ━━━
+  bash $0 --auto
+
+━━━ 임베딩 호출 예시 ━━━
+  curl -s http://localhost:8001/v1/embeddings \\
+    -H "Content-Type: application/json" \\
+    -d '{"model": "$EMBED_MODEL", "input": ["테스트"]}'
 
 INFO_EOF
