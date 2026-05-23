@@ -17,7 +17,7 @@ BGE_MAX_TOKENS = 8192
 
 SOURCES = {
     "nietzsche_hierarchical_en": ("data/nietzsche_md/zarathustra_en.md", "en"),
-    "nietzsche_hierarchical_ko": ("data/nietzsche_md/zarathustra_ko.md", "ko"),
+    # "nietzsche_hierarchical_ko": ("data/nietzsche_md/zarathustra_ko.md", "ko"),  # KO 비활성화 (RAGAs 영어 평가)
 }
 
 

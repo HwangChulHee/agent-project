@@ -19,11 +19,12 @@ SOURCES = {
         "contexts": "chroma_db/contexts_nietzsche_en.json",
         "lang": "en",
     },
-    "nietzsche_contextual_ko": {
-        "md": "data/nietzsche_md/zarathustra_ko.md",
-        "contexts": "chroma_db/contexts_nietzsche_ko.json",
-        "lang": "ko",
-    },
+    # KO 비활성화 (RAGAs 영어 평가)
+    # "nietzsche_contextual_ko": {
+    #     "md": "data/nietzsche_md/zarathustra_ko.md",
+    #     "contexts": "chroma_db/contexts_nietzsche_ko.json",
+    #     "lang": "ko",
+    # },
 }
 
 

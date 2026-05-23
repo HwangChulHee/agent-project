@@ -14,7 +14,7 @@ BGE_MAX_TOKENS = 8192   # bge-m3 max sequence length
 
 SOURCES = {
     "nietzsche_baseline_en": ("data/nietzsche_md/zarathustra_en.md", "en"),
-    "nietzsche_baseline_ko": ("data/nietzsche_md/zarathustra_ko.md", "ko"),
+    # "nietzsche_baseline_ko": ("data/nietzsche_md/zarathustra_ko.md", "ko"),  # KO 비활성화 (RAGAs 영어 평가)
 }
 
 
