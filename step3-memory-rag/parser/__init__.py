@@ -14,8 +14,15 @@ COMPANY_MAP = {
 
 
 class Parser:
-    def __init__(self, max_chunk_chars: int = 1500):
+    def __init__(
+        self,
+        target_chunk_chars: int = 800,
+        max_chunk_chars: int = 1500,
+        overlap_chars: int = 100,
+    ):
+        self.target_chunk_chars = target_chunk_chars
         self.max_chunk_chars = max_chunk_chars
+        self.overlap_chars = overlap_chars
 
     def parse(self, zip_path: str | Path) -> list[Chunk]:
         zip_path = Path(zip_path)
@@ -35,7 +42,13 @@ class Parser:
                 "source_xml": source_type,
             }
             sections = parse_section_tree(root)
-            chunks = build_chunks(sections, base_meta, self.max_chunk_chars)
+            chunks = build_chunks(
+                sections,
+                base_meta,
+                max_chunk_chars=self.max_chunk_chars,
+                target_chunk_chars=self.target_chunk_chars,
+                overlap_chars=self.overlap_chars,
+            )
             all_chunks.extend(chunks)
 
         return all_chunks
