@@ -18,3 +18,11 @@ chroma_db/*/
 .DS_Store
 .vscode/
 .idea/
+
+# DART 원본 ZIP — 외부에서 받음
+data/*.zip
+
+# 디버그 덤프 중 큰 파생물 — 스크립트로 재생성 가능
+data/debug/B_parsed/
+data/debug/C_chunks/
+data/debug/F_raw_xml/
