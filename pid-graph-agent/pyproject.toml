@@ -1,0 +1,10 @@
+[project]
+name = "pid-graph-agent"
+version = "0.1.0"
+description = "비정형 P&ID 도면을 그래프로 구조화해 자연어로 질의하는 에이전트"
+requires-python = ">=3.12"
+dependencies = [
+    "gdown>=6.0.0",
+    "networkx",
+    "numpy",
+]
