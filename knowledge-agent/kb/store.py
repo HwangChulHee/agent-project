@@ -32,6 +32,7 @@ def add_node(m, concept_id, ntype, mastery=0.0):
         "type": ntype,
         "mastery": mastery,
         "last_touched": date.today().isoformat(),
+        "last_probed": None,
     }
 
 

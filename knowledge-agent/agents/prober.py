@@ -99,13 +99,30 @@ def probe_concept(m, concept_id):
     new = update_mastery(old, result["score"])
     node["mastery"] = new
     node["last_touched"] = date.today().isoformat()
+    node["last_probed"] = date.today().isoformat()
 
     print(f"\n[채점 근거] {result['reasoning']}")
     print(f"[점수] {result['score']}  (요소: {q['elements']})")
     print(f"[mastery] {old:.3f} → {new:.3f}")
 
 
+def pick_unprobed(m, n=3):
+    """아직 안 잰(last_probed=None) 갭을 순서대로 n개. (콜드스타트: 단순 순회)"""
+    from kb.store import GAP_THRESHOLD
+    out = []
+    for cid, node in m["nodes"].items():
+        if node.get("last_probed") is None and node["mastery"] < GAP_THRESHOLD:
+            out.append(cid)
+        if len(out) >= n:
+            break
+    return out
+
+
 if __name__ == "__main__":
     m = load_map()
-    probe_concept(m, "리랭킹")   # 프론티어 1순위를 프로빙
-    save_map(m)
+    targets = pick_unprobed(m, n=3)
+    print(f"프로빙 대상: {targets}\n")
+    for cid in targets:
+        print("=" * 50)
+        probe_concept(m, cid)
+        save_map(m)   # 매 개념마다 저장 (중간에 끊겨도 보존)
