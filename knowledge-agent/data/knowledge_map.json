@@ -1,0 +1,71 @@
+{
+  "nodes": {
+    "LLM 에이전트": {
+      "type": "개념",
+      "mastery": 0.6,
+      "last_touched": "2026-06-02"
+    },
+    "ReAct": {
+      "type": "기법",
+      "mastery": 0.9,
+      "last_touched": "2026-06-02"
+    },
+    "function calling": {
+      "type": "기법",
+      "mastery": 0.6,
+      "last_touched": "2026-06-02"
+    },
+    "RAG": {
+      "type": "기법",
+      "mastery": 0.9,
+      "last_touched": "2026-06-02"
+    },
+    "리랭킹": {
+      "type": "기법",
+      "mastery": 0.22500000000000003,
+      "last_touched": "2026-06-02"
+    },
+    "임베딩검색": {
+      "type": "기법",
+      "mastery": 0.9,
+      "last_touched": "2026-06-02"
+    }
+  },
+  "edges": [
+    {
+      "from": "ReAct",
+      "rel": "is_a",
+      "to": "LLM 에이전트",
+      "source": "seed",
+      "confidence": 1.0
+    },
+    {
+      "from": "function calling",
+      "rel": "is_a",
+      "to": "LLM 에이전트",
+      "source": "seed",
+      "confidence": 1.0
+    },
+    {
+      "from": "리랭킹",
+      "rel": "part_of",
+      "to": "RAG",
+      "source": "seed",
+      "confidence": 1.0
+    },
+    {
+      "from": "임베딩검색",
+      "rel": "part_of",
+      "to": "RAG",
+      "source": "seed",
+      "confidence": 1.0
+    },
+    {
+      "from": "리랭킹",
+      "rel": "depends_on",
+      "to": "임베딩검색",
+      "source": "seed",
+      "confidence": 1.0
+    }
+  ]
+}
