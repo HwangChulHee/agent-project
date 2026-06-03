@@ -4,8 +4,8 @@
 기존 맵에 누적. 깨끗이 시작하려면 먼저: uv run python -m kb.store
 """
 from kb.store import load_map, save_map, new_map, find_gaps
-from agents.extractor import extract
-from agents.aligner import align
+from agents.entity_extraction_agent import extract
+from agents.schema_alignment_agent import align
 
 SOURCES = [
     ("memreranker-2605.06132",

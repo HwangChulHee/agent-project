@@ -10,7 +10,7 @@ from kb.store import (
     load_map, save_map, new_map, add_node, add_edge,
     get_node, find_gaps, REL_TYPES,
 )
-from agents.extractor import extract
+from agents.entity_extraction_agent import extract
 
 load_dotenv()
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])

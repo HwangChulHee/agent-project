@@ -3,6 +3,7 @@ arXiv 수집기 — 최신 논문을 공통 포맷으로 가져옴.
 공통 항목: {source_id, title, text, date, url}  (text=abstract)
 판정/필터 없음 — 그냥 긁어오기. 거르기는 collector 상위에서.
 """
+import time
 import urllib.request
 import urllib.parse
 import feedparser
@@ -20,7 +21,9 @@ def fetch(categories=("cs.CL", "cs.AI"), max_results=5):
         "max_results": max_results,
     }
     url = f"{ARXIV_API}?{urllib.parse.urlencode(params)}"
-    with urllib.request.urlopen(url, timeout=30) as resp:
+    time.sleep(3)  # arXiv 권장 요청 간격
+    req = urllib.request.Request(url, headers={"User-Agent": "knowledge-agent/0.1"})
+    with urllib.request.urlopen(req, timeout=30) as resp:
         feed = feedparser.parse(resp.read())
 
     items = []

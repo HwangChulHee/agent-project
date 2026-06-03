@@ -824,6 +824,34 @@
       "to": "Evaluation",
       "source": "bootstrap",
       "confidence": 1.0
+    },
+    {
+      "from": "Reranking",
+      "rel": "depends_on",
+      "to": "embedding-based retrieval",
+      "source": "sample-001",
+      "confidence": 1.0
+    },
+    {
+      "from": "RAG",
+      "rel": "part_of",
+      "to": "retrieval quality",
+      "source": "sample-001",
+      "confidence": 1.0
+    },
+    {
+      "from": "Reranking",
+      "rel": "depends_on",
+      "to": "embedding-based retrieval",
+      "source": "sample-001",
+      "confidence": 1.0
+    },
+    {
+      "from": "Reranking",
+      "rel": "part_of",
+      "to": "RAG",
+      "source": "sample-001",
+      "confidence": 1.0
     }
   ]
 }
