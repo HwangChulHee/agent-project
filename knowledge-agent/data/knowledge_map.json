@@ -353,6 +353,66 @@
       "mastery": 0.3,
       "last_touched": "2026-06-03",
       "last_probed": null
+    },
+    "knowledge distillation": {
+      "type": "기법",
+      "mastery": 0.0,
+      "last_touched": "2026-06-04",
+      "last_probed": null
+    },
+    "contrastive learning": {
+      "type": "기법",
+      "mastery": 0.0,
+      "last_touched": "2026-06-04",
+      "last_probed": null
+    },
+    "xMemory": {
+      "type": "기법",
+      "mastery": 0.0,
+      "last_touched": "2026-06-04",
+      "last_probed": null
+    },
+    "memory split": {
+      "type": "기법",
+      "mastery": 0.0,
+      "last_touched": "2026-06-04",
+      "last_probed": null
+    },
+    "memory merge": {
+      "type": "기법",
+      "mastery": 0.0,
+      "last_touched": "2026-06-04",
+      "last_probed": null
+    },
+    "sparsity-semantics objective": {
+      "type": "기법",
+      "mastery": 0.0,
+      "last_touched": "2026-06-04",
+      "last_probed": null
+    },
+    "multi-fact queries": {
+      "type": "개념",
+      "mastery": 0.0,
+      "last_touched": "2026-06-04",
+      "last_probed": null
+    },
+    "episodes": {
+      "type": "개념",
+      "mastery": 0.0,
+      "last_touched": "2026-06-04",
+      "last_probed": null
+    },
+    "raw messages": {
+      "type": "개념",
+      "mastery": 0.0,
+      "last_touched": "2026-06-04",
+      "last_probed": null
+    },
+    "structure-aware retrieval": {
+      "type": "기법",
+      "mastery": 0.0,
+      "last_touched": "2026-06-04",
+      "last_probed": null
     }
   },
   "edges": [
@@ -851,6 +911,27 @@
       "rel": "part_of",
       "to": "RAG",
       "source": "sample-001",
+      "confidence": 1.0
+    },
+    {
+      "from": "Agent Memory",
+      "rel": "depends_on",
+      "to": "RAG",
+      "source": "beyond-rag-2602.09988",
+      "confidence": 1.0
+    },
+    {
+      "from": "memories",
+      "rel": "part_of",
+      "to": "hierarchy of intact units",
+      "source": "beyond-rag-2602.09988",
+      "confidence": 1.0
+    },
+    {
+      "from": "structure-aware retrieval",
+      "rel": "depends_on",
+      "to": "memories",
+      "source": "beyond-rag-2602.09988",
       "confidence": 1.0
     }
   ]
