@@ -1,0 +1,11 @@
+[
+  {
+    "src": "CoT-SC",
+    "rel": "is_a",
+    "dst": "chain-of-thought",
+    "direction": "CoT-SC->Chain-of-Thought (CoT) prompting",
+    "stage1_sentence": "CoT-SC is an integration of Chain-of-Thought prompting that optimizes problem-solving by allowing the model to switch between reasoning and action-based methods.",
+    "stage2_rationale": "integration = a kind of CoT prompting",
+    "evidence": "3.2 METHODS"
+  }
+]
