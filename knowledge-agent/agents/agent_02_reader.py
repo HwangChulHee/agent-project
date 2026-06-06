@@ -1,5 +1,8 @@
 import re
 import json
+import argparse
+
+from agents.paths import paper_paths
 
 HEADER = re.compile(r"^#{1,6}\s+(.*)$")
 
@@ -37,8 +40,9 @@ def segment_file(md_path: str):
 
 
 if __name__ == "__main__":
-    MD = "data/parsed/2210.03629/2210.03629_01.md"
-    segs, out = segment_file(MD)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--paper", required=True)
+    segs, out = segment_file(paper_paths(ap.parse_args().paper)["01_md"])
     print(f"segments: {len(segs)}  ->  {out}\n")
     for i, s in enumerate(segs):
         print(f"{i:2} | {len(s['text']):5}자 | {s['heading'][:55]}")

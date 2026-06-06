@@ -1,0 +1,77 @@
+{
+  "nodes": {
+    "chain-of-thought": {
+      "type": "technique",
+      "definition": "A prompting technique that elicits intermediate reasoning steps from a language model before it produces a final answer.",
+      "mastery": 0.5,
+      "_seed_intent": "merge",
+      "last_touched": "2026-06-05",
+      "last_probed": null
+    },
+    "in-context learning": {
+      "type": "technique",
+      "definition": "The ability of a language model to learn a task from examples provided in the prompt, without updating its weights.",
+      "mastery": 0.3,
+      "_seed_intent": "merge",
+      "last_touched": "2026-06-05",
+      "last_probed": null
+    },
+    "large language model": {
+      "type": "concept",
+      "definition": "A neural network trained on large text corpora to predict and generate language, exhibiting broad capabilities across tasks.",
+      "mastery": 0.6,
+      "_seed_intent": "merge",
+      "last_touched": "2026-06-05",
+      "last_probed": null
+    },
+    "backpropagation": {
+      "type": "technique",
+      "definition": "An algorithm that computes gradients of a loss with respect to network weights by propagating errors backward through layers.",
+      "mastery": 0.7,
+      "_seed_intent": "new",
+      "last_touched": "2026-06-05",
+      "last_probed": null
+    },
+    "convolutional neural network": {
+      "type": "concept",
+      "definition": "A neural network architecture that uses convolutional filters to capture local spatial patterns, primarily used for images.",
+      "mastery": 0.5,
+      "_seed_intent": "new",
+      "last_touched": "2026-06-05",
+      "last_probed": null
+    },
+    "gradient descent": {
+      "type": "technique",
+      "definition": "An optimization method that iteratively adjusts parameters in the direction that reduces a loss function.",
+      "mastery": 0.7,
+      "_seed_intent": "new",
+      "last_touched": "2026-06-05",
+      "last_probed": null
+    },
+    "few-shot learning": {
+      "type": "technique",
+      "definition": "Learning to perform a task from only a small number of labeled examples.",
+      "mastery": 0.3,
+      "_seed_intent": "boundary",
+      "last_touched": "2026-06-05",
+      "last_probed": null
+    },
+    "reasoning": {
+      "type": "concept",
+      "definition": "The process of deriving conclusions or plans through logical or inferential steps.",
+      "mastery": 0.4,
+      "_seed_intent": "boundary",
+      "last_touched": "2026-06-05",
+      "last_probed": null
+    },
+    "retrieval-augmented generation": {
+      "type": "technique",
+      "definition": "A method that retrieves relevant external documents and conditions a language model's generation on them.",
+      "mastery": 0.2,
+      "_seed_intent": "boundary",
+      "last_touched": "2026-06-05",
+      "last_probed": null
+    }
+  },
+  "edges": []
+}

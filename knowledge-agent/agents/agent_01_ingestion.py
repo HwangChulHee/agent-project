@@ -1,10 +1,11 @@
 import re
-import os
+import argparse
 from collections import Counter
 import pymupdf4llm
 
+from agents.paths import paper_paths, find_pdf, ensure_base
+
 CUT_HEADER = re.compile(r"^##\s+REFERENCES\b", re.IGNORECASE)
-PARSED_DIR = "data/parsed"
 
 # 캡션(Figure N:/Table N:)을 지울지. False = 살림(개념 이름 보존, 추천)
 DROP_CAPTIONS = False
@@ -76,9 +77,8 @@ def ingest(pdf_path: str) -> dict:
     arxiv_id = _arxiv_id_from_name(pdf_path)
 
     out_name = arxiv_id or pdf_path.rsplit("/", 1)[-1].rsplit(".", 1)[0]
-    paper_dir = os.path.join(PARSED_DIR, out_name)
-    os.makedirs(paper_dir, exist_ok=True)
-    parsed_path = os.path.join(paper_dir, f"{out_name}_01.md")
+    ensure_base(out_name)
+    parsed_path = paper_paths(out_name)["01_md"]
     with open(parsed_path, "w", encoding="utf-8") as f:
         f.write(body)
 
@@ -91,8 +91,9 @@ def ingest(pdf_path: str) -> dict:
 
 
 if __name__ == "__main__":
-    PDF = "data/raw_papers/react_2210.03629.pdf"
-    doc = ingest(PDF)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--paper", required=True)
+    doc = ingest(find_pdf(ap.parse_args().paper))
     print(f"arxiv_id    : {doc['arxiv_id']}")
     print(f"parsed_path : {doc['parsed_path']}")
     print(f"body length : {len(doc['text'])} chars, {len(doc['text'].splitlines())} lines")

@@ -4,12 +4,11 @@ import argparse
 from dotenv import load_dotenv
 from openai import OpenAI
 from agents.prompts.summarizer import SYSTEM
+from agents.paths import paper_paths
 
 load_dotenv()  # .env에서 OPENAI_API_KEY 로드
 
 MODEL = "gpt-4o-mini"
-SEGMENTS_PATH = "data/parsed/2210.03629/2210.03629_02.segments.json"
-OUT_PATH = "data/parsed/2210.03629/2210.03629_03.summaries.json"
 SMOKE_INDICES = [1, 8, 13]  # ABSTRACT(짧음) / 4장(제일 김) / ETHICS(잡섹션)
 
 client = OpenAI()
@@ -34,8 +33,9 @@ def _has_hangul(s: str) -> bool:
     return bool(re.search(r"[\uac00-\ud7a3]", s))
 
 
-def run(full: bool):
-    with open(SEGMENTS_PATH, encoding="utf-8") as f:
+def run(paper: str, full: bool):
+    P = paper_paths(paper)
+    with open(P["02"], encoding="utf-8") as f:
         segs = json.load(f)
 
     if not full:
@@ -62,12 +62,14 @@ def run(full: bool):
         summ = summarize_one(seg)
         out.append({"heading": seg["heading"], "original_len": len(seg["text"]), "summary": summ})
         print(f"  [{i:2}] {seg['heading'][:40]:42} {len(seg['text']):5}자 → {len(summ):5}자")
-    with open(OUT_PATH, "w", encoding="utf-8") as f:
+    with open(P["03"], "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f"\n저장: {OUT_PATH}")
+    print(f"\n저장: {P['03']}")
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
+    ap.add_argument("--paper", required=True)
     ap.add_argument("--run", action="store_true", help="전체 실행 (없으면 스모크)")
-    run(ap.parse_args().run)
+    args = ap.parse_args()
+    run(args.paper, args.run)

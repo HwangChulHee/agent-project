@@ -3,18 +3,20 @@ import argparse
 from dotenv import load_dotenv
 from openai import OpenAI
 from agents.prompts.alignment import SYSTEM as JUDGE_SYSTEM
+from agents.paths import paper_paths, MAP_PATH
 
 load_dotenv()
 
 EMBED_MODEL = "text-embedding-3-small"
 JUDGE_MODEL = "gpt-4o-mini"
-CONCEPTS_PATH = "data/parsed/2210.03629/2210.03629_04.concepts.json"
-MAP_PATH = "data/knowledge_map.json"
-OUT_PATH = "data/parsed/2210.03629/2210.03629_05.aligned.json"
 CANDIDATE_FLOOR = 0.40
 TOP_K = 2
 
 client = OpenAI()
+
+
+def _def_text(d):
+    return d["text"] if isinstance(d, dict) else d
 
 
 def embed(texts):
@@ -43,12 +45,13 @@ def judge_same(cand_name, cand_defs, node_name, node_def):
     return data.get("verdict") == "SAME", data.get("reason", "")
 
 
-def run():
-    concepts = json.load(open(CONCEPTS_PATH, encoding="utf-8"))
+def run(paper):
+    P = paper_paths(paper)
+    concepts = json.load(open(P["04"], encoding="utf-8"))
     kmap = json.load(open(MAP_PATH, encoding="utf-8"))
 
     map_names = list(kmap["nodes"].keys())
-    map_defs = [kmap["nodes"][n]["definition"] for n in map_names]
+    map_defs = [_def_text(kmap["nodes"][n]["definition"]) for n in map_names]
     map_embs = embed(map_defs)
 
     flat, owner = [], []
@@ -107,10 +110,12 @@ def run():
         mark = "← " + ", ".join(h[:18] for h in hits) if hits else ""
         print(f"  [{intent[node]:8}] {node:30} {mark}")
 
-    with open(OUT_PATH, "w", encoding="utf-8") as f:
+    with open(P["05"], "w", encoding="utf-8") as f:
         json.dump(aligned, f, ensure_ascii=False, indent=2)
-    print(f"\n저장: {OUT_PATH}")
+    print(f"\n저장: {P['05']}")
 
 
 if __name__ == "__main__":
-    run()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--paper", required=True)
+    run(ap.parse_args().paper)

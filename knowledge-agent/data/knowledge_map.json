@@ -2,76 +2,312 @@
   "nodes": {
     "chain-of-thought": {
       "type": "technique",
-      "definition": "A prompting technique that elicits intermediate reasoning steps from a language model before it produces a final answer.",
+      "definition": {
+        "text": "A foundational method that enables language models to articulate their reasoning processes.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
       "mastery": 0.5,
+      "locked": false,
       "_seed_intent": "merge",
-      "last_touched": "2026-06-05",
+      "last_touched": "2026-06-07",
       "last_probed": null
     },
     "in-context learning": {
       "type": "technique",
-      "definition": "The ability of a language model to learn a task from examples provided in the prompt, without updating its weights.",
+      "definition": {
+        "text": "The ability of a language model to learn a task from examples provided in the prompt, without updating its weights.",
+        "source": "seed",
+        "pub_date": null
+      },
       "mastery": 0.3,
+      "locked": false,
       "_seed_intent": "merge",
       "last_touched": "2026-06-05",
       "last_probed": null
     },
     "large language model": {
       "type": "concept",
-      "definition": "A neural network trained on large text corpora to predict and generate language, exhibiting broad capabilities across tasks.",
+      "definition": {
+        "text": "A neural network trained on large text corpora to predict and generate language, exhibiting broad capabilities across tasks.",
+        "source": "seed",
+        "pub_date": null
+      },
       "mastery": 0.6,
+      "locked": false,
       "_seed_intent": "merge",
       "last_touched": "2026-06-05",
       "last_probed": null
     },
     "backpropagation": {
       "type": "technique",
-      "definition": "An algorithm that computes gradients of a loss with respect to network weights by propagating errors backward through layers.",
+      "definition": {
+        "text": "An algorithm that computes gradients of a loss with respect to network weights by propagating errors backward through layers.",
+        "source": "seed",
+        "pub_date": null
+      },
       "mastery": 0.7,
+      "locked": false,
       "_seed_intent": "new",
       "last_touched": "2026-06-05",
       "last_probed": null
     },
     "convolutional neural network": {
       "type": "concept",
-      "definition": "A neural network architecture that uses convolutional filters to capture local spatial patterns, primarily used for images.",
+      "definition": {
+        "text": "A neural network architecture that uses convolutional filters to capture local spatial patterns, primarily used for images.",
+        "source": "seed",
+        "pub_date": null
+      },
       "mastery": 0.5,
+      "locked": false,
       "_seed_intent": "new",
       "last_touched": "2026-06-05",
       "last_probed": null
     },
     "gradient descent": {
       "type": "technique",
-      "definition": "An optimization method that iteratively adjusts parameters in the direction that reduces a loss function.",
+      "definition": {
+        "text": "An optimization method that iteratively adjusts parameters in the direction that reduces a loss function.",
+        "source": "seed",
+        "pub_date": null
+      },
       "mastery": 0.7,
+      "locked": false,
       "_seed_intent": "new",
       "last_touched": "2026-06-05",
       "last_probed": null
     },
     "few-shot learning": {
       "type": "technique",
-      "definition": "Learning to perform a task from only a small number of labeled examples.",
+      "definition": {
+        "text": "Learning to perform a task from only a small number of labeled examples.",
+        "source": "seed",
+        "pub_date": null
+      },
       "mastery": 0.3,
+      "locked": false,
       "_seed_intent": "boundary",
       "last_touched": "2026-06-05",
       "last_probed": null
     },
     "reasoning": {
       "type": "concept",
-      "definition": "The process of deriving conclusions or plans through logical or inferential steps.",
+      "definition": {
+        "text": "The process of deriving conclusions or plans through logical or inferential steps.",
+        "source": "seed",
+        "pub_date": null
+      },
       "mastery": 0.4,
+      "locked": false,
       "_seed_intent": "boundary",
       "last_touched": "2026-06-05",
       "last_probed": null
     },
     "retrieval-augmented generation": {
       "type": "technique",
-      "definition": "A method that retrieves relevant external documents and conditions a language model's generation on them.",
+      "definition": {
+        "text": "A method that retrieves relevant external documents and conditions a language model's generation on them.",
+        "source": "seed",
+        "pub_date": null
+      },
       "mastery": 0.2,
+      "locked": false,
       "_seed_intent": "boundary",
       "last_touched": "2026-06-05",
       "last_probed": null
+    },
+    "REACT": {
+      "type": null,
+      "definition": {
+        "text": "ReAct is a novel paradigm that integrates reasoning and acting within language models to enhance task-solving capabilities by prompting them to generate both verbal reasoning traces and actions in an interleaved fashion.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "HotPotQA": {
+      "type": null,
+      "definition": {
+        "text": "HotPotQA is a dataset for multi-hop question answering that requires reasoning across multiple Wikipedia passages.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "FEVER": {
+      "type": null,
+      "definition": {
+        "text": "FEVER is a dataset that entails fact verification of claims based on Wikipedia content.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "Wikipedia web API": {
+      "type": null,
+      "definition": {
+        "text": "The Wikipedia web API is a designed interface that includes actions for retrieving initial sentences, finding specific sentences, and concluding tasks with answers.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "CoT-SC": {
+      "type": null,
+      "definition": {
+        "text": "CoT-SC is an integration of ReAct and Chain-of-Thought prompting proposed to optimize problem-solving by allowing the model to switch between methods based on specific heuristics.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "ALFWorld": {
+      "type": null,
+      "definition": {
+        "text": "ALFWorld is an interactive decision-making task where agents interact with a simulated household to achieve high-level goals through effective planning and commonsense reasoning.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "WebShop": {
+      "type": null,
+      "definition": {
+        "text": "WebShop is an interactive decision-making task that simulates a real-world online shopping scenario where agents interpret user instructions and make product selections.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "least-to-most prompting": {
+      "type": null,
+      "definition": {
+        "text": "An advancement of Chain-of-Thought that enhances its capabilities.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "zero-shot CoT": {
+      "type": null,
+      "definition": {
+        "text": "An advancement of Chain-of-Thought that enhances its capabilities.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "Selection-Inference": {
+      "type": null,
+      "definition": {
+        "text": "A methodology that refines reasoning by structuring the process or leveraging self-generated rationales.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "STaR": {
+      "type": null,
+      "definition": {
+        "text": "A methodology that refines reasoning by structuring the process or leveraging self-generated rationales.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "WebGPT": {
+      "type": null,
+      "definition": {
+        "text": "An application of language models in decision-making contexts, exemplified by its reliance on human feedback for policy learning.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "SayCan": {
+      "type": null,
+      "definition": {
+        "text": "A work that applies language models in robotic action planning.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
+    },
+    "Inner Monologue": {
+      "type": null,
+      "definition": {
+        "text": "A work that applies language models in robotic action planning, which ReAct builds on while critiquing its representation of inner thoughts.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-07",
+      "last_probed": null
     }
   },
-  "edges": []
+  "edges": [
+    {
+      "from": "CoT-SC",
+      "rel": "is_a",
+      "to": "chain-of-thought",
+      "source": "2210.03629",
+      "confidence": 1.0,
+      "evidence": "3.2 METHODS"
+    }
+  ]
 }

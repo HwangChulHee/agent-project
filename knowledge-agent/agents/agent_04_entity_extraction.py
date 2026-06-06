@@ -3,12 +3,11 @@ import argparse
 from dotenv import load_dotenv
 from openai import OpenAI
 from agents.prompts.entity_extraction import SYSTEM
+from agents.paths import paper_paths
 
 load_dotenv()
 
 MODEL = "gpt-4o-mini"
-SUMMARIES_PATH = "data/parsed/2210.03629/2210.03629_03.summaries.json"
-OUT_PATH = "data/parsed/2210.03629/2210.03629_04.concepts.json"
 SMOKE_INDICES = [1, 9]  # ABSTRACT / RELATED WORK
 
 client = OpenAI()
@@ -40,8 +39,9 @@ def group(concepts: list) -> list:
     return list(grouped.values())
 
 
-def run(full: bool):
-    with open(SUMMARIES_PATH, encoding="utf-8") as f:
+def run(paper: str, full: bool):
+    P = paper_paths(paper)
+    with open(P["03"], encoding="utf-8") as f:
         summaries = json.load(f)
 
     indices = range(len(summaries)) if full else SMOKE_INDICES
@@ -63,12 +63,14 @@ def run(full: bool):
         print("\n=== SMOKE 끝 — 형식 OK면 `--run`으로 전체 ===")
         return
 
-    with open(OUT_PATH, "w", encoding="utf-8") as f:
+    with open(P["04"], "w", encoding="utf-8") as f:
         json.dump(grouped, f, ensure_ascii=False, indent=2)
-    print(f"\n저장: {OUT_PATH}")
+    print(f"\n저장: {P['04']}")
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
+    ap.add_argument("--paper", required=True)
     ap.add_argument("--run", action="store_true", help="전체 실행 (없으면 스모크)")
-    run(ap.parse_args().run)
+    args = ap.parse_args()
+    run(args.paper, args.run)

@@ -1,8 +1,8 @@
-import json, glob, os, argparse, random
+import json, os, argparse, random
+
+from agents.paths import paper_paths
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PAPER = "2210.03629"
-BASE = os.path.join(ROOT, "data", "parsed", PAPER)
 MODEL = "gpt-4o-mini"
 
 from dotenv import load_dotenv
@@ -18,9 +18,10 @@ def llm(content):
                                        messages=[{"role": "user", "content": content}])
     return r.choices[0].message.content.strip()
 
-def load_inputs():
-    summaries = json.load(open(sorted(glob.glob(os.path.join(BASE, "*_03*.json")))[0], encoding="utf-8"))
-    nodes = json.load(open(sorted(glob.glob(os.path.join(BASE, "*_05*.json")))[0], encoding="utf-8"))
+def load_inputs(paper):
+    P = paper_paths(paper)
+    summaries = json.load(open(P["03"], encoding="utf-8"))
+    nodes = json.load(open(P["05"], encoding="utf-8"))
     return summaries, nodes
 
 def endpoint_id(node):
@@ -78,8 +79,8 @@ def process_pair(name2node, key, ev):
                                "stage2_rationale": why, "evidence": ev["heading"]})
     return edges, exceptions, stage1_recs
 
-def run(smoke=True):
-    summaries, nodes = load_inputs()
+def run(paper, smoke=True):
+    summaries, nodes = load_inputs(paper)
     name2node, pairs = find_pairs(summaries, nodes)
     items = list(pairs.items())
     print(f"[nodes] {len(nodes)}  [unique co-occurring pairs] {len(items)}")
@@ -102,15 +103,18 @@ def run(smoke=True):
         all_edges += e
         all_exc += x
         all_s1 += s
-    dump = lambda name, obj: json.dump(obj, open(os.path.join(BASE, name), "w", encoding="utf-8"),
-                                       ensure_ascii=False, indent=2)
-    dump(f"{PAPER}_06.stage1.json", all_s1)
-    dump(f"{PAPER}_06.relations.json", all_edges)
-    dump(f"{PAPER}_06.exceptions.json", all_exc)
+    P = paper_paths(paper)
+    dump = lambda key, obj: json.dump(obj, open(P[key], "w", encoding="utf-8"),
+                                      ensure_ascii=False, indent=2)
+    dump("06_stage1", all_s1)
+    dump("06_relations", all_edges)
+    dump("06_exceptions", all_exc)
     print(f"[done] stage1={len(all_s1)}  edges={len(all_edges)}  exceptions={len(all_exc)}")
-    print(f"  -> {PAPER}_06.stage1.json / _06.relations.json / _06.exceptions.json")
+    print(f"  -> _06.stage1.json / _06.relations.json / _06.exceptions.json")
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
+    ap.add_argument("--paper", required=True)
     ap.add_argument("--run", action="store_true", help="전체 실행 (기본은 smoke 3쌍)")
-    run(smoke=not ap.parse_args().run)
+    args = ap.parse_args()
+    run(args.paper, smoke=not args.run)
