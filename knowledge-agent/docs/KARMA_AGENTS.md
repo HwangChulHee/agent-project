@@ -1,123 +1,116 @@
-# KARMA 에이전트 매핑
+# KARMA 논문 레퍼런스
 
-이 프로젝트(knowledge-agent)는 KARMA의 멀티에이전트 파이프라인을 참고해 구성한다.
-KARMA는 "논문을 읽어 지식 그래프에 자동으로 쌓는" 시스템으로, 각 단계가 전담 에이전트 하나로 나뉜다.
-이 문서는 KARMA의 9개 에이전트가 각각 무슨 일을 하는지, 그리고 우리 코드의 어느 파일에 대응하는지를 정리한다.
-
-> 출처: Lu & Wang, *KARMA: Leveraging Multi-Agent LLMs for Automated Knowledge Graph Enrichment* (arXiv:2502.06472)
+> 이 문서는 **KARMA 논문 자체**를 정리한 레퍼런스다.
+> "우리가 어떻게 구현/변형했나"는 `docs/PIPELINE_POLICY.md`에 있다 (역할 분리).
+>
+> 출처: Lu, Wu, Zhao, Peng, Wang, *KARMA: Leveraging Multi-Agent LLMs for
+> Automated Knowledge Graph Enrichment* (arXiv:2502.06472, NeurIPS 2025).
 
 ---
 
-## 전체 흐름
+## 한 줄 요약
+
+KARMA는 **비정형 텍스트(논문)를 읽어 기존 지식 그래프(KG)를 자동으로 풍부하게(enrich)**
+만드는 멀티에이전트 LLM 프레임워크다. 9개의 전담 에이전트가 협업하며, 문서를 파싱하고
+지식을 추출·검증해 기존 그래프 구조에 통합한다.
+
+핵심: **"새 KG를 짓는 게 아니라 기존 KG를 enrich한다."** G(예: Wikidata, DBpedia)가
+주어지고, 논문에서 뽑은 새 트리플을 거기 더한다.
+
+실험: PubMed 1,200편(유전체·단백질체·대사체 3도메인)으로, 최대 38,230개 신규 엔티티 식별,
+LLM 검증 정확도 83.1%, 충돌 엣지 18.6% 감소.
+
+---
+
+## 문제 정의 (formal)
+
+- 기존 KG: `G = (V, E)`. V = 엔티티, E = 방향 엣지(관계).
+- 관계 = 트리플 `t = (e_h, r, e_t)`.
+- 입력: 논문 코퍼스 `P = {p_1, ..., p_n}`.
+- 목표: 각 논문에서 기존에 없던 트리플 `t ∉ E`를 추출해 통합 → `G_new`.
+- 각 후보 트리플은 통합 전 LLM 검증을 거친다.
+
+---
+
+## 9개 에이전트
+
+Central Controller가 작업을 분배하고, 각 에이전트는 전용 프롬프트·하이퍼파라미터를 가진다.
+
+### 1. Ingestion Agent (IA)
+- 문서 검색 + 포맷 정규화 + 메타데이터(저널·날짜·저자) 추출.
+- `IA(p) = (normalize(p), metadata(p))`. normalize는 LLM 프롬프트 P_ingest로 OCR 오류·구조 불일치 처리.
+- 출력을 Reader용 큐에 넣음.
+
+### 2. Reader Agent (RA)
+- 정규화 문서를 세그먼트(abstract, methods, results 등)로 분할 + 관련성 필터.
+- 각 세그먼트 `s_j`에 관련성 점수: `R(s_j) = LLM_reader(s_j, G)` — **현재 그래프 G에 비춰** 평가.
+- `R(s_j) < δ`(도메인 보정 임계값)면 버림. 살아남은 세그먼트만 SA로.
+
+### 3. Summarizer Agent (SA)
+- 세그먼트를 간결한 요약 `u_j`로 압축: `u_j = LLM_summ(s_j, P_summ)`.
+- P_summ은 **핵심 엔티티·관계·도메인 용어를 보존**하도록 지시. 추출기에 "고신호·저노이즈" 입력 제공.
+- (부록 B.5 프롬프트: gene/chemical 이름·수치 데이터는 verbatim 보존, 100단어 미만 권장, 저관련 세그먼트는 `[OMITTED]`.)
+
+### 4. Entity Extraction Agent (EEA)
+- LLM 기반 NER로 엔티티 식별 + 사전/온톨로지 필터로 거짓양성 제거.
+- **정규화:** 추출 엔티티 `e`를 임베딩 공간에서 기존 KG 엔티티와 매칭.
+  `ê = argmin_v d(φ(e), ψ(v))` — φ는 멘션을, ψ는 KG 엔티티를 같은 공간으로 매핑(예: BERT 계열).
+  거리가 ρ보다 크면 신규로 표시해 후보 집합 V+에 추가.
+  (예: "acetylsalicylic acid" → "Aspirin"으로 정규화.) **이름 기반 임베딩.**
+
+### 5. Relationship Extraction Agent (REA)
+- 정규화된 엔티티 쌍 `(ê_i, ê_j)`을 LLM 분류기에 넣어 관계 확률 `p(r | ê_i, ê_j, u_j)` 계산.
+- 임계값 θ_r 넘는 관계로 트리플 형성. multi-label 허용(한 구절에 여러 관계 가능).
+- **입력이 "정규화된 엔티티 쌍"** — 즉 EEA가 엔티티를 확정한 *후*에 작동.
+
+### 6. Schema Alignment Agent (SAA)
+- 새 엔티티/관계가 기존 KG 타입과 안 맞으면 도메인 분류 수행.
+- 엔티티: `τ* = argmax_τ LLM_SAA(v, τ, P_align)`, T = 유효 타입 집합(Disease, Drug, Gene 등).
+- 새 관계도 기존 관계 타입에 매핑. 적절한 매치 없으면 후보 추가로 플래그.
+
+### 7. Conflict Resolution Agent (CRA)
+- 새 트리플이 기존과 논리적으로 모순되면 LLM 토론(debate) 프롬프트로 Agree/Contradict 판정.
+- Contradict면 폐기하거나 전문가 검토 큐로.
+
+### 8. Evaluator Agent (EA)
+- 최종 통합 관문. 트리플마다 confidence·clarity·relevance를 시그모이드 가중 결합으로 산출.
+- `integrate(t) = 1 if mean(C, Cl, R) ≥ Θ else 0`. 평균이 임계값 넘는 트리플만 통합.
+
+### 9. Central Controller
+- 에이전트들에 작업 분배·우선순위 결정(워크로드 균형).
+
+---
+
+## 흐름
 
 ```
-논문 가져오기 → 읽고 거르기 → 요약 → 개념 추출 → 관계 추출
-   → 기존 그래프에 정렬 → 모순 해소 → 통합 결정
+Ingest → Read(분할+관련성컷) → Summarize → Extract(엔티티+정규화)
+   → Relate(관계) → Align(스키마) → Resolve(충돌) → Evaluate(통합결정) → Store
 ```
 
-KARMA는 이 흐름의 각 단계를 독립 에이전트로 두고, Central Controller가 작업을 분배한다.
-우리는 abstract 입력이라 일부 단계를 합치거나 생략하고, self-model(이해도)·추천이라는 고유 층을 더한다.
+3대 혁신 (논문 주장):
+1. 멀티에이전트 교차검증 (REA가 SAA 출력으로 후보 엔티티 검증 등).
+2. 도메인 적응형 프롬프팅 (분야별 정확도).
+3. LLM 기반 검증으로 환각·스키마 불일치 완화.
 
 ---
 
-## KARMA 9개 에이전트
+## Ablation (어느 에이전트가 중요한가)
 
-### 1. Ingestion Agent (수집)
-- **하는 일:** 입력 문서를 가져와 정규화(제목·초록·저자·날짜 등으로 분리). 다운스트림이 다루기 쉬운 형태로 정리해 큐에 넣는다.
-- **우리 대응:** `agents/collectors/arxiv.py`
-- **상태:** ✅ — arXiv API로 최신 논문을 `{source_id, title, text, date, url}` 공통 포맷으로 가져옴.
+| 제거한 에이전트 | 효과 |
+|---|---|
+| Summarizer 제거 | 품질 지표 큰 하락 (정확도 ~22.9%↓ 등) — 요약 단계의 가치 입증 |
+| Conflict Resolution 제거 | 모순 엣지 증가, 정확도 하락 |
+| Evaluator 제거 | 필터 없이 통합 → 품질 하락 |
 
-### 2. Reader Agent (관련성 필터)
-- **하는 일:** 문서를 문단 단위로 쪼개고, 각 조각의 "현재 그래프에 대한 관련성 점수"를 매긴다. 점수가 임계값 δ보다 낮으면 버린다(감사말·참고문헌 등 비관련 내용 제거).
-- **우리 대응:** `agents/evaluator_agent.py` (일부 — 관련성 판정 부분)
-- **상태:** △ — "이 논문이 LLM 에이전트 분야 안인가, 무관(irrelevant)인가"를 판정. 단 이름 매칭 기반이라 거침("new 후함" 문제). 정밀화 시 설명 임베딩 + 관련성 임계값 컷 필요.
-
-### 3. Summarizer Agent (요약)
-- **하는 일:** 관련성 높은 문단을 간결한 요약으로 압축하되, 핵심 기술 디테일(기법명·수치)은 보존. 추출기가 다루기 쉽게.
-- **우리 대응:** 없음
-- **상태:** ✗ 생략 — 우리는 abstract(이미 짧은 요약)를 입력으로 써서 더 요약할 게 없음. 논문 전문(PDF)을 다루게 되면 부활.
-
-### 4. Entity Extraction Agent (개념 추출)
-- **하는 일:** 요약된 텍스트에서 엔티티(개념)를 few-shot으로 식별하고, 기존 그래프의 표준형(canonical form)에 정규화. KARMA는 임베딩 정렬(ontology-guided embedding alignment)로 정규화.
-- **우리 대응:** `agents/entity_extraction_agent.py`
-- **상태:** ✅ — abstract에서 개념(기법/개념)을 추출. 타입 중심 필터로 잡개념·모델명 제외.
-
-### 5. Relationship Extraction Agent (관계 추출)
-- **하는 일:** 엔티티 쌍 사이의 관계를 추론(multi-label, 중첩 관계 허용).
-- **우리 대응:** `agents/entity_extraction_agent.py` (위와 같은 파일이 겸함)
-- **상태:** ✅ — extractor가 개념과 함께 관계(is_a/part_of/depends_on)도 추출. KARMA는 별도 에이전트지만 우리는 한 파일이 4+5번을 겸함.
-
-### 6. Schema Alignment Agent (스키마 정렬)
-- **하는 일:** 새 엔티티/관계를 기존 그래프 스키마(타입)에 매핑. "이게 기존의 어느 개념과 같은가? 새 거면 추가하거나 온톨로지 확장 플래그."
-- **우리 대응:** `agents/schema_alignment_agent.py`
-- **상태:** ✅ — 새 개념이 기존 노드와 같은지 LLM으로 판단해 병합/신규 결정. 타입 다르면 병합 금지. mastery 보존.
-
-### 7. Conflict Resolution Agent (모순 해소)
-- **하는 일:** 새 정보가 기존 그래프와 논리적으로 충돌하면(상반된 triplet) 토론(debate) 메커니즘으로 해소.
-- **우리 대응:** 없음
-- **상태:** ✗ 후순위 — belief/모순 처리. LLM 도메인이 수렴적이라 모순이 약하다고 판단해 뒤로 미룸. 고도화 시 추가.
-
-### 8. Evaluator Agent (통합 결정)
-- **하는 일:** 최종 품질 관문. confidence·relevance·clarity·coherence를 가중 결합한 통합 신뢰도로 "이 개념을 그래프에 통합할지" 결정.
-- **우리 대응:** `agents/evaluator_agent.py` (일부 — 가치 판정/통합 결정 부분)
-- **상태:** △ 판정만 — 논문의 가치(extend/new/contradict/known/irrelevant + 점수)를 판정. 단 통과한 논문을 실제로 맵에 통합(4→5→6으로 흘려보내기)하는 연결이 아직 없음 = 핵심 미완 과제.
-
-### 9. Central Controller Agent (작업 분배)
-- **하는 일:** 여러 에이전트에 작업을 분배하고 우선순위를 정함(multi-armed bandit으로 워크로드 균형).
-- **우리 대응:** 없음
-- **상태:** ✗ 불필요 — 우리는 단일 순차 흐름이라 관리자 불필요. 진짜 멀티에이전트로 고도화할 때 오케스트레이터로 부활.
+> 주의: "Summarizer 제거 시 하락"은 **요약 단계의 가치**이지, Reader/Summarizer를
+> 두 에이전트로 *분리*하라는 근거가 아니다. (우리 설계에서 이 점 주의 — PIPELINE_POLICY 03 참조.)
 
 ---
 
-## 우리 고유 (KARMA에 없음)
+## 우리 프로젝트가 참고하는 방식
 
-KARMA는 "분야 지식 그래프 구축"이 목적이라 사용자가 없다.
-우리는 그 위에 **self-model(내 이해도)**과 **추천**을 더한다 — 이것이 차별점.
-
-### prober (`agents/prober.py`)
-- **하는 일:** self-model 측정. 개념에 대해 LLM이 서술형 질문 생성 → 사용자 답 → CoT 채점(5등분) → 부드러운 수렴으로 mastery 갱신.
-- **KARMA 대응:** 없음. self-model은 우리 고유 기여.
-- **참고:** BKT 검토 후 폐기(서술형엔 guess/slip 전제 안 맞음), 점진 수렴만 채택.
-
-### digest (`agents/digest.py`)
-- **하는 일:** 추천. mastery + depends_on 구조만으로 "지금 배우기 좋은 개념"(프론티어 = 모르는데 선수지식 충족)을 계산.
-- **KARMA 대응:** 없음. 추천은 우리 고유.
-
----
-
-## 한눈에 보는 표
-
-| # | KARMA 에이전트 | 우리 파일 | 상태 |
-|---|---|---|---|
-| 1 | Ingestion (수집) | `collectors/arxiv.py` | ✅ |
-| 2 | Reader (관련성 필터) | `evaluator_agent.py` (겸) | △ 거침 |
-| 3 | Summarizer (요약) | — | ✗ abstract라 생략 |
-| 4 | Entity Extraction (개념) | `entity_extraction_agent.py` (겸) | ✅ |
-| 5 | Relationship Extraction (관계) | `entity_extraction_agent.py` (겸) | ✅ |
-| 6 | Schema Alignment (정렬) | `schema_alignment_agent.py` | ✅ |
-| 7 | Conflict Resolution (모순) | — | ✗ 후순위 |
-| 8 | Evaluator (통합 결정) | `evaluator_agent.py` (겸) | △ 판정만 |
-| 9 | Central Controller (분배) | — | ✗ 단일 흐름이라 불필요 |
-| — | **self-model 측정** | `prober.py` | ✅ 우리 고유 |
-| — | **추천** | `digest.py` | ✅ 우리 고유 |
-
----
-
-## 우리 구현이 KARMA와 다른 점
-
-1. **부품이 더 적다 (겸직).** `entity_extraction_agent`가 4+5를, `evaluator_agent`가 2+8을 겸함. abstract 입력이라 잘게 쪼갤 필요가 없음. 진짜 멀티에이전트로 고도화할 때 분리 가능.
-2. **셋을 의도적으로 비움.** Summarizer(abstract라 불필요), Conflict Resolution(belief 후순위), Central Controller(단일 흐름).
-3. **고유 층을 더함.** prober(self-model), digest(추천) — KARMA엔 사용자 개념이 없음.
-4. **목적이 다름.** KARMA는 "분야 그래프를 정확히 완성", 우리는 "분야 그래프를 발판으로 나에게 새롭고 도전적인 걸 큐레이션".
-
-## 현재 핵심 미완 과제
-
-부품은 다 있으나 **흐름이 끊겨 있다.** 특히 Evaluator(8)가 "통합하자" 판정한 논문이
-Entity Extraction(4)으로 넘어가는 연결이 없음. KARMA의 진짜 가치는 9개 에이전트가
-*파이프라인으로 연결*돼 흐른다는 것 — 다음 과제는 새 부품 만들기가 아니라 있는 부품을
-KARMA 흐름대로 잇는 것:
-
-```
-evaluator(통과 판정) → entity_extraction(개념·관계 추출)
-   → schema_alignment(맵에 병합) → 위상 해석("이건 네가 아는 X의 확장")
-```
+- **9개를 그대로 따르지 않음.** 목적이 다름(KARMA=정확한 분야 그래프 / 우리=내 커버리지 지형도 + self-model + 추천).
+- 핵심 차용: 멀티에이전트 파이프라인 구조(파싱→분할→요약→추출→정규화→...), 임베딩+LLM 다단계 검증 정신.
+- 핵심 변형: **이름 임베딩 → 정의문 임베딩** (AI 개념엔 도메인 임베딩 모델이 없어서). 이로 인해 KARMA엔 없는 "정의 출처·품질" 문제를 새로 다룸.
+- 자세한 대응·차이는 `docs/PIPELINE_POLICY.md` 참조.

@@ -3,3 +3,4 @@
 __pycache__/
 *.pyc
 agents/collectors/_arxiv_cache.json
+data/raw_papers/
