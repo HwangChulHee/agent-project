@@ -10,8 +10,8 @@ load_dotenv(os.path.join(ROOT, ".env"))
 from openai import OpenAI
 client = OpenAI()
 
-from agents.prompts.relations_stage1 import STAGE1
-from agents.prompts.relations_stage2 import STAGE2
+from agents.prompts.p06_relations_stage1 import STAGE1
+from agents.prompts.p06_relations_stage2 import STAGE2
 
 def llm(content):
     r = client.chat.completions.create(model=MODEL, temperature=0,

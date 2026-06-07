@@ -1,14 +1,17 @@
 """
-09 통합 (Integration) — 판정 산출물(05 노드, 06 엣지)을 실제 맵에 쓴다.
-산출: 09a(디버그, 정의 더미 보존) / 09b(운영, 정의 단수 객체).
+08 통합 (Integration) — 판정 산출물(05 노드, 06 엣지)을 실제 맵에 쓴다.
+산출: 08a(디버그, 정의 더미 + 충돌 스냅샷) / 08b(운영, 정의 단수 객체) / 07.conflicts(대기열).
 
 정의 단위 = {"text", "source", "pub_date"}  (맨 문자열 아님 — 출처·시점 보존).
 원칙:
-  - mastery 불개입(new=0, merge/seed=유지) · new id=05 name · type=None(SAA 일).
+  - mastery 불개입(new=0, merge/seed=유지) · new id=05 name · type=None.
   - 정의 병합 = append + text 완전일치 dedup (FUSE/의미dedup 금지).
   - locked=true → SELECT/갱신 대상 아님. 수동 정의 고정(이번 논문 정의 무시, 로그만).
   - SELECT는 (맵 기존 정의 + 더미)에서 깨끗한 1개. 날짜 가중치는 미구현
     (논문 vs 논문 케이스 = 두 번째 논문 때 데이터 보고 규칙 확정). 지금은 신호만 보존.
+  - 엣지 = **누적**. 기존 맵 엣지에 새 논문 엣지를 더한다(덮어쓰기 아님). 보수적:
+    기존은 항상 유지, 충돌난 새 엣지는 맵에 안 넣고 07.conflicts 대기열로 보류.
+    운영 맵(08b)은 모순 없이 깨끗하게(precision-first). 충돌 해소는 07 resolve(미구현) 몫.
 """
 import json
 import argparse
@@ -17,13 +20,14 @@ from datetime import date
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from agents.prompts.definition_select import SELECT as SELECT_PROMPT
+from agents import agent_07_cra as cra
+from agents.prompts.p08_definition_select import SELECT as SELECT_PROMPT
 from agents.paths import paper_paths, pub_date_from_id, MAP_PATH
 
 load_dotenv()
 
 SELECT_MODEL = "gpt-4o-mini"
-REL_TYPES = {"is_a", "part_of", "depends_on"}
+REL_TYPES = {"is_a", "part_of"}
 
 client = OpenAI(timeout=30, max_retries=3)
 
@@ -136,6 +140,36 @@ def edge_pass(relations, node_ids, paper):
     return edges, dangling
 
 
+def _ekey(e):
+    return (e["from"], e["rel"], e["to"])
+
+
+def integrate_edges(new_edges, map_edges):
+    """기존 맵 엣지 + 새 논문 엣지 누적 (덮어쓰기 아님). 보수적 = 기존 신뢰:
+      - 기존 맵 엣지         → 항상 유지 (새 도전자가 충돌해도 안 내림)
+      - 충돌난 새 엣지        → 보류(held). 맵 제외 → 07.conflicts 대기열로.
+      - 중복(이미 맵에 있음)   → 스킵 (재추가 방지)
+      - 그 외 새 엣지          → 맵에 추가(accepted)
+    충돌 판정은 07 CRA(detect). 반환: (final_edges, accepted, held, conflicts).
+    """
+    conflicts = cra.detect(new_edges, map_edges)
+    held_keys = {_ekey(e) for c in conflicts for e in c["held"]}
+    existing_keys = {_ekey(e) for e in map_edges}
+
+    final_edges = list(map_edges)          # 기존은 항상 유지
+    accepted, held = [], []
+    for e in new_edges:
+        k = _ekey(e)
+        if k in held_keys:                 # 충돌 → 보류
+            held.append(e); continue
+        if k in existing_keys:             # 이미 맵에 있음 → 스킵
+            continue
+        final_edges.append(e)
+        accepted.append(e)
+        existing_keys.add(k)
+    return final_edges, accepted, held, conflicts
+
+
 # ── 오케스트레이션 ─────────────────────────────────────────
 def main(paper, do_select):
     P = paper_paths(paper)
@@ -145,7 +179,9 @@ def main(paper, do_select):
     relations = json.load(open(P["06_relations"], encoding="utf-8"))
 
     nodes, merged_from, locked_skipped = node_pass(kmap, aligned, paper, pub)
-    edges, dangling = edge_pass(relations, set(nodes.keys()), paper)
+    new_edges, dangling = edge_pass(relations, set(nodes.keys()), paper)
+    map_edges = kmap.get("edges", [])
+    edges, accepted, held, conflicts = integrate_edges(new_edges, map_edges)
 
     print(f"=== SELECT ({'LLM' if do_select else 'STUB idx0'}) — multi-def 노드만 ===")
     final_nodes, debug_nodes = {}, {}
@@ -171,17 +207,27 @@ def main(paper, do_select):
         }
 
     if do_select:
-        json.dump({"nodes": debug_nodes}, open(P["09a"], "w", encoding="utf-8"),
-                  ensure_ascii=False, indent=2)
+        json.dump({"nodes": debug_nodes, "conflicts": conflicts},
+                  open(P["08a"], "w", encoding="utf-8"), ensure_ascii=False, indent=2)
         json.dump({"nodes": final_nodes, "edges": edges},
                   open(MAP_PATH, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+        json.dump(conflicts, open(P["07_conflicts"], "w", encoding="utf-8"),
+                  ensure_ascii=False, indent=2)
 
     print(f"\n=== 통합 후 점검 ===")
     print(f"  노드 {len(final_nodes)}  (시드 {len(kmap['nodes'])} + new "
           f"{len(final_nodes) - len(kmap['nodes'])})")
-    print(f"  엣지 {len(edges)}")
+    print(f"  엣지 {len(edges)}  (기존 {len(map_edges)} 유지 + 새 {len(accepted)} 추가)")
     for e in edges:
-        print(f"    {e['from']} --{e['rel']}--> {e['to']}  [{e['evidence']}]")
+        print(f"    {e['from']} --{e['rel']}--> {e['to']}  [{e.get('evidence', '')}]")
+    print(f"  conflicts {len(conflicts)}  (충돌난 새 엣지는 맵 제외 → 07.conflicts 대기열)")
+    for c in conflicts:
+        a, b = c["edges"]
+        print(f"    [{c['kind']}] {a['from']} {a['rel']} {a['to']}  ⟷  "
+              f"{b['from']} {b['rel']} {b['to']}")
+    if held:
+        print(f"  보류 새 엣지 {len(held)}: "
+              + ", ".join(f"{e['from']} {e['rel']} {e['to']}" for e in held))
     print(f"  dangling/skip {len(dangling)}")
     for d in dangling:
         print(f"    {d.get('src')} {d.get('rel')} {d.get('dst')} — {d['_skip']}")
@@ -189,9 +235,9 @@ def main(paper, do_select):
     if locked_skipped:
         print(f"  locked 동결(이번 논문 정의 무시): {locked_skipped}")
     if do_select:
-        print(f"\n저장: 09a {P['09a']}\n      09b {MAP_PATH}")
+        print(f"\n저장: 08a {P['08a']}\n      08b {MAP_PATH}\n      07 {P['07_conflicts']}")
     else:
-        print(f"\n(스텁 — 파일 안 씀. 카운트 맞으면 --run 으로 실제 SELECT 실행)")
+        print(f"\n(스텁 — 파일 안 씀. 카운트 맞으면 --run 으로 실제 SELECT + 저장)")
 
 
 if __name__ == "__main__":

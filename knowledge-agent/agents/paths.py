@@ -25,7 +25,8 @@ def paper_paths(paper_id: str) -> dict:
         "06_stage1": p("06.stage1.json"),
         "06_relations": p("06.relations.json"),
         "06_exceptions": p("06.exceptions.json"),
-        "09a": p("09.integrated.json"),
+        "07_conflicts": p("07.conflicts.json"),
+        "08a": p("08.integrated.json"),
     }
 
 

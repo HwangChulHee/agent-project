@@ -6,7 +6,7 @@ import json
 import os
 from datetime import date
 
-REL_TYPES = {"is_a", "part_of", "depends_on"}  # 관계 화이트리스트
+REL_TYPES = {"is_a", "part_of"}  # 관계 화이트리스트 (depends_on 폐기 — is_a 계층으로 대체)
 GAP_THRESHOLD = 0.5  # mastery가 이 미만이면 '아직 모름(갭)'으로 봄
 
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -54,12 +54,6 @@ def find_gaps(m):
     return [cid for cid, n in m["nodes"].items() if n["mastery"] < GAP_THRESHOLD]
 
 
-def prerequisites(m, concept_id):
-    """이 개념이 depends_on으로 가리키는 선수지식."""
-    return [e["to"] for e in m["edges"]
-            if e["from"] == concept_id and e["rel"] == "depends_on"]
-
-
 if __name__ == "__main__":
     # 시드 — mastery는 대략의 자기보고 (3→0.9, 2→0.6, 0→0.0)
     m = new_map()
@@ -74,11 +68,7 @@ if __name__ == "__main__":
     add_edge(m, "function calling", "is_a", "LLM 에이전트")
     add_edge(m, "리랭킹", "part_of", "RAG")
     add_edge(m, "임베딩검색", "part_of", "RAG")
-    add_edge(m, "리랭킹", "depends_on", "임베딩검색")
 
     save_map(m)
     print(f"=== 노드 {len(m['nodes'])}개, 엣지 {len(m['edges'])}개 ===")
     print("내 갭(mastery<0.5):", find_gaps(m))
-    pre = prerequisites(m, "리랭킹")
-    print("리랭킹 선수지식:", pre)
-    print("선수지식 mastery:", {p: get_node(m, p)["mastery"] for p in pre})
