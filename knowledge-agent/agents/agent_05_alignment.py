@@ -47,12 +47,12 @@ def judge_same(cand_name, cand_defs, node_name, node_def):
 
 def run(paper):
     P = paper_paths(paper)
-    concepts = json.load(open(P["04"], encoding="utf-8"))
+    concepts = json.load(open(P["04b"], encoding="utf-8"))
     kmap = json.load(open(MAP_PATH, encoding="utf-8"))
 
     map_names = list(kmap["nodes"].keys())
     map_defs = [_def_text(kmap["nodes"][n]["definition"]) for n in map_names]
-    map_embs = embed(map_defs)
+    map_embs = embed(map_defs) if map_defs else []   # 빈 맵(맨바닥 첫 논문) → 비교 없이 전부 new
 
     flat, owner = [], []
     for ci, c in enumerate(concepts):
@@ -85,6 +85,7 @@ def run(paper):
 
         aligned.append({
             "name": c["name"],
+            "aliases": c.get("aliases", []),
             "definitions": c["definitions"],
             "verdict": verdict,
             "matched_node": matched,
@@ -108,7 +109,8 @@ def run(paper):
     for node in map_names:
         hits = merged_to.get(node, [])
         mark = "← " + ", ".join(h[:18] for h in hits) if hits else ""
-        print(f"  [{intent[node]:8}] {node:30} {mark}")
+        tag = intent[node] or "?"
+        print(f"  [{tag:8}] {node:30} {mark}")
 
     with open(P["05"], "w", encoding="utf-8") as f:
         json.dump(aligned, f, ensure_ascii=False, indent=2)

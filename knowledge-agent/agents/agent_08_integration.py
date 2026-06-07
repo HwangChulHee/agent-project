@@ -20,7 +20,6 @@ from datetime import date
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from agents import agent_07_cra as cra
 from agents.prompts.p08_definition_select import SELECT as SELECT_PROMPT
 from agents.paths import paper_paths, pub_date_from_id, MAP_PATH
 
@@ -144,15 +143,14 @@ def _ekey(e):
     return (e["from"], e["rel"], e["to"])
 
 
-def integrate_edges(new_edges, map_edges):
+def integrate_edges(new_edges, map_edges, conflicts):
     """기존 맵 엣지 + 새 논문 엣지 누적 (덮어쓰기 아님). 보수적 = 기존 신뢰:
       - 기존 맵 엣지         → 항상 유지 (새 도전자가 충돌해도 안 내림)
       - 충돌난 새 엣지        → 보류(held). 맵 제외 → 07.conflicts 대기열로.
       - 중복(이미 맵에 있음)   → 스킵 (재추가 방지)
       - 그 외 새 엣지          → 맵에 추가(accepted)
-    충돌 판정은 07 CRA(detect). 반환: (final_edges, accepted, held, conflicts).
+    충돌은 07이 감지해 인자로 주입(detect 호출 안 함). 반환: (final_edges, accepted, held).
     """
-    conflicts = cra.detect(new_edges, map_edges)
     held_keys = {_ekey(e) for c in conflicts for e in c["held"]}
     existing_keys = {_ekey(e) for e in map_edges}
 
@@ -160,14 +158,14 @@ def integrate_edges(new_edges, map_edges):
     accepted, held = [], []
     for e in new_edges:
         k = _ekey(e)
-        if k in held_keys:                 # 충돌 → 보류
+        if k in held_keys:                 # 충돌(07 감지) → 보류
             held.append(e); continue
         if k in existing_keys:             # 이미 맵에 있음 → 스킵
             continue
         final_edges.append(e)
         accepted.append(e)
         existing_keys.add(k)
-    return final_edges, accepted, held, conflicts
+    return final_edges, accepted, held
 
 
 # ── 오케스트레이션 ─────────────────────────────────────────
@@ -177,11 +175,12 @@ def main(paper, do_select):
     kmap = json.load(open(MAP_PATH, encoding="utf-8"))
     aligned = json.load(open(P["05"], encoding="utf-8"))
     relations = json.load(open(P["06_relations"], encoding="utf-8"))
+    conflicts = json.load(open(P["07_conflicts"], encoding="utf-8"))   # 07이 감지한 충돌(신뢰)
 
     nodes, merged_from, locked_skipped = node_pass(kmap, aligned, paper, pub)
     new_edges, dangling = edge_pass(relations, set(nodes.keys()), paper)
     map_edges = kmap.get("edges", [])
-    edges, accepted, held, conflicts = integrate_edges(new_edges, map_edges)
+    edges, accepted, held = integrate_edges(new_edges, map_edges, conflicts)
 
     print(f"=== SELECT ({'LLM' if do_select else 'STUB idx0'}) — multi-def 노드만 ===")
     final_nodes, debug_nodes = {}, {}
@@ -211,8 +210,6 @@ def main(paper, do_select):
                   open(P["08a"], "w", encoding="utf-8"), ensure_ascii=False, indent=2)
         json.dump({"nodes": final_nodes, "edges": edges},
                   open(MAP_PATH, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-        json.dump(conflicts, open(P["07_conflicts"], "w", encoding="utf-8"),
-                  ensure_ascii=False, indent=2)
 
     print(f"\n=== 통합 후 점검 ===")
     print(f"  노드 {len(final_nodes)}  (시드 {len(kmap['nodes'])} + new "
@@ -235,7 +232,7 @@ def main(paper, do_select):
     if locked_skipped:
         print(f"  locked 동결(이번 논문 정의 무시): {locked_skipped}")
     if do_select:
-        print(f"\n저장: 08a {P['08a']}\n      08b {MAP_PATH}\n      07 {P['07_conflicts']}")
+        print(f"\n저장: 08a {P['08a']}\n      08b {MAP_PATH}")
     else:
         print(f"\n(스텁 — 파일 안 씀. 카운트 맞으면 --run 으로 실제 SELECT + 저장)")
 

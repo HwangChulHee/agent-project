@@ -1,0 +1,145 @@
+[
+  {
+    "name": "Tree of Thoughts",
+    "definitions": [
+      "The Tree of Thoughts framework enhances problem-solving in large language models by structuring the reasoning process as a tree, where each node represents a potential thought or action.",
+      "The Tree of Thoughts (ToT) framework enhances language model inference by allowing exploration over coherent units of text, referred to as 'thoughts,' which serve as intermediate steps in problem-solving.",
+      "The Tree of Thoughts (ToT) framework is a structure that maintains coherent language sequences, or thoughts, to facilitate self-evaluation and systematic exploration of problem-solving paths.",
+      "The Tree of Thoughts (ToT) paradigm enhances problem-solving by framing tasks as a search over a tree structure, where each node represents a state that includes a partial solution and the sequence of thoughts generated so far.",
+      "Tree of Thoughts (ToT) is a structured approach that decomposes the Game of 24 problem into three intermediate equations, allowing for the evaluation of potential next steps at each node using a breadth-first search strategy.",
+      "The Tree of Thoughts (ToT) framework is a method that enhances decision-making in complex real-world applications by allowing for customizable performance-cost tradeoffs."
+    ]
+  },
+  {
+    "name": "Chain of Thought",
+    "definitions": [
+      "The Chain of Thought method enables language models to engage in deliberate decision-making through the evaluation of multiple reasoning paths."
+    ]
+  },
+  {
+    "name": "System 1 reasoning",
+    "definitions": [
+      "System 1 reasoning reflects the associative choices of language models."
+    ]
+  },
+  {
+    "name": "System 2 reasoning",
+    "definitions": [
+      "System 2 reasoning represents a more deliberate planning process."
+    ]
+  },
+  {
+    "name": "input-output prompting",
+    "definitions": [
+      "A method that transforms an input sequence into an output sequence by wrapping the input with task instructions or examples, formalized as a probabilistic function."
+    ]
+  },
+  {
+    "name": "chain-of-thought prompting",
+    "definitions": [
+      "An enhancement of input-output prompting that incorporates a sequence of intermediate thoughts to facilitate the transition from input to output, particularly in complex scenarios."
+    ]
+  },
+  {
+    "name": "self-consistency with chain-of-thought",
+    "definitions": [
+      "An ensemble strategy that samples multiple chains of thought to produce a more robust output by selecting the most frequent result from these samples."
+    ]
+  },
+  {
+    "name": "thought decomposition",
+    "definitions": [
+      "Thought decomposition breaks down the problem into manageable thought steps."
+    ]
+  },
+  {
+    "name": "thought generator",
+    "definitions": [
+      "A thought generator produces candidate thoughts either through independent sampling or sequential proposals."
+    ]
+  },
+  {
+    "name": "state evaluator",
+    "definitions": [
+      "A state evaluator assesses the potential of different states using heuristic reasoning."
+    ]
+  },
+  {
+    "name": "search algorithm",
+    "definitions": [
+      "A search algorithm navigates the tree structure, employing either breadth-first or depth-first strategies."
+    ]
+  },
+  {
+    "name": "trees of thoughts",
+    "definitions": [
+      "Deliberate search in trees of thoughts (ToT) is a method that improves results in problem-solving scenarios involving search or planning."
+    ]
+  },
+  {
+    "name": "chain-of-thought",
+    "definitions": [
+      "A method that incorporates planning into the generation of coherent passages from random sentences."
+    ]
+  },
+  {
+    "name": "two-step thought generation",
+    "definitions": [
+      "A method that involves generating and voting on plans before creating a coherent passage."
+    ]
+  },
+  {
+    "name": "iterative-refine",
+    "definitions": [
+      "A method that enhances the coherence of passages by allowing the model to assess and improve upon its previous outputs."
+    ]
+  },
+  {
+    "name": "depth-first search",
+    "definitions": [
+      "A method that allows the model to propose and evaluate thoughts while adhering to letter constraints and enables backtracking when a state becomes unpromising."
+    ]
+  },
+  {
+    "name": "state evaluation and pruning heuristics",
+    "definitions": [
+      "Techniques that enhance the model's ability to solve crossword puzzles by effectively evaluating states and eliminating unpromising paths."
+    ]
+  },
+  {
+    "name": "backtracking",
+    "definitions": [
+      "A process that allows the model to revert to a previous state when the current state becomes unpromising in the search for solutions."
+    ]
+  },
+  {
+    "name": "ToT",
+    "definitions": [
+      "ToT is an approach that enhances traditional planning in language models by evaluating multiple feasible plans simultaneously and integrating thought sampling with value feedback for effective solution tree exploration."
+    ]
+  },
+  {
+    "name": "self-reflection",
+    "definitions": [
+      "Self-reflection is a mechanism where language models assess their predictions, improving accuracy through feedback on generated candidates."
+    ]
+  },
+  {
+    "name": "program-guided generation",
+    "definitions": [
+      "Program-guided generation is a method where language models are organized through systematic procedures."
+    ]
+  },
+  {
+    "name": "counterfactual decision-making",
+    "definitions": [
+      "ToT-style counterfactual decision-making is a technique for fine-tuning language models to improve their problem-solving capabilities."
+    ]
+  },
+  {
+    "name": "System 1 and System 2",
+    "definitions": [
+      "The concept of augmenting the associative 'System 1' of language models with a 'System 2' based on structured search methods to leverage classical problem-solving insights."
+    ]
+  }
+]

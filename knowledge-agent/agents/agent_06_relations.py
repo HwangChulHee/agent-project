@@ -33,10 +33,14 @@ def endpoint_id(node):
 def find_pairs(summaries, nodes):
     name2node = {n["name"]: n for n in nodes}
     names = list(name2node)
+    # 대표 이름 + aliases 중 하나라도 요약 원문에 있으면 present.
+    # 정규화로 개념 이름은 통일됐지만 섹션 원문은 'ToT'로 쓸 수 있어, 별칭까지 봐야 매칭됨.
+    name2surface = {nm: [nm] + name2node[nm].get("aliases", []) for nm in names}
     pairs = {}  # frozenset({A,B}) -> evidence
     for sec in summaries:
         text = (sec.get("summary") or "").lower()
-        present = [nm for nm in names if nm.lower() in text]
+        present = [nm for nm in names
+                   if any(sf.lower() in text for sf in name2surface[nm])]
         for i in range(len(present)):
             for j in range(i + 1, len(present)):
                 key = frozenset((present[i], present[j]))
@@ -98,7 +102,7 @@ def run(paper, smoke=True):
         return
     all_edges, all_exc, all_s1 = [], [], []
     for i, (key, ev) in enumerate(items, 1):
-        print(f"  [{i}/{len(items)}] {tuple(key)}", flush=True)
+        print(f"  [{i}/{len(items)}] {tuple(key)}  @ {ev['heading']}", flush=True)
         e, x, s = process_pair(name2node, key, ev)
         all_edges += e
         all_exc += x

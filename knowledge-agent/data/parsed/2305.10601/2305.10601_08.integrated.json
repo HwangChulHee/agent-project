@@ -1,0 +1,489 @@
+{
+  "nodes": {
+    "Tree of Thoughts": {
+      "definitions": [
+        {
+          "text": "The Tree of Thoughts framework enhances problem-solving in large language models by structuring the reasoning process as a tree, where each node represents a potential thought or action.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        },
+        {
+          "text": "The Tree of Thoughts (ToT) framework enhances language model inference by allowing exploration over coherent units of text, referred to as 'thoughts,' which serve as intermediate steps in problem-solving.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        },
+        {
+          "text": "The Tree of Thoughts (ToT) framework is a structure that maintains coherent language sequences, or thoughts, to facilitate self-evaluation and systematic exploration of problem-solving paths.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        },
+        {
+          "text": "The Tree of Thoughts (ToT) paradigm enhances problem-solving by framing tasks as a search over a tree structure, where each node represents a state that includes a partial solution and the sequence of thoughts generated so far.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        },
+        {
+          "text": "Tree of Thoughts (ToT) is a structured approach that decomposes the Game of 24 problem into three intermediate equations, allowing for the evaluation of potential next steps at each node using a breadth-first search strategy.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        },
+        {
+          "text": "The Tree of Thoughts (ToT) framework is a method that enhances decision-making in complex real-world applications by allowing for customizable performance-cost tradeoffs.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        },
+        {
+          "text": "Deliberate search in trees of thoughts (ToT) is a method that improves results in problem-solving scenarios involving search or planning.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 1,
+      "selected": {
+        "text": "The Tree of Thoughts (ToT) framework enhances language model inference by allowing exploration over coherent units of text, referred to as 'thoughts,' which serve as intermediate steps in problem-solving.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 7,
+      "locked": false
+    },
+    "Chain of Thought": {
+      "definitions": [
+        {
+          "text": "The Chain of Thought method enables language models to engage in deliberate decision-making through the evaluation of multiple reasoning paths.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        },
+        {
+          "text": "A method that incorporates planning into the generation of coherent passages from random sentences.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "The Chain of Thought method enables language models to engage in deliberate decision-making through the evaluation of multiple reasoning paths.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 2,
+      "locked": false
+    },
+    "System 1 reasoning": {
+      "definitions": [
+        {
+          "text": "System 1 reasoning reflects the associative choices of language models.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "System 1 reasoning reflects the associative choices of language models.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "System 2 reasoning": {
+      "definitions": [
+        {
+          "text": "System 2 reasoning represents a more deliberate planning process.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "System 2 reasoning represents a more deliberate planning process.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "input-output prompting": {
+      "definitions": [
+        {
+          "text": "A method that transforms an input sequence into an output sequence by wrapping the input with task instructions or examples, formalized as a probabilistic function.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A method that transforms an input sequence into an output sequence by wrapping the input with task instructions or examples, formalized as a probabilistic function.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "chain-of-thought prompting": {
+      "definitions": [
+        {
+          "text": "An enhancement of input-output prompting that incorporates a sequence of intermediate thoughts to facilitate the transition from input to output, particularly in complex scenarios.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "An enhancement of input-output prompting that incorporates a sequence of intermediate thoughts to facilitate the transition from input to output, particularly in complex scenarios.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "self-consistency with chain-of-thought": {
+      "definitions": [
+        {
+          "text": "An ensemble strategy that samples multiple chains of thought to produce a more robust output by selecting the most frequent result from these samples.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "An ensemble strategy that samples multiple chains of thought to produce a more robust output by selecting the most frequent result from these samples.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "thought decomposition": {
+      "definitions": [
+        {
+          "text": "Thought decomposition breaks down the problem into manageable thought steps.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "Thought decomposition breaks down the problem into manageable thought steps.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "thought generator": {
+      "definitions": [
+        {
+          "text": "A thought generator produces candidate thoughts either through independent sampling or sequential proposals.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A thought generator produces candidate thoughts either through independent sampling or sequential proposals.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "state evaluator": {
+      "definitions": [
+        {
+          "text": "A state evaluator assesses the potential of different states using heuristic reasoning.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A state evaluator assesses the potential of different states using heuristic reasoning.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "search algorithm": {
+      "definitions": [
+        {
+          "text": "A search algorithm navigates the tree structure, employing either breadth-first or depth-first strategies.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A search algorithm navigates the tree structure, employing either breadth-first or depth-first strategies.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "two-step thought generation": {
+      "definitions": [
+        {
+          "text": "A method that involves generating and voting on plans before creating a coherent passage.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A method that involves generating and voting on plans before creating a coherent passage.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "iterative-refine": {
+      "definitions": [
+        {
+          "text": "A method that enhances the coherence of passages by allowing the model to assess and improve upon its previous outputs.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A method that enhances the coherence of passages by allowing the model to assess and improve upon its previous outputs.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "depth-first search": {
+      "definitions": [
+        {
+          "text": "A method that allows the model to propose and evaluate thoughts while adhering to letter constraints and enables backtracking when a state becomes unpromising.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A method that allows the model to propose and evaluate thoughts while adhering to letter constraints and enables backtracking when a state becomes unpromising.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "state evaluation and pruning heuristics": {
+      "definitions": [
+        {
+          "text": "Techniques that enhance the model's ability to solve crossword puzzles by effectively evaluating states and eliminating unpromising paths.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "Techniques that enhance the model's ability to solve crossword puzzles by effectively evaluating states and eliminating unpromising paths.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "backtracking": {
+      "definitions": [
+        {
+          "text": "A process that allows the model to revert to a previous state when the current state becomes unpromising in the search for solutions.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A process that allows the model to revert to a previous state when the current state becomes unpromising in the search for solutions.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "ToT": {
+      "definitions": [
+        {
+          "text": "ToT is an approach that enhances traditional planning in language models by evaluating multiple feasible plans simultaneously and integrating thought sampling with value feedback for effective solution tree exploration.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "ToT is an approach that enhances traditional planning in language models by evaluating multiple feasible plans simultaneously and integrating thought sampling with value feedback for effective solution tree exploration.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "self-reflection": {
+      "definitions": [
+        {
+          "text": "Self-reflection is a mechanism where language models assess their predictions, improving accuracy through feedback on generated candidates.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "Self-reflection is a mechanism where language models assess their predictions, improving accuracy through feedback on generated candidates.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "program-guided generation": {
+      "definitions": [
+        {
+          "text": "Program-guided generation is a method where language models are organized through systematic procedures.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "Program-guided generation is a method where language models are organized through systematic procedures.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "counterfactual decision-making": {
+      "definitions": [
+        {
+          "text": "ToT-style counterfactual decision-making is a technique for fine-tuning language models to improve their problem-solving capabilities.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "ToT-style counterfactual decision-making is a technique for fine-tuning language models to improve their problem-solving capabilities.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "System 1 and System 2": {
+      "definitions": [
+        {
+          "text": "The concept of augmenting the associative 'System 1' of language models with a 'System 2' based on structured search methods to leverage classical problem-solving insights.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "The concept of augmenting the associative 'System 1' of language models with a 'System 2' based on structured search methods to leverage classical problem-solving insights.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    }
+  },
+  "conflicts": [
+    {
+      "pair": [
+        "backtracking",
+        "Tree of Thoughts"
+      ],
+      "kind": "cycle",
+      "edges": [
+        {
+          "from": "backtracking",
+          "rel": "part_of",
+          "to": "Tree of Thoughts",
+          "evidence": "**Abstract**"
+        },
+        {
+          "from": "Tree of Thoughts",
+          "rel": "part_of",
+          "to": "backtracking",
+          "evidence": "**Abstract**"
+        }
+      ],
+      "held": [
+        {
+          "from": "backtracking",
+          "rel": "part_of",
+          "to": "Tree of Thoughts",
+          "evidence": "**Abstract**"
+        },
+        {
+          "from": "Tree of Thoughts",
+          "rel": "part_of",
+          "to": "backtracking",
+          "evidence": "**Abstract**"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "ToT",
+        "two-step thought generation"
+      ],
+      "kind": "cycle",
+      "edges": [
+        {
+          "from": "ToT",
+          "rel": "part_of",
+          "to": "two-step thought generation",
+          "evidence": "**4.2 Creative writing**"
+        },
+        {
+          "from": "two-step thought generation",
+          "rel": "part_of",
+          "to": "ToT",
+          "evidence": "**4.2 Creative writing**"
+        }
+      ],
+      "held": [
+        {
+          "from": "ToT",
+          "rel": "part_of",
+          "to": "two-step thought generation",
+          "evidence": "**4.2 Creative writing**"
+        },
+        {
+          "from": "two-step thought generation",
+          "rel": "part_of",
+          "to": "ToT",
+          "evidence": "**4.2 Creative writing**"
+        }
+      ]
+    }
+  ]
+}

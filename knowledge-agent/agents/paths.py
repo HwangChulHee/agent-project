@@ -21,6 +21,7 @@ def paper_paths(paper_id: str) -> dict:
         "02": p("02.segments.json"),
         "03": p("03.summaries.json"),
         "04": p("04.concepts.json"),
+        "04b": p("04.canonical.json"),
         "05": p("05.aligned.json"),
         "06_stage1": p("06.stage1.json"),
         "06_relations": p("06.relations.json"),

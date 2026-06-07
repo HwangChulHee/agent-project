@@ -66,3 +66,36 @@ def resolve(conflicts):
     # TODO: 실제 충돌이 쌓이면 결정. 사이클=자동, is_a/part_of 애매=locked 수작업,
     #       LLM은 그 사이. 지금은 충돌 사례 0건이라 방식을 정할 데이터가 없다.
     raise NotImplementedError
+
+
+# ── 독립 실행 ──────────────────────────────────────────────
+# 06 relations(판정 산출물) + 현재 맵을 읽어 충돌 감지 → _07.conflicts.json.
+# 05·06처럼 "판정 → 파일"만. 반영/보류는 08이 이 파일을 읽어서. LLM 없음.
+def run(paper):
+    import json
+    from agents.paths import paper_paths, MAP_PATH
+    P = paper_paths(paper)
+    kmap = json.load(open(MAP_PATH, encoding="utf-8"))
+    relations = json.load(open(P["06_relations"], encoding="utf-8"))
+    # 06 relations(src/rel/dst) -> 엣지(from/rel/to). detect는 끝점만 보므로 충분.
+    new_edges = [{"from": r["src"], "rel": r["rel"], "to": r["dst"],
+                  "evidence": r.get("evidence", "")}
+                 for r in relations if r["rel"] in ("is_a", "part_of")]
+    map_edges = kmap.get("edges", [])
+    conflicts = detect(new_edges, map_edges)
+    json.dump(conflicts, open(P["07_conflicts"], "w", encoding="utf-8"),
+              ensure_ascii=False, indent=2)
+    print("=== 07 CRA \uac10\uc9c0 ===")
+    print(f"  \uc0c8 \uc5e3\uc9c0 {len(new_edges)} vs \ub9f5 \uc5e3\uc9c0 {len(map_edges)}  \u2192  conflicts {len(conflicts)}")
+    for c in conflicts:
+        a, b = c["edges"]
+        print(f"    [{c['kind']}] {a['from']} {a['rel']} {a['to']}  \u27f7  "
+              f"{b['from']} {b['rel']} {b['to']}")
+    print(f"\n\uc800\uc7a5: {P['07_conflicts']}")
+
+
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--paper", required=True)
+    run(ap.parse_args().paper)
