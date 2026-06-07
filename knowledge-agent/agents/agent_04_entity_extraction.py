@@ -13,11 +13,14 @@ SMOKE_INDICES = [1, 9]  # ABSTRACT / RELATED WORK
 client = OpenAI()
 
 
-def extract_one(summary_text: str) -> list:
+def extract_one(summary_text: str, heading: str = "") -> list:
+    # heading을 함께 넘긴다 — 프롬프트가 "이 섹션의 주개념 vs 스쳐가는 개념"을
+    # 구분해 성질을 엉뚱한 개념에 귀속하지 않도록(주어 귀속 가드).
+    user = f"Section heading: {heading}\n\nSummary:\n{summary_text}" if heading else summary_text
     resp = client.chat.completions.create(
         model=MODEL,
         messages=[{"role": "system", "content": SYSTEM},
-                  {"role": "user", "content": summary_text}],
+                  {"role": "user", "content": user}],
         temperature=0.2,
         response_format={"type": "json_object"},
     )
@@ -47,7 +50,7 @@ def run(paper: str, full: bool):
     indices = range(len(summaries)) if full else SMOKE_INDICES
     all_concepts = []
     for i in indices:
-        concepts = extract_one(summaries[i]["summary"])
+        concepts = extract_one(summaries[i]["summary"], summaries[i].get("heading", ""))
         all_concepts.extend(concepts)
         print(f"  [{i:2}] {summaries[i]['heading'][:40]:42} 개념 {len(concepts)}개")
 

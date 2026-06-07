@@ -97,7 +97,9 @@ def _blank_node():
 # ── SELECT (유일한 LLM 부분) ────────────────────────────────
 def select_definition(name, defs):
     """더미(정의-객체 리스트)에서 best 1개. 1개면 그대로. 실패 시 0 fallback.
-    날짜 가중치 미구현 — 깨끗함만 본다(LLM)."""
+    날짜 가중치 미구현 — 깨끗함만 본다(LLM).
+    반환 idx == -1 = 기권(깨끗한 후보 없음). chosen=None으로 돌려보내 호출부가
+    저신뢰 플래그를 단다."""
     if len(defs) <= 1:
         return (defs[0] if defs else None), 0
     listing = "\n".join(f"  {i}. \"{d['text']}\"" for i, d in enumerate(defs))
@@ -111,6 +113,8 @@ def select_definition(name, defs):
             response_format={"type": "json_object"},
         )
         idx = json.loads(resp.choices[0].message.content).get("index", 0)
+        if idx == -1:                                  # 기권 — 깨끗한 후보 없음
+            return None, -1
         if not isinstance(idx, int) or not (0 <= idx < len(defs)):
             print(f"  ! SELECT 잘못된 인덱스({idx}) → 0 fallback: {name}")
             idx = 0
@@ -183,7 +187,7 @@ def main(paper, do_select):
     edges, accepted, held = integrate_edges(new_edges, map_edges, conflicts)
 
     print(f"=== SELECT ({'LLM' if do_select else 'STUB idx0'}) — multi-def 노드만 ===")
-    final_nodes, debug_nodes = {}, {}
+    final_nodes, debug_nodes, abstained = {}, {}, []
     for nid, n in nodes.items():
         defs = n["definitions"]
         if n["locked"]:                                    # 동결 — SELECT 안 함
@@ -192,8 +196,17 @@ def main(paper, do_select):
             chosen, idx = select_definition(nid, defs)
         else:
             chosen, idx = (defs[0] if defs else None), 0
+        if idx == -1:                                      # 기권 — 깨끗한 후보 없음
+            # 가장 덜 나쁜 후보(0)를 두되, 운영 맵이 이걸 신뢰하지 않도록 플래그.
+            # precision-first: 틀린 정의를 조용히 박느니 "저신뢰"로 표시한다.
+            chosen = dict(defs[0]) if defs else None
+            if chosen is not None:
+                chosen["confidence"] = "low"
+                chosen["flagged"] = "no_clean_candidate"
+            abstained.append(nid)
         if len(defs) > 1 and not n["locked"]:
-            print(f"  {nid[:28]:30} {len(defs)}개 → #{idx}  ({chosen['source']})")
+            tag = "ABSTAIN→저신뢰" if idx == -1 else f"#{idx}  ({chosen['source']})"
+            print(f"  {nid[:28]:30} {len(defs)}개 → {tag}")
         final_nodes[nid] = {
             "type": n["type"], "definition": chosen, "mastery": n["mastery"],
             "locked": n["locked"], "_seed_intent": n["_seed_intent"],
@@ -229,6 +242,8 @@ def main(paper, do_select):
     for d in dangling:
         print(f"    {d.get('src')} {d.get('rel')} {d.get('dst')} — {d['_skip']}")
     print(f"  merge 흡수: " + (", ".join(f"{k}←{len(v)}" for k, v in merged_from.items()) or "없음"))
+    if abstained:
+        print(f"  SELECT 기권(저신뢰 플래그) {len(abstained)}: " + ", ".join(abstained))
     if locked_skipped:
         print(f"  locked 동결(이번 논문 정의 무시): {locked_skipped}")
     if do_select:

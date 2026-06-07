@@ -18,6 +18,12 @@ SELECT = (
     "(\"the approach X is compared against\").\n"
     "- Is contaminated with paper/code specifics.\n"
     "- Is narrower than the concept (describes one use, not the concept).\n\n"
+    "ABSTAIN: If NONE of the candidates actually states what THIS concept is — e.g. "
+    "every one describes a DIFFERENT named concept, or all are contaminated/contrast-"
+    "framed with nothing clean to fall back on — return index -1. A wrong definition "
+    "is worse than none (this map measures coverage; a contaminated definition "
+    "silently corrupts the measurement). Only abstain when there is truly no usable "
+    "candidate; if one is merely thin but correct, pick it, do not abstain.\n\n"
     "Examples:\n"
     "Concept: Chain-of-Thought\n"
     "  0. \"CoT is the reasoning approach that ReAct is compared against.\"\n"
@@ -31,7 +37,7 @@ SELECT = (
     "  1. \"ReAct is a prompting code associated with the GPT-3 model that "
     "enables replication of findings.\"\n"
     '  -> {"index": 0}   (1 is code/model-contaminated)\n\n'
-    "Return strict JSON only, the index of the best definition: "
+    "Return strict JSON only, the index of the best definition, or -1 to abstain: "
     '{"index": <integer>}'
 )
 
@@ -51,6 +57,12 @@ SELECT = (
 # - 다른 방법과의 상대적 위치로만 서술된 것("X가 비교 대상으로 삼는 접근").
 # - 논문/코드 특정 내용으로 오염된 것.
 # - 개념보다 좁은 것(개념이 아니라 한 가지 용례를 서술).
+#
+# 기권(ABSTAIN): 후보 중 "이 개념"이 뭔지 실제로 서술한 게 하나도 없으면 — 예: 전부
+#   다른 개념을 서술하거나, 전부 오염/대조프레임이라 fallback할 깨끗한 게 없으면 —
+#   인덱스 -1을 반환하라. 틀린 정의는 없느니만 못하다(이 맵은 커버리지 측정 도구라,
+#   오염된 정의는 측정을 조용히 망친다). 정말 쓸 후보가 없을 때만 기권하라; 단지 얇지만
+#   맞는 후보가 있으면 그걸 골라라(기권 말고).
 #
 # 예시:
 # 개념: Chain-of-Thought

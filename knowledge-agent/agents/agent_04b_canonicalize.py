@@ -29,6 +29,21 @@ def norm_key(name: str) -> str:
     return " ".join(out)
 
 
+# 구조 접미어: 'X prompting'/'X method'는 보통 'X'의 표기 변형 — 같은 개념.
+# 단, 베이스 'X'가 같은 논문에 개념으로 실재할 때만 흡수(과병합 방지).
+STRUCT_SUFFIXES = {"prompting", "method", "framework", "approach", "paradigm"}
+
+
+def strip_struct_suffix(key: str):
+    """norm_key 끝의 구조 접미어 한 단어 제거. 'chain of thought prompting'
+    → 'chain of thought'. 접미어 없거나 베이스가 비면 None."""
+    parts = key.split()
+    if len(parts) >= 2 and parts[-1] in STRUCT_SUFFIXES:
+        base = " ".join(parts[:-1]).strip()
+        return base or None
+    return None
+
+
 def paren_abbrev(name: str):
     """이름 속 괄호 약어 추출. 단일 토큰만 인정 — '(GSM8k, StrategyQA)' 같은 목록은 제외."""
     m = re.search(r"\(([^)]+)\)", name)
@@ -60,12 +75,19 @@ def canonicalize(concepts: list) -> list:
         abbrev_map[ab] = max(keys, key=lambda k: (_initials(k) == ab_flat,
                                                   -len(k.split())))
 
+    # 1.5단계: 표기-변형 흡수용 베이스 키 집합. 약어 해소까지 반영한 각 개념의 키를
+    #   모은 뒤, 'X prompting' 같은 변형은 베이스 'X'가 이 집합에 있을 때만 흡수.
+    #   (예: 'chain of thought prompting' → 'chain of thought' 베이스 존재 → 흡수.
+    #    'input output prompting' → 'input output' 베이스 없음 → 그대로 분리.)
+    resolved = [abbrev_map.get(norm_key(c["name"]), norm_key(c["name"])) for c in concepts]
+    key_set = set(resolved)
+
     # 2단계: 각 개념 → 클러스터 키. 이름 자체가 약어 토큰이면 풀네임 클러스터로 흡수.
     clusters = {}  # cluster_key -> {"name", "aliases":[], "definitions":[]}
-    for c in concepts:
-        k = norm_key(c["name"])
-        if k in abbrev_map:
-            k = abbrev_map[k]
+    for c, k in zip(concepts, resolved):
+        base = strip_struct_suffix(k)
+        if base and base in key_set:               # 변형 → 실재하는 베이스로 흡수
+            k = base
         if k not in clusters:
             clusters[k] = {"name": c["name"], "aliases": [], "definitions": []}
         else:

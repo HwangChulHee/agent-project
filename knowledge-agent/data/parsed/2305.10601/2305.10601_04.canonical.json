@@ -2,40 +2,38 @@
   {
     "name": "Tree of Thoughts",
     "aliases": [
-      "trees of thoughts"
+      "trees of thoughts (ToT)",
+      "ToT"
     ],
     "definitions": [
-      "The Tree of Thoughts framework enhances problem-solving in large language models by structuring the reasoning process as a tree, where each node represents a potential thought or action.",
+      "A framework that structures the reasoning process of large language models as a tree, with each node representing a potential thought or action, enabling systematic evaluation of various reasoning paths.",
       "The Tree of Thoughts (ToT) framework enhances language model inference by allowing exploration over coherent units of text, referred to as 'thoughts,' which serve as intermediate steps in problem-solving.",
-      "The Tree of Thoughts (ToT) framework is a structure that maintains coherent language sequences, or thoughts, to facilitate self-evaluation and systematic exploration of problem-solving paths.",
+      "The Tree of Thoughts (ToT) framework is a structure that maintains coherent language sequences to facilitate self-evaluation and systematic exploration of problem-solving paths.",
       "The Tree of Thoughts (ToT) paradigm enhances problem-solving by framing tasks as a search over a tree structure, where each node represents a state that includes a partial solution and the sequence of thoughts generated so far.",
-      "Tree of Thoughts (ToT) is a structured approach that decomposes the Game of 24 problem into three intermediate equations, allowing for the evaluation of potential next steps at each node using a breadth-first search strategy.",
-      "The Tree of Thoughts (ToT) framework is a method that enhances decision-making in complex real-world applications by allowing for customizable performance-cost tradeoffs.",
-      "Deliberate search in trees of thoughts (ToT) is a method that improves results in problem-solving scenarios involving search or planning."
+      "Tree of Thoughts (ToT) is a structured approach that decomposes a mathematical reasoning problem into intermediate equations, allowing for the evaluation of potential next steps at each node.",
+      "A framework that allows for customizable performance-cost tradeoffs in decision-making processes.",
+      "A mechanism that enables deliberate search in problem-solving scenarios, leading to improved results.",
+      "The ToT approach enhances traditional planning by evaluating multiple feasible plans simultaneously and integrating thought sampling with value feedback for effective solution tree exploration."
     ]
   },
   {
     "name": "Chain of Thought",
     "aliases": [
+      "chain-of-thought prompting",
       "chain-of-thought"
     ],
     "definitions": [
       "The Chain of Thought method enables language models to engage in deliberate decision-making through the evaluation of multiple reasoning paths.",
-      "A method that incorporates planning into the generation of coherent passages from random sentences."
+      "An enhancement of input-output prompting that incorporates a sequence of intermediate thoughts to facilitate the transition from input to output, particularly in complex scenarios.",
+      "A method that involves prompting a model to think through a problem step-by-step.",
+      "A prompting method that incorporates planning into the generation process."
     ]
   },
   {
-    "name": "System 1 reasoning",
+    "name": "dual process models",
     "aliases": [],
     "definitions": [
-      "System 1 reasoning reflects the associative choices of language models."
-    ]
-  },
-  {
-    "name": "System 2 reasoning",
-    "aliases": [],
-    "definitions": [
-      "System 2 reasoning represents a more deliberate planning process."
+      "Dual process models refer to a cognitive framework that distinguishes between two types of reasoning: 'System 1', which reflects associative choices, and 'System 2', which represents a more deliberate planning process."
     ]
   },
   {
@@ -46,17 +44,10 @@
     ]
   },
   {
-    "name": "chain-of-thought prompting",
-    "aliases": [],
-    "definitions": [
-      "An enhancement of input-output prompting that incorporates a sequence of intermediate thoughts to facilitate the transition from input to output, particularly in complex scenarios."
-    ]
-  },
-  {
     "name": "self-consistency with chain-of-thought",
     "aliases": [],
     "definitions": [
-      "An ensemble strategy that samples multiple chains of thought to produce a more robust output by selecting the most frequent result from these samples."
+      "An ensemble strategy that builds on chain-of-thought prompting by sampling multiple chains of thought to select the most frequent result for a more robust output."
     ]
   },
   {
@@ -88,45 +79,45 @@
     ]
   },
   {
+    "name": "GPT-4",
+    "aliases": [],
+    "definitions": [
+      "A language model that is utilized in various tasks to explore its capabilities and limitations."
+    ]
+  },
+  {
     "name": "two-step thought generation",
     "aliases": [],
     "definitions": [
-      "A method that involves generating and voting on plans before creating a coherent passage."
+      "A method that involves generating and voting on plans before creating the output."
     ]
   },
   {
     "name": "iterative-refine",
     "aliases": [],
     "definitions": [
-      "A method that enhances the coherence of passages by allowing the model to assess and improve upon its previous outputs."
+      "A method that enhances the coherence of outputs by allowing the model to assess and improve upon its previous results."
     ]
   },
   {
     "name": "depth-first search",
     "aliases": [],
     "definitions": [
-      "A method that allows the model to propose and evaluate thoughts while adhering to letter constraints and enables backtracking when a state becomes unpromising."
+      "A method that allows exploration of a problem space by proposing and evaluating thoughts while adhering to constraints and enabling backtracking when a state becomes unpromising."
     ]
   },
   {
-    "name": "state evaluation and pruning heuristics",
+    "name": "state evaluation",
     "aliases": [],
     "definitions": [
-      "Techniques that enhance the model's ability to solve crossword puzzles by effectively evaluating states and eliminating unpromising paths."
+      "The process of assessing the current state in problem-solving to determine its viability."
     ]
   },
   {
-    "name": "backtracking",
+    "name": "pruning heuristics",
     "aliases": [],
     "definitions": [
-      "A process that allows the model to revert to a previous state when the current state becomes unpromising in the search for solutions."
-    ]
-  },
-  {
-    "name": "ToT",
-    "aliases": [],
-    "definitions": [
-      "ToT is an approach that enhances traditional planning in language models by evaluating multiple feasible plans simultaneously and integrating thought sampling with value feedback for effective solution tree exploration."
+      "Techniques used to eliminate unpromising states in a search problem to enhance efficiency."
     ]
   },
   {
@@ -140,21 +131,21 @@
     "name": "program-guided generation",
     "aliases": [],
     "definitions": [
-      "Program-guided generation is a method where language models are organized through systematic procedures."
+      "Program-guided generation involves organizing language models through systematic procedures."
     ]
   },
   {
-    "name": "counterfactual decision-making",
+    "name": "System 1",
     "aliases": [],
     "definitions": [
-      "ToT-style counterfactual decision-making is a technique for fine-tuning language models to improve their problem-solving capabilities."
+      "The associative component of language models that operates intuitively."
     ]
   },
   {
-    "name": "System 1 and System 2",
+    "name": "System 2",
     "aliases": [],
     "definitions": [
-      "The concept of augmenting the associative 'System 1' of language models with a 'System 2' based on structured search methods to leverage classical problem-solving insights."
+      "The structured search methods component that enhances the problem-solving capabilities of language models."
     ]
   }
 ]

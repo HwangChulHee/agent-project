@@ -3,7 +3,7 @@
     "Tree of Thoughts": {
       "type": null,
       "definition": {
-        "text": "The Tree of Thoughts (ToT) framework enhances language model inference by allowing exploration over coherent units of text, referred to as 'thoughts,' which serve as intermediate steps in problem-solving.",
+        "text": "A framework that structures the reasoning process of large language models as a tree, with each node representing a potential thought or action, enabling systematic evaluation of various reasoning paths.",
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
@@ -16,7 +16,7 @@
     "Chain of Thought": {
       "type": null,
       "definition": {
-        "text": "The Chain of Thought method enables language models to engage in deliberate decision-making through the evaluation of multiple reasoning paths.",
+        "text": "A method that involves prompting a model to think through a problem step-by-step.",
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
@@ -26,23 +26,10 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "System 1 reasoning": {
+    "dual process models": {
       "type": null,
       "definition": {
-        "text": "System 1 reasoning reflects the associative choices of language models.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
-      },
-      "mastery": 0.0,
-      "locked": false,
-      "_seed_intent": null,
-      "last_touched": "2026-06-08",
-      "last_probed": null
-    },
-    "System 2 reasoning": {
-      "type": null,
-      "definition": {
-        "text": "System 2 reasoning represents a more deliberate planning process.",
+        "text": "Dual process models refer to a cognitive framework that distinguishes between two types of reasoning: 'System 1', which reflects associative choices, and 'System 2', which represents a more deliberate planning process.",
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
@@ -65,23 +52,10 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "chain-of-thought prompting": {
-      "type": null,
-      "definition": {
-        "text": "An enhancement of input-output prompting that incorporates a sequence of intermediate thoughts to facilitate the transition from input to output, particularly in complex scenarios.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
-      },
-      "mastery": 0.0,
-      "locked": false,
-      "_seed_intent": null,
-      "last_touched": "2026-06-08",
-      "last_probed": null
-    },
     "self-consistency with chain-of-thought": {
       "type": null,
       "definition": {
-        "text": "An ensemble strategy that samples multiple chains of thought to produce a more robust output by selecting the most frequent result from these samples.",
+        "text": "An ensemble strategy that builds on chain-of-thought prompting by sampling multiple chains of thought to select the most frequent result for a more robust output.",
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
@@ -143,10 +117,23 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
+    "GPT-4": {
+      "type": null,
+      "definition": {
+        "text": "A language model that is utilized in various tasks to explore its capabilities and limitations.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
     "two-step thought generation": {
       "type": null,
       "definition": {
-        "text": "A method that involves generating and voting on plans before creating a coherent passage.",
+        "text": "A method that involves generating and voting on plans before creating the output.",
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
@@ -159,7 +146,7 @@
     "iterative-refine": {
       "type": null,
       "definition": {
-        "text": "A method that enhances the coherence of passages by allowing the model to assess and improve upon its previous outputs.",
+        "text": "A method that enhances the coherence of outputs by allowing the model to assess and improve upon its previous results.",
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
@@ -172,7 +159,7 @@
     "depth-first search": {
       "type": null,
       "definition": {
-        "text": "A method that allows the model to propose and evaluate thoughts while adhering to letter constraints and enables backtracking when a state becomes unpromising.",
+        "text": "A method that allows exploration of a problem space by proposing and evaluating thoughts while adhering to constraints and enabling backtracking when a state becomes unpromising.",
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
@@ -182,10 +169,10 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "state evaluation and pruning heuristics": {
+    "state evaluation": {
       "type": null,
       "definition": {
-        "text": "Techniques that enhance the model's ability to solve crossword puzzles by effectively evaluating states and eliminating unpromising paths.",
+        "text": "The process of assessing the current state in problem-solving to determine its viability.",
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
@@ -195,23 +182,10 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "backtracking": {
+    "pruning heuristics": {
       "type": null,
       "definition": {
-        "text": "A process that allows the model to revert to a previous state when the current state becomes unpromising in the search for solutions.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
-      },
-      "mastery": 0.0,
-      "locked": false,
-      "_seed_intent": null,
-      "last_touched": "2026-06-08",
-      "last_probed": null
-    },
-    "ToT": {
-      "type": null,
-      "definition": {
-        "text": "ToT is an approach that enhances traditional planning in language models by evaluating multiple feasible plans simultaneously and integrating thought sampling with value feedback for effective solution tree exploration.",
+        "text": "Techniques used to eliminate unpromising states in a search problem to enhance efficiency.",
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
@@ -237,7 +211,7 @@
     "program-guided generation": {
       "type": null,
       "definition": {
-        "text": "Program-guided generation is a method where language models are organized through systematic procedures.",
+        "text": "Program-guided generation involves organizing language models through systematic procedures.",
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
@@ -247,10 +221,10 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "counterfactual decision-making": {
+    "System 1": {
       "type": null,
       "definition": {
-        "text": "ToT-style counterfactual decision-making is a technique for fine-tuning language models to improve their problem-solving capabilities.",
+        "text": "The associative component of language models that operates intuitively.",
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
@@ -260,10 +234,10 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "System 1 and System 2": {
+    "System 2": {
       "type": null,
       "definition": {
-        "text": "The concept of augmenting the associative 'System 1' of language models with a 'System 2' based on structured search methods to leverage classical problem-solving insights.",
+        "text": "The structured search methods component that enhances the problem-solving capabilities of language models.",
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
@@ -275,22 +249,6 @@
     }
   },
   "edges": [
-    {
-      "from": "backtracking",
-      "rel": "part_of",
-      "to": "ToT",
-      "source": "2305.10601",
-      "confidence": 1.0,
-      "evidence": "**Abstract**"
-    },
-    {
-      "from": "search algorithm",
-      "rel": "part_of",
-      "to": "ToT",
-      "source": "2305.10601",
-      "confidence": 1.0,
-      "evidence": "**1 Introduction**"
-    },
     {
       "from": "state evaluator",
       "rel": "part_of",
@@ -308,28 +266,12 @@
       "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
     },
     {
-      "from": "chain-of-thought prompting",
-      "rel": "is_a",
-      "to": "Chain of Thought",
-      "source": "2305.10601",
-      "confidence": 1.0,
-      "evidence": "**4 Experiments**"
-    },
-    {
       "from": "two-step thought generation",
       "rel": "is_a",
       "to": "Chain of Thought",
       "source": "2305.10601",
       "confidence": 1.0,
       "evidence": "**4.2 Creative writing**"
-    },
-    {
-      "from": "backtracking",
-      "rel": "part_of",
-      "to": "depth-first search",
-      "source": "2305.10601",
-      "confidence": 1.0,
-      "evidence": "**4.3 Mini crosswords**"
     }
   ]
 }
