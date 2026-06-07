@@ -79,13 +79,6 @@
     ]
   },
   {
-    "name": "GPT-4",
-    "aliases": [],
-    "definitions": [
-      "A language model that is utilized in various tasks to explore its capabilities and limitations."
-    ]
-  },
-  {
     "name": "two-step thought generation",
     "aliases": [],
     "definitions": [

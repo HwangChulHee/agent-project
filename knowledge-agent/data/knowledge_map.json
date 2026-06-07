@@ -117,19 +117,6 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "GPT-4": {
-      "type": null,
-      "definition": {
-        "text": "A language model that is utilized in various tasks to explore its capabilities and limitations.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
-      },
-      "mastery": 0.0,
-      "locked": false,
-      "_seed_intent": null,
-      "last_touched": "2026-06-08",
-      "last_probed": null
-    },
     "two-step thought generation": {
       "type": null,
       "definition": {
@@ -250,12 +237,12 @@
   },
   "edges": [
     {
-      "from": "state evaluator",
+      "from": "search algorithm",
       "rel": "part_of",
-      "to": "Tree of Thoughts",
+      "to": "System 2",
       "source": "2305.10601",
       "confidence": 1.0,
-      "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+      "evidence": "**1 Introduction**"
     },
     {
       "from": "search algorithm",
@@ -272,6 +259,14 @@
       "source": "2305.10601",
       "confidence": 1.0,
       "evidence": "**4.2 Creative writing**"
+    },
+    {
+      "from": "state evaluation",
+      "rel": "part_of",
+      "to": "depth-first search",
+      "source": "2305.10601",
+      "confidence": 1.0,
+      "evidence": "**4.3 Mini crosswords**"
     }
   ]
 }

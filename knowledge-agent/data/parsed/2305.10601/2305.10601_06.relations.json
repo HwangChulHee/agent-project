@@ -1,48 +1,12 @@
 [
   {
-    "src": "backtracking",
-    "rel": "part_of",
-    "dst": "Tree of Thoughts",
-    "direction": "backtracking->Tree of Thoughts",
-    "stage1_sentence": "Backtracking is a mechanism utilized within the Tree of Thoughts framework to evaluate multiple reasoning paths and make informed global choices during problem-solving.",
-    "stage2_rationale": "mechanism utilized within the framework",
-    "evidence": "**Abstract**"
-  },
-  {
-    "src": "Tree of Thoughts",
-    "rel": "part_of",
-    "dst": "backtracking",
-    "direction": "Tree of Thoughts->backtracking",
-    "stage1_sentence": "The Tree of Thoughts framework incorporates backtracking as a mechanism to evaluate multiple reasoning paths and make informed decisions during problem-solving.",
-    "stage2_rationale": "backtracking is a mechanism Tree of Thoughts uses",
-    "evidence": "**Abstract**"
-  },
-  {
-    "src": "backtracking",
-    "rel": "part_of",
-    "dst": "ToT",
-    "direction": "backtracking->ToT",
-    "stage1_sentence": "Backtracking is a mechanism utilized within the Tree of Thoughts (ToT) framework to evaluate multiple reasoning paths and make informed global choices during problem-solving.",
-    "stage2_rationale": "mechanism utilized within ToT framework",
-    "evidence": "**Abstract**"
-  },
-  {
     "src": "search algorithm",
     "rel": "part_of",
-    "dst": "ToT",
-    "direction": "search algorithm->ToT",
-    "stage1_sentence": "The search algorithm is integrated into the Tree of Thoughts (ToT) framework to enhance planning and decision-making in complex tasks.",
-    "stage2_rationale": "integrated into ToT framework as a component",
+    "dst": "System 2",
+    "direction": "search algorithm->System 2",
+    "stage1_sentence": "The search algorithm is integrated into the System 2 framework to enhance deliberate planning and decision-making in complex tasks.",
+    "stage2_rationale": "integrated into System 2 framework",
     "evidence": "**1 Introduction**"
-  },
-  {
-    "src": "state evaluator",
-    "rel": "part_of",
-    "dst": "Tree of Thoughts",
-    "direction": "state evaluator->Tree of Thoughts",
-    "stage1_sentence": "The state evaluator assesses the potential of different states within the Tree of Thoughts framework using heuristic reasoning.",
-    "stage2_rationale": "assesses states within the Tree of Thoughts framework",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
     "src": "search algorithm",
@@ -54,15 +18,6 @@
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
-    "src": "chain-of-thought prompting",
-    "rel": "is_a",
-    "dst": "Chain of Thought",
-    "direction": "chain-of-thought prompting->Chain of Thought",
-    "stage1_sentence": "Chain-of-thought prompting is a method that highlights the limitations of standard input-output and is related to the broader concept of Chain of Thought in the context of enhancing problem-solving capabilities.",
-    "stage2_rationale": "method = a kind of Chain of Thought",
-    "evidence": "**4 Experiments**"
-  },
-  {
     "src": "two-step thought generation",
     "rel": "is_a",
     "dst": "Chain of Thought",
@@ -72,30 +27,12 @@
     "evidence": "**4.2 Creative writing**"
   },
   {
-    "src": "ToT",
-    "rel": "part_of",
-    "dst": "two-step thought generation",
-    "direction": "ToT->two-step thought generation",
-    "stage1_sentence": "ToT involves generating and voting on plans as part of the two-step thought generation process before creating a coherent passage.",
-    "stage2_rationale": "ToT is part of the process",
-    "evidence": "**4.2 Creative writing**"
-  },
-  {
-    "src": "two-step thought generation",
-    "rel": "part_of",
-    "dst": "ToT",
-    "direction": "two-step thought generation->ToT",
-    "stage1_sentence": "Two-step thought generation is a method within the ToT framework that involves generating and voting on plans before creating a coherent passage.",
-    "stage2_rationale": "method within the ToT framework",
-    "evidence": "**4.2 Creative writing**"
-  },
-  {
-    "src": "backtracking",
+    "src": "state evaluation",
     "rel": "part_of",
     "dst": "depth-first search",
-    "direction": "backtracking->depth-first search",
-    "stage1_sentence": "Backtracking is a technique employed within the depth-first search approach to enable the model to revert to previous states when a current state is deemed unpromising.",
-    "stage2_rationale": "technique employed within depth-first search",
+    "direction": "state evaluation->depth-first search",
+    "stage1_sentence": "State evaluation is a crucial component of the depth-first search approach that helps determine the viability of proposed solutions during the crossword generation process.",
+    "stage2_rationale": "component of the depth-first search approach",
     "evidence": "**4.3 Mini crosswords**"
   }
 ]

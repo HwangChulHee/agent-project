@@ -66,12 +66,6 @@
     ]
   },
   {
-    "name": "GPT-4",
-    "definitions": [
-      "A language model that is utilized in various tasks to explore its capabilities and limitations."
-    ]
-  },
-  {
     "name": "trees of thoughts (ToT)",
     "definitions": [
       "A mechanism that enables deliberate search in problem-solving scenarios, leading to improved results."

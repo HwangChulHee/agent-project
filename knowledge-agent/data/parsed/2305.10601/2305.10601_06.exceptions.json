@@ -1,14 +1,5 @@
 [
   {
-    "a": "Chain of Thought",
-    "b": "Tree of Thoughts",
-    "direction": "Chain of Thought->Tree of Thoughts",
-    "stage1_sentence": "Chain of Thought builds on the Tree of Thoughts framework by providing a method for language models to engage in reasoning through coherent units of text.",
-    "stage2_label": "none",
-    "stage2_rationale": "builds on, not a kind of",
-    "evidence": "**Abstract**"
-  },
-  {
     "a": "Tree of Thoughts",
     "b": "Chain of Thought",
     "direction": "Tree of Thoughts->Chain of Thought",
@@ -18,67 +9,31 @@
     "evidence": "**Abstract**"
   },
   {
-    "a": "ToT",
+    "a": "Chain of Thought",
     "b": "Tree of Thoughts",
-    "direction": "ToT->Tree of Thoughts",
-    "stage1_sentence": "ToT is a framework that enhances language model inference by allowing exploration over coherent units of text known as \"thoughts.\"",
+    "direction": "Chain of Thought->Tree of Thoughts",
+    "stage1_sentence": "Chain of Thought builds on the Tree of Thoughts framework by providing a method for language models to engage in reasoning through coherent units of text during problem-solving.",
     "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of Tree of Thoughts",
+    "stage2_rationale": "builds on, not a kind of",
     "evidence": "**Abstract**"
+  },
+  {
+    "a": "dual process models",
+    "b": "Tree of Thoughts",
+    "direction": "dual process models->Tree of Thoughts",
+    "stage1_sentence": "Dual process models inform the Tree of Thoughts framework by providing insights into the distinction between associative and deliberate reasoning processes that enhance problem-solving capabilities.",
+    "stage2_label": "none",
+    "stage2_rationale": "informing is not a type or part of",
+    "evidence": "**1 Introduction**"
   },
   {
     "a": "Tree of Thoughts",
-    "b": "ToT",
-    "direction": "Tree of Thoughts->ToT",
-    "stage1_sentence": "The Tree of Thoughts (ToT) framework is an enhancement of the Chain of Thought method that allows for exploration over coherent units of text to improve language model inference.",
+    "b": "dual process models",
+    "direction": "Tree of Thoughts->dual process models",
+    "stage1_sentence": "The Tree of Thoughts framework is informed by dual process models, as it incorporates both associative and deliberate reasoning strategies to enhance problem-solving capabilities.",
     "stage2_label": "none",
-    "stage2_rationale": "enhancement, not a kind of ToT",
-    "evidence": "**Abstract**"
-  },
-  {
-    "a": "backtracking",
-    "b": "Chain of Thought",
-    "direction": "backtracking->Chain of Thought",
-    "stage1_sentence": "Backtracking is a decision-making process used in the Chain of Thought method to evaluate multiple reasoning paths for informed global choices.",
-    "stage2_label": "none",
-    "stage2_rationale": "used in, not a kind of",
-    "evidence": "**Abstract**"
-  },
-  {
-    "a": "Chain of Thought",
-    "b": "backtracking",
-    "direction": "Chain of Thought->backtracking",
-    "stage1_sentence": "Chain of Thought enables language models to engage in reasoning paths that facilitate lookahead and backtracking for informed decision-making.",
-    "stage2_label": "none",
-    "stage2_rationale": "enables reasoning, not a kind of backtracking",
-    "evidence": "**Abstract**"
-  },
-  {
-    "a": "ToT",
-    "b": "Chain of Thought",
-    "direction": "ToT->Chain of Thought",
-    "stage1_sentence": "ToT builds on the Chain of Thought method by allowing language models to explore multiple reasoning paths and make informed decisions during problem-solving.",
-    "stage2_label": "none",
-    "stage2_rationale": "builds on, not a kind of",
-    "evidence": "**Abstract**"
-  },
-  {
-    "a": "Chain of Thought",
-    "b": "ToT",
-    "direction": "Chain of Thought->ToT",
-    "stage1_sentence": "Chain of Thought builds on the Tree of Thoughts framework by providing a method for language models to engage in reasoning through coherent units of text.",
-    "stage2_label": "none",
-    "stage2_rationale": "builds on, not a kind of",
-    "evidence": "**Abstract**"
-  },
-  {
-    "a": "ToT",
-    "b": "backtracking",
-    "direction": "ToT->backtracking",
-    "stage1_sentence": "ToT incorporates backtracking as a mechanism to evaluate multiple reasoning paths and make informed global choices during problem-solving.",
-    "stage2_label": "none",
-    "stage2_rationale": "incorporates, not a type of backtracking",
-    "evidence": "**Abstract**"
+    "stage2_rationale": "informed by, not a kind of",
+    "evidence": "**1 Introduction**"
   },
   {
     "a": "search algorithm",
@@ -99,21 +54,147 @@
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "ToT",
-    "b": "search algorithm",
-    "direction": "ToT->search algorithm",
-    "stage1_sentence": "The Tree of Thoughts (ToT) framework integrates language-based reasoning with search algorithms to enhance planning and decision-making in complex tasks.",
+    "a": "System 1",
+    "b": "Tree of Thoughts",
+    "direction": "System 1->Tree of Thoughts",
+    "stage1_sentence": "System 1 reflects the associative choices of LMs that the Tree of Thoughts framework aims to enhance through more deliberate planning and systematic exploration.",
     "stage2_label": "none",
-    "stage2_rationale": "integrates, not a kind of search algorithm",
+    "stage2_rationale": "reflects choices, not a kind of Tree of Thoughts",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "Tree of Thoughts",
+    "b": "System 1",
+    "direction": "Tree of Thoughts->System 1",
+    "stage1_sentence": "The Tree of Thoughts framework enhances System 1 reasoning by organizing coherent language sequences to improve planning and decision-making in complex tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "System 2",
+    "b": "Tree of Thoughts",
+    "direction": "System 2->Tree of Thoughts",
+    "stage1_sentence": "System 2 represents a more deliberate planning process that informs the Tree of Thoughts framework's approach to systematic exploration of problem-solving paths.",
+    "stage2_label": "none",
+    "stage2_rationale": "System 2 informs, not a type of Tree of Thoughts",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "Tree of Thoughts",
+    "b": "System 2",
+    "direction": "Tree of Thoughts->System 2",
+    "stage1_sentence": "The Tree of Thoughts framework enhances System 2 reasoning by providing a structured approach to deliberate planning and systematic exploration of problem-solving paths.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of System 2",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "dual process models",
+    "b": "search algorithm",
+    "direction": "dual process models->search algorithm",
+    "stage1_sentence": "Dual process models inform the development of search algorithms by providing insights into human cognitive reasoning processes that can enhance problem-solving capabilities.",
+    "stage2_label": "none",
+    "stage2_rationale": "inform development, not a kind of algorithm",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "search algorithm",
+    "b": "dual process models",
+    "direction": "search algorithm->dual process models",
+    "stage1_sentence": "The search algorithm is integrated into the Tree of Thoughts framework to enhance planning and decision-making in complex tasks informed by dual process models.",
+    "stage2_label": "none",
+    "stage2_rationale": "integrated into, not a kind of dual process models",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "dual process models",
+    "b": "System 1",
+    "direction": "dual process models->System 1",
+    "stage1_sentence": "Dual process models inform the understanding of System 1 by illustrating the associative reasoning processes that language models exhibit.",
+    "stage2_label": "none",
+    "stage2_rationale": "inform does not indicate a type or part relationship",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "System 1",
+    "b": "dual process models",
+    "direction": "System 1->dual process models",
+    "stage1_sentence": "System 1 reflects the associative choices in dual process models, contrasting with the more deliberate planning represented by System 2.",
+    "stage2_label": "none",
+    "stage2_rationale": "contrasting with, not a kind of",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "dual process models",
+    "b": "System 2",
+    "direction": "dual process models->System 2",
+    "stage1_sentence": "Dual process models inform the understanding of System 2 as a more deliberate planning process in contrast to the associative choices of System 1.",
+    "stage2_label": "none",
+    "stage2_rationale": "inform does not indicate a type or part",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "System 2",
+    "b": "dual process models",
+    "direction": "System 2->dual process models",
+    "stage1_sentence": "System 2 represents a more deliberate planning process within the context of dual process models that differentiate between associative and analytical reasoning.",
+    "stage2_label": "none",
+    "stage2_rationale": "represents within context, not a kind of",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "search algorithm",
+    "b": "System 1",
+    "direction": "search algorithm->System 1",
+    "stage1_sentence": "The search algorithm is integrated into the Tree of Thoughts framework to enhance planning and decision-making in relation to System 1 reasoning.",
+    "stage2_label": "none",
+    "stage2_rationale": "integrated into framework, not a kind of System 1",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "System 1",
+    "b": "search algorithm",
+    "direction": "System 1->search algorithm",
+    "stage1_sentence": "System 1 reflects the associative choices made by language models, which can inform the development of search algorithms within the Tree of Thoughts framework.",
+    "stage2_label": "none",
+    "stage2_rationale": "reflects choices, not a kind of algorithm",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "System 2",
+    "b": "search algorithm",
+    "direction": "System 2->search algorithm",
+    "stage1_sentence": "System 2 represents a more deliberate planning process that informs the integration of language-based reasoning with search algorithms in the Tree of Thoughts framework.",
+    "stage2_label": "none",
+    "stage2_rationale": "informs integration, not a type of algorithm",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "System 2",
+    "b": "System 1",
+    "direction": "System 2->System 1",
+    "stage1_sentence": "System 2 represents a more deliberate planning process that contrasts with the associative choices of System 1.",
+    "stage2_label": "none",
+    "stage2_rationale": "contrasts with, not a kind of",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "System 1",
+    "b": "System 2",
+    "direction": "System 1->System 2",
+    "stage1_sentence": "System 1 reflects the associative choices of LMs, while System 2 represents a more deliberate planning process.",
+    "stage2_label": "none",
+    "stage2_rationale": "reflects and represents, not a kind of",
     "evidence": "**1 Introduction**"
   },
   {
     "a": "thought decomposition",
     "b": "Tree of Thoughts",
     "direction": "thought decomposition->Tree of Thoughts",
-    "stage1_sentence": "Thought decomposition breaks down problems into manageable steps within the Tree of Thoughts framework to enhance problem-solving efficiency.",
+    "stage1_sentence": "Thought decomposition breaks down problems into manageable steps within the Tree of Thoughts framework to enhance problem-solving.",
     "stage2_label": "none",
-    "stage2_rationale": "breaks down problems, not a kind of Tree of Thoughts",
+    "stage2_rationale": "breaks down, not a kind of Tree of Thoughts",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
@@ -129,9 +210,9 @@
     "a": "thought generator",
     "b": "Tree of Thoughts",
     "direction": "thought generator->Tree of Thoughts",
-    "stage1_sentence": "The thought generator produces candidate thoughts that are utilized within the Tree of Thoughts framework to enhance problem-solving.",
+    "stage1_sentence": "The thought generator produces candidate thoughts that are utilized within the Tree of Thoughts framework to enhance problem-solving through structured exploration.",
     "stage2_label": "none",
-    "stage2_rationale": "produces and utilizes, not a kind of",
+    "stage2_rationale": "produces thoughts for Tree of Thoughts, not a kind of",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
@@ -144,6 +225,15 @@
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
+    "a": "state evaluator",
+    "b": "Tree of Thoughts",
+    "direction": "state evaluator->Tree of Thoughts",
+    "stage1_sentence": "The state evaluator assesses the potential of different states within the Tree of Thoughts framework using heuristic reasoning.",
+    "stage2_label": "none",
+    "stage2_rationale": "assesses within, not a kind of Tree of Thoughts",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
     "a": "Tree of Thoughts",
     "b": "state evaluator",
     "direction": "Tree of Thoughts->state evaluator",
@@ -153,28 +243,28 @@
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
-    "a": "thought decomposition",
-    "b": "thought generator",
-    "direction": "thought decomposition->thought generator",
-    "stage1_sentence": "Thought decomposition breaks down problems into manageable steps that the thought generator uses to produce candidate thoughts.",
-    "stage2_label": "none",
-    "stage2_rationale": "thought decomposition is used by thought generator, not a kind of",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
     "a": "thought generator",
     "b": "thought decomposition",
     "direction": "thought generator->thought decomposition",
-    "stage1_sentence": "The thought generator produces candidate thoughts that are then organized and refined through thought decomposition into manageable steps.",
+    "stage1_sentence": "The thought generator produces candidate thoughts that are then organized through thought decomposition into manageable steps for problem-solving.",
     "stage2_label": "none",
-    "stage2_rationale": "produces thoughts, not a kind of decomposition",
+    "stage2_rationale": "produces candidates, not a kind of decomposition",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
+    "a": "thought decomposition",
+    "b": "thought generator",
+    "direction": "thought decomposition->thought generator",
+    "stage1_sentence": "Thought decomposition breaks down the problem into manageable steps that the thought generator uses to produce candidate thoughts.",
+    "stage2_label": "none",
+    "stage2_rationale": "thought generator uses thought decomposition, not a kind of",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
     "a": "thought decomposition",
     "b": "state evaluator",
     "direction": "thought decomposition->state evaluator",
-    "stage1_sentence": "Thought decomposition breaks down the problem into manageable steps that the state evaluator assesses for potential solutions.",
+    "stage1_sentence": "Thought decomposition breaks down the problem into manageable thought steps that the state evaluator assesses for potential solutions.",
     "stage2_label": "none",
     "stage2_rationale": "no direct relationship between A and B",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
@@ -185,16 +275,16 @@
     "direction": "state evaluator->thought decomposition",
     "stage1_sentence": "The state evaluator assesses the potential of different states generated during the thought decomposition process.",
     "stage2_label": "none",
-    "stage2_rationale": "assesses potential, not a kind of decomposition",
+    "stage2_rationale": "assesses potential, not a kind of",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
     "a": "thought decomposition",
     "b": "search algorithm",
     "direction": "thought decomposition->search algorithm",
-    "stage1_sentence": "Thought decomposition breaks down problems into manageable steps that the search algorithm navigates within the tree structure.",
+    "stage1_sentence": "Thought decomposition breaks down the problem into manageable steps that the search algorithm navigates within the tree structure.",
     "stage2_label": "none",
-    "stage2_rationale": "breaks down problems, not a kind of algorithm",
+    "stage2_rationale": "breaks down, not a kind of search algorithm",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
@@ -203,52 +293,7 @@
     "direction": "search algorithm->thought decomposition",
     "stage1_sentence": "The search algorithm navigates the tree structure created by thought decomposition to explore different states and potential solutions.",
     "stage2_label": "none",
-    "stage2_rationale": "navigates tree structure, not a kind of",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "thought decomposition",
-    "b": "backtracking",
-    "direction": "thought decomposition->backtracking",
-    "stage1_sentence": "Thought decomposition breaks down the problem into manageable steps that facilitate the planning and backtracking processes in the Tree of Thoughts paradigm.",
-    "stage2_label": "none",
-    "stage2_rationale": "breaks down, not a kind of backtracking",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "backtracking",
-    "b": "thought decomposition",
-    "direction": "backtracking->thought decomposition",
-    "stage1_sentence": "Backtracking is a mechanism that enhances thought decomposition by allowing the exploration of alternative paths in the problem-solving process.",
-    "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "ToT",
-    "b": "thought decomposition",
-    "direction": "ToT->thought decomposition",
-    "stage1_sentence": "ToT incorporates thought decomposition as a method to break down problems into manageable thought steps within its tree structure framework.",
-    "stage2_label": "none",
-    "stage2_rationale": "incorporates, not a kind of thought decomposition",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "thought decomposition",
-    "b": "ToT",
-    "direction": "thought decomposition->ToT",
-    "stage1_sentence": "Thought decomposition breaks down problems into manageable steps that are utilized within the Tree of Thoughts (ToT) framework to enhance problem-solving.",
-    "stage2_label": "none",
-    "stage2_rationale": "utilized within ToT, not a kind of",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "state evaluator",
-    "b": "thought generator",
-    "direction": "state evaluator->thought generator",
-    "stage1_sentence": "The state evaluator assesses the potential of different states generated by the thought generator in the Tree of Thoughts paradigm.",
-    "stage2_label": "none",
-    "stage2_rationale": "assesses potential, not a kind of thought generator",
+    "stage2_rationale": "search algorithm navigates, not a kind of",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
@@ -261,55 +306,28 @@
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
+    "a": "state evaluator",
+    "b": "thought generator",
+    "direction": "state evaluator->thought generator",
+    "stage1_sentence": "The state evaluator assesses the potential of different states generated by the thought generator during the problem-solving process.",
+    "stage2_label": "none",
+    "stage2_rationale": "assesses potential, not a kind of",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
     "a": "thought generator",
     "b": "search algorithm",
     "direction": "thought generator->search algorithm",
-    "stage1_sentence": "The thought generator produces candidate thoughts that the search algorithm navigates through in the tree structure.",
+    "stage1_sentence": "The thought generator produces candidate thoughts that the search algorithm evaluates and navigates through the tree structure.",
     "stage2_label": "none",
-    "stage2_rationale": "produces candidate thoughts, not a kind of search algorithm",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "backtracking",
-    "b": "thought generator",
-    "direction": "backtracking->thought generator",
-    "stage1_sentence": "Backtracking is a mechanism that enhances the thought generator's ability to explore and refine candidate thoughts during the problem-solving process.",
-    "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "thought generator",
-    "b": "backtracking",
-    "direction": "thought generator->backtracking",
-    "stage1_sentence": "The thought generator produces candidate thoughts that can be utilized during the backtracking process to explore alternative solutions in the Tree of Thoughts paradigm.",
-    "stage2_label": "none",
-    "stage2_rationale": "produces candidate thoughts, not a kind of backtracking",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "ToT",
-    "b": "thought generator",
-    "direction": "ToT->thought generator",
-    "stage1_sentence": "The Tree of Thoughts (ToT) paradigm utilizes a thought generator to produce candidate thoughts that facilitate the exploration of diverse thought continuations in problem-solving.",
-    "stage2_label": "none",
-    "stage2_rationale": "utilizes, not a kind of",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "thought generator",
-    "b": "ToT",
-    "direction": "thought generator->ToT",
-    "stage1_sentence": "The thought generator produces candidate thoughts that are utilized within the Tree of Thoughts (ToT) framework to enhance problem-solving.",
-    "stage2_label": "none",
-    "stage2_rationale": "utilized within, not a kind of ToT",
+    "stage2_rationale": "produces and evaluates, not a kind of",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
     "a": "search algorithm",
     "b": "state evaluator",
     "direction": "search algorithm->state evaluator",
-    "stage1_sentence": "The search algorithm navigates the tree structure created by the state evaluator to explore different potential solutions.",
+    "stage1_sentence": "The search algorithm navigates the tree structure of states evaluated by the state evaluator to enhance problem-solving efficiency.",
     "stage2_label": "none",
     "stage2_rationale": "navigates, not a kind of state evaluator",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
@@ -320,124 +338,52 @@
     "direction": "state evaluator->search algorithm",
     "stage1_sentence": "The state evaluator assesses the potential of different states within the search algorithm's navigation of the tree structure.",
     "stage2_label": "none",
-    "stage2_rationale": "assesses potential, not a kind of search algorithm",
+    "stage2_rationale": "assesses potential, not a type of algorithm",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
-    "a": "backtracking",
-    "b": "state evaluator",
-    "direction": "backtracking->state evaluator",
-    "stage1_sentence": "Backtracking is a mechanism that can be utilized by the state evaluator to reassess and refine the search for optimal solutions within the tree structure.",
-    "stage2_label": "none",
-    "stage2_rationale": "mechanism utilized by state evaluator, not a kind of",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "state evaluator",
-    "b": "backtracking",
-    "direction": "state evaluator->backtracking",
-    "stage1_sentence": "The state evaluator assesses the potential of different states in the context of backtracking within the Tree of Thoughts paradigm.",
-    "stage2_label": "none",
-    "stage2_rationale": "assesses potential, not a kind of backtracking",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "ToT",
-    "b": "state evaluator",
-    "direction": "ToT->state evaluator",
-    "stage1_sentence": "The Tree of Thoughts (ToT) utilizes the state evaluator to assess the potential of different states within its problem-solving framework.",
-    "stage2_label": "none",
-    "stage2_rationale": "utilizes, not a kind of",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "state evaluator",
-    "b": "ToT",
-    "direction": "state evaluator->ToT",
-    "stage1_sentence": "The state evaluator assesses the potential of different states within the Tree of Thoughts (ToT) framework using heuristic reasoning.",
-    "stage2_label": "none",
-    "stage2_rationale": "assesses within ToT, not a kind of",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "backtracking",
-    "b": "search algorithm",
-    "direction": "backtracking->search algorithm",
-    "stage1_sentence": "Backtracking is a mechanism employed by the search algorithm to revisit previous states in the tree structure for improved problem-solving.",
-    "stage2_label": "none",
-    "stage2_rationale": "mechanism employed by, not a kind of",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "search algorithm",
-    "b": "backtracking",
-    "direction": "search algorithm->backtracking",
-    "stage1_sentence": "The search algorithm navigates the tree structure by employing strategies that may include backtracking to explore different states and thought continuations.",
-    "stage2_label": "none",
-    "stage2_rationale": "search algorithm employs backtracking, not a kind of",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "chain-of-thought prompting",
+    "a": "two-step thought generation",
     "b": "Tree of Thoughts",
-    "direction": "chain-of-thought prompting->Tree of Thoughts",
-    "stage1_sentence": "Chain-of-thought prompting highlights limitations that the Tree of Thoughts addresses through deliberate search for improved results in problem-solving scenarios.",
+    "direction": "two-step thought generation->Tree of Thoughts",
+    "stage1_sentence": "Two-step thought generation is a method that can be utilized within the Tree of Thoughts framework to enhance the planning and coherence of generated passages.",
     "stage2_label": "none",
-    "stage2_rationale": "highlights limitations, not a type of Tree of Thoughts",
-    "evidence": "**4 Experiments**"
+    "stage2_rationale": "utilized within, not a kind of Tree of Thoughts",
+    "evidence": "**4.2 Creative writing**"
   },
   {
     "a": "Tree of Thoughts",
-    "b": "chain-of-thought prompting",
-    "direction": "Tree of Thoughts->chain-of-thought prompting",
-    "stage1_sentence": "The Tree of Thoughts enhances chain-of-thought prompting by incorporating a deliberate search mechanism that improves problem-solving outcomes.",
+    "b": "two-step thought generation",
+    "direction": "Tree of Thoughts->two-step thought generation",
+    "stage1_sentence": "The Tree of Thoughts framework incorporates a two-step thought generation method that involves generating and voting on plans before creating a coherent passage.",
     "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of",
-    "evidence": "**4 Experiments**"
+    "stage2_rationale": "incorporates, not a kind of two-step method",
+    "evidence": "**4.2 Creative writing**"
   },
   {
-    "a": "Chain of Thought",
-    "b": "chain-of-thought prompting",
-    "direction": "Chain of Thought->chain-of-thought prompting",
-    "stage1_sentence": "Chain of Thought is a method that is utilized within chain-of-thought prompting to enhance reasoning capabilities in language models.",
+    "a": "Tree of Thoughts",
+    "b": "iterative-refine",
+    "direction": "Tree of Thoughts->iterative-refine",
+    "stage1_sentence": "The Tree of Thoughts method can be enhanced by the iterative-refine approach, which allows for the assessment and improvement of generated plans to achieve better coherence in the final output.",
     "stage2_label": "none",
-    "stage2_rationale": "utilized within, not a kind of",
-    "evidence": "**4 Experiments**"
+    "stage2_rationale": "enhanced by, not a kind of",
+    "evidence": "**4.2 Creative writing**"
   },
   {
-    "a": "ToT",
-    "b": "chain-of-thought prompting",
-    "direction": "ToT->chain-of-thought prompting",
-    "stage1_sentence": "ToT enhances chain-of-thought prompting by employing a deliberate search strategy that improves results in complex problem-solving tasks.",
+    "a": "iterative-refine",
+    "b": "Tree of Thoughts",
+    "direction": "iterative-refine->Tree of Thoughts",
+    "stage1_sentence": "Iterative-refine enhances the coherence of outputs in the Tree of Thoughts framework by allowing for the assessment and improvement of previous thought generations.",
     "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of",
-    "evidence": "**4 Experiments**"
-  },
-  {
-    "a": "chain-of-thought prompting",
-    "b": "ToT",
-    "direction": "chain-of-thought prompting->ToT",
-    "stage1_sentence": "Chain-of-thought prompting highlights limitations that the tree of thoughts (ToT) method addresses by providing a more effective approach for problem-solving scenarios involving search or planning.",
-    "stage2_label": "none",
-    "stage2_rationale": "highlights limitations, not a type of ToT",
-    "evidence": "**4 Experiments**"
+    "stage2_rationale": "enhances, not a kind of Tree of Thoughts",
+    "evidence": "**4.2 Creative writing**"
   },
   {
     "a": "Chain of Thought",
     "b": "two-step thought generation",
     "direction": "Chain of Thought->two-step thought generation",
-    "stage1_sentence": "Chain of Thought incorporates planning, which is a key aspect of the two-step thought generation method that involves generating and voting on plans before creating the passage.",
+    "stage1_sentence": "Chain of Thought incorporates planning in the two-step thought generation method, which involves generating and voting on plans before creating a coherent passage.",
     "stage2_label": "none",
-    "stage2_rationale": "incorporates planning, not a kind of two-step method",
-    "evidence": "**4.2 Creative writing**"
-  },
-  {
-    "a": "Chain of Thought",
-    "b": "iterative-refine",
-    "direction": "Chain of Thought->iterative-refine",
-    "stage1_sentence": "Chain of Thought enhances the iterative-refine method by incorporating planning steps that can be assessed and improved upon for better coherence in generated passages.",
-    "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of",
+    "stage2_rationale": "incorporates, not a kind of two-step thought generation",
     "evidence": "**4.2 Creative writing**"
   },
   {
@@ -450,12 +396,21 @@
     "evidence": "**4.2 Creative writing**"
   },
   {
+    "a": "Chain of Thought",
+    "b": "iterative-refine",
+    "direction": "Chain of Thought->iterative-refine",
+    "stage1_sentence": "Chain of Thought enhances the iterative-refine method by incorporating planning steps that can be assessed and improved upon for better coherence in generated passages.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "**4.2 Creative writing**"
+  },
+  {
     "a": "two-step thought generation",
     "b": "iterative-refine",
     "direction": "two-step thought generation->iterative-refine",
-    "stage1_sentence": "Two-step thought generation is enhanced by the iterative-refine method, which allows for the assessment and improvement of plans before creating the final passage.",
+    "stage1_sentence": "Two-step thought generation involves generating and voting on plans, while iterative-refine enhances the coherence of passages by allowing for assessment and improvement of previous outputs within the ToT framework.",
     "stage2_label": "none",
-    "stage2_rationale": "enhanced by, not a kind of",
+    "stage2_rationale": "enhances, not a kind of",
     "evidence": "**4.2 Creative writing**"
   },
   {
@@ -468,75 +423,84 @@
     "evidence": "**4.2 Creative writing**"
   },
   {
-    "a": "ToT",
-    "b": "iterative-refine",
-    "direction": "ToT->iterative-refine",
-    "stage1_sentence": "ToT incorporates the iterative-refine method to enhance the coherence of generated passages by allowing for assessment and improvement of initial outputs.",
-    "stage2_label": "none",
-    "stage2_rationale": "incorporates to enhance, not a kind of",
-    "evidence": "**4.2 Creative writing**"
-  },
-  {
-    "a": "iterative-refine",
-    "b": "ToT",
-    "direction": "iterative-refine->ToT",
-    "stage1_sentence": "Iterative-refine enhances the coherence of passages generated through the ToT method by allowing the model to assess and improve upon its previous outputs.",
-    "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of ToT",
-    "evidence": "**4.2 Creative writing**"
-  },
-  {
     "a": "depth-first search",
-    "b": "state evaluation and pruning heuristics",
-    "direction": "depth-first search->state evaluation and pruning heuristics",
-    "stage1_sentence": "Depth-first search employs state evaluation and pruning heuristics to backtrack when a state becomes unpromising during the exploration of crossword puzzles.",
+    "b": "state evaluation",
+    "direction": "depth-first search->state evaluation",
+    "stage1_sentence": "Depth-first search employs state evaluation to determine the viability of paths in solving the crossword puzzle.",
     "stage2_label": "none",
     "stage2_rationale": "employs, not a kind of",
     "evidence": "**4.3 Mini crosswords**"
   },
   {
-    "a": "state evaluation and pruning heuristics",
+    "a": "depth-first search",
+    "b": "pruning heuristics",
+    "direction": "depth-first search->pruning heuristics",
+    "stage1_sentence": "Depth-first search employs pruning heuristics to improve state evaluation and enhance the model's problem-solving efficiency in generating crossword boards.",
+    "stage2_label": "none",
+    "stage2_rationale": "employs, not a kind of",
+    "evidence": "**4.3 Mini crosswords**"
+  },
+  {
+    "a": "pruning heuristics",
     "b": "depth-first search",
-    "direction": "state evaluation and pruning heuristics->depth-first search",
-    "stage1_sentence": "State evaluation and pruning heuristics enhance the depth-first search by guiding the exploration and enabling backtracking when a state becomes unpromising.",
+    "direction": "pruning heuristics->depth-first search",
+    "stage1_sentence": "Pruning heuristics enhance the depth-first search by improving state evaluation and guiding the exploration process in solving crossword puzzles.",
     "stage2_label": "none",
     "stage2_rationale": "enhance, not a kind of depth-first search",
     "evidence": "**4.3 Mini crosswords**"
   },
   {
-    "a": "depth-first search",
-    "b": "backtracking",
-    "direction": "depth-first search->backtracking",
-    "stage1_sentence": "Depth-first search enables the model to backtrack when a state becomes unpromising during the exploration of crossword puzzles.",
-    "stage2_label": "none",
-    "stage2_rationale": "enables, not a kind of backtracking",
-    "evidence": "**4.3 Mini crosswords**"
-  },
-  {
-    "a": "state evaluation and pruning heuristics",
-    "b": "backtracking",
-    "direction": "state evaluation and pruning heuristics->backtracking",
-    "stage1_sentence": "State evaluation and pruning heuristics enhance the model's ability to backtrack when a state becomes unpromising in the crossword-solving process.",
-    "stage2_label": "none",
-    "stage2_rationale": "enhance, not a kind of backtracking",
-    "evidence": "**4.3 Mini crosswords**"
-  },
-  {
-    "a": "backtracking",
-    "b": "state evaluation and pruning heuristics",
-    "direction": "backtracking->state evaluation and pruning heuristics",
-    "stage1_sentence": "Backtracking enhances state evaluation and pruning heuristics by allowing the model to revert to previous states when a current state is deemed unpromising.",
+    "a": "state evaluation",
+    "b": "pruning heuristics",
+    "direction": "state evaluation->pruning heuristics",
+    "stage1_sentence": "State evaluation enhances pruning heuristics by determining which paths in the search space are unpromising and should be discarded.",
     "stage2_label": "none",
     "stage2_rationale": "enhances, not a kind of",
     "evidence": "**4.3 Mini crosswords**"
   },
   {
-    "a": "self-reflection",
-    "b": "search algorithm",
-    "direction": "self-reflection->search algorithm",
-    "stage1_sentence": "Self-reflection enhances the search algorithm by allowing language models to assess their predictions and improve accuracy through feedback during the evaluation process.",
+    "a": "pruning heuristics",
+    "b": "state evaluation",
+    "direction": "pruning heuristics->state evaluation",
+    "stage1_sentence": "Pruning heuristics enhance state evaluation by eliminating unpromising states during the search process in crossword problem-solving.",
     "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of search algorithm",
+    "stage2_rationale": "enhance, not a kind of state evaluation",
+    "evidence": "**4.3 Mini crosswords**"
+  },
+  {
+    "a": "Tree of Thoughts",
+    "b": "self-reflection",
+    "direction": "Tree of Thoughts->self-reflection",
+    "stage1_sentence": "The Tree of Thoughts enhances self-reflection by integrating thought sampling with value feedback to evaluate multiple plans and improve decision-making in language models.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of self-reflection",
+    "evidence": "**5 Related Work**"
+  },
+  {
+    "a": "self-reflection",
+    "b": "Tree of Thoughts",
+    "direction": "self-reflection->Tree of Thoughts",
+    "stage1_sentence": "Self-reflection enhances the Tree of Thoughts by allowing language models to assess their predictions and improve accuracy through feedback during the exploration of solution trees.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of Tree of Thoughts",
+    "evidence": "**5 Related Work**"
+  },
+  {
+    "a": "program-guided generation",
+    "b": "Tree of Thoughts",
+    "direction": "program-guided generation->Tree of Thoughts",
+    "stage1_sentence": "Program-guided generation organizes language models through systematic procedures, while Tree of Thoughts enhances planning by integrating thought sampling and value feedback.",
+    "stage2_label": "none",
+    "stage2_rationale": "organizes and enhances, not a kind of",
+    "evidence": "**5 Related Work**"
+  },
+  {
+    "a": "Tree of Thoughts",
+    "b": "program-guided generation",
+    "direction": "Tree of Thoughts->program-guided generation",
+    "stage1_sentence": "Tree of Thoughts enhances program-guided generation by utilizing internal thoughts for value estimation and solution exploration rather than relying on external information.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
     "evidence": "**5 Related Work**"
   },
   {
@@ -544,6 +508,24 @@
     "b": "self-reflection",
     "direction": "search algorithm->self-reflection",
     "stage1_sentence": "The search algorithm is likened to heuristic search methods that utilize self-assessment for problem-solving in the context of planning and decision-making in language models.",
+    "stage2_label": "none",
+    "stage2_rationale": "likened to, not a kind of",
+    "evidence": "**5 Related Work**"
+  },
+  {
+    "a": "self-reflection",
+    "b": "search algorithm",
+    "direction": "self-reflection->search algorithm",
+    "stage1_sentence": "Self-reflection enhances the search algorithm by allowing language models to assess their predictions and improve accuracy through feedback during the evaluation process.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "**5 Related Work**"
+  },
+  {
+    "a": "search algorithm",
+    "b": "program-guided generation",
+    "direction": "search algorithm->program-guided generation",
+    "stage1_sentence": "The search algorithm is likened to heuristic search methods that utilize self-assessment for problem-solving in the context of program-guided generation.",
     "stage2_label": "none",
     "stage2_rationale": "likened to, not a kind of",
     "evidence": "**5 Related Work**"
@@ -558,46 +540,10 @@
     "evidence": "**5 Related Work**"
   },
   {
-    "a": "search algorithm",
-    "b": "program-guided generation",
-    "direction": "search algorithm->program-guided generation",
-    "stage1_sentence": "The search algorithm is likened to heuristic search methods that utilize self-assessment for problem-solving in the context of program-guided generation.",
-    "stage2_label": "none",
-    "stage2_rationale": "likened to, not a kind of",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "ToT",
-    "b": "self-reflection",
-    "direction": "ToT->self-reflection",
-    "stage1_sentence": "ToT incorporates self-reflection by allowing language models to evaluate their predictions and improve accuracy through feedback during the planning and decision-making process.",
-    "stage2_label": "none",
-    "stage2_rationale": "incorporates, not a kind of self-reflection",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "self-reflection",
-    "b": "ToT",
-    "direction": "self-reflection->ToT",
-    "stage1_sentence": "Self-reflection enhances the ToT approach by allowing language models to assess their predictions and improve accuracy through feedback on generated candidates.",
-    "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of ToT",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "ToT",
-    "b": "program-guided generation",
-    "direction": "ToT->program-guided generation",
-    "stage1_sentence": "ToT enhances program-guided generation by utilizing internal thoughts for value estimation and solution exploration, distinguishing it from methods that rely on external information.",
-    "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of",
-    "evidence": "**5 Related Work**"
-  },
-  {
     "a": "program-guided generation",
-    "b": "ToT",
-    "direction": "program-guided generation->ToT",
-    "stage1_sentence": "Program-guided generation organizes LMs through systematic procedures, while ToT enhances planning by integrating thought sampling and value feedback for effective exploration.",
+    "b": "self-reflection",
+    "direction": "program-guided generation->self-reflection",
+    "stage1_sentence": "Program-guided generation organizes LMs through systematic procedures, while self-reflection enhances their accuracy by allowing them to assess their predictions.",
     "stage2_label": "none",
     "stage2_rationale": "no direct relationship between A and B",
     "evidence": "**5 Related Work**"
@@ -610,50 +556,5 @@
     "stage2_label": "none",
     "stage2_rationale": "enhances, not a kind of",
     "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "program-guided generation",
-    "b": "self-reflection",
-    "direction": "program-guided generation->self-reflection",
-    "stage1_sentence": "Program-guided generation organizes LMs through systematic procedures, while self-reflection enhances their accuracy by allowing them to assess their predictions.",
-    "stage2_label": "none",
-    "stage2_rationale": "no direct relationship between A and B",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "counterfactual decision-making",
-    "b": "Tree of Thoughts",
-    "direction": "counterfactual decision-making->Tree of Thoughts",
-    "stage1_sentence": "Counterfactual decision-making in the Tree of Thoughts framework enhances the problem-solving capabilities of language models by allowing for structured search methods that improve decision-making in complex applications.",
-    "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of Tree of Thoughts",
-    "evidence": "**6 Discussion**"
-  },
-  {
-    "a": "Tree of Thoughts",
-    "b": "counterfactual decision-making",
-    "direction": "Tree of Thoughts->counterfactual decision-making",
-    "stage1_sentence": "The Tree of Thoughts framework enhances counterfactual decision-making by providing a structured approach that can improve problem-solving capabilities in complex applications.",
-    "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of",
-    "evidence": "**6 Discussion**"
-  },
-  {
-    "a": "ToT",
-    "b": "counterfactual decision-making",
-    "direction": "ToT->counterfactual decision-making",
-    "stage1_sentence": "ToT enhances counterfactual decision-making by providing a structured framework that allows for customizable performance-cost tradeoffs in complex problem-solving scenarios.",
-    "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of",
-    "evidence": "**6 Discussion**"
-  },
-  {
-    "a": "counterfactual decision-making",
-    "b": "ToT",
-    "direction": "counterfactual decision-making->ToT",
-    "stage1_sentence": "Counterfactual decision-making in the Tree of Thoughts (ToT) framework enhances the problem-solving capabilities of language models by allowing for structured search methods that improve decision-making in complex applications.",
-    "stage2_label": "none",
-    "stage2_rationale": "enhances, not a kind of ToT",
-    "evidence": "**6 Discussion**"
   }
 ]

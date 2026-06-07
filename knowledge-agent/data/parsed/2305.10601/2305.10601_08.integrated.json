@@ -212,24 +212,6 @@
       "n_defs": 1,
       "locked": false
     },
-    "GPT-4": {
-      "definitions": [
-        {
-          "text": "A language model that is utilized in various tasks to explore its capabilities and limitations.",
-          "source": "2305.10601",
-          "pub_date": "2023-05"
-        }
-      ],
-      "selected_index": 0,
-      "selected": {
-        "text": "A language model that is utilized in various tasks to explore its capabilities and limitations.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
-      },
-      "merged_from": [],
-      "n_defs": 1,
-      "locked": false
-    },
     "two-step thought generation": {
       "definitions": [
         {
@@ -393,76 +375,5 @@
       "locked": false
     }
   },
-  "conflicts": [
-    {
-      "pair": [
-        "backtracking",
-        "Tree of Thoughts"
-      ],
-      "kind": "cycle",
-      "edges": [
-        {
-          "from": "backtracking",
-          "rel": "part_of",
-          "to": "Tree of Thoughts",
-          "evidence": "**Abstract**"
-        },
-        {
-          "from": "Tree of Thoughts",
-          "rel": "part_of",
-          "to": "backtracking",
-          "evidence": "**Abstract**"
-        }
-      ],
-      "held": [
-        {
-          "from": "backtracking",
-          "rel": "part_of",
-          "to": "Tree of Thoughts",
-          "evidence": "**Abstract**"
-        },
-        {
-          "from": "Tree of Thoughts",
-          "rel": "part_of",
-          "to": "backtracking",
-          "evidence": "**Abstract**"
-        }
-      ]
-    },
-    {
-      "pair": [
-        "ToT",
-        "two-step thought generation"
-      ],
-      "kind": "cycle",
-      "edges": [
-        {
-          "from": "ToT",
-          "rel": "part_of",
-          "to": "two-step thought generation",
-          "evidence": "**4.2 Creative writing**"
-        },
-        {
-          "from": "two-step thought generation",
-          "rel": "part_of",
-          "to": "ToT",
-          "evidence": "**4.2 Creative writing**"
-        }
-      ],
-      "held": [
-        {
-          "from": "ToT",
-          "rel": "part_of",
-          "to": "two-step thought generation",
-          "evidence": "**4.2 Creative writing**"
-        },
-        {
-          "from": "two-step thought generation",
-          "rel": "part_of",
-          "to": "ToT",
-          "evidence": "**4.2 Creative writing**"
-        }
-      ]
-    }
-  ]
+  "conflicts": []
 }
