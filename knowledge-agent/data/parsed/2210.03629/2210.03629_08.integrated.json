@@ -1,0 +1,685 @@
+{
+  "nodes": {
+    "Tree of Thoughts": {
+      "definitions": [
+        {
+          "text": "A framework that structures the reasoning process of large language models as a tree, with each node representing a potential thought or action, enabling systematic evaluation of various reasoning paths.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A framework that structures the reasoning process of large language models as a tree, with each node representing a potential thought or action, enabling systematic evaluation of various reasoning paths.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "Chain of Thought": {
+      "definitions": [
+        {
+          "text": "A method that involves prompting a model to think through a problem step-by-step.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        },
+        {
+          "text": "A prompting method that includes a sequence of thoughts to aid in reasoning and answer formulation.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "A foundational method that enables language models to articulate their reasoning processes.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "A prompting strategy that involves chain-of-thought reasoning.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 2,
+      "selected": {
+        "text": "A foundational method that enables language models to articulate their reasoning processes.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [
+        "Chain-of-thought prompting",
+        "CoT"
+      ],
+      "n_defs": 4,
+      "locked": false
+    },
+    "dual process models": {
+      "definitions": [
+        {
+          "text": "Dual process models refer to a cognitive framework that distinguishes between two types of reasoning: 'System 1', which reflects associative choices, and 'System 2', which represents a more deliberate planning process.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "Dual process models refer to a cognitive framework that distinguishes between two types of reasoning: 'System 1', which reflects associative choices, and 'System 2', which represents a more deliberate planning process.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "input-output prompting": {
+      "definitions": [
+        {
+          "text": "A method that transforms an input sequence into an output sequence by wrapping the input with task instructions or examples, formalized as a probabilistic function.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A method that transforms an input sequence into an output sequence by wrapping the input with task instructions or examples, formalized as a probabilistic function.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "self-consistency with chain-of-thought": {
+      "definitions": [
+        {
+          "text": "An ensemble strategy that builds on chain-of-thought prompting by sampling multiple chains of thought to select the most frequent result for a more robust output.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "An ensemble strategy that builds on chain-of-thought prompting by sampling multiple chains of thought to select the most frequent result for a more robust output.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "thought decomposition": {
+      "definitions": [
+        {
+          "text": "Thought decomposition breaks down the problem into manageable thought steps.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "Thought decomposition breaks down the problem into manageable thought steps.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "thought generator": {
+      "definitions": [
+        {
+          "text": "A thought generator produces candidate thoughts either through independent sampling or sequential proposals.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A thought generator produces candidate thoughts either through independent sampling or sequential proposals.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "state evaluator": {
+      "definitions": [
+        {
+          "text": "A state evaluator assesses the potential of different states using heuristic reasoning.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A state evaluator assesses the potential of different states using heuristic reasoning.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "search algorithm": {
+      "definitions": [
+        {
+          "text": "A search algorithm navigates the tree structure, employing either breadth-first or depth-first strategies.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A search algorithm navigates the tree structure, employing either breadth-first or depth-first strategies.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "two-step thought generation": {
+      "definitions": [
+        {
+          "text": "A method that involves generating and voting on plans before creating the output.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A method that involves generating and voting on plans before creating the output.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "iterative-refine": {
+      "definitions": [
+        {
+          "text": "A method that enhances the coherence of outputs by allowing the model to assess and improve upon its previous results.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A method that enhances the coherence of outputs by allowing the model to assess and improve upon its previous results.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "depth-first search": {
+      "definitions": [
+        {
+          "text": "A method that allows exploration of a problem space by proposing and evaluating thoughts while adhering to constraints and enabling backtracking when a state becomes unpromising.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A method that allows exploration of a problem space by proposing and evaluating thoughts while adhering to constraints and enabling backtracking when a state becomes unpromising.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "state evaluation": {
+      "definitions": [
+        {
+          "text": "The process of assessing the current state in problem-solving to determine its viability.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "The process of assessing the current state in problem-solving to determine its viability.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "pruning heuristics": {
+      "definitions": [
+        {
+          "text": "Techniques used to eliminate unpromising states in a search problem to enhance efficiency.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "Techniques used to eliminate unpromising states in a search problem to enhance efficiency.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "self-reflection": {
+      "definitions": [
+        {
+          "text": "Self-reflection is a mechanism where language models assess their predictions, improving accuracy through feedback on generated candidates.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "Self-reflection is a mechanism where language models assess their predictions, improving accuracy through feedback on generated candidates.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "program-guided generation": {
+      "definitions": [
+        {
+          "text": "Program-guided generation involves organizing language models through systematic procedures.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "Program-guided generation involves organizing language models through systematic procedures.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "System 1": {
+      "definitions": [
+        {
+          "text": "The associative component of language models that operates intuitively.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "The associative component of language models that operates intuitively.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "System 2": {
+      "definitions": [
+        {
+          "text": "The structured search methods component that enhances the problem-solving capabilities of language models.",
+          "source": "2305.10601",
+          "pub_date": "2023-05"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "The structured search methods component that enhances the problem-solving capabilities of language models.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "REACT": {
+      "definitions": [
+        {
+          "text": "The REACT framework integrates reasoning and acting within language models to enhance their task performance.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "A method that interleaves reasoning traces with task-specific actions in large language models to enhance their performance in language understanding and decision making.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "A novel paradigm that integrates reasoning and acting within language models to enhance task-solving capabilities.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "ReAct is a method that enhances an agent's task-solving capabilities by expanding its action space to include language-based thoughts that serve as reasoning traces.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "An approach that integrates reasoning with action to enhance knowledge-intensive reasoning tasks.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "A prompting method that utilizes a structured approach of thought-action-observation steps to enhance question answering.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "A model that interleaves reasoning, action, and observation to enhance groundedness and trustworthiness in reasoning tasks.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "A framework that enhances decision-making performance by incorporating reasoning to guide actions in complex environments.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "A method that integrates reasoning with model actions and observations, facilitating more complex tasks like interactive decision-making.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "ReAct is a method designed to enhance the synergy between reasoning and acting in large language models.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 2,
+      "selected": {
+        "text": "A novel paradigm that integrates reasoning and acting within language models to enhance task-solving capabilities.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 10,
+      "locked": false
+    },
+    "HotPotQA": {
+      "definitions": [
+        {
+          "text": "A dataset for multi-hop question answering that requires reasoning across multiple Wikipedia passages.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A dataset for multi-hop question answering that requires reasoning across multiple Wikipedia passages.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "FEVER": {
+      "definitions": [
+        {
+          "text": "A dataset for fact verification of claims based on Wikipedia content.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A dataset for fact verification of claims based on Wikipedia content.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "Wikipedia web API": {
+      "definitions": [
+        {
+          "text": "A designed interface with actions for retrieving information from Wikipedia to assist in reasoning tasks.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A designed interface with actions for retrieving information from Wikipedia to assist in reasoning tasks.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "Acting-only prompts": {
+      "definitions": [
+        {
+          "text": "A type of prompting method that focuses solely on actions without incorporating thoughts or observations.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A type of prompting method that focuses solely on actions without incorporating thoughts or observations.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "Chain-of-thought self-consistency (CoT-SC)": {
+      "definitions": [
+        {
+          "text": "A technique that complements ReAct by improving the consistency of reasoning to reduce hallucination issues.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "A variant of the chain-of-thought prompting strategy that integrates internal and external knowledge for reasoning tasks.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 1,
+      "selected": {
+        "text": "A variant of the chain-of-thought prompting strategy that integrates internal and external knowledge for reasoning tasks.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 2,
+      "locked": false
+    },
+    "finetuning strategy": {
+      "definitions": [
+        {
+          "text": "An approach used to enhance smaller language models by conditioning them on generated trajectories.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "An approach used to enhance smaller language models by conditioning them on generated trajectories.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "ALFWorld": {
+      "definitions": [
+        {
+          "text": "An interactive decision-making task where agents achieve high-level goals through text-based interactions in a simulated household.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "An interactive decision-making task where agents achieve high-level goals through text-based interactions in a simulated household.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "WebShop": {
+      "definitions": [
+        {
+          "text": "An interactive decision-making task that involves purchasing products based on user instructions in a noisy online shopping environment.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "An interactive decision-making task that involves purchasing products based on user instructions in a noisy online shopping environment.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "least-to-most prompting": {
+      "definitions": [
+        {
+          "text": "An advancement that enhances the capabilities of Chain-of-Thought.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "An advancement that enhances the capabilities of Chain-of-Thought.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "zero-shot CoT": {
+      "definitions": [
+        {
+          "text": "An advancement that enhances the capabilities of Chain-of-Thought.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "An advancement that enhances the capabilities of Chain-of-Thought.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "Selection-Inference": {
+      "definitions": [
+        {
+          "text": "A method that refines reasoning by structuring it into distinct phases or leveraging self-generated rationales.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A method that refines reasoning by structuring it into distinct phases or leveraging self-generated rationales.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "STaR": {
+      "definitions": [
+        {
+          "text": "A method that refines reasoning by structuring it into distinct phases or leveraging self-generated rationales.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A method that refines reasoning by structuring it into distinct phases or leveraging self-generated rationales.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "WebGPT": {
+      "definitions": [
+        {
+          "text": "An example of a language model employed in interactive environments for decision-making.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "An example of a language model employed in interactive environments for decision-making.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "SayCan": {
+      "definitions": [
+        {
+          "text": "A work that demonstrates the use of language models in robotic action planning.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A work that demonstrates the use of language models in robotic action planning.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "Inner Monologue": {
+      "definitions": [
+        {
+          "text": "A work that introduces a feedback loop in robotic action planning that ReAct builds upon.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A work that introduces a feedback loop in robotic action planning that ReAct builds upon.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    }
+  },
+  "conflicts": []
+}

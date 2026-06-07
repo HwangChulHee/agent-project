@@ -8,19 +8,40 @@
 
 ## 현재 상태 (2026-06-08 기준)
 
-- 맵(`data/knowledge_map.json`): **ToT 논문(2305.10601) 1편만** 태운 상태. **18 노드 / 엣지 4 / 저신뢰·dangling·cycle 0** = 정합.
-- CoT 정의 오염 해소됨. 단일논문 베이스 깨끗.
-- **다음 할 일: ReAct 논문(`data/raw_papers/react_2210.03629.pdf`) 파이프라인 투입 → 결과 분석.**
-  특히 지금껏 한 번도 안 탄 **merge/align 경로**(2번째 논문이 기존 맵과 겹칠 때 어떻게 붙나)를 집중 분석.
+- 맵(`data/knowledge_map.json`): **2편(ToT 2305.10601 + ReAct 2210.03629)**. **34 노드(ToT 18 + ReAct new 16) / 엣지 6 / 충돌·dangling 0.**
+- merge 경로 첫 실증 완료(아래 ReAct 항목). CoT는 정확히 merge되고 정의도 깨끗 유지. 단 **CoT-SC 파편화 + 교차엣지 0** 발견.
+- **다음 할 일 후보**(택1, 사용자와 방향 합의 필요):
+  (a) **Related Work 프레이밍 오염** 잡기 — CoT-SC 누락·Inner Monologue 오염의 원인. merge 정확도 직결.
+  (b) **교차논문 엣지 추론** — 지금 두 논문 서브그래프가 섬. 06이 논문 내 관계만 뽑아 교차엣지 0.
+  (c) **측정→추천/순서 레이어** 착수.
 
-### 열린 이슈 (실측됨, 미해결 — ReAct 데이터 보고 판단하기로 보류)
-- **엣지 recall 희소**: `agent_06`이 노드쌍을 `random` 샘플링해 관계 추출 → 런마다 엣지 일부만. 18노드에 엣지 4개. world-model 뼈대라 다중논문에서 중요해질 수 있음.
-- **cycle 자가생성 간헐적**: 06이 같은 쌍을 양방향 추출하면 cycle. 이번 재실행 땐 0건(비결정적).
-- **SELECT 기권(-1)은 의미적 오염엔 약함**: SELECT는 도메인지식이 없어 "후보가 다른 개념을 서술"하는 미묘한 오염을 인지 못함. 노골적 타개념 풀에만 발동.
-- **추출 노이즈**(예: `GPT-4`가 제외 규칙 무시하고 추출됨): heading 주입 부작용 의심, 미확인. ReAct 추출에도 나오는지로 체계성 판단.
-- **측정→추천/순서 레이어 미구현**: `kb/store.py`에 `find_gaps()`(mastery<0.5 나열)뿐, 프로빙·추천·순서결정 코드 없음. 프로젝트 최종 목적의 빈 곳. (맵 실증 후 착수 예정)
+### 열린 이슈 (실측됨, 미해결)
+- **교차논문 엣지 0 (구조적)**: 06은 한 논문 내부 노드쌍만 관계 추출 → 새 논문 개념과 기존 맵 개념을 잇는 엣지가 안 생김. **world-model 교차연결은 전적으로 노드 merge에만 의존** → merge 한 번 놓치면 섬이 됨. (ReAct 실증으로 확인)
+- **Related Work 프레이밍 오염**: 04 새 가드를 뚫고 "ReAct builds upon" / "complements ReAct" 같은 관계서술형 정의가 통과(`Inner Monologue`, ReAct의 `CoT-SC` 후보). 이게 **CoT-SC 누락 merge를 직접 유발**(깨끗한 정의면 SAME으로 붙음을 확증). Related Work가 오염 핫스팟.
+- **엣지 recall 희소 + 품질**: 34노드에 엣지 6개(`agent_06` `random` 샘플링). 일부 의심 엣지(`REACT part_of Acting-only prompts`는 역방향/오추출로 보임).
+- **cycle 자가생성 간헐적**: 06 양방향 추출 시. ReAct 런에선 0건.
+- **SELECT 기권(-1)은 의미적 오염엔 약함**: 도메인지식 없어 미묘한 오염 미인지. 노골적 타개념 풀에만 발동.
+- **추출 노이즈**: ToT 런의 `GPT-4`는 제거함. ReAct 런에선 명시적 모델 인스턴스 오추출 없었음(GPT-4 노이즈는 체계적이라기보단 산발적일 가능성).
+- **측정→추천/순서 레이어 미구현**: `kb/store.py`에 `find_gaps()`뿐. 프로젝트 최종 목적의 빈 곳.
 
 ---
+
+## 2026-06-08 — ReAct(2210.03629) 투입 + merge/align 경로 첫 실증
+
+**목표:** 2번째 논문을 기존 ToT 맵에 통합하며, 지금껏 안 탄 merge 경로를 실증·분석.
+**실행:** 01~08 전체. ReAct 18개념 추출 → 05에서 기존 18노드와 대조 → 08 통합. 결과 **34노드/엣지6/충돌0**.
+
+**merge 판정 결과:**
+- ✅ `Chain-of-thought prompting`(sim 0.720)·`CoT`(0.668) → 둘 다 `Chain of Thought`로 정확히 merge. 병합 후 정의도 깨끗 유지(재오염 없음).
+- ✅ `zero-shot CoT`·`least-to-most prompting`(0.596) → new. 변형은 별개로 유지(정책대로).
+- ❌ **`CoT-SC`(0.635) → new (누락 merge)**. ToT의 `self-consistency with chain-of-thought`와 동일 개념인데 안 붙어 **2노드로 파편화**.
+
+**핵심 발견 (실측):**
+1. **프레이밍 오염이 merge를 깬다.** CoT-SC 누락 원인 = ReAct가 뽑은 정의 *"complements ReAct…reduce hallucination"*(개념 자체 아닌 ReAct와의 관계 서술). `judge_same`에 깨끗한 정의를 넣으면 SAME(merge), 오염 정의면 DIFFERENT(new)임을 확증. → **정의 오염은 노드 하나가 아니라 world-model 교차연결을 깨뜨린다.**
+2. **Related Work가 오염 핫스팟.** 04 새 가드를 뚫고 `Inner Monologue`="A work…that ReAct builds upon", CoT-SC 후보가 통과. 관계서술형 정의가 RW 섹션에서 반복.
+3. **교차논문 엣지 0 (구조적).** 6개 엣지 전부 논문 내부. 두 논문 서브그래프는 **섬**이고 merge된 `Chain of Thought` 노드 하나로만 연결(그나마 ReAct쪽 CoT 엣지 없음). 06이 논문 내부 관계만 추출하므로 교차연결은 노드 merge에만 의존.
+
+**함의:** 다중논문에서 정의 오염의 비용이 단일논문보다 크다(파편화). Related Work 프레이밍 가드 + 교차논문 연결이 다음 후보. (코드 무변경, 데이터 산출물만 추가)
 
 ## 2026-06-08 — ToT 맵 단일논문 베이스 정합화 (`94dbede`)
 

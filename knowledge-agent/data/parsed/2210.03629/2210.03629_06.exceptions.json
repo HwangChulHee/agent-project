@@ -1,0 +1,1298 @@
+[
+  {
+    "a": "HotPotQA",
+    "b": "FEVER",
+    "direction": "HotPotQA->FEVER",
+    "stage1_sentence": "HotPotQA involves multi-hop question answering that requires reasoning across multiple Wikipedia passages, while FEVER entails fact verification of claims based on Wikipedia content.",
+    "stage2_label": "none",
+    "stage2_rationale": "different tasks, not a type of each other",
+    "evidence": "3.1 SETUP"
+  },
+  {
+    "a": "FEVER",
+    "b": "HotPotQA",
+    "direction": "FEVER->HotPotQA",
+    "stage1_sentence": "FEVER involves fact verification of claims based on Wikipedia content, while HotPotQA requires reasoning across multiple Wikipedia passages for multi-hop question answering.",
+    "stage2_label": "none",
+    "stage2_rationale": "different tasks, not a type or part of",
+    "evidence": "3.1 SETUP"
+  },
+  {
+    "a": "Wikipedia web API",
+    "b": "HotPotQA",
+    "direction": "Wikipedia web API->HotPotQA",
+    "stage1_sentence": "The Wikipedia web API provides essential functionalities that support the multi-hop question answering process required by HotPotQA.",
+    "stage2_label": "none",
+    "stage2_rationale": "supports, not a kind of HotPotQA",
+    "evidence": "3.1 SETUP"
+  },
+  {
+    "a": "HotPotQA",
+    "b": "Wikipedia web API",
+    "direction": "HotPotQA->Wikipedia web API",
+    "stage1_sentence": "HotPotQA involves multi-hop question answering that requires reasoning across multiple Wikipedia passages, which can be supported by the Wikipedia web API designed to facilitate knowledge retrieval.",
+    "stage2_label": "none",
+    "stage2_rationale": "HotPotQA uses the Wikipedia web API for support.",
+    "evidence": "3.1 SETUP"
+  },
+  {
+    "a": "Wikipedia web API",
+    "b": "FEVER",
+    "direction": "Wikipedia web API->FEVER",
+    "stage1_sentence": "The Wikipedia web API provides essential functionalities that support the fact verification process in FEVER by enabling retrieval of relevant information from Wikipedia content.",
+    "stage2_label": "none",
+    "stage2_rationale": "supports fact verification, not a kind of FEVER",
+    "evidence": "3.1 SETUP"
+  },
+  {
+    "a": "FEVER",
+    "b": "Wikipedia web API",
+    "direction": "FEVER->Wikipedia web API",
+    "stage1_sentence": "FEVER entails fact verification of claims based on Wikipedia content, which is accessed through the Wikipedia web API designed to support knowledge retrieval.",
+    "stage2_label": "none",
+    "stage2_rationale": "entails fact verification, not a kind of API",
+    "evidence": "3.1 SETUP"
+  },
+  {
+    "a": "REACT",
+    "b": "HotPotQA",
+    "direction": "REACT->HotPotQA",
+    "stage1_sentence": "ReAct enhances question answering in HotPotQA by utilizing a structured approach of thought-action-observation steps.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "HotPotQA",
+    "b": "REACT",
+    "direction": "HotPotQA->REACT",
+    "stage1_sentence": "HotPotQA is a task that ReAct prompting enhances through its structured thought-action-observation approach to question answering.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of REACT",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "REACT",
+    "b": "FEVER",
+    "direction": "REACT->FEVER",
+    "stage1_sentence": "ReAct utilizes a structured approach to enhance question answering in tasks like Fever by guiding the search reformulation and synthesis of final answers through thought-action-observation steps.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "FEVER",
+    "b": "REACT",
+    "direction": "FEVER->REACT",
+    "stage1_sentence": "FEVER is a task that ReAct prompting enhances through its structured approach of thought-action-observation steps for improved question answering.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of ReAct",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "REACT",
+    "b": "Chain of Thought",
+    "direction": "REACT->Chain-of-thought prompting",
+    "stage1_sentence": "ReAct utilizes a structured approach that incorporates elements of chain-of-thought prompting to enhance question answering by guiding the search reformulation and synthesis of final answers.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "REACT",
+    "direction": "Chain-of-thought prompting->REACT",
+    "stage1_sentence": "Chain-of-thought prompting is one of the baseline methods that can be used in conjunction with ReAct to improve the reasoning process in question answering tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "used in conjunction, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Acting-only prompts",
+    "b": "REACT",
+    "direction": "Acting-only prompts->REACT",
+    "stage1_sentence": "Acting-only prompts are one of the baseline methods utilized in ReAct prompting to guide the structured approach of thought-action-observation steps.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilized in ReAct, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "REACT",
+    "b": "Chain-of-thought self-consistency (CoT-SC)",
+    "direction": "REACT->Chain-of-thought self-consistency (CoT-SC)",
+    "stage1_sentence": "ReAct can be complemented by Chain-of-thought self-consistency (CoT-SC) to mitigate issues of hallucination in its question-answering approach.",
+    "stage2_label": "none",
+    "stage2_rationale": "complemented by, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain-of-thought self-consistency (CoT-SC)",
+    "b": "REACT",
+    "direction": "Chain-of-thought self-consistency (CoT-SC)->REACT",
+    "stage1_sentence": "Chain-of-thought self-consistency (CoT-SC) complements REACT by mitigating issues of hallucination and guiding the selection of methods based on performance.",
+    "stage2_label": "none",
+    "stage2_rationale": "complements, not a kind of REACT",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "finetuning strategy",
+    "b": "REACT",
+    "direction": "finetuning strategy->REACT",
+    "stage1_sentence": "The finetuning strategy enhances REACT by improving smaller language models through generated trajectories that support the decoding of reasoning traces.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of REACT",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "REACT",
+    "b": "finetuning strategy",
+    "direction": "REACT->finetuning strategy",
+    "stage1_sentence": "ReAct employs a finetuning strategy to enhance smaller language models by utilizing generated trajectories that improve the decoding of reasoning traces.",
+    "stage2_label": "none",
+    "stage2_rationale": "employs, not a kind of finetuning strategy",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "REACT",
+    "b": "Chain of Thought",
+    "direction": "REACT->CoT",
+    "stage1_sentence": "ReAct incorporates Chain-of-thought prompting as one of its baseline methods, utilizing structured reasoning to improve task performance.",
+    "stage2_label": "none",
+    "stage2_rationale": "incorporates, not a kind of CoT",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "REACT",
+    "direction": "CoT->REACT",
+    "stage1_sentence": "CoT complements ReAct by providing a method for self-consistency that helps reduce hallucination in the structured thought-action-observation approach.",
+    "stage2_label": "none",
+    "stage2_rationale": "complements, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "HotPotQA",
+    "b": "Chain of Thought",
+    "direction": "HotPotQA->Chain-of-thought prompting",
+    "stage1_sentence": "HotPotQA utilizes chain-of-thought prompting to enhance its question answering capabilities through structured reasoning steps.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "HotPotQA",
+    "direction": "Chain-of-thought prompting->HotPotQA",
+    "stage1_sentence": "Chain-of-thought prompting is a method that can be utilized to improve performance in tasks like HotPotQA by guiding the reasoning process.",
+    "stage2_label": "none",
+    "stage2_rationale": "method to improve performance, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Acting-only prompts",
+    "b": "HotPotQA",
+    "direction": "Acting-only prompts->HotPotQA",
+    "stage1_sentence": "Acting-only prompts are utilized within the ReAct framework to enhance question answering in tasks like HotPotQA.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilized within ReAct, not a kind of HotPotQA",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "HotPotQA",
+    "b": "Acting-only prompts",
+    "direction": "HotPotQA->Acting-only prompts",
+    "stage1_sentence": "HotPotQA is a task that utilizes ReAct prompting to enhance question answering through structured thought-action-observation steps.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "HotPotQA",
+    "b": "Chain-of-thought self-consistency (CoT-SC)",
+    "direction": "HotPotQA->Chain-of-thought self-consistency (CoT-SC)",
+    "stage1_sentence": "HotPotQA can be enhanced by Chain-of-thought self-consistency (CoT-SC) to mitigate issues of hallucination in question answering tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhanced by, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain-of-thought self-consistency (CoT-SC)",
+    "b": "HotPotQA",
+    "direction": "Chain-of-thought self-consistency (CoT-SC)->HotPotQA",
+    "stage1_sentence": "Chain-of-thought self-consistency (CoT-SC) complements HotPotQA by mitigating hallucination issues in the question-answering process.",
+    "stage2_label": "none",
+    "stage2_rationale": "complements, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "finetuning strategy",
+    "b": "HotPotQA",
+    "direction": "finetuning strategy->HotPotQA",
+    "stage1_sentence": "The finetuning strategy enhances the performance of models on tasks like HotPotQA by utilizing generated trajectories to improve reasoning capabilities.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances performance, not a kind of HotPotQA",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "HotPotQA",
+    "b": "finetuning strategy",
+    "direction": "HotPotQA->finetuning strategy",
+    "stage1_sentence": "HotPotQA is a task that benefits from the finetuning strategy employed to enhance smaller language models using generated trajectories for improved question answering.",
+    "stage2_label": "none",
+    "stage2_rationale": "benefits from, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "HotPotQA",
+    "b": "Chain of Thought",
+    "direction": "HotPotQA->CoT",
+    "stage1_sentence": "HotPotQA utilizes CoT as a method to enhance question answering through structured reasoning steps.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes CoT, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "HotPotQA",
+    "direction": "CoT->HotPotQA",
+    "stage1_sentence": "Chain-of-thought (CoT) is a method that can be complemented by ReAct prompting to improve question answering in tasks like HotPotQA.",
+    "stage2_label": "none",
+    "stage2_rationale": "CoT complements ReAct, not a kind of HotPotQA",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "FEVER",
+    "direction": "Chain-of-thought prompting->FEVER",
+    "stage1_sentence": "Chain-of-thought prompting is a method that enhances question answering in tasks like FEVER by guiding the reasoning process through structured thought steps.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances question answering, not a kind of FEVER",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "FEVER",
+    "b": "Chain of Thought",
+    "direction": "FEVER->Chain-of-thought prompting",
+    "stage1_sentence": "FEVER is a task that can benefit from the structured approach of chain-of-thought prompting to improve question answering.",
+    "stage2_label": "none",
+    "stage2_rationale": "task benefits from approach, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Acting-only prompts",
+    "b": "FEVER",
+    "direction": "Acting-only prompts->FEVER",
+    "stage1_sentence": "Acting-only prompts are utilized within the ReAct framework to enhance question answering in tasks like FEVER.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilized within ReAct, not a kind of FEVER",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "FEVER",
+    "b": "Acting-only prompts",
+    "direction": "FEVER->Acting-only prompts",
+    "stage1_sentence": "FEVER is a task that benefits from the structured approach of Acting-only prompts in the ReAct prompting framework to enhance question answering.",
+    "stage2_label": "none",
+    "stage2_rationale": "benefits from, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain-of-thought self-consistency (CoT-SC)",
+    "b": "FEVER",
+    "direction": "Chain-of-thought self-consistency (CoT-SC)->FEVER",
+    "stage1_sentence": "Chain-of-thought self-consistency (CoT-SC) complements FEVER by mitigating hallucination issues in the question-answering process.",
+    "stage2_label": "none",
+    "stage2_rationale": "complements, not a kind of FEVER",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "FEVER",
+    "b": "Chain-of-thought self-consistency (CoT-SC)",
+    "direction": "FEVER->Chain-of-thought self-consistency (CoT-SC)",
+    "stage1_sentence": "FEVER is a task that can benefit from the structured approach of Chain-of-thought self-consistency (CoT-SC) to reduce hallucination issues in its question answering process.",
+    "stage2_label": "none",
+    "stage2_rationale": "benefit from, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "finetuning strategy",
+    "b": "FEVER",
+    "direction": "finetuning strategy->FEVER",
+    "stage1_sentence": "The finetuning strategy enhances smaller language models by utilizing generated trajectories to improve their performance in tasks like FEVER.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of FEVER",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "FEVER",
+    "b": "finetuning strategy",
+    "direction": "FEVER->finetuning strategy",
+    "stage1_sentence": "FEVER is a task that ReAct prompting enhances through its structured approach to question answering.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of finetuning strategy",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "FEVER",
+    "direction": "CoT->FEVER",
+    "stage1_sentence": "CoT is a method that can be complemented by ReAct prompting to enhance question answering in tasks like FEVER.",
+    "stage2_label": "none",
+    "stage2_rationale": "CoT is a method, not a kind of FEVER",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "FEVER",
+    "b": "Chain of Thought",
+    "direction": "FEVER->CoT",
+    "stage1_sentence": "FEVER is a task that benefits from the structured thought-action-observation approach utilized in Chain-of-thought prompting to enhance question answering.",
+    "stage2_label": "none",
+    "stage2_rationale": "benefits from, not a kind of CoT",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Acting-only prompts",
+    "b": "Chain of Thought",
+    "direction": "Acting-only prompts->Chain-of-thought prompting",
+    "stage1_sentence": "Acting-only prompts are a baseline method that varies in the inclusion of thoughts compared to chain-of-thought prompting.",
+    "stage2_label": "none",
+    "stage2_rationale": "baseline method, not a kind of prompting",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "Acting-only prompts",
+    "direction": "Chain-of-thought prompting->Acting-only prompts",
+    "stage1_sentence": "Chain-of-thought prompting is one of the baseline methods that varies in the inclusion of thoughts compared to acting-only prompts.",
+    "stage2_label": "none",
+    "stage2_rationale": "varies in inclusion, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain-of-thought self-consistency (CoT-SC)",
+    "b": "Chain of Thought",
+    "direction": "Chain-of-thought self-consistency (CoT-SC)->Chain-of-thought prompting",
+    "stage1_sentence": "Chain-of-thought self-consistency (CoT-SC) complements Chain-of-thought prompting by mitigating issues of hallucination in the reasoning process.",
+    "stage2_label": "none",
+    "stage2_rationale": "complements, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "Chain-of-thought self-consistency (CoT-SC)",
+    "direction": "Chain-of-thought prompting->Chain-of-thought self-consistency (CoT-SC)",
+    "stage1_sentence": "Chain-of-thought prompting is a foundational method that can be enhanced by Chain-of-thought self-consistency (CoT-SC) to reduce hallucination in reasoning tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "foundational method, not a kind of CoT-SC",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "finetuning strategy",
+    "b": "Chain of Thought",
+    "direction": "finetuning strategy->Chain-of-thought prompting",
+    "stage1_sentence": "The finetuning strategy enhances smaller language models by utilizing generated trajectories that improve their ability to decode reasoning traces, which can be applied in conjunction with Chain-of-thought prompting to optimize performance.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "finetuning strategy",
+    "direction": "Chain-of-thought prompting->finetuning strategy",
+    "stage1_sentence": "Chain-of-thought prompting is a method that can be enhanced by a finetuning strategy to improve the performance of language models in reasoning tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhanced by, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Acting-only prompts",
+    "b": "Chain-of-thought self-consistency (CoT-SC)",
+    "direction": "Acting-only prompts->Chain-of-thought self-consistency (CoT-SC)",
+    "stage1_sentence": "Acting-only prompts are a baseline method that varies in the inclusion of thoughts compared to Chain-of-thought self-consistency (CoT-SC), which helps mitigate hallucination issues in ReAct prompting.",
+    "stage2_label": "none",
+    "stage2_rationale": "baseline method, not a kind of CoT-SC",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain-of-thought self-consistency (CoT-SC)",
+    "b": "Acting-only prompts",
+    "direction": "Chain-of-thought self-consistency (CoT-SC)->Acting-only prompts",
+    "stage1_sentence": "Chain-of-thought self-consistency (CoT-SC) complements Acting-only prompts by mitigating hallucination issues in the ReAct prompting framework.",
+    "stage2_label": "none",
+    "stage2_rationale": "complements, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "finetuning strategy",
+    "b": "Acting-only prompts",
+    "direction": "finetuning strategy->Acting-only prompts",
+    "stage1_sentence": "The finetuning strategy enhances the performance of Acting-only prompts by utilizing generated trajectories to improve the decoding of reasoning traces.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances performance, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Acting-only prompts",
+    "b": "Chain of Thought",
+    "direction": "Acting-only prompts->CoT",
+    "stage1_sentence": "Acting-only prompts are a baseline method that varies in the inclusion of thoughts, actions, and observations compared to Chain-of-thought prompting.",
+    "stage2_label": "none",
+    "stage2_rationale": "baseline method, not a kind of CoT",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "Acting-only prompts",
+    "direction": "CoT->Acting-only prompts",
+    "stage1_sentence": "Chain-of-thought prompting (CoT) is one of the baseline methods that varies in its approach compared to Acting-only prompts by incorporating structured reasoning steps.",
+    "stage2_label": "none",
+    "stage2_rationale": "varies in approach, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "finetuning strategy",
+    "b": "Chain-of-thought self-consistency (CoT-SC)",
+    "direction": "finetuning strategy->Chain-of-thought self-consistency (CoT-SC)",
+    "stage1_sentence": "The finetuning strategy enhances smaller language models by utilizing generated trajectories, which can support the implementation of Chain-of-thought self-consistency (CoT-SC) to improve performance and reduce hallucination.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances and supports, not a kind of CoT-SC",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain-of-thought self-consistency (CoT-SC)",
+    "b": "finetuning strategy",
+    "direction": "Chain-of-thought self-consistency (CoT-SC)->finetuning strategy",
+    "stage1_sentence": "Chain-of-thought self-consistency (CoT-SC) complements the finetuning strategy by mitigating hallucination issues in ReAct prompting through a proposed heuristic for method switching based on performance.",
+    "stage2_label": "none",
+    "stage2_rationale": "complements, not a kind of finetuning strategy",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain-of-thought self-consistency (CoT-SC)",
+    "b": "Chain of Thought",
+    "direction": "Chain-of-thought self-consistency (CoT-SC)->CoT",
+    "stage1_sentence": "Chain-of-thought self-consistency (CoT-SC) complements CoT by mitigating issues of hallucination in the reasoning process.",
+    "stage2_label": "none",
+    "stage2_rationale": "complements, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "Chain-of-thought self-consistency (CoT-SC)",
+    "direction": "CoT->Chain-of-thought self-consistency (CoT-SC)",
+    "stage1_sentence": "CoT-SC complements CoT by mitigating issues of hallucination in the reasoning process.",
+    "stage2_label": "none",
+    "stage2_rationale": "complements, not a kind of",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "finetuning strategy",
+    "b": "Chain of Thought",
+    "direction": "finetuning strategy->CoT",
+    "stage1_sentence": "The finetuning strategy enhances the performance of smaller language models by utilizing generated trajectories that support the application of Chain-of-thought prompting.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances performance, not a kind of CoT",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "finetuning strategy",
+    "direction": "CoT->finetuning strategy",
+    "stage1_sentence": "Chain-of-thought (CoT) is a method that can be enhanced by a finetuning strategy to improve the performance of smaller language models in reasoning tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhanced by, not a kind of finetuning strategy",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "a": "REACT",
+    "b": "ALFWorld",
+    "direction": "REACT->ALFWorld",
+    "stage1_sentence": "ReAct is tested in ALFWorld as one of the interactive decision-making tasks that require agents to navigate complex environments and make decisions.",
+    "stage2_label": "none",
+    "stage2_rationale": "tested in, not a kind of ALFWorld",
+    "evidence": "4 DECISION MAKING TASKS"
+  },
+  {
+    "a": "ALFWorld",
+    "b": "REACT",
+    "direction": "ALFWorld->REACT",
+    "stage1_sentence": "ALFWorld is one of the interactive decision-making tasks where ReAct is tested, requiring agents to navigate complex environments and make decisions.",
+    "stage2_label": "none",
+    "stage2_rationale": "ALFWorld tests ReAct, not a kind of ReAct",
+    "evidence": "4 DECISION MAKING TASKS"
+  },
+  {
+    "a": "REACT",
+    "b": "WebShop",
+    "direction": "REACT->WebShop",
+    "stage1_sentence": "ReAct is a framework that enhances performance in the WebShop task by incorporating reasoning to guide actions in a noisy online shopping environment.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances performance, not a kind of WebShop",
+    "evidence": "4 DECISION MAKING TASKS"
+  },
+  {
+    "a": "WebShop",
+    "b": "REACT",
+    "direction": "WebShop->REACT",
+    "stage1_sentence": "WebShop is one of the interactive decision-making tasks where ReAct is tested, requiring agents to make decisions in a noisy online shopping environment.",
+    "stage2_label": "none",
+    "stage2_rationale": "WebShop is a task, not a kind of ReAct",
+    "evidence": "4 DECISION MAKING TASKS"
+  },
+  {
+    "a": "ALFWorld",
+    "b": "WebShop",
+    "direction": "ALFWorld->WebShop",
+    "stage1_sentence": "ALFWorld and WebShop are both interactive decision-making tasks that require agents to navigate complex environments and make decisions over long time horizons with sparse rewards.",
+    "stage2_label": "none",
+    "stage2_rationale": "both are tasks, not a kind of",
+    "evidence": "4 DECISION MAKING TASKS"
+  },
+  {
+    "a": "WebShop",
+    "b": "ALFWorld",
+    "direction": "WebShop->ALFWorld",
+    "stage1_sentence": "WebShop is one of the interactive decision-making tasks tested with ReAct, requiring agents to navigate a noisy online shopping environment and make decisions based on user instructions.",
+    "stage2_label": "none",
+    "stage2_rationale": "WebShop is a task, not a kind of ALFWorld",
+    "evidence": "4 DECISION MAKING TASKS"
+  },
+  {
+    "a": "REACT",
+    "b": "least-to-most prompting",
+    "direction": "REACT->least-to-most prompting",
+    "stage1_sentence": "ReAct incorporates least-to-most prompting by integrating reasoning with model actions and observations to enhance decision-making processes.",
+    "stage2_label": "none",
+    "stage2_rationale": "incorporates and integrates, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "least-to-most prompting",
+    "b": "REACT",
+    "direction": "least-to-most prompting->REACT",
+    "stage1_sentence": "Least-to-most prompting enhances the capabilities of REACT by structuring the reasoning process in a way that supports decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of REACT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "REACT",
+    "b": "zero-shot CoT",
+    "direction": "REACT->zero-shot CoT",
+    "stage1_sentence": "ReAct incorporates zero-shot CoT by utilizing language descriptions to inform decision-making policies without needing in-context examples.",
+    "stage2_label": "none",
+    "stage2_rationale": "incorporates and utilizes, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "zero-shot CoT",
+    "b": "REACT",
+    "direction": "zero-shot CoT->REACT",
+    "stage1_sentence": "Zero-shot CoT enhances the reasoning capabilities of LLMs, which can be utilized in the ReAct framework for more complex decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of ReAct",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "REACT",
+    "b": "Selection-Inference",
+    "direction": "REACT->Selection-Inference",
+    "stage1_sentence": "ReAct incorporates Selection-Inference by integrating reasoning with model actions and observations to enhance decision-making processes.",
+    "stage2_label": "none",
+    "stage2_rationale": "incorporates and integrates, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Selection-Inference",
+    "b": "REACT",
+    "direction": "Selection-Inference->REACT",
+    "stage1_sentence": "Selection-Inference refines reasoning by structuring it into distinct phases, which can complement the interactive decision-making capabilities of ReAct.",
+    "stage2_label": "none",
+    "stage2_rationale": "refines and complements, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "REACT",
+    "b": "STaR",
+    "direction": "REACT->STaR",
+    "stage1_sentence": "ReAct incorporates reasoning into its decision-making process, while STaR refines reasoning by structuring it into distinct phases.",
+    "stage2_label": "none",
+    "stage2_rationale": "incorporates and refines, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "STaR",
+    "b": "REACT",
+    "direction": "STaR->REACT",
+    "stage1_sentence": "STaR refines reasoning by structuring it into distinct phases, while ReAct integrates reasoning with model actions and observations for interactive decision-making.",
+    "stage2_label": "none",
+    "stage2_rationale": "refines and integrates, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "REACT",
+    "b": "WebGPT",
+    "direction": "REACT->WebGPT",
+    "stage1_sentence": "ReAct enhances WebGPT's decision-making capabilities by integrating reasoning with model actions and observations in interactive environments.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "WebGPT",
+    "b": "REACT",
+    "direction": "WebGPT->REACT",
+    "stage1_sentence": "WebGPT is an example of an interactive decision-making system that operates without explicitly modeling reasoning, contrasting with the approach taken by ReAct.",
+    "stage2_label": "none",
+    "stage2_rationale": "contrasting with ReAct, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "REACT",
+    "b": "SayCan",
+    "direction": "REACT->SayCan",
+    "stage1_sentence": "ReAct builds upon the feedback loop introduced by Inner Monologue, which is a concept utilized in SayCan for robotic action planning.",
+    "stage2_label": "none",
+    "stage2_rationale": "builds upon, not a kind of SayCan",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "SayCan",
+    "b": "REACT",
+    "direction": "SayCan->REACT",
+    "stage1_sentence": "SayCan is a method that utilizes language models for robotic action planning, which relates to ReAct's integration of reasoning with model actions in interactive decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes, not a kind of ReAct",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "REACT",
+    "b": "Inner Monologue",
+    "direction": "REACT->Inner Monologue",
+    "stage1_sentence": "ReAct builds upon the feedback loop introduced by Inner Monologue to enhance its decision-making capabilities in interactive environments.",
+    "stage2_label": "none",
+    "stage2_rationale": "builds upon, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Inner Monologue",
+    "b": "REACT",
+    "direction": "Inner Monologue->REACT",
+    "stage1_sentence": "Inner Monologue introduces a feedback loop that ReAct builds upon for enhanced decision-making in interactive environments.",
+    "stage2_label": "none",
+    "stage2_rationale": "builds upon, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "least-to-most prompting",
+    "b": "Chain of Thought",
+    "direction": "least-to-most prompting->Chain-of-thought prompting",
+    "stage1_sentence": "Least-to-most prompting enhances Chain-of-Thought prompting by structuring reasoning in a progressive manner.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "least-to-most prompting",
+    "direction": "Chain-of-thought prompting->least-to-most prompting",
+    "stage1_sentence": "Chain-of-thought prompting enhances least-to-most prompting by providing a foundational method for articulating reasoning processes in decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "zero-shot CoT",
+    "b": "Chain of Thought",
+    "direction": "zero-shot CoT->Chain-of-thought prompting",
+    "stage1_sentence": "Zero-shot CoT enhances Chain-of-thought prompting by enabling reasoning steps to be elicited without the need for in-context exemplars.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "zero-shot CoT",
+    "direction": "Chain-of-thought prompting->zero-shot CoT",
+    "stage1_sentence": "Chain-of-thought prompting enhances zero-shot CoT by providing a foundational method for articulating reasoning processes in language models.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Selection-Inference",
+    "b": "Chain of Thought",
+    "direction": "Selection-Inference->Chain-of-thought prompting",
+    "stage1_sentence": "Selection-Inference refines reasoning in LLMs by structuring it into distinct phases, complementing the articulation of reasoning processes enabled by chain-of-thought prompting.",
+    "stage2_label": "none",
+    "stage2_rationale": "refines and complements, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "Selection-Inference",
+    "direction": "Chain-of-thought prompting->Selection-Inference",
+    "stage1_sentence": "Chain-of-thought prompting enhances Selection-Inference by providing a structured reasoning process that informs the distinct phases of inference.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of Selection-Inference",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "STaR",
+    "b": "Chain of Thought",
+    "direction": "STaR->Chain-of-thought prompting",
+    "stage1_sentence": "STaR refines reasoning by structuring it into distinct phases, similar to how chain-of-thought prompting enables LLMs to articulate their reasoning processes.",
+    "stage2_label": "none",
+    "stage2_rationale": "refines reasoning, not a kind of prompting",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "STaR",
+    "direction": "Chain-of-thought prompting->STaR",
+    "stage1_sentence": "Chain-of-thought prompting enhances STaR by providing a structured approach to articulate reasoning processes in decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of STaR",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "WebGPT",
+    "b": "Chain of Thought",
+    "direction": "WebGPT->Chain-of-thought prompting",
+    "stage1_sentence": "WebGPT operates in interactive decision-making environments, while chain-of-thought prompting is a foundational method that enables reasoning articulation in LLMs.",
+    "stage2_label": "none",
+    "stage2_rationale": "no direct relationship between WebGPT and chain-of-thought",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "WebGPT",
+    "direction": "Chain-of-thought prompting->WebGPT",
+    "stage1_sentence": "Chain-of-thought prompting enhances WebGPT's ability to articulate reasoning processes in decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of WebGPT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "SayCan",
+    "b": "Chain of Thought",
+    "direction": "SayCan->Chain-of-thought prompting",
+    "stage1_sentence": "SayCan utilizes chain-of-thought prompting to enhance robotic action planning by enabling LLMs to articulate their reasoning processes.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "SayCan",
+    "direction": "Chain-of-thought prompting->SayCan",
+    "stage1_sentence": "Chain-of-thought prompting is a foundational method that enhances the reasoning capabilities of LLMs, which are utilized in SayCan for robotic action planning.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of SayCan",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Inner Monologue",
+    "b": "Chain of Thought",
+    "direction": "Inner Monologue->Chain-of-thought prompting",
+    "stage1_sentence": "Inner Monologue introduces a feedback loop that enhances the reasoning capabilities utilized in Chain-of-thought prompting.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "Inner Monologue",
+    "direction": "Chain-of-thought prompting->Inner Monologue",
+    "stage1_sentence": "Chain-of-thought prompting enhances Inner Monologue by providing a structured approach to articulate reasoning processes in decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of Inner Monologue",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "least-to-most prompting",
+    "b": "Chain of Thought",
+    "direction": "least-to-most prompting->CoT",
+    "stage1_sentence": "Least-to-most prompting enhances the capabilities of Chain-of-Thought by structuring reasoning processes in a progressive manner.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of CoT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "least-to-most prompting",
+    "direction": "CoT->least-to-most prompting",
+    "stage1_sentence": "CoT serves as a foundational method that least-to-most prompting builds upon to enhance reasoning capabilities in language models.",
+    "stage2_label": "none",
+    "stage2_rationale": "serves as foundational, not a kind of prompting",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "zero-shot CoT",
+    "b": "Chain of Thought",
+    "direction": "zero-shot CoT->CoT",
+    "stage1_sentence": "Zero-shot CoT enhances the capabilities of CoT by enabling reasoning steps to be elicited without the need for in-context exemplars.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "zero-shot CoT",
+    "direction": "CoT->zero-shot CoT",
+    "stage1_sentence": "CoT is a foundational method that enables the development of zero-shot CoT, which enhances reasoning capabilities without in-context exemplars.",
+    "stage2_label": "none",
+    "stage2_rationale": "enables development, not a kind of zero-shot CoT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Selection-Inference",
+    "b": "Chain of Thought",
+    "direction": "Selection-Inference->CoT",
+    "stage1_sentence": "Selection-Inference refines reasoning in LLMs by structuring it into distinct phases, complementing the articulation of reasoning processes seen in Chain-of-Thought (CoT).",
+    "stage2_label": "none",
+    "stage2_rationale": "refines and complements, not a kind of CoT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "Selection-Inference",
+    "direction": "CoT->Selection-Inference",
+    "stage1_sentence": "CoT provides a foundational method for reasoning that is further refined by Selection-Inference, which structures reasoning into distinct phases.",
+    "stage2_label": "none",
+    "stage2_rationale": "foundational method, not a kind of Selection-Inference",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "STaR",
+    "b": "Chain of Thought",
+    "direction": "STaR->CoT",
+    "stage1_sentence": "STaR refines reasoning by structuring it into distinct phases, similar to how CoT enables LLMs to articulate their reasoning processes.",
+    "stage2_label": "none",
+    "stage2_rationale": "refines and structures, not a kind of CoT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "STaR",
+    "direction": "CoT->STaR",
+    "stage1_sentence": "CoT is a foundational method that enables LLMs to articulate their reasoning processes, which is further refined by STaR through structuring reasoning into distinct phases.",
+    "stage2_label": "none",
+    "stage2_rationale": "CoT enables LLMs, not a kind of STaR",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "WebGPT",
+    "b": "Chain of Thought",
+    "direction": "WebGPT->CoT",
+    "stage1_sentence": "WebGPT operates in interactive decision-making environments, utilizing language models without explicitly modeling reasoning like CoT does.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizing language models, not a kind of CoT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "WebGPT",
+    "direction": "CoT->WebGPT",
+    "stage1_sentence": "CoT serves as a foundational method that enhances the reasoning capabilities of LLMs, which are utilized in systems like WebGPT for decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances reasoning capabilities, not a kind of WebGPT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "SayCan",
+    "b": "Chain of Thought",
+    "direction": "SayCan->CoT",
+    "stage1_sentence": "SayCan utilizes language models for robotic action planning, building on the foundational reasoning methods established by Chain-of-Thought (CoT).",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes and builds on, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "SayCan",
+    "direction": "CoT->SayCan",
+    "stage1_sentence": "CoT is a foundational method that enables LLMs to articulate their reasoning processes, which is essential for the decision-making capabilities demonstrated in SayCan.",
+    "stage2_label": "none",
+    "stage2_rationale": "CoT enables LLMs, not a kind of SayCan",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Inner Monologue",
+    "b": "Chain of Thought",
+    "direction": "Inner Monologue->CoT",
+    "stage1_sentence": "Inner Monologue introduces a feedback loop that enhances the decision-making capabilities of methods like ReAct.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of CoT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "Inner Monologue",
+    "direction": "CoT->Inner Monologue",
+    "stage1_sentence": "CoT is a foundational method that enables LLMs to articulate their reasoning processes, which is further refined by approaches like Inner Monologue that introduce feedback loops for enhanced decision-making.",
+    "stage2_label": "none",
+    "stage2_rationale": "CoT enables LLMs, not a kind of Inner Monologue",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "least-to-most prompting",
+    "b": "zero-shot CoT",
+    "direction": "least-to-most prompting->zero-shot CoT",
+    "stage1_sentence": "Least-to-most prompting enhances zero-shot CoT by structuring the reasoning process to improve the model's performance in decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "zero-shot CoT",
+    "b": "least-to-most prompting",
+    "direction": "zero-shot CoT->least-to-most prompting",
+    "stage1_sentence": "Zero-shot CoT enhances least-to-most prompting by allowing reasoning steps to be elicited without the need for in-context exemplars.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "least-to-most prompting",
+    "b": "Selection-Inference",
+    "direction": "least-to-most prompting->Selection-Inference",
+    "stage1_sentence": "Least-to-most prompting enhances Selection-Inference by structuring reasoning into distinct phases for improved decision-making.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Selection-Inference",
+    "b": "least-to-most prompting",
+    "direction": "Selection-Inference->least-to-most prompting",
+    "stage1_sentence": "Selection-Inference enhances least-to-most prompting by structuring reasoning into distinct phases.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "least-to-most prompting",
+    "b": "STaR",
+    "direction": "least-to-most prompting->STaR",
+    "stage1_sentence": "Least-to-most prompting is a method that enhances the capabilities of STaR by structuring reasoning into distinct phases.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances capabilities, not a kind of STaR",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "STaR",
+    "b": "least-to-most prompting",
+    "direction": "STaR->least-to-most prompting",
+    "stage1_sentence": "STaR enhances least-to-most prompting by structuring reasoning into distinct phases or leveraging self-generated rationales.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "least-to-most prompting",
+    "b": "WebGPT",
+    "direction": "least-to-most prompting->WebGPT",
+    "stage1_sentence": "Least-to-most prompting enhances the capabilities of WebGPT by structuring the reasoning process in a more effective manner.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of WebGPT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "WebGPT",
+    "b": "least-to-most prompting",
+    "direction": "WebGPT->least-to-most prompting",
+    "stage1_sentence": "WebGPT utilizes least-to-most prompting as a method to enhance its decision-making capabilities in interactive environments.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "least-to-most prompting",
+    "b": "SayCan",
+    "direction": "least-to-most prompting->SayCan",
+    "stage1_sentence": "Least-to-most prompting enhances the capabilities of methods like SayCan by structuring reasoning processes in a more effective manner.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of SayCan",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "SayCan",
+    "b": "least-to-most prompting",
+    "direction": "SayCan->least-to-most prompting",
+    "stage1_sentence": "SayCan utilizes least-to-most prompting as a strategy to enhance its robotic action planning capabilities.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "least-to-most prompting",
+    "b": "Inner Monologue",
+    "direction": "least-to-most prompting->Inner Monologue",
+    "stage1_sentence": "Least-to-most prompting enhances the reasoning capabilities of Inner Monologue by structuring the thought process in a progressive manner.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Inner Monologue",
+    "b": "least-to-most prompting",
+    "direction": "Inner Monologue->least-to-most prompting",
+    "stage1_sentence": "Inner Monologue introduces a feedback loop that enhances the capabilities of least-to-most prompting in decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of least-to-most prompting",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "zero-shot CoT",
+    "b": "Selection-Inference",
+    "direction": "zero-shot CoT->Selection-Inference",
+    "stage1_sentence": "Zero-shot CoT enhances Selection-Inference by providing a method for reasoning without requiring in-context examples.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Selection-Inference",
+    "b": "zero-shot CoT",
+    "direction": "Selection-Inference->zero-shot CoT",
+    "stage1_sentence": "Selection-Inference refines reasoning processes in LLMs, similar to how zero-shot CoT enhances the articulation of reasoning steps.",
+    "stage2_label": "none",
+    "stage2_rationale": "refines and enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "zero-shot CoT",
+    "b": "STaR",
+    "direction": "zero-shot CoT->STaR",
+    "stage1_sentence": "Zero-shot CoT enhances reasoning capabilities in LLMs, which is a foundational aspect that STaR builds upon by structuring reasoning into distinct phases.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of STaR",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "STaR",
+    "b": "zero-shot CoT",
+    "direction": "STaR->zero-shot CoT",
+    "stage1_sentence": "STaR refines reasoning by structuring it into distinct phases, similar to how zero-shot CoT enhances the articulation of reasoning processes in language models.",
+    "stage2_label": "none",
+    "stage2_rationale": "refines and enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "zero-shot CoT",
+    "b": "WebGPT",
+    "direction": "zero-shot CoT->WebGPT",
+    "stage1_sentence": "Zero-shot CoT enhances the reasoning capabilities of LLMs, which are utilized in WebGPT for decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of WebGPT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "WebGPT",
+    "b": "zero-shot CoT",
+    "direction": "WebGPT->zero-shot CoT",
+    "stage1_sentence": "WebGPT is an application of language models in decision-making that operates without explicitly modeling reasoning, contrasting with zero-shot CoT's focus on eliciting reasoning steps.",
+    "stage2_label": "none",
+    "stage2_rationale": "contrasting with zero-shot CoT, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "zero-shot CoT",
+    "b": "Inner Monologue",
+    "direction": "zero-shot CoT->Inner Monologue",
+    "stage1_sentence": "Zero-shot CoT enhances reasoning capabilities in LLMs, while Inner Monologue introduces a feedback loop that can be utilized in decision-making processes.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances and introduces, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Inner Monologue",
+    "b": "zero-shot CoT",
+    "direction": "Inner Monologue->zero-shot CoT",
+    "stage1_sentence": "Inner Monologue introduces a feedback loop that enhances the capabilities of zero-shot CoT in reasoning and decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of zero-shot CoT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "STaR",
+    "b": "Selection-Inference",
+    "direction": "STaR->Selection-Inference",
+    "stage1_sentence": "STaR leverages self-generated rationales to refine reasoning in a structured manner, similar to how Selection-Inference organizes reasoning into distinct phases.",
+    "stage2_label": "none",
+    "stage2_rationale": "leverages and similar, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Selection-Inference",
+    "b": "STaR",
+    "direction": "Selection-Inference->STaR",
+    "stage1_sentence": "Selection-Inference is a method that refines reasoning by structuring it into distinct phases, similar to how STaR leverages self-generated rationales for enhanced decision-making.",
+    "stage2_label": "none",
+    "stage2_rationale": "refines reasoning, not a kind of STaR",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Selection-Inference",
+    "b": "WebGPT",
+    "direction": "Selection-Inference->WebGPT",
+    "stage1_sentence": "Selection-Inference refines reasoning in decision-making tasks, which is relevant to the capabilities demonstrated by WebGPT in interactive environments.",
+    "stage2_label": "none",
+    "stage2_rationale": "refines reasoning, not a kind of WebGPT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "WebGPT",
+    "b": "Selection-Inference",
+    "direction": "WebGPT->Selection-Inference",
+    "stage1_sentence": "WebGPT is an approach that focuses on API decision-making in interactive environments without explicitly modeling reasoning, while Selection-Inference further refines reasoning by structuring it into distinct phases.",
+    "stage2_label": "none",
+    "stage2_rationale": "no direct relationship between WebGPT and Selection-Inference",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Selection-Inference",
+    "b": "SayCan",
+    "direction": "Selection-Inference->SayCan",
+    "stage1_sentence": "Selection-Inference refines reasoning in decision-making tasks, while SayCan applies LLMs to robotic action planning.",
+    "stage2_label": "none",
+    "stage2_rationale": "refines reasoning, not a kind of SayCan",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "SayCan",
+    "b": "Selection-Inference",
+    "direction": "SayCan->Selection-Inference",
+    "stage1_sentence": "SayCan utilizes Selection-Inference to enhance its robotic action planning by structuring reasoning into distinct phases.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes and enhances, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Selection-Inference",
+    "b": "Inner Monologue",
+    "direction": "Selection-Inference->Inner Monologue",
+    "stage1_sentence": "Selection-Inference structures reasoning into distinct phases, which can enhance the feedback loop introduced by Inner Monologue in decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhance, not a kind of Inner Monologue",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Inner Monologue",
+    "b": "Selection-Inference",
+    "direction": "Inner Monologue->Selection-Inference",
+    "stage1_sentence": "Inner Monologue introduces a feedback loop that enhances the decision-making process utilized in Selection-Inference.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of Selection-Inference",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "STaR",
+    "b": "WebGPT",
+    "direction": "STaR->WebGPT",
+    "stage1_sentence": "STaR refines reasoning in decision-making tasks by structuring it into distinct phases, while WebGPT employs LLMs for interactive decision-making without explicitly modeling reasoning.",
+    "stage2_label": "none",
+    "stage2_rationale": "no direct relationship between STaR and WebGPT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "WebGPT",
+    "b": "STaR",
+    "direction": "WebGPT->STaR",
+    "stage1_sentence": "WebGPT is an example of an interactive decision-making application that utilizes language models without explicitly modeling reasoning.",
+    "stage2_label": "none",
+    "stage2_rationale": "example, not a type of STaR",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "STaR",
+    "b": "SayCan",
+    "direction": "STaR->SayCan",
+    "stage1_sentence": "STaR refines reasoning by structuring it into distinct phases, while SayCan demonstrates the application of LLMs in robotic action planning.",
+    "stage2_label": "none",
+    "stage2_rationale": "no direct relationship between STaR and SayCan",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "SayCan",
+    "b": "STaR",
+    "direction": "SayCan->STaR",
+    "stage1_sentence": "SayCan is a method that utilizes language models for robotic action planning, similar to how STaR refines reasoning by structuring it into distinct phases.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes, not a kind of STaR",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "STaR",
+    "b": "Inner Monologue",
+    "direction": "STaR->Inner Monologue",
+    "stage1_sentence": "STaR refines reasoning by structuring it into distinct phases, which can complement the feedback loop introduced by Inner Monologue in decision-making tasks.",
+    "stage2_label": "none",
+    "stage2_rationale": "refines and complements, not a kind of",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Inner Monologue",
+    "b": "STaR",
+    "direction": "Inner Monologue->STaR",
+    "stage1_sentence": "Inner Monologue introduces a feedback loop that enhances the decision-making capabilities utilized by STaR in structuring reasoning processes.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of STaR",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "SayCan",
+    "b": "WebGPT",
+    "direction": "SayCan->WebGPT",
+    "stage1_sentence": "SayCan is a method that utilizes language models for robotic action planning, similar to how WebGPT employs LLMs in interactive decision-making environments.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes, not a kind of WebGPT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "WebGPT",
+    "b": "SayCan",
+    "direction": "WebGPT->SayCan",
+    "stage1_sentence": "WebGPT is an example of an LLM employed in interactive decision-making environments, focusing on API decision-making without explicitly modeling reasoning, while SayCan demonstrates the use of LLMs in robotic action planning.",
+    "stage2_label": "none",
+    "stage2_rationale": "no direct relationship between WebGPT and SayCan",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Inner Monologue",
+    "b": "WebGPT",
+    "direction": "Inner Monologue->WebGPT",
+    "stage1_sentence": "Inner Monologue introduces a feedback loop that enhances the decision-making capabilities of WebGPT in robotic action planning.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of WebGPT",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "WebGPT",
+    "b": "Inner Monologue",
+    "direction": "WebGPT->Inner Monologue",
+    "stage1_sentence": "WebGPT is an example of an interactive decision-making model that operates without explicitly modeling reasoning, while Inner Monologue introduces a feedback loop that enhances decision-making processes.",
+    "stage2_label": "none",
+    "stage2_rationale": "no direct relationship between WebGPT and Inner Monologue",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "Inner Monologue",
+    "b": "SayCan",
+    "direction": "Inner Monologue->SayCan",
+    "stage1_sentence": "Inner Monologue introduces a feedback loop that enhances the decision-making capabilities utilized by SayCan in robotic action planning.",
+    "stage2_label": "none",
+    "stage2_rationale": "enhances, not a kind of SayCan",
+    "evidence": "5 RELATED WORK"
+  },
+  {
+    "a": "SayCan",
+    "b": "Inner Monologue",
+    "direction": "SayCan->Inner Monologue",
+    "stage1_sentence": "SayCan utilizes Inner Monologue to enhance robotic action planning by incorporating a feedback loop that informs decision-making processes.",
+    "stage2_label": "none",
+    "stage2_rationale": "utilizes to enhance, not a kind of",
+    "evidence": "5 RELATED WORK"
+  }
+]

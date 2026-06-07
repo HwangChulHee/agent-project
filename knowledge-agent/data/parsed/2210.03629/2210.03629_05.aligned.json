@@ -1,0 +1,215 @@
+[
+  {
+    "name": "REACT",
+    "aliases": [],
+    "definitions": [
+      "The REACT framework integrates reasoning and acting within language models to enhance their task performance.",
+      "A method that interleaves reasoning traces with task-specific actions in large language models to enhance their performance in language understanding and decision making.",
+      "A novel paradigm that integrates reasoning and acting within language models to enhance task-solving capabilities.",
+      "ReAct is a method that enhances an agent's task-solving capabilities by expanding its action space to include language-based thoughts that serve as reasoning traces.",
+      "An approach that integrates reasoning with action to enhance knowledge-intensive reasoning tasks.",
+      "A prompting method that utilizes a structured approach of thought-action-observation steps to enhance question answering.",
+      "A model that interleaves reasoning, action, and observation to enhance groundedness and trustworthiness in reasoning tasks.",
+      "A framework that enhances decision-making performance by incorporating reasoning to guide actions in complex environments.",
+      "A method that integrates reasoning with model actions and observations, facilitating more complex tasks like interactive decision-making.",
+      "ReAct is a method designed to enhance the synergy between reasoning and acting in large language models."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.709,
+    "reason": ""
+  },
+  {
+    "name": "HotPotQA",
+    "aliases": [],
+    "definitions": [
+      "A dataset for multi-hop question answering that requires reasoning across multiple Wikipedia passages."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.405,
+    "reason": ""
+  },
+  {
+    "name": "FEVER",
+    "aliases": [],
+    "definitions": [
+      "A dataset for fact verification of claims based on Wikipedia content."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.232,
+    "reason": ""
+  },
+  {
+    "name": "Wikipedia web API",
+    "aliases": [],
+    "definitions": [
+      "A designed interface with actions for retrieving information from Wikipedia to assist in reasoning tasks."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.466,
+    "reason": ""
+  },
+  {
+    "name": "Chain-of-thought prompting",
+    "aliases": [
+      "Chain-of-Thought"
+    ],
+    "definitions": [
+      "A prompting method that includes a sequence of thoughts to aid in reasoning and answer formulation.",
+      "A foundational method that enables language models to articulate their reasoning processes."
+    ],
+    "verdict": "merge",
+    "matched_node": "Chain of Thought",
+    "top_similarity": 0.72,
+    "reason": "Both concepts refer to the same prompting method that involves reasoning through a problem step-by-step."
+  },
+  {
+    "name": "Acting-only prompts",
+    "aliases": [],
+    "definitions": [
+      "A type of prompting method that focuses solely on actions without incorporating thoughts or observations."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.521,
+    "reason": ""
+  },
+  {
+    "name": "Chain-of-thought self-consistency (CoT-SC)",
+    "aliases": [
+      "CoT-SC"
+    ],
+    "definitions": [
+      "A technique that complements ReAct by improving the consistency of reasoning to reduce hallucination issues.",
+      "A variant of the chain-of-thought prompting strategy that integrates internal and external knowledge for reasoning tasks."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.635,
+    "reason": ""
+  },
+  {
+    "name": "finetuning strategy",
+    "aliases": [],
+    "definitions": [
+      "An approach used to enhance smaller language models by conditioning them on generated trajectories."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.538,
+    "reason": ""
+  },
+  {
+    "name": "CoT",
+    "aliases": [],
+    "definitions": [
+      "A prompting strategy that involves chain-of-thought reasoning."
+    ],
+    "verdict": "merge",
+    "matched_node": "Chain of Thought",
+    "top_similarity": 0.668,
+    "reason": "Both refer to the same prompting strategy involving step-by-step reasoning."
+  },
+  {
+    "name": "ALFWorld",
+    "aliases": [],
+    "definitions": [
+      "An interactive decision-making task where agents achieve high-level goals through text-based interactions in a simulated household."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.421,
+    "reason": ""
+  },
+  {
+    "name": "WebShop",
+    "aliases": [],
+    "definitions": [
+      "An interactive decision-making task that involves purchasing products based on user instructions in a noisy online shopping environment."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.433,
+    "reason": ""
+  },
+  {
+    "name": "least-to-most prompting",
+    "aliases": [],
+    "definitions": [
+      "An advancement that enhances the capabilities of Chain-of-Thought."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.596,
+    "reason": ""
+  },
+  {
+    "name": "zero-shot CoT",
+    "aliases": [],
+    "definitions": [
+      "An advancement that enhances the capabilities of Chain-of-Thought."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.596,
+    "reason": ""
+  },
+  {
+    "name": "Selection-Inference",
+    "aliases": [],
+    "definitions": [
+      "A method that refines reasoning by structuring it into distinct phases or leveraging self-generated rationales."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.6,
+    "reason": ""
+  },
+  {
+    "name": "STaR",
+    "aliases": [],
+    "definitions": [
+      "A method that refines reasoning by structuring it into distinct phases or leveraging self-generated rationales."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.6,
+    "reason": ""
+  },
+  {
+    "name": "WebGPT",
+    "aliases": [],
+    "definitions": [
+      "An example of a language model employed in interactive environments for decision-making."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.527,
+    "reason": ""
+  },
+  {
+    "name": "SayCan",
+    "aliases": [],
+    "definitions": [
+      "A work that demonstrates the use of language models in robotic action planning."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.445,
+    "reason": ""
+  },
+  {
+    "name": "Inner Monologue",
+    "aliases": [],
+    "definitions": [
+      "A work that introduces a feedback loop in robotic action planning that ReAct builds upon."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.371,
+    "reason": ""
+  }
+]

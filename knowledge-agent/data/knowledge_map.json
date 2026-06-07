@@ -16,9 +16,9 @@
     "Chain of Thought": {
       "type": null,
       "definition": {
-        "text": "A method that involves prompting a model to think through a problem step-by-step.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "A foundational method that enables language models to articulate their reasoning processes.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
       },
       "mastery": 0.0,
       "locked": false,
@@ -233,6 +233,214 @@
       "_seed_intent": null,
       "last_touched": "2026-06-08",
       "last_probed": null
+    },
+    "REACT": {
+      "type": null,
+      "definition": {
+        "text": "A novel paradigm that integrates reasoning and acting within language models to enhance task-solving capabilities.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "HotPotQA": {
+      "type": null,
+      "definition": {
+        "text": "A dataset for multi-hop question answering that requires reasoning across multiple Wikipedia passages.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "FEVER": {
+      "type": null,
+      "definition": {
+        "text": "A dataset for fact verification of claims based on Wikipedia content.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Wikipedia web API": {
+      "type": null,
+      "definition": {
+        "text": "A designed interface with actions for retrieving information from Wikipedia to assist in reasoning tasks.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Acting-only prompts": {
+      "type": null,
+      "definition": {
+        "text": "A type of prompting method that focuses solely on actions without incorporating thoughts or observations.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Chain-of-thought self-consistency (CoT-SC)": {
+      "type": null,
+      "definition": {
+        "text": "A variant of the chain-of-thought prompting strategy that integrates internal and external knowledge for reasoning tasks.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "finetuning strategy": {
+      "type": null,
+      "definition": {
+        "text": "An approach used to enhance smaller language models by conditioning them on generated trajectories.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "ALFWorld": {
+      "type": null,
+      "definition": {
+        "text": "An interactive decision-making task where agents achieve high-level goals through text-based interactions in a simulated household.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "WebShop": {
+      "type": null,
+      "definition": {
+        "text": "An interactive decision-making task that involves purchasing products based on user instructions in a noisy online shopping environment.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "least-to-most prompting": {
+      "type": null,
+      "definition": {
+        "text": "An advancement that enhances the capabilities of Chain-of-Thought.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "zero-shot CoT": {
+      "type": null,
+      "definition": {
+        "text": "An advancement that enhances the capabilities of Chain-of-Thought.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Selection-Inference": {
+      "type": null,
+      "definition": {
+        "text": "A method that refines reasoning by structuring it into distinct phases or leveraging self-generated rationales.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "STaR": {
+      "type": null,
+      "definition": {
+        "text": "A method that refines reasoning by structuring it into distinct phases or leveraging self-generated rationales.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "WebGPT": {
+      "type": null,
+      "definition": {
+        "text": "An example of a language model employed in interactive environments for decision-making.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "SayCan": {
+      "type": null,
+      "definition": {
+        "text": "A work that demonstrates the use of language models in robotic action planning.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Inner Monologue": {
+      "type": null,
+      "definition": {
+        "text": "A work that introduces a feedback loop in robotic action planning that ReAct builds upon.",
+        "source": "2210.03629",
+        "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
     }
   },
   "edges": [
@@ -267,6 +475,22 @@
       "source": "2305.10601",
       "confidence": 1.0,
       "evidence": "**4.3 Mini crosswords**"
+    },
+    {
+      "from": "REACT",
+      "rel": "part_of",
+      "to": "Acting-only prompts",
+      "source": "2210.03629",
+      "confidence": 1.0,
+      "evidence": "3.2 METHODS"
+    },
+    {
+      "from": "Acting-only prompts",
+      "rel": "part_of",
+      "to": "finetuning strategy",
+      "source": "2210.03629",
+      "confidence": 1.0,
+      "evidence": "3.2 METHODS"
     }
   ]
 }

@@ -1,0 +1,20 @@
+[
+  {
+    "src": "REACT",
+    "rel": "part_of",
+    "dst": "Acting-only prompts",
+    "direction": "REACT->Acting-only prompts",
+    "stage1_sentence": "ReAct incorporates Acting-only prompts as one of its baseline methods, differing in the extent of thought and observation integration during the question-answering process.",
+    "stage2_rationale": "baseline methods include Acting-only prompts",
+    "evidence": "3.2 METHODS"
+  },
+  {
+    "src": "Acting-only prompts",
+    "rel": "part_of",
+    "dst": "finetuning strategy",
+    "direction": "Acting-only prompts->finetuning strategy",
+    "stage1_sentence": "Acting-only prompts are part of a finetuning strategy that enhances the performance of language models by varying the inclusion of thoughts, actions, and observations.",
+    "stage2_rationale": "part of a finetuning strategy",
+    "evidence": "3.2 METHODS"
+  }
+]
