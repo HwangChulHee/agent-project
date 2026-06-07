@@ -1,3 +1,4 @@
+import re
 import json
 import argparse
 from dotenv import load_dotenv
@@ -11,6 +12,22 @@ MODEL = "gpt-4o-mini"
 SMOKE_INDICES = [1, 9]  # ABSTRACT / RELATED WORK
 
 client = OpenAI()
+
+# 모델 인스턴스 차단(결정적). 프롬프트가 제외를 지시하지만, 실험 섹션처럼 모델이
+# "주어"로 등장하면 LLM이 규칙을 무시하고 뽑는다(실측: §4 Experiments에서 'GPT-4'
+# 2/2 누출). → 추출 후 규칙으로 거른다. 프롬프트가 이미 열거한 모델군을 결정적으로 강제.
+_MODEL_FAMILIES = ("gpt", "chatgpt", "instructgpt", "palm", "llama", "lamda",
+                   "gopher", "chinchilla", "opt", "bloom", "codex", "t5",
+                   "bert", "roberta", "claude", "gemini", "mistral", "falcon",
+                   "qwen", "vicuna", "alpaca", "flan")
+# 단독 모델군 이름, 또는 'gpt-4'/'gpt-3.5'/'palm-540b'/'llama-2-70b' 같은 버전·파라미터 변형.
+_MODEL_RE = re.compile(
+    r"^(?:" + "|".join(_MODEL_FAMILIES) + r")(?:[-\s]?\d[\w.\-]*)?$")
+
+
+def is_model_instance(name: str) -> bool:
+    """이름이 특정 모델 인스턴스인가(개념 아님). 정확/버전 매칭 — 부분문자열 아님."""
+    return bool(_MODEL_RE.match(name.strip().lower()))
 
 
 def extract_one(summary_text: str, heading: str = "") -> list:
@@ -48,11 +65,16 @@ def run(paper: str, full: bool):
         summaries = json.load(f)
 
     indices = range(len(summaries)) if full else SMOKE_INDICES
-    all_concepts = []
+    all_concepts, dropped = [], []
     for i in indices:
         concepts = extract_one(summaries[i]["summary"], summaries[i].get("heading", ""))
-        all_concepts.extend(concepts)
-        print(f"  [{i:2}] {summaries[i]['heading'][:40]:42} 개념 {len(concepts)}개")
+        kept = [c for c in concepts if not is_model_instance(c["name"])]
+        dropped += [c["name"] for c in concepts if is_model_instance(c["name"])]
+        all_concepts.extend(kept)
+        print(f"  [{i:2}] {summaries[i]['heading'][:40]:42} 개념 {len(kept)}개"
+              + (f"  (모델인스턴스 {len(concepts)-len(kept)} 제거)" if len(kept) != len(concepts) else ""))
+    if dropped:
+        print(f"\n  모델 인스턴스 필터 제거: {dropped}")
 
     grouped = group(all_concepts)
     multi = sum(1 for c in grouped if len(c["definitions"]) > 1)
