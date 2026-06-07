@@ -75,6 +75,19 @@ def canonicalize(concepts: list) -> list:
         abbrev_map[ab] = max(keys, key=lambda k: (_initials(k) == ab_flat,
                                                   -len(k.split())))
 
+    # 약어 선언(괄호)이 없어도 풀네임 머리글자로 약어를 생성해 단독 약어 토큰을 흡수.
+    #   'Chain of Thought'(머리글자 cot) ← 단독 'CoT'. 구조접미어를 떼고 계산해
+    #   'input-output prompting'(→'input output'→io) ← 'IO'도 잡는다.
+    #   괄호 선언이 우선(더 신뢰) — 이미 있는 약어는 안 덮어씀. 충돌 시 first-seen.
+    for c in concepts:
+        k = norm_key(c["name"])
+        core = strip_struct_suffix(k) or k
+        if len(core.split()) < 2:                  # 머리글자 약어는 2단어 이상에서만
+            continue
+        acro = _initials(core)
+        if len(acro) >= 2 and acro not in abbrev_map:
+            abbrev_map[acro] = k                   # 약어 토큰 -> 풀네임 norm_key
+
     # 1.5단계: 표기-변형 흡수용 베이스 키 집합. 약어 해소까지 반영한 각 개념의 키를
     #   모은 뒤, 'X prompting' 같은 변형은 베이스 'X'가 이 집합에 있을 때만 흡수.
     #   (예: 'chain of thought prompting' → 'chain of thought' 베이스 존재 → 흡수.

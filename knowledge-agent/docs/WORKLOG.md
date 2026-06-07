@@ -32,6 +32,13 @@
 
 ---
 
+## 2026-06-08 — 04b 머리글자 약어 묶기 (merge 안정성)
+
+**문제:** 04b가 괄호 약어선언("...(CoT)")이 있을 때만 약어를 묶음 → 단독 `CoT`/`IO`가 풀네임과 분리. 재실행마다 CoT 3조각·IO 분리의 직접 원인("약어 흡수가 04 추출 운에 의존").
+**해결:** `agent_04b_canonicalize.py` — 풀네임 **머리글자로 약어를 생성**해 단독 약어 토큰 흡수(구조접미어 떼고 계산해 `input-output prompting`→`io`로 `IO`도 잡음). 괄호 선언이 우선(더 신뢰), 충돌 시 first-seen.
+**검증(결정적, 재실행 노이즈 회피):** 단위 9/9 — CoT(괄호없음)·IO 해결, 가드 유지(`zero-shot CoT`·`self-consistency`·무관약어 분리, `DFS` 묶임). 실데이터 회귀: ReAct에서 `CoT`가 CoT-prompting 클러스터로 흡수, 과병합 0. **04b는 순수함수라 전체 재실행(비결정성 복권) 대신 단위테스트로 확정.**
+**남음:** 04b가 못 잡는 파편(`Act`←ReAct 같은 substring/granularity, `search algorithm`↔`search algorithms`는 이미 복수형처리로 OK)·추출 노이즈(GPT-4)는 별개 표적.
+
 ## 2026-06-08 — Related Work 섹션 제외 (02) + 재실행이 드러낸 비결정성
 
 **변경:** `agent_02_reader.py`에 `drop_sections()` 추가 — References처럼 RW를 본문 외 잡음원으로 제거(단 trim_back_matter와 달리 "그 섹션만", 뒤 Discussion/Conclusion 보존). 근거: RW = 공출현 엣지 폭발 + 인용-stub 변두리 개념 + 관계서술 정의의 핫스팟.
