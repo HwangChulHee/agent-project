@@ -96,6 +96,16 @@
           "text": "An ensemble strategy that builds on chain-of-thought prompting by sampling multiple chains of thought to select the most frequent result for a more robust output.",
           "source": "2305.10601",
           "pub_date": "2023-05"
+        },
+        {
+          "text": "A technique that complements ReAct by improving the consistency of reasoning to reduce hallucination issues.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
+        },
+        {
+          "text": "A variant of the chain-of-thought prompting strategy that integrates internal and external knowledge for reasoning tasks.",
+          "source": "2210.03629",
+          "pub_date": "2022-10"
         }
       ],
       "selected_index": 0,
@@ -104,8 +114,10 @@
         "source": "2305.10601",
         "pub_date": "2023-05"
       },
-      "merged_from": [],
-      "n_defs": 1,
+      "merged_from": [
+        "Chain-of-thought self-consistency (CoT-SC)"
+      ],
+      "n_defs": 3,
       "locked": false
     },
     "thought decomposition": {
@@ -475,29 +487,6 @@
       },
       "merged_from": [],
       "n_defs": 1,
-      "locked": false
-    },
-    "Chain-of-thought self-consistency (CoT-SC)": {
-      "definitions": [
-        {
-          "text": "A technique that complements ReAct by improving the consistency of reasoning to reduce hallucination issues.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "A variant of the chain-of-thought prompting strategy that integrates internal and external knowledge for reasoning tasks.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        }
-      ],
-      "selected_index": 1,
-      "selected": {
-        "text": "A variant of the chain-of-thought prompting strategy that integrates internal and external knowledge for reasoning tasks.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "merged_from": [],
-      "n_defs": 2,
       "locked": false
     },
     "finetuning strategy": {

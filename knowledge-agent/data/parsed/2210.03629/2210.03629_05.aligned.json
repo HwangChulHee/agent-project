@@ -64,7 +64,7 @@
     "verdict": "merge",
     "matched_node": "Chain of Thought",
     "top_similarity": 0.72,
-    "reason": "Both concepts refer to the same prompting method that involves reasoning through a problem step-by-step."
+    "reason": "The names 'Chain-of-thought prompting' and 'Chain of Thought' denote the same concept, with the former being a more specific phrasing of the latter."
   },
   {
     "name": "Acting-only prompts",
@@ -86,10 +86,10 @@
       "A technique that complements ReAct by improving the consistency of reasoning to reduce hallucination issues.",
       "A variant of the chain-of-thought prompting strategy that integrates internal and external knowledge for reasoning tasks."
     ],
-    "verdict": "new",
-    "matched_node": null,
+    "verdict": "merge",
+    "matched_node": "self-consistency with chain-of-thought",
     "top_similarity": 0.635,
-    "reason": ""
+    "reason": "The names 'Chain-of-thought self-consistency (CoT-SC)' and 'self-consistency with chain-of-thought' denote the same concept, as they are reworded forms of each other and refer to the same technique."
   },
   {
     "name": "finetuning strategy",
@@ -111,7 +111,7 @@
     "verdict": "merge",
     "matched_node": "Chain of Thought",
     "top_similarity": 0.668,
-    "reason": "Both refer to the same prompting strategy involving step-by-step reasoning."
+    "reason": "CoT is an abbreviation for Chain of Thought, and both definitions describe the same concept of a prompting strategy involving step-by-step reasoning."
   },
   {
     "name": "ALFWorld",

@@ -299,19 +299,6 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "Chain-of-thought self-consistency (CoT-SC)": {
-      "type": null,
-      "definition": {
-        "text": "A variant of the chain-of-thought prompting strategy that integrates internal and external knowledge for reasoning tasks.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "mastery": 0.0,
-      "locked": false,
-      "_seed_intent": null,
-      "last_touched": "2026-06-08",
-      "last_probed": null
-    },
     "finetuning strategy": {
       "type": null,
       "definition": {

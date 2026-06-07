@@ -8,16 +8,16 @@
 
 ## 현재 상태 (2026-06-08 기준)
 
-- 맵(`data/knowledge_map.json`): **2편(ToT 2305.10601 + ReAct 2210.03629)**. **34 노드(ToT 18 + ReAct new 16) / 엣지 6 / 충돌·dangling 0.**
-- merge 경로 첫 실증 완료(아래 ReAct 항목). CoT는 정확히 merge되고 정의도 깨끗 유지. 단 **CoT-SC 파편화 + 교차엣지 0** 발견.
-- **다음 할 일 후보**(택1, 사용자와 방향 합의 필요):
-  (a) **Related Work 프레이밍 오염** 잡기 — CoT-SC 누락·Inner Monologue 오염의 원인. merge 정확도 직결.
-  (b) **교차논문 엣지 추론** — 지금 두 논문 서브그래프가 섬. 06이 논문 내 관계만 뽑아 교차엣지 0.
-  (c) **측정→추천/순서 레이어** 착수.
+- 맵(`data/knowledge_map.json`): **2편(ToT 2305.10601 + ReAct 2210.03629)**. **33 노드(ToT 18 + ReAct new 15) / 충돌·dangling 0.**
+- merge 경로 실증 완료. CoT 정확히 merge, **CoT-SC 파편화도 "이름 보기"로 해소**(아래 항목). 흡수 후 깨끗한 정의 유지.
+- **진행 중인 큰 그림 — 사용자와 합의된 2단계 계획:**
+  - **① 이름 보기 merge (완료)** — 정의가 오염돼도 이름/약어가 같으면 SAME. CoT-SC 해결.
+  - **② 정의 없는 노드 + 엣지 게이트 (다음)** — 관계로만 서술된 개념은 *틀린 정의 저장 대신 정의를 비워서* 노드로 넣고, **엣지가 붙는 것만** 남긴다(2차 바). 오염 저장 방지 + 섬(교차연결) 완화 동시 공략. ①이 전제(빈 정의 노드는 이름으로만 매칭 가능).
+  - 이후: 측정→추천/순서 레이어.
 
 ### 열린 이슈 (실측됨, 미해결)
-- **교차논문 엣지 0 (구조적)**: 06은 한 논문 내부 노드쌍만 관계 추출 → 새 논문 개념과 기존 맵 개념을 잇는 엣지가 안 생김. **world-model 교차연결은 전적으로 노드 merge에만 의존** → merge 한 번 놓치면 섬이 됨. (ReAct 실증으로 확인)
-- **Related Work 프레이밍 오염**: 04 새 가드를 뚫고 "ReAct builds upon" / "complements ReAct" 같은 관계서술형 정의가 통과(`Inner Monologue`, ReAct의 `CoT-SC` 후보). 이게 **CoT-SC 누락 merge를 직접 유발**(깨끗한 정의면 SAME으로 붙음을 확증). Related Work가 오염 핫스팟.
+- **교차논문 엣지 0 (구조적)**: 06은 한 논문 내부 노드쌍만 관계 추출 → 새 논문 개념과 기존 맵 개념을 잇는 엣지가 안 생김. **world-model 교차연결은 전적으로 노드 merge에만 의존** → merge 한 번 놓치면 섬. (②에서 빈-정의 노드+엣지로 다리 늘려 완화 예정)
+- **Related Work 관계서술형 정의**: 04 가드를 뚫고 "ReAct builds upon"/"complements ReAct" 류가 통과(`Inner Monologue` 등). **merge 깨짐 증상은 ①(이름 보기)로 해소**됐으나, *아직 맵에 없는* 개념이 관계정의만 갖고 단독 노드로 들어오는 문제는 남음 → **②(빈 정의로 저장)가 정공법.**
 - **엣지 recall 희소 + 품질**: 34노드에 엣지 6개(`agent_06` `random` 샘플링). 일부 의심 엣지(`REACT part_of Acting-only prompts`는 역방향/오추출로 보임).
 - **cycle 자가생성 간헐적**: 06 양방향 추출 시. ReAct 런에선 0건.
 - **SELECT 기권(-1)은 의미적 오염엔 약함**: 도메인지식 없어 미묘한 오염 미인지. 노골적 타개념 풀에만 발동.
@@ -25,6 +25,13 @@
 - **측정→추천/순서 레이어 미구현**: `kb/store.py`에 `find_gaps()`뿐. 프로젝트 최종 목적의 빈 곳.
 
 ---
+
+## 2026-06-08 — 이름 보기 merge (① — CoT-SC 파편화 해소)
+
+**문제:** ReAct의 `CoT-SC`가 ToT 맵의 `self-consistency with chain-of-thought`와 같은 개념인데 **new로 빠져 2노드로 파편화**(직전 항목). 원인 = ReAct가 뽑은 정의가 관계서술형 오염("complements ReAct…")이라, 정의만 비교하는 05 판정기가 DIFFERENT 판정.
+**해결:** `prompts/alignment.py` 판정 규칙에 **"이름 보기"** 추가 — 정의가 오염·역할기반이어도 **두 이름이 같은 개념(약어/풀네임/어순변경)이면 SAME**. 단 수식어 붙은 변형(zero-shot CoT 등)은 DIFFERENT 유지. "이름만 먼저 비교" 절차 + 구체 예시로 gpt-4o-mini 안정화. **외부지식 금지는 "merge 판단의 이름 동일성 인식"에만 한정 완화 — 저장 정의는 순수 유지.**
+**검증:** judge 단위 테스트 7/7(프롬프트에 없는 RLHF 약어·Auto-CoT 변형 일반화 포함). end-to-end: ToT 18노드 맵에 ReAct 재통합 → **34→33노드**, self-consistency 계열 1노드로 통합, 흡수 후 **깨끗한 ToT 정의 유지**(SELECT가 오염 ReAct 정의 대신 선택), 변형 과병합 0.
+**코드:** `prompts/alignment.py`만 변경.
 
 ## 2026-06-08 — ReAct(2210.03629) 투입 + merge/align 경로 첫 실증
 
