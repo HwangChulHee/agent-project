@@ -30,6 +30,21 @@ def is_model_instance(name: str) -> bool:
     return bool(_MODEL_RE.match(name.strip().lower()))
 
 
+# 일반 원시어 차단(결정적). 메서드를 분해한 구성 동작/원시 개념(act/reasoning/thought 등)은
+# 명명된 메서드가 아니라 노드로 부적합. 프롬프트가 'reasoning processes' 류 제외를
+# 지시하지만 가끔 단독으로 샌다(실측: 'Act' 11섹션 중 1). 정확매칭이라 'ReAct'·
+# 'thought generator'·'Tree of Thoughts' 같은 진짜 개념은 안 건드림.
+_GENERIC_PRIMITIVES = frozenset({
+    "act", "action", "acting", "observation", "observe",
+    "reasoning", "reason", "thought", "thoughts",
+})
+
+
+def is_noise_concept(name: str) -> bool:
+    """노드로 부적합한 추출 노이즈(모델 인스턴스 + 일반 원시어)."""
+    return is_model_instance(name) or name.strip().lower() in _GENERIC_PRIMITIVES
+
+
 def extract_one(summary_text: str, heading: str = "") -> list:
     # heading을 함께 넘긴다 — 프롬프트가 "이 섹션의 주개념 vs 스쳐가는 개념"을
     # 구분해 성질을 엉뚱한 개념에 귀속하지 않도록(주어 귀속 가드).
@@ -68,13 +83,13 @@ def run(paper: str, full: bool):
     all_concepts, dropped = [], []
     for i in indices:
         concepts = extract_one(summaries[i]["summary"], summaries[i].get("heading", ""))
-        kept = [c for c in concepts if not is_model_instance(c["name"])]
-        dropped += [c["name"] for c in concepts if is_model_instance(c["name"])]
+        kept = [c for c in concepts if not is_noise_concept(c["name"])]
+        dropped += [c["name"] for c in concepts if is_noise_concept(c["name"])]
         all_concepts.extend(kept)
         print(f"  [{i:2}] {summaries[i]['heading'][:40]:42} 개념 {len(kept)}개"
-              + (f"  (모델인스턴스 {len(concepts)-len(kept)} 제거)" if len(kept) != len(concepts) else ""))
+              + (f"  (노이즈 {len(concepts)-len(kept)} 제거)" if len(kept) != len(concepts) else ""))
     if dropped:
-        print(f"\n  모델 인스턴스 필터 제거: {dropped}")
+        print(f"\n  노이즈 필터 제거(모델/원시어): {dropped}")
 
     grouped = group(all_concepts)
     multi = sum(1 for c in grouped if len(c["definitions"]) > 1)
