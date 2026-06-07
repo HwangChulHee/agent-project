@@ -1,464 +1,646 @@
 [
   {
+    "a": "language models",
+    "b": "Tree of Thoughts",
+    "direction": "language models->Tree of Thoughts",
+    "stage1_sentence": "Language models utilize the Tree of Thoughts framework to enhance their problem-solving capabilities by structuring the reasoning process into a tree-like format.",
+    "evidence": "**Tree of Thoughts: Deliberate Problem Solving with Large Language Models**"
+  },
+  {
     "a": "Tree of Thoughts",
-    "b": "Chain of Thought",
-    "direction": "Tree of Thoughts->Chain of Thought",
-    "stage1_sentence": "The Tree of Thoughts builds on the Chain of Thought method by allowing language models to explore multiple reasoning paths for improved decision-making in problem-solving.",
-    "evidence": "**Abstract**"
+    "b": "language models",
+    "direction": "Tree of Thoughts->language models",
+    "stage1_sentence": "The Tree of Thoughts enhances language models by structuring their reasoning process into a tree-like format to improve problem-solving capabilities.",
+    "evidence": "**Tree of Thoughts: Deliberate Problem Solving with Large Language Models**"
   },
   {
     "a": "Chain of Thought",
     "b": "Tree of Thoughts",
     "direction": "Chain of Thought->Tree of Thoughts",
-    "stage1_sentence": "Chain of Thought builds on the Tree of Thoughts framework by providing a method for language models to engage in reasoning through coherent units of text during problem-solving.",
+    "stage1_sentence": "Chain of Thought enhances the Tree of Thoughts framework by providing a method for engaging in deliberate decision-making through the evaluation of multiple reasoning paths.",
     "evidence": "**Abstract**"
   },
   {
-    "a": "dual process models",
+    "a": "Tree of Thoughts",
+    "b": "Chain of Thought",
+    "direction": "Tree of Thoughts->Chain of Thought",
+    "stage1_sentence": "The Tree of Thoughts framework builds on the Chain of Thought method by allowing models to explore multiple reasoning paths and make global choices during problem solving.",
+    "evidence": "**Abstract**"
+  },
+  {
+    "a": "language models",
+    "b": "Chain of Thought",
+    "direction": "language models->Chain of Thought",
+    "stage1_sentence": "Language models utilize the Chain of Thought method to enhance their problem-solving performance by evaluating multiple reasoning paths.",
+    "evidence": "**Abstract**"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "language models",
+    "direction": "Chain of Thought->language models",
+    "stage1_sentence": "Chain of Thought enhances language models by enabling them to engage in deliberate decision-making through the evaluation of multiple reasoning paths.",
+    "evidence": "**Abstract**"
+  },
+  {
+    "a": "dual process theory",
     "b": "Tree of Thoughts",
-    "direction": "dual process models->Tree of Thoughts",
-    "stage1_sentence": "Dual process models inform the Tree of Thoughts framework by providing insights into the distinction between associative and deliberate reasoning processes that enhance problem-solving capabilities.",
+    "direction": "dual process theory->Tree of Thoughts",
+    "stage1_sentence": "Dual process theory suggests that LMs could benefit from a more structured planning process, which the Tree of Thoughts framework aims to provide through systematic exploration and self-evaluation.",
     "evidence": "**1 Introduction**"
   },
   {
     "a": "Tree of Thoughts",
-    "b": "dual process models",
-    "direction": "Tree of Thoughts->dual process models",
-    "stage1_sentence": "The Tree of Thoughts framework is informed by dual process models, as it incorporates both associative and deliberate reasoning strategies to enhance problem-solving capabilities.",
+    "b": "dual process theory",
+    "direction": "Tree of Thoughts->dual process theory",
+    "stage1_sentence": "The Tree of Thoughts framework is informed by dual process theory as it seeks to enhance language models' problem-solving capabilities by integrating structured planning akin to the deliberative processes of System 2.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "search algorithm",
+    "a": "autoregressive mechanism",
     "b": "Tree of Thoughts",
-    "direction": "search algorithm->Tree of Thoughts",
-    "stage1_sentence": "The search algorithm is integrated into the Tree of Thoughts framework to enhance planning and decision-making in complex tasks.",
+    "direction": "autoregressive mechanism->Tree of Thoughts",
+    "stage1_sentence": "The autoregressive mechanism underpins the Tree of Thoughts framework by providing the foundational language generation capabilities that the framework builds upon for enhanced reasoning and planning.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "Tree of Thoughts",
+    "b": "autoregressive mechanism",
+    "direction": "Tree of Thoughts->autoregressive mechanism",
+    "stage1_sentence": "The Tree of Thoughts framework enhances the autoregressive mechanism by introducing a structured planning process that allows for systematic exploration and self-evaluation of coherent language sequences.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "Tree of Thoughts",
+    "b": "thought generation",
+    "direction": "Tree of Thoughts->thought generation",
+    "stage1_sentence": "The Tree of Thoughts framework facilitates thought generation by maintaining a structured tree of coherent language sequences that allows for systematic exploration and self-evaluation.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "thought generation",
+    "b": "Tree of Thoughts",
+    "direction": "thought generation->Tree of Thoughts",
+    "stage1_sentence": "Thought generation is a component of the Tree of Thoughts framework that facilitates the systematic exploration and evaluation of coherent language sequences.",
     "evidence": "**1 Introduction**"
   },
   {
     "a": "Tree of Thoughts",
     "b": "search algorithm",
     "direction": "Tree of Thoughts->search algorithm",
-    "stage1_sentence": "The Tree of Thoughts framework integrates with search algorithms to enhance planning and decision-making in complex tasks.",
+    "stage1_sentence": "The Tree of Thoughts utilizes search algorithms to systematically explore and evaluate coherent language sequences, enhancing problem-solving capabilities in language models.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "System 1",
+    "a": "search algorithm",
     "b": "Tree of Thoughts",
-    "direction": "System 1->Tree of Thoughts",
-    "stage1_sentence": "System 1 reflects the associative choices of LMs that the Tree of Thoughts framework aims to enhance through more deliberate planning and systematic exploration.",
+    "direction": "search algorithm->Tree of Thoughts",
+    "stage1_sentence": "The search algorithm is utilized within the Tree of Thoughts framework to systematically explore and evaluate coherent language sequences.",
     "evidence": "**1 Introduction**"
   },
   {
     "a": "Tree of Thoughts",
-    "b": "System 1",
-    "direction": "Tree of Thoughts->System 1",
-    "stage1_sentence": "The Tree of Thoughts framework enhances System 1 reasoning by organizing coherent language sequences to improve planning and decision-making in complex tasks.",
+    "b": "depth-first search",
+    "direction": "Tree of Thoughts->depth-first search",
+    "stage1_sentence": "The Tree of Thoughts utilizes depth-first search as a method for systematic exploration within its framework of coherent language sequences.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "System 2",
+    "a": "depth-first search",
     "b": "Tree of Thoughts",
-    "direction": "System 2->Tree of Thoughts",
-    "stage1_sentence": "System 2 represents a more deliberate planning process that informs the Tree of Thoughts framework's approach to systematic exploration of problem-solving paths.",
+    "direction": "depth-first search->Tree of Thoughts",
+    "stage1_sentence": "Depth-first search is a search algorithm utilized within the Tree of Thoughts framework to systematically explore coherent language sequences.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "Tree of Thoughts",
-    "b": "System 2",
-    "direction": "Tree of Thoughts->System 2",
-    "stage1_sentence": "The Tree of Thoughts framework enhances System 2 reasoning by providing a structured approach to deliberate planning and systematic exploration of problem-solving paths.",
+    "a": "dual process theory",
+    "b": "autoregressive mechanism",
+    "direction": "dual process theory->autoregressive mechanism",
+    "stage1_sentence": "Dual process theory suggests that insights from human cognition could inform improvements to the autoregressive mechanism by proposing a more structured planning process for language models.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "dual process models",
+    "a": "autoregressive mechanism",
+    "b": "dual process theory",
+    "direction": "autoregressive mechanism->dual process theory",
+    "stage1_sentence": "The autoregressive mechanism underpins the functioning of language models, while dual process theory offers insights that could enhance these models' reasoning capabilities through structured planning.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "dual process theory",
+    "b": "thought generation",
+    "direction": "dual process theory->thought generation",
+    "stage1_sentence": "Dual process theory informs thought generation by suggesting that language models could benefit from a structured planning process that distinguishes between fast and slow cognitive approaches.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "thought generation",
+    "b": "dual process theory",
+    "direction": "thought generation->dual process theory",
+    "stage1_sentence": "Thought generation is a process that could be enhanced by insights from dual process theory, which distinguishes between automatic and deliberative cognitive functions.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "dual process theory",
     "b": "search algorithm",
-    "direction": "dual process models->search algorithm",
-    "stage1_sentence": "Dual process models inform the development of search algorithms by providing insights into human cognitive reasoning processes that can enhance problem-solving capabilities.",
+    "direction": "dual process theory->search algorithm",
+    "stage1_sentence": "Dual process theory suggests that language models could benefit from a more structured planning process, which relates to search algorithms as they facilitate systematic exploration and evaluation of thoughts within the Tree of Thoughts framework.",
     "evidence": "**1 Introduction**"
   },
   {
     "a": "search algorithm",
-    "b": "dual process models",
-    "direction": "search algorithm->dual process models",
-    "stage1_sentence": "The search algorithm is integrated into the Tree of Thoughts framework to enhance planning and decision-making in complex tasks informed by dual process models.",
+    "b": "dual process theory",
+    "direction": "search algorithm->dual process theory",
+    "stage1_sentence": "The search algorithm is utilized within the Tree of Thoughts framework to systematically explore and evaluate coherent language sequences, enhancing problem-solving capabilities informed by dual process theory.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "dual process models",
-    "b": "System 1",
-    "direction": "dual process models->System 1",
-    "stage1_sentence": "Dual process models inform the understanding of System 1 by illustrating the associative reasoning processes that language models exhibit.",
+    "a": "dual process theory",
+    "b": "depth-first search",
+    "direction": "dual process theory->depth-first search",
+    "stage1_sentence": "Dual process theory suggests that LMs could benefit from a more structured planning process, which relates to depth-first search as a systematic exploration method within the Tree of Thoughts framework.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "System 1",
-    "b": "dual process models",
-    "direction": "System 1->dual process models",
-    "stage1_sentence": "System 1 reflects the associative choices in dual process models, contrasting with the more deliberate planning represented by System 2.",
+    "a": "depth-first search",
+    "b": "dual process theory",
+    "direction": "depth-first search->dual process theory",
+    "stage1_sentence": "Depth-first search is a search algorithm utilized within the Tree of Thoughts framework to systematically explore and evaluate coherent language sequences.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "dual process models",
-    "b": "System 2",
-    "direction": "dual process models->System 2",
-    "stage1_sentence": "Dual process models inform the understanding of System 2 as a more deliberate planning process in contrast to the associative choices of System 1.",
+    "a": "dual process theory",
+    "b": "language models",
+    "direction": "dual process theory->language models",
+    "stage1_sentence": "Dual process theory suggests that language models could benefit from a more structured planning process to enhance their problem-solving capabilities.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "System 2",
-    "b": "dual process models",
-    "direction": "System 2->dual process models",
-    "stage1_sentence": "System 2 represents a more deliberate planning process within the context of dual process models that differentiate between associative and analytical reasoning.",
+    "a": "language models",
+    "b": "dual process theory",
+    "direction": "language models->dual process theory",
+    "stage1_sentence": "Language models could benefit from insights provided by dual process theory, which distinguishes between automatic and deliberative reasoning processes.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "autoregressive mechanism",
+    "b": "thought generation",
+    "direction": "autoregressive mechanism->thought generation",
+    "stage1_sentence": "The autoregressive mechanism underpins thought generation in language models by providing a foundational method for producing sequences of text based on prior context.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "thought generation",
+    "b": "autoregressive mechanism",
+    "direction": "thought generation->autoregressive mechanism",
+    "stage1_sentence": "Thought generation is enhanced by the autoregressive mechanism, which serves as the foundational process for generating coherent language sequences in language models.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "autoregressive mechanism",
+    "b": "search algorithm",
+    "direction": "autoregressive mechanism->search algorithm",
+    "stage1_sentence": "The autoregressive mechanism underpins the functioning of language models, while the search algorithm is utilized within the Tree of Thoughts framework to enhance problem-solving capabilities.",
     "evidence": "**1 Introduction**"
   },
   {
     "a": "search algorithm",
-    "b": "System 1",
-    "direction": "search algorithm->System 1",
-    "stage1_sentence": "The search algorithm is integrated into the Tree of Thoughts framework to enhance planning and decision-making in relation to System 1 reasoning.",
+    "b": "autoregressive mechanism",
+    "direction": "search algorithm->autoregressive mechanism",
+    "stage1_sentence": "The search algorithm is utilized within the Tree of Thoughts framework to systematically explore and evaluate coherent language sequences generated by the autoregressive mechanism.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "System 1",
-    "b": "search algorithm",
-    "direction": "System 1->search algorithm",
-    "stage1_sentence": "System 1 reflects the associative choices made by language models, which can inform the development of search algorithms within the Tree of Thoughts framework.",
+    "a": "autoregressive mechanism",
+    "b": "depth-first search",
+    "direction": "autoregressive mechanism->depth-first search",
+    "stage1_sentence": "The autoregressive mechanism underpins the language models' capabilities, while depth-first search is a search algorithm utilized within the Tree of Thoughts framework to systematically explore coherent language sequences.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "depth-first search",
+    "b": "autoregressive mechanism",
+    "direction": "depth-first search->autoregressive mechanism",
+    "stage1_sentence": "Depth-first search is a search algorithm utilized within the Tree of Thoughts framework to systematically explore coherent language sequences for enhanced problem-solving in language models.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "language models",
+    "b": "autoregressive mechanism",
+    "direction": "language models->autoregressive mechanism",
+    "stage1_sentence": "Language models utilize an autoregressive mechanism to generate text, which underpins their reasoning capabilities despite its simplicity.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "autoregressive mechanism",
+    "b": "language models",
+    "direction": "autoregressive mechanism->language models",
+    "stage1_sentence": "The autoregressive mechanism underpins language models, enabling them to generate text by predicting the next word based on previous words.",
     "evidence": "**1 Introduction**"
   },
   {
     "a": "search algorithm",
-    "b": "System 2",
-    "direction": "search algorithm->System 2",
-    "stage1_sentence": "The search algorithm is integrated into the System 2 framework to enhance deliberate planning and decision-making in complex tasks.",
+    "b": "thought generation",
+    "direction": "search algorithm->thought generation",
+    "stage1_sentence": "The search algorithm is utilized within the Tree of Thoughts framework to systematically explore and evaluate diverse thought generation processes.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "System 2",
+    "a": "thought generation",
     "b": "search algorithm",
-    "direction": "System 2->search algorithm",
-    "stage1_sentence": "System 2 represents a more deliberate planning process that informs the integration of language-based reasoning with search algorithms in the Tree of Thoughts framework.",
+    "direction": "thought generation->search algorithm",
+    "stage1_sentence": "Thought generation is enhanced by search algorithms that systematically explore and evaluate coherent language sequences within the Tree of Thoughts framework.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "System 2",
-    "b": "System 1",
-    "direction": "System 2->System 1",
-    "stage1_sentence": "System 2 represents a more deliberate planning process that contrasts with the associative choices of System 1.",
+    "a": "depth-first search",
+    "b": "thought generation",
+    "direction": "depth-first search->thought generation",
+    "stage1_sentence": "Depth-first search is a search algorithm utilized within the Tree of Thoughts framework to systematically explore and evaluate diverse thought generation.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "System 1",
-    "b": "System 2",
-    "direction": "System 1->System 2",
-    "stage1_sentence": "System 1 reflects the associative choices of LMs, while System 2 represents a more deliberate planning process.",
+    "a": "thought generation",
+    "b": "depth-first search",
+    "direction": "thought generation->depth-first search",
+    "stage1_sentence": "Thought generation is a process utilized within the depth-first search algorithm to systematically explore and evaluate coherent language sequences in the Tree of Thoughts framework.",
     "evidence": "**1 Introduction**"
   },
   {
-    "a": "thought decomposition",
-    "b": "Tree of Thoughts",
-    "direction": "thought decomposition->Tree of Thoughts",
-    "stage1_sentence": "Thought decomposition breaks down problems into manageable steps within the Tree of Thoughts framework to enhance problem-solving.",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+    "a": "language models",
+    "b": "thought generation",
+    "direction": "language models->thought generation",
+    "stage1_sentence": "Language models are designed to enhance thought generation by integrating diverse methods for systematic exploration and self-evaluation in problem-solving tasks.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "thought generation",
+    "b": "language models",
+    "direction": "thought generation->language models",
+    "stage1_sentence": "Thought generation enhances language models by providing a structured approach to explore and evaluate coherent sequences of reasoning.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "depth-first search",
+    "b": "search algorithm",
+    "direction": "depth-first search->search algorithm",
+    "stage1_sentence": "Depth-first search is a search algorithm utilized within the Tree of Thoughts framework to systematically explore coherent language sequences.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "search algorithm",
+    "b": "depth-first search",
+    "direction": "search algorithm->depth-first search",
+    "stage1_sentence": "The search algorithm is utilized within the Tree of Thoughts framework to systematically explore coherent language sequences through methods like depth-first search.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "language models",
+    "b": "search algorithm",
+    "direction": "language models->search algorithm",
+    "stage1_sentence": "Language models can utilize search algorithms to enhance their problem-solving capabilities by systematically exploring and evaluating diverse thought sequences within the Tree of Thoughts framework.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "search algorithm",
+    "b": "language models",
+    "direction": "search algorithm->language models",
+    "stage1_sentence": "The search algorithm is utilized within the Tree of Thoughts framework to enhance language models' problem-solving capabilities through systematic exploration of coherent language sequences.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "language models",
+    "b": "depth-first search",
+    "direction": "language models->depth-first search",
+    "stage1_sentence": "Language models can utilize depth-first search as part of the Tree of Thoughts framework to systematically explore and evaluate coherent language sequences during problem-solving tasks.",
+    "evidence": "**1 Introduction**"
+  },
+  {
+    "a": "depth-first search",
+    "b": "language models",
+    "direction": "depth-first search->language models",
+    "stage1_sentence": "Depth-first search is a search algorithm utilized within the Tree of Thoughts framework to systematically explore coherent language sequences for enhancing language models' problem-solving capabilities.",
+    "evidence": "**1 Introduction**"
   },
   {
     "a": "Tree of Thoughts",
     "b": "thought decomposition",
     "direction": "Tree of Thoughts->thought decomposition",
-    "stage1_sentence": "The Tree of Thoughts utilizes thought decomposition to break down problems into manageable thought steps within its tree structure.",
+    "stage1_sentence": "The Tree of Thoughts utilizes thought decomposition to break down the problem-solving process into manageable thought steps within its structured framework.",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
-    "a": "thought generator",
+    "a": "thought decomposition",
     "b": "Tree of Thoughts",
-    "direction": "thought generator->Tree of Thoughts",
-    "stage1_sentence": "The thought generator produces candidate thoughts that are utilized within the Tree of Thoughts framework to enhance problem-solving through structured exploration.",
+    "direction": "thought decomposition->Tree of Thoughts",
+    "stage1_sentence": "Thought decomposition breaks down the problem-solving process within the Tree of Thoughts into manageable thought steps.",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
+    "a": "state evaluation",
+    "b": "Tree of Thoughts",
+    "direction": "state evaluation->Tree of Thoughts",
+    "stage1_sentence": "State evaluation assesses the progress of different states within the Tree of Thoughts framework towards a solution using heuristics derived from the language model's reasoning.",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
     "a": "Tree of Thoughts",
-    "b": "thought generator",
-    "direction": "Tree of Thoughts->thought generator",
-    "stage1_sentence": "The Tree of Thoughts utilizes a thought generator to produce candidate thoughts that facilitate the exploration of diverse thought continuations within its tree structure.",
+    "b": "state evaluation",
+    "direction": "Tree of Thoughts->state evaluation",
+    "stage1_sentence": "The Tree of Thoughts utilizes state evaluation to assess the progress of various reasoning paths towards a solution within its structured framework.",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
-    "a": "state evaluator",
-    "b": "Tree of Thoughts",
-    "direction": "state evaluator->Tree of Thoughts",
-    "stage1_sentence": "The state evaluator assesses the potential of different states within the Tree of Thoughts framework using heuristic reasoning.",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "Tree of Thoughts",
-    "b": "state evaluator",
-    "direction": "Tree of Thoughts->state evaluator",
-    "stage1_sentence": "The Tree of Thoughts utilizes the state evaluator to assess the potential of different states within its tree structure during the problem-solving process.",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "thought generator",
+    "a": "thought generation",
     "b": "thought decomposition",
-    "direction": "thought generator->thought decomposition",
-    "stage1_sentence": "The thought generator produces candidate thoughts that are then organized through thought decomposition into manageable steps for problem-solving.",
+    "direction": "thought generation->thought decomposition",
+    "stage1_sentence": "Thought generation produces candidates for the next thought, which are then utilized in thought decomposition to break down the problem-solving process into manageable steps.",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
     "a": "thought decomposition",
-    "b": "thought generator",
-    "direction": "thought decomposition->thought generator",
-    "stage1_sentence": "Thought decomposition breaks down the problem into manageable steps that the thought generator uses to produce candidate thoughts.",
+    "b": "thought generation",
+    "direction": "thought decomposition->thought generation",
+    "stage1_sentence": "Thought decomposition breaks down the problem-solving process into manageable steps that inform the thought generation of candidates for the next thought.",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
-    "a": "thought decomposition",
-    "b": "state evaluator",
-    "direction": "thought decomposition->state evaluator",
-    "stage1_sentence": "Thought decomposition breaks down the problem into manageable thought steps that the state evaluator assesses for potential solutions.",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "state evaluator",
+    "a": "state evaluation",
     "b": "thought decomposition",
-    "direction": "state evaluator->thought decomposition",
-    "stage1_sentence": "The state evaluator assesses the potential of different states generated during the thought decomposition process.",
+    "direction": "state evaluation->thought decomposition",
+    "stage1_sentence": "State evaluation assesses the progress of thought decomposition by evaluating how different states contribute to reaching a solution.",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
     "a": "thought decomposition",
-    "b": "search algorithm",
-    "direction": "thought decomposition->search algorithm",
-    "stage1_sentence": "Thought decomposition breaks down the problem into manageable steps that the search algorithm navigates within the tree structure.",
+    "b": "state evaluation",
+    "direction": "thought decomposition->state evaluation",
+    "stage1_sentence": "Thought decomposition breaks down the problem-solving process into manageable steps that are then assessed through state evaluation to determine progress towards a solution.",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
     "a": "search algorithm",
     "b": "thought decomposition",
     "direction": "search algorithm->thought decomposition",
-    "stage1_sentence": "The search algorithm navigates the tree structure created by thought decomposition to explore different states and potential solutions.",
+    "stage1_sentence": "The search algorithm navigates the tree of thoughts by employing strategies that facilitate the exploration of thought decomposition steps.",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
-    "a": "thought generator",
-    "b": "state evaluator",
-    "direction": "thought generator->state evaluator",
-    "stage1_sentence": "The thought generator produces candidate thoughts that the state evaluator assesses for their potential in the problem-solving process.",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "state evaluator",
-    "b": "thought generator",
-    "direction": "state evaluator->thought generator",
-    "stage1_sentence": "The state evaluator assesses the potential of different states generated by the thought generator during the problem-solving process.",
-    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
-  },
-  {
-    "a": "thought generator",
+    "a": "thought decomposition",
     "b": "search algorithm",
-    "direction": "thought generator->search algorithm",
-    "stage1_sentence": "The thought generator produces candidate thoughts that the search algorithm evaluates and navigates through the tree structure.",
+    "direction": "thought decomposition->search algorithm",
+    "stage1_sentence": "Thought decomposition breaks down the problem-solving process into manageable steps that the search algorithm navigates through the structured tree framework.",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
+    "a": "depth-first search",
+    "b": "thought decomposition",
+    "direction": "depth-first search->thought decomposition",
+    "stage1_sentence": "Depth-first search navigates the tree of thoughts by exploring one branch fully before backtracking, which relates to thought decomposition as it organizes the problem-solving process into manageable steps.",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
+    "a": "thought decomposition",
+    "b": "depth-first search",
+    "direction": "thought decomposition->depth-first search",
+    "stage1_sentence": "Thought decomposition breaks down the problem-solving process into manageable steps that can be explored using depth-first search within the structured tree framework of the Tree of Thoughts paradigm.",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
+    "a": "language models",
+    "b": "thought decomposition",
+    "direction": "language models->thought decomposition",
+    "stage1_sentence": "Language models utilize thought decomposition to break down the problem-solving process into manageable thought steps within the Tree of Thoughts paradigm.",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
+    "a": "thought decomposition",
+    "b": "language models",
+    "direction": "thought decomposition->language models",
+    "stage1_sentence": "Thought decomposition breaks down the problem-solving process into manageable steps that enhance the effectiveness of language models in tackling complex tasks.",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
+    "a": "state evaluation",
+    "b": "thought generation",
+    "direction": "state evaluation->thought generation",
+    "stage1_sentence": "State evaluation assesses the progress of thought generation by determining how different states are advancing towards a solution.",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
+    "a": "thought generation",
+    "b": "state evaluation",
+    "direction": "thought generation->state evaluation",
+    "stage1_sentence": "Thought generation produces candidates for the next thought, which are then assessed through state evaluation to determine their progress towards a solution.",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
+    "a": "state evaluation",
+    "b": "search algorithm",
+    "direction": "state evaluation->search algorithm",
+    "stage1_sentence": "State evaluation assesses the progress of different states towards a solution, while the search algorithm determines how to navigate the tree of states.",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
     "a": "search algorithm",
-    "b": "thought generator",
-    "direction": "search algorithm->thought generator",
-    "stage1_sentence": "The search algorithm navigates the tree structure created by the thought generator, facilitating the exploration of candidate thoughts during problem-solving.",
+    "b": "state evaluation",
+    "direction": "search algorithm->state evaluation",
+    "stage1_sentence": "The search algorithm navigates the tree of states by employing strategies that guide the exploration of different states evaluated for their progress towards a solution.",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
-    "a": "search algorithm",
-    "b": "state evaluator",
-    "direction": "search algorithm->state evaluator",
-    "stage1_sentence": "The search algorithm navigates the tree structure of states evaluated by the state evaluator to enhance problem-solving efficiency.",
+    "a": "state evaluation",
+    "b": "depth-first search",
+    "direction": "state evaluation->depth-first search",
+    "stage1_sentence": "State evaluation assesses the progress of different states in the tree framework used by depth-first search to navigate through potential solutions.",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
-    "a": "state evaluator",
-    "b": "search algorithm",
-    "direction": "state evaluator->search algorithm",
-    "stage1_sentence": "The state evaluator assesses the potential of different states within the search algorithm's navigation of the tree structure.",
+    "a": "depth-first search",
+    "b": "state evaluation",
+    "direction": "depth-first search->state evaluation",
+    "stage1_sentence": "Depth-first search navigates the tree of thoughts by exploring one branch fully before backtracking, while state evaluation assesses the progress of different states towards a solution.",
     "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
   },
   {
-    "a": "two-step thought generation",
+    "a": "language models",
+    "b": "state evaluation",
+    "direction": "language models->state evaluation",
+    "stage1_sentence": "Language models assess the progress of different states towards a solution through state evaluation using heuristics derived from their reasoning.",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
+    "a": "state evaluation",
+    "b": "language models",
+    "direction": "state evaluation->language models",
+    "stage1_sentence": "State evaluation assesses the progress of language models towards a solution by using heuristics derived from their reasoning.",
+    "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
+  },
+  {
+    "a": "deliberate search in trees of thoughts",
+    "b": "Chain of Thought",
+    "direction": "deliberate search in trees of thoughts->Chain of Thought",
+    "stage1_sentence": "Deliberate search in trees of thoughts enhances the performance of Chain of Thought prompting methods in problem-solving scenarios involving search or planning.",
+    "evidence": "**4 Experiments**"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "deliberate search in trees of thoughts",
+    "direction": "Chain of Thought->deliberate search in trees of thoughts",
+    "stage1_sentence": "Chain of Thought enhances performance by employing deliberate search in trees of thoughts for problem-solving scenarios involving search or planning.",
+    "evidence": "**4 Experiments**"
+  },
+  {
+    "a": "language models",
+    "b": "deliberate search in trees of thoughts",
+    "direction": "language models->deliberate search in trees of thoughts",
+    "stage1_sentence": "Language models benefit from employing deliberate search in trees of thoughts to enhance performance in problem-solving scenarios that involve search or planning.",
+    "evidence": "**4 Experiments**"
+  },
+  {
+    "a": "deliberate search in trees of thoughts",
+    "b": "language models",
+    "direction": "deliberate search in trees of thoughts->language models",
+    "stage1_sentence": "Deliberate search in trees of thoughts enhances the performance of language models by providing innovative approaches for problem-solving scenarios that involve search or planning.",
+    "evidence": "**4 Experiments**"
+  },
+  {
+    "a": "Game of 24",
     "b": "Tree of Thoughts",
-    "direction": "two-step thought generation->Tree of Thoughts",
-    "stage1_sentence": "Two-step thought generation is a method that can be utilized within the Tree of Thoughts framework to enhance the planning and coherence of generated passages.",
-    "evidence": "**4.2 Creative writing**"
+    "direction": "Game of 24->Tree of Thoughts",
+    "stage1_sentence": "The Game of 24 is a mathematical reasoning challenge that can be addressed using the Tree of Thoughts method to systematically generate and evaluate equations towards achieving the target of 24.",
+    "evidence": "**4.1 Game of 24**"
   },
   {
     "a": "Tree of Thoughts",
-    "b": "two-step thought generation",
-    "direction": "Tree of Thoughts->two-step thought generation",
-    "stage1_sentence": "The Tree of Thoughts framework incorporates a two-step thought generation method that involves generating and voting on plans before creating a coherent passage.",
+    "b": "Game of 24",
+    "direction": "Tree of Thoughts->Game of 24",
+    "stage1_sentence": "Tree of Thoughts decomposes the Game of 24 challenge into three steps, guiding the language model to generate intermediate equations towards achieving the target of 24.",
+    "evidence": "**4.1 Game of 24**"
+  },
+  {
+    "a": "Game of 24",
+    "b": "Chain of Thought",
+    "direction": "Game of 24->Chain of Thought",
+    "stage1_sentence": "The Game of 24 involves mathematical reasoning that can benefit from chain-of-thought strategies to generate valid equations towards achieving the target.",
+    "evidence": "**4.1 Game of 24**"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "Game of 24",
+    "direction": "Chain of Thought->Game of 24",
+    "stage1_sentence": "Chain of Thought is a prompting method that contrasts with the Tree of Thoughts approach used in the Game of 24, which focuses on generating intermediate equations through a structured problem-solving process.",
+    "evidence": "**4.1 Game of 24**"
+  },
+  {
+    "a": "iterative-refine",
+    "b": "Tree of Thoughts",
+    "direction": "iterative-refine->Tree of Thoughts",
+    "stage1_sentence": "Iterative-refine enhances the Tree of Thoughts approach by allowing the model to assess and improve the coherence of its output based on previous attempts.",
     "evidence": "**4.2 Creative writing**"
   },
   {
     "a": "Tree of Thoughts",
     "b": "iterative-refine",
     "direction": "Tree of Thoughts->iterative-refine",
-    "stage1_sentence": "The Tree of Thoughts method can be enhanced by the iterative-refine approach, which allows for the assessment and improvement of generated plans to achieve better coherence in the final output.",
-    "evidence": "**4.2 Creative writing**"
-  },
-  {
-    "a": "iterative-refine",
-    "b": "Tree of Thoughts",
-    "direction": "iterative-refine->Tree of Thoughts",
-    "stage1_sentence": "Iterative-refine enhances the coherence of outputs in the Tree of Thoughts framework by allowing for the assessment and improvement of previous thought generations.",
+    "stage1_sentence": "The Tree of Thoughts generates multiple plans for creative writing, which can be further enhanced by the iterative-refine method that improves coherence based on previous attempts.",
     "evidence": "**4.2 Creative writing**"
   },
   {
     "a": "two-step thought generation",
-    "b": "Chain of Thought",
-    "direction": "two-step thought generation->Chain of Thought",
-    "stage1_sentence": "Two-step thought generation is a method that incorporates planning similar to chain-of-thought prompts by generating and voting on plans before creating a coherent passage.",
+    "b": "Tree of Thoughts",
+    "direction": "two-step thought generation->Tree of Thoughts",
+    "stage1_sentence": "Two-step thought generation is a method that involves selecting the most promising plan before creating passages, which aligns with the Tree of Thoughts approach that emphasizes planning in the creative writing process.",
+    "evidence": "**4.2 Creative writing**"
+  },
+  {
+    "a": "Tree of Thoughts",
+    "b": "two-step thought generation",
+    "direction": "Tree of Thoughts->two-step thought generation",
+    "stage1_sentence": "The Tree of Thoughts is a method that utilizes a two-step thought generation approach to enhance the coherence of creative writing outputs by first generating multiple plans and selecting the most promising one.",
     "evidence": "**4.2 Creative writing**"
   },
   {
     "a": "Chain of Thought",
-    "b": "two-step thought generation",
-    "direction": "Chain of Thought->two-step thought generation",
-    "stage1_sentence": "Chain of Thought incorporates planning in the two-step thought generation method, which involves generating and voting on plans before creating a coherent passage.",
+    "b": "thought generation",
+    "direction": "Chain of Thought->thought generation",
+    "stage1_sentence": "Chain of Thought enhances thought generation by incorporating a planning step before writing, which aids in producing more coherent outputs.",
+    "evidence": "**4.2 Creative writing**"
+  },
+  {
+    "a": "thought generation",
+    "b": "Chain of Thought",
+    "direction": "thought generation->Chain of Thought",
+    "stage1_sentence": "Thought generation is a process that can be enhanced by the Chain of Thought strategy, which incorporates planning steps before writing to improve coherence.",
     "evidence": "**4.2 Creative writing**"
   },
   {
     "a": "iterative-refine",
     "b": "Chain of Thought",
     "direction": "iterative-refine->Chain of Thought",
-    "stage1_sentence": "Iterative-refine enhances the coherence of outputs in the Chain of Thought framework by allowing for the assessment and improvement of previous outputs.",
+    "stage1_sentence": "Iterative-refine enhances the Chain of Thought approach by allowing the model to assess and improve the coherence of its output based on previous attempts.",
     "evidence": "**4.2 Creative writing**"
   },
   {
     "a": "Chain of Thought",
     "b": "iterative-refine",
     "direction": "Chain of Thought->iterative-refine",
-    "stage1_sentence": "Chain of Thought enhances the iterative-refine method by incorporating planning steps that can be assessed and improved upon for better coherence in generated passages.",
+    "stage1_sentence": "Chain of Thought incorporates a planning step before writing, while iterative-refine enhances the coherence of outputs by allowing the model to assess and improve its previous attempts.",
+    "evidence": "**4.2 Creative writing**"
+  },
+  {
+    "a": "Chain of Thought",
+    "b": "two-step thought generation",
+    "direction": "Chain of Thought->two-step thought generation",
+    "stage1_sentence": "Chain of Thought incorporates a planning step before writing, which relates to two-step thought generation as both methods involve generating and selecting plans to enhance coherence in creative writing tasks.",
     "evidence": "**4.2 Creative writing**"
   },
   {
     "a": "two-step thought generation",
+    "b": "Chain of Thought",
+    "direction": "two-step thought generation->Chain of Thought",
+    "stage1_sentence": "Two-step thought generation is a method that enhances the chain of thought by incorporating a planning phase before generating coherent passages.",
+    "evidence": "**4.2 Creative writing**"
+  },
+  {
+    "a": "iterative-refine",
+    "b": "thought generation",
+    "direction": "iterative-refine->thought generation",
+    "stage1_sentence": "Iterative-refine enhances thought generation by allowing the model to assess and improve the coherence of its output based on previous attempts.",
+    "evidence": "**4.2 Creative writing**"
+  },
+  {
+    "a": "thought generation",
     "b": "iterative-refine",
-    "direction": "two-step thought generation->iterative-refine",
-    "stage1_sentence": "Two-step thought generation involves generating and voting on plans, while iterative-refine enhances the coherence of passages by allowing for assessment and improvement of previous outputs within the ToT framework.",
+    "direction": "thought generation->iterative-refine",
+    "stage1_sentence": "Thought generation enhances iterative-refine by providing initial ideas that can be assessed and improved for coherence in creative writing tasks.",
+    "evidence": "**4.2 Creative writing**"
+  },
+  {
+    "a": "two-step thought generation",
+    "b": "thought generation",
+    "direction": "two-step thought generation->thought generation",
+    "stage1_sentence": "Two-step thought generation is a method of thought generation that involves creating multiple plans before selecting the best one to produce coherent passages.",
+    "evidence": "**4.2 Creative writing**"
+  },
+  {
+    "a": "thought generation",
+    "b": "two-step thought generation",
+    "direction": "thought generation->two-step thought generation",
+    "stage1_sentence": "Thought generation is a process that includes two-step thought generation as a specific method for producing coherent outputs through planning and selection.",
     "evidence": "**4.2 Creative writing**"
   },
   {
     "a": "iterative-refine",
     "b": "two-step thought generation",
     "direction": "iterative-refine->two-step thought generation",
-    "stage1_sentence": "Iterative-refine enhances the two-step thought generation by allowing the model to assess and improve upon its previous outputs for better coherence in the generated passage.",
+    "stage1_sentence": "Iterative-refine enhances two-step thought generation by allowing the model to assess and improve the coherence of its selected plans based on previous attempts.",
     "evidence": "**4.2 Creative writing**"
   },
   {
-    "a": "state evaluation",
-    "b": "depth-first search",
-    "direction": "state evaluation->depth-first search",
-    "stage1_sentence": "State evaluation is a crucial component of the depth-first search approach that helps determine the viability of proposed solutions during the crossword generation process.",
-    "evidence": "**4.3 Mini crosswords**"
-  },
-  {
-    "a": "depth-first search",
-    "b": "state evaluation",
-    "direction": "depth-first search->state evaluation",
-    "stage1_sentence": "Depth-first search employs state evaluation to determine the viability of paths in solving the crossword puzzle.",
-    "evidence": "**4.3 Mini crosswords**"
-  },
-  {
-    "a": "depth-first search",
-    "b": "pruning heuristics",
-    "direction": "depth-first search->pruning heuristics",
-    "stage1_sentence": "Depth-first search employs pruning heuristics to improve state evaluation and enhance the model's problem-solving efficiency in generating crossword boards.",
-    "evidence": "**4.3 Mini crosswords**"
-  },
-  {
-    "a": "pruning heuristics",
-    "b": "depth-first search",
-    "direction": "pruning heuristics->depth-first search",
-    "stage1_sentence": "Pruning heuristics enhance the depth-first search by improving state evaluation and guiding the exploration process in solving crossword puzzles.",
-    "evidence": "**4.3 Mini crosswords**"
-  },
-  {
-    "a": "state evaluation",
-    "b": "pruning heuristics",
-    "direction": "state evaluation->pruning heuristics",
-    "stage1_sentence": "State evaluation enhances pruning heuristics by determining which paths in the search space are unpromising and should be discarded.",
-    "evidence": "**4.3 Mini crosswords**"
-  },
-  {
-    "a": "pruning heuristics",
-    "b": "state evaluation",
-    "direction": "pruning heuristics->state evaluation",
-    "stage1_sentence": "Pruning heuristics enhance state evaluation by eliminating unpromising states during the search process in crossword problem-solving.",
-    "evidence": "**4.3 Mini crosswords**"
-  },
-  {
-    "a": "Tree of Thoughts",
-    "b": "self-reflection",
-    "direction": "Tree of Thoughts->self-reflection",
-    "stage1_sentence": "The Tree of Thoughts enhances self-reflection by integrating thought sampling with value feedback to evaluate multiple plans and improve decision-making in language models.",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "self-reflection",
-    "b": "Tree of Thoughts",
-    "direction": "self-reflection->Tree of Thoughts",
-    "stage1_sentence": "Self-reflection enhances the Tree of Thoughts by allowing language models to assess their predictions and improve accuracy through feedback during the exploration of solution trees.",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "program-guided generation",
-    "b": "Tree of Thoughts",
-    "direction": "program-guided generation->Tree of Thoughts",
-    "stage1_sentence": "Program-guided generation organizes language models through systematic procedures, while Tree of Thoughts enhances planning by integrating thought sampling and value feedback.",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "Tree of Thoughts",
-    "b": "program-guided generation",
-    "direction": "Tree of Thoughts->program-guided generation",
-    "stage1_sentence": "Tree of Thoughts enhances program-guided generation by utilizing internal thoughts for value estimation and solution exploration rather than relying on external information.",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "search algorithm",
-    "b": "self-reflection",
-    "direction": "search algorithm->self-reflection",
-    "stage1_sentence": "The search algorithm is likened to heuristic search methods that utilize self-assessment for problem-solving in the context of planning and decision-making in language models.",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "self-reflection",
-    "b": "search algorithm",
-    "direction": "self-reflection->search algorithm",
-    "stage1_sentence": "Self-reflection enhances the search algorithm by allowing language models to assess their predictions and improve accuracy through feedback during the evaluation process.",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "search algorithm",
-    "b": "program-guided generation",
-    "direction": "search algorithm->program-guided generation",
-    "stage1_sentence": "The search algorithm is likened to heuristic search methods that utilize self-assessment for problem-solving in the context of program-guided generation.",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "program-guided generation",
-    "b": "search algorithm",
-    "direction": "program-guided generation->search algorithm",
-    "stage1_sentence": "Program-guided generation organizes language models through systematic procedures, while the search algorithm is likened to heuristic search methods that utilize self-assessment for problem-solving.",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "program-guided generation",
-    "b": "self-reflection",
-    "direction": "program-guided generation->self-reflection",
-    "stage1_sentence": "Program-guided generation organizes LMs through systematic procedures, while self-reflection enhances their accuracy by allowing them to assess their predictions.",
-    "evidence": "**5 Related Work**"
-  },
-  {
-    "a": "self-reflection",
-    "b": "program-guided generation",
-    "direction": "self-reflection->program-guided generation",
-    "stage1_sentence": "Self-reflection enhances program-guided generation by allowing language models to assess their predictions and improve accuracy through feedback on generated candidates.",
-    "evidence": "**5 Related Work**"
+    "a": "two-step thought generation",
+    "b": "iterative-refine",
+    "direction": "two-step thought generation->iterative-refine",
+    "stage1_sentence": "Two-step thought generation is a method that generates multiple plans before writing, which is further enhanced by the iterative-refine technique that improves the coherence of its outputs.",
+    "evidence": "**4.2 Creative writing**"
   }
 ]

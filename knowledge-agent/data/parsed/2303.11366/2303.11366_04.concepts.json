@@ -1,0 +1,105 @@
+[
+  {
+    "name": "Reflexion",
+    "definitions": [
+      "A framework for language agents that utilizes verbal reinforcement learning to enhance their performance by allowing agents to receive feedback through language.",
+      "Reflexion is a framework designed to enhance the learning process of language agents by utilizing linguistic feedback and storing reflective text in an episodic memory buffer.",
+      "A novel approach that utilizes verbal reinforcement to enhance the learning capabilities of autonomous decision-making agents built on large language models.",
+      "The Reflexion framework is a system composed of three interconnected models: the Actor, the Evaluator, and the Self-Reflection model, designed to enhance decision-making through iterative learning and feedback.",
+      "A method that demonstrates significant improvement over strong baselines in natural language reinforcement learning tasks.",
+      "An approach that leverages self-reflection to distill past experiences into useful 'self-hints' for error correction and task improvement.",
+      "An approach that incorporates self-reflection to enhance learning efficiency in reasoning tasks.",
+      "A method for generating code in programming languages that utilizes self-generated unit test suites to enhance code generation accuracy.",
+      "Reflexion is an optimization technique that leverages natural language for policy optimization and enhances action selection through experiential learning.",
+      "Reflexion is an approach that uses verbal reinforcement to enable agents to learn from their past mistakes, leading to improved decision-making performance."
+    ]
+  },
+  {
+    "name": "verbal reinforcement learning",
+    "definitions": [
+      "An approach that enables agents to receive feedback through language to adjust their behavior and improve decision-making processes.",
+      "A proposed approach that aims to improve the interpretability and diagnosability of autonomous agents in reinforcement learning."
+    ]
+  },
+  {
+    "name": "Actor",
+    "definitions": [
+      "The Actor is a model that generates text and actions based on state observations, utilizing a large language model and a memory component for improved context awareness."
+    ]
+  },
+  {
+    "name": "Evaluator",
+    "definitions": [
+      "The Evaluator is a model that assesses the quality of the Actor's outputs by computing reward scores that reflect performance in specific tasks."
+    ]
+  },
+  {
+    "name": "Self-Reflection model",
+    "definitions": [
+      "The Self-Reflection model generates verbal feedback based on the Actor's performance, providing insights that inform future actions and are stored in memory."
+    ]
+  },
+  {
+    "name": "AlfWorld",
+    "definitions": [
+      "An environment used for evaluating performance in multi-step decision-making tasks.",
+      "A series of text-based environments where agents tackle multi-step tasks."
+    ]
+  },
+  {
+    "name": "HotPotQA",
+    "definitions": [
+      "A benchmark used for evaluating search-based question answering tasks.",
+      "A dataset designed to evaluate reasoning capabilities through question-and-answer pairs that require parsing and reasoning over multiple documents."
+    ]
+  },
+  {
+    "name": "HumanEval",
+    "definitions": [
+      "A benchmark used for evaluating code generation tasks."
+    ]
+  },
+  {
+    "name": "ReAct",
+    "definitions": [
+      "A framework for action generation used by agents in multi-step tasks.",
+      "An approach that allows an agent to retrieve relevant information via a Wikipedia API and engage in explicit step-by-step thinking."
+    ]
+  },
+  {
+    "name": "Chain-of-Thought (CoT)",
+    "definitions": [
+      "A method that leverages ground truth context to enhance reasoning over extensive text."
+    ]
+  },
+  {
+    "name": "Chain-of-Thought prompting",
+    "definitions": [
+      "A prompting technique used to create diverse test cases that are filtered for syntactic validity."
+    ]
+  },
+  {
+    "name": "LeetcodeHardGym",
+    "definitions": [
+      "An interactive programming benchmark introduced to evaluate programming approaches."
+    ]
+  },
+  {
+    "name": "experiential learning",
+    "definitions": [
+      "Experiential learning is a process that enhances action selection by learning from experiences."
+    ]
+  },
+  {
+    "name": "self-reflection",
+    "definitions": [
+      "Self-reflection is a concept that allows agents to evaluate their actions and outcomes."
+    ]
+  },
+  {
+    "name": "isolated execution environments",
+    "definitions": [
+      "environments that are separated from other processes to safely execute code without interference or risk from unverified code."
+    ]
+  }
+]

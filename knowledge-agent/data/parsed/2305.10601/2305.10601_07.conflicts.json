@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "pair": [
+      "two-step thought generation",
+      "thought generation"
+    ],
+    "kind": "cycle",
+    "edges": [
+      {
+        "from": "two-step thought generation",
+        "rel": "is_a",
+        "to": "thought generation",
+        "evidence": "**4.2 Creative writing**"
+      },
+      {
+        "from": "thought generation",
+        "rel": "is_a",
+        "to": "two-step thought generation",
+        "evidence": "**4.2 Creative writing**"
+      }
+    ],
+    "held": [
+      {
+        "from": "two-step thought generation",
+        "rel": "is_a",
+        "to": "thought generation",
+        "evidence": "**4.2 Creative writing**"
+      },
+      {
+        "from": "thought generation",
+        "rel": "is_a",
+        "to": "two-step thought generation",
+        "evidence": "**4.2 Creative writing**"
+      }
+    ]
+  }
+]

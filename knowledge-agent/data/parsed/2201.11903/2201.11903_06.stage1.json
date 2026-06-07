@@ -1,0 +1,828 @@
+[
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "large language models",
+    "direction": "Chain-of-Thought Prompting->large language models",
+    "stage1_sentence": "Chain-of-thought prompting encourages large language models to articulate their reasoning processes, enhancing their ability to solve complex problems.",
+    "evidence": "**Chain-of-Thought Prompting Elicits Reasoning in Large Language Models**"
+  },
+  {
+    "a": "large language models",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "large language models->Chain-of-Thought Prompting",
+    "stage1_sentence": "Large language models utilize chain-of-thought prompting to articulate their reasoning processes, thereby enhancing their ability to solve complex problems.",
+    "evidence": "**Chain-of-Thought Prompting Elicits Reasoning in Large Language Models**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "symbolic reasoning",
+    "direction": "Chain-of-Thought Prompting->symbolic reasoning",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances symbolic reasoning by providing intermediate reasoning steps that improve the performance of large language models in reasoning tasks.",
+    "evidence": "**Abstract**"
+  },
+  {
+    "a": "symbolic reasoning",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "symbolic reasoning->Chain-of-Thought Prompting",
+    "stage1_sentence": "Symbolic reasoning benefits from chain-of-thought prompting, which enhances its performance by providing intermediate reasoning steps in the prompts.",
+    "evidence": "**Abstract**"
+  },
+  {
+    "a": "large language models",
+    "b": "symbolic reasoning",
+    "direction": "large language models->symbolic reasoning",
+    "stage1_sentence": "Large language models improve their performance in symbolic reasoning through the application of chain-of-thought prompting that enhances their complex reasoning capabilities.",
+    "evidence": "**Abstract**"
+  },
+  {
+    "a": "symbolic reasoning",
+    "b": "large language models",
+    "direction": "symbolic reasoning->large language models",
+    "stage1_sentence": "Symbolic reasoning benefits from the enhanced complex reasoning capabilities of large language models through the application of chain-of-thought prompting.",
+    "evidence": "**Abstract**"
+  },
+  {
+    "a": "commonsense reasoning",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "commonsense reasoning->Chain-of-Thought Prompting",
+    "stage1_sentence": "Commonsense reasoning is a task that can be addressed using chain-of-thought prompting to enhance the model's reasoning process.",
+    "evidence": "**2 Chain-of-Thought Prompting**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "commonsense reasoning",
+    "direction": "Chain-of-Thought Prompting->commonsense reasoning",
+    "stage1_sentence": "Chain-of-thought prompting enhances commonsense reasoning by enabling language models to generate coherent intermediate reasoning steps that lead to final answers.",
+    "evidence": "**2 Chain-of-Thought Prompting**"
+  },
+  {
+    "a": "commonsense reasoning",
+    "b": "large language models",
+    "direction": "commonsense reasoning->large language models",
+    "stage1_sentence": "Commonsense reasoning is a task that can be effectively addressed by large language models through chain-of-thought prompting.",
+    "evidence": "**2 Chain-of-Thought Prompting**"
+  },
+  {
+    "a": "large language models",
+    "b": "commonsense reasoning",
+    "direction": "large language models->commonsense reasoning",
+    "stage1_sentence": "Large language models can utilize chain-of-thought prompting to enhance their performance in commonsense reasoning tasks by generating coherent intermediate reasoning steps.",
+    "evidence": "**2 Chain-of-Thought Prompting**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "GSM8K",
+    "direction": "Chain-of-Thought Prompting->GSM8K",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances performance on the GSM8K dataset by enabling a large language model to tackle arithmetic reasoning more effectively.",
+    "evidence": "**3 Arithmetic Reasoning**"
+  },
+  {
+    "a": "GSM8K",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "GSM8K->Chain-of-Thought Prompting",
+    "stage1_sentence": "GSM8K is a difficult dataset on which chain-of-thought prompting has demonstrated promising results, performing similarly to specialized finetuned models.",
+    "evidence": "**3 Arithmetic Reasoning**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "SVAMP",
+    "direction": "Chain-of-Thought Prompting->SVAMP",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances the evaluation of SVAMP by incorporating reasoning processes into the input-output pairs for improved model performance.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "SVAMP",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "SVAMP->Chain-of-Thought Prompting",
+    "stage1_sentence": "SVAMP is one of the math word problem benchmarks used to evaluate the effectiveness of chain-of-thought prompting in language models.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "ASDiv",
+    "direction": "Chain-of-Thought Prompting->ASDiv",
+    "stage1_sentence": "Chain-of-Thought Prompting is a method evaluated using the ASDiv benchmark to enhance model performance on math word problems.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "ASDiv",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "ASDiv->Chain-of-Thought Prompting",
+    "stage1_sentence": "ASDiv is one of the math word problem benchmarks used to evaluate the effectiveness of chain-of-thought prompting in language models.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "AQuA",
+    "direction": "Chain-of-Thought Prompting->AQuA",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances the evaluation of AQuA by incorporating reasoning processes tailored to its multiple-choice format.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "AQuA",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "AQuA->Chain-of-Thought Prompting",
+    "stage1_sentence": "AQuA is a benchmark that utilizes a different approach to chain-of-thought prompting due to its multiple-choice format.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "MAWPS",
+    "direction": "Chain-of-Thought Prompting->MAWPS",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances the evaluation of MAWPS by incorporating reasoning processes into the input-output pairs for improved model performance.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "MAWPS",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "MAWPS->Chain-of-Thought Prompting",
+    "stage1_sentence": "MAWPS is one of the math word problem benchmarks used to evaluate the effectiveness of chain-of-thought prompting in language models.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "GSM8K",
+    "b": "SVAMP",
+    "direction": "GSM8K->SVAMP",
+    "stage1_sentence": "GSM8K and SVAMP are both math word problem benchmarks used to evaluate language models in the experimental setup.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "SVAMP",
+    "b": "GSM8K",
+    "direction": "SVAMP->GSM8K",
+    "stage1_sentence": "SVAMP is one of the five math word problem benchmarks used to evaluate language models alongside GSM8K.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "GSM8K",
+    "b": "ASDiv",
+    "direction": "GSM8K->ASDiv",
+    "stage1_sentence": "GSM8K and ASDiv are both math word problem benchmarks used to evaluate language models in the context of chain-of-thought prompting.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "ASDiv",
+    "b": "GSM8K",
+    "direction": "ASDiv->GSM8K",
+    "stage1_sentence": "ASDiv is one of the five math word problem benchmarks, including GSM8K, used to evaluate the performance of language models in the study.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "GSM8K",
+    "b": "AQuA",
+    "direction": "GSM8K->AQuA",
+    "stage1_sentence": "GSM8K and AQuA are both math word problem benchmarks used to evaluate language models in the context of chain-of-thought prompting.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "AQuA",
+    "b": "GSM8K",
+    "direction": "AQuA->GSM8K",
+    "stage1_sentence": "AQuA is one of the math word problem benchmarks used to evaluate language models, alongside GSM8K.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "GSM8K",
+    "b": "MAWPS",
+    "direction": "GSM8K->MAWPS",
+    "stage1_sentence": "GSM8K and MAWPS are both math word problem benchmarks used to evaluate language models in the context of chain-of-thought prompting.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "MAWPS",
+    "b": "GSM8K",
+    "direction": "MAWPS->GSM8K",
+    "stage1_sentence": "MAWPS is one of the five math word problem benchmarks used to evaluate language models alongside GSM8K.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "GSM8K",
+    "b": "large language models",
+    "direction": "GSM8K->large language models",
+    "stage1_sentence": "GSM8K serves as one of the benchmarks used to evaluate the performance of large language models in solving math word problems.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "large language models",
+    "b": "GSM8K",
+    "direction": "large language models->GSM8K",
+    "stage1_sentence": "Large language models are evaluated on the GSM8K benchmark to assess their performance in solving math word problems using chain-of-thought prompting.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "SVAMP",
+    "b": "ASDiv",
+    "direction": "SVAMP->ASDiv",
+    "stage1_sentence": "SVAMP is one of the math word problem benchmarks used to evaluate language models alongside ASDiv.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "ASDiv",
+    "b": "SVAMP",
+    "direction": "ASDiv->SVAMP",
+    "stage1_sentence": "ASDiv is one of the five math word problem benchmarks used to evaluate language models alongside SVAMP.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "AQuA",
+    "b": "SVAMP",
+    "direction": "AQuA->SVAMP",
+    "stage1_sentence": "AQuA is a math word problem benchmark that differs in its approach to prompting compared to SVAMP due to its multiple-choice format.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "SVAMP",
+    "b": "AQuA",
+    "direction": "SVAMP->AQuA",
+    "stage1_sentence": "SVAMP is one of the math word problem benchmarks used to evaluate language models alongside AQuA.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "MAWPS",
+    "b": "SVAMP",
+    "direction": "MAWPS->SVAMP",
+    "stage1_sentence": "MAWPS is one of the five math word problem benchmarks used to evaluate language models alongside SVAMP.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "SVAMP",
+    "b": "MAWPS",
+    "direction": "SVAMP->MAWPS",
+    "stage1_sentence": "SVAMP is one of the five math word problem benchmarks used to evaluate the performance of language models in the study.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "large language models",
+    "b": "SVAMP",
+    "direction": "large language models->SVAMP",
+    "stage1_sentence": "Large language models are evaluated on the SVAMP benchmark as part of the experimental setup for exploring chain-of-thought prompting.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "SVAMP",
+    "b": "large language models",
+    "direction": "SVAMP->large language models",
+    "stage1_sentence": "SVAMP is one of the math word problem benchmarks used to evaluate the performance of large language models in the study.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "AQuA",
+    "b": "ASDiv",
+    "direction": "AQuA->ASDiv",
+    "stage1_sentence": "AQuA is one of the math word problem benchmarks used to evaluate language models, alongside ASDiv.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "ASDiv",
+    "b": "AQuA",
+    "direction": "ASDiv->AQuA",
+    "stage1_sentence": "ASDiv is one of the math word problem benchmarks used to evaluate language models alongside AQuA.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "MAWPS",
+    "b": "ASDiv",
+    "direction": "MAWPS->ASDiv",
+    "stage1_sentence": "MAWPS is one of the five math word problem benchmarks used to evaluate language models alongside ASDiv.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "ASDiv",
+    "b": "MAWPS",
+    "direction": "ASDiv->MAWPS",
+    "stage1_sentence": "ASDiv is one of the five math word problem benchmarks used to evaluate the performance of language models in the study.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "large language models",
+    "b": "ASDiv",
+    "direction": "large language models->ASDiv",
+    "stage1_sentence": "Large language models are evaluated on the ASDiv benchmark to assess their performance in solving math word problems using chain-of-thought prompting.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "ASDiv",
+    "b": "large language models",
+    "direction": "ASDiv->large language models",
+    "stage1_sentence": "ASDiv is one of the math word problem benchmarks used to evaluate the performance of large language models in the study.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "MAWPS",
+    "b": "AQuA",
+    "direction": "MAWPS->AQuA",
+    "stage1_sentence": "MAWPS is one of the math word problem benchmarks used to evaluate language models alongside AQuA.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "AQuA",
+    "b": "MAWPS",
+    "direction": "AQuA->MAWPS",
+    "stage1_sentence": "AQuA is one of the math word problem benchmarks used to evaluate language models alongside MAWPS.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "AQuA",
+    "b": "large language models",
+    "direction": "AQuA->large language models",
+    "stage1_sentence": "AQuA is a benchmark used to evaluate the performance of large language models in solving math word problems with a multiple-choice format.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "large language models",
+    "b": "AQuA",
+    "direction": "large language models->AQuA",
+    "stage1_sentence": "Large language models are evaluated on the AQuA benchmark, which is one of the math word problem benchmarks used to assess their performance.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "MAWPS",
+    "b": "large language models",
+    "direction": "MAWPS->large language models",
+    "stage1_sentence": "MAWPS serves as one of the math word problem benchmarks used to evaluate the performance of large language models in the study.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "large language models",
+    "b": "MAWPS",
+    "direction": "large language models->MAWPS",
+    "stage1_sentence": "Large language models are evaluated on the MAWPS benchmark as part of the experimental setup for exploring chain-of-thought prompting.",
+    "evidence": "**3.1 Experimental Setup**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "equation only",
+    "direction": "Chain-of-Thought Prompting->equation only",
+    "stage1_sentence": "Chain-of-Thought Prompting is essential for translating complex questions into solvable equations, unlike the equation only approach which shows limited success.",
+    "evidence": "**3.3 Ablation Study**"
+  },
+  {
+    "a": "equation only",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "equation only->Chain-of-Thought Prompting",
+    "stage1_sentence": "The equation only approach demonstrates limited success for complex problems, highlighting the importance of chain-of-thought prompting in effectively translating challenging questions into solvable equations.",
+    "evidence": "**3.3 Ablation Study**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "variable compute only",
+    "direction": "Chain-of-Thought Prompting->variable compute only",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances reasoning processes that variable compute only fails to replicate due to its lack of natural language expressiveness.",
+    "evidence": "**3.3 Ablation Study**"
+  },
+  {
+    "a": "variable compute only",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "variable compute only->Chain-of-Thought Prompting",
+    "stage1_sentence": "Variable compute only lacks the expressiveness of natural language that is crucial for the effectiveness of chain-of-thought prompting.",
+    "evidence": "**3.3 Ablation Study**"
+  },
+  {
+    "a": "chain of thought after answer",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "chain of thought after answer->Chain-of-Thought Prompting",
+    "stage1_sentence": "The chain of thought after answer enhances the reasoning process by building on the sequential reasoning inherent in Chain-of-Thought Prompting.",
+    "evidence": "**3.3 Ablation Study**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "chain of thought after answer",
+    "direction": "Chain-of-Thought Prompting->chain of thought after answer",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances the reasoning process by utilizing sequential reasoning, which is also reflected in the chain of thought after answer variant.",
+    "evidence": "**3.3 Ablation Study**"
+  },
+  {
+    "a": "variable compute only",
+    "b": "equation only",
+    "direction": "variable compute only->equation only",
+    "stage1_sentence": "Variable compute only lacks the expressiveness of natural language that is essential for effectively translating complex problems into solvable equations, as demonstrated by the limitations of the equation only approach.",
+    "evidence": "**3.3 Ablation Study**"
+  },
+  {
+    "a": "equation only",
+    "b": "variable compute only",
+    "direction": "equation only->variable compute only",
+    "stage1_sentence": "The equation only approach highlights the limitations of solving complex problems without the reasoning steps provided by variable compute only.",
+    "evidence": "**3.3 Ablation Study**"
+  },
+  {
+    "a": "chain of thought after answer",
+    "b": "equation only",
+    "direction": "chain of thought after answer->equation only",
+    "stage1_sentence": "Chain of thought after answer enhances the reasoning process by building on the sequential reasoning inherent in chain-of-thought prompting.",
+    "evidence": "**3.3 Ablation Study**"
+  },
+  {
+    "a": "equation only",
+    "b": "chain of thought after answer",
+    "direction": "equation only->chain of thought after answer",
+    "stage1_sentence": "The equation only approach highlights the necessity of chain-of-thought reasoning steps for effectively solving complex problems.",
+    "evidence": "**3.3 Ablation Study**"
+  },
+  {
+    "a": "chain of thought after answer",
+    "b": "variable compute only",
+    "direction": "chain of thought after answer->variable compute only",
+    "stage1_sentence": "Chain of thought after answer enhances the reasoning process by building on the sequential reasoning inherent in chain-of-thought.",
+    "evidence": "**3.3 Ablation Study**"
+  },
+  {
+    "a": "variable compute only",
+    "b": "chain of thought after answer",
+    "direction": "variable compute only->chain of thought after answer",
+    "stage1_sentence": "Variable compute only lacks the expressiveness of natural language that is essential for the reasoning process enhanced by chain of thought after answer.",
+    "evidence": "**3.3 Ablation Study**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "CSQA",
+    "direction": "Chain-of-Thought Prompting->CSQA",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances the model's reasoning capabilities in CSQA by facilitating the understanding of complex semantic questions.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "CSQA",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "CSQA->Chain-of-Thought Prompting",
+    "stage1_sentence": "CSQA benefits from chain-of-thought prompting, which enhances the model's reasoning capabilities in addressing complex semantic questions.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "StrategyQA",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "StrategyQA->Chain-of-Thought Prompting",
+    "stage1_sentence": "StrategyQA utilizes chain-of-thought prompting to enhance multi-hop strategy inference in commonsense reasoning tasks.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "StrategyQA",
+    "direction": "Chain-of-Thought Prompting->StrategyQA",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances the reasoning capabilities of models applied to StrategyQA by facilitating multi-hop strategy inference.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "BIG-bench",
+    "direction": "Chain-of-Thought Prompting->BIG-bench",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances the reasoning capabilities of models evaluated in the BIG-bench tasks, demonstrating its applicability in commonsense reasoning.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "BIG-bench",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "BIG-bench->Chain-of-Thought Prompting",
+    "stage1_sentence": "BIG-bench tasks utilize chain-of-thought prompting to enhance reasoning capabilities in commonsense reasoning evaluations.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "Date Understanding",
+    "direction": "Chain-of-Thought Prompting->Date Understanding",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances Date Understanding by improving the model's reasoning capabilities in inferring dates within commonsense reasoning tasks.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Date Understanding",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "Date Understanding->Chain-of-Thought Prompting",
+    "stage1_sentence": "Date Understanding utilizes chain-of-thought prompting to enhance reasoning capabilities in inferring dates within commonsense reasoning tasks.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Sports Understanding",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "Sports Understanding->Chain-of-Thought Prompting",
+    "stage1_sentence": "Sports Understanding relates to Chain-of-Thought Prompting as the latter enhances the model's reasoning capabilities in evaluating sports-related plausibility within the context of commonsense reasoning tasks.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "Sports Understanding",
+    "direction": "Chain-of-Thought Prompting->Sports Understanding",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances the model's reasoning capabilities in Sports Understanding by facilitating the inference of sports-related plausibility through structured reasoning steps.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "SayCan",
+    "b": "Chain-of-Thought Prompting",
+    "direction": "SayCan->Chain-of-Thought Prompting",
+    "stage1_sentence": "SayCan utilizes chain-of-thought prompting to enhance the model's reasoning capabilities in mapping natural language instructions to robot actions.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Chain-of-Thought Prompting",
+    "b": "SayCan",
+    "direction": "Chain-of-Thought Prompting->SayCan",
+    "stage1_sentence": "Chain-of-Thought Prompting enhances SayCan's ability to improve reasoning capabilities by facilitating the mapping of natural language instructions to robot actions.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "commonsense reasoning",
+    "b": "CSQA",
+    "direction": "commonsense reasoning->CSQA",
+    "stage1_sentence": "Commonsense reasoning is evaluated by the CSQA dataset, which involves complex semantic questions that test this reasoning ability.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "CSQA",
+    "b": "commonsense reasoning",
+    "direction": "CSQA->commonsense reasoning",
+    "stage1_sentence": "CSQA is a dataset that evaluates complex semantic questions related to commonsense reasoning.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "commonsense reasoning",
+    "b": "StrategyQA",
+    "direction": "commonsense reasoning->StrategyQA",
+    "stage1_sentence": "Commonsense reasoning is evaluated in StrategyQA through the requirement of multi-hop strategy inference.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "StrategyQA",
+    "b": "commonsense reasoning",
+    "direction": "StrategyQA->commonsense reasoning",
+    "stage1_sentence": "StrategyQA requires multi-hop strategy inference, which is a specific aspect of commonsense reasoning that involves understanding complex interactions and relationships.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "commonsense reasoning",
+    "b": "BIG-bench",
+    "direction": "commonsense reasoning->BIG-bench",
+    "stage1_sentence": "Commonsense reasoning is evaluated through the BIG-bench tasks that assess the ability to infer dates and evaluate sports-related plausibility.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "BIG-bench",
+    "b": "commonsense reasoning",
+    "direction": "BIG-bench->commonsense reasoning",
+    "stage1_sentence": "BIG-bench includes tasks that assess specific aspects of commonsense reasoning, such as Date Understanding and Sports Understanding.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "commonsense reasoning",
+    "b": "Date Understanding",
+    "direction": "commonsense reasoning->Date Understanding",
+    "stage1_sentence": "Commonsense reasoning is essential for effective Date Understanding as it involves inferring temporal relationships and contextual relevance based on general background knowledge.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Date Understanding",
+    "b": "commonsense reasoning",
+    "direction": "Date Understanding->commonsense reasoning",
+    "stage1_sentence": "Date Understanding is a task that evaluates aspects of commonsense reasoning by assessing the ability to infer dates.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "commonsense reasoning",
+    "b": "Sports Understanding",
+    "direction": "commonsense reasoning->Sports Understanding",
+    "stage1_sentence": "Commonsense reasoning is evaluated in part through the Sports Understanding dataset, which assesses the ability to evaluate sports-related plausibility.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Sports Understanding",
+    "b": "commonsense reasoning",
+    "direction": "Sports Understanding->commonsense reasoning",
+    "stage1_sentence": "Sports Understanding evaluates sports-related plausibility as a specific aspect of commonsense reasoning.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "SayCan",
+    "b": "commonsense reasoning",
+    "direction": "SayCan->commonsense reasoning",
+    "stage1_sentence": "SayCan is a dataset that focuses on mapping natural language instructions to robot actions, which is relevant for enhancing performance in commonsense reasoning tasks.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "commonsense reasoning",
+    "b": "SayCan",
+    "direction": "commonsense reasoning->SayCan",
+    "stage1_sentence": "Commonsense reasoning is essential for effectively mapping natural language instructions to robot actions in SayCan.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "StrategyQA",
+    "b": "CSQA",
+    "direction": "StrategyQA->CSQA",
+    "stage1_sentence": "StrategyQA requires multi-hop strategy inference, while CSQA involves complex semantic questions, highlighting different aspects of commonsense reasoning evaluation.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "CSQA",
+    "b": "StrategyQA",
+    "direction": "CSQA->StrategyQA",
+    "stage1_sentence": "CSQA involves complex semantic questions that assess aspects of commonsense reasoning, while StrategyQA requires multi-hop strategy inference, indicating both datasets evaluate different dimensions of commonsense reasoning.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "CSQA",
+    "b": "BIG-bench",
+    "direction": "CSQA->BIG-bench",
+    "stage1_sentence": "CSQA is one of the datasets that evaluates various aspects of commonsense reasoning, similar to the tasks assessed by BIG-bench.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "BIG-bench",
+    "b": "CSQA",
+    "direction": "BIG-bench->CSQA",
+    "stage1_sentence": "BIG-bench includes tasks that assess commonsense reasoning abilities, while CSQA is one of the datasets evaluated within the broader context of commonsense reasoning.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "CSQA",
+    "b": "Date Understanding",
+    "direction": "CSQA->Date Understanding",
+    "stage1_sentence": "CSQA involves complex semantic questions that may require date understanding as part of its commonsense reasoning evaluation.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Date Understanding",
+    "b": "CSQA",
+    "direction": "Date Understanding->CSQA",
+    "stage1_sentence": "Date Understanding evaluates the ability to infer dates, which is one aspect of the broader commonsense reasoning assessed by CSQA.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Sports Understanding",
+    "b": "CSQA",
+    "direction": "Sports Understanding->CSQA",
+    "stage1_sentence": "Sports Understanding evaluates sports-related plausibility, which is one aspect of commonsense reasoning assessed alongside datasets like CSQA.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "CSQA",
+    "b": "Sports Understanding",
+    "direction": "CSQA->Sports Understanding",
+    "stage1_sentence": "CSQA evaluates complex semantic questions that may relate to the reasoning required in Sports Understanding.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "SayCan",
+    "b": "CSQA",
+    "direction": "SayCan->CSQA",
+    "stage1_sentence": "No direct relationship.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "CSQA",
+    "b": "SayCan",
+    "direction": "CSQA->SayCan",
+    "stage1_sentence": "CSQA evaluates complex semantic questions that may inform the reasoning capabilities necessary for effective interaction with the world, which is relevant for the tasks addressed by SayCan.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "StrategyQA",
+    "b": "BIG-bench",
+    "direction": "StrategyQA->BIG-bench",
+    "stage1_sentence": "StrategyQA requires multi-hop strategy inference, while BIG-bench tasks assess the ability to infer dates and evaluate sports-related plausibility, indicating that both contribute to evaluating different aspects of commonsense reasoning.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "BIG-bench",
+    "b": "StrategyQA",
+    "direction": "BIG-bench->StrategyQA",
+    "stage1_sentence": "BIG-bench includes tasks that assess various reasoning abilities, while StrategyQA specifically focuses on multi-hop strategy inference within the realm of commonsense reasoning.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "StrategyQA",
+    "b": "Date Understanding",
+    "direction": "StrategyQA->Date Understanding",
+    "stage1_sentence": "StrategyQA requires multi-hop strategy inference, which may involve understanding temporal aspects relevant to Date Understanding.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Date Understanding",
+    "b": "StrategyQA",
+    "direction": "Date Understanding->StrategyQA",
+    "stage1_sentence": "Date Understanding is a dataset that evaluates the ability to infer dates, which is a skill relevant for the multi-hop strategy inference required in StrategyQA.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Sports Understanding",
+    "b": "StrategyQA",
+    "direction": "Sports Understanding->StrategyQA",
+    "stage1_sentence": "Sports Understanding evaluates sports-related plausibility, which is a component of the broader commonsense reasoning assessed by StrategyQA.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "StrategyQA",
+    "b": "Sports Understanding",
+    "direction": "StrategyQA->Sports Understanding",
+    "stage1_sentence": "StrategyQA requires multi-hop strategy inference, which may enhance the model's performance in tasks like Sports Understanding that assess sports-related plausibility.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "SayCan",
+    "b": "StrategyQA",
+    "direction": "SayCan->StrategyQA",
+    "stage1_sentence": "No direct relationship.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "StrategyQA",
+    "b": "SayCan",
+    "direction": "StrategyQA->SayCan",
+    "stage1_sentence": "StrategyQA requires multi-hop strategy inference, which may enhance the reasoning capabilities needed for effectively mapping natural language instructions to robot actions in SayCan.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "BIG-bench",
+    "b": "Date Understanding",
+    "direction": "BIG-bench->Date Understanding",
+    "stage1_sentence": "BIG-bench includes Date Understanding as one of its tasks that evaluates the ability to infer dates in commonsense reasoning.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Date Understanding",
+    "b": "BIG-bench",
+    "direction": "Date Understanding->BIG-bench",
+    "stage1_sentence": "Date Understanding is a task within the BIG-bench that evaluates the ability to infer dates in commonsense reasoning scenarios.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Sports Understanding",
+    "b": "BIG-bench",
+    "direction": "Sports Understanding->BIG-bench",
+    "stage1_sentence": "Sports Understanding is a task within the BIG-bench that evaluates the ability to assess sports-related plausibility.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "BIG-bench",
+    "b": "Sports Understanding",
+    "direction": "BIG-bench->Sports Understanding",
+    "stage1_sentence": "BIG-bench includes Sports Understanding as one of its tasks that evaluates sports-related plausibility.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "SayCan",
+    "b": "BIG-bench",
+    "direction": "SayCan->BIG-bench",
+    "stage1_sentence": "SayCan is a dataset that focuses on mapping natural language instructions to robot actions, while BIG-bench includes tasks that assess various aspects of commonsense reasoning.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "BIG-bench",
+    "b": "SayCan",
+    "direction": "BIG-bench->SayCan",
+    "stage1_sentence": "BIG-bench includes tasks that assess commonsense reasoning, while SayCan focuses on mapping natural language instructions to robot actions.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Sports Understanding",
+    "b": "Date Understanding",
+    "direction": "Sports Understanding->Date Understanding",
+    "stage1_sentence": "Sports Understanding evaluates sports-related plausibility while Date Understanding assesses the ability to infer dates, both contributing to the broader scope of commonsense reasoning.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Date Understanding",
+    "b": "Sports Understanding",
+    "direction": "Date Understanding->Sports Understanding",
+    "stage1_sentence": "Date Understanding evaluates the ability to infer dates, while Sports Understanding assesses sports-related plausibility, indicating both are part of the broader commonsense reasoning framework.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "SayCan",
+    "b": "Date Understanding",
+    "direction": "SayCan->Date Understanding",
+    "stage1_sentence": "SayCan is a dataset that focuses on mapping natural language instructions to robot actions, while Date Understanding assesses the ability to infer dates, indicating that both are part of evaluating commonsense reasoning in different contexts.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Date Understanding",
+    "b": "SayCan",
+    "direction": "Date Understanding->SayCan",
+    "stage1_sentence": "Date Understanding evaluates the ability to infer dates, which may contribute to the broader commonsense reasoning required for effective interaction in tasks like those in SayCan.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "SayCan",
+    "b": "Sports Understanding",
+    "direction": "SayCan->Sports Understanding",
+    "stage1_sentence": "No direct relationship.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "Sports Understanding",
+    "b": "SayCan",
+    "direction": "Sports Understanding->SayCan",
+    "stage1_sentence": "Sports Understanding evaluates sports-related plausibility, while SayCan focuses on mapping natural language instructions to robot actions, indicating that both assess different aspects of reasoning in their respective contexts.",
+    "evidence": "**4 Commonsense Reasoning**"
+  },
+  {
+    "a": "commonsense reasoning",
+    "b": "symbolic reasoning",
+    "direction": "commonsense reasoning->symbolic reasoning",
+    "stage1_sentence": "Commonsense reasoning is enhanced by symbolic reasoning through the application of chain-of-thought prompting, which improves performance in related tasks.",
+    "evidence": "**6 Discussion**"
+  },
+  {
+    "a": "symbolic reasoning",
+    "b": "commonsense reasoning",
+    "direction": "symbolic reasoning->commonsense reasoning",
+    "stage1_sentence": "Symbolic reasoning enhances commonsense reasoning by demonstrating improved out-of-distribution generalization in tasks that require multi-step reasoning.",
+    "evidence": "**6 Discussion**"
+  }
+]

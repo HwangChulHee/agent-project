@@ -1,0 +1,72 @@
+[
+  {
+    "pair": [
+      "BIG-bench",
+      "Date Understanding"
+    ],
+    "kind": "cycle",
+    "edges": [
+      {
+        "from": "BIG-bench",
+        "rel": "part_of",
+        "to": "Date Understanding",
+        "evidence": "**4 Commonsense Reasoning**"
+      },
+      {
+        "from": "Date Understanding",
+        "rel": "part_of",
+        "to": "BIG-bench",
+        "evidence": "**4 Commonsense Reasoning**"
+      }
+    ],
+    "held": [
+      {
+        "from": "BIG-bench",
+        "rel": "part_of",
+        "to": "Date Understanding",
+        "evidence": "**4 Commonsense Reasoning**"
+      },
+      {
+        "from": "Date Understanding",
+        "rel": "part_of",
+        "to": "BIG-bench",
+        "evidence": "**4 Commonsense Reasoning**"
+      }
+    ]
+  },
+  {
+    "pair": [
+      "Sports Understanding",
+      "BIG-bench"
+    ],
+    "kind": "cycle",
+    "edges": [
+      {
+        "from": "Sports Understanding",
+        "rel": "part_of",
+        "to": "BIG-bench",
+        "evidence": "**4 Commonsense Reasoning**"
+      },
+      {
+        "from": "BIG-bench",
+        "rel": "part_of",
+        "to": "Sports Understanding",
+        "evidence": "**4 Commonsense Reasoning**"
+      }
+    ],
+    "held": [
+      {
+        "from": "Sports Understanding",
+        "rel": "part_of",
+        "to": "BIG-bench",
+        "evidence": "**4 Commonsense Reasoning**"
+      },
+      {
+        "from": "BIG-bench",
+        "rel": "part_of",
+        "to": "Sports Understanding",
+        "evidence": "**4 Commonsense Reasoning**"
+      }
+    ]
+  }
+]

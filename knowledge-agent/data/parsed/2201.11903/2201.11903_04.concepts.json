@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Chain-of-Thought Prompting",
+    "definitions": [
+      "A prompting technique that encourages large language models to articulate their reasoning processes step-by-step, enhancing their ability to solve complex problems.",
+      "A technique that includes demonstrations of intermediate reasoning steps in prompts to enhance the reasoning capabilities of large language models.",
+      "A method that combines rationale-augmented training and few-shot prompting to enhance reasoning abilities in large language models by using prompts structured as triples that include an input, intermediate reasoning steps, and an output.",
+      "A method that enables language models to generate a coherent series of intermediate reasoning steps leading to a final answer, mimicking human thought processes in solving complex problems.",
+      "a technique that enhances the performance of large language models in solving problems by encouraging a step-by-step reasoning process.",
+      "a prompting technique that enhances input-output pairs with reasoning processes to improve model performance.",
+      "A prompting technique that enhances logical coherence and performance on complex problems, particularly in larger models.",
+      "A technique that enhances a model's reasoning capabilities across various datasets.",
+      "A prompting technique that helps language models address challenges in symbolic reasoning by guiding them through a sequence of logical steps.",
+      "a mechanism for eliciting multi-step reasoning in large language models that enhances performance in various reasoning tasks.",
+      "a method that enhances reasoning in language models by enabling them to tackle a variety of reasoning tasks."
+    ]
+  },
+  {
+    "name": "chain of thought",
+    "definitions": [
+      "A sequence of intermediate reasoning steps that improves complex reasoning capabilities."
+    ]
+  },
+  {
+    "name": "GSM8K",
+    "definitions": [
+      "a benchmark dataset used to evaluate the performance of models on arithmetic reasoning tasks.",
+      "a math word problem benchmark used for evaluating language models.",
+      "A challenging dataset used to evaluate the performance of models on complex problems."
+    ]
+  },
+  {
+    "name": "SVAMP",
+    "definitions": [
+      "a math word problem benchmark used for evaluating language models."
+    ]
+  },
+  {
+    "name": "ASDiv",
+    "definitions": [
+      "a math word problem benchmark used for evaluating language models."
+    ]
+  },
+  {
+    "name": "AQuA",
+    "definitions": [
+      "a math word problem benchmark used for evaluating language models."
+    ]
+  },
+  {
+    "name": "MAWPS",
+    "definitions": [
+      "a math word problem benchmark used for evaluating language models."
+    ]
+  },
+  {
+    "name": "large language models",
+    "definitions": [
+      "a category of models evaluated in the study, including various named instances."
+    ]
+  },
+  {
+    "name": "chain-of-thought",
+    "definitions": [
+      "A prompting strategy that incorporates natural language reasoning steps to translate complex questions into solvable equations.",
+      "A prompting method that involves generating a sequence of reasoning steps to enhance the effectiveness of responses."
+    ]
+  },
+  {
+    "name": "equation only",
+    "definitions": [
+      "A prompting strategy that focuses solely on equations, showing limited success for complex problems."
+    ]
+  },
+  {
+    "name": "variable compute only",
+    "definitions": [
+      "A prompting strategy that increases computation without replicating the benefits of chain-of-thought due to its lack of natural language expressiveness."
+    ]
+  },
+  {
+    "name": "chain of thought after answer",
+    "definitions": [
+      "A variant of chain-of-thought prompting that emphasizes sequential reasoning to enhance the reasoning process."
+    ]
+  },
+  {
+    "name": "commonsense reasoning",
+    "definitions": [
+      "The ability to understand physical and human interactions based on general background knowledge."
+    ]
+  },
+  {
+    "name": "CSQA",
+    "definitions": [
+      "A dataset that involves complex semantic questions to evaluate commonsense reasoning."
+    ]
+  },
+  {
+    "name": "StrategyQA",
+    "definitions": [
+      "A dataset that requires multi-hop strategy inference to assess commonsense reasoning."
+    ]
+  },
+  {
+    "name": "BIG-bench",
+    "definitions": [
+      "A collection of tasks that evaluate various aspects of commonsense reasoning."
+    ]
+  },
+  {
+    "name": "Date Understanding",
+    "definitions": [
+      "A task that assesses the ability to infer dates within the context of commonsense reasoning."
+    ]
+  },
+  {
+    "name": "Sports Understanding",
+    "definitions": [
+      "A task that evaluates sports-related plausibility in the context of commonsense reasoning."
+    ]
+  },
+  {
+    "name": "SayCan",
+    "definitions": [
+      "A dataset that focuses on mapping natural language instructions to robot actions."
+    ]
+  },
+  {
+    "name": "symbolic reasoning",
+    "definitions": [
+      "A reasoning process that involves manipulating symbols and abstract concepts, which presents challenges for language models."
+    ]
+  }
+]

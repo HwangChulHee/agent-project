@@ -1,0 +1,181 @@
+[
+  {
+    "name": "self-consistency",
+    "aliases": [],
+    "definitions": [
+      "A method that enhances chain of thought reasoning in language models by generating multiple reasoning paths and selecting the most frequent or consistent outcome.",
+      "A decoding strategy that enhances chain-of-thought prompting in large language models by sampling diverse reasoning paths to select the most consistent answer.",
+      "A novel decoding strategy that samples multiple reasoning paths from a single pre-trained language model to generate diverse outputs and aggregate them for a consistent answer.",
+      "A method that leverages diverse reasoning paths to generate multiple candidate outputs from a language model's decoder, which are then aggregated to identify the most consistent final answer.",
+      "a method evaluated for enhancing reasoning accuracy across language models.",
+      "a property evaluated across various reasoning tasks and datasets to assess the reliability of reasoning outputs.",
+      "A method that enhances the performance of language models in reasoning tasks by utilizing multiple sampled reasoning paths to improve accuracy.",
+      "A method that enhances performance and surpasses standard prompting by integrating rationales in few-shot learning scenarios.",
+      "A method that enhances generation quality by leveraging the diversity of reasoning paths within a single language model, outperforming traditional ensemble techniques.",
+      "A method that maintains effectiveness across various sampling strategies and model scales, enhancing a language model's resilience to imperfect prompts and providing an uncertainty estimate regarding the model's confidence in its answers.",
+      "A method that enhances accuracy in reasoning tasks and aids in collecting rationales and providing uncertainty estimates for language model outputs."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.701,
+    "reason": ""
+  },
+  {
+    "name": "chain of thought reasoning",
+    "aliases": [],
+    "definitions": [
+      "A reasoning process in language models that involves generating and following a sequence of logical steps to arrive at a conclusion."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.67,
+    "reason": ""
+  },
+  {
+    "name": "chain-of-thought prompting",
+    "aliases": [],
+    "definitions": [
+      "A prompting technique used in large language models that involves reasoning through a sequence of thoughts.",
+      "A technique that encourages language models to articulate reasoning processes through a series of short sentences to enhance performance on multi-step reasoning tasks.",
+      "A prompting technique that is outperformed by self-consistency in enhancing language model performance.",
+      "A prompting technique that involves generating reasoning steps to aid in decision-making, which can sometimes negatively impact performance in few-shot in-context learning."
+    ],
+    "verdict": "merge",
+    "matched_node": "Chain-of-Thought Prompting",
+    "top_similarity": 0.826,
+    "reason": "The names 'chain-of-thought prompting' and 'Chain-of-Thought Prompting' denote the same concept, with only a minor difference in capitalization."
+  },
+  {
+    "name": "latent variables",
+    "aliases": [],
+    "definitions": [
+      "Variables that represent reasoning sequences in the context of coupling reasoning with answer generation."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.545,
+    "reason": ""
+  },
+  {
+    "name": "arithmetic reasoning",
+    "aliases": [],
+    "definitions": [
+      "a category of reasoning that utilizes a range of math problem datasets."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.618,
+    "reason": ""
+  },
+  {
+    "name": "commonsense reasoning",
+    "aliases": [],
+    "definitions": [
+      "a category of reasoning assessed through benchmarks like CommonsenseQA and StrategyQA."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.697,
+    "reason": ""
+  },
+  {
+    "name": "symbolic reasoning",
+    "aliases": [],
+    "definitions": [
+      "a category of reasoning that includes specific tasks such as last letter concatenation and coin flipping."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.592,
+    "reason": ""
+  },
+  {
+    "name": "temperature sampling",
+    "aliases": [],
+    "definitions": [
+      "a sampling scheme used to generate diverse reasoning paths."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.601,
+    "reason": ""
+  },
+  {
+    "name": "token truncation",
+    "aliases": [],
+    "definitions": [
+      "a sampling scheme used to generate diverse reasoning paths."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.601,
+    "reason": ""
+  },
+  {
+    "name": "UL2",
+    "aliases": [],
+    "definitions": [
+      "a transformer-based language model that differs in scale and architecture.",
+      "UL2 is a public language model with accessible checkpoints."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.456,
+    "reason": ""
+  },
+  {
+    "name": "sample-and-rank",
+    "aliases": [],
+    "definitions": [
+      "A method that ranks multiple sequences based on log probability."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.32,
+    "reason": ""
+  },
+  {
+    "name": "beam search",
+    "aliases": [],
+    "definitions": [
+      "A method that generates outputs by exploring a limited set of high-probability sequences, which restricts output diversity."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.416,
+    "reason": ""
+  },
+  {
+    "name": "ensemble-based approaches",
+    "aliases": [],
+    "definitions": [
+      "Methods that aggregate outputs from multiple models to improve performance."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.41,
+    "reason": ""
+  },
+  {
+    "name": "language models",
+    "aliases": [],
+    "definitions": [
+      "Language models are computational systems designed to generate and understand human language."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.502,
+    "reason": ""
+  },
+  {
+    "name": "generated rationales",
+    "aliases": [],
+    "definitions": [
+      "Generated rationales are explanations produced by models that help in inspecting their reasoning processes."
+    ],
+    "verdict": "new",
+    "matched_node": null,
+    "top_similarity": 0.493,
+    "reason": ""
+  }
+]

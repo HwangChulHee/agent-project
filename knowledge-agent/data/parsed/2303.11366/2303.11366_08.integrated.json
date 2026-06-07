@@ -547,59 +547,19 @@
     "REACT": {
       "definitions": [
         {
-          "text": "The REACT framework integrates reasoning and acting within language models to enhance performance in various tasks.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "A method that interleaves reasoning traces with task-specific actions in large language models to enhance the synergy between reasoning and acting.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
           "text": "A novel paradigm that integrates reasoning and acting within language models to enhance task-solving capabilities.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "ReAct is a method that enhances an agent's ability to solve tasks by integrating reasoning traces into its action space, allowing for improved decision-making capabilities.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "ReAct is an approach that interacts with a Wikipedia API to retrieve relevant information for knowledge-intensive reasoning tasks.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "ReAct prompting is a structured approach that combines thought-action-observation steps to enhance reasoning.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "ReAct is a method that integrates reasoning and action to improve performance in tasks by utilizing external knowledge to guide actions and synthesize answers.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "A method that employs reasoning to enhance decision-making in interactive tasks, allowing agents to identify relevant options and effectively decompose goals.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "ReAct is a method designed to enhance the synergy between reasoning and acting in large language models.",
           "source": "2210.03629",
           "pub_date": "2022-10"
         }
       ],
-      "selected_index": 2,
+      "selected_index": 0,
       "selected": {
         "text": "A novel paradigm that integrates reasoning and acting within language models to enhance task-solving capabilities.",
         "source": "2210.03629",
         "pub_date": "2022-10"
       },
       "merged_from": [],
-      "n_defs": 9,
+      "n_defs": 1,
       "locked": false
     },
     "HotPotQA": {
@@ -608,16 +568,28 @@
           "text": "A dataset that presents challenges in knowledge retrieval and reasoning.",
           "source": "2210.03629",
           "pub_date": "2022-10"
+        },
+        {
+          "text": "A benchmark used for evaluating search-based question answering tasks.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "A dataset designed to evaluate reasoning capabilities through question-and-answer pairs that require parsing and reasoning over multiple documents.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
         }
       ],
-      "selected_index": 0,
+      "selected_index": 2,
       "selected": {
-        "text": "A dataset that presents challenges in knowledge retrieval and reasoning.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
+        "text": "A dataset designed to evaluate reasoning capabilities through question-and-answer pairs that require parsing and reasoning over multiple documents.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
       },
-      "merged_from": [],
-      "n_defs": 1,
+      "merged_from": [
+        "HotPotQA"
+      ],
+      "n_defs": 3,
       "locked": false
     },
     "FEVER": {
@@ -661,15 +633,12 @@
         {
           "text": "Chain-of-thought prompting is a baseline method that differs in its use of thoughts, actions, and observations.",
           "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "CoT is a method that is compared to ReAct and is noted for its issues with hallucination due to a lack of access to external knowledge.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
+          "pub_date": "2022-10",
+          "confidence": "low",
+          "flagged": "no_clean_candidate"
         }
       ],
-      "selected_index": -1,
+      "selected_index": 0,
       "selected": {
         "text": "Chain-of-thought prompting is a baseline method that differs in its use of thoughts, actions, and observations.",
         "source": "2210.03629",
@@ -678,7 +647,7 @@
         "flagged": "no_clean_candidate"
       },
       "merged_from": [],
-      "n_defs": 2,
+      "n_defs": 1,
       "locked": false
     },
     "CoT-SC": {
@@ -686,15 +655,12 @@
         {
           "text": "CoT-SC is a method proposed to leverage the strengths of both ReAct and Chain-of-thought prompting.",
           "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "CoT-SC is a variant of CoT that, when combined with ReAct, yields the best results for prompting large language models.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
+          "pub_date": "2022-10",
+          "confidence": "low",
+          "flagged": "no_clean_candidate"
         }
       ],
-      "selected_index": -1,
+      "selected_index": 0,
       "selected": {
         "text": "CoT-SC is a method proposed to leverage the strengths of both ReAct and Chain-of-thought prompting.",
         "source": "2210.03629",
@@ -703,7 +669,7 @@
         "flagged": "no_clean_candidate"
       },
       "merged_from": [],
-      "n_defs": 2,
+      "n_defs": 1,
       "locked": false
     },
     "ALFWorld": {
@@ -712,6 +678,16 @@
           "text": "An interactive decision-making task where agents achieve high-level goals through text-based interactions in a simulated household.",
           "source": "2210.03629",
           "pub_date": "2022-10"
+        },
+        {
+          "text": "An environment used for evaluating performance in multi-step decision-making tasks.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "A series of text-based environments where agents tackle multi-step tasks.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
         }
       ],
       "selected_index": 0,
@@ -720,8 +696,10 @@
         "source": "2210.03629",
         "pub_date": "2022-10"
       },
-      "merged_from": [],
-      "n_defs": 1,
+      "merged_from": [
+        "AlfWorld"
+      ],
+      "n_defs": 3,
       "locked": false
     },
     "WebShop": {
@@ -777,7 +755,356 @@
       "merged_from": [],
       "n_defs": 1,
       "locked": false
+    },
+    "Reflexion": {
+      "definitions": [
+        {
+          "text": "A framework for language agents that utilizes verbal reinforcement learning to enhance their performance by allowing agents to receive feedback through language.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "Reflexion is a framework designed to enhance the learning process of language agents by utilizing linguistic feedback and storing reflective text in an episodic memory buffer.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "A novel approach that utilizes verbal reinforcement to enhance the learning capabilities of autonomous decision-making agents built on large language models.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "The Reflexion framework is a system composed of three interconnected models: the Actor, the Evaluator, and the Self-Reflection model, designed to enhance decision-making through iterative learning and feedback.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "A method that demonstrates significant improvement over strong baselines in natural language reinforcement learning tasks.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "An approach that leverages self-reflection to distill past experiences into useful 'self-hints' for error correction and task improvement.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "An approach that incorporates self-reflection to enhance learning efficiency in reasoning tasks.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "A method for generating code in programming languages that utilizes self-generated unit test suites to enhance code generation accuracy.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "Reflexion is an optimization technique that leverages natural language for policy optimization and enhances action selection through experiential learning.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "Reflexion is an approach that uses verbal reinforcement to enable agents to learn from their past mistakes, leading to improved decision-making performance.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        }
+      ],
+      "selected_index": 1,
+      "selected": {
+        "text": "Reflexion is a framework designed to enhance the learning process of language agents by utilizing linguistic feedback and storing reflective text in an episodic memory buffer.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "merged_from": [],
+      "n_defs": 10,
+      "locked": false
+    },
+    "verbal reinforcement learning": {
+      "definitions": [
+        {
+          "text": "An approach that enables agents to receive feedback through language to adjust their behavior and improve decision-making processes.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "A proposed approach that aims to improve the interpretability and diagnosability of autonomous agents in reinforcement learning.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "An approach that enables agents to receive feedback through language to adjust their behavior and improve decision-making processes.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "merged_from": [],
+      "n_defs": 2,
+      "locked": false
+    },
+    "Actor": {
+      "definitions": [
+        {
+          "text": "The Actor is a model that generates text and actions based on state observations, utilizing a large language model and a memory component for improved context awareness.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "The Actor is a model that generates text and actions based on state observations, utilizing a large language model and a memory component for improved context awareness.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "Evaluator": {
+      "definitions": [
+        {
+          "text": "The Evaluator is a model that assesses the quality of the Actor's outputs by computing reward scores that reflect performance in specific tasks.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "The Evaluator is a model that assesses the quality of the Actor's outputs by computing reward scores that reflect performance in specific tasks.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "Self-Reflection model": {
+      "definitions": [
+        {
+          "text": "The Self-Reflection model generates verbal feedback based on the Actor's performance, providing insights that inform future actions and are stored in memory.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "The Self-Reflection model generates verbal feedback based on the Actor's performance, providing insights that inform future actions and are stored in memory.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "HumanEval": {
+      "definitions": [
+        {
+          "text": "A benchmark used for evaluating code generation tasks.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A benchmark used for evaluating code generation tasks.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "ReAct": {
+      "definitions": [
+        {
+          "text": "A framework for action generation used by agents in multi-step tasks.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "An approach that allows an agent to retrieve relevant information via a Wikipedia API and engage in explicit step-by-step thinking.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "A framework for action generation used by agents in multi-step tasks.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "merged_from": [],
+      "n_defs": 2,
+      "locked": false
+    },
+    "Chain-of-Thought (CoT)": {
+      "definitions": [
+        {
+          "text": "A method that leverages ground truth context to enhance reasoning over extensive text.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        },
+        {
+          "text": "A prompting technique used to create diverse test cases that are filtered for syntactic validity.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        }
+      ],
+      "selected_index": -1,
+      "selected": {
+        "text": "A method that leverages ground truth context to enhance reasoning over extensive text.",
+        "source": "2303.11366",
+        "pub_date": "2023-03",
+        "confidence": "low",
+        "flagged": "no_clean_candidate"
+      },
+      "merged_from": [],
+      "n_defs": 2,
+      "locked": false
+    },
+    "LeetcodeHardGym": {
+      "definitions": [
+        {
+          "text": "An interactive programming benchmark introduced to evaluate programming approaches.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "An interactive programming benchmark introduced to evaluate programming approaches.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "experiential learning": {
+      "definitions": [
+        {
+          "text": "Experiential learning is a process that enhances action selection by learning from experiences.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "Experiential learning is a process that enhances action selection by learning from experiences.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "self-reflection": {
+      "definitions": [
+        {
+          "text": "Self-reflection is a concept that allows agents to evaluate their actions and outcomes.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "Self-reflection is a concept that allows agents to evaluate their actions and outcomes.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
+    },
+    "isolated execution environments": {
+      "definitions": [
+        {
+          "text": "environments that are separated from other processes to safely execute code without interference or risk from unverified code.",
+          "source": "2303.11366",
+          "pub_date": "2023-03"
+        }
+      ],
+      "selected_index": 0,
+      "selected": {
+        "text": "environments that are separated from other processes to safely execute code without interference or risk from unverified code.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "merged_from": [],
+      "n_defs": 1,
+      "locked": false
     }
   },
-  "conflicts": []
+  "conflicts": [
+    {
+      "pair": [
+        "Reflexion",
+        "Actor"
+      ],
+      "kind": "cycle",
+      "edges": [
+        {
+          "from": "Reflexion",
+          "rel": "part_of",
+          "to": "Actor",
+          "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+        },
+        {
+          "from": "Actor",
+          "rel": "part_of",
+          "to": "Reflexion",
+          "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+        }
+      ],
+      "held": [
+        {
+          "from": "Reflexion",
+          "rel": "part_of",
+          "to": "Actor",
+          "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+        },
+        {
+          "from": "Actor",
+          "rel": "part_of",
+          "to": "Reflexion",
+          "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "Evaluator",
+        "Reflexion"
+      ],
+      "kind": "cycle",
+      "edges": [
+        {
+          "from": "Evaluator",
+          "rel": "part_of",
+          "to": "Reflexion",
+          "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+        },
+        {
+          "from": "Reflexion",
+          "rel": "part_of",
+          "to": "Evaluator",
+          "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+        }
+      ],
+      "held": [
+        {
+          "from": "Evaluator",
+          "rel": "part_of",
+          "to": "Reflexion",
+          "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+        },
+        {
+          "from": "Reflexion",
+          "rel": "part_of",
+          "to": "Evaluator",
+          "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+        }
+      ]
+    }
+  ]
 }

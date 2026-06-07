@@ -6,6 +6,26 @@
           "text": "A prompting technique that encourages large language models to articulate their reasoning processes step-by-step, enhancing their ability to solve complex problems.",
           "source": "2201.11903",
           "pub_date": "2022-01"
+        },
+        {
+          "text": "A prompting technique used in large language models that involves reasoning through a sequence of thoughts.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "A technique that encourages language models to articulate reasoning processes through a series of short sentences to enhance performance on multi-step reasoning tasks.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "A prompting technique that is outperformed by self-consistency in enhancing language model performance.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "A prompting technique that involves generating reasoning steps to aid in decision-making, which can sometimes negatively impact performance in few-shot in-context learning.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
         }
       ],
       "selected_index": 0,
@@ -14,8 +34,10 @@
         "source": "2201.11903",
         "pub_date": "2022-01"
       },
-      "merged_from": [],
-      "n_defs": 1,
+      "merged_from": [
+        "chain-of-thought prompting"
+      ],
+      "n_defs": 5,
       "locked": false
     },
     "GSM8K": {
@@ -186,6 +208,11 @@
           "text": "The ability to understand physical and human interactions based on general background knowledge.",
           "source": "2201.11903",
           "pub_date": "2022-01"
+        },
+        {
+          "text": "a category of reasoning assessed through benchmarks like CommonsenseQA and StrategyQA.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
         }
       ],
       "selected_index": 0,
@@ -195,7 +222,7 @@
         "pub_date": "2022-01"
       },
       "merged_from": [],
-      "n_defs": 1,
+      "n_defs": 2,
       "locked": false
     },
     "CSQA": {
@@ -312,6 +339,11 @@
           "text": "A reasoning process that involves manipulating symbols and abstract concepts, which presents challenges for language models.",
           "source": "2201.11903",
           "pub_date": "2022-01"
+        },
+        {
+          "text": "a category of reasoning that includes specific tasks such as last letter concatenation and coin flipping.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
         }
       ],
       "selected_index": 0,
@@ -321,13 +353,63 @@
         "pub_date": "2022-01"
       },
       "merged_from": [],
-      "n_defs": 1,
+      "n_defs": 2,
       "locked": false
     },
     "self-consistency": {
       "definitions": [
         {
           "text": "A method that enhances chain of thought reasoning in language models by generating multiple reasoning paths and selecting the most frequent or consistent outcome.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "A decoding strategy that enhances chain-of-thought prompting in large language models by sampling diverse reasoning paths to select the most consistent answer.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "A novel decoding strategy that samples multiple reasoning paths from a single pre-trained language model to generate diverse outputs and aggregate them for a consistent answer.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "A method that leverages diverse reasoning paths to generate multiple candidate outputs from a language model's decoder, which are then aggregated to identify the most consistent final answer.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "a method evaluated for enhancing reasoning accuracy across language models.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "a property evaluated across various reasoning tasks and datasets to assess the reliability of reasoning outputs.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "A method that enhances the performance of language models in reasoning tasks by utilizing multiple sampled reasoning paths to improve accuracy.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "A method that enhances performance and surpasses standard prompting by integrating rationales in few-shot learning scenarios.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "A method that enhances generation quality by leveraging the diversity of reasoning paths within a single language model, outperforming traditional ensemble techniques.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "A method that maintains effectiveness across various sampling strategies and model scales, enhancing a language model's resilience to imperfect prompts and providing an uncertainty estimate regarding the model's confidence in its answers.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "A method that enhances accuracy in reasoning tasks and aids in collecting rationales and providing uncertainty estimates for language model outputs.",
           "source": "2203.11171",
           "pub_date": "2022-03"
         }
@@ -339,7 +421,7 @@
         "pub_date": "2022-03"
       },
       "merged_from": [],
-      "n_defs": 1,
+      "n_defs": 11,
       "locked": false
     },
     "chain of thought reasoning": {
@@ -437,12 +519,15 @@
         {
           "text": "a transformer-based language model that differs in scale and architecture.",
           "source": "2203.11171",
-          "pub_date": "2022-03",
-          "confidence": "low",
-          "flagged": "no_clean_candidate"
+          "pub_date": "2022-03"
+        },
+        {
+          "text": "UL2 is a public language model with accessible checkpoints.",
+          "source": "2203.11171",
+          "pub_date": "2022-03"
         }
       ],
-      "selected_index": 0,
+      "selected_index": -1,
       "selected": {
         "text": "a transformer-based language model that differs in scale and architecture.",
         "source": "2203.11171",
@@ -451,7 +536,7 @@
         "flagged": "no_clean_candidate"
       },
       "merged_from": [],
-      "n_defs": 1,
+      "n_defs": 2,
       "locked": false
     },
     "sample-and-rank": {
@@ -539,240 +624,6 @@
         "text": "Generated rationales are explanations produced by models that help in inspecting their reasoning processes.",
         "source": "2203.11171",
         "pub_date": "2022-03"
-      },
-      "merged_from": [],
-      "n_defs": 1,
-      "locked": false
-    },
-    "REACT": {
-      "definitions": [
-        {
-          "text": "The REACT framework integrates reasoning and acting within language models to enhance performance in various tasks.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "A method that interleaves reasoning traces with task-specific actions in large language models to enhance the synergy between reasoning and acting.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "A novel paradigm that integrates reasoning and acting within language models to enhance task-solving capabilities.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "ReAct is a method that enhances an agent's ability to solve tasks by integrating reasoning traces into its action space, allowing for improved decision-making capabilities.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "ReAct is an approach that interacts with a Wikipedia API to retrieve relevant information for knowledge-intensive reasoning tasks.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "ReAct prompting is a structured approach that combines thought-action-observation steps to enhance reasoning.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "ReAct is a method that integrates reasoning and action to improve performance in tasks by utilizing external knowledge to guide actions and synthesize answers.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "A method that employs reasoning to enhance decision-making in interactive tasks, allowing agents to identify relevant options and effectively decompose goals.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "ReAct is a method designed to enhance the synergy between reasoning and acting in large language models.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        }
-      ],
-      "selected_index": 2,
-      "selected": {
-        "text": "A novel paradigm that integrates reasoning and acting within language models to enhance task-solving capabilities.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "merged_from": [],
-      "n_defs": 9,
-      "locked": false
-    },
-    "HotPotQA": {
-      "definitions": [
-        {
-          "text": "A dataset that presents challenges in knowledge retrieval and reasoning.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        }
-      ],
-      "selected_index": 0,
-      "selected": {
-        "text": "A dataset that presents challenges in knowledge retrieval and reasoning.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "merged_from": [],
-      "n_defs": 1,
-      "locked": false
-    },
-    "FEVER": {
-      "definitions": [
-        {
-          "text": "A dataset that presents challenges in knowledge retrieval and reasoning.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        }
-      ],
-      "selected_index": 0,
-      "selected": {
-        "text": "A dataset that presents challenges in knowledge retrieval and reasoning.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "merged_from": [],
-      "n_defs": 1,
-      "locked": false
-    },
-    "Wikipedia web API": {
-      "definitions": [
-        {
-          "text": "A designed interface that allows models to perform actions such as searching for sentences, looking up specific sentences, and finishing tasks with answers.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        }
-      ],
-      "selected_index": 0,
-      "selected": {
-        "text": "A designed interface that allows models to perform actions such as searching for sentences, looking up specific sentences, and finishing tasks with answers.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "merged_from": [],
-      "n_defs": 1,
-      "locked": false
-    },
-    "Chain-of-thought prompting": {
-      "definitions": [
-        {
-          "text": "Chain-of-thought prompting is a baseline method that differs in its use of thoughts, actions, and observations.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "CoT is a method that is compared to ReAct and is noted for its issues with hallucination due to a lack of access to external knowledge.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        }
-      ],
-      "selected_index": -1,
-      "selected": {
-        "text": "Chain-of-thought prompting is a baseline method that differs in its use of thoughts, actions, and observations.",
-        "source": "2210.03629",
-        "pub_date": "2022-10",
-        "confidence": "low",
-        "flagged": "no_clean_candidate"
-      },
-      "merged_from": [],
-      "n_defs": 2,
-      "locked": false
-    },
-    "CoT-SC": {
-      "definitions": [
-        {
-          "text": "CoT-SC is a method proposed to leverage the strengths of both ReAct and Chain-of-thought prompting.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        },
-        {
-          "text": "CoT-SC is a variant of CoT that, when combined with ReAct, yields the best results for prompting large language models.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        }
-      ],
-      "selected_index": -1,
-      "selected": {
-        "text": "CoT-SC is a method proposed to leverage the strengths of both ReAct and Chain-of-thought prompting.",
-        "source": "2210.03629",
-        "pub_date": "2022-10",
-        "confidence": "low",
-        "flagged": "no_clean_candidate"
-      },
-      "merged_from": [],
-      "n_defs": 2,
-      "locked": false
-    },
-    "ALFWorld": {
-      "definitions": [
-        {
-          "text": "An interactive decision-making task where agents achieve high-level goals through text-based interactions in a simulated household.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        }
-      ],
-      "selected_index": 0,
-      "selected": {
-        "text": "An interactive decision-making task where agents achieve high-level goals through text-based interactions in a simulated household.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "merged_from": [],
-      "n_defs": 1,
-      "locked": false
-    },
-    "WebShop": {
-      "definitions": [
-        {
-          "text": "An interactive decision-making task that involves navigating an online shopping environment where agents interpret user instructions and select products from various text.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        }
-      ],
-      "selected_index": 0,
-      "selected": {
-        "text": "An interactive decision-making task that involves navigating an online shopping environment where agents interpret user instructions and select products from various text.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "merged_from": [],
-      "n_defs": 1,
-      "locked": false
-    },
-    "Act": {
-      "definitions": [
-        {
-          "text": "A method compared to ReAct that highlights differences in reasoning approaches for decision-making.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        }
-      ],
-      "selected_index": 0,
-      "selected": {
-        "text": "A method compared to ReAct that highlights differences in reasoning approaches for decision-making.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "merged_from": [],
-      "n_defs": 1,
-      "locked": false
-    },
-    "Inner Monologue": {
-      "definitions": [
-        {
-          "text": "A method compared to ReAct that emphasizes different reasoning strategies in decision-making.",
-          "source": "2210.03629",
-          "pub_date": "2022-10"
-        }
-      ],
-      "selected_index": 0,
-      "selected": {
-        "text": "A method compared to ReAct that emphasizes different reasoning strategies in decision-making.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
       },
       "merged_from": [],
       "n_defs": 1,

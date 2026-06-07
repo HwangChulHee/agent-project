@@ -1,0 +1,72 @@
+[
+  {
+    "pair": [
+      "Reflexion",
+      "Actor"
+    ],
+    "kind": "cycle",
+    "edges": [
+      {
+        "from": "Reflexion",
+        "rel": "part_of",
+        "to": "Actor",
+        "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+      },
+      {
+        "from": "Actor",
+        "rel": "part_of",
+        "to": "Reflexion",
+        "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+      }
+    ],
+    "held": [
+      {
+        "from": "Reflexion",
+        "rel": "part_of",
+        "to": "Actor",
+        "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+      },
+      {
+        "from": "Actor",
+        "rel": "part_of",
+        "to": "Reflexion",
+        "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+      }
+    ]
+  },
+  {
+    "pair": [
+      "Evaluator",
+      "Reflexion"
+    ],
+    "kind": "cycle",
+    "edges": [
+      {
+        "from": "Evaluator",
+        "rel": "part_of",
+        "to": "Reflexion",
+        "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+      },
+      {
+        "from": "Reflexion",
+        "rel": "part_of",
+        "to": "Evaluator",
+        "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+      }
+    ],
+    "held": [
+      {
+        "from": "Evaluator",
+        "rel": "part_of",
+        "to": "Reflexion",
+        "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+      },
+      {
+        "from": "Reflexion",
+        "rel": "part_of",
+        "to": "Evaluator",
+        "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+      }
+    ]
+  }
+]

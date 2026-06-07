@@ -1,0 +1,106 @@
+[
+  {
+    "name": "self-consistency",
+    "definitions": [
+      "A method that enhances chain of thought reasoning in language models by generating multiple reasoning paths and selecting the most frequent or consistent outcome.",
+      "A decoding strategy that enhances chain-of-thought prompting in large language models by sampling diverse reasoning paths to select the most consistent answer.",
+      "A novel decoding strategy that samples multiple reasoning paths from a single pre-trained language model to generate diverse outputs and aggregate them for a consistent answer.",
+      "A method that leverages diverse reasoning paths to generate multiple candidate outputs from a language model's decoder, which are then aggregated to identify the most consistent final answer.",
+      "a method evaluated for enhancing reasoning accuracy across language models.",
+      "a property evaluated across various reasoning tasks and datasets to assess the reliability of reasoning outputs.",
+      "A method that enhances the performance of language models in reasoning tasks by utilizing multiple sampled reasoning paths to improve accuracy.",
+      "A method that enhances performance and surpasses standard prompting by integrating rationales in few-shot learning scenarios.",
+      "A method that enhances generation quality by leveraging the diversity of reasoning paths within a single language model, outperforming traditional ensemble techniques.",
+      "A method that maintains effectiveness across various sampling strategies and model scales, enhancing a language model's resilience to imperfect prompts and providing an uncertainty estimate regarding the model's confidence in its answers.",
+      "A method that enhances accuracy in reasoning tasks and aids in collecting rationales and providing uncertainty estimates for language model outputs."
+    ]
+  },
+  {
+    "name": "chain of thought reasoning",
+    "definitions": [
+      "A reasoning process in language models that involves generating and following a sequence of logical steps to arrive at a conclusion."
+    ]
+  },
+  {
+    "name": "chain-of-thought prompting",
+    "definitions": [
+      "A prompting technique used in large language models that involves reasoning through a sequence of thoughts.",
+      "A technique that encourages language models to articulate reasoning processes through a series of short sentences to enhance performance on multi-step reasoning tasks.",
+      "A prompting technique that is outperformed by self-consistency in enhancing language model performance.",
+      "A prompting technique that involves generating reasoning steps to aid in decision-making, which can sometimes negatively impact performance in few-shot in-context learning."
+    ]
+  },
+  {
+    "name": "latent variables",
+    "definitions": [
+      "Variables that represent reasoning sequences in the context of coupling reasoning with answer generation."
+    ]
+  },
+  {
+    "name": "arithmetic reasoning",
+    "definitions": [
+      "a category of reasoning that utilizes a range of math problem datasets."
+    ]
+  },
+  {
+    "name": "commonsense reasoning",
+    "definitions": [
+      "a category of reasoning assessed through benchmarks like CommonsenseQA and StrategyQA."
+    ]
+  },
+  {
+    "name": "symbolic reasoning",
+    "definitions": [
+      "a category of reasoning that includes specific tasks such as last letter concatenation and coin flipping."
+    ]
+  },
+  {
+    "name": "temperature sampling",
+    "definitions": [
+      "a sampling scheme used to generate diverse reasoning paths."
+    ]
+  },
+  {
+    "name": "token truncation",
+    "definitions": [
+      "a sampling scheme used to generate diverse reasoning paths."
+    ]
+  },
+  {
+    "name": "UL2",
+    "definitions": [
+      "a transformer-based language model that differs in scale and architecture.",
+      "UL2 is a public language model with accessible checkpoints."
+    ]
+  },
+  {
+    "name": "sample-and-rank",
+    "definitions": [
+      "A method that ranks multiple sequences based on log probability."
+    ]
+  },
+  {
+    "name": "beam search",
+    "definitions": [
+      "A method that generates outputs by exploring a limited set of high-probability sequences, which restricts output diversity."
+    ]
+  },
+  {
+    "name": "ensemble-based approaches",
+    "definitions": [
+      "Methods that aggregate outputs from multiple models to improve performance."
+    ]
+  },
+  {
+    "name": "language models",
+    "definitions": [
+      "Language models are computational systems designed to generate and understand human language."
+    ]
+  },
+  {
+    "name": "generated rationales",
+    "definitions": [
+      "Generated rationales are explanations produced by models that help in inspecting their reasoning processes."
+    ]
+  }
+]

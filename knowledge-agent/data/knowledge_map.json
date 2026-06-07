@@ -1,11 +1,11 @@
 {
   "nodes": {
-    "Tree of Thoughts": {
+    "Chain-of-Thought Prompting": {
       "type": null,
       "definition": {
-        "text": "A framework that structures the reasoning process of large language models as a tree, with each node representing a potential thought or action, enabling systematic evaluation of various reasoning paths.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "A prompting technique that encourages large language models to articulate their reasoning processes step-by-step, enhancing their ability to solve complex problems.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -13,12 +13,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "Chain of Thought": {
+    "GSM8K": {
       "type": null,
       "definition": {
-        "text": "A foundational method that enables language models to articulate their reasoning processes.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
+        "text": "a benchmark dataset used to evaluate the performance of models on arithmetic reasoning tasks.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -26,12 +26,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "dual process models": {
+    "SVAMP": {
       "type": null,
       "definition": {
-        "text": "Dual process models refer to a cognitive framework that distinguishes between two types of reasoning: 'System 1', which reflects associative choices, and 'System 2', which represents a more deliberate planning process.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "a math word problem benchmark used for evaluating language models.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -39,12 +39,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "input-output prompting": {
+    "ASDiv": {
       "type": null,
       "definition": {
-        "text": "A method that transforms an input sequence into an output sequence by wrapping the input with task instructions or examples, formalized as a probabilistic function.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "a math word problem benchmark used for evaluating language models.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -52,12 +52,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "self-consistency with chain-of-thought": {
+    "AQuA": {
       "type": null,
       "definition": {
-        "text": "An ensemble strategy that builds on chain-of-thought prompting by sampling multiple chains of thought to select the most frequent result for a more robust output.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "a math word problem benchmark used for evaluating language models.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -65,12 +65,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "thought decomposition": {
+    "MAWPS": {
       "type": null,
       "definition": {
-        "text": "Thought decomposition breaks down the problem into manageable thought steps.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "a math word problem benchmark used for evaluating language models.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -78,12 +78,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "thought generator": {
+    "large language models": {
       "type": null,
       "definition": {
-        "text": "A thought generator produces candidate thoughts either through independent sampling or sequential proposals.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "a category of models evaluated in the study, including various named instances.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -91,12 +91,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "state evaluator": {
+    "equation only": {
       "type": null,
       "definition": {
-        "text": "A state evaluator assesses the potential of different states using heuristic reasoning.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "A prompting strategy that focuses solely on equations, showing limited success for complex problems.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -104,12 +104,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "search algorithm": {
+    "variable compute only": {
       "type": null,
       "definition": {
-        "text": "A search algorithm navigates the tree structure, employing either breadth-first or depth-first strategies.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "A prompting strategy that increases computation without replicating the benefits of chain-of-thought due to its lack of natural language expressiveness.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -117,12 +117,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "two-step thought generation": {
+    "chain of thought after answer": {
       "type": null,
       "definition": {
-        "text": "A method that involves generating and voting on plans before creating the output.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "A variant of chain-of-thought prompting that emphasizes sequential reasoning to enhance the reasoning process.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -130,12 +130,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "iterative-refine": {
+    "commonsense reasoning": {
       "type": null,
       "definition": {
-        "text": "A method that enhances the coherence of outputs by allowing the model to assess and improve upon its previous results.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "The ability to understand physical and human interactions based on general background knowledge.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -143,12 +143,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "depth-first search": {
+    "CSQA": {
       "type": null,
       "definition": {
-        "text": "A method that allows exploration of a problem space by proposing and evaluating thoughts while adhering to constraints and enabling backtracking when a state becomes unpromising.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "A dataset that involves complex semantic questions to evaluate commonsense reasoning.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -156,12 +156,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "state evaluation": {
+    "StrategyQA": {
       "type": null,
       "definition": {
-        "text": "The process of assessing the current state in problem-solving to determine its viability.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "A dataset that requires multi-hop strategy inference to assess commonsense reasoning.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -169,12 +169,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "pruning heuristics": {
+    "BIG-bench": {
       "type": null,
       "definition": {
-        "text": "Techniques used to eliminate unpromising states in a search problem to enhance efficiency.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "A collection of tasks that evaluate various aspects of commonsense reasoning.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -182,12 +182,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "self-reflection": {
+    "Date Understanding": {
       "type": null,
       "definition": {
-        "text": "Self-reflection is a mechanism where language models assess their predictions, improving accuracy through feedback on generated candidates.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "A task that assesses the ability to infer dates within the context of commonsense reasoning.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -195,12 +195,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "program-guided generation": {
+    "Sports Understanding": {
       "type": null,
       "definition": {
-        "text": "Program-guided generation involves organizing language models through systematic procedures.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "A task that evaluates sports-related plausibility in the context of commonsense reasoning.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -208,12 +208,12 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "System 1": {
+    "SayCan": {
       "type": null,
       "definition": {
-        "text": "The associative component of language models that operates intuitively.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "A dataset that focuses on mapping natural language instructions to robot actions.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
       },
       "mastery": 0.0,
       "locked": false,
@@ -221,12 +221,170 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "System 2": {
+    "symbolic reasoning": {
       "type": null,
       "definition": {
-        "text": "The structured search methods component that enhances the problem-solving capabilities of language models.",
-        "source": "2305.10601",
-        "pub_date": "2023-05"
+        "text": "A reasoning process that involves manipulating symbols and abstract concepts, which presents challenges for language models.",
+        "source": "2201.11903",
+        "pub_date": "2022-01"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "self-consistency": {
+      "type": null,
+      "definition": {
+        "text": "A method that enhances chain of thought reasoning in language models by generating multiple reasoning paths and selecting the most frequent or consistent outcome.",
+        "source": "2203.11171",
+        "pub_date": "2022-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "chain of thought reasoning": {
+      "type": null,
+      "definition": {
+        "text": "A reasoning process in language models that involves generating and following a sequence of logical steps to arrive at a conclusion.",
+        "source": "2203.11171",
+        "pub_date": "2022-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "latent variables": {
+      "type": null,
+      "definition": {
+        "text": "Variables that represent reasoning sequences in the context of coupling reasoning with answer generation.",
+        "source": "2203.11171",
+        "pub_date": "2022-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "arithmetic reasoning": {
+      "type": null,
+      "definition": {
+        "text": "a category of reasoning that utilizes a range of math problem datasets.",
+        "source": "2203.11171",
+        "pub_date": "2022-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "temperature sampling": {
+      "type": null,
+      "definition": {
+        "text": "a sampling scheme used to generate diverse reasoning paths.",
+        "source": "2203.11171",
+        "pub_date": "2022-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "token truncation": {
+      "type": null,
+      "definition": {
+        "text": "a sampling scheme used to generate diverse reasoning paths.",
+        "source": "2203.11171",
+        "pub_date": "2022-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "UL2": {
+      "type": null,
+      "definition": {
+        "text": "a transformer-based language model that differs in scale and architecture.",
+        "source": "2203.11171",
+        "pub_date": "2022-03",
+        "confidence": "low",
+        "flagged": "no_clean_candidate"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "sample-and-rank": {
+      "type": null,
+      "definition": {
+        "text": "A method that ranks multiple sequences based on log probability.",
+        "source": "2203.11171",
+        "pub_date": "2022-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "beam search": {
+      "type": null,
+      "definition": {
+        "text": "A method that generates outputs by exploring a limited set of high-probability sequences, which restricts output diversity.",
+        "source": "2203.11171",
+        "pub_date": "2022-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "ensemble-based approaches": {
+      "type": null,
+      "definition": {
+        "text": "Methods that aggregate outputs from multiple models to improve performance.",
+        "source": "2203.11171",
+        "pub_date": "2022-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "language models": {
+      "type": null,
+      "definition": {
+        "text": "Language models are computational systems designed to generate and understand human language.",
+        "source": "2203.11171",
+        "pub_date": "2022-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "generated rationales": {
+      "type": null,
+      "definition": {
+        "text": "Generated rationales are explanations produced by models that help in inspecting their reasoning processes.",
+        "source": "2203.11171",
+        "pub_date": "2022-03"
       },
       "mastery": 0.0,
       "locked": false,
@@ -250,9 +408,9 @@
     "HotPotQA": {
       "type": null,
       "definition": {
-        "text": "A dataset for multi-hop question answering that requires reasoning across multiple Wikipedia passages.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
+        "text": "A dataset designed to evaluate reasoning capabilities through question-and-answer pairs that require parsing and reasoning over multiple documents.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
       },
       "mastery": 0.0,
       "locked": false,
@@ -263,7 +421,7 @@
     "FEVER": {
       "type": null,
       "definition": {
-        "text": "A dataset for fact verification of claims based on Wikipedia content.",
+        "text": "A dataset that presents challenges in knowledge retrieval and reasoning.",
         "source": "2210.03629",
         "pub_date": "2022-10"
       },
@@ -276,7 +434,7 @@
     "Wikipedia web API": {
       "type": null,
       "definition": {
-        "text": "A designed interface with actions for retrieving information from Wikipedia to assist in reasoning tasks.",
+        "text": "A designed interface that allows models to perform actions such as searching for sentences, looking up specific sentences, and finishing tasks with answers.",
         "source": "2210.03629",
         "pub_date": "2022-10"
       },
@@ -286,12 +444,14 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "Acting-only prompts": {
+    "Chain-of-thought prompting": {
       "type": null,
       "definition": {
-        "text": "A type of prompting method that focuses solely on actions without incorporating thoughts or observations.",
+        "text": "Chain-of-thought prompting is a baseline method that differs in its use of thoughts, actions, and observations.",
         "source": "2210.03629",
-        "pub_date": "2022-10"
+        "pub_date": "2022-10",
+        "confidence": "low",
+        "flagged": "no_clean_candidate"
       },
       "mastery": 0.0,
       "locked": false,
@@ -299,12 +459,14 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "finetuning strategy": {
+    "CoT-SC": {
       "type": null,
       "definition": {
-        "text": "An approach used to enhance smaller language models by conditioning them on generated trajectories.",
+        "text": "CoT-SC is a method proposed to leverage the strengths of both ReAct and Chain-of-thought prompting.",
         "source": "2210.03629",
-        "pub_date": "2022-10"
+        "pub_date": "2022-10",
+        "confidence": "low",
+        "flagged": "no_clean_candidate"
       },
       "mastery": 0.0,
       "locked": false,
@@ -328,7 +490,7 @@
     "WebShop": {
       "type": null,
       "definition": {
-        "text": "An interactive decision-making task that involves purchasing products based on user instructions in a noisy online shopping environment.",
+        "text": "An interactive decision-making task that involves navigating an online shopping environment where agents interpret user instructions and select products from various text.",
         "source": "2210.03629",
         "pub_date": "2022-10"
       },
@@ -338,75 +500,10 @@
       "last_touched": "2026-06-08",
       "last_probed": null
     },
-    "least-to-most prompting": {
+    "Act": {
       "type": null,
       "definition": {
-        "text": "An advancement that enhances the capabilities of Chain-of-Thought.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "mastery": 0.0,
-      "locked": false,
-      "_seed_intent": null,
-      "last_touched": "2026-06-08",
-      "last_probed": null
-    },
-    "zero-shot CoT": {
-      "type": null,
-      "definition": {
-        "text": "An advancement that enhances the capabilities of Chain-of-Thought.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "mastery": 0.0,
-      "locked": false,
-      "_seed_intent": null,
-      "last_touched": "2026-06-08",
-      "last_probed": null
-    },
-    "Selection-Inference": {
-      "type": null,
-      "definition": {
-        "text": "A method that refines reasoning by structuring it into distinct phases or leveraging self-generated rationales.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "mastery": 0.0,
-      "locked": false,
-      "_seed_intent": null,
-      "last_touched": "2026-06-08",
-      "last_probed": null
-    },
-    "STaR": {
-      "type": null,
-      "definition": {
-        "text": "A method that refines reasoning by structuring it into distinct phases or leveraging self-generated rationales.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "mastery": 0.0,
-      "locked": false,
-      "_seed_intent": null,
-      "last_touched": "2026-06-08",
-      "last_probed": null
-    },
-    "WebGPT": {
-      "type": null,
-      "definition": {
-        "text": "An example of a language model employed in interactive environments for decision-making.",
-        "source": "2210.03629",
-        "pub_date": "2022-10"
-      },
-      "mastery": 0.0,
-      "locked": false,
-      "_seed_intent": null,
-      "last_touched": "2026-06-08",
-      "last_probed": null
-    },
-    "SayCan": {
-      "type": null,
-      "definition": {
-        "text": "A work that demonstrates the use of language models in robotic action planning.",
+        "text": "A method compared to ReAct that highlights differences in reasoning approaches for decision-making.",
         "source": "2210.03629",
         "pub_date": "2022-10"
       },
@@ -419,9 +516,349 @@
     "Inner Monologue": {
       "type": null,
       "definition": {
-        "text": "A work that introduces a feedback loop in robotic action planning that ReAct builds upon.",
+        "text": "A method compared to ReAct that emphasizes different reasoning strategies in decision-making.",
         "source": "2210.03629",
         "pub_date": "2022-10"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Reflexion": {
+      "type": null,
+      "definition": {
+        "text": "Reflexion is a framework designed to enhance the learning process of language agents by utilizing linguistic feedback and storing reflective text in an episodic memory buffer.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "verbal reinforcement learning": {
+      "type": null,
+      "definition": {
+        "text": "An approach that enables agents to receive feedback through language to adjust their behavior and improve decision-making processes.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Actor": {
+      "type": null,
+      "definition": {
+        "text": "The Actor is a model that generates text and actions based on state observations, utilizing a large language model and a memory component for improved context awareness.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Evaluator": {
+      "type": null,
+      "definition": {
+        "text": "The Evaluator is a model that assesses the quality of the Actor's outputs by computing reward scores that reflect performance in specific tasks.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Self-Reflection model": {
+      "type": null,
+      "definition": {
+        "text": "The Self-Reflection model generates verbal feedback based on the Actor's performance, providing insights that inform future actions and are stored in memory.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "HumanEval": {
+      "type": null,
+      "definition": {
+        "text": "A benchmark used for evaluating code generation tasks.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "ReAct": {
+      "type": null,
+      "definition": {
+        "text": "A framework for action generation used by agents in multi-step tasks.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Chain-of-Thought (CoT)": {
+      "type": null,
+      "definition": {
+        "text": "A method that leverages ground truth context to enhance reasoning over extensive text.",
+        "source": "2303.11366",
+        "pub_date": "2023-03",
+        "confidence": "low",
+        "flagged": "no_clean_candidate"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "LeetcodeHardGym": {
+      "type": null,
+      "definition": {
+        "text": "An interactive programming benchmark introduced to evaluate programming approaches.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "experiential learning": {
+      "type": null,
+      "definition": {
+        "text": "Experiential learning is a process that enhances action selection by learning from experiences.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "self-reflection": {
+      "type": null,
+      "definition": {
+        "text": "Self-reflection is a concept that allows agents to evaluate their actions and outcomes.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "isolated execution environments": {
+      "type": null,
+      "definition": {
+        "text": "environments that are separated from other processes to safely execute code without interference or risk from unverified code.",
+        "source": "2303.11366",
+        "pub_date": "2023-03"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Tree of Thoughts": {
+      "type": null,
+      "definition": {
+        "text": "The Tree of Thoughts (ToT) framework enhances language model inference by allowing exploration over coherent units of text, termed 'thoughts,' which serve as intermediate steps in problem solving.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Chain of Thought": {
+      "type": null,
+      "definition": {
+        "text": "A method that involves reasoning through a sequence of thoughts to generate outputs.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "dual process theory": {
+      "type": null,
+      "definition": {
+        "text": "A theory that distinguishes between fast, automatic decision-making and slow, deliberative planning, suggesting that insights from human cognition could improve language models.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "autoregressive mechanism": {
+      "type": null,
+      "definition": {
+        "text": "A simple mechanism relied upon by language models for generating outputs.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "input-output prompting": {
+      "type": null,
+      "definition": {
+        "text": "Transforms an input sequence into an output sequence by wrapping the input with task instructions or examples.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "thought decomposition": {
+      "type": null,
+      "definition": {
+        "text": "Thought decomposition breaks down the problem-solving process into manageable thought steps.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "thought generation": {
+      "type": null,
+      "definition": {
+        "text": "Thought generation produces candidates for the next thought using either independent sampling or sequential proposing.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "state evaluation": {
+      "type": null,
+      "definition": {
+        "text": "State evaluation assesses the progress of different states towards a solution using heuristics derived from the language model's reasoning.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "search algorithm": {
+      "type": null,
+      "definition": {
+        "text": "The search algorithm determines how to navigate the tree, employing strategies like breadth-first or depth-first search.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "deliberate search in trees of thoughts": {
+      "type": null,
+      "definition": {
+        "text": "An approach that enhances performance by exploring structured thought processes during problem-solving.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "Game of 24": {
+      "type": null,
+      "definition": {
+        "text": "A mathematical reasoning challenge that requires using four numbers and basic arithmetic operations to achieve the target of 24.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "iterative-refine": {
+      "type": null,
+      "definition": {
+        "text": "A method that allows the model to assess and improve the coherence of its output based on previous attempts.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "two-step thought generation": {
+      "type": null,
+      "definition": {
+        "text": "An approach where the model first generates multiple plans and selects the most promising one before creating outputs based on that plan.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
+      },
+      "mastery": 0.0,
+      "locked": false,
+      "_seed_intent": null,
+      "last_touched": "2026-06-08",
+      "last_probed": null
+    },
+    "depth-first search": {
+      "type": null,
+      "definition": {
+        "text": "A search strategy that explores alternative thoughts by allowing backtracking when a state becomes unpromising.",
+        "source": "2305.10601",
+        "pub_date": "2023-05"
       },
       "mastery": 0.0,
       "locked": false,
@@ -432,52 +869,196 @@
   },
   "edges": [
     {
-      "from": "search algorithm",
+      "from": "large language models",
       "rel": "part_of",
-      "to": "System 2",
+      "to": "SVAMP",
+      "source": "2201.11903",
+      "confidence": 1.0,
+      "evidence": "**3.1 Experimental Setup**"
+    },
+    {
+      "from": "large language models",
+      "rel": "part_of",
+      "to": "MAWPS",
+      "source": "2201.11903",
+      "confidence": 1.0,
+      "evidence": "**3.1 Experimental Setup**"
+    },
+    {
+      "from": "BIG-bench",
+      "rel": "part_of",
+      "to": "commonsense reasoning",
+      "source": "2201.11903",
+      "confidence": 1.0,
+      "evidence": "**4 Commonsense Reasoning**"
+    },
+    {
+      "from": "Sports Understanding",
+      "rel": "is_a",
+      "to": "commonsense reasoning",
+      "source": "2201.11903",
+      "confidence": 1.0,
+      "evidence": "**4 Commonsense Reasoning**"
+    },
+    {
+      "from": "Date Understanding",
+      "rel": "part_of",
+      "to": "Sports Understanding",
+      "source": "2201.11903",
+      "confidence": 1.0,
+      "evidence": "**4 Commonsense Reasoning**"
+    },
+    {
+      "from": "UL2",
+      "rel": "part_of",
+      "to": "token truncation",
+      "source": "2203.11171",
+      "confidence": 1.0,
+      "evidence": "3.1 EXPERIMENT SETUP"
+    },
+    {
+      "from": "language models",
+      "rel": "part_of",
+      "to": "UL2",
+      "source": "2203.11171",
+      "confidence": 1.0,
+      "evidence": "3.1 EXPERIMENT SETUP"
+    },
+    {
+      "from": "UL2",
+      "rel": "is_a",
+      "to": "language models",
+      "source": "2203.11171",
+      "confidence": 1.0,
+      "evidence": "3.1 EXPERIMENT SETUP"
+    },
+    {
+      "from": "Act",
+      "rel": "part_of",
+      "to": "REACT",
+      "source": "2210.03629",
+      "confidence": 1.0,
+      "evidence": "REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS"
+    },
+    {
+      "from": "Act",
+      "rel": "part_of",
+      "to": "HotPotQA",
+      "source": "2210.03629",
+      "confidence": 1.0,
+      "evidence": "3.1 SETUP"
+    },
+    {
+      "from": "Act",
+      "rel": "part_of",
+      "to": "FEVER",
+      "source": "2210.03629",
+      "confidence": 1.0,
+      "evidence": "3.1 SETUP"
+    },
+    {
+      "from": "Act",
+      "rel": "part_of",
+      "to": "Wikipedia web API",
+      "source": "2210.03629",
+      "confidence": 1.0,
+      "evidence": "3.1 SETUP"
+    },
+    {
+      "from": "Act",
+      "rel": "part_of",
+      "to": "Chain-of-thought prompting",
+      "source": "2210.03629",
+      "confidence": 1.0,
+      "evidence": "3.2 METHODS"
+    },
+    {
+      "from": "Act",
+      "rel": "part_of",
+      "to": "CoT-SC",
+      "source": "2210.03629",
+      "confidence": 1.0,
+      "evidence": "3.2 METHODS"
+    },
+    {
+      "from": "Reflexion",
+      "rel": "part_of",
+      "to": "Self-Reflection model",
+      "source": "2303.11366",
+      "confidence": 1.0,
+      "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+    },
+    {
+      "from": "Reflexion",
+      "rel": "part_of",
+      "to": "self-reflection",
+      "source": "2303.11366",
+      "confidence": 1.0,
+      "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+    },
+    {
+      "from": "Evaluator",
+      "rel": "part_of",
+      "to": "self-reflection",
+      "source": "2303.11366",
+      "confidence": 1.0,
+      "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+    },
+    {
+      "from": "self-reflection",
+      "rel": "part_of",
+      "to": "Self-Reflection model",
+      "source": "2303.11366",
+      "confidence": 1.0,
+      "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+    },
+    {
+      "from": "Self-Reflection model",
+      "rel": "is_a",
+      "to": "self-reflection",
+      "source": "2303.11366",
+      "confidence": 1.0,
+      "evidence": "**3 Reflexion: reinforcement via verbal reflection**"
+    },
+    {
+      "from": "thought generation",
+      "rel": "part_of",
+      "to": "Tree of Thoughts",
       "source": "2305.10601",
       "confidence": 1.0,
       "evidence": "**1 Introduction**"
     },
     {
-      "from": "search algorithm",
+      "from": "autoregressive mechanism",
       "rel": "part_of",
-      "to": "thought generator",
+      "to": "language models",
+      "source": "2305.10601",
+      "confidence": 1.0,
+      "evidence": "**1 Introduction**"
+    },
+    {
+      "from": "depth-first search",
+      "rel": "is_a",
+      "to": "search algorithm",
+      "source": "2305.10601",
+      "confidence": 1.0,
+      "evidence": "**1 Introduction**"
+    },
+    {
+      "from": "thought decomposition",
+      "rel": "part_of",
+      "to": "Tree of Thoughts",
       "source": "2305.10601",
       "confidence": 1.0,
       "evidence": "**3 Tree of Thoughts: Deliberate Problem Solving with LM**"
     },
     {
-      "from": "two-step thought generation",
+      "from": "Tree of Thoughts",
       "rel": "is_a",
-      "to": "Chain of Thought",
+      "to": "two-step thought generation",
       "source": "2305.10601",
       "confidence": 1.0,
       "evidence": "**4.2 Creative writing**"
-    },
-    {
-      "from": "state evaluation",
-      "rel": "part_of",
-      "to": "depth-first search",
-      "source": "2305.10601",
-      "confidence": 1.0,
-      "evidence": "**4.3 Mini crosswords**"
-    },
-    {
-      "from": "REACT",
-      "rel": "part_of",
-      "to": "Acting-only prompts",
-      "source": "2210.03629",
-      "confidence": 1.0,
-      "evidence": "3.2 METHODS"
-    },
-    {
-      "from": "Acting-only prompts",
-      "rel": "part_of",
-      "to": "finetuning strategy",
-      "source": "2210.03629",
-      "confidence": 1.0,
-      "evidence": "3.2 METHODS"
     }
   ]
 }

@@ -1,0 +1,67 @@
+[
+  {
+    "heading": "SELF-CONSISTENCY IMPROVES CHAIN OF THOUGHT REASONING IN LANGUAGE MODELS",
+    "original_len": 261,
+    "summary": "The concept of self-consistency is introduced as a method to enhance chain of thought reasoning in language models. By generating multiple reasoning paths for a given task and selecting the most frequent or consistent outcome, self-consistency allows the model to refine its reasoning process, leading to improved accuracy and reliability in its responses. This approach emphasizes the importance of aggregating diverse reasoning traces to bolster the overall reasoning capability of the model."
+  },
+  {
+    "heading": "ABSTRACT",
+    "original_len": 941,
+    "summary": "The paper introduces the concept of _self-consistency_, a new decoding strategy designed to enhance chain-of-thought prompting in large language models. This approach involves sampling a diverse set of reasoning paths rather than relying solely on a greedy method, allowing for the selection of the most consistent answer by considering multiple reasoning perspectives. The underlying idea is that complex reasoning tasks often have various valid approaches that can lead to a singular correct answer, thereby improving performance on arithmetic and commonsense reasoning benchmarks."
+  },
+  {
+    "heading": "1 INTRODUCTION",
+    "original_len": 4958,
+    "summary": "The introduction presents the concept of chain-of-thought prompting, which encourages language models to articulate reasoning processes through a series of short sentences, enhancing their performance on multi-step reasoning tasks. To further improve reasoning capabilities, the paper introduces self-consistency, a novel decoding strategy that samples multiple reasoning paths from the model instead of relying on a single greedy decoding approach. This method acknowledges that complex reasoning tasks can have various valid paths leading to the same answer, thereby increasing confidence in the final output. Self-consistency operates in an unsupervised manner, leveraging a single pre-trained language model to generate diverse reasoning paths and aggregate them for a consistent answer, distinguishing it from traditional ensemble methods that require multiple models."
+  },
+  {
+    "heading": "2 SELF-CONSISTENCY OVER DIVERSE REASONING PATHS",
+    "original_len": 6372,
+    "summary": "Self-consistency leverages the idea that diverse reasoning paths can lead to the same correct answer in language models, reflecting the varied ways humans approach problem-solving. By sampling multiple candidate outputs from the model's decoder, the method generates a range of reasoning paths, which are then aggregated to identify the most consistent final answer. This process involves introducing latent variables that represent reasoning sequences, allowing the model to couple reasoning with answer generation. The aggregation can be performed through majority voting or weighted approaches, with the goal of enhancing accuracy by capitalizing on the agreement among correct reasoning processes, while also acknowledging that incorrect paths are less likely to converge on the same answer. This approach highlights the potential benefits of incorporating diversity in reasoning, even when the final answer is fixed, suggesting a valuable intersection between open-ended and optimal text generation."
+  },
+  {
+    "heading": "3 EXPERIMENTS",
+    "original_len": 288,
+    "summary": "The self-consistency method was evaluated against existing approaches through a series of experiments on various reasoning benchmarks. The findings indicate that self-consistency enhances reasoning accuracy across all language models tested, regardless of their scale."
+  },
+  {
+    "heading": "3.1 EXPERIMENT SETUP",
+    "original_len": 3704,
+    "summary": "The section outlines the experimental setup for evaluating self-consistency across various reasoning tasks and datasets. It introduces three main categories of reasoning: arithmetic reasoning, which utilizes a range of math problem datasets; commonsense reasoning, assessed through benchmarks like CommonsenseQA and StrategyQA; and symbolic reasoning, which includes specific tasks such as last letter concatenation and coin flipping. The evaluation employs four transformer-based language models, each differing in scale and architecture, including UL2, GPT-3, LaMDA, and PaLM, all tested in a few-shot setting using consistent prompts. Additionally, a sampling scheme is described, utilizing temperature sampling and token truncation to generate diverse reasoning paths, with an emphasis on the robustness of self-consistency across different sampling strategies."
+  },
+  {
+    "heading": "3.2 MAIN RESULTS",
+    "original_len": 4118,
+    "summary": "Self-consistency enhances the performance of language models in arithmetic, commonsense, and symbolic reasoning tasks, outperforming chain-of-thought prompting. This method shows particularly significant improvements in larger models, achieving state-of-the-art results even in challenging out-of-distribution scenarios. The effectiveness of self-consistency is further underscored by the observation that increasing the number of sampled reasoning paths leads to better accuracy, highlighting the value of diversity in reasoning approaches."
+  },
+  {
+    "heading": "3.3 SELF-CONSISTENCY HELPS WHEN CHAIN-OF-THOUGHT HURTS PERFORMANCE",
+    "original_len": 1045,
+    "summary": "Ye and Durrett (2022) highlight that chain-of-thought prompting can sometimes negatively impact performance in few-shot in-context learning. The study explores the role of self-consistency in addressing this issue across various NLP tasks, including Closed-Book Question Answering and Natural Language Inference. While chain-of-thought prompting may reduce performance in certain tasks, self-consistency demonstrates the ability to enhance performance and surpass standard prompting, suggesting it is an effective method for integrating rationales in few-shot learning scenarios."
+  },
+  {
+    "heading": "3.4 COMPARE TO OTHER EXISTING APPROACHES",
+    "original_len": 2978,
+    "summary": "Self-consistency is shown to significantly outperform existing methods such as sample-and-rank, beam search, and ensemble-based approaches in enhancing generation quality. In comparison to sample-and-rank, which ranks multiple sequences based on log probability, self-consistency achieves a greater improvement in accuracy despite using the same number of sampled sequences. When compared to beam search, self-consistency also demonstrates superior performance, as the diversity of reasoning paths in self-consistency contributes to better outcomes, while beam search limits output diversity. Additionally, self-consistency is distinguished from ensemble-based methods, which typically involve aggregating outputs from multiple models; instead, self-consistency operates as a \"self-ensemble\" within a single language model, yielding more substantial gains than traditional ensemble techniques that rely on prompt permutations or multiple prompt sets."
+  },
+  {
+    "heading": "3.5 ADDITIONAL STUDIES",
+    "original_len": 3533,
+    "summary": "The section discusses the self-consistency method and its robustness across various sampling strategies and model scales, indicating that it maintains effectiveness regardless of temperature, top-k, or nucleus sampling parameters. Additionally, self-consistency enhances a language model's resilience to imperfect prompts, as it compensates for minor errors made by human annotators, thereby improving accuracy and providing an uncertainty estimate regarding the model's confidence in its answers. Furthermore, self-consistency is applicable to non-natural-language reasoning paths, such as equations, and demonstrates significant improvements in performance with zero-shot chain-of-thought reasoning, although the gains are less pronounced compared to natural language reasoning due to the brevity of equations."
+  },
+  {
+    "heading": "5 CONCLUSION AND DISCUSSION",
+    "original_len": 1247,
+    "summary": "The method of self-consistency enhances accuracy in arithmetic and commonsense reasoning tasks while also aiding in the collection of rationales and providing uncertainty estimates for language model outputs. Although self-consistency increases computational costs, starting with a limited number of paths can yield significant improvements without excessive expense. Future applications of self-consistency may involve generating better supervised data for model fine-tuning, which could lead to more accurate predictions in single inference runs. However, challenges remain, as language models can produce incorrect reasoning paths, indicating a need for improved grounding in rationale generation."
+  },
+  {
+    "heading": "REPRODUCIBILITY STATEMENT",
+    "original_len": 795,
+    "summary": "The section outlines the reproducibility measures taken in the experiments, highlighting the inclusion of four language models of different scales. It specifies that UL2 and GPT-3 are public models, with accessible checkpoints and APIs, respectively, while also detailing the use of specific engines from GPT-3 to enhance reproducibility. Additionally, it mentions the use of LaMDA-137B and PaLM-540B, which are not publicly available, and emphasizes that the study relies solely on prompting these off-the-shelf models without any finetuning, providing input prompts in an appendix for transparency."
+  },
+  {
+    "heading": "ETHICS STATEMENT",
+    "original_len": 672,
+    "summary": "The ethics statement emphasizes the need for caution when using language models, as they can produce nonsensical or non-factual reasoning paths. It highlights the role of generated rationales in inspecting the model's reasoning process, which can help identify mistakes and biases. Additionally, it points out the necessity for further improvements in grounding predictions and enhancing factuality and safety to prevent potential harm to users in real-world applications."
+  }
+]

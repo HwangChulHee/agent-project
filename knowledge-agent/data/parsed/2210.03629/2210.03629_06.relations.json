@@ -1,20 +1,56 @@
 [
   {
-    "src": "REACT",
+    "src": "Act",
     "rel": "part_of",
-    "dst": "Acting-only prompts",
-    "direction": "REACT->Acting-only prompts",
-    "stage1_sentence": "ReAct incorporates Acting-only prompts as one of its baseline methods, differing in the extent of thought and observation integration during the question-answering process.",
-    "stage2_rationale": "baseline methods include Acting-only prompts",
+    "dst": "REACT",
+    "direction": "Act->REACT",
+    "stage1_sentence": "Act is a component of REACT that enables the execution of actions based on the reasoning provided by the framework.",
+    "stage2_rationale": "component of REACT that enables execution",
+    "evidence": "REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS"
+  },
+  {
+    "src": "Act",
+    "rel": "part_of",
+    "dst": "HotPotQA",
+    "direction": "Act->HotPotQA",
+    "stage1_sentence": "Act is a component of the system designed to interact with HotPotQA by performing actions like searching and looking up information to support reasoning.",
+    "stage2_rationale": "component of the system designed for HotPotQA",
+    "evidence": "3.1 SETUP"
+  },
+  {
+    "src": "Act",
+    "rel": "part_of",
+    "dst": "FEVER",
+    "direction": "Act->FEVER",
+    "stage1_sentence": "Act is a component of the action space designed to facilitate reasoning in the FEVER dataset by simulating interactions with external knowledge sources.",
+    "stage2_rationale": "component of the action space in FEVER",
+    "evidence": "3.1 SETUP"
+  },
+  {
+    "src": "Act",
+    "rel": "part_of",
+    "dst": "Wikipedia web API",
+    "direction": "Act->Wikipedia web API",
+    "stage1_sentence": "Act is a component of the Wikipedia web API that enables interaction through actions like \"search,\" \"lookup,\" and \"finish\" to support reasoning tasks.",
+    "stage2_rationale": "component of the Wikipedia web API",
+    "evidence": "3.1 SETUP"
+  },
+  {
+    "src": "Act",
+    "rel": "part_of",
+    "dst": "Chain-of-thought prompting",
+    "direction": "Act->Chain-of-thought prompting",
+    "stage1_sentence": "Act is a component of chain-of-thought prompting that involves executing actions based on reasoning steps to enhance task performance.",
+    "stage2_rationale": "component of chain-of-thought prompting",
     "evidence": "3.2 METHODS"
   },
   {
-    "src": "Acting-only prompts",
+    "src": "Act",
     "rel": "part_of",
-    "dst": "finetuning strategy",
-    "direction": "Acting-only prompts->finetuning strategy",
-    "stage1_sentence": "Acting-only prompts are part of a finetuning strategy that enhances the performance of language models by varying the inclusion of thoughts, actions, and observations.",
-    "stage2_rationale": "part of a finetuning strategy",
+    "dst": "CoT-SC",
+    "direction": "Act->CoT-SC",
+    "stage1_sentence": "Act is a component of the ReAct prompting method that interacts with CoT-SC to enhance reasoning by allowing the model to switch between thought-action-observation steps and structured reasoning.",
+    "stage2_rationale": "component of ReAct prompting method",
     "evidence": "3.2 METHODS"
   }
 ]
