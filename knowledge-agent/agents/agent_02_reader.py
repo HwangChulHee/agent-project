@@ -29,9 +29,14 @@ def segment(text: str) -> list:
 
 
 # 본문 끝 경계 = References/부록 등. 첫 경계 이후를 통째로 버린다(본문 → 참고문헌 → 부록 순서 가정).
-# 안전장치: 문서 후반부(절반 이후)에서만 경계를 찾는다 — 본문 중간 우연 매칭 방지.
-_BOUNDARY_WORDS = ("reference", "bibliography", "acknowledgment", "acknowledgement",
-                   "broader impact", "appendix", "supplementary")
+# 강한 경계 = References/Bibliography/Acknowledgements/Checklist — 본문 섹션명으로는 거의
+#   안 쓰여 위치 무관하게 신뢰. 부록이 거대해 본문 절반을 넘는 논문(예: CoT 2201.11903은
+#   50섹션 중 References가 14번째)도 본문만 남기려면 "절반 이후" 가드 없이 첫 등장에서 절단.
+# 약한 경계 = appendix/supplementary 등 + 단일대문자 패턴 — 본문 중간 우연매칭 위험이 있어
+#   강한 경계가 없을 때만, 그리고 후반부에서만 적용.
+_STRONG_BOUNDARY = ("reference", "bibliography", "acknowledgment", "acknowledgement",
+                    "checklist")
+_WEAK_BOUNDARY = ("broader impact", "appendix", "supplementary")
 
 
 def _norm_heading(h: str) -> str:
@@ -41,9 +46,13 @@ def _norm_heading(h: str) -> str:
     return h.strip()
 
 
-def _is_boundary(h: str) -> bool:
+def _is_strong_boundary(h: str) -> bool:
+    return any(_norm_heading(h).startswith(w) for w in _STRONG_BOUNDARY)
+
+
+def _is_weak_boundary(h: str) -> bool:
     nh = _norm_heading(h)
-    if any(nh.startswith(w) for w in _BOUNDARY_WORDS):
+    if any(nh.startswith(w) for w in _WEAK_BOUNDARY):
         return True
     # 부록 패턴: 단일 대문자로 시작 (A / A. / B.1 ...)
     if re.match(r"^[A-Z]([\.\s]|\.\d)", h.strip()):
@@ -52,10 +61,14 @@ def _is_boundary(h: str) -> bool:
 
 
 def trim_back_matter(segs: list) -> list:
-    """후반부에서 첫 경계 섹션을 찾아 그 이후를 모두 제거. 못 찾으면 원본 유지."""
-    start = len(segs) // 2                       # 앞 절반은 무조건 본문으로 보존
+    """본문 외(참고문헌·부록 등) 절단. 강한 경계는 위치 무관 첫 등장에서, 없으면
+    약한 경계를 후반부에서만 찾는다. 못 찾으면 원본 유지."""
+    for i, s in enumerate(segs):                 # 강한 경계: 위치 무관 (부록 거대 논문 대응)
+        if _is_strong_boundary(s["heading"]):
+            return segs[:i]
+    start = len(segs) // 2                        # 약한 경계: 앞 절반은 본문으로 보존
     for i in range(start, len(segs)):
-        if _is_boundary(segs[i]["heading"]):
+        if _is_weak_boundary(segs[i]["heading"]):
             return segs[:i]
     return segs
 
