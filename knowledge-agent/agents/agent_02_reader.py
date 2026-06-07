@@ -60,11 +60,27 @@ def trim_back_matter(segs: list) -> list:
     return segs
 
 
+# Related Work는 본문 중간(Conclusion 앞)이라 trim_back_matter로는 못 자른다(뒤 본문까지 날아감).
+# → "그 섹션만" 콕 제거. 근거: RW는 (1) 공출현 엣지 폭발 (2) 인용-stub 변두리 개념
+# (3) 관계서술 정의의 핫스팟. 실제 개념은 본문에서 정의되므로 손실 적음(enrichment).
+_DROP_SECTIONS = ("related work", "related works")
+
+
+def _is_dropped_section(h: str) -> bool:
+    return any(_norm_heading(h).startswith(w) for w in _DROP_SECTIONS)
+
+
+def drop_sections(segs: list) -> list:
+    """본문 외 잡음 섹션(Related Work)만 골라 제거. 나머지 순서·내용 보존."""
+    return [s for s in segs if not _is_dropped_section(s["heading"])]
+
+
 def segment_file(md_path: str):
     with open(md_path, encoding="utf-8") as f:
         text = f.read()
     segs = segment(text)
     segs = trim_back_matter(segs)                # References/부록 등 본문 외 절단
+    segs = drop_sections(segs)                   # Related Work 섹션 제거(잡음원)
     # {paper}_01.md → {paper}_02.segments.json (같은 폴더)
     out_path = md_path.replace("_01.md", "_02.segments.json")
     with open(out_path, "w", encoding="utf-8") as f:
