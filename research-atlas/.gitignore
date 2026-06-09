@@ -19,3 +19,8 @@ data/pdfs/
 # === 로그 / 임시 ===
 *.log
 *.tmp
+
+# === 웹 프론트 (web/) ===
+web/node_modules/
+web/dist/
+web/.vite/
