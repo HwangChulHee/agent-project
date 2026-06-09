@@ -1,3 +1,21 @@
+# === Python / uv ===
+__pycache__/
+*.py[cod]
+.venv/
+.ruff_cache/
+.pytest_cache/
+
+# === 환경변수 (절대 커밋 금지) ===
+.env
 
 # === 논문 PDF (재다운로드 가능, 용량 큼) ===
 data/pdfs/
+
+# === IDE / OS ===
+.vscode/
+.idea/
+.DS_Store
+
+# === 로그 / 임시 ===
+*.log
+*.tmp
