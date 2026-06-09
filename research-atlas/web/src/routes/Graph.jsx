@@ -12,22 +12,82 @@ const TYPE_COLOR = {
 
 export default function Graph() {
   const svgRef = useRef(null);
+  const apiRef = useRef(null); // render()가 돌려준 {sim, focus, names}
+  const lastQ = useRef(""); // 같은 검색어 Enter → 다음 매칭 순회
   const [selected, setSelected] = useState(null);
   const [error, setError] = useState(null);
+  const [query, setQuery] = useState("");
+  const [matches, setMatches] = useState([]); // [{id, canonical}]
+  const [matchIdx, setMatchIdx] = useState(0);
+  const [searchMsg, setSearchMsg] = useState(""); // "없음" 등
 
   useEffect(() => {
-    let sim;
     getGraph()
       .then((data) => {
-        sim = render(svgRef.current, data, setSelected);
+        apiRef.current = render(svgRef.current, data, setSelected);
       })
       .catch((e) => setError(e.message));
-    return () => sim && sim.stop();
+    return () => apiRef.current && apiRef.current.sim.stop();
   }, []);
+
+  function goTo(id, list, idx) {
+    apiRef.current.focus(id);
+    setMatches(list);
+    setMatchIdx(idx);
+    setSearchMsg("");
+  }
+
+  function runSearch(e) {
+    e.preventDefault();
+    const api = apiRef.current;
+    if (!api) return;
+    const q = query.trim().toLowerCase();
+    if (!q) {
+      setMatches([]);
+      setSearchMsg("");
+      return;
+    }
+    const found = api.names.filter((n) =>
+      n.canonical.toLowerCase().includes(q)
+    );
+    if (found.length === 0) {
+      setMatches([]);
+      setSearchMsg("없음");
+      lastQ.current = q;
+      return;
+    }
+    // 같은 검색어로 다시 Enter → 다음 매칭으로 순회
+    const advance = q === lastQ.current && found.length > 1;
+    const idx = advance ? (matchIdx + 1) % found.length : 0;
+    lastQ.current = q;
+    goTo(found[idx].id, found, idx);
+  }
 
   return (
     <div className="graph-page">
       <svg id="graph-svg" ref={svgRef} />
+      <form className="graph-search" onSubmit={runSearch}>
+        <input
+          placeholder="노드 검색 (예: RLHF)…"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        {searchMsg && <div className="muted">{searchMsg}</div>}
+        {matches.length > 1 && (
+          <div className="match-list">
+            {matches.map((m, i) => (
+              <button
+                type="button"
+                key={m.id}
+                className={i === matchIdx ? "active" : ""}
+                onClick={() => goTo(m.id, matches, i)}
+              >
+                {m.canonical}
+              </button>
+            ))}
+          </div>
+        )}
+      </form>
       <div className="graph-legend">
         <div>
           <span className="dot" style={{ background: TYPE_COLOR.technique }} />
@@ -125,9 +185,8 @@ function render(svgEl, data, setSelected) {
   }
 
   const root = svg.append("g");
-  svg.call(
-    d3.zoom().on("zoom", (e) => root.attr("transform", e.transform))
-  );
+  const zoom = d3.zoom().on("zoom", (e) => root.attr("transform", e.transform));
+  svg.call(zoom);
 
   const link = root
     .append("g")
@@ -199,5 +258,23 @@ function render(svgEl, data, setSelected) {
       node.attr("transform", (d) => `translate(${d.x},${d.y})`);
     });
 
-  return sim;
+  // 검색→포커스: 노드를 화면 중앙으로 이동(transition)하고 강조
+  const nodeById = new Map(nodes.map((n) => [n.id, n]));
+  function focus(id) {
+    const d = nodeById.get(id);
+    if (!d) return;
+    const k = 1.5; // 적당한 확대
+    const t = d3.zoomIdentity
+      .translate(W / 2 - k * d.x, H / 2 - k * d.y)
+      .scale(k);
+    svg.transition().duration(500).call(zoom.transform, t);
+    node
+      .select("circle")
+      .attr("stroke-width", (c) => (c.id === id ? 5 : 2.5))
+      .attr("r", (c) => (c.id === id ? 15 : 10));
+    setSelected(d); // 사이드 패널도 갱신
+  }
+
+  const names = nodes.map((n) => ({ id: n.id, canonical: n.canonical }));
+  return { sim, focus, names };
 }

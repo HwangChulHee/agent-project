@@ -26,3 +26,23 @@
 **실행**: `uv run uvicorn api.main:app --reload --port 8000` + `cd web && npm install && npm run dev`
 
 **남은 일(범위 밖, 미래)**: problem 유사도 슬라이더, /search 동작, AI 도우미 동작.
+
+## 2026-06-09 — 웹 UI 2차: 노드/사전 검색·이동·정렬
+
+핸드오프 v2 3건. 백엔드(`api/`)·파이프라인(`src/`) 미수정, 프론트만.
+
+**`/graph` 노드 검색→이동(핵심)** `web/src/routes/Graph.jsx`
+- svg 상단 중앙 검색창(`form`). `canonical` 부분일치(대소문자 무시).
+- `render()`가 `{sim, focus, names}` 반환하도록 변경(기존엔 sim만). `zoom` 핸들러를 변수로 잡아 `focus(id)`에서 `zoom.transform`을 500ms transition으로 호출 → 해당 노드를 화면 중앙(scale 1.5)으로 이동. 강조: 해당 circle만 stroke-width 5·r 15.
+- 매칭 0=「없음」, 1=바로 이동, 여러개=검색창 아래 매칭 목록(클릭 이동) + 같은 검색어로 Enter 반복 시 다음 매칭 순회. 이동 시 사이드 패널(`setSelected`)도 갱신.
+- 노드 키는 canon 소문자(`n.id`)로 focus, 검색·표시는 `n.canonical`.
+
+**`/lexicon` 정렬** `web/src/routes/Lexicon.jsx`
+- 헤더 클릭 정렬(name/status/source/first_seen) 오름/내림 토글 + ▲/▼ 표시. aliases·definition·액션은 비정렬.
+- 정렬은 현재 status 필터 적용 후의 목록에 대해 동작.
+
+**`/lexicon` 검색 강화**
+- 검색을 **숨김 필터 → 강조 방식**으로 변경: 비매칭을 숨기지 않고 매칭 행에 `.matched`(배경 강조) + 첫 매칭으로 `scrollIntoView`(smooth, center). 툴바에 「N건 매칭/매칭 없음」 표시.
+- 검색+정렬+상태필터 동시 동작(필터→정렬된 목록 안에서 강조).
+
+**검증**: `npm run build` 성공. `normalized.json` 노드 키=canon소문자·`canonical`=표시명 확인(focus 로직 전제 일치).

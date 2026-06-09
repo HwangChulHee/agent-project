@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   getLexicon,
   mergeLexicon,
@@ -14,8 +14,19 @@ export default function Lexicon() {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("pending"); // 대기열 처리가 주 작업
   const [query, setQuery] = useState("");
+  const [sortKey, setSortKey] = useState(null); // "name" | "status" | "source" | "first_seen"
+  const [sortDir, setSortDir] = useState("asc");
   const [toast, setToast] = useState(null); // {msg, err}
   const [rebuilding, setRebuilding] = useState(false);
+  const firstMatchRef = useRef(null); // 검색 첫 매칭 행 → 스크롤 대상
+
+  function toggleSort(key) {
+    if (sortKey === key) setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    else {
+      setSortKey(key);
+      setSortDir("asc");
+    }
+  }
 
   const flash = (msg, err = false) => {
     setToast({ msg, err });
@@ -85,14 +96,48 @@ export default function Lexicon() {
     return c;
   }, [items]);
 
+  // 필터(상태) + 정렬. 검색은 숨기지 않고 강조/스크롤로 처리한다.
   const visible = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return items.filter((it) => {
-      if (filter !== "all" && it.status !== filter) return false;
-      if (q && !it.name.toLowerCase().includes(q)) return false;
-      return true;
-    });
-  }, [items, filter, query]);
+    const arr = items.filter((it) => filter === "all" || it.status === filter);
+    if (sortKey) {
+      arr.sort((a, b) => {
+        const av = (a[sortKey] ?? "").toString().toLowerCase();
+        const bv = (b[sortKey] ?? "").toString().toLowerCase();
+        const cmp = av < bv ? -1 : av > bv ? 1 : 0;
+        return sortDir === "asc" ? cmp : -cmp;
+      });
+    }
+    return arr;
+  }, [items, filter, sortKey, sortDir]);
+
+  const q = query.trim().toLowerCase();
+  const matchSet = useMemo(() => {
+    if (!q) return null;
+    return new Set(
+      visible.filter((it) => it.name.toLowerCase().includes(q)).map((it) => it.name)
+    );
+  }, [visible, q]);
+  const firstMatch = q
+    ? visible.find((it) => it.name.toLowerCase().includes(q))?.name
+    : null;
+
+  // 검색어/정렬/필터가 바뀌어 첫 매칭이 달라지면 그 행으로 스크롤
+  useEffect(() => {
+    if (firstMatchRef.current)
+      firstMatchRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [firstMatch]);
+
+  // 정렬 가능한 헤더 셀
+  const th = (key, label, width) => (
+    <th
+      style={{ width, cursor: "pointer" }}
+      onClick={() => toggleSort(key)}
+      title="클릭하여 정렬"
+    >
+      {label}
+      {sortKey === key ? (sortDir === "asc" ? " ▲" : " ▼") : ""}
+    </th>
+  );
 
   return (
     <div className="lex-wrap">
@@ -108,11 +153,18 @@ export default function Lexicon() {
           </button>
         ))}
         <input
-          placeholder="개념명 검색…"
+          placeholder="개념명 검색(강조)…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           style={{ width: 180 }}
         />
+        {q && (
+          <span className="muted">
+            {matchSet && matchSet.size > 0
+              ? `${matchSet.size}건 매칭`
+              : "매칭 없음"}
+          </span>
+        )}
         <span className="spacer" />
         <span className="muted">승인/거부 후 재빌드해야 그래프에 반영됩니다 →</span>
         <button onClick={doRebuild} disabled={rebuilding}>
@@ -126,12 +178,12 @@ export default function Lexicon() {
         <table className="lex-table">
           <thead>
             <tr>
-              <th style={{ width: "16%" }}>개념명</th>
+              {th("name", "개념명", "16%")}
               <th style={{ width: "22%" }}>aliases</th>
-              <th style={{ width: "12%" }}>status</th>
+              {th("status", "status", "12%")}
               <th style={{ width: "28%" }}>definition</th>
-              <th style={{ width: "8%" }}>source</th>
-              <th style={{ width: "8%" }}>first_seen</th>
+              {th("source", "source", "8%")}
+              {th("first_seen", "first_seen", "8%")}
               <th style={{ width: "6%" }}>액션</th>
             </tr>
           </thead>
@@ -142,6 +194,8 @@ export default function Lexicon() {
                 item={it}
                 onPatch={applyPatch}
                 onMerge={doMerge}
+                matched={matchSet ? matchSet.has(it.name) : false}
+                rowRef={it.name === firstMatch ? firstMatchRef : null}
               />
             ))}
           </tbody>
@@ -160,7 +214,7 @@ export default function Lexicon() {
   );
 }
 
-function Row({ item, onPatch, onMerge }) {
+function Row({ item, onPatch, onMerge, matched, rowRef }) {
   const [newAlias, setNewAlias] = useState("");
   const [def, setDef] = useState(item.definition || "");
   const defDirty = def !== (item.definition || "");
@@ -179,7 +233,7 @@ function Row({ item, onPatch, onMerge }) {
   }
 
   return (
-    <tr>
+    <tr ref={rowRef} className={matched ? "matched" : ""}>
       <td>{item.name}</td>
       <td>
         {item.aliases.map((a) => (

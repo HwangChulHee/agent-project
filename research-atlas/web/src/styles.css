@@ -120,6 +120,12 @@ textarea {
 .lex-table tr:hover td {
   background: #1c1c24;
 }
+.lex-table tr.matched td {
+  background: #13303a;
+}
+.lex-table tr.matched:hover td {
+  background: #173a47;
+}
 .badge {
   display: inline-block;
   padding: 1px 7px;
@@ -201,6 +207,45 @@ textarea {
   overflow: auto;
   border-left: 1px solid var(--border);
   line-height: 1.5;
+}
+.graph-search {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 260px;
+  padding: 8px 10px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  z-index: 10;
+}
+.graph-search input {
+  width: 100%;
+}
+.graph-search .match-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 160px;
+  overflow: auto;
+}
+.graph-search .match-list button {
+  text-align: left;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 6px;
+  color: var(--muted);
+}
+.graph-search .match-list button:hover {
+  color: var(--text);
+}
+.graph-search .match-list button.active {
+  color: var(--text);
+  background: #2a2a33;
 }
 .graph-legend {
   position: absolute;
