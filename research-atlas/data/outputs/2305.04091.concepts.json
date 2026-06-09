@@ -1,0 +1,27 @@
+{
+  "title": "Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models",
+  "task": [
+    "prompt engineering",
+    "multi-step reasoning",
+    "question answering"
+  ],
+  "defines": [
+    {
+      "name": "Plan-and-Solve (PS) Prompting",
+      "definition": "A zero-shot prompting strategy that first asks the model to devise a plan to break a problem into subtasks and then solve the subtasks according to that plan."
+    },
+    {
+      "name": "PS+ Prompting",
+      "definition": "An extended Plan-and-Solve prompting strategy that adds more detailed instructions to improve reasoning quality and reduce calculation errors."
+    }
+  ],
+  "uses": [
+    "chain-of-thought prompting",
+    "Zero-shot-CoT",
+    "Zero-shot-Program-of-Thought prompting",
+    "GPT-3"
+  ],
+  "problem": "Zero-shot-CoT still produces calculation errors, missing-step errors, and semantic misunderstanding errors on multi-step reasoning tasks.",
+  "domain": "general",
+  "paper_type": "technique"
+}

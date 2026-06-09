@@ -1,0 +1,26 @@
+{
+  "title": "HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face",
+  "task": [
+    "multi-step AI task solving",
+    "LLM agent",
+    "model orchestration",
+    "multimodal task execution"
+  ],
+  "defines": [
+    {
+      "name": "HuggingGPT",
+      "definition": "An LLM-powered agent that uses ChatGPT as a controller to plan tasks, select expert models from Hugging Face, execute them, and synthesize the results for complex AI requests."
+    }
+  ],
+  "uses": [
+    "ChatGPT",
+    "Hugging Face model descriptions",
+    "task planning",
+    "model selection",
+    "task execution",
+    "response generation"
+  ],
+  "problem": "Current LLMs cannot autonomously solve complicated multimodal AI tasks and need a way to coordinate external expert models.",
+  "domain": "general",
+  "paper_type": "technique"
+}

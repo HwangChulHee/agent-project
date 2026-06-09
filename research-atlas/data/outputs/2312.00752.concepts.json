@@ -1,0 +1,29 @@
+{
+  "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+  "task": [
+    "sequence modeling",
+    "language modeling",
+    "audio modeling",
+    "genomics modeling"
+  ],
+  "defines": [
+    {
+      "name": "Mamba",
+      "definition": "A simplified end-to-end neural network architecture that integrates selective state space models for linear-time sequence modeling without attention or MLP blocks."
+    },
+    {
+      "name": "selective state space models",
+      "definition": "State space models whose parameters are conditioned on the input to enable content-based selection and selective propagation or forgetting of information along the sequence."
+    }
+  ],
+  "uses": [
+    "structured state space models",
+    "hardware-aware parallel algorithm",
+    "scan",
+    "recurrent computation",
+    "selective parameterization"
+  ],
+  "problem": "Transformer-based sequence models have quadratic scaling, while prior efficient sequence models have been unable to match attention on discrete, information-dense modalities like language because they cannot perform content-based reasoning.",
+  "domain": "general",
+  "paper_type": "technique"
+}

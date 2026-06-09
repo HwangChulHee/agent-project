@@ -1,0 +1,27 @@
+{
+  "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+  "task": [
+    "general problem solving",
+    "planning",
+    "search",
+    "reasoning"
+  ],
+  "defines": [
+    {
+      "name": "Tree of Thoughts",
+      "definition": "A language model inference framework that organizes coherent intermediate reasoning units as a tree and uses search over them for deliberate problem solving."
+    }
+  ],
+  "uses": [
+    "chain of thought prompting",
+    "thought generation",
+    "thought self-evaluation",
+    "breadth-first search",
+    "depth-first search",
+    "lookahead",
+    "backtracking"
+  ],
+  "problem": "Token-level left-to-right language model inference is too myopic for tasks requiring exploration, strategic lookahead, or global decision making.",
+  "domain": "general",
+  "paper_type": "technique"
+}

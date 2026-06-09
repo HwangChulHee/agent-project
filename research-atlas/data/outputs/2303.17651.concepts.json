@@ -1,0 +1,26 @@
+{
+  "title": "SELF-REFINE: Iterative Refinement with Self-Feedback",
+  "task": [
+    "text generation",
+    "dialogue response generation",
+    "mathematical reasoning",
+    "code generation",
+    "program refinement"
+  ],
+  "defines": [
+    {
+      "name": "SELF-REFINE",
+      "definition": "An iterative self-refinement algorithm that improves an LLM's initial output by repeatedly generating self-feedback and using that feedback to refine the output."
+    }
+  ],
+  "uses": [
+    "few-shot prompting",
+    "feedback generation",
+    "refinement generation",
+    "single LLM",
+    "iterative prompting"
+  ],
+  "problem": "LLMs often produce suboptimal initial outputs and existing refinement methods typically require supervised data, extra training, or external reward models.",
+  "domain": "general",
+  "paper_type": "technique"
+}

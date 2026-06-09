@@ -1,0 +1,27 @@
+{
+  "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+  "task": [
+    "goal-driven language agents",
+    "sequential decision-making",
+    "code generation",
+    "language reasoning"
+  ],
+  "defines": [
+    {
+      "name": "Reflexion",
+      "definition": "A framework that improves language agents by converting task feedback into verbal self-reflection stored in episodic memory instead of updating model weights."
+    }
+  ],
+  "uses": [
+    "episodic memory buffer",
+    "verbal feedback",
+    "natural language experience summaries",
+    "self-evaluation",
+    "heuristics",
+    "unit tests",
+    "LLMs"
+  ],
+  "problem": "Traditional reinforcement learning for language agents is sample-inefficient and requires expensive fine-tuning, making it hard for agents to learn quickly from trial and error.",
+  "domain": "general",
+  "paper_type": "technique"
+}

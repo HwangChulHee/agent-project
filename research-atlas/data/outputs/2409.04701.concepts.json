@@ -1,0 +1,24 @@
+{
+  "title": "Late Chunking: Contextual Chunk Embeddings for Long-Context Embedding Models",
+  "task": [
+    "information retrieval",
+    "text retrieval",
+    "document chunk embedding",
+    "retrieval augmentation"
+  ],
+  "defines": [
+    {
+      "name": "late chunking",
+      "definition": "A chunking method that embeds an entire long document first and applies chunking only after the transformer encoder, before mean pooling, so each chunk embedding retains full document context."
+    }
+  ],
+  "uses": [
+    "long-context embedding models",
+    "transformer encoder",
+    "mean pooling",
+    "contrastive training"
+  ],
+  "problem": "Naive chunking discards surrounding context and produces sub-optimal chunk embeddings for retrieval when meaning depends on neighboring text.",
+  "domain": "general",
+  "paper_type": "technique"
+}

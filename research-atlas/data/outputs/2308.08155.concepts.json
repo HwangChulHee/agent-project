@@ -1,0 +1,25 @@
+{
+  "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
+  "task": [
+    "multi-agent LLM application development",
+    "agent-based task solving",
+    "conversation programming",
+    "human-in-the-loop interaction"
+  ],
+  "defines": [
+    {
+      "name": "AutoGen",
+      "definition": "An open-source framework for building LLM applications with customizable, conversable agents that coordinate through multi-agent conversations."
+    }
+  ],
+  "uses": [
+    "LLMs",
+    "human inputs",
+    "tools",
+    "natural language programming",
+    "code programming"
+  ],
+  "problem": "Developers need a flexible, generic framework for coordinating multiple agents to build LLM applications across diverse domains and conversation patterns.",
+  "domain": "general",
+  "paper_type": "technique"
+}

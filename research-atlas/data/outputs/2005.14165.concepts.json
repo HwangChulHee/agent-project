@@ -1,0 +1,27 @@
+{
+  "title": "GPT-3: Language Models are Few-Shot Learners",
+  "task": [
+    "few-shot language understanding",
+    "question answering",
+    "machine translation",
+    "cloze task solving",
+    "reasoning",
+    "domain adaptation",
+    "text generation"
+  ],
+  "defines": [
+    {
+      "name": "GPT-3",
+      "definition": "An autoregressive language model with 175 billion parameters that performs a wide range of NLP tasks in a few-shot setting without gradient updates or task-specific fine-tuning."
+    }
+  ],
+  "uses": [
+    "autoregressive language model",
+    "few-shot demonstrations",
+    "text prompts",
+    "large-scale pre-training"
+  ],
+  "problem": "Current NLP systems typically require large task-specific fine-tuning datasets and still struggle to perform new language tasks from only a few examples or simple instructions.",
+  "domain": "general",
+  "paper_type": "technique"
+}

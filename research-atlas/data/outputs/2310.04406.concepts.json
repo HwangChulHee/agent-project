@@ -1,0 +1,31 @@
+{
+  "title": "Language Agent Tree Search Unifies Reasoning, Acting, and Planning in Language Models",
+  "task": [
+    "autonomous agent decision-making",
+    "reasoning",
+    "planning",
+    "interactive question answering",
+    "web navigation",
+    "programming",
+    "math problem solving"
+  ],
+  "defines": [
+    {
+      "name": "LATS",
+      "definition": "A general language-agent framework that uses Monte Carlo Tree Search to combine reasoning, acting, planning, external feedback, and self-reflection for improved decision-making."
+    }
+  ],
+  "uses": [
+    "Monte Carlo Tree Search",
+    "ReAct",
+    "LM-powered value functions",
+    "self-reflection",
+    "self-refinement",
+    "self-consistency",
+    "external feedback",
+    "in-context learning"
+  ],
+  "problem": "Existing language-model agents are too reflexive and insufficiently deliberative, lacking effective planning over multiple reasoning paths and integration of external feedback.",
+  "domain": "general",
+  "paper_type": "technique"
+}

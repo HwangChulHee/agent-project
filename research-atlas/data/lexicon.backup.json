@@ -1,0 +1,80 @@
+{
+  "_comment": "기법 사전. 키=대표명(약어). 값=canon이 못 잡는 변형만(약어↔풀이름 등). 대소문자/하이픈은 canon이 처리하므로 불필요.",
+  "techniques": {
+    "RAG": [
+      "Retrieval-Augmented Generation"
+    ],
+    "GraphRAG": [
+      "Graph RAG",
+      "Graph-RAG"
+    ],
+    "LightRAG": [],
+    "HippoRAG": [],
+    "HippoRAG 2": [
+      "HippoRAG2"
+    ],
+    "HyperGraphRAG": [],
+    "DPR": [
+      "Dense Passage Retrieval"
+    ],
+    "ColBERT": [],
+    "BERT": [],
+    "Contriever": [],
+    "REALM": [],
+    "RAPTOR": [],
+    "HyDE": [],
+    "Self-RAG": [
+      "SelfRAG"
+    ],
+    "FLARE": [],
+    "REPLUG": [],
+    "CRAG": [
+      "Corrective RAG"
+    ],
+    "Dense X": [
+      "propositions"
+    ],
+    "Late Chunking": [],
+    "LumberChunker": [],
+    "Meta-Chunking": [],
+    "IRCoT": [],
+    "Rewrite-Retrieve-Read": [],
+    "Transformer": [],
+    "GPT-3": [],
+    "LLaMA": [],
+    "T5": [],
+    "BART": [],
+    "Mamba": [],
+    "CoT": [
+      "chain-of-thought prompting",
+      "Chain of Thought"
+    ],
+    "Self-Consistency": [],
+    "ToT": [
+      "Tree of Thoughts"
+    ],
+    "least-to-most prompting": [],
+    "ReAct": [],
+    "Reflexion": [],
+    "Toolformer": [],
+    "Self-Refine": [],
+    "Plan-and-Solve": [
+      "PS+"
+    ],
+    "AutoGen": [],
+    "MetaGPT": [],
+    "HuggingGPT": [],
+    "LATS": [],
+    "RLHF": [],
+    "DPO": [],
+    "PPO": [],
+    "InstructGPT": [],
+    "Constitutional AI": [],
+    "instruction tuning": [],
+    "LoRA": [],
+    "QLoRA": [],
+    "Personalized PageRank": [
+      "PPR"
+    ]
+  }
+}

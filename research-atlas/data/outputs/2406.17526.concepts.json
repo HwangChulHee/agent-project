@@ -1,0 +1,29 @@
+{
+  "title": "LumberChunker: Dynamic Text Segmentation for Dense Retrieval and RAG",
+  "task": [
+    "dense retrieval",
+    "text segmentation",
+    "question answering",
+    "retrieval-augmented generation"
+  ],
+  "defines": [
+    {
+      "name": "LumberChunker",
+      "definition": "An LLM-driven dynamic text segmentation method that iteratively identifies content shift points to create semantically independent chunks of variable size."
+    },
+    {
+      "name": "GutenQA",
+      "definition": "A benchmark of 3,000 needle-in-a-haystack question-answer pairs derived from 100 public domain narrative books from Project Gutenberg for evaluating retrieval and RAG chunking methods."
+    }
+  ],
+  "uses": [
+    "large language models",
+    "dense retrieval",
+    "retrieval-augmented generation",
+    "Gemini",
+    "paragraph-wise segmentation"
+  ],
+  "problem": "Fixed-size or simple chunking strategies can hurt dense retrieval quality and RAG performance because they fail to capture semantically independent content boundaries.",
+  "domain": "general",
+  "paper_type": "technique"
+}

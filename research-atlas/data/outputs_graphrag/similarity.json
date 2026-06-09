@@ -1,0 +1,1602 @@
+{
+  "labels": {
+    "rgb": "RGB",
+    "paper:2401.14887": "The Power of Noise: Redefining",
+    "raft": "RAFT",
+    "graphrag": "GraphRAG",
+    "hipporag": "HippoRAG",
+    "ragbench": "RAGBench",
+    "trace": "TRACe",
+    "rag taxonomy": "RAG taxonomy",
+    "medgraphrag": "MedGraphRAG",
+    "paper:2408.08921": "Graph Retrieval-Augmented Gene",
+    "lightrag": "LightRAG",
+    "medrag": "MedRAG",
+    "amg rag": "AMG-RAG",
+    "hipporag 2": "HippoRAG 2",
+    "hypergraphrag": "HyperGraphRAG"
+  },
+  "sims": {
+    "define": [
+      {
+        "a": "rgb",
+        "b": "paper:2401.14887",
+        "sim": 0.489
+      },
+      {
+        "a": "rgb",
+        "b": "raft",
+        "sim": 0.436
+      },
+      {
+        "a": "rgb",
+        "b": "graphrag",
+        "sim": 0.474
+      },
+      {
+        "a": "rgb",
+        "b": "hipporag",
+        "sim": 0.437
+      },
+      {
+        "a": "rgb",
+        "b": "ragbench",
+        "sim": 0.677
+      },
+      {
+        "a": "rgb",
+        "b": "trace",
+        "sim": 0.34
+      },
+      {
+        "a": "rgb",
+        "b": "rag taxonomy",
+        "sim": 0.545
+      },
+      {
+        "a": "rgb",
+        "b": "medgraphrag",
+        "sim": 0.574
+      },
+      {
+        "a": "rgb",
+        "b": "paper:2408.08921",
+        "sim": 0.517
+      },
+      {
+        "a": "rgb",
+        "b": "lightrag",
+        "sim": 0.432
+      },
+      {
+        "a": "rgb",
+        "b": "medrag",
+        "sim": 0.517
+      },
+      {
+        "a": "rgb",
+        "b": "amg rag",
+        "sim": 0.349
+      },
+      {
+        "a": "rgb",
+        "b": "hipporag 2",
+        "sim": 0.534
+      },
+      {
+        "a": "rgb",
+        "b": "hypergraphrag",
+        "sim": 0.358
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "raft",
+        "sim": 0.325
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "graphrag",
+        "sim": 0.353
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "hipporag",
+        "sim": 0.447
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "ragbench",
+        "sim": 0.468
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "trace",
+        "sim": 0.47
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "rag taxonomy",
+        "sim": 0.5
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "medgraphrag",
+        "sim": 0.404
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "paper:2408.08921",
+        "sim": 0.535
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "lightrag",
+        "sim": 0.579
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "medrag",
+        "sim": 0.427
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "amg rag",
+        "sim": 0.386
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "hipporag 2",
+        "sim": 0.515
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "hypergraphrag",
+        "sim": 0.456
+      },
+      {
+        "a": "raft",
+        "b": "graphrag",
+        "sim": 0.35
+      },
+      {
+        "a": "raft",
+        "b": "hipporag",
+        "sim": 0.479
+      },
+      {
+        "a": "raft",
+        "b": "ragbench",
+        "sim": 0.351
+      },
+      {
+        "a": "raft",
+        "b": "trace",
+        "sim": 0.221
+      },
+      {
+        "a": "raft",
+        "b": "rag taxonomy",
+        "sim": 0.281
+      },
+      {
+        "a": "raft",
+        "b": "medgraphrag",
+        "sim": 0.413
+      },
+      {
+        "a": "raft",
+        "b": "paper:2408.08921",
+        "sim": 0.299
+      },
+      {
+        "a": "raft",
+        "b": "lightrag",
+        "sim": 0.32
+      },
+      {
+        "a": "raft",
+        "b": "medrag",
+        "sim": 0.323
+      },
+      {
+        "a": "raft",
+        "b": "amg rag",
+        "sim": 0.283
+      },
+      {
+        "a": "raft",
+        "b": "hipporag 2",
+        "sim": 0.466
+      },
+      {
+        "a": "raft",
+        "b": "hypergraphrag",
+        "sim": 0.246
+      },
+      {
+        "a": "graphrag",
+        "b": "hipporag",
+        "sim": 0.564
+      },
+      {
+        "a": "graphrag",
+        "b": "ragbench",
+        "sim": 0.534
+      },
+      {
+        "a": "graphrag",
+        "b": "trace",
+        "sim": 0.3
+      },
+      {
+        "a": "graphrag",
+        "b": "rag taxonomy",
+        "sim": 0.526
+      },
+      {
+        "a": "graphrag",
+        "b": "medgraphrag",
+        "sim": 0.65
+      },
+      {
+        "a": "graphrag",
+        "b": "paper:2408.08921",
+        "sim": 0.615
+      },
+      {
+        "a": "graphrag",
+        "b": "lightrag",
+        "sim": 0.575
+      },
+      {
+        "a": "graphrag",
+        "b": "medrag",
+        "sim": 0.615
+      },
+      {
+        "a": "graphrag",
+        "b": "amg rag",
+        "sim": 0.547
+      },
+      {
+        "a": "graphrag",
+        "b": "hipporag 2",
+        "sim": 0.553
+      },
+      {
+        "a": "graphrag",
+        "b": "hypergraphrag",
+        "sim": 0.511
+      },
+      {
+        "a": "hipporag",
+        "b": "ragbench",
+        "sim": 0.398
+      },
+      {
+        "a": "hipporag",
+        "b": "trace",
+        "sim": 0.316
+      },
+      {
+        "a": "hipporag",
+        "b": "rag taxonomy",
+        "sim": 0.458
+      },
+      {
+        "a": "hipporag",
+        "b": "medgraphrag",
+        "sim": 0.548
+      },
+      {
+        "a": "hipporag",
+        "b": "paper:2408.08921",
+        "sim": 0.446
+      },
+      {
+        "a": "hipporag",
+        "b": "lightrag",
+        "sim": 0.547
+      },
+      {
+        "a": "hipporag",
+        "b": "medrag",
+        "sim": 0.528
+      },
+      {
+        "a": "hipporag",
+        "b": "amg rag",
+        "sim": 0.497
+      },
+      {
+        "a": "hipporag",
+        "b": "hipporag 2",
+        "sim": 0.752
+      },
+      {
+        "a": "hipporag",
+        "b": "hypergraphrag",
+        "sim": 0.505
+      },
+      {
+        "a": "ragbench",
+        "b": "trace",
+        "sim": 0.349
+      },
+      {
+        "a": "ragbench",
+        "b": "rag taxonomy",
+        "sim": 0.613
+      },
+      {
+        "a": "ragbench",
+        "b": "medgraphrag",
+        "sim": 0.56
+      },
+      {
+        "a": "ragbench",
+        "b": "paper:2408.08921",
+        "sim": 0.63
+      },
+      {
+        "a": "ragbench",
+        "b": "lightrag",
+        "sim": 0.439
+      },
+      {
+        "a": "ragbench",
+        "b": "medrag",
+        "sim": 0.537
+      },
+      {
+        "a": "ragbench",
+        "b": "amg rag",
+        "sim": 0.358
+      },
+      {
+        "a": "ragbench",
+        "b": "hipporag 2",
+        "sim": 0.517
+      },
+      {
+        "a": "ragbench",
+        "b": "hypergraphrag",
+        "sim": 0.38
+      },
+      {
+        "a": "trace",
+        "b": "rag taxonomy",
+        "sim": 0.401
+      },
+      {
+        "a": "trace",
+        "b": "medgraphrag",
+        "sim": 0.35
+      },
+      {
+        "a": "trace",
+        "b": "paper:2408.08921",
+        "sim": 0.323
+      },
+      {
+        "a": "trace",
+        "b": "lightrag",
+        "sim": 0.563
+      },
+      {
+        "a": "trace",
+        "b": "medrag",
+        "sim": 0.365
+      },
+      {
+        "a": "trace",
+        "b": "amg rag",
+        "sim": 0.532
+      },
+      {
+        "a": "trace",
+        "b": "hipporag 2",
+        "sim": 0.303
+      },
+      {
+        "a": "trace",
+        "b": "hypergraphrag",
+        "sim": 0.512
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "medgraphrag",
+        "sim": 0.532
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "paper:2408.08921",
+        "sim": 0.609
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "lightrag",
+        "sim": 0.491
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "medrag",
+        "sim": 0.59
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "amg rag",
+        "sim": 0.376
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "hipporag 2",
+        "sim": 0.52
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "hypergraphrag",
+        "sim": 0.452
+      },
+      {
+        "a": "medgraphrag",
+        "b": "paper:2408.08921",
+        "sim": 0.598
+      },
+      {
+        "a": "medgraphrag",
+        "b": "lightrag",
+        "sim": 0.567
+      },
+      {
+        "a": "medgraphrag",
+        "b": "medrag",
+        "sim": 0.762
+      },
+      {
+        "a": "medgraphrag",
+        "b": "amg rag",
+        "sim": 0.616
+      },
+      {
+        "a": "medgraphrag",
+        "b": "hipporag 2",
+        "sim": 0.584
+      },
+      {
+        "a": "medgraphrag",
+        "b": "hypergraphrag",
+        "sim": 0.498
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "lightrag",
+        "sim": 0.544
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "medrag",
+        "sim": 0.546
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "amg rag",
+        "sim": 0.406
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "hipporag 2",
+        "sim": 0.583
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "hypergraphrag",
+        "sim": 0.473
+      },
+      {
+        "a": "lightrag",
+        "b": "medrag",
+        "sim": 0.537
+      },
+      {
+        "a": "lightrag",
+        "b": "amg rag",
+        "sim": 0.615
+      },
+      {
+        "a": "lightrag",
+        "b": "hipporag 2",
+        "sim": 0.524
+      },
+      {
+        "a": "lightrag",
+        "b": "hypergraphrag",
+        "sim": 0.672
+      },
+      {
+        "a": "medrag",
+        "b": "amg rag",
+        "sim": 0.631
+      },
+      {
+        "a": "medrag",
+        "b": "hipporag 2",
+        "sim": 0.56
+      },
+      {
+        "a": "medrag",
+        "b": "hypergraphrag",
+        "sim": 0.537
+      },
+      {
+        "a": "amg rag",
+        "b": "hipporag 2",
+        "sim": 0.432
+      },
+      {
+        "a": "amg rag",
+        "b": "hypergraphrag",
+        "sim": 0.666
+      },
+      {
+        "a": "hipporag 2",
+        "b": "hypergraphrag",
+        "sim": 0.425
+      }
+    ],
+    "problem": [
+      {
+        "a": "rgb",
+        "b": "paper:2401.14887",
+        "sim": 0.63
+      },
+      {
+        "a": "rgb",
+        "b": "raft",
+        "sim": 0.688
+      },
+      {
+        "a": "rgb",
+        "b": "graphrag",
+        "sim": 0.53
+      },
+      {
+        "a": "rgb",
+        "b": "hipporag",
+        "sim": 0.554
+      },
+      {
+        "a": "rgb",
+        "b": "ragbench",
+        "sim": 0.675
+      },
+      {
+        "a": "rgb",
+        "b": "trace",
+        "sim": 0.675
+      },
+      {
+        "a": "rgb",
+        "b": "rag taxonomy",
+        "sim": 0.415
+      },
+      {
+        "a": "rgb",
+        "b": "medgraphrag",
+        "sim": 0.554
+      },
+      {
+        "a": "rgb",
+        "b": "paper:2408.08921",
+        "sim": 0.51
+      },
+      {
+        "a": "rgb",
+        "b": "lightrag",
+        "sim": 0.565
+      },
+      {
+        "a": "rgb",
+        "b": "medrag",
+        "sim": 0.544
+      },
+      {
+        "a": "rgb",
+        "b": "amg rag",
+        "sim": 0.343
+      },
+      {
+        "a": "rgb",
+        "b": "hipporag 2",
+        "sim": 0.519
+      },
+      {
+        "a": "rgb",
+        "b": "hypergraphrag",
+        "sim": 0.535
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "raft",
+        "sim": 0.63
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "graphrag",
+        "sim": 0.581
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "hipporag",
+        "sim": 0.679
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "ragbench",
+        "sim": 0.508
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "trace",
+        "sim": 0.508
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "rag taxonomy",
+        "sim": 0.41
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "medgraphrag",
+        "sim": 0.505
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "paper:2408.08921",
+        "sim": 0.496
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "lightrag",
+        "sim": 0.566
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "medrag",
+        "sim": 0.479
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "amg rag",
+        "sim": 0.234
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "hipporag 2",
+        "sim": 0.497
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "hypergraphrag",
+        "sim": 0.529
+      },
+      {
+        "a": "raft",
+        "b": "graphrag",
+        "sim": 0.516
+      },
+      {
+        "a": "raft",
+        "b": "hipporag",
+        "sim": 0.542
+      },
+      {
+        "a": "raft",
+        "b": "ragbench",
+        "sim": 0.464
+      },
+      {
+        "a": "raft",
+        "b": "trace",
+        "sim": 0.464
+      },
+      {
+        "a": "raft",
+        "b": "rag taxonomy",
+        "sim": 0.43
+      },
+      {
+        "a": "raft",
+        "b": "medgraphrag",
+        "sim": 0.482
+      },
+      {
+        "a": "raft",
+        "b": "paper:2408.08921",
+        "sim": 0.486
+      },
+      {
+        "a": "raft",
+        "b": "lightrag",
+        "sim": 0.509
+      },
+      {
+        "a": "raft",
+        "b": "medrag",
+        "sim": 0.414
+      },
+      {
+        "a": "raft",
+        "b": "amg rag",
+        "sim": 0.27
+      },
+      {
+        "a": "raft",
+        "b": "hipporag 2",
+        "sim": 0.542
+      },
+      {
+        "a": "raft",
+        "b": "hypergraphrag",
+        "sim": 0.491
+      },
+      {
+        "a": "graphrag",
+        "b": "hipporag",
+        "sim": 0.592
+      },
+      {
+        "a": "graphrag",
+        "b": "ragbench",
+        "sim": 0.564
+      },
+      {
+        "a": "graphrag",
+        "b": "trace",
+        "sim": 0.564
+      },
+      {
+        "a": "graphrag",
+        "b": "rag taxonomy",
+        "sim": 0.48
+      },
+      {
+        "a": "graphrag",
+        "b": "medgraphrag",
+        "sim": 0.567
+      },
+      {
+        "a": "graphrag",
+        "b": "paper:2408.08921",
+        "sim": 0.582
+      },
+      {
+        "a": "graphrag",
+        "b": "lightrag",
+        "sim": 0.647
+      },
+      {
+        "a": "graphrag",
+        "b": "medrag",
+        "sim": 0.479
+      },
+      {
+        "a": "graphrag",
+        "b": "amg rag",
+        "sim": 0.306
+      },
+      {
+        "a": "graphrag",
+        "b": "hipporag 2",
+        "sim": 0.6
+      },
+      {
+        "a": "graphrag",
+        "b": "hypergraphrag",
+        "sim": 0.6
+      },
+      {
+        "a": "hipporag",
+        "b": "ragbench",
+        "sim": 0.496
+      },
+      {
+        "a": "hipporag",
+        "b": "trace",
+        "sim": 0.496
+      },
+      {
+        "a": "hipporag",
+        "b": "rag taxonomy",
+        "sim": 0.441
+      },
+      {
+        "a": "hipporag",
+        "b": "medgraphrag",
+        "sim": 0.444
+      },
+      {
+        "a": "hipporag",
+        "b": "paper:2408.08921",
+        "sim": 0.538
+      },
+      {
+        "a": "hipporag",
+        "b": "lightrag",
+        "sim": 0.624
+      },
+      {
+        "a": "hipporag",
+        "b": "medrag",
+        "sim": 0.436
+      },
+      {
+        "a": "hipporag",
+        "b": "amg rag",
+        "sim": 0.306
+      },
+      {
+        "a": "hipporag",
+        "b": "hipporag 2",
+        "sim": 0.564
+      },
+      {
+        "a": "hipporag",
+        "b": "hypergraphrag",
+        "sim": 0.566
+      },
+      {
+        "a": "ragbench",
+        "b": "trace",
+        "sim": 1.0
+      },
+      {
+        "a": "ragbench",
+        "b": "rag taxonomy",
+        "sim": 0.434
+      },
+      {
+        "a": "ragbench",
+        "b": "medgraphrag",
+        "sim": 0.599
+      },
+      {
+        "a": "ragbench",
+        "b": "paper:2408.08921",
+        "sim": 0.56
+      },
+      {
+        "a": "ragbench",
+        "b": "lightrag",
+        "sim": 0.59
+      },
+      {
+        "a": "ragbench",
+        "b": "medrag",
+        "sim": 0.598
+      },
+      {
+        "a": "ragbench",
+        "b": "amg rag",
+        "sim": 0.359
+      },
+      {
+        "a": "ragbench",
+        "b": "hipporag 2",
+        "sim": 0.463
+      },
+      {
+        "a": "ragbench",
+        "b": "hypergraphrag",
+        "sim": 0.496
+      },
+      {
+        "a": "trace",
+        "b": "rag taxonomy",
+        "sim": 0.434
+      },
+      {
+        "a": "trace",
+        "b": "medgraphrag",
+        "sim": 0.599
+      },
+      {
+        "a": "trace",
+        "b": "paper:2408.08921",
+        "sim": 0.56
+      },
+      {
+        "a": "trace",
+        "b": "lightrag",
+        "sim": 0.59
+      },
+      {
+        "a": "trace",
+        "b": "medrag",
+        "sim": 0.598
+      },
+      {
+        "a": "trace",
+        "b": "amg rag",
+        "sim": 0.359
+      },
+      {
+        "a": "trace",
+        "b": "hipporag 2",
+        "sim": 0.463
+      },
+      {
+        "a": "trace",
+        "b": "hypergraphrag",
+        "sim": 0.496
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "medgraphrag",
+        "sim": 0.372
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "paper:2408.08921",
+        "sim": 0.544
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "lightrag",
+        "sim": 0.437
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "medrag",
+        "sim": 0.383
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "amg rag",
+        "sim": 0.318
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "hipporag 2",
+        "sim": 0.448
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "hypergraphrag",
+        "sim": 0.496
+      },
+      {
+        "a": "medgraphrag",
+        "b": "paper:2408.08921",
+        "sim": 0.559
+      },
+      {
+        "a": "medgraphrag",
+        "b": "lightrag",
+        "sim": 0.608
+      },
+      {
+        "a": "medgraphrag",
+        "b": "medrag",
+        "sim": 0.707
+      },
+      {
+        "a": "medgraphrag",
+        "b": "amg rag",
+        "sim": 0.513
+      },
+      {
+        "a": "medgraphrag",
+        "b": "hipporag 2",
+        "sim": 0.499
+      },
+      {
+        "a": "medgraphrag",
+        "b": "hypergraphrag",
+        "sim": 0.591
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "lightrag",
+        "sim": 0.726
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "medrag",
+        "sim": 0.515
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "amg rag",
+        "sim": 0.338
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "hipporag 2",
+        "sim": 0.59
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "hypergraphrag",
+        "sim": 0.661
+      },
+      {
+        "a": "lightrag",
+        "b": "medrag",
+        "sim": 0.627
+      },
+      {
+        "a": "lightrag",
+        "b": "amg rag",
+        "sim": 0.463
+      },
+      {
+        "a": "lightrag",
+        "b": "hipporag 2",
+        "sim": 0.585
+      },
+      {
+        "a": "lightrag",
+        "b": "hypergraphrag",
+        "sim": 0.672
+      },
+      {
+        "a": "medrag",
+        "b": "amg rag",
+        "sim": 0.533
+      },
+      {
+        "a": "medrag",
+        "b": "hipporag 2",
+        "sim": 0.433
+      },
+      {
+        "a": "medrag",
+        "b": "hypergraphrag",
+        "sim": 0.507
+      },
+      {
+        "a": "amg rag",
+        "b": "hipporag 2",
+        "sim": 0.37
+      },
+      {
+        "a": "amg rag",
+        "b": "hypergraphrag",
+        "sim": 0.414
+      },
+      {
+        "a": "hipporag 2",
+        "b": "hypergraphrag",
+        "sim": 0.586
+      }
+    ],
+    "task": [
+      {
+        "a": "rgb",
+        "b": "paper:2401.14887",
+        "sim": 0.717
+      },
+      {
+        "a": "rgb",
+        "b": "raft",
+        "sim": 0.68
+      },
+      {
+        "a": "rgb",
+        "b": "graphrag",
+        "sim": 0.537
+      },
+      {
+        "a": "rgb",
+        "b": "hipporag",
+        "sim": 0.654
+      },
+      {
+        "a": "rgb",
+        "b": "ragbench",
+        "sim": 0.435
+      },
+      {
+        "a": "rgb",
+        "b": "trace",
+        "sim": 0.435
+      },
+      {
+        "a": "rgb",
+        "b": "rag taxonomy",
+        "sim": 0.309
+      },
+      {
+        "a": "rgb",
+        "b": "medgraphrag",
+        "sim": 0.405
+      },
+      {
+        "a": "rgb",
+        "b": "paper:2408.08921",
+        "sim": 0.62
+      },
+      {
+        "a": "rgb",
+        "b": "lightrag",
+        "sim": 0.799
+      },
+      {
+        "a": "rgb",
+        "b": "medrag",
+        "sim": 0.374
+      },
+      {
+        "a": "rgb",
+        "b": "amg rag",
+        "sim": 0.564
+      },
+      {
+        "a": "rgb",
+        "b": "hipporag 2",
+        "sim": 0.647
+      },
+      {
+        "a": "rgb",
+        "b": "hypergraphrag",
+        "sim": 0.733
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "raft",
+        "sim": 0.556
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "graphrag",
+        "sim": 0.494
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "hipporag",
+        "sim": 0.569
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "ragbench",
+        "sim": 0.419
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "trace",
+        "sim": 0.419
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "rag taxonomy",
+        "sim": 0.316
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "medgraphrag",
+        "sim": 0.344
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "paper:2408.08921",
+        "sim": 0.722
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "lightrag",
+        "sim": 0.797
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "medrag",
+        "sim": 0.401
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "amg rag",
+        "sim": 0.536
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "hipporag 2",
+        "sim": 0.622
+      },
+      {
+        "a": "paper:2401.14887",
+        "b": "hypergraphrag",
+        "sim": 0.702
+      },
+      {
+        "a": "raft",
+        "b": "graphrag",
+        "sim": 0.512
+      },
+      {
+        "a": "raft",
+        "b": "hipporag",
+        "sim": 0.548
+      },
+      {
+        "a": "raft",
+        "b": "ragbench",
+        "sim": 0.516
+      },
+      {
+        "a": "raft",
+        "b": "trace",
+        "sim": 0.516
+      },
+      {
+        "a": "raft",
+        "b": "rag taxonomy",
+        "sim": 0.314
+      },
+      {
+        "a": "raft",
+        "b": "medgraphrag",
+        "sim": 0.315
+      },
+      {
+        "a": "raft",
+        "b": "paper:2408.08921",
+        "sim": 0.473
+      },
+      {
+        "a": "raft",
+        "b": "lightrag",
+        "sim": 0.627
+      },
+      {
+        "a": "raft",
+        "b": "medrag",
+        "sim": 0.319
+      },
+      {
+        "a": "raft",
+        "b": "amg rag",
+        "sim": 0.495
+      },
+      {
+        "a": "raft",
+        "b": "hipporag 2",
+        "sim": 0.55
+      },
+      {
+        "a": "raft",
+        "b": "hypergraphrag",
+        "sim": 0.622
+      },
+      {
+        "a": "graphrag",
+        "b": "hipporag",
+        "sim": 0.509
+      },
+      {
+        "a": "graphrag",
+        "b": "ragbench",
+        "sim": 0.305
+      },
+      {
+        "a": "graphrag",
+        "b": "trace",
+        "sim": 0.305
+      },
+      {
+        "a": "graphrag",
+        "b": "rag taxonomy",
+        "sim": 0.286
+      },
+      {
+        "a": "graphrag",
+        "b": "medgraphrag",
+        "sim": 0.431
+      },
+      {
+        "a": "graphrag",
+        "b": "paper:2408.08921",
+        "sim": 0.484
+      },
+      {
+        "a": "graphrag",
+        "b": "lightrag",
+        "sim": 0.529
+      },
+      {
+        "a": "graphrag",
+        "b": "medrag",
+        "sim": 0.322
+      },
+      {
+        "a": "graphrag",
+        "b": "amg rag",
+        "sim": 0.524
+      },
+      {
+        "a": "graphrag",
+        "b": "hipporag 2",
+        "sim": 0.545
+      },
+      {
+        "a": "graphrag",
+        "b": "hypergraphrag",
+        "sim": 0.532
+      },
+      {
+        "a": "hipporag",
+        "b": "ragbench",
+        "sim": 0.261
+      },
+      {
+        "a": "hipporag",
+        "b": "trace",
+        "sim": 0.261
+      },
+      {
+        "a": "hipporag",
+        "b": "rag taxonomy",
+        "sim": 0.271
+      },
+      {
+        "a": "hipporag",
+        "b": "medgraphrag",
+        "sim": 0.372
+      },
+      {
+        "a": "hipporag",
+        "b": "paper:2408.08921",
+        "sim": 0.607
+      },
+      {
+        "a": "hipporag",
+        "b": "lightrag",
+        "sim": 0.764
+      },
+      {
+        "a": "hipporag",
+        "b": "medrag",
+        "sim": 0.345
+      },
+      {
+        "a": "hipporag",
+        "b": "amg rag",
+        "sim": 0.655
+      },
+      {
+        "a": "hipporag",
+        "b": "hipporag 2",
+        "sim": 0.709
+      },
+      {
+        "a": "hipporag",
+        "b": "hypergraphrag",
+        "sim": 0.792
+      },
+      {
+        "a": "ragbench",
+        "b": "trace",
+        "sim": 1.0
+      },
+      {
+        "a": "ragbench",
+        "b": "rag taxonomy",
+        "sim": 0.296
+      },
+      {
+        "a": "ragbench",
+        "b": "medgraphrag",
+        "sim": 0.214
+      },
+      {
+        "a": "ragbench",
+        "b": "paper:2408.08921",
+        "sim": 0.386
+      },
+      {
+        "a": "ragbench",
+        "b": "lightrag",
+        "sim": 0.327
+      },
+      {
+        "a": "ragbench",
+        "b": "medrag",
+        "sim": 0.225
+      },
+      {
+        "a": "ragbench",
+        "b": "amg rag",
+        "sim": 0.334
+      },
+      {
+        "a": "ragbench",
+        "b": "hipporag 2",
+        "sim": 0.251
+      },
+      {
+        "a": "ragbench",
+        "b": "hypergraphrag",
+        "sim": 0.295
+      },
+      {
+        "a": "trace",
+        "b": "rag taxonomy",
+        "sim": 0.296
+      },
+      {
+        "a": "trace",
+        "b": "medgraphrag",
+        "sim": 0.214
+      },
+      {
+        "a": "trace",
+        "b": "paper:2408.08921",
+        "sim": 0.386
+      },
+      {
+        "a": "trace",
+        "b": "lightrag",
+        "sim": 0.327
+      },
+      {
+        "a": "trace",
+        "b": "medrag",
+        "sim": 0.225
+      },
+      {
+        "a": "trace",
+        "b": "amg rag",
+        "sim": 0.334
+      },
+      {
+        "a": "trace",
+        "b": "hipporag 2",
+        "sim": 0.251
+      },
+      {
+        "a": "trace",
+        "b": "hypergraphrag",
+        "sim": 0.295
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "medgraphrag",
+        "sim": 0.2
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "paper:2408.08921",
+        "sim": 0.337
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "lightrag",
+        "sim": 0.274
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "medrag",
+        "sim": 0.244
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "amg rag",
+        "sim": 0.35
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "hipporag 2",
+        "sim": 0.312
+      },
+      {
+        "a": "rag taxonomy",
+        "b": "hypergraphrag",
+        "sim": 0.325
+      },
+      {
+        "a": "medgraphrag",
+        "b": "paper:2408.08921",
+        "sim": 0.327
+      },
+      {
+        "a": "medgraphrag",
+        "b": "lightrag",
+        "sim": 0.412
+      },
+      {
+        "a": "medgraphrag",
+        "b": "medrag",
+        "sim": 0.537
+      },
+      {
+        "a": "medgraphrag",
+        "b": "amg rag",
+        "sim": 0.551
+      },
+      {
+        "a": "medgraphrag",
+        "b": "hipporag 2",
+        "sim": 0.412
+      },
+      {
+        "a": "medgraphrag",
+        "b": "hypergraphrag",
+        "sim": 0.389
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "lightrag",
+        "sim": 0.771
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "medrag",
+        "sim": 0.321
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "amg rag",
+        "sim": 0.622
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "hipporag 2",
+        "sim": 0.522
+      },
+      {
+        "a": "paper:2408.08921",
+        "b": "hypergraphrag",
+        "sim": 0.691
+      },
+      {
+        "a": "lightrag",
+        "b": "medrag",
+        "sim": 0.396
+      },
+      {
+        "a": "lightrag",
+        "b": "amg rag",
+        "sim": 0.65
+      },
+      {
+        "a": "lightrag",
+        "b": "hipporag 2",
+        "sim": 0.676
+      },
+      {
+        "a": "lightrag",
+        "b": "hypergraphrag",
+        "sim": 0.868
+      },
+      {
+        "a": "medrag",
+        "b": "amg rag",
+        "sim": 0.45
+      },
+      {
+        "a": "medrag",
+        "b": "hipporag 2",
+        "sim": 0.391
+      },
+      {
+        "a": "medrag",
+        "b": "hypergraphrag",
+        "sim": 0.348
+      },
+      {
+        "a": "amg rag",
+        "b": "hipporag 2",
+        "sim": 0.553
+      },
+      {
+        "a": "amg rag",
+        "b": "hypergraphrag",
+        "sim": 0.693
+      },
+      {
+        "a": "hipporag 2",
+        "b": "hypergraphrag",
+        "sim": 0.694
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "title": "PaLM: Scaling Language Modeling with Pathways",
+  "task": [
+    "few-shot language modeling",
+    "language understanding",
+    "text generation",
+    "multi-step reasoning",
+    "multilingual tasks",
+    "source code generation",
+    "bias and toxicity analysis",
+    "training data memorization analysis"
+  ],
+  "defines": [
+    {
+      "name": "PaLM",
+      "definition": "A 540-billion-parameter densely activated Transformer language model trained to study the effects of scaling on few-shot learning and broad language capabilities."
+    }
+  ],
+  "uses": [
+    "Pathways",
+    "TPU v4 chips",
+    "Transformer",
+    "few-shot learning"
+  ],
+  "problem": "Existing language models had not yet been studied at this scale, and the paper addresses how scaling affects few-shot performance, reasoning, multilingual ability, and safety-related behaviors.",
+  "domain": "general",
+  "paper_type": "technique"
+}

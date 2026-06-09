@@ -1,0 +1,8 @@
+{
+  "builds_on": [
+    "AutoGPT",
+    "LangChain",
+    "AgentVerse",
+    "ChatDev"
+  ]
+}

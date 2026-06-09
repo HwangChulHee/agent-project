@@ -1,0 +1,33 @@
+{
+  "title": "Longformer: The Long-Document Transformer",
+  "task": [
+    "long document modeling",
+    "language modeling",
+    "document classification",
+    "question answering",
+    "coreference resolution",
+    "summarization",
+    "sequence-to-sequence learning"
+  ],
+  "defines": [
+    {
+      "name": "Longformer",
+      "definition": "A modified Transformer architecture with a sparse attention mechanism that scales linearly with sequence length for processing long documents."
+    },
+    {
+      "name": "LED",
+      "definition": "A Longformer-based encoder-decoder model designed for long-document sequence-to-sequence tasks such as summarization."
+    }
+  ],
+  "uses": [
+    "windowed local attention",
+    "global attention",
+    "dilated attention",
+    "masked language modeling",
+    "RoBERTa",
+    "encoder-decoder architecture"
+  ],
+  "problem": "Standard Transformer self-attention scales quadratically with sequence length, making it impractical for long documents and limiting document-level NLP performance.",
+  "domain": "general",
+  "paper_type": "technique"
+}

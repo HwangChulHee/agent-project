@@ -1,0 +1,23 @@
+{
+  "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+  "task": [
+    "preference learning",
+    "language model fine-tuning",
+    "reinforcement learning from human feedback"
+  ],
+  "defines": [
+    {
+      "name": "Direct Preference Optimization",
+      "definition": "A reinforcement-learning-free method for training language models from human preferences by directly optimizing a policy with a binary classification objective."
+    }
+  ],
+  "uses": [
+    "Bradley-Terry model",
+    "KL-divergence constraint",
+    "binary cross entropy",
+    "importance weighting"
+  ],
+  "problem": "RLHF is complex, unstable, and computationally expensive because it requires fitting a reward model and then performing reinforcement learning to optimize the language model policy.",
+  "domain": "general",
+  "paper_type": "technique"
+}

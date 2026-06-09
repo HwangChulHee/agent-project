@@ -1,0 +1,6 @@
+{
+  "builds_on": [
+    "HippoRAG",
+    "RAPTOR"
+  ]
+}

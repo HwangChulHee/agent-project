@@ -1,0 +1,25 @@
+{
+  "title": "REALM: Retrieval-Augmented Language Model Pre-Training",
+  "task": [
+    "language model pre-training",
+    "open-domain question answering",
+    "knowledge retrieval"
+  ],
+  "defines": [
+    {
+      "name": "REALM",
+      "definition": "A retrieval-augmented language model pre-training framework that learns a latent knowledge retriever and uses retrieved documents during pre-training, fine-tuning, and inference."
+    }
+  ],
+  "uses": [
+    "latent knowledge retriever",
+    "masked language modeling",
+    "backpropagation through retrieval",
+    "Maximum Inner Product Search (MIPS)",
+    "cached document representations",
+    "Wikipedia"
+  ],
+  "problem": "Language models store world knowledge implicitly in parameters, making it hard to interpret and scale to larger knowledge corpora.",
+  "domain": "general",
+  "paper_type": "technique"
+}

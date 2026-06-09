@@ -1,0 +1,30 @@
+{
+  "title": "MedRAG: A Knowledge Graph-Elicited Reasoning Enhanced Retrieval-Augmented Generation Model for Medical Diagnosis",
+  "task": [
+    "medical diagnosis",
+    "treatment recommendation",
+    "follow-up question generation",
+    "decision support"
+  ],
+  "defines": [
+    {
+      "name": "MedRAG",
+      "definition": "A retrieval-augmented generation framework for medical diagnosis that combines knowledge graph-elicited reasoning with retrieved electronic health records to improve diagnostic accuracy and specificity."
+    }
+  ],
+  "uses": [
+    "knowledge graph",
+    "diagnostic knowledge graph",
+    "hierarchical diagnostic KG",
+    "disease clustering",
+    "hierarchical aggregation",
+    "LLM augmentation",
+    "multi-level manifestations matching",
+    "EHR retrieval",
+    "large language model",
+    "KG-augmented RAG"
+  ],
+  "problem": "Existing medical RAG systems are too heuristic and often produce inaccurate or vague diagnoses, especially for diseases with similar manifestations.",
+  "domain": "medical",
+  "paper_type": "technique"
+}

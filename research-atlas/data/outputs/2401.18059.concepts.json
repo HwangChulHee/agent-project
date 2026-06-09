@@ -1,0 +1,25 @@
+{
+  "title": "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+  "task": [
+    "retrieval-augmented language modeling",
+    "question answering",
+    "document retrieval"
+  ],
+  "defines": [
+    {
+      "name": "RAPTOR",
+      "definition": "A retrieval and indexing system that recursively embeds, clusters, and summarizes text chunks into a tree of multi-level abstractions for retrieval-augmented generation."
+    }
+  ],
+  "uses": [
+    "text chunking",
+    "text embeddings",
+    "clustering",
+    "summarization",
+    "tree-structured indexing",
+    "top-k retrieval"
+  ],
+  "problem": "Standard retrieval-augmented methods retrieve only short contiguous chunks, which limits their ability to capture large-scale document structure and answer questions requiring broader context.",
+  "domain": "general",
+  "paper_type": "technique"
+}

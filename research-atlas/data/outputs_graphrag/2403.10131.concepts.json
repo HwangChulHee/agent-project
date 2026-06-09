@@ -1,0 +1,24 @@
+{
+  "title": "Retrieval Augmented Fine Tuning (RAFT)",
+  "task": [
+    "retrieval-augmented question answering",
+    "in-domain language model adaptation",
+    "fine-tuning for RAG"
+  ],
+  "defines": [
+    {
+      "name": "RAFT",
+      "definition": "A training recipe that fine-tunes LLMs to answer questions using relevant retrieved documents while ignoring distractor documents and citing supporting text verbatim."
+    }
+  ],
+  "uses": [
+    "instruction fine-tuning",
+    "retrieval-augmented generation",
+    "chain-of-thought reasoning",
+    "retrieved documents",
+    "distractor documents"
+  ],
+  "problem": "Existing RAG and fine-tuning approaches do not jointly prepare pretrained LLMs to use retrieved evidence while remaining robust to irrelevant retrieved documents in specialized domains.",
+  "domain": "general",
+  "paper_type": "technique"
+}

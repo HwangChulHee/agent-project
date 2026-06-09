@@ -1,0 +1,7 @@
+{
+  "builds_on": [
+    "RAG",
+    "DPR",
+    "REPLUG"
+  ]
+}

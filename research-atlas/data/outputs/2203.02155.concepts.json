@@ -1,0 +1,25 @@
+{
+  "title": "InstructGPT",
+  "task": [
+    "instruction following",
+    "language model alignment",
+    "human feedback fine-tuning"
+  ],
+  "defines": [
+    {
+      "name": "InstructGPT",
+      "definition": "A family of GPT-3 models fine-tuned with supervised demonstrations and reinforcement learning from human feedback to better follow user instructions."
+    }
+  ],
+  "uses": [
+    "supervised learning",
+    "human-written demonstrations",
+    "human preference rankings",
+    "reward model",
+    "proximal policy optimization (PPO)",
+    "reinforcement learning from human feedback (RLHF)"
+  ],
+  "problem": "Large language models often fail to follow user intent and can generate untruthful, toxic, or unhelpful outputs.",
+  "domain": "general",
+  "paper_type": "technique"
+}

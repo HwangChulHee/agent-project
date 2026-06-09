@@ -1,0 +1,23 @@
+{
+  "title": "A Taxonomy of Retrieval-Augmented Generation (RAG) Applications",
+  "task": [
+    "taxonomy creation",
+    "conceptual modeling",
+    "literature classification"
+  ],
+  "defines": [
+    {
+      "name": "RAG taxonomy",
+      "definition": "A taxonomy that conceptualizes and categorizes the core characteristics of retrieval-augmented generation applications across domains."
+    }
+  ],
+  "uses": [
+    "Nickerson et al. taxonomy creation method",
+    "iterative taxonomy development",
+    "ChatGPT",
+    "automatic domain classification"
+  ],
+  "problem": "There is a lack of a holistic, application-oriented taxonomy for retrieval-augmented generation that systematically captures its characteristics across domains.",
+  "domain": "general",
+  "paper_type": "survey"
+}

@@ -1,0 +1,18 @@
+{
+  "title": "The Power of Noise: Redefining Retrieval for RAG Systems",
+  "task": [
+    "retrieval-augmented generation analysis",
+    "information retrieval evaluation",
+    "prompt construction analysis"
+  ],
+  "defines": [],
+  "uses": [
+    "dense retrieval",
+    "sparse retrieval",
+    "large language models",
+    "information retrieval systems"
+  ],
+  "problem": "Current RAG retrievers are assumed to surface the most relevant passages, but this paper shows that the type of retrieved documents can significantly affect LLM effectiveness and that standard retrieval assumptions may not hold in RAG settings.",
+  "domain": "general",
+  "paper_type": "analysis"
+}

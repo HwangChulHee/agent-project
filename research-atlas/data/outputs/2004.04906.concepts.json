@@ -1,0 +1,24 @@
+{
+  "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+  "task": [
+    "open-domain question answering",
+    "passage retrieval",
+    "end-to-end question answering"
+  ],
+  "defines": [
+    {
+      "name": "Dense Passage Retriever (DPR)",
+      "definition": "A dual-encoder dense retrieval model that embeds questions and passages into a shared vector space and retrieves relevant passages by maximizing inner products."
+    }
+  ],
+  "uses": [
+    "BERT",
+    "dual-encoder architecture",
+    "maximum inner product search",
+    "in-batch negatives",
+    "pretrained model"
+  ],
+  "problem": "Traditional sparse retrieval methods like TF-IDF and BM25 are effective but fail to capture semantic matches needed for high-quality open-domain QA retrieval.",
+  "domain": "general",
+  "paper_type": "technique"
+}

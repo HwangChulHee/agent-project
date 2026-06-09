@@ -1,0 +1,24 @@
+{
+  "title": "Least-to-Most Prompting Enables Complex Reasoning in Large Language Models",
+  "task": [
+    "prompting",
+    "few-shot reasoning",
+    "compositional generalization",
+    "symbolic manipulation",
+    "math reasoning"
+  ],
+  "defines": [
+    {
+      "name": "least-to-most prompting",
+      "definition": "A two-stage prompting strategy that first decomposes a complex problem into simpler subproblems and then solves them sequentially using earlier subproblem answers as context."
+    }
+  ],
+  "uses": [
+    "chain-of-thought prompting",
+    "few-shot prompting",
+    "self-consistency decoding"
+  ],
+  "problem": "Chain-of-thought prompting often fails to generalize from easy demonstration examples to harder problems that require stepwise decomposition.",
+  "domain": "general",
+  "paper_type": "technique"
+}

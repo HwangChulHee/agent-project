@@ -1,0 +1,25 @@
+{
+  "title": "Rewrite-Retrieve-Read: A New Paradigm for Retrieval-Augmented LLMs",
+  "task": [
+    "retrieval-augmented language modeling",
+    "open-domain question answering",
+    "multiple-choice question answering",
+    "query rewriting"
+  ],
+  "defines": [
+    {
+      "name": "Rewrite-Retrieve-Read",
+      "definition": "A retrieval-augmented LLM framework that rewrites the input query before retrieval to better align the search request with the needed knowledge and improve downstream reading performance."
+    }
+  ],
+  "uses": [
+    "query rewriting",
+    "web search engine",
+    "reinforcement learning",
+    "small trainable language model",
+    "black-box LLM reader"
+  ],
+  "problem": "Existing retrieval-augmented LLM pipelines use fixed queries that do not match the knowledge actually needed, limiting retrieval quality and downstream performance.",
+  "domain": "general",
+  "paper_type": "technique"
+}

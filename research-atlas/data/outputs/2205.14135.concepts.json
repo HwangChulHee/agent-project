@@ -1,0 +1,30 @@
+{
+  "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+  "task": [
+    "efficient transformer attention",
+    "long-sequence modeling",
+    "exact attention computation",
+    "approximate block-sparse attention"
+  ],
+  "defines": [
+    {
+      "name": "FlashAttention",
+      "definition": "An IO-aware exact attention algorithm that uses tiling and kernel fusion to minimize GPU memory traffic between HBM and SRAM."
+    },
+    {
+      "name": "block-sparse FlashAttention",
+      "definition": "A sparse attention variant built on FlashAttention that exploits block sparsity to further reduce memory access and speed up attention."
+    }
+  ],
+  "uses": [
+    "tiling",
+    "softmax recomputation",
+    "stored softmax normalization factor",
+    "CUDA",
+    "kernel fusion",
+    "block-sparse attention"
+  ],
+  "problem": "Standard attention and many approximate attention methods are bottlenecked by quadratic memory access overhead on long sequences, limiting speed and scalability.",
+  "domain": "general",
+  "paper_type": "technique"
+}

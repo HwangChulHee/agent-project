@@ -1,0 +1,25 @@
+{
+  "title": "Proposition Indexing: A Novel Retrieval Unit for Dense Retrieval",
+  "task": [
+    "dense retrieval",
+    "open-domain question answering",
+    "retrieval-augmented language modeling",
+    "retrieval evaluation"
+  ],
+  "defines": [
+    {
+      "name": "Proposition indexing",
+      "definition": "A dense retrieval approach that indexes a corpus using propositions, which are atomic, self-contained factoid units, instead of passages or sentences."
+    }
+  ],
+  "uses": [
+    "dense retrievers",
+    "passage retrieval",
+    "sentence retrieval",
+    "proposition segmentation",
+    "retrieval-augmented language models"
+  ],
+  "problem": "Dense retrieval systems depend on an overlooked choice of indexing granularity, and passage-level retrieval units can limit retrieval and downstream QA performance under a fixed computation budget.",
+  "domain": "general",
+  "paper_type": "technique"
+}

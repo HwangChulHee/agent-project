@@ -1,0 +1,25 @@
+{
+  "title": "Training Compute-Optimal Large Language Models",
+  "task": [
+    "compute-optimal scaling analysis",
+    "large language model pretraining",
+    "language model evaluation"
+  ],
+  "defines": [
+    {
+      "name": "Chinchilla",
+      "definition": "A compute-optimal 70B-parameter language model trained with substantially more data to maximize performance under a fixed compute budget."
+    }
+  ],
+  "uses": [
+    "transformer language models",
+    "scaling laws",
+    "pretraining loss",
+    "FLOPs budget",
+    "downstream evaluation tasks",
+    "MMLU benchmark"
+  ],
+  "problem": "Current large language models are often under-trained because model size has been scaled up faster than the amount of training data under fixed compute budgets.",
+  "domain": "general",
+  "paper_type": "technique"
+}

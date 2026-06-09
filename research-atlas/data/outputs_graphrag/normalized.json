@@ -1,0 +1,305 @@
+{
+  "nodes": {
+    "rgb": {
+      "canonical": "RGB",
+      "definition": "A bilingual benchmark for evaluating retrieval-augmented generation in large language models across four fundamental abilities: noise robustness, negative rejection, information integration, and counterfactual robustness.",
+      "def_source": "2309.01431",
+      "papers": [
+        "2309.01431"
+      ],
+      "domain": "general",
+      "ptype": "benchmark",
+      "def_status": "n/a"
+    },
+    "paper:2401.14887": {
+      "canonical": "The Power of Noise: Redefining Retrieval",
+      "definition": "Current RAG retrievers are assumed to surface the most relevant passages, but this paper shows that the type of retrieved documents can significantly affect LLM effectiveness and that standard retrieval assumptions may not hold in RAG settings.",
+      "def_source": "2401.14887",
+      "papers": [
+        "2401.14887"
+      ],
+      "domain": "general",
+      "ptype": "analysis",
+      "def_status": "n/a"
+    },
+    "raft": {
+      "canonical": "RAFT",
+      "definition": "A training recipe that fine-tunes LLMs to answer questions using relevant retrieved documents while ignoring distractor documents and citing supporting text verbatim.",
+      "def_source": "2403.10131",
+      "papers": [
+        "2403.10131"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "def_status": "ok"
+    },
+    "graphrag": {
+      "canonical": "GraphRAG",
+      "definition": "A graph-based retrieval-augmented generation framework that enables global question answering over large private text corpora by organizing corpus content into a knowledge graph and community summaries.",
+      "def_source": "2404.16130",
+      "papers": [
+        "2404.16130"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "def_status": "ok"
+    },
+    "hipporag": {
+      "canonical": "HippoRAG",
+      "definition": "A retrieval framework that uses a knowledge graph and Personalized PageRank to enable efficient long-term memory and multi-hop knowledge integration for LLMs.",
+      "def_source": "2405.14831",
+      "papers": [
+        "2405.14831"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "def_status": "ok"
+    },
+    "ragbench": {
+      "canonical": "RAGBench",
+      "definition": "A large-scale benchmark dataset for training and evaluating retrieval-augmented generation systems across multiple industry domains and task types.",
+      "def_source": "2407.11005",
+      "papers": [
+        "2407.11005"
+      ],
+      "domain": "general",
+      "ptype": "benchmark",
+      "def_status": "n/a"
+    },
+    "trace": {
+      "canonical": "TRACe",
+      "definition": "An explainable and actionable RAG evaluation framework based on a suite of cross-domain metrics.",
+      "def_source": "2407.11005",
+      "papers": [
+        "2407.11005"
+      ],
+      "domain": "general",
+      "ptype": "benchmark",
+      "def_status": "n/a"
+    },
+    "rag taxonomy": {
+      "canonical": "RAG taxonomy",
+      "definition": "A taxonomy that conceptualizes and categorizes the core characteristics of retrieval-augmented generation applications across domains.",
+      "def_source": "2408.02854",
+      "papers": [
+        "2408.02854"
+      ],
+      "domain": "general",
+      "ptype": "survey",
+      "def_status": "n/a"
+    },
+    "medgraphrag": {
+      "canonical": "MedGraphRAG",
+      "definition": "A graph-based retrieval-augmented generation framework for the medical domain that improves large language model responses with evidence-based retrieval and source-linked explanations.",
+      "def_source": "2408.04187",
+      "papers": [
+        "2408.04187"
+      ],
+      "domain": "medical",
+      "ptype": "technique",
+      "def_status": "ok"
+    },
+    "paper:2408.08921": {
+      "canonical": "Graph Retrieval-Augmented Generation: A ",
+      "definition": "Traditional RAG misses structured relationships, introduces redundant context, and lacks global information needed for more accurate and comprehensive generation.",
+      "def_source": "2408.08921",
+      "papers": [
+        "2408.08921"
+      ],
+      "domain": "general",
+      "ptype": "survey",
+      "def_status": "n/a"
+    },
+    "lightrag": {
+      "canonical": "LightRAG",
+      "definition": "A graph-empowered RAG framework that combines graph-based text indexing with dual-level retrieval to improve comprehensiveness, efficiency, and adaptability.",
+      "def_source": "2410.05779",
+      "papers": [
+        "2410.05779"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "def_status": "ok"
+    },
+    "medrag": {
+      "canonical": "MedRAG",
+      "definition": "A retrieval-augmented generation framework for medical diagnosis that combines knowledge graph-elicited reasoning with retrieved electronic health records to improve diagnostic accuracy and specificity.",
+      "def_source": "2502.04413",
+      "papers": [
+        "2502.04413"
+      ],
+      "domain": "medical",
+      "ptype": "technique",
+      "def_status": "ok"
+    },
+    "amg rag": {
+      "canonical": "AMG-RAG",
+      "definition": "An agentic graph-RAG framework that automatically constructs and continuously updates medical knowledge graphs to support evidence-grounded medical QA.",
+      "def_source": "2502.13010",
+      "papers": [
+        "2502.13010"
+      ],
+      "domain": "medical",
+      "ptype": "technique",
+      "def_status": "ok"
+    },
+    "hipporag 2": {
+      "canonical": "HippoRAG 2",
+      "definition": "A retrieval-augmented generation framework that improves non-parametric continual learning by combining Personalized PageRank with deeper passage integration and more effective online LLM use.",
+      "def_source": "2502.14802",
+      "papers": [
+        "2502.14802"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "def_status": "ok"
+    },
+    "hypergraphrag": {
+      "canonical": "HyperGraphRAG",
+      "definition": "A hypergraph-based RAG framework that represents and retrieves n-ary relational facts with hyperedges to improve knowledge-intensive generation.",
+      "def_source": "2503.21322",
+      "papers": [
+        "2503.21322"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "def_status": "ok"
+    },
+    "rag": {
+      "canonical": "RAG",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "def_status": "placeholder"
+    },
+    "ircot": {
+      "canonical": "IRCoT",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "def_status": "placeholder"
+    },
+    "raptor": {
+      "canonical": "RAPTOR",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "def_status": "placeholder"
+    }
+  },
+  "builds_on": [
+    {
+      "from": "rgb",
+      "to": "rag"
+    },
+    {
+      "from": "paper:2401.14887",
+      "to": "rag"
+    },
+    {
+      "from": "raft",
+      "to": "rag"
+    },
+    {
+      "from": "graphrag",
+      "to": "rag"
+    },
+    {
+      "from": "hipporag",
+      "to": "rag"
+    },
+    {
+      "from": "hipporag",
+      "to": "ircot"
+    },
+    {
+      "from": "ragbench",
+      "to": "rag"
+    },
+    {
+      "from": "ragbench",
+      "to": "rgb"
+    },
+    {
+      "from": "rag taxonomy",
+      "to": "rag"
+    },
+    {
+      "from": "medgraphrag",
+      "to": "rag"
+    },
+    {
+      "from": "medgraphrag",
+      "to": "graphrag"
+    },
+    {
+      "from": "paper:2408.08921",
+      "to": "rag"
+    },
+    {
+      "from": "lightrag",
+      "to": "rag"
+    },
+    {
+      "from": "medrag",
+      "to": "rag"
+    },
+    {
+      "from": "amg rag",
+      "to": "rag"
+    },
+    {
+      "from": "hipporag 2",
+      "to": "hipporag"
+    },
+    {
+      "from": "hipporag 2",
+      "to": "raptor"
+    },
+    {
+      "from": "hypergraphrag",
+      "to": "rag"
+    },
+    {
+      "from": "hypergraphrag",
+      "to": "graphrag"
+    }
+  ],
+  "applies": [],
+  "pending": [
+    {
+      "name": "RAGAS",
+      "paper": "2407.11005"
+    },
+    {
+      "name": "TruLens",
+      "paper": "2407.11005"
+    },
+    {
+      "name": "ARES",
+      "paper": "2407.11005"
+    },
+    {
+      "name": "AttributionBench",
+      "paper": "2407.11005"
+    },
+    {
+      "name": "RAGTruth",
+      "paper": "2407.11005"
+    },
+    {
+      "name": "FL-RAG",
+      "paper": "2502.04413"
+    },
+    {
+      "name": "DRAGIN",
+      "paper": "2502.04413"
+    }
+  ]
+}

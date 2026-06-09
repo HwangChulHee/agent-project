@@ -1,0 +1,998 @@
+{
+  "nodes": {
+    "transformer": {
+      "canonical": "Transformer",
+      "definition": "A neural network architecture for sequence transduction that relies entirely on attention mechanisms instead of recurrence or convolutions.",
+      "def_source": "1706.03762",
+      "papers": [
+        "1706.03762"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "bert": {
+      "canonical": "BERT",
+      "definition": "BERT is a bidirectional Transformer-based language representation model pre-trained with masked language modeling and next sentence prediction for fine-tuning on downstream NLP tasks.",
+      "def_source": "1810.04805",
+      "papers": [
+        "1810.04805"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "t5": {
+      "canonical": "T5",
+      "definition": "A unified text-to-text transfer learning framework that casts every NLP problem as text input to text output and trains a single model across tasks.",
+      "def_source": "1910.10683",
+      "papers": [
+        "1910.10683"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "paper:2001.08361": {
+      "canonical": "Empirical Scaling Laws for Language Mode",
+      "definition": "It is unclear how language model loss depends on model size, dataset size, and compute, and how to allocate a fixed compute budget optimally.",
+      "def_source": "2001.08361",
+      "papers": [
+        "2001.08361"
+      ],
+      "domain": "general",
+      "ptype": "analysis",
+      "status": "approved",
+      "def_status": "n/a"
+    },
+    "realm": {
+      "canonical": "REALM",
+      "definition": "A retrieval-augmented language model pre-training framework that learns a latent knowledge retriever and uses retrieved documents during pre-training, fine-tuning, and inference.",
+      "def_source": "2002.08909",
+      "papers": [
+        "2002.08909"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "dense passage retriever (dpr)": {
+      "canonical": "Dense Passage Retriever (DPR)",
+      "definition": "A dual-encoder dense retrieval model that embeds questions and passages into a shared vector space and retrieves relevant passages by maximizing inner products.",
+      "def_source": "2004.04906",
+      "papers": [
+        "2004.04906"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "longformer": {
+      "canonical": "Longformer",
+      "definition": "A modified Transformer architecture with a sparse attention mechanism that scales linearly with sequence length for processing long documents.",
+      "def_source": "2004.05150",
+      "papers": [
+        "2004.05150"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "led": {
+      "canonical": "LED",
+      "definition": "A Longformer-based encoder-decoder model designed for long-document sequence-to-sequence tasks such as summarization.",
+      "def_source": "2004.05150",
+      "papers": [
+        "2004.05150"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "colbert": {
+      "canonical": "ColBERT",
+      "definition": "A BERT-based ranking model that uses contextualized late interaction to efficiently compute query-document relevance for retrieval.",
+      "def_source": "2004.12832",
+      "papers": [
+        "2004.12832"
+      ],
+      "domain": "information retrieval",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "rag": {
+      "canonical": "RAG",
+      "definition": "A retrieval-augmented generation framework that combines a pre-trained seq2seq generator with a dense retriever over Wikipedia and jointly fine-tunes them end-to-end for knowledge-intensive generation.",
+      "def_source": "2005.11401",
+      "papers": [
+        "2005.11401"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "gpt 3": {
+      "canonical": "GPT-3",
+      "definition": "An autoregressive language model with 175 billion parameters that performs a wide range of NLP tasks in a few-shot setting without gradient updates or task-specific fine-tuning.",
+      "def_source": "2005.14165",
+      "papers": [
+        "2005.14165"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "switch transformer": {
+      "canonical": "Switch Transformer",
+      "definition": "A simplified mixture-of-experts transformer that routes each input token to a single expert to enable sparse, scalable training with reduced communication and computation costs.",
+      "def_source": "2101.03961",
+      "papers": [
+        "2101.03961"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "lora": {
+      "canonical": "LoRA",
+      "definition": "A parameter-efficient fine-tuning method that freezes pretrained model weights and injects trainable low-rank decomposition matrices into Transformer layers to adapt large language models.",
+      "def_source": "2106.09685",
+      "papers": [
+        "2106.09685"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "flan": {
+      "canonical": "FLAN",
+      "definition": "A pretrained language model instruction-tuned on many NLP datasets phrased as natural language instructions to improve zero-shot performance on unseen tasks.",
+      "def_source": "2109.01652",
+      "papers": [
+        "2109.01652"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "cot": {
+      "canonical": "CoT",
+      "definition": "A few-shot prompting method that includes intermediate natural-language reasoning steps between the input and output to elicit complex reasoning in large language models.",
+      "def_source": "2201.11903",
+      "papers": [
+        "2201.11903"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "instructgpt": {
+      "canonical": "InstructGPT",
+      "definition": "A family of GPT-3 models fine-tuned with supervised demonstrations and reinforcement learning from human feedback to better follow user instructions.",
+      "def_source": "2203.02155",
+      "papers": [
+        "2203.02155"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "self consistency": {
+      "canonical": "Self-Consistency",
+      "definition": "A decoding strategy for chain-of-thought prompting that samples multiple reasoning paths and selects the most consistent final answer by marginalizing over the sampled paths.",
+      "def_source": "2203.11171",
+      "papers": [
+        "2203.11171"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "chinchilla": {
+      "canonical": "Chinchilla",
+      "definition": "A compute-optimal 70B-parameter language model trained with substantially more data to maximize performance under a fixed compute budget.",
+      "def_source": "2203.15556",
+      "papers": [
+        "2203.15556"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "palm": {
+      "canonical": "PaLM",
+      "definition": "A 540-billion-parameter densely activated Transformer language model trained to study the effects of scaling on few-shot learning and broad language capabilities.",
+      "def_source": "2204.02311",
+      "papers": [
+        "2204.02311"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "least to most prompting": {
+      "canonical": "least-to-most prompting",
+      "definition": "A two-stage prompting strategy that first decomposes a complex problem into simpler subproblems and then solves them sequentially using earlier subproblem answers as context.",
+      "def_source": "2205.10625",
+      "papers": [
+        "2205.10625"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "flashattention": {
+      "canonical": "FlashAttention",
+      "definition": "An IO-aware exact attention algorithm that uses tiling and kernel fusion to minimize GPU memory traffic between HBM and SRAM.",
+      "def_source": "2205.14135",
+      "papers": [
+        "2205.14135"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "block sparse flashattention": {
+      "canonical": "block-sparse FlashAttention",
+      "definition": "A sparse attention variant built on FlashAttention that exploits block sparsity to further reduce memory access and speed up attention.",
+      "def_source": "2205.14135",
+      "papers": [
+        "2205.14135"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "emergent abilities of large language models": {
+      "canonical": "emergent abilities of large language models",
+      "definition": "Abilities that are absent in smaller-scale models but present in larger-scale models, and therefore cannot be predicted by extrapolating smaller-model performance.",
+      "def_source": "2206.07682",
+      "papers": [
+        "2206.07682"
+      ],
+      "domain": "general",
+      "ptype": "survey",
+      "status": "unreviewed",
+      "def_status": "n/a"
+    },
+    "react": {
+      "canonical": "ReAct",
+      "definition": "A prompting paradigm that interleaves verbal reasoning traces with task-specific actions to improve language model problem solving.",
+      "def_source": "2210.03629",
+      "papers": [
+        "2210.03629"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "constitutional ai": {
+      "canonical": "Constitutional AI",
+      "definition": "A training framework that uses a written constitution of principles plus AI self-critiques and AI preference judgments to train a more harmless assistant with minimal human supervision.",
+      "def_source": "2212.08073",
+      "papers": [
+        "2212.08073"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "hyde": {
+      "canonical": "HyDE",
+      "definition": "A zero-shot dense retrieval method that generates a hypothetical document from a query with an instruction-following language model and then embeds it with a contrastive encoder for retrieval.",
+      "def_source": "2212.10496",
+      "papers": [
+        "2212.10496"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "self instruct": {
+      "canonical": "SELF-INSTRUCT",
+      "definition": "A semi-automated bootstrapping framework that improves instruction-following by generating synthetic instructions and instances from a language model and using them to finetune the same model.",
+      "def_source": "2212.10560",
+      "papers": [
+        "2212.10560"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "replug": {
+      "canonical": "REPLUG",
+      "definition": "A retrieval-augmented language modeling framework that augments a frozen black-box language model by prepending retrieved documents and optionally ensembles multiple retrieved contexts in parallel.",
+      "def_source": "2301.12652",
+      "papers": [
+        "2301.12652"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "replug lsr": {
+      "canonical": "REPLUG LSR",
+      "definition": "A training scheme that uses a black-box language model’s scores to supervise and improve the retriever.",
+      "def_source": "2301.12652",
+      "papers": [
+        "2301.12652"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "toolformer": {
+      "canonical": "Toolformer",
+      "definition": "A language model trained in a self-supervised way to decide which external APIs to call, when to call them, what arguments to pass, and how to integrate the results into next-token prediction.",
+      "def_source": "2302.04761",
+      "papers": [
+        "2302.04761"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "llama": {
+      "canonical": "LLaMA",
+      "definition": "A collection of open foundation language models trained on publicly available data and optimized for strong performance at different inference budgets.",
+      "def_source": "2302.13971",
+      "papers": [
+        "2302.13971"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "reflexion": {
+      "canonical": "Reflexion",
+      "definition": "A framework that improves language agents by converting task feedback into verbal self-reflection stored in episodic memory instead of updating model weights.",
+      "def_source": "2303.11366",
+      "papers": [
+        "2303.11366"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "hugginggpt": {
+      "canonical": "HuggingGPT",
+      "definition": "An LLM-powered agent that uses ChatGPT as a controller to plan tasks, select expert models from Hugging Face, execute them, and synthesize the results for complex AI requests.",
+      "def_source": "2303.17580",
+      "papers": [
+        "2303.17580"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "self refine": {
+      "canonical": "Self-Refine",
+      "definition": "An iterative self-refinement algorithm that improves an LLM's initial output by repeatedly generating self-feedback and using that feedback to refine the output.",
+      "def_source": "2303.17651",
+      "papers": [
+        "2303.17651"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "generative agents": {
+      "canonical": "Generative Agents",
+      "definition": "Computational agents that simulate believable human behavior by storing, reflecting on, and retrieving memories to plan and act over time.",
+      "def_source": "2304.03442",
+      "papers": [
+        "2304.03442"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "rankgpt": {
+      "canonical": "RankGPT",
+      "definition": "A prompting and distillation framework that uses large language models to rank passages by directly generating permutations of candidate passages.",
+      "def_source": "2304.09542",
+      "papers": [
+        "2304.09542"
+      ],
+      "domain": "information retrieval",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "plan and solve (ps) prompting": {
+      "canonical": "Plan-and-Solve (PS) Prompting",
+      "definition": "A zero-shot prompting strategy that first asks the model to devise a plan to break a problem into subtasks and then solve the subtasks according to that plan.",
+      "def_source": "2305.04091",
+      "papers": [
+        "2305.04091"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "ps+ prompting": {
+      "canonical": "PS+ Prompting",
+      "definition": "An extended Plan-and-Solve prompting strategy that adds more detailed instructions to improve reasoning quality and reduce calculation errors.",
+      "def_source": "2305.04091",
+      "papers": [
+        "2305.04091"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "flare": {
+      "canonical": "FLARE",
+      "definition": "A forward-looking active retrieval augmented generation method that iteratively predicts the next sentence, retrieves documents using that prediction when token confidence is low, and regenerates the sentence with the retrieved evidence.",
+      "def_source": "2305.06983",
+      "papers": [
+        "2305.06983"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "tot": {
+      "canonical": "ToT",
+      "definition": "A language model inference framework that organizes coherent intermediate reasoning units as a tree and uses search over them for deliberate problem solving.",
+      "def_source": "2305.10601",
+      "papers": [
+        "2305.10601"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "rewrite retrieve read": {
+      "canonical": "Rewrite-Retrieve-Read",
+      "definition": "A retrieval-augmented LLM framework that rewrites the input query before retrieval to better align the search request with the needed knowledge and improve downstream reading performance.",
+      "def_source": "2305.14283",
+      "papers": [
+        "2305.14283"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "qlora": {
+      "canonical": "QLoRA",
+      "definition": "An efficient finetuning method that backpropagates through a frozen 4-bit quantized pretrained language model into Low Rank Adapters to enable low-memory LLM finetuning without performance loss.",
+      "def_source": "2305.14314",
+      "papers": [
+        "2305.14314"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "guanaco": {
+      "canonical": "Guanaco",
+      "definition": "A family of chatbot models finetuned with QLORA that achieves strong Vicuna benchmark performance.",
+      "def_source": "2305.14314",
+      "papers": [
+        "2305.14314"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "voyager": {
+      "canonical": "VOYAGER",
+      "definition": "An LLM-powered embodied lifelong learning agent for Minecraft that autonomously explores, acquires skills, and makes new discoveries using code-based actions and a growing skill library.",
+      "def_source": "2305.16291",
+      "papers": [
+        "2305.16291"
+      ],
+      "domain": "minecraft",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "direct preference optimization": {
+      "canonical": "Direct Preference Optimization",
+      "definition": "A reinforcement-learning-free method for training language models from human preferences by directly optimizing a policy with a binary classification objective.",
+      "def_source": "2305.18290",
+      "papers": [
+        "2305.18290"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "llama 2": {
+      "canonical": "Llama 2",
+      "definition": "A collection of pretrained and fine-tuned large language models ranging from 7 billion to 70 billion parameters.",
+      "def_source": "2307.09288",
+      "papers": [
+        "2307.09288"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "llama 2 chat": {
+      "canonical": "Llama 2-Chat",
+      "definition": "A fine-tuned version of Llama 2 optimized for dialogue use cases.",
+      "def_source": "2307.09288",
+      "papers": [
+        "2307.09288"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "metagpt": {
+      "canonical": "MetaGPT",
+      "definition": "A multi-agent meta-programming framework that encodes software-development standardized operating procedures into coordinated LLM agent workflows.",
+      "def_source": "2308.00352",
+      "papers": [
+        "2308.00352"
+      ],
+      "domain": "software engineering",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "autogen": {
+      "canonical": "AutoGen",
+      "definition": "An open-source framework for building LLM applications with customizable, conversable agents that coordinate through multi-agent conversations.",
+      "def_source": "2308.08155",
+      "papers": [
+        "2308.08155"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "lats": {
+      "canonical": "LATS",
+      "definition": "A general language-agent framework that uses Monte Carlo Tree Search to combine reasoning, acting, planning, external feedback, and self-reflection for improved decision-making.",
+      "def_source": "2310.04406",
+      "papers": [
+        "2310.04406"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "self rag": {
+      "canonical": "Self-RAG",
+      "definition": "A retrieval-augmented generation framework that trains a single language model to decide when to retrieve, critique its own outputs, and generate with reflection tokens for improved factuality and controllability.",
+      "def_source": "2310.11511",
+      "papers": [
+        "2310.11511"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "jina embeddings v2": {
+      "canonical": "Jina Embeddings v2",
+      "definition": "An open-source text embedding model that extends BERT with bidirectional ALiBi to encode sequences up to 8192 tokens for high-quality document embeddings.",
+      "def_source": "2310.19923",
+      "papers": [
+        "2310.19923"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "mamba": {
+      "canonical": "Mamba",
+      "definition": "A simplified end-to-end neural network architecture that integrates selective state space models for linear-time sequence modeling without attention or MLP blocks.",
+      "def_source": "2312.00752",
+      "papers": [
+        "2312.00752"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "selective state space models": {
+      "canonical": "selective state space models",
+      "definition": "State space models whose parameters are conditioned on the input to enable content-based selection and selective propagation or forgetting of information along the sequence.",
+      "def_source": "2312.00752",
+      "papers": [
+        "2312.00752"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "proposition indexing": {
+      "canonical": "Proposition indexing",
+      "definition": "A dense retrieval approach that indexes a corpus using propositions, which are atomic, self-contained factoid units, instead of passages or sentences.",
+      "def_source": "2312.06648",
+      "papers": [
+        "2312.06648"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "paper:2312.10997": {
+      "canonical": "Large Language Model based Multi-Documen",
+      "definition": "Large language models suffer from hallucination, outdated knowledge, and non-transparent reasoning, and existing RAG research lacks a systematic synthesis and evaluation-focused overview.",
+      "def_source": "2312.10997",
+      "papers": [
+        "2312.10997"
+      ],
+      "domain": "general",
+      "ptype": "survey",
+      "status": "approved",
+      "def_status": "n/a"
+    },
+    "crag": {
+      "canonical": "CRAG",
+      "definition": "A plug-and-play corrective retrieval-augmented generation framework that self-corrects poor retrieval results to improve robustness and document utilization.",
+      "def_source": "2401.15884",
+      "papers": [
+        "2401.15884"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "raptor": {
+      "canonical": "RAPTOR",
+      "definition": "A retrieval and indexing system that recursively embeds, clusters, and summarizes text chunks into a tree of multi-level abstractions for retrieval-augmented generation.",
+      "def_source": "2401.18059",
+      "papers": [
+        "2401.18059"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "lumberchunker": {
+      "canonical": "LumberChunker",
+      "definition": "An LLM-driven dynamic text segmentation method that iteratively identifies content shift points to create semantically independent chunks of variable size.",
+      "def_source": "2406.17526",
+      "papers": [
+        "2406.17526"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "gutenqa": {
+      "canonical": "GutenQA",
+      "definition": "A benchmark of 3,000 needle-in-a-haystack question-answer pairs derived from 100 public domain narrative books from Project Gutenberg for evaluating retrieval and RAG chunking methods.",
+      "def_source": "2406.17526",
+      "papers": [
+        "2406.17526"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "late chunking": {
+      "canonical": "Late Chunking",
+      "definition": "A chunking method that embeds an entire long document first and applies chunking only after the transformer encoder, before mean pooling, so each chunk embedding retains full document context.",
+      "def_source": "2409.04701",
+      "papers": [
+        "2409.04701"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "meta chunking": {
+      "canonical": "Meta-Chunking",
+      "definition": "A lightweight chunking framework for RAG that combines uncertainty-based boundary detection with dynamic merging and information compensation to produce more coherent text chunks.",
+      "def_source": "2410.12788",
+      "papers": [
+        "2410.12788"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "dpr": {
+      "canonical": "DPR",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "rlhf": {
+      "canonical": "RLHF",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "ppo": {
+      "canonical": "PPO",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "contriever": {
+      "canonical": "Contriever",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    }
+  },
+  "builds_on": [
+    {
+      "from": "t5",
+      "to": "rag"
+    },
+    {
+      "from": "realm",
+      "to": "bert"
+    },
+    {
+      "from": "realm",
+      "to": "t5"
+    },
+    {
+      "from": "longformer",
+      "to": "transformer"
+    },
+    {
+      "from": "colbert",
+      "to": "bert"
+    },
+    {
+      "from": "rag",
+      "to": "dpr"
+    },
+    {
+      "from": "switch transformer",
+      "to": "t5"
+    },
+    {
+      "from": "flan",
+      "to": "gpt 3"
+    },
+    {
+      "from": "flan",
+      "to": "bert"
+    },
+    {
+      "from": "flan",
+      "to": "t5"
+    },
+    {
+      "from": "instructgpt",
+      "to": "gpt 3"
+    },
+    {
+      "from": "instructgpt",
+      "to": "rlhf"
+    },
+    {
+      "from": "instructgpt",
+      "to": "ppo"
+    },
+    {
+      "from": "self consistency",
+      "to": "cot"
+    },
+    {
+      "from": "palm",
+      "to": "transformer"
+    },
+    {
+      "from": "least to most prompting",
+      "to": "cot"
+    },
+    {
+      "from": "least to most prompting",
+      "to": "self consistency"
+    },
+    {
+      "from": "react",
+      "to": "cot"
+    },
+    {
+      "from": "constitutional ai",
+      "to": "rlhf"
+    },
+    {
+      "from": "hyde",
+      "to": "contriever"
+    },
+    {
+      "from": "self instruct",
+      "to": "instructgpt"
+    },
+    {
+      "from": "self instruct",
+      "to": "gpt 3"
+    },
+    {
+      "from": "replug",
+      "to": "rag"
+    },
+    {
+      "from": "replug",
+      "to": "dpr"
+    },
+    {
+      "from": "replug",
+      "to": "replug"
+    },
+    {
+      "from": "toolformer",
+      "to": "rag"
+    },
+    {
+      "from": "llama",
+      "to": "gpt 3"
+    },
+    {
+      "from": "llama",
+      "to": "chinchilla"
+    },
+    {
+      "from": "llama",
+      "to": "palm"
+    },
+    {
+      "from": "reflexion",
+      "to": "react"
+    },
+    {
+      "from": "reflexion",
+      "to": "toolformer"
+    },
+    {
+      "from": "reflexion",
+      "to": "hugginggpt"
+    },
+    {
+      "from": "reflexion",
+      "to": "generative agents"
+    },
+    {
+      "from": "flare",
+      "to": "rag"
+    },
+    {
+      "from": "tot",
+      "to": "cot"
+    },
+    {
+      "from": "rewrite retrieve read",
+      "to": "rag"
+    },
+    {
+      "from": "rewrite retrieve read",
+      "to": "dpr"
+    },
+    {
+      "from": "qlora",
+      "to": "lora"
+    },
+    {
+      "from": "direct preference optimization",
+      "to": "rlhf"
+    },
+    {
+      "from": "direct preference optimization",
+      "to": "ppo"
+    },
+    {
+      "from": "llama 2",
+      "to": "llama"
+    },
+    {
+      "from": "lats",
+      "to": "react"
+    },
+    {
+      "from": "self rag",
+      "to": "rag"
+    },
+    {
+      "from": "jina embeddings v2",
+      "to": "bert"
+    },
+    {
+      "from": "mamba",
+      "to": "transformer"
+    },
+    {
+      "from": "paper:2312.10997",
+      "to": "rag"
+    },
+    {
+      "from": "crag",
+      "to": "rag"
+    },
+    {
+      "from": "crag",
+      "to": "self rag"
+    },
+    {
+      "from": "raptor",
+      "to": "rag"
+    },
+    {
+      "from": "lumberchunker",
+      "to": "rag"
+    },
+    {
+      "from": "late chunking",
+      "to": "rag"
+    },
+    {
+      "from": "meta chunking",
+      "to": "rag"
+    }
+  ]
+}

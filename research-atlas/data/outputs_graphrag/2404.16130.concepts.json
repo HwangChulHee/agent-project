@@ -1,0 +1,25 @@
+{
+  "title": "GraphRAG",
+  "task": [
+    "question answering over private text corpora",
+    "global sensemaking",
+    "query-focused summarization"
+  ],
+  "defines": [
+    {
+      "name": "GraphRAG",
+      "definition": "A graph-based retrieval-augmented generation framework that enables global question answering over large private text corpora by organizing corpus content into a knowledge graph and community summaries."
+    }
+  ],
+  "uses": [
+    "LLM",
+    "knowledge graph construction",
+    "graph partitioning into communities",
+    "hierarchical community summaries",
+    "map-reduce processing",
+    "LLM-as-a-judge"
+  ],
+  "problem": "Conventional vector RAG cannot answer global sensemaking questions over large corpora, and prior query-focused summarization methods do not scale to RAG-sized collections.",
+  "domain": "general",
+  "paper_type": "technique"
+}

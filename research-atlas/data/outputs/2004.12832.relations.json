@@ -1,0 +1,11 @@
+{
+  "builds_on": [
+    "BERT",
+    "KNRM",
+    "DRMM",
+    "Duet",
+    "DSSM",
+    "SNRM",
+    "Conv-KNRM"
+  ]
+}

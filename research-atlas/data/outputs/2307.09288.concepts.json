@@ -1,0 +1,27 @@
+{
+  "title": "Llama 2",
+  "task": [
+    "large language model pretraining",
+    "dialogue fine-tuning",
+    "chat model evaluation",
+    "safety alignment"
+  ],
+  "defines": [
+    {
+      "name": "Llama 2",
+      "definition": "A collection of pretrained and fine-tuned large language models ranging from 7 billion to 70 billion parameters."
+    },
+    {
+      "name": "Llama 2-Chat",
+      "definition": "A fine-tuned version of Llama 2 optimized for dialogue use cases."
+    }
+  ],
+  "uses": [
+    "supervised fine-tuning",
+    "human preference optimization",
+    "safety improvements"
+  ],
+  "problem": "Open-source chat models lag behind closed-source models in helpfulness and safety, and the paper aims to provide a stronger open alternative.",
+  "domain": "general",
+  "paper_type": "technique"
+}

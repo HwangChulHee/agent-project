@@ -1,0 +1,31 @@
+{
+  "title": "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+  "task": [
+    "multi-agent collaboration",
+    "software engineering",
+    "code generation",
+    "task decomposition",
+    "automated problem solving"
+  ],
+  "defines": [
+    {
+      "name": "MetaGPT",
+      "definition": "A multi-agent meta-programming framework that encodes software-development standardized operating procedures into coordinated LLM agent workflows."
+    }
+  ],
+  "uses": [
+    "Standardized Operating Procedures (SOPs)",
+    "assembly line paradigm",
+    "structured outputs",
+    "role-based agents",
+    "requirements analysis",
+    "system design",
+    "code generation",
+    "modification",
+    "execution",
+    "debugging"
+  ],
+  "problem": "Existing LLM-based multi-agent systems often fail on complex tasks because naive chaining causes cascading hallucinations, inconsistencies, and weak coordination.",
+  "domain": "software engineering",
+  "paper_type": "technique"
+}

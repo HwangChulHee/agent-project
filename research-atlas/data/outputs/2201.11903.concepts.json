@@ -1,0 +1,26 @@
+{
+  "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+  "task": [
+    "few-shot prompting",
+    "reasoning",
+    "arithmetic reasoning",
+    "commonsense reasoning",
+    "symbolic reasoning",
+    "math word problem solving"
+  ],
+  "defines": [
+    {
+      "name": "chain-of-thought prompting",
+      "definition": "A few-shot prompting method that includes intermediate natural-language reasoning steps between the input and output to elicit complex reasoning in large language models."
+    }
+  ],
+  "uses": [
+    "few-shot prompting",
+    "natural language rationales",
+    "intermediate reasoning steps",
+    "in-context learning"
+  ],
+  "problem": "Standard few-shot prompting performs poorly on tasks that require complex reasoning, and rationale-based training is costly because it requires many high-quality explanations.",
+  "domain": "general",
+  "paper_type": "technique"
+}

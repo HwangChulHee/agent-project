@@ -1,0 +1,28 @@
+{
+  "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+  "task": [
+    "language modeling",
+    "machine translation",
+    "multilingual language modeling",
+    "pre-training"
+  ],
+  "defines": [
+    {
+      "name": "Switch Transformer",
+      "definition": "A simplified mixture-of-experts transformer that routes each input token to a single expert to enable sparse, scalable training with reduced communication and computation costs."
+    }
+  ],
+  "uses": [
+    "mixture-of-experts",
+    "routing algorithm",
+    "bfloat16",
+    "T5-Base",
+    "T5-Large",
+    "mT5-Base",
+    "T5-XXL",
+    "Colossal Clean Crawled Corpus"
+  ],
+  "problem": "Mixture-of-experts models are promising but are difficult to adopt widely because of routing complexity, communication overhead, and training instability.",
+  "domain": "general",
+  "paper_type": "technique"
+}

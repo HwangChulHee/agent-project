@@ -1,0 +1,26 @@
+{
+  "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+  "task": [
+    "language representation learning",
+    "text pre-training",
+    "question answering",
+    "natural language inference",
+    "sentence classification",
+    "token-level prediction"
+  ],
+  "defines": [
+    {
+      "name": "BERT",
+      "definition": "BERT is a bidirectional Transformer-based language representation model pre-trained with masked language modeling and next sentence prediction for fine-tuning on downstream NLP tasks."
+    }
+  ],
+  "uses": [
+    "Transformer",
+    "masked language model",
+    "next sentence prediction",
+    "fine-tuning"
+  ],
+  "problem": "Existing pre-trained language models are typically unidirectional, which limits bidirectional context modeling and hurts performance on many downstream NLP tasks.",
+  "domain": "general",
+  "paper_type": "technique"
+}

@@ -1,0 +1,30 @@
+{
+  "title": "REPLUG: Retrieval-Augmented Black-Box Language Models",
+  "task": [
+    "retrieval-augmented language modeling",
+    "open-domain question answering",
+    "in-context learning",
+    "language model perplexity reduction"
+  ],
+  "defines": [
+    {
+      "name": "REPLUG",
+      "definition": "A retrieval-augmented language modeling framework that augments a frozen black-box language model by prepending retrieved documents and optionally ensembles multiple retrieved contexts in parallel."
+    },
+    {
+      "name": "REPLUG LSR",
+      "definition": "A training scheme that uses a black-box language model’s scores to supervise and improve the retriever."
+    }
+  ],
+  "uses": [
+    "off-the-shelf retrieval model",
+    "document prepending",
+    "parallel ensemble scheme",
+    "language model perplexity scores",
+    "frozen black-box language model",
+    "retriever tuning"
+  ],
+  "problem": "Prior retrieval-augmented language models require access to internal language model representations or fine-tuning, making them difficult to apply to large API-based black-box models.",
+  "domain": "general",
+  "paper_type": "technique"
+}

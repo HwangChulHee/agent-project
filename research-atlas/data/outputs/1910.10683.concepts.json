@@ -1,0 +1,31 @@
+{
+  "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+  "task": [
+    "transfer learning",
+    "multi-task learning",
+    "natural language processing",
+    "text generation",
+    "question answering",
+    "text classification",
+    "summarization"
+  ],
+  "defines": [
+    {
+      "name": "T5",
+      "definition": "A unified text-to-text transfer learning framework that casts every NLP problem as text input to text output and trains a single model across tasks."
+    }
+  ],
+  "uses": [
+    "text-to-text format",
+    "pre-training",
+    "fine-tuning",
+    "unsupervised learning",
+    "Common Crawl",
+    "Colossal Clean Crawled Corpus",
+    "Transformer",
+    "sequence-to-sequence learning"
+  ],
+  "problem": "The growing diversity of transfer learning methods for NLP makes it difficult to compare approaches and understand which design choices drive performance.",
+  "domain": "general",
+  "paper_type": "technique"
+}

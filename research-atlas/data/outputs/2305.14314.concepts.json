@@ -1,0 +1,34 @@
+{
+  "title": "QLORA: Efficient Finetuning of Quantized LLMs",
+  "task": [
+    "parameter-efficient finetuning",
+    "instruction tuning",
+    "chatbot training",
+    "model evaluation"
+  ],
+  "defines": [
+    {
+      "name": "QLORA",
+      "definition": "An efficient finetuning method that backpropagates through a frozen 4-bit quantized pretrained language model into Low Rank Adapters to enable low-memory LLM finetuning without performance loss."
+    },
+    {
+      "name": "Guanaco",
+      "definition": "A family of chatbot models finetuned with QLORA that achieves strong Vicuna benchmark performance."
+    }
+  ],
+  "uses": [
+    "4-bit quantization",
+    "Low Rank Adapters (LoRA)",
+    "4-bit NormalFloat (NF4)",
+    "Double Quantization",
+    "Paged Optimizers",
+    "NVIDIA unified memory",
+    "gradient checkpointing",
+    "Elo scoring",
+    "GPT-4 evaluation",
+    "human evaluation"
+  ],
+  "problem": "Full-precision finetuning of very large language models requires prohibitively large GPU memory, and existing quantization methods generally do not support training without degrading performance.",
+  "domain": "general",
+  "paper_type": "technique"
+}

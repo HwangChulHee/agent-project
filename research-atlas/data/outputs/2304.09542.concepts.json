@@ -1,0 +1,29 @@
+{
+  "title": "RankGPT: How Far Are Large Language Models from Effective Rankers?",
+  "task": [
+    "passage re-ranking",
+    "information retrieval",
+    "zero-shot evaluation",
+    "knowledge contamination evaluation",
+    "distillation of ranking models"
+  ],
+  "defines": [
+    {
+      "name": "RankGPT",
+      "definition": "A prompting and distillation framework that uses large language models to rank passages by directly generating permutations of candidate passages."
+    }
+  ],
+  "uses": [
+    "ChatGPT",
+    "GPT-4",
+    "instructional permutation generation",
+    "sliding window strategy",
+    "NovelEval",
+    "RankNet-based distillation",
+    "BM25",
+    "MS MARCO"
+  ],
+  "problem": "Existing information retrieval methods rely on supervised rankers, while large language models are not naturally aligned with passage-ranking objectives and may be affected by data contamination concerns.",
+  "domain": "information retrieval",
+  "paper_type": "technique"
+}

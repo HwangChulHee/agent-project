@@ -1,0 +1,25 @@
+{
+  "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+  "task": [
+    "question answering",
+    "fact verification",
+    "interactive decision making",
+    "language reasoning"
+  ],
+  "defines": [
+    {
+      "name": "ReAct",
+      "definition": "A prompting paradigm that interleaves verbal reasoning traces with task-specific actions to improve language model problem solving."
+    }
+  ],
+  "uses": [
+    "chain-of-thought prompting",
+    "Wikipedia API",
+    "in-context examples",
+    "action plan generation",
+    "interactive environments"
+  ],
+  "problem": "Separate reasoning-only and acting-only approaches are brittle because reasoning is not grounded in the external world and acting methods do not support explicit high-level reasoning or working memory.",
+  "domain": "general",
+  "paper_type": "technique"
+}

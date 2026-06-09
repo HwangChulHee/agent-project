@@ -1,0 +1,29 @@
+{
+  "title": "From RAG to Memory: Non-Parametric Continual Learning for Large Language Models",
+  "task": [
+    "continual learning",
+    "retrieval-augmented generation",
+    "factual memory",
+    "sense-making",
+    "associative memory",
+    "multi-hop question answering",
+    "discourse understanding"
+  ],
+  "defines": [
+    {
+      "name": "HippoRAG 2",
+      "definition": "A retrieval-augmented generation framework that improves non-parametric continual learning by combining Personalized PageRank with deeper passage integration and more effective online LLM use."
+    }
+  ],
+  "uses": [
+    "Personalized PageRank",
+    "OpenIE",
+    "knowledge graph construction",
+    "passage integration",
+    "online LLM retrieval",
+    "query-based contextualization"
+  ],
+  "problem": "Standard vector-based and structure-augmented RAG methods fail to robustly support human-like long-term memory across factual, sense-making, and associative tasks.",
+  "domain": "general",
+  "paper_type": "technique"
+}

@@ -1,0 +1,27 @@
+{
+  "title": "HyperGraphRAG: A Hypergraph-based Retrieval-Augmented Generation Framework for Knowledge-intensive Applications",
+  "task": [
+    "retrieval-augmented generation",
+    "knowledge-intensive question answering",
+    "knowledge representation",
+    "information retrieval"
+  ],
+  "defines": [
+    {
+      "name": "HyperGraphRAG",
+      "definition": "A hypergraph-based RAG framework that represents and retrieves n-ary relational facts with hyperedges to improve knowledge-intensive generation."
+    }
+  ],
+  "uses": [
+    "knowledge hypergraph construction",
+    "LLM-based n-ary relation extraction",
+    "bipartite graph database",
+    "vector databases",
+    "hypergraph retrieval",
+    "hypergraph-guided generation",
+    "chunk-based RAG passages"
+  ],
+  "problem": "Existing graph-based RAG methods are limited to binary relations and cannot faithfully represent n-ary facts common in real-world knowledge, causing incomplete and less effective retrieval and generation.",
+  "domain": "general",
+  "paper_type": "technique"
+}

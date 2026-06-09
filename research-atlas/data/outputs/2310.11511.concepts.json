@@ -1,0 +1,27 @@
+{
+  "title": "Self-Reflective Retrieval-Augmented Generation",
+  "task": [
+    "open-domain question answering",
+    "reasoning",
+    "fact verification",
+    "long-form generation"
+  ],
+  "defines": [
+    {
+      "name": "SELF-RAG",
+      "definition": "A retrieval-augmented generation framework that trains a single language model to decide when to retrieve, critique its own outputs, and generate with reflection tokens for improved factuality and controllability."
+    }
+  ],
+  "uses": [
+    "retriever model",
+    "reflection tokens",
+    "retrieval tokens",
+    "critique tokens",
+    "segment-level beam search",
+    "reward model",
+    "GPT-4"
+  ],
+  "problem": "Standard RAG systems retrieve passages indiscriminately and do not explicitly assess whether retrieved evidence improves generation quality or factual consistency.",
+  "domain": "general",
+  "paper_type": "technique"
+}

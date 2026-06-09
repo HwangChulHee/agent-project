@@ -1,0 +1,8 @@
+{
+  "builds_on": [
+    "RNN",
+    "LSTM",
+    "GRU",
+    "attention mechanisms"
+  ]
+}

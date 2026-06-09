@@ -1,0 +1,24 @@
+{
+  "title": "LLaMA: Open and Efficient Foundation Language Models",
+  "task": [
+    "foundation language modeling",
+    "language model pretraining",
+    "benchmark evaluation"
+  ],
+  "defines": [
+    {
+      "name": "LLaMA",
+      "definition": "A collection of open foundation language models trained on publicly available data and optimized for strong performance at different inference budgets."
+    }
+  ],
+  "uses": [
+    "transformer architecture",
+    "scaling laws",
+    "publicly available datasets",
+    "next-token prediction",
+    "benchmark evaluation"
+  ],
+  "problem": "Existing large language models are often trained on proprietary data and are not optimized for inference efficiency at different deployment budgets.",
+  "domain": "general",
+  "paper_type": "technique"
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+  "task": [
+    "interactive simulation",
+    "agent modeling",
+    "human behavior simulation",
+    "social interaction simulation"
+  ],
+  "defines": [
+    {
+      "name": "Generative Agents",
+      "definition": "Computational agents that simulate believable human behavior by storing, reflecting on, and retrieving memories to plan and act over time."
+    }
+  ],
+  "uses": [
+    "large language models",
+    "memory stream",
+    "memory retrieval",
+    "reflection",
+    "planning",
+    "natural language interaction"
+  ],
+  "problem": "Existing agents and language models struggle to maintain long-term coherence and believable social behavior as experiences accumulate over time.",
+  "domain": "general",
+  "paper_type": "technique"
+}

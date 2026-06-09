@@ -1,0 +1,21 @@
+{
+  "title": "Emergent Abilities of Large Language Models",
+  "task": [
+    "analysis of language model scaling",
+    "survey of emergent capabilities in LLMs"
+  ],
+  "defines": [
+    {
+      "name": "emergent abilities of large language models",
+      "definition": "Abilities that are absent in smaller-scale models but present in larger-scale models, and therefore cannot be predicted by extrapolating smaller-model performance."
+    }
+  ],
+  "uses": [
+    "scaling laws",
+    "few-shot prompting",
+    "augmented prompting strategies"
+  ],
+  "problem": "Scaling laws explain many gains in language models, but some downstream abilities appear unpredictably only at larger scales and cannot be anticipated from smaller models.",
+  "domain": "general",
+  "paper_type": "survey"
+}

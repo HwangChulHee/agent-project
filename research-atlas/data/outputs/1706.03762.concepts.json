@@ -1,0 +1,24 @@
+{
+  "title": "Attention Is All You Need",
+  "task": [
+    "machine translation",
+    "sequence transduction",
+    "constituency parsing"
+  ],
+  "defines": [
+    {
+      "name": "Transformer",
+      "definition": "A neural network architecture for sequence transduction that relies entirely on attention mechanisms instead of recurrence or convolutions."
+    }
+  ],
+  "uses": [
+    "self-attention",
+    "scaled dot-product attention",
+    "multi-head attention",
+    "positional encoding",
+    "encoder-decoder architecture"
+  ],
+  "problem": "Recurrent and convolutional sequence models are inherently sequential, limiting parallelization and increasing training cost for long sequence tasks.",
+  "domain": "general",
+  "paper_type": "technique"
+}

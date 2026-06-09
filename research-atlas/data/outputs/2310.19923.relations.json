@@ -1,0 +1,8 @@
+{
+  "builds_on": [
+    "BERT",
+    "ALiBi",
+    "Jina Embeddings v1",
+    "E5"
+  ]
+}

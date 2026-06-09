@@ -1,0 +1,29 @@
+{
+  "title": "Corrective Retrieval Augmented Generation",
+  "task": [
+    "retrieval-augmented generation",
+    "question answering",
+    "short-form generation",
+    "long-form generation"
+  ],
+  "defines": [
+    {
+      "name": "CRAG",
+      "definition": "A plug-and-play corrective retrieval-augmented generation framework that self-corrects poor retrieval results to improve robustness and document utilization."
+    }
+  ],
+  "uses": [
+    "lightweight retrieval evaluator",
+    "confidence degree",
+    "Correct",
+    "Incorrect",
+    "Ambiguous",
+    "large-scale web searches",
+    "decompose-then-recompose algorithm",
+    "RAG",
+    "Self-RAG"
+  ],
+  "problem": "Retrieval-augmented generation can fail when retrieved documents are irrelevant or inaccurate, causing hallucinations and degraded generation quality.",
+  "domain": "general",
+  "paper_type": "technique"
+}

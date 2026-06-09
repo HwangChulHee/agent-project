@@ -1,0 +1,31 @@
+{
+  "title": "VOYAGER: An Open-Ended Embodied Agent with Large Language Models",
+  "task": [
+    "embodied lifelong learning",
+    "open-ended exploration",
+    "Minecraft control",
+    "skill acquisition",
+    "program synthesis for agent actions"
+  ],
+  "defines": [
+    {
+      "name": "VOYAGER",
+      "definition": "An LLM-powered embodied lifelong learning agent for Minecraft that autonomously explores, acquires skills, and makes new discoveries using code-based actions and a growing skill library."
+    }
+  ],
+  "uses": [
+    "automatic curriculum",
+    "skill library",
+    "iterative prompting mechanism",
+    "GPT-4",
+    "blackbox queries",
+    "in-context learning",
+    "self-verification",
+    "execution errors",
+    "environment feedback",
+    "code as the action space"
+  ],
+  "problem": "Existing embodied agents are not lifelong learners and struggle to systematically explore, accumulate skills, and generalize over long time spans in open-ended environments like Minecraft.",
+  "domain": "minecraft",
+  "paper_type": "technique"
+}

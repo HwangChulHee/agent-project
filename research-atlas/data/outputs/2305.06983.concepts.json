@@ -1,0 +1,26 @@
+{
+  "title": "Forward-Looking Active REtrieval augmented generation (FLARE)",
+  "task": [
+    "long-form knowledge-intensive generation",
+    "retrieval-augmented generation",
+    "question answering",
+    "summarization",
+    "reasoning"
+  ],
+  "defines": [
+    {
+      "name": "FLARE",
+      "definition": "A forward-looking active retrieval augmented generation method that iteratively predicts the next sentence, retrieves documents using that prediction when token confidence is low, and regenerates the sentence with the retrieved evidence."
+    }
+  ],
+  "uses": [
+    "large language models",
+    "temporary next-sentence generation",
+    "low-probability token detection",
+    "document retrieval",
+    "sentence regeneration"
+  ],
+  "problem": "Standard retrieve-and-generate LMs retrieve only once from the input, which is insufficient for long-form generation with evolving information needs and can lead to hallucination or inappropriate retrieval.",
+  "domain": "general",
+  "paper_type": "technique"
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Empirical Scaling Laws for Language Model Performance",
+  "task": [
+    "scaling law analysis",
+    "language model performance modeling",
+    "compute-optimal training"
+  ],
+  "defines": [],
+  "uses": [
+    "cross-entropy loss",
+    "power-law fitting",
+    "model size",
+    "dataset size",
+    "training compute"
+  ],
+  "problem": "It is unclear how language model loss depends on model size, dataset size, and compute, and how to allocate a fixed compute budget optimally.",
+  "domain": "general",
+  "paper_type": "analysis"
+}

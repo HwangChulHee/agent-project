@@ -1,0 +1,1036 @@
+{
+  "techniques": {
+    "RAG": {
+      "aliases": [
+        "Retrieval-Augmented Generation"
+      ],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "GraphRAG": {
+      "aliases": [
+        "Graph RAG",
+        "Graph-RAG"
+      ],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "LightRAG": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "HippoRAG": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "HippoRAG 2": {
+      "aliases": [
+        "HippoRAG2"
+      ],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "HyperGraphRAG": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "DPR": {
+      "aliases": [
+        "Dense Passage Retrieval"
+      ],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "ColBERT": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "BERT": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Contriever": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "REALM": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "RAPTOR": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "HyDE": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Self-RAG": {
+      "aliases": [
+        "SelfRAG"
+      ],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "FLARE": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "REPLUG": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "CRAG": {
+      "aliases": [
+        "Corrective RAG"
+      ],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Dense X": {
+      "aliases": [
+        "propositions"
+      ],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Late Chunking": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "LumberChunker": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Meta-Chunking": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "IRCoT": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Rewrite-Retrieve-Read": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Transformer": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "GPT-3": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "LLaMA": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "T5": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "BART": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Mamba": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "CoT": {
+      "aliases": [
+        "chain-of-thought prompting",
+        "Chain of Thought"
+      ],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Self-Consistency": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "ToT": {
+      "aliases": [
+        "Tree of Thoughts"
+      ],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "least-to-most prompting": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "ReAct": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Reflexion": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Toolformer": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Self-Refine": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Plan-and-Solve": {
+      "aliases": [
+        "PS+"
+      ],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "AutoGen": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "MetaGPT": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "HuggingGPT": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "LATS": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "RLHF": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "DPO": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "PPO": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "InstructGPT": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Constitutional AI": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "instruction tuning": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "LoRA": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "QLoRA": {
+      "aliases": [],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Personalized PageRank": {
+      "aliases": [
+        "PPR"
+      ],
+      "status": "approved",
+      "definition": "",
+      "source": "seed",
+      "first_seen": ""
+    },
+    "Dense Passage Retriever (DPR)": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A dual-encoder dense retrieval model that embeds questions and passages into a shared vector space and retrieves relevant passages by maximizing inner products.",
+      "source": "defines",
+      "first_seen": "2004.04906"
+    },
+    "Longformer": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A modified Transformer architecture with a sparse attention mechanism that scales linearly with sequence length for processing long documents.",
+      "source": "defines",
+      "first_seen": "2004.05150"
+    },
+    "LED": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A Longformer-based encoder-decoder model designed for long-document sequence-to-sequence tasks such as summarization.",
+      "source": "defines",
+      "first_seen": "2004.05150"
+    },
+    "Switch Transformer": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A simplified mixture-of-experts transformer that routes each input token to a single expert to enable sparse, scalable training with reduced communication and computation costs.",
+      "source": "defines",
+      "first_seen": "2101.03961"
+    },
+    "FLAN": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A pretrained language model instruction-tuned on many NLP datasets phrased as natural language instructions to improve zero-shot performance on unseen tasks.",
+      "source": "defines",
+      "first_seen": "2109.01652"
+    },
+    "Chinchilla": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A compute-optimal 70B-parameter language model trained with substantially more data to maximize performance under a fixed compute budget.",
+      "source": "defines",
+      "first_seen": "2203.15556"
+    },
+    "PaLM": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A 540-billion-parameter densely activated Transformer language model trained to study the effects of scaling on few-shot learning and broad language capabilities.",
+      "source": "defines",
+      "first_seen": "2204.02311"
+    },
+    "FlashAttention": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "An IO-aware exact attention algorithm that uses tiling and kernel fusion to minimize GPU memory traffic between HBM and SRAM.",
+      "source": "defines",
+      "first_seen": "2205.14135"
+    },
+    "block-sparse FlashAttention": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A sparse attention variant built on FlashAttention that exploits block sparsity to further reduce memory access and speed up attention.",
+      "source": "defines",
+      "first_seen": "2205.14135"
+    },
+    "emergent abilities of large language models": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "Abilities that are absent in smaller-scale models but present in larger-scale models, and therefore cannot be predicted by extrapolating smaller-model performance.",
+      "source": "defines",
+      "first_seen": "2206.07682"
+    },
+    "SELF-INSTRUCT": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A semi-automated bootstrapping framework that improves instruction-following by generating synthetic instructions and instances from a language model and using them to finetune the same model.",
+      "source": "defines",
+      "first_seen": "2212.10560"
+    },
+    "REPLUG LSR": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A training scheme that uses a black-box language model’s scores to supervise and improve the retriever.",
+      "source": "defines",
+      "first_seen": "2301.12652"
+    },
+    "Generative Agents": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "Computational agents that simulate believable human behavior by storing, reflecting on, and retrieving memories to plan and act over time.",
+      "source": "defines",
+      "first_seen": "2304.03442"
+    },
+    "RankGPT": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A prompting and distillation framework that uses large language models to rank passages by directly generating permutations of candidate passages.",
+      "source": "defines",
+      "first_seen": "2304.09542"
+    },
+    "Plan-and-Solve (PS) Prompting": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A zero-shot prompting strategy that first asks the model to devise a plan to break a problem into subtasks and then solve the subtasks according to that plan.",
+      "source": "defines",
+      "first_seen": "2305.04091"
+    },
+    "PS+ Prompting": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "An extended Plan-and-Solve prompting strategy that adds more detailed instructions to improve reasoning quality and reduce calculation errors.",
+      "source": "defines",
+      "first_seen": "2305.04091"
+    },
+    "Guanaco": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A family of chatbot models finetuned with QLORA that achieves strong Vicuna benchmark performance.",
+      "source": "defines",
+      "first_seen": "2305.14314"
+    },
+    "VOYAGER": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "An LLM-powered embodied lifelong learning agent for Minecraft that autonomously explores, acquires skills, and makes new discoveries using code-based actions and a growing skill library.",
+      "source": "defines",
+      "first_seen": "2305.16291"
+    },
+    "Direct Preference Optimization": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A reinforcement-learning-free method for training language models from human preferences by directly optimizing a policy with a binary classification objective.",
+      "source": "defines",
+      "first_seen": "2305.18290"
+    },
+    "Llama 2": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A collection of pretrained and fine-tuned large language models ranging from 7 billion to 70 billion parameters.",
+      "source": "defines",
+      "first_seen": "2307.09288"
+    },
+    "Llama 2-Chat": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A fine-tuned version of Llama 2 optimized for dialogue use cases.",
+      "source": "defines",
+      "first_seen": "2307.09288"
+    },
+    "Jina Embeddings v2": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "An open-source text embedding model that extends BERT with bidirectional ALiBi to encode sequences up to 8192 tokens for high-quality document embeddings.",
+      "source": "defines",
+      "first_seen": "2310.19923"
+    },
+    "selective state space models": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "State space models whose parameters are conditioned on the input to enable content-based selection and selective propagation or forgetting of information along the sequence.",
+      "source": "defines",
+      "first_seen": "2312.00752"
+    },
+    "Proposition indexing": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A dense retrieval approach that indexes a corpus using propositions, which are atomic, self-contained factoid units, instead of passages or sentences.",
+      "source": "defines",
+      "first_seen": "2312.06648"
+    },
+    "GutenQA": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A benchmark of 3,000 needle-in-a-haystack question-answer pairs derived from 100 public domain narrative books from Project Gutenberg for evaluating retrieval and RAG chunking methods.",
+      "source": "defines",
+      "first_seen": "2406.17526"
+    },
+    "RNN": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "1706.03762"
+    },
+    "LSTM": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "1706.03762"
+    },
+    "GRU": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "1706.03762"
+    },
+    "attention mechanisms": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "1706.03762"
+    },
+    "ELMo": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "1810.04805"
+    },
+    "OpenAI GPT": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "1810.04805"
+    },
+    "RoBERTa": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2002.08909"
+    },
+    "kNN-LM": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2002.08909"
+    },
+    "BM25": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.04906"
+    },
+    "TF-IDF": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.04906"
+    },
+    "ORQA": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.04906"
+    },
+    "Transformer-XL": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.05150"
+    },
+    "Adaptive Span": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.05150"
+    },
+    "Compressive": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.05150"
+    },
+    "Reformer": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.05150"
+    },
+    "Sparse": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.05150"
+    },
+    "Routing": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.05150"
+    },
+    "BP-Transformer": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.05150"
+    },
+    "Blockwise": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.05150"
+    },
+    "KNRM": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.12832"
+    },
+    "DRMM": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.12832"
+    },
+    "Duet": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.12832"
+    },
+    "DSSM": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.12832"
+    },
+    "SNRM": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.12832"
+    },
+    "Conv-KNRM": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2004.12832"
+    },
+    "Mixture of Experts": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2101.03961"
+    },
+    "mT5": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2101.03961"
+    },
+    "fine-tuning": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2106.09685"
+    },
+    "adapter": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2106.09685"
+    },
+    "prefix-tuning": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2106.09685"
+    },
+    "Brown et al. (2020)": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2201.11903"
+    },
+    "Cobbe et al. (2021)": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2201.11903"
+    },
+    "greedy decoding": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2203.11171"
+    },
+    "sample-and-rank": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2203.11171"
+    },
+    "beam search": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2203.11171"
+    },
+    "ensemble-based approaches": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2203.11171"
+    },
+    "Kaplan et al.": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2203.15556"
+    },
+    "Pathways": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2204.02311"
+    },
+    "standard attention": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2205.14135"
+    },
+    "approximate attention": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2205.14135"
+    },
+    "sparse attention": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2205.14135"
+    },
+    "low-rank approximation": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2205.14135"
+    },
+    "OPT": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2302.13971"
+    },
+    "GPT-NeoX": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2302.13971"
+    },
+    "BLOOM": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2302.13971"
+    },
+    "GLM": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2302.13971"
+    },
+    "SayCan": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2303.11366"
+    },
+    "WebGPT": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2303.11366"
+    },
+    "monoT5": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2304.09542"
+    },
+    "RankNet": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2304.09542"
+    },
+    "Zero-shot-CoT": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2305.04091"
+    },
+    "Few-shot chain-of-thought prompting": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2305.04091"
+    },
+    "Zero-shot-Program-of-Thought Prompting": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2305.04091"
+    },
+    "retrieve-then-read": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2305.14283"
+    },
+    "GPT-4": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2305.16291"
+    },
+    "novelty search": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2305.16291"
+    },
+    "Llama 1": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2307.09288"
+    },
+    "AutoGPT": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2308.00352"
+    },
+    "LangChain": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2308.00352"
+    },
+    "AgentVerse": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2308.00352"
+    },
+    "ChatDev": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2308.00352"
+    },
+    "Monte Carlo Tree Search": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2310.04406"
+    },
+    "ALiBi": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2310.19923"
+    },
+    "Jina Embeddings v1": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2310.19923"
+    },
+    "E5": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2310.19923"
+    },
+    "structured state space models": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2312.00752"
+    },
+    "linear attention": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2312.00752"
+    },
+    "Dense retrieval": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2312.06648"
+    }
+  }
+}

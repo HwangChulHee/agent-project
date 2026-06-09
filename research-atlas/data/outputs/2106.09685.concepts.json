@@ -1,0 +1,24 @@
+{
+  "title": "Low-Rank Adaptation of Large Language Models",
+  "task": [
+    "parameter-efficient fine-tuning",
+    "language model adaptation"
+  ],
+  "defines": [
+    {
+      "name": "LoRA",
+      "definition": "A parameter-efficient fine-tuning method that freezes pretrained model weights and injects trainable low-rank decomposition matrices into Transformer layers to adapt large language models."
+    }
+  ],
+  "uses": [
+    "low-rank decomposition matrices",
+    "frozen pretrained weights",
+    "Transformer architecture",
+    "Adam",
+    "rank decomposition",
+    "pretrained model sharing"
+  ],
+  "problem": "Full fine-tuning of large pretrained language models is too expensive in storage, memory, and deployment cost, while existing parameter-efficient methods often add latency or reduce quality.",
+  "domain": "general",
+  "paper_type": "technique"
+}

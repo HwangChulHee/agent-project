@@ -1,0 +1,29 @@
+{
+  "title": "Large pre-trained language models have been shown to store factual knowledge in their parameters, and achieve state-of-the-art results when ﬁne-tuned on downstream NLP tasks. However, their ability to access and precisely manipulate knowledge is still limited, and hence on knowledge-intensive tasks, their performance lags behind task-speciﬁc architectures. Additionally, providing provenance for their decisions and updating their world knowledge remain open research problems. Pre-trained models with a differentiable access mechanism to explicit non-parametric memory have so far been only investigated for extractive downstream tasks. We explore a general-purpose ﬁne-tuning recipe for retrieval-augmented generation (RAG) — models which combine pre-trained parametric and non-parametric memory for language generation. We introduce RAG models where the parametric memory is a pre-trained seq2seq model and the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever. We compare two RAG formulations, one which conditions on the same retrieved passages across the whole generated sequence, and another which can use different passages per token. We ﬁne-tune and evaluate our models on a wide range of knowledge-intensive NLP tasks and set the state of the art on three open domain QA tasks, outperforming parametric seq2seq models and task-speciﬁc retrieve-and-extract architectures. For language generation tasks, we ﬁnd that RAG models generate more speciﬁc, diverse and factual language than a state-of-the-art parametric-only seq2seq baseline.",
+  "task": [
+    "retrieval-augmented generation",
+    "knowledge-intensive NLP",
+    "open-domain question answering",
+    "language generation",
+    "fact verification"
+  ],
+  "defines": [
+    {
+      "name": "RAG",
+      "definition": "A retrieval-augmented generation framework that combines a pre-trained seq2seq generator with a dense retriever over Wikipedia and jointly fine-tunes them end-to-end for knowledge-intensive generation."
+    }
+  ],
+  "uses": [
+    "pre-trained seq2seq model",
+    "dense vector index of Wikipedia",
+    "pre-trained neural retriever",
+    "Dense Passage Retriever (DPR)",
+    "BART",
+    "Maximum Inner Product Search (MIPS)",
+    "top-K approximation",
+    "marginalization over latent documents"
+  ],
+  "problem": "Pre-trained language models lack reliable access to external knowledge, are hard to update, and do not provide sufficient provenance for knowledge-intensive tasks.",
+  "domain": "general",
+  "paper_type": "technique"
+}

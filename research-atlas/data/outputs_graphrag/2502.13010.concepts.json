@@ -1,0 +1,27 @@
+{
+  "title": "Agentic Medical Graph-RAG (AMG-RAG)",
+  "task": [
+    "medical question answering",
+    "knowledge graph construction",
+    "retrieval-augmented reasoning"
+  ],
+  "defines": [
+    {
+      "name": "AMG-RAG",
+      "definition": "An agentic graph-RAG framework that automatically constructs and continuously updates medical knowledge graphs to support evidence-grounded medical QA."
+    }
+  ],
+  "uses": [
+    "LLM-driven agents",
+    "domain-specific search tools",
+    "medical textbooks",
+    "medical knowledge graphs",
+    "graph-centric retrieval",
+    "multi-step reasoning",
+    "confidence scores",
+    "adaptive traversal strategies"
+  ],
+  "problem": "Medical QA systems struggle to stay current and to model complex medical relationships because medical knowledge changes rapidly and manual knowledge graph maintenance is costly.",
+  "domain": "medical",
+  "paper_type": "technique"
+}

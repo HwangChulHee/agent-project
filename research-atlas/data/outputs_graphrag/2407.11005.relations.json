@@ -1,0 +1,11 @@
+{
+  "builds_on": [
+    "RAG",
+    "RAGAS",
+    "TruLens",
+    "ARES",
+    "RGB",
+    "AttributionBench",
+    "RAGTruth"
+  ]
+}

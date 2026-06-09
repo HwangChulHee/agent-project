@@ -1,0 +1,7 @@
+{
+  "builds_on": [
+    "Transformer",
+    "structured state space models",
+    "linear attention"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Large Language Model based Multi-Document Retrieval and Generation: A Survey",
+  "task": [
+    "survey",
+    "retrieval-augmented generation",
+    "information retrieval",
+    "natural language processing"
+  ],
+  "defines": [],
+  "uses": [
+    "LLMs",
+    "retrieval",
+    "generation",
+    "augmentation",
+    "pre-training models",
+    "in-context learning",
+    "fine-tuning",
+    "semantic similarity calculation"
+  ],
+  "problem": "Large language models suffer from hallucination, outdated knowledge, and non-transparent reasoning, and existing RAG research lacks a systematic synthesis and evaluation-focused overview.",
+  "domain": "general",
+  "paper_type": "survey"
+}

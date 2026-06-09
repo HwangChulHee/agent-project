@@ -1,0 +1,26 @@
+{
+  "title": "FLAN: Finetuned Language Net",
+  "task": [
+    "instruction tuning",
+    "zero-shot learning",
+    "natural language understanding",
+    "multi-task learning"
+  ],
+  "defines": [
+    {
+      "name": "FLAN",
+      "definition": "A pretrained language model instruction-tuned on many NLP datasets phrased as natural language instructions to improve zero-shot performance on unseen tasks."
+    }
+  ],
+  "uses": [
+    "pretrained language model",
+    "instruction templates",
+    "natural language instructions",
+    "multi-task fine-tuning",
+    "task clustering",
+    "ablation studies"
+  ],
+  "problem": "Large language models perform poorly in zero-shot settings compared with few-shot prompting, especially on tasks whose formats differ from pretraining data.",
+  "domain": "general",
+  "paper_type": "technique"
+}

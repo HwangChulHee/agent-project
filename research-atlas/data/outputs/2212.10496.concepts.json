@@ -1,0 +1,28 @@
+{
+  "title": "HyDE: Precise Zero-Shot Dense Retrieval without Relevance Labels",
+  "task": [
+    "dense retrieval",
+    "zero-shot retrieval",
+    "information retrieval",
+    "question answering",
+    "web search",
+    "fact verification"
+  ],
+  "defines": [
+    {
+      "name": "HyDE",
+      "definition": "A zero-shot dense retrieval method that generates a hypothetical document from a query with an instruction-following language model and then embeds it with a contrastive encoder for retrieval."
+    }
+  ],
+  "uses": [
+    "instruction-following language model",
+    "hypothetical document generation",
+    "contrastive encoder",
+    "dense embeddings",
+    "document-document similarity",
+    "inner product similarity"
+  ],
+  "problem": "Fully zero-shot dense retrieval is difficult because effective retrieval usually depends on relevance labels or task-specific supervision.",
+  "domain": "general",
+  "paper_type": "technique"
+}

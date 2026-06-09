@@ -1,0 +1,7 @@
+{
+  "builds_on": [
+    "BM25",
+    "TF-IDF",
+    "ORQA"
+  ]
+}

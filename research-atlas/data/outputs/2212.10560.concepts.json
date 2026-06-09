@@ -1,0 +1,28 @@
+{
+  "title": "SELF-INSTRUCT: Aligning Language Models with Self-Generated Instructions",
+  "task": [
+    "instruction tuning",
+    "data generation",
+    "instruction following",
+    "language model finetuning"
+  ],
+  "defines": [
+    {
+      "name": "SELF-INSTRUCT",
+      "definition": "A semi-automated bootstrapping framework that improves instruction-following by generating synthetic instructions and instances from a language model and using them to finetune the same model."
+    }
+  ],
+  "uses": [
+    "pretrained language models",
+    "instruction generation",
+    "instance generation",
+    "task identification",
+    "filtering heuristics",
+    "bootstrapping",
+    "finetuning",
+    "seed tasks"
+  ],
+  "problem": "Instruction-tuned language models rely heavily on limited human-written instruction data, which constrains diversity, creativity, and generalization.",
+  "domain": "general",
+  "paper_type": "technique"
+}

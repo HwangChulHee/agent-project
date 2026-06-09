@@ -1,0 +1,29 @@
+{
+  "title": "Constitutional AI: Harmlessness from AI Feedback",
+  "task": [
+    "AI alignment",
+    "harmless assistant training",
+    "preference modeling",
+    "reinforcement learning from AI feedback",
+    "supervised learning with self-critique"
+  ],
+  "defines": [
+    {
+      "name": "Constitutional AI",
+      "definition": "A training framework that uses a written constitution of principles plus AI self-critiques and AI preference judgments to train a more harmless assistant with minimal human supervision."
+    }
+  ],
+  "uses": [
+    "self-critiques",
+    "revisions",
+    "supervised fine-tuning",
+    "preference model",
+    "reinforcement learning",
+    "chain-of-thought reasoning",
+    "AI feedback",
+    "principles or constitution"
+  ],
+  "problem": "Training helpful AI assistants to be harmless and non-evasive is difficult when relying on human labels for harmfulness, and existing methods create tension between helpfulness and harmlessness.",
+  "domain": "general",
+  "paper_type": "technique"
+}

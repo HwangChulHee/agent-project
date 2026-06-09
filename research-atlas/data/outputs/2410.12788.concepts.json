@@ -1,0 +1,27 @@
+{
+  "title": "Meta-Chunking: A Lightweight Text Chunking Framework for Retrieval-Augmented Generation",
+  "task": [
+    "text chunking",
+    "retrieval-augmented generation preprocessing"
+  ],
+  "defines": [
+    {
+      "name": "Meta-Chunking",
+      "definition": "A lightweight chunking framework for RAG that combines uncertainty-based boundary detection with dynamic merging and information compensation to produce more coherent text chunks."
+    }
+  ],
+  "uses": [
+    "perplexity chunking",
+    "margin sampling chunking",
+    "dynamic merging",
+    "two-stage hierarchical summary generation",
+    "three-stage text chunk rewriting",
+    "missing reflection",
+    "refinement",
+    "completion",
+    "small language models"
+  ],
+  "problem": "Standard RAG chunking methods often miss logical boundaries and lose semantic completeness, producing incoherent chunks that hurt retrieval and generation quality.",
+  "domain": "general",
+  "paper_type": "technique"
+}

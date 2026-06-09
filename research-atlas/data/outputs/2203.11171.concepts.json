@@ -1,0 +1,23 @@
+{
+  "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+  "task": [
+    "reasoning",
+    "decoding strategy",
+    "question answering"
+  ],
+  "defines": [
+    {
+      "name": "self-consistency",
+      "definition": "A decoding strategy for chain-of-thought prompting that samples multiple reasoning paths and selects the most consistent final answer by marginalizing over the sampled paths."
+    }
+  ],
+  "uses": [
+    "chain-of-thought prompting",
+    "sampling",
+    "marginalization",
+    "greedy decoding"
+  ],
+  "problem": "Greedy decoding in chain-of-thought prompting can be repetitive, locally optimal, and overly dependent on a single reasoning path.",
+  "domain": "general",
+  "paper_type": "technique"
+}

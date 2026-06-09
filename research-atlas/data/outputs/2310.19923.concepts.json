@@ -1,0 +1,24 @@
+{
+  "title": "Jina Embeddings v2",
+  "task": [
+    "text embedding",
+    "long document embedding",
+    "information retrieval",
+    "semantic clustering",
+    "text re-ranking"
+  ],
+  "defines": [
+    {
+      "name": "Jina Embeddings v2",
+      "definition": "An open-source text embedding model that extends BERT with bidirectional ALiBi to encode sequences up to 8192 tokens for high-quality document embeddings."
+    }
+  ],
+  "uses": [
+    "BERT",
+    "ALiBi",
+    "fine-tuning"
+  ],
+  "problem": "Existing embedding models, especially BERT-based ones, cannot represent long documents well and often require truncation or chunking, which hurts semantics and increases memory and search costs.",
+  "domain": "general",
+  "paper_type": "technique"
+}

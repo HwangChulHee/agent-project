@@ -1,0 +1,28 @@
+{
+  "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+  "task": [
+    "tool use learning",
+    "self-supervised language modeling",
+    "question answering",
+    "arithmetic",
+    "machine translation",
+    "search-assisted text completion"
+  ],
+  "defines": [
+    {
+      "name": "Toolformer",
+      "definition": "A language model trained in a self-supervised way to decide which external APIs to call, when to call them, what arguments to pass, and how to integrate the results into next-token prediction."
+    }
+  ],
+  "uses": [
+    "calculator",
+    "question answering system",
+    "search engine",
+    "translation system",
+    "calendar",
+    "API calls"
+  ],
+  "problem": "Language models struggle with basic capabilities like arithmetic, factual lookup, up-to-date information, low-resource languages, and time awareness, and existing tool-use methods require heavy supervision or task-specific setups.",
+  "domain": "general",
+  "paper_type": "technique"
+}
