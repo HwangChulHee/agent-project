@@ -1,0 +1,2707 @@
+{
+  "nodes": {
+    "paper:1706.03762": {
+      "type": "paper",
+      "title": "Attention Is All You Need",
+      "problem": "Recurrent and convolutional sequence models are inherently sequential, limiting parallelization and increasing training cost for long sequence tasks.",
+      "task": [
+        "machine translation",
+        "sequence transduction",
+        "constituency parsing"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:transformer": {
+      "type": "concept",
+      "canonical": "Transformer",
+      "definition": "A neural network architecture for sequence transduction that relies entirely on attention mechanisms instead of recurrence or convolutions.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:rnn": {
+      "type": "concept",
+      "canonical": "RNN",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:lstm": {
+      "type": "concept",
+      "canonical": "LSTM",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:gru": {
+      "type": "concept",
+      "canonical": "GRU",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:1810.04805": {
+      "type": "paper",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "problem": "Existing pre-trained language models are typically unidirectional, which limits bidirectional context modeling and hurts performance on many downstream NLP tasks.",
+      "task": [
+        "language representation learning",
+        "text pre-training",
+        "question answering",
+        "natural language inference",
+        "sentence classification",
+        "token-level prediction"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:bert": {
+      "type": "concept",
+      "canonical": "BERT",
+      "definition": "BERT is a bidirectional Transformer-based language representation model pre-trained with masked language modeling and next sentence prediction for fine-tuning on downstream NLP tasks.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:elmo": {
+      "type": "concept",
+      "canonical": "ELMo",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:openai gpt": {
+      "type": "concept",
+      "canonical": "OpenAI GPT",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:1910.10683": {
+      "type": "paper",
+      "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "problem": "The growing diversity of transfer learning methods for NLP makes it difficult to compare approaches and understand which design choices drive performance.",
+      "task": [
+        "transfer learning",
+        "multi-task learning",
+        "natural language processing",
+        "text generation",
+        "question answering",
+        "text classification",
+        "summarization"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:t5": {
+      "type": "concept",
+      "canonical": "T5",
+      "definition": "A unified text-to-text transfer learning framework that casts every NLP problem as text input to text output and trains a single model across tasks.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:rag": {
+      "type": "concept",
+      "canonical": "RAG",
+      "definition": "A retrieval-augmented generation framework that combines a pre-trained seq2seq generator with a dense retriever over Wikipedia and jointly fine-tunes them end-to-end for knowledge-intensive generation.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2001.08361": {
+      "type": "paper",
+      "title": "Empirical Scaling Laws for Language Model Performance",
+      "problem": "It is unclear how language model loss depends on model size, dataset size, and compute, and how to allocate a fixed compute budget optimally.",
+      "task": [
+        "scaling law analysis",
+        "language model performance modeling",
+        "compute-optimal training"
+      ],
+      "domain": "general",
+      "paper_type": "analysis"
+    },
+    "paper:2002.08909": {
+      "type": "paper",
+      "title": "REALM: Retrieval-Augmented Language Model Pre-Training",
+      "problem": "Language models store world knowledge implicitly in parameters, making it hard to interpret and scale to larger knowledge corpora.",
+      "task": [
+        "language model pre-training",
+        "open-domain question answering",
+        "knowledge retrieval"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:realm": {
+      "type": "concept",
+      "canonical": "REALM",
+      "definition": "A retrieval-augmented language model pre-training framework that learns a latent knowledge retriever and uses retrieved documents during pre-training, fine-tuning, and inference.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:roberta": {
+      "type": "concept",
+      "canonical": "RoBERTa",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:knn lm": {
+      "type": "concept",
+      "canonical": "kNN-LM",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2004.04906": {
+      "type": "paper",
+      "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+      "problem": "Traditional sparse retrieval methods like TF-IDF and BM25 are effective but fail to capture semantic matches needed for high-quality open-domain QA retrieval.",
+      "task": [
+        "open-domain question answering",
+        "passage retrieval",
+        "end-to-end question answering"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:dense passage retriever (dpr)": {
+      "type": "concept",
+      "canonical": "Dense Passage Retriever (DPR)",
+      "definition": "A dual-encoder dense retrieval model that embeds questions and passages into a shared vector space and retrieves relevant passages by maximizing inner products.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:bm25": {
+      "type": "concept",
+      "canonical": "BM25",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:tf idf": {
+      "type": "concept",
+      "canonical": "TF-IDF",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:orqa": {
+      "type": "concept",
+      "canonical": "ORQA",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2004.05150": {
+      "type": "paper",
+      "title": "Longformer: The Long-Document Transformer",
+      "problem": "Standard Transformer self-attention scales quadratically with sequence length, making it impractical for long documents and limiting document-level NLP performance.",
+      "task": [
+        "long document modeling",
+        "language modeling",
+        "document classification",
+        "question answering",
+        "coreference resolution",
+        "summarization",
+        "sequence-to-sequence learning"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:longformer": {
+      "type": "concept",
+      "canonical": "Longformer",
+      "definition": "A modified Transformer architecture with a sparse attention mechanism that scales linearly with sequence length for processing long documents.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:led": {
+      "type": "concept",
+      "canonical": "LED",
+      "definition": "A Longformer-based encoder-decoder model designed for long-document sequence-to-sequence tasks such as summarization.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:transformer xl": {
+      "type": "concept",
+      "canonical": "Transformer-XL",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:reformer": {
+      "type": "concept",
+      "canonical": "Reformer",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:bp transformer": {
+      "type": "concept",
+      "canonical": "BP-Transformer",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2004.12832": {
+      "type": "paper",
+      "title": "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT",
+      "problem": "BERT-based retrieval models are highly effective but far too computationally expensive for practical large-scale search.",
+      "task": [
+        "passage retrieval",
+        "document ranking",
+        "neural re-ranking",
+        "end-to-end search"
+      ],
+      "domain": "information retrieval",
+      "paper_type": "technique"
+    },
+    "concept:colbert": {
+      "type": "concept",
+      "canonical": "ColBERT",
+      "definition": "A BERT-based ranking model that uses contextualized late interaction to efficiently compute query-document relevance for retrieval.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:knrm": {
+      "type": "concept",
+      "canonical": "KNRM",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:drmm": {
+      "type": "concept",
+      "canonical": "DRMM",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:duet": {
+      "type": "concept",
+      "canonical": "Duet",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:dssm": {
+      "type": "concept",
+      "canonical": "DSSM",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:snrm": {
+      "type": "concept",
+      "canonical": "SNRM",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:conv knrm": {
+      "type": "concept",
+      "canonical": "Conv-KNRM",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2005.11401": {
+      "type": "paper",
+      "title": "Large pre-trained language models have been shown to store factual knowledge in their parameters, and achieve state-of-the-art results when ﬁne-tuned on downstream NLP tasks. However, their ability to access and precisely manipulate knowledge is still limited, and hence on knowledge-intensive tasks, their performance lags behind task-speciﬁc architectures. Additionally, providing provenance for their decisions and updating their world knowledge remain open research problems. Pre-trained models with a differentiable access mechanism to explicit non-parametric memory have so far been only investigated for extractive downstream tasks. We explore a general-purpose ﬁne-tuning recipe for retrieval-augmented generation (RAG) — models which combine pre-trained parametric and non-parametric memory for language generation. We introduce RAG models where the parametric memory is a pre-trained seq2seq model and the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever. We compare two RAG formulations, one which conditions on the same retrieved passages across the whole generated sequence, and another which can use different passages per token. We ﬁne-tune and evaluate our models on a wide range of knowledge-intensive NLP tasks and set the state of the art on three open domain QA tasks, outperforming parametric seq2seq models and task-speciﬁc retrieve-and-extract architectures. For language generation tasks, we ﬁnd that RAG models generate more speciﬁc, diverse and factual language than a state-of-the-art parametric-only seq2seq baseline.",
+      "problem": "Pre-trained language models lack reliable access to external knowledge, are hard to update, and do not provide sufficient provenance for knowledge-intensive tasks.",
+      "task": [
+        "retrieval-augmented generation",
+        "knowledge-intensive NLP",
+        "open-domain question answering",
+        "language generation",
+        "fact verification"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:dpr": {
+      "type": "concept",
+      "canonical": "DPR",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2005.14165": {
+      "type": "paper",
+      "title": "GPT-3: Language Models are Few-Shot Learners",
+      "problem": "Current NLP systems typically require large task-specific fine-tuning datasets and still struggle to perform new language tasks from only a few examples or simple instructions.",
+      "task": [
+        "few-shot language understanding",
+        "question answering",
+        "machine translation",
+        "cloze task solving",
+        "reasoning",
+        "domain adaptation",
+        "text generation"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:gpt 3": {
+      "type": "concept",
+      "canonical": "GPT-3",
+      "definition": "An autoregressive language model with 175 billion parameters that performs a wide range of NLP tasks in a few-shot setting without gradient updates or task-specific fine-tuning.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2101.03961": {
+      "type": "paper",
+      "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+      "problem": "Mixture-of-experts models are promising but are difficult to adopt widely because of routing complexity, communication overhead, and training instability.",
+      "task": [
+        "language modeling",
+        "machine translation",
+        "multilingual language modeling",
+        "pre-training"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:switch transformer": {
+      "type": "concept",
+      "canonical": "Switch Transformer",
+      "definition": "A simplified mixture-of-experts transformer that routes each input token to a single expert to enable sparse, scalable training with reduced communication and computation costs.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:mixture of experts": {
+      "type": "concept",
+      "canonical": "Mixture of Experts",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:mt5": {
+      "type": "concept",
+      "canonical": "mT5",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2106.09685": {
+      "type": "paper",
+      "title": "Low-Rank Adaptation of Large Language Models",
+      "problem": "Full fine-tuning of large pretrained language models is too expensive in storage, memory, and deployment cost, while existing parameter-efficient methods often add latency or reduce quality.",
+      "task": [
+        "parameter-efficient fine-tuning",
+        "language model adaptation"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:lora": {
+      "type": "concept",
+      "canonical": "LoRA",
+      "definition": "A parameter-efficient fine-tuning method that freezes pretrained model weights and injects trainable low-rank decomposition matrices into Transformer layers to adapt large language models.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:adapter": {
+      "type": "concept",
+      "canonical": "adapter",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:prefix tuning": {
+      "type": "concept",
+      "canonical": "prefix-tuning",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2109.01652": {
+      "type": "paper",
+      "title": "FLAN: Finetuned Language Net",
+      "problem": "Large language models perform poorly in zero-shot settings compared with few-shot prompting, especially on tasks whose formats differ from pretraining data.",
+      "task": [
+        "instruction tuning",
+        "zero-shot learning",
+        "natural language understanding",
+        "multi-task learning"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:flan": {
+      "type": "concept",
+      "canonical": "FLAN",
+      "definition": "A pretrained language model instruction-tuned on many NLP datasets phrased as natural language instructions to improve zero-shot performance on unseen tasks.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2201.11903": {
+      "type": "paper",
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "problem": "Standard few-shot prompting performs poorly on tasks that require complex reasoning, and rationale-based training is costly because it requires many high-quality explanations.",
+      "task": [
+        "few-shot prompting",
+        "reasoning",
+        "arithmetic reasoning",
+        "commonsense reasoning",
+        "symbolic reasoning",
+        "math word problem solving"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:cot": {
+      "type": "concept",
+      "canonical": "CoT",
+      "definition": "A few-shot prompting method that includes intermediate natural-language reasoning steps between the input and output to elicit complex reasoning in large language models.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2203.02155": {
+      "type": "paper",
+      "title": "InstructGPT",
+      "problem": "Large language models often fail to follow user intent and can generate untruthful, toxic, or unhelpful outputs.",
+      "task": [
+        "instruction following",
+        "language model alignment",
+        "human feedback fine-tuning"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:instructgpt": {
+      "type": "concept",
+      "canonical": "InstructGPT",
+      "definition": "A family of GPT-3 models fine-tuned with supervised demonstrations and reinforcement learning from human feedback to better follow user instructions.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:rlhf": {
+      "type": "concept",
+      "canonical": "RLHF",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:ppo": {
+      "type": "concept",
+      "canonical": "PPO",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2203.11171": {
+      "type": "paper",
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "problem": "Greedy decoding in chain-of-thought prompting can be repetitive, locally optimal, and overly dependent on a single reasoning path.",
+      "task": [
+        "reasoning",
+        "decoding strategy",
+        "question answering"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:self consistency": {
+      "type": "concept",
+      "canonical": "Self-Consistency",
+      "definition": "A decoding strategy for chain-of-thought prompting that samples multiple reasoning paths and selects the most consistent final answer by marginalizing over the sampled paths.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2203.15556": {
+      "type": "paper",
+      "title": "Training Compute-Optimal Large Language Models",
+      "problem": "Current large language models are often under-trained because model size has been scaled up faster than the amount of training data under fixed compute budgets.",
+      "task": [
+        "compute-optimal scaling analysis",
+        "large language model pretraining",
+        "language model evaluation"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:chinchilla": {
+      "type": "concept",
+      "canonical": "Chinchilla",
+      "definition": "A compute-optimal 70B-parameter language model trained with substantially more data to maximize performance under a fixed compute budget.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2204.02311": {
+      "type": "paper",
+      "title": "PaLM: Scaling Language Modeling with Pathways",
+      "problem": "Existing language models had not yet been studied at this scale, and the paper addresses how scaling affects few-shot performance, reasoning, multilingual ability, and safety-related behaviors.",
+      "task": [
+        "few-shot language modeling",
+        "language understanding",
+        "text generation",
+        "multi-step reasoning",
+        "multilingual tasks",
+        "source code generation",
+        "bias and toxicity analysis",
+        "training data memorization analysis"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:palm": {
+      "type": "concept",
+      "canonical": "PaLM",
+      "definition": "A 540-billion-parameter densely activated Transformer language model trained to study the effects of scaling on few-shot learning and broad language capabilities.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:pathways": {
+      "type": "concept",
+      "canonical": "Pathways",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2205.10625": {
+      "type": "paper",
+      "title": "Least-to-Most Prompting Enables Complex Reasoning in Large Language Models",
+      "problem": "Chain-of-thought prompting often fails to generalize from easy demonstration examples to harder problems that require stepwise decomposition.",
+      "task": [
+        "prompting",
+        "few-shot reasoning",
+        "compositional generalization",
+        "symbolic manipulation",
+        "math reasoning"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:least to most prompting": {
+      "type": "concept",
+      "canonical": "least-to-most prompting",
+      "definition": "A two-stage prompting strategy that first decomposes a complex problem into simpler subproblems and then solves them sequentially using earlier subproblem answers as context.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2205.14135": {
+      "type": "paper",
+      "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "problem": "Standard attention and many approximate attention methods are bottlenecked by quadratic memory access overhead on long sequences, limiting speed and scalability.",
+      "task": [
+        "efficient transformer attention",
+        "long-sequence modeling",
+        "exact attention computation",
+        "approximate block-sparse attention"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:flashattention": {
+      "type": "concept",
+      "canonical": "FlashAttention",
+      "definition": "An IO-aware exact attention algorithm that uses tiling and kernel fusion to minimize GPU memory traffic between HBM and SRAM.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:block sparse flashattention": {
+      "type": "concept",
+      "canonical": "block-sparse FlashAttention",
+      "definition": "A sparse attention variant built on FlashAttention that exploits block sparsity to further reduce memory access and speed up attention.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2206.07682": {
+      "type": "paper",
+      "title": "Emergent Abilities of Large Language Models",
+      "problem": "Scaling laws explain many gains in language models, but some downstream abilities appear unpredictably only at larger scales and cannot be anticipated from smaller models.",
+      "task": [
+        "analysis of language model scaling",
+        "survey of emergent capabilities in LLMs"
+      ],
+      "domain": "general",
+      "paper_type": "survey"
+    },
+    "concept:emergent abilities of large language models": {
+      "type": "concept",
+      "canonical": "emergent abilities of large language models",
+      "definition": "Abilities that are absent in smaller-scale models but present in larger-scale models, and therefore cannot be predicted by extrapolating smaller-model performance.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2210.03629": {
+      "type": "paper",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "problem": "Separate reasoning-only and acting-only approaches are brittle because reasoning is not grounded in the external world and acting methods do not support explicit high-level reasoning or working memory.",
+      "task": [
+        "question answering",
+        "fact verification",
+        "interactive decision making",
+        "language reasoning"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:react": {
+      "type": "concept",
+      "canonical": "ReAct",
+      "definition": "A prompting paradigm that interleaves verbal reasoning traces with task-specific actions to improve language model problem solving.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2212.08073": {
+      "type": "paper",
+      "title": "Constitutional AI: Harmlessness from AI Feedback",
+      "problem": "Training helpful AI assistants to be harmless and non-evasive is difficult when relying on human labels for harmfulness, and existing methods create tension between helpfulness and harmlessness.",
+      "task": [
+        "AI alignment",
+        "harmless assistant training",
+        "preference modeling",
+        "reinforcement learning from AI feedback",
+        "supervised learning with self-critique"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:constitutional ai": {
+      "type": "concept",
+      "canonical": "Constitutional AI",
+      "definition": "A training framework that uses a written constitution of principles plus AI self-critiques and AI preference judgments to train a more harmless assistant with minimal human supervision.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2212.10496": {
+      "type": "paper",
+      "title": "HyDE: Precise Zero-Shot Dense Retrieval without Relevance Labels",
+      "problem": "Fully zero-shot dense retrieval is difficult because effective retrieval usually depends on relevance labels or task-specific supervision.",
+      "task": [
+        "dense retrieval",
+        "zero-shot retrieval",
+        "information retrieval",
+        "question answering",
+        "web search",
+        "fact verification"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:hyde": {
+      "type": "concept",
+      "canonical": "HyDE",
+      "definition": "A zero-shot dense retrieval method that generates a hypothetical document from a query with an instruction-following language model and then embeds it with a contrastive encoder for retrieval.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:contriever": {
+      "type": "concept",
+      "canonical": "Contriever",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2212.10560": {
+      "type": "paper",
+      "title": "SELF-INSTRUCT: Aligning Language Models with Self-Generated Instructions",
+      "problem": "Instruction-tuned language models rely heavily on limited human-written instruction data, which constrains diversity, creativity, and generalization.",
+      "task": [
+        "instruction tuning",
+        "data generation",
+        "instruction following",
+        "language model finetuning"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:self instruct": {
+      "type": "concept",
+      "canonical": "SELF-INSTRUCT",
+      "definition": "A semi-automated bootstrapping framework that improves instruction-following by generating synthetic instructions and instances from a language model and using them to finetune the same model.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2301.12652": {
+      "type": "paper",
+      "title": "REPLUG: Retrieval-Augmented Black-Box Language Models",
+      "problem": "Prior retrieval-augmented language models require access to internal language model representations or fine-tuning, making them difficult to apply to large API-based black-box models.",
+      "task": [
+        "retrieval-augmented language modeling",
+        "open-domain question answering",
+        "in-context learning",
+        "language model perplexity reduction"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:replug": {
+      "type": "concept",
+      "canonical": "REPLUG",
+      "definition": "A retrieval-augmented language modeling framework that augments a frozen black-box language model by prepending retrieved documents and optionally ensembles multiple retrieved contexts in parallel.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:replug lsr": {
+      "type": "concept",
+      "canonical": "REPLUG LSR",
+      "definition": "A training scheme that uses a black-box language model’s scores to supervise and improve the retriever.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2302.04761": {
+      "type": "paper",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "problem": "Language models struggle with basic capabilities like arithmetic, factual lookup, up-to-date information, low-resource languages, and time awareness, and existing tool-use methods require heavy supervision or task-specific setups.",
+      "task": [
+        "tool use learning",
+        "self-supervised language modeling",
+        "question answering",
+        "arithmetic",
+        "machine translation",
+        "search-assisted text completion"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:toolformer": {
+      "type": "concept",
+      "canonical": "Toolformer",
+      "definition": "A language model trained in a self-supervised way to decide which external APIs to call, when to call them, what arguments to pass, and how to integrate the results into next-token prediction.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2302.13971": {
+      "type": "paper",
+      "title": "LLaMA: Open and Efficient Foundation Language Models",
+      "problem": "Existing large language models are often trained on proprietary data and are not optimized for inference efficiency at different deployment budgets.",
+      "task": [
+        "foundation language modeling",
+        "language model pretraining",
+        "benchmark evaluation"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:llama": {
+      "type": "concept",
+      "canonical": "LLaMA",
+      "definition": "A collection of open foundation language models trained on publicly available data and optimized for strong performance at different inference budgets.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:opt": {
+      "type": "concept",
+      "canonical": "OPT",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:gpt neox": {
+      "type": "concept",
+      "canonical": "GPT-NeoX",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:bloom": {
+      "type": "concept",
+      "canonical": "BLOOM",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:glm": {
+      "type": "concept",
+      "canonical": "GLM",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2303.11366": {
+      "type": "paper",
+      "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "problem": "Traditional reinforcement learning for language agents is sample-inefficient and requires expensive fine-tuning, making it hard for agents to learn quickly from trial and error.",
+      "task": [
+        "goal-driven language agents",
+        "sequential decision-making",
+        "code generation",
+        "language reasoning"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:reflexion": {
+      "type": "concept",
+      "canonical": "Reflexion",
+      "definition": "A framework that improves language agents by converting task feedback into verbal self-reflection stored in episodic memory instead of updating model weights.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:saycan": {
+      "type": "concept",
+      "canonical": "SayCan",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:hugginggpt": {
+      "type": "concept",
+      "canonical": "HuggingGPT",
+      "definition": "An LLM-powered agent that uses ChatGPT as a controller to plan tasks, select expert models from Hugging Face, execute them, and synthesize the results for complex AI requests.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:generative agents": {
+      "type": "concept",
+      "canonical": "Generative Agents",
+      "definition": "Computational agents that simulate believable human behavior by storing, reflecting on, and retrieving memories to plan and act over time.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:webgpt": {
+      "type": "concept",
+      "canonical": "WebGPT",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2303.17580": {
+      "type": "paper",
+      "title": "HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face",
+      "problem": "Current LLMs cannot autonomously solve complicated multimodal AI tasks and need a way to coordinate external expert models.",
+      "task": [
+        "multi-step AI task solving",
+        "LLM agent",
+        "model orchestration",
+        "multimodal task execution"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "paper:2303.17651": {
+      "type": "paper",
+      "title": "SELF-REFINE: Iterative Refinement with Self-Feedback",
+      "problem": "LLMs often produce suboptimal initial outputs and existing refinement methods typically require supervised data, extra training, or external reward models.",
+      "task": [
+        "text generation",
+        "dialogue response generation",
+        "mathematical reasoning",
+        "code generation",
+        "program refinement"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:self refine": {
+      "type": "concept",
+      "canonical": "Self-Refine",
+      "definition": "An iterative self-refinement algorithm that improves an LLM's initial output by repeatedly generating self-feedback and using that feedback to refine the output.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2304.03442": {
+      "type": "paper",
+      "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+      "problem": "Existing agents and language models struggle to maintain long-term coherence and believable social behavior as experiences accumulate over time.",
+      "task": [
+        "interactive simulation",
+        "agent modeling",
+        "human behavior simulation",
+        "social interaction simulation"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "paper:2304.09542": {
+      "type": "paper",
+      "title": "RankGPT: How Far Are Large Language Models from Effective Rankers?",
+      "problem": "Existing information retrieval methods rely on supervised rankers, while large language models are not naturally aligned with passage-ranking objectives and may be affected by data contamination concerns.",
+      "task": [
+        "passage re-ranking",
+        "information retrieval",
+        "zero-shot evaluation",
+        "knowledge contamination evaluation",
+        "distillation of ranking models"
+      ],
+      "domain": "information retrieval",
+      "paper_type": "technique"
+    },
+    "concept:rankgpt": {
+      "type": "concept",
+      "canonical": "RankGPT",
+      "definition": "A prompting and distillation framework that uses large language models to rank passages by directly generating permutations of candidate passages.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:monot5": {
+      "type": "concept",
+      "canonical": "monoT5",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:ranknet": {
+      "type": "concept",
+      "canonical": "RankNet",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2305.04091": {
+      "type": "paper",
+      "title": "Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models",
+      "problem": "Zero-shot-CoT still produces calculation errors, missing-step errors, and semantic misunderstanding errors on multi-step reasoning tasks.",
+      "task": [
+        "prompt engineering",
+        "multi-step reasoning",
+        "question answering"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:plan and solve (ps) prompting": {
+      "type": "concept",
+      "canonical": "Plan-and-Solve (PS) Prompting",
+      "definition": "A zero-shot prompting strategy that first asks the model to devise a plan to break a problem into subtasks and then solve the subtasks according to that plan.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:ps+ prompting": {
+      "type": "concept",
+      "canonical": "PS+ Prompting",
+      "definition": "An extended Plan-and-Solve prompting strategy that adds more detailed instructions to improve reasoning quality and reduce calculation errors.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:zero shot cot": {
+      "type": "concept",
+      "canonical": "Zero-shot-CoT",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:few shot chain of thought prompting": {
+      "type": "concept",
+      "canonical": "Few-shot chain-of-thought prompting",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:zero shot program of thought prompting": {
+      "type": "concept",
+      "canonical": "Zero-shot-Program-of-Thought Prompting",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2305.06983": {
+      "type": "paper",
+      "title": "Forward-Looking Active REtrieval augmented generation (FLARE)",
+      "problem": "Standard retrieve-and-generate LMs retrieve only once from the input, which is insufficient for long-form generation with evolving information needs and can lead to hallucination or inappropriate retrieval.",
+      "task": [
+        "long-form knowledge-intensive generation",
+        "retrieval-augmented generation",
+        "question answering",
+        "summarization",
+        "reasoning"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:flare": {
+      "type": "concept",
+      "canonical": "FLARE",
+      "definition": "A forward-looking active retrieval augmented generation method that iteratively predicts the next sentence, retrieves documents using that prediction when token confidence is low, and regenerates the sentence with the retrieved evidence.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2305.10601": {
+      "type": "paper",
+      "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+      "problem": "Token-level left-to-right language model inference is too myopic for tasks requiring exploration, strategic lookahead, or global decision making.",
+      "task": [
+        "general problem solving",
+        "planning",
+        "search",
+        "reasoning"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:tot": {
+      "type": "concept",
+      "canonical": "ToT",
+      "definition": "A language model inference framework that organizes coherent intermediate reasoning units as a tree and uses search over them for deliberate problem solving.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2305.14283": {
+      "type": "paper",
+      "title": "Rewrite-Retrieve-Read: A New Paradigm for Retrieval-Augmented LLMs",
+      "problem": "Existing retrieval-augmented LLM pipelines use fixed queries that do not match the knowledge actually needed, limiting retrieval quality and downstream performance.",
+      "task": [
+        "retrieval-augmented language modeling",
+        "open-domain question answering",
+        "multiple-choice question answering",
+        "query rewriting"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:rewrite retrieve read": {
+      "type": "concept",
+      "canonical": "Rewrite-Retrieve-Read",
+      "definition": "A retrieval-augmented LLM framework that rewrites the input query before retrieval to better align the search request with the needed knowledge and improve downstream reading performance.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2305.14314": {
+      "type": "paper",
+      "title": "QLORA: Efficient Finetuning of Quantized LLMs",
+      "problem": "Full-precision finetuning of very large language models requires prohibitively large GPU memory, and existing quantization methods generally do not support training without degrading performance.",
+      "task": [
+        "parameter-efficient finetuning",
+        "instruction tuning",
+        "chatbot training",
+        "model evaluation"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:qlora": {
+      "type": "concept",
+      "canonical": "QLoRA",
+      "definition": "An efficient finetuning method that backpropagates through a frozen 4-bit quantized pretrained language model into Low Rank Adapters to enable low-memory LLM finetuning without performance loss.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:guanaco": {
+      "type": "concept",
+      "canonical": "Guanaco",
+      "definition": "A family of chatbot models finetuned with QLORA that achieves strong Vicuna benchmark performance.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2305.16291": {
+      "type": "paper",
+      "title": "VOYAGER: An Open-Ended Embodied Agent with Large Language Models",
+      "problem": "Existing embodied agents are not lifelong learners and struggle to systematically explore, accumulate skills, and generalize over long time spans in open-ended environments like Minecraft.",
+      "task": [
+        "embodied lifelong learning",
+        "open-ended exploration",
+        "Minecraft control",
+        "skill acquisition",
+        "program synthesis for agent actions"
+      ],
+      "domain": "minecraft",
+      "paper_type": "technique"
+    },
+    "concept:voyager": {
+      "type": "concept",
+      "canonical": "VOYAGER",
+      "definition": "An LLM-powered embodied lifelong learning agent for Minecraft that autonomously explores, acquires skills, and makes new discoveries using code-based actions and a growing skill library.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:gpt 4": {
+      "type": "concept",
+      "canonical": "GPT-4",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2305.18290": {
+      "type": "paper",
+      "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "problem": "RLHF is complex, unstable, and computationally expensive because it requires fitting a reward model and then performing reinforcement learning to optimize the language model policy.",
+      "task": [
+        "preference learning",
+        "language model fine-tuning",
+        "reinforcement learning from human feedback"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:direct preference optimization": {
+      "type": "concept",
+      "canonical": "Direct Preference Optimization",
+      "definition": "A reinforcement-learning-free method for training language models from human preferences by directly optimizing a policy with a binary classification objective.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2307.09288": {
+      "type": "paper",
+      "title": "Llama 2",
+      "problem": "Open-source chat models lag behind closed-source models in helpfulness and safety, and the paper aims to provide a stronger open alternative.",
+      "task": [
+        "large language model pretraining",
+        "dialogue fine-tuning",
+        "chat model evaluation",
+        "safety alignment"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:llama 2": {
+      "type": "concept",
+      "canonical": "Llama 2",
+      "definition": "A collection of pretrained and fine-tuned large language models ranging from 7 billion to 70 billion parameters.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:llama 2 chat": {
+      "type": "concept",
+      "canonical": "Llama 2-Chat",
+      "definition": "A fine-tuned version of Llama 2 optimized for dialogue use cases.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2308.00352": {
+      "type": "paper",
+      "title": "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+      "problem": "Existing LLM-based multi-agent systems often fail on complex tasks because naive chaining causes cascading hallucinations, inconsistencies, and weak coordination.",
+      "task": [
+        "multi-agent collaboration",
+        "software engineering",
+        "code generation",
+        "task decomposition",
+        "automated problem solving"
+      ],
+      "domain": "software engineering",
+      "paper_type": "technique"
+    },
+    "concept:metagpt": {
+      "type": "concept",
+      "canonical": "MetaGPT",
+      "definition": "A multi-agent meta-programming framework that encodes software-development standardized operating procedures into coordinated LLM agent workflows.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:autogpt": {
+      "type": "concept",
+      "canonical": "AutoGPT",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:langchain": {
+      "type": "concept",
+      "canonical": "LangChain",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:agentverse": {
+      "type": "concept",
+      "canonical": "AgentVerse",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:chatdev": {
+      "type": "concept",
+      "canonical": "ChatDev",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2308.08155": {
+      "type": "paper",
+      "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
+      "problem": "Developers need a flexible, generic framework for coordinating multiple agents to build LLM applications across diverse domains and conversation patterns.",
+      "task": [
+        "multi-agent LLM application development",
+        "agent-based task solving",
+        "conversation programming",
+        "human-in-the-loop interaction"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:autogen": {
+      "type": "concept",
+      "canonical": "AutoGen",
+      "definition": "An open-source framework for building LLM applications with customizable, conversable agents that coordinate through multi-agent conversations.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2309.01431": {
+      "type": "paper",
+      "title": "Retrieval-Augmented Generation Benchmark (RGB)",
+      "problem": "Existing RAG evaluation lacks a rigorous, comprehensive benchmark for diagnosing how different LLMs handle noise, missing evidence, multi-document reasoning, and false information.",
+      "task": [
+        "retrieval-augmented generation evaluation",
+        "large language model benchmarking",
+        "question answering"
+      ],
+      "domain": "general",
+      "paper_type": "benchmark"
+    },
+    "concept:rgb": {
+      "type": "concept",
+      "canonical": "RGB",
+      "definition": "A bilingual benchmark for evaluating retrieval-augmented generation in large language models across four fundamental abilities: noise robustness, negative rejection, information integration, and counterfactual robustness.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2310.04406": {
+      "type": "paper",
+      "title": "Language Agent Tree Search Unifies Reasoning, Acting, and Planning in Language Models",
+      "problem": "Existing language-model agents are too reflexive and insufficiently deliberative, lacking effective planning over multiple reasoning paths and integration of external feedback.",
+      "task": [
+        "autonomous agent decision-making",
+        "reasoning",
+        "planning",
+        "interactive question answering",
+        "web navigation",
+        "programming",
+        "math problem solving"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:lats": {
+      "type": "concept",
+      "canonical": "LATS",
+      "definition": "A general language-agent framework that uses Monte Carlo Tree Search to combine reasoning, acting, planning, external feedback, and self-reflection for improved decision-making.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:monte carlo tree search": {
+      "type": "concept",
+      "canonical": "Monte Carlo Tree Search",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2310.11511": {
+      "type": "paper",
+      "title": "Self-Reflective Retrieval-Augmented Generation",
+      "problem": "Standard RAG systems retrieve passages indiscriminately and do not explicitly assess whether retrieved evidence improves generation quality or factual consistency.",
+      "task": [
+        "open-domain question answering",
+        "reasoning",
+        "fact verification",
+        "long-form generation"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:self rag": {
+      "type": "concept",
+      "canonical": "Self-RAG",
+      "definition": "A retrieval-augmented generation framework that trains a single language model to decide when to retrieve, critique its own outputs, and generate with reflection tokens for improved factuality and controllability.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2310.19923": {
+      "type": "paper",
+      "title": "Jina Embeddings v2",
+      "problem": "Existing embedding models, especially BERT-based ones, cannot represent long documents well and often require truncation or chunking, which hurts semantics and increases memory and search costs.",
+      "task": [
+        "text embedding",
+        "long document embedding",
+        "information retrieval",
+        "semantic clustering",
+        "text re-ranking"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:jina embeddings v2": {
+      "type": "concept",
+      "canonical": "Jina Embeddings v2",
+      "definition": "An open-source text embedding model that extends BERT with bidirectional ALiBi to encode sequences up to 8192 tokens for high-quality document embeddings.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:alibi": {
+      "type": "concept",
+      "canonical": "ALiBi",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:jina embeddings v1": {
+      "type": "concept",
+      "canonical": "Jina Embeddings v1",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "concept:e5": {
+      "type": "concept",
+      "canonical": "E5",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2312.00752": {
+      "type": "paper",
+      "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+      "problem": "Transformer-based sequence models have quadratic scaling, while prior efficient sequence models have been unable to match attention on discrete, information-dense modalities like language because they cannot perform content-based reasoning.",
+      "task": [
+        "sequence modeling",
+        "language modeling",
+        "audio modeling",
+        "genomics modeling"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:mamba": {
+      "type": "concept",
+      "canonical": "Mamba",
+      "definition": "A simplified end-to-end neural network architecture that integrates selective state space models for linear-time sequence modeling without attention or MLP blocks.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:selective state space models": {
+      "type": "concept",
+      "canonical": "selective state space models",
+      "definition": "State space models whose parameters are conditioned on the input to enable content-based selection and selective propagation or forgetting of information along the sequence.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2312.06648": {
+      "type": "paper",
+      "title": "Proposition Indexing: A Novel Retrieval Unit for Dense Retrieval",
+      "problem": "Dense retrieval systems depend on an overlooked choice of indexing granularity, and passage-level retrieval units can limit retrieval and downstream QA performance under a fixed computation budget.",
+      "task": [
+        "dense retrieval",
+        "open-domain question answering",
+        "retrieval-augmented language modeling",
+        "retrieval evaluation"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:proposition indexing": {
+      "type": "concept",
+      "canonical": "Proposition indexing",
+      "definition": "A dense retrieval approach that indexes a corpus using propositions, which are atomic, self-contained factoid units, instead of passages or sentences.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2312.10997": {
+      "type": "paper",
+      "title": "Large Language Model based Multi-Document Retrieval and Generation: A Survey",
+      "problem": "Large language models suffer from hallucination, outdated knowledge, and non-transparent reasoning, and existing RAG research lacks a systematic synthesis and evaluation-focused overview.",
+      "task": [
+        "survey",
+        "retrieval-augmented generation",
+        "information retrieval",
+        "natural language processing"
+      ],
+      "domain": "general",
+      "paper_type": "survey"
+    },
+    "paper:2401.14887": {
+      "type": "paper",
+      "title": "The Power of Noise: Redefining Retrieval for RAG Systems",
+      "problem": "Current RAG retrievers are assumed to surface the most relevant passages, but this paper shows that the type of retrieved documents can significantly affect LLM effectiveness and that standard retrieval assumptions may not hold in RAG settings.",
+      "task": [
+        "retrieval-augmented generation analysis",
+        "information retrieval evaluation",
+        "prompt construction analysis"
+      ],
+      "domain": "general",
+      "paper_type": "analysis"
+    },
+    "paper:2401.15884": {
+      "type": "paper",
+      "title": "Corrective Retrieval Augmented Generation",
+      "problem": "Retrieval-augmented generation can fail when retrieved documents are irrelevant or inaccurate, causing hallucinations and degraded generation quality.",
+      "task": [
+        "retrieval-augmented generation",
+        "question answering",
+        "short-form generation",
+        "long-form generation"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:crag": {
+      "type": "concept",
+      "canonical": "CRAG",
+      "definition": "A plug-and-play corrective retrieval-augmented generation framework that self-corrects poor retrieval results to improve robustness and document utilization.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2401.18059": {
+      "type": "paper",
+      "title": "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+      "problem": "Standard retrieval-augmented methods retrieve only short contiguous chunks, which limits their ability to capture large-scale document structure and answer questions requiring broader context.",
+      "task": [
+        "retrieval-augmented language modeling",
+        "question answering",
+        "document retrieval"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:raptor": {
+      "type": "concept",
+      "canonical": "RAPTOR",
+      "definition": "A retrieval and indexing system that recursively embeds, clusters, and summarizes text chunks into a tree of multi-level abstractions for retrieval-augmented generation.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2403.10131": {
+      "type": "paper",
+      "title": "Retrieval Augmented Fine Tuning (RAFT)",
+      "problem": "Existing RAG and fine-tuning approaches do not jointly prepare pretrained LLMs to use retrieved evidence while remaining robust to irrelevant retrieved documents in specialized domains.",
+      "task": [
+        "retrieval-augmented question answering",
+        "in-domain language model adaptation",
+        "fine-tuning for RAG"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:raft": {
+      "type": "concept",
+      "canonical": "RAFT",
+      "definition": "A training recipe that fine-tunes LLMs to answer questions using relevant retrieved documents while ignoring distractor documents and citing supporting text verbatim.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2404.16130": {
+      "type": "paper",
+      "title": "GraphRAG",
+      "problem": "Conventional vector RAG cannot answer global sensemaking questions over large corpora, and prior query-focused summarization methods do not scale to RAG-sized collections.",
+      "task": [
+        "question answering over private text corpora",
+        "global sensemaking",
+        "query-focused summarization"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:graphrag": {
+      "type": "concept",
+      "canonical": "GraphRAG",
+      "definition": "A graph-based retrieval-augmented generation framework that enables global question answering over large private text corpora by organizing corpus content into a knowledge graph and community summaries.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2405.14831": {
+      "type": "paper",
+      "title": "HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models",
+      "problem": "Current RAG methods encode passages in isolation and therefore struggle to integrate new knowledge across passage boundaries for complex multi-hop retrieval and reasoning tasks.",
+      "task": [
+        "multi-hop question answering",
+        "knowledge integration",
+        "retrieval-augmented generation"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:hipporag": {
+      "type": "concept",
+      "canonical": "HippoRAG",
+      "definition": "A retrieval framework that uses a knowledge graph and Personalized PageRank to enable efficient long-term memory and multi-hop knowledge integration for LLMs.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:ircot": {
+      "type": "concept",
+      "canonical": "IRCoT",
+      "definition": "",
+      "def_status": "placeholder",
+      "status": "approved"
+    },
+    "paper:2406.17526": {
+      "type": "paper",
+      "title": "LumberChunker: Dynamic Text Segmentation for Dense Retrieval and RAG",
+      "problem": "Fixed-size or simple chunking strategies can hurt dense retrieval quality and RAG performance because they fail to capture semantically independent content boundaries.",
+      "task": [
+        "dense retrieval",
+        "text segmentation",
+        "question answering",
+        "retrieval-augmented generation"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:lumberchunker": {
+      "type": "concept",
+      "canonical": "LumberChunker",
+      "definition": "An LLM-driven dynamic text segmentation method that iteratively identifies content shift points to create semantically independent chunks of variable size.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "concept:gutenqa": {
+      "type": "concept",
+      "canonical": "GutenQA",
+      "definition": "A benchmark of 3,000 needle-in-a-haystack question-answer pairs derived from 100 public domain narrative books from Project Gutenberg for evaluating retrieval and RAG chunking methods.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2407.11005": {
+      "type": "paper",
+      "title": "RAGBench: A Comprehensive RAG Benchmark with Fine-Grained Evaluation Metrics",
+      "problem": "Comprehensive evaluation of RAG systems is difficult because existing benchmarks are small, inconsistent, and lack unified, explainable metrics.",
+      "task": [
+        "benchmarking",
+        "RAG evaluation",
+        "dataset construction"
+      ],
+      "domain": "general",
+      "paper_type": "benchmark"
+    },
+    "concept:ragbench": {
+      "type": "concept",
+      "canonical": "RAGBench",
+      "definition": "A large-scale benchmark dataset for training and evaluating retrieval-augmented generation systems across multiple industry domains and task types.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:trace": {
+      "type": "concept",
+      "canonical": "TRACe",
+      "definition": "An explainable and actionable RAG evaluation framework based on a suite of cross-domain metrics.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2408.02854": {
+      "type": "paper",
+      "title": "A Taxonomy of Retrieval-Augmented Generation (RAG) Applications",
+      "problem": "There is a lack of a holistic, application-oriented taxonomy for retrieval-augmented generation that systematically captures its characteristics across domains.",
+      "task": [
+        "taxonomy creation",
+        "conceptual modeling",
+        "literature classification"
+      ],
+      "domain": "general",
+      "paper_type": "survey"
+    },
+    "concept:rag taxonomy": {
+      "type": "concept",
+      "canonical": "RAG taxonomy",
+      "definition": "A taxonomy that conceptualizes and categorizes the core characteristics of retrieval-augmented generation applications across domains.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2408.04187": {
+      "type": "paper",
+      "title": "MedGraphRAG: Towards Safe Medical LLM via Graph RAG",
+      "problem": "Standard RAG and general-purpose GraphRAG are insufficient for medical use because they do not reliably produce evidence-based, source-backed responses and are too costly or complex to adapt directly.",
+      "task": [
+        "medical question answering",
+        "health fact checking",
+        "long-form medical response generation"
+      ],
+      "domain": "medical",
+      "paper_type": "technique"
+    },
+    "concept:medgraphrag": {
+      "type": "concept",
+      "canonical": "MedGraphRAG",
+      "definition": "A graph-based retrieval-augmented generation framework for the medical domain that improves large language model responses with evidence-based retrieval and source-linked explanations.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2408.08921": {
+      "type": "paper",
+      "title": "Graph Retrieval-Augmented Generation: A Survey",
+      "problem": "Traditional RAG misses structured relationships, introduces redundant context, and lacks global information needed for more accurate and comprehensive generation.",
+      "task": [
+        "survey",
+        "retrieval-augmented generation",
+        "graph-based information retrieval"
+      ],
+      "domain": "general",
+      "paper_type": "survey"
+    },
+    "paper:2409.04701": {
+      "type": "paper",
+      "title": "Late Chunking: Contextual Chunk Embeddings for Long-Context Embedding Models",
+      "problem": "Naive chunking discards surrounding context and produces sub-optimal chunk embeddings for retrieval when meaning depends on neighboring text.",
+      "task": [
+        "information retrieval",
+        "text retrieval",
+        "document chunk embedding",
+        "retrieval augmentation"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:late chunking": {
+      "type": "concept",
+      "canonical": "Late Chunking",
+      "definition": "A chunking method that embeds an entire long document first and applies chunking only after the transformer encoder, before mean pooling, so each chunk embedding retains full document context.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2410.05779": {
+      "type": "paper",
+      "title": "LightRAG",
+      "problem": "Existing RAG systems rely on flat representations and weak contextual awareness, leading to fragmented answers that miss complex interdependencies and are inefficient to update.",
+      "task": [
+        "retrieval-augmented generation",
+        "information retrieval",
+        "question answering"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:lightrag": {
+      "type": "concept",
+      "canonical": "LightRAG",
+      "definition": "A graph-empowered RAG framework that combines graph-based text indexing with dual-level retrieval to improve comprehensiveness, efficiency, and adaptability.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2410.12788": {
+      "type": "paper",
+      "title": "Meta-Chunking: A Lightweight Text Chunking Framework for Retrieval-Augmented Generation",
+      "problem": "Standard RAG chunking methods often miss logical boundaries and lose semantic completeness, producing incoherent chunks that hurt retrieval and generation quality.",
+      "task": [
+        "text chunking",
+        "retrieval-augmented generation preprocessing"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:meta chunking": {
+      "type": "concept",
+      "canonical": "Meta-Chunking",
+      "definition": "A lightweight chunking framework for RAG that combines uncertainty-based boundary detection with dynamic merging and information compensation to produce more coherent text chunks.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2502.04413": {
+      "type": "paper",
+      "title": "MedRAG: A Knowledge Graph-Elicited Reasoning Enhanced Retrieval-Augmented Generation Model for Medical Diagnosis",
+      "problem": "Existing medical RAG systems are too heuristic and often produce inaccurate or vague diagnoses, especially for diseases with similar manifestations.",
+      "task": [
+        "medical diagnosis",
+        "treatment recommendation",
+        "follow-up question generation",
+        "decision support"
+      ],
+      "domain": "medical",
+      "paper_type": "technique"
+    },
+    "concept:medrag": {
+      "type": "concept",
+      "canonical": "MedRAG",
+      "definition": "A retrieval-augmented generation framework for medical diagnosis that combines knowledge graph-elicited reasoning with retrieved electronic health records to improve diagnostic accuracy and specificity.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2502.13010": {
+      "type": "paper",
+      "title": "Agentic Medical Graph-RAG (AMG-RAG)",
+      "problem": "Medical QA systems struggle to stay current and to model complex medical relationships because medical knowledge changes rapidly and manual knowledge graph maintenance is costly.",
+      "task": [
+        "medical question answering",
+        "knowledge graph construction",
+        "retrieval-augmented reasoning"
+      ],
+      "domain": "medical",
+      "paper_type": "technique"
+    },
+    "concept:amg rag": {
+      "type": "concept",
+      "canonical": "AMG-RAG",
+      "definition": "An agentic graph-RAG framework that automatically constructs and continuously updates medical knowledge graphs to support evidence-grounded medical QA.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "paper:2502.14802": {
+      "type": "paper",
+      "title": "From RAG to Memory: Non-Parametric Continual Learning for Large Language Models",
+      "problem": "Standard vector-based and structure-augmented RAG methods fail to robustly support human-like long-term memory across factual, sense-making, and associative tasks.",
+      "task": [
+        "continual learning",
+        "retrieval-augmented generation",
+        "factual memory",
+        "sense-making",
+        "associative memory",
+        "multi-hop question answering",
+        "discourse understanding"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:hipporag 2": {
+      "type": "concept",
+      "canonical": "HippoRAG 2",
+      "definition": "A retrieval-augmented generation framework that improves non-parametric continual learning by combining Personalized PageRank with deeper passage integration and more effective online LLM use.",
+      "def_status": "ok",
+      "status": "approved"
+    },
+    "paper:2503.21322": {
+      "type": "paper",
+      "title": "HyperGraphRAG: A Hypergraph-based Retrieval-Augmented Generation Framework for Knowledge-intensive Applications",
+      "problem": "Existing graph-based RAG methods are limited to binary relations and cannot faithfully represent n-ary facts common in real-world knowledge, causing incomplete and less effective retrieval and generation.",
+      "task": [
+        "retrieval-augmented generation",
+        "knowledge-intensive question answering",
+        "knowledge representation",
+        "information retrieval"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:hypergraphrag": {
+      "type": "concept",
+      "canonical": "HyperGraphRAG",
+      "definition": "A hypergraph-based RAG framework that represents and retrieves n-ary relational facts with hyperedges to improve knowledge-intensive generation.",
+      "def_status": "ok",
+      "status": "approved"
+    }
+  },
+  "edges": [
+    {
+      "type": "defines",
+      "from": "paper:1706.03762",
+      "to": "concept:transformer"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:1706.03762",
+      "to": "concept:rnn"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:1706.03762",
+      "to": "concept:lstm"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:1706.03762",
+      "to": "concept:gru"
+    },
+    {
+      "type": "defines",
+      "from": "paper:1810.04805",
+      "to": "concept:bert"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:1810.04805",
+      "to": "concept:elmo"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:1810.04805",
+      "to": "concept:openai gpt"
+    },
+    {
+      "type": "defines",
+      "from": "paper:1910.10683",
+      "to": "concept:t5"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:1910.10683",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2002.08909",
+      "to": "concept:realm"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2002.08909",
+      "to": "concept:bert"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2002.08909",
+      "to": "concept:roberta"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2002.08909",
+      "to": "concept:t5"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2002.08909",
+      "to": "concept:knn lm"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2004.04906",
+      "to": "concept:dense passage retriever (dpr)"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.04906",
+      "to": "concept:bm25"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.04906",
+      "to": "concept:tf idf"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.04906",
+      "to": "concept:orqa"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2004.05150",
+      "to": "concept:longformer"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2004.05150",
+      "to": "concept:led"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.05150",
+      "to": "concept:transformer xl"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.05150",
+      "to": "concept:reformer"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.05150",
+      "to": "concept:bp transformer"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.05150",
+      "to": "concept:transformer"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.05150",
+      "to": "concept:roberta"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2004.12832",
+      "to": "concept:colbert"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.12832",
+      "to": "concept:bert"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.12832",
+      "to": "concept:knrm"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.12832",
+      "to": "concept:drmm"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.12832",
+      "to": "concept:duet"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.12832",
+      "to": "concept:dssm"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.12832",
+      "to": "concept:snrm"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2004.12832",
+      "to": "concept:conv knrm"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2005.11401",
+      "to": "concept:rag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2005.11401",
+      "to": "concept:dpr"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2005.14165",
+      "to": "concept:gpt 3"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2101.03961",
+      "to": "concept:switch transformer"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2101.03961",
+      "to": "concept:mixture of experts"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2101.03961",
+      "to": "concept:t5"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2101.03961",
+      "to": "concept:mt5"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2106.09685",
+      "to": "concept:lora"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2106.09685",
+      "to": "concept:adapter"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2106.09685",
+      "to": "concept:prefix tuning"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2109.01652",
+      "to": "concept:flan"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2109.01652",
+      "to": "concept:gpt 3"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2109.01652",
+      "to": "concept:bert"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2109.01652",
+      "to": "concept:t5"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2201.11903",
+      "to": "concept:cot"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2203.02155",
+      "to": "concept:instructgpt"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2203.02155",
+      "to": "concept:gpt 3"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2203.02155",
+      "to": "concept:rlhf"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2203.02155",
+      "to": "concept:ppo"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2203.11171",
+      "to": "concept:self consistency"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2203.11171",
+      "to": "concept:cot"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2203.15556",
+      "to": "concept:chinchilla"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2204.02311",
+      "to": "concept:palm"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2204.02311",
+      "to": "concept:transformer"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2204.02311",
+      "to": "concept:pathways"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2205.10625",
+      "to": "concept:least to most prompting"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2205.10625",
+      "to": "concept:cot"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2205.10625",
+      "to": "concept:self consistency"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2205.14135",
+      "to": "concept:flashattention"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2205.14135",
+      "to": "concept:block sparse flashattention"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2206.07682",
+      "to": "concept:emergent abilities of large language models"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2210.03629",
+      "to": "concept:react"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2210.03629",
+      "to": "concept:cot"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2212.08073",
+      "to": "concept:constitutional ai"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2212.08073",
+      "to": "concept:rlhf"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2212.10496",
+      "to": "concept:hyde"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2212.10496",
+      "to": "concept:contriever"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2212.10560",
+      "to": "concept:self instruct"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2212.10560",
+      "to": "concept:instructgpt"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2212.10560",
+      "to": "concept:gpt 3"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2301.12652",
+      "to": "concept:replug"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2301.12652",
+      "to": "concept:replug lsr"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2301.12652",
+      "to": "concept:rag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2301.12652",
+      "to": "concept:dpr"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2301.12652",
+      "to": "concept:replug"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2302.04761",
+      "to": "concept:toolformer"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2302.04761",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2302.13971",
+      "to": "concept:llama"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2302.13971",
+      "to": "concept:gpt 3"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2302.13971",
+      "to": "concept:chinchilla"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2302.13971",
+      "to": "concept:palm"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2302.13971",
+      "to": "concept:opt"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2302.13971",
+      "to": "concept:gpt neox"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2302.13971",
+      "to": "concept:bloom"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2302.13971",
+      "to": "concept:glm"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2303.11366",
+      "to": "concept:reflexion"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2303.11366",
+      "to": "concept:react"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2303.11366",
+      "to": "concept:saycan"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2303.11366",
+      "to": "concept:toolformer"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2303.11366",
+      "to": "concept:hugginggpt"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2303.11366",
+      "to": "concept:generative agents"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2303.11366",
+      "to": "concept:webgpt"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2303.17580",
+      "to": "concept:hugginggpt"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2303.17651",
+      "to": "concept:self refine"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2304.03442",
+      "to": "concept:generative agents"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2304.09542",
+      "to": "concept:rankgpt"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2304.09542",
+      "to": "concept:monot5"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2304.09542",
+      "to": "concept:ranknet"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2304.09542",
+      "to": "concept:bm25"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2305.04091",
+      "to": "concept:plan and solve (ps) prompting"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2305.04091",
+      "to": "concept:ps+ prompting"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2305.04091",
+      "to": "concept:zero shot cot"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2305.04091",
+      "to": "concept:few shot chain of thought prompting"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2305.04091",
+      "to": "concept:zero shot program of thought prompting"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2305.06983",
+      "to": "concept:flare"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2305.06983",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2305.10601",
+      "to": "concept:tot"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2305.10601",
+      "to": "concept:cot"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2305.14283",
+      "to": "concept:rewrite retrieve read"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2305.14283",
+      "to": "concept:rag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2305.14283",
+      "to": "concept:dpr"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2305.14314",
+      "to": "concept:qlora"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2305.14314",
+      "to": "concept:guanaco"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2305.14314",
+      "to": "concept:lora"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2305.16291",
+      "to": "concept:voyager"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2305.16291",
+      "to": "concept:gpt 4"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2305.18290",
+      "to": "concept:direct preference optimization"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2305.18290",
+      "to": "concept:rlhf"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2305.18290",
+      "to": "concept:ppo"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2307.09288",
+      "to": "concept:llama 2"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2307.09288",
+      "to": "concept:llama 2 chat"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2307.09288",
+      "to": "concept:llama"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2307.09288",
+      "to": "concept:llama"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2308.00352",
+      "to": "concept:metagpt"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2308.00352",
+      "to": "concept:autogpt"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2308.00352",
+      "to": "concept:langchain"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2308.00352",
+      "to": "concept:agentverse"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2308.00352",
+      "to": "concept:chatdev"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2308.08155",
+      "to": "concept:autogen"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2309.01431",
+      "to": "concept:rgb"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2309.01431",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2310.04406",
+      "to": "concept:lats"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2310.04406",
+      "to": "concept:react"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2310.04406",
+      "to": "concept:monte carlo tree search"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2310.11511",
+      "to": "concept:self rag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2310.11511",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2310.19923",
+      "to": "concept:jina embeddings v2"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2310.19923",
+      "to": "concept:bert"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2310.19923",
+      "to": "concept:alibi"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2310.19923",
+      "to": "concept:jina embeddings v1"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2310.19923",
+      "to": "concept:e5"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2312.00752",
+      "to": "concept:mamba"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2312.00752",
+      "to": "concept:selective state space models"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2312.00752",
+      "to": "concept:transformer"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2312.06648",
+      "to": "concept:proposition indexing"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2312.10997",
+      "to": "concept:rag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2401.14887",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2401.15884",
+      "to": "concept:crag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2401.15884",
+      "to": "concept:rag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2401.15884",
+      "to": "concept:self rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2401.18059",
+      "to": "concept:raptor"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2401.18059",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2403.10131",
+      "to": "concept:raft"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2403.10131",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2404.16130",
+      "to": "concept:graphrag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2404.16130",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2405.14831",
+      "to": "concept:hipporag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2405.14831",
+      "to": "concept:rag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2405.14831",
+      "to": "concept:ircot"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2406.17526",
+      "to": "concept:lumberchunker"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2406.17526",
+      "to": "concept:gutenqa"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2406.17526",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2407.11005",
+      "to": "concept:ragbench"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2407.11005",
+      "to": "concept:trace"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2407.11005",
+      "to": "concept:rag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2407.11005",
+      "to": "concept:rgb"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2408.02854",
+      "to": "concept:rag taxonomy"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2408.02854",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2408.04187",
+      "to": "concept:medgraphrag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2408.04187",
+      "to": "concept:rag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2408.04187",
+      "to": "concept:graphrag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2408.08921",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2409.04701",
+      "to": "concept:late chunking"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2409.04701",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2410.05779",
+      "to": "concept:lightrag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2410.05779",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2410.12788",
+      "to": "concept:meta chunking"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2410.12788",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2502.04413",
+      "to": "concept:medrag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2502.04413",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2502.13010",
+      "to": "concept:amg rag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2502.13010",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2502.14802",
+      "to": "concept:hipporag 2"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2502.14802",
+      "to": "concept:hipporag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2502.14802",
+      "to": "concept:raptor"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2503.21322",
+      "to": "concept:hypergraphrag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2503.21322",
+      "to": "concept:rag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2503.21322",
+      "to": "concept:graphrag"
+    }
+  ]
+}

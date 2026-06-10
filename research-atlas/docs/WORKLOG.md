@@ -2,6 +2,19 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-10 — normalize_v2: 이중 노드(논문+개념) 데이터 토대 (전환 1/4)
+
+개념 단일 노드 → **이중 노드(paper + concept)** 전환의 데이터 재조립 단계. LLM 호출 없음, 기존 파일 무변경.
+
+- `src/normalize_v2.py` 신규. `*.concepts.json`(논문 속성)·`*.relations.json`(builds_on)을 재조립해 `data/outputs/normalized_v2.json` 생성.
+- problem→논문 노드, definition→개념 노드로 귀속 분리. id에 `paper:`/`concept:` 접두사, 엣지는 `{type, from, to}` 단일 배열(defines·builds_on). 모든 엣지 `paper:* → concept:*` 방향.
+- 거름망은 개념에만(lexicon status approved/unreviewed). 논문은 전부 노드. 빈 링 개념은 `def_status=placeholder`로 계보 보존.
+- `normalize.py`에서 canon/load_lexicon/save_lexicon/NODE_OK import 재사용(규칙 단일 출처). normalize.py 무수정.
+
+**검증**: `uv run python src/normalize_v2.py` → 논문 68 + 개념 122 = 노드 190 / 엣지 191(defines 73·builds_on 118) / 빈 링 49 / **사전 신규 {unreviewed:0, pending:0}**. 수용 기준 6종 통과: 논문수=concepts파일수(68), 엣지 방향 위반 0, paper 노드 problem/title·concept 노드 canonical/definition 보유, `lexicon.json`·`normalized.json` git diff 무변경(롤백 가능).
+
+다음: 임베딩 분리(2/4) → API/프론트(3/4) → 수집 재배치(4/4).
+
 ## 2026-06-10 — UI 개선 4종: 그래프 자동맞춤·노드 디테일·채팅 예시칩·사전 zebra
 
 `web/src/routes/Graph.jsx` · `styles.css`. 사용자가 4개 모두 선택.
