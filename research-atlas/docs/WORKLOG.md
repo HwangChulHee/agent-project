@@ -2,6 +2,18 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-10 — UI 개선 4종: 그래프 자동맞춤·노드 디테일·채팅 예시칩·사전 zebra
+
+`web/src/routes/Graph.jsx` · `styles.css`. 사용자가 4개 모두 선택.
+
+**1) 그래프 자동 맞춤** — `render()`에 `fitView(animate)` 추가(노드 x/y bbox→줌 transform, 라벨 여백 위해 padX 160·padY 90, k 상한 1.6). 로드 시 sim `alphaDecay(0.05)`로 ~2초 빨리 안정 후 `on("end")` 1회 자동 맞춤(드래그 재안정 땐 `didFit` 가드로 재맞춤 안 함). 좌상단 svg 위 "⤢ 전체 보기" 버튼이 `apiRef.fitView()` 호출.
+  - 시행착오: 동기 `sim.tick()` 루프 사전안정은 forceCenter만으론 비연결 노드가 멀리 튀어(blow-out→speck) 폐기. forceX/Y(0.05) 복원력은 charge를 눌러 클럼프 붕괴→폐기. 원래 force(-900) 유지 + alphaDecay만 올려 timer-driven end 맞춤이 정답(스샷 확인 양호).
+**2) 노드 디테일** — 미선택 시 카드 숨김(기존 "지형도/클릭하세요" 제거). type 색 배지(`.type-badge`), papers를 arXiv 링크(`https://arxiv.org/abs/{id}`), 닫기 ✕(`detail-close`).
+**3) 채팅 예시 칩** — 빈 상태에 클릭 가능한 예시 4종(벤치마크/RAG 계보/2024 이후/다 보여줘). `sendCommand`를 `runCommand(text)`+`onSubmit`으로 분리해 칩이 직접 실행.
+**4) 사전 가독성** — tbody 짝수행 zebra(`#f1f1ec`), sticky th 그림자.
+
+**검증**: build 성공 + Playwright 스샷 — 자동맞춤(전체 노드 프레이밍), 디테일(InstructGPT 배지+arXiv 링크+닫기), 예시칩 클릭→필터 적용(칩+버블+노드 강조), 사전 zebra 확인.
+
 ## 2026-06-10 — UI 미세조정: 뷰포트 꽉채움 + 채팅 확대 + 브랜드 확대
 
 `styles.css`만. 스크롤바/잘림 원인은 `.graph-page`의 `width:100vw`(스크롤바 폭 포함→가로바)와 하드코딩 `calc(100vh-41px)`(14px 폰트로 nav 실제 높이>41px→세로 오버플로).

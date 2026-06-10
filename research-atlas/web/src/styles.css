@@ -147,6 +147,10 @@ textarea {
   position: sticky;
   top: 0;
   background: var(--bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+.lex-table tbody tr:nth-child(even) td {
+  background: #f1f1ec;
 }
 .lex-table tr:hover td {
   background: var(--hover);
@@ -309,6 +313,58 @@ textarea {
   margin-right: 6px;
   vertical-align: middle;
 }
+.graph-fit {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+/* --- 노드 디테일 패널 --- */
+.graph-panel h3 {
+  margin: 0 0 8px;
+  padding-right: 18px;
+}
+.detail-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  padding: 2px 4px;
+}
+.detail-close:hover:not(:disabled) {
+  background: var(--hover);
+  color: var(--text);
+}
+.detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.type-badge {
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #fff;
+}
+.detail-def {
+  margin-top: 10px;
+}
+.detail-papers {
+  margin-top: 12px;
+}
+.detail-papers a {
+  color: var(--accent);
+}
+.detail-papers a:hover {
+  text-decoration: underline;
+}
 
 .center-msg {
   flex: 1;
@@ -392,8 +448,24 @@ textarea {
   gap: 8px;
 }
 .chat-hint {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
+}
+.chat-examples {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.example-chip {
+  border-radius: 14px;
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--panel);
+}
+.example-chip:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--accent-fg);
 }
 .chat-bubble {
   max-width: 85%;

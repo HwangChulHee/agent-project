@@ -217,12 +217,9 @@ export default function Graph() {
     addAgent(`알 수 없는 도구: ${res.tool}`);
   }
 
-  async function sendCommand(e) {
-    e.preventDefault();
-    const text = chatInput.trim();
+  async function runCommand(text) {
     if (!text || pending || !apiRef.current) return;
     setMessages((m) => [...m, { role: "user", text }]);
-    setChatInput("");
     setPending(true);
     try {
       const res = await postCommand(text);
@@ -234,6 +231,14 @@ export default function Graph() {
     }
   }
 
+  function sendCommand(e) {
+    e.preventDefault();
+    const text = chatInput.trim();
+    if (!text) return;
+    setChatInput("");
+    runCommand(text);
+  }
+
   function clearHighlight() {
     apiRef.current && apiRef.current.highlight(null);
     setChips([]);
@@ -243,6 +248,13 @@ export default function Graph() {
     <div className="graph-page">
       <div className="graph-area" ref={areaRef}>
         <svg id="graph-svg" ref={svgRef} />
+        <button
+          className="graph-fit"
+          title="전체 보기"
+          onClick={() => apiRef.current && apiRef.current.fitView()}
+        >
+          ⤢ 전체 보기
+        </button>
         {chips.length > 0 && (
           <div className="graph-chips">
             {chips.map((c) => (
@@ -302,35 +314,55 @@ export default function Graph() {
             빈 원(점선) = 정의 없음
           </div>
         </div>
-        <div className="graph-panel">
-          {error ? (
+        {error && (
+          <div className="graph-panel">
             <div className="toast err">{error}</div>
-          ) : selected ? (
-            <>
-              <h3>{selected.canonical}</h3>
-              <div className="muted">
-                type: {selected.ptype}
-                {selected.domain && selected.domain !== "general"
-                  ? ` · domain: ${selected.domain}`
-                  : ""}
-              </div>
-              <div style={{ marginTop: 8 }}>
-                {selected.definition ||
-                  (selected.def_status === "placeholder"
-                    ? "정의 없음 — 원논문 미수록"
-                    : "정의 없음")}
-              </div>
-              <div className="muted" style={{ marginTop: 12 }}>
-                등장 {selected.papers.length}편: {selected.papers.join(", ")}
-              </div>
-            </>
-          ) : (
-            <>
-              <h3>지형도</h3>
-              <div className="muted">노드를 클릭하세요.</div>
-            </>
-          )}
-        </div>
+          </div>
+        )}
+        {!error && selected && (
+          <div className="graph-panel">
+            <button
+              className="detail-close"
+              title="닫기"
+              onClick={() => setSelected(null)}
+            >
+              ✕
+            </button>
+            <h3>{selected.canonical}</h3>
+            <div className="detail-meta">
+              <span
+                className="type-badge"
+                style={{ background: TYPE_COLOR[selected.ptype] || "#888" }}
+              >
+                {selected.ptype}
+              </span>
+              {selected.domain && selected.domain !== "general" && (
+                <span className="muted">domain: {selected.domain}</span>
+              )}
+            </div>
+            <div className="detail-def">
+              {selected.definition ||
+                (selected.def_status === "placeholder"
+                  ? "정의 없음 — 원논문 미수록"
+                  : "정의 없음")}
+            </div>
+            <div className="muted detail-papers">
+              등장 {selected.papers.length}편:{" "}
+              {selected.papers.map((p, i) => (
+                <span key={p}>
+                  {i > 0 ? ", " : ""}
+                  <a
+                    href={`https://arxiv.org/abs/${p}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {p}
+                  </a>
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {collapsed ? (
@@ -355,8 +387,24 @@ export default function Graph() {
           </div>
           <div className="chat-msgs">
             {messages.length === 0 && (
-              <div className="muted chat-hint">
-                예: "벤치마크만 보여줘", "RAG 계보만 보여줘", "다 보여줘"
+              <div className="chat-examples">
+                <div className="muted chat-hint">예시 — 눌러서 실행:</div>
+                {[
+                  "벤치마크만 보여줘",
+                  "RAG 계보만 보여줘",
+                  "2024년 이후 나온 것만",
+                  "다 보여줘",
+                ].map((ex) => (
+                  <button
+                    type="button"
+                    key={ex}
+                    className="example-chip"
+                    onClick={() => runCommand(ex)}
+                    disabled={pending}
+                  >
+                    {ex}
+                  </button>
+                ))}
               </div>
             )}
             {messages.map((m, i) => (
@@ -477,6 +525,7 @@ function render(container, svgEl, data, setSelected) {
 
   const sim = d3
     .forceSimulation(nodes)
+    .alphaDecay(0.05) // 기본(0.0228)보다 빠르게 안정 → 로드 후 빠른 자동 맞춤
     .force(
       "link",
       d3
@@ -496,6 +545,39 @@ function render(container, svgEl, data, setSelected) {
         .attr("y2", (d) => d.target.y);
       node.attr("transform", (d) => `translate(${d.x},${d.y})`);
     });
+
+  // 전체 노드가 화면에 들어오도록 줌 자동 맞춤(라벨 여백 고려해 우측 패딩 더 줌)
+  function fitView(animate = true) {
+    if (!nodes.length) return;
+    const xs = nodes.map((n) => n.x);
+    const ys = nodes.map((n) => n.y);
+    const minX = Math.min(...xs);
+    const maxX = Math.max(...xs);
+    const minY = Math.min(...ys);
+    const maxY = Math.max(...ys);
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+    const gw = maxX - minX || 1;
+    const gh = maxY - minY || 1;
+    const padX = 160; // 라벨이 노드 오른쪽으로 뻗으므로 가로 여백 넉넉히
+    const padY = 90;
+    const k = Math.min((w - padX) / gw, (h - padY) / gh, 1.6);
+    const cx = (minX + maxX) / 2;
+    const cy = (minY + maxY) / 2;
+    const t = d3.zoomIdentity
+      .translate(w / 2 - k * cx, h / 2 - k * cy)
+      .scale(k);
+    (animate ? svg.transition().duration(500) : svg).call(zoom.transform, t);
+  }
+
+  // 초기 시뮬레이션이 안정되면(약 2초) 전체가 보이도록 자동 맞춤.
+  // 드래그 후 재안정 때는 재맞춤하지 않음(사용자 시점 보존).
+  let didFit = false;
+  sim.on("end", () => {
+    if (didFit) return;
+    didFit = true;
+    fitView();
+  });
 
   // 검색→포커스: 노드를 화면 중앙으로 이동(transition)하고 강조
   const nodeById = new Map(nodes.map((n) => [n.id, n]));
@@ -542,5 +624,5 @@ function render(container, svgEl, data, setSelected) {
   }
 
   const names = nodes.map((n) => ({ id: n.id, canonical: n.canonical }));
-  return { sim, focus, names, highlight, resize };
+  return { sim, focus, names, highlight, resize, fitView };
 }
