@@ -27,3 +27,10 @@ export const mergeLexicon = (from, into) =>
 
 export const rebuild = () =>
   fetch("/api/rebuild", { method: "POST" }).then(jsonOrThrow);
+
+export const postCommand = (text) =>
+  fetch("/api/command", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text }),
+  }).then(jsonOrThrow);

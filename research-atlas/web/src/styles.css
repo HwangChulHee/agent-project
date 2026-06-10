@@ -183,9 +183,15 @@ textarea {
 
 /* --- graph --- */
 .graph-page {
-  position: relative;
+  display: flex;
   width: 100vw;
   height: calc(100vh - 41px);
+  overflow: hidden;
+}
+.graph-area {
+  position: relative;
+  flex: 1;
+  min-width: 0;
   overflow: hidden;
 }
 #graph-svg circle {
@@ -269,4 +275,104 @@ textarea {
   padding: 60px;
   text-align: center;
   color: var(--muted);
+}
+
+/* --- graph chips (활성 조건) --- */
+.graph-chips {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%) translateY(56px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  z-index: 10;
+}
+.graph-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--accent);
+  color: #08121a;
+  border-radius: 12px;
+  padding: 2px 4px 2px 10px;
+  font-size: 12px;
+}
+.graph-chip button {
+  border: none;
+  background: rgba(0, 0, 0, 0.2);
+  color: #08121a;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  line-height: 1;
+  font-size: 10px;
+}
+
+/* --- chat panel --- */
+.chat-panel {
+  width: 320px;
+  flex: 0 0 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border-left: 1px solid var(--border);
+}
+.chat-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+.chat-toggle {
+  padding: 2px 8px;
+  font-weight: bold;
+}
+.chat-toggle.collapsed {
+  align-self: flex-start;
+  margin: 8px 0 0 0;
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+}
+.chat-msgs {
+  flex: 1;
+  overflow: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.chat-hint {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.chat-bubble {
+  max-width: 85%;
+  padding: 6px 10px;
+  border-radius: 10px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.chat-bubble.user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: #08121a;
+}
+.chat-bubble.agent {
+  align-self: flex-start;
+  background: #2a2a33;
+  color: var(--text);
+}
+.chat-input {
+  display: flex;
+  gap: 6px;
+  padding: 8px 10px;
+  border-top: 1px solid var(--border);
+}
+.chat-input input {
+  flex: 1;
 }

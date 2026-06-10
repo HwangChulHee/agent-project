@@ -2,6 +2,24 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-10 — `/graph` 채팅 패널(필터 에이전트 프론트)
+
+핸드오프대로 프론트만. 백엔드 `POST /api/command`(이미 구현·검증)는 미수정.
+
+**레이아웃** `web/src/routes/Graph.jsx` · `styles.css`
+- `.graph-page`를 flex 가로 분할: `.graph-area`(flex 1, 기존 svg·검색·범례·디테일 패널을 그 안의 absolute 오버레이로 이동) + `.chat-panel`(320px 고정).
+- 패널 접기 토글(`>`/`<`). 접으면 그래프 전체 폭. svg 크기는 `window.innerWidth` 대신 `.graph-area` 측정으로 변경하고 `ResizeObserver`로 접기/리사이즈 시 svg·forceCenter 갱신(`sim.alpha(0.2).restart()`).
+
+**채팅→그래프** (LLM 추가 호출 없이 프론트 템플릿)
+- `api.js`에 `postCommand(text)` 추가. 입력→사용자 버블→`/api/command`→대기「…」→tool 실행→에이전트 버블.
+- `render()`가 `{sim, focus, names, highlight, resize}` 반환(기존 3개에 highlight·resize 추가). 강조=opacity만 입힘(매칭 1·비매칭 0.12, 엣지는 양끝 매칭 시만 0.65 아니면 0.06). 시뮬레이션 재시작 없음.
+- `filter`: 노드 속성 AND 매칭. `date_after`는 papers의 arXiv ID 앞4자리→연월 중 **최소값** 기준, papers 빈 placeholder는 비매칭. 0개면 강조 변경 없이 「조건에 맞는 노드가 없음」.
+- `focus_lineage`: `builds_on{from,to}`(to=조상) JS 순회, ancestors/descendants/both, visited로 사이클 방지. node 소문자화해 키 매칭, 없으면 메시지.
+- `reset`: 강조 해제. 활성 조건은 좌상단 칩(✕=reset)으로 표시.
+- `tool:null`/네트워크 실패는 에이전트 버블로 표시.
+
+**검증**: `npm run build` 성공. `/api/command` 실제 응답 4종(filter ptype/date_after, focus_lineage, ) 프론트 기대 형태와 일치 확인. 데이터 정합: `rag` 키 존재, benchmark 3·date≥2024-01 20개 매칭. 브라우저 수용기준은 미실행(서버 기동 확인까지).
+
 ## 2026-06-09 — 웹 UI (FastAPI + React) 1차 구현
 
 핸드오프 문서대로 결과물(그래프+사전) 웹 조회/편집 UI 구축. `src/` 파이프라인 미수정(normalize.py는 호출만).
