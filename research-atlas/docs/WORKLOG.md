@@ -2,6 +2,26 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-10 — UI 개선: 라이트 테마 + 스케일업 + 레이아웃 정리
+
+스타일·표시만. 채팅/필터/계보 동작 로직 미변경. `web/src/styles.css` · `routes/Graph.jsx`.
+
+**라이트 테마(전역)** `styles.css`
+- `:root` 교체(웜 오프화이트 `#f7f7f5`/패널 `#fff`/accent `#2563eb`). `--accent-fg`(accent 위 글씨)·`--hover`·`--shadow`·`--mono` 추가. 다크 하드코딩(#16161a/#1f1f26/#2a2a33/#14141a/#08121a 등) 전수 변수화. body 폰트 mono→system-ui 산세리프, 13→14px. badge/toast/matched 행은 라이트 톤(blue-100, green/red-100 등). /lexicon source·first_seen 열만 `--mono` 유지(arXiv ID).
+- 노드색 라이트용 교체(Graph.jsx TYPE_COLOR): technique #2563eb / benchmark #d97706 / analysis #7c3aed / survey #059669.
+- placeholder 노드: fill #fff + 점선 테두리(`stroke-dasharray "3 2"`, stroke=type색). 범례 dot도 흰 바탕+점선.
+
+**스케일업** `Graph.jsx`
+- 노드 r 10→12(focus 18, ~1.5× 유지), 라벨 11→13px·fill `--text`·x오프셋 13→16, `forceCollide` 28→30.
+
+**필터 시 엣지 표시** `Graph.jsx highlight()`
+- 비매칭 엣지를 opacity 0.06 → **`display:none`**(화살촉만 또렷이 남던 문제 해결). 매칭(양끝) 엣지만 표시, 비매칭 노드는 흐림 0.18(숨김 아님). reset 시 `display:null` 복원.
+
+**레이아웃** `styles.css`
+- 검색창 top-center→**좌상단**, 범례→**좌하단**, 노드 디테일 패널 우측 풀하이트→**좌측 카드**(검색창 아래, max-height로 범례와 비충돌), 활성 칩→상단 중앙. 오버레이 전부 border+`--shadow`로 분리. 오른쪽은 채팅 단독.
+
+**검증**: `npm run build` 성공 + Playwright 스크린샷 3종 육안 확인 — (1) /graph·/lexicon 라이트, 다크 잔재 없음 (2) placeholder kNN-LM 흰 점선 원 (3) "벤치마크만" 필터 시 비매칭 노드 흐림·**화살표 전부 사라짐**·칩 표시·버블 "benchmark · 3개 강조".
+
 ## 2026-06-10 — `/graph` 채팅 패널(필터 에이전트 프론트)
 
 핸드오프대로 프론트만. 백엔드 `POST /api/command`(이미 구현·검증)는 미수정.

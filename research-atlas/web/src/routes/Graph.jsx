@@ -3,10 +3,10 @@ import * as d3 from "d3";
 import { getGraph, postCommand } from "../api.js";
 
 const TYPE_COLOR = {
-  technique: "#4fc3f7",
-  benchmark: "#e0943a",
-  analysis: "#b06fd6",
-  survey: "#5cb96f",
+  technique: "#2563eb",
+  benchmark: "#d97706",
+  analysis: "#7c3aed",
+  survey: "#059669",
   other: "#888",
 };
 
@@ -297,9 +297,9 @@ export default function Graph() {
           <div style={{ marginTop: 3 }}>
             <span
               className="dot"
-              style={{ background: "#16161a", border: "2px solid #4fc3f7" }}
+              style={{ background: "#fff", border: "2px dashed #64748b" }}
             />
-            빈 원 = 정의 없음
+            빈 원(점선) = 정의 없음
           </div>
         </div>
         <div className="graph-panel">
@@ -387,8 +387,9 @@ function render(container, svgEl, data, setSelected) {
   const W = container.clientWidth;
   const H = container.clientHeight;
   const fill = (d) =>
-    d.def_status === "placeholder" ? "#16161a" : TYPE_COLOR[d.ptype] || "#4fc3f7";
-  const stroke = (d) => TYPE_COLOR[d.ptype] || "#4fc3f7";
+    d.def_status === "placeholder" ? "#ffffff" : TYPE_COLOR[d.ptype] || "#2563eb";
+  const stroke = (d) => TYPE_COLOR[d.ptype] || "#2563eb";
+  const dash = (d) => (d.def_status === "placeholder" ? "3 2" : null);
 
   // normalized.json(객체 nodes + builds_on) → d3 배열 형태로 변환
   const nodes = Object.entries(data.nodes).map(([id, n]) => ({ id, ...n }));
@@ -461,16 +462,17 @@ function render(container, svgEl, data, setSelected) {
 
   node
     .append("circle")
-    .attr("r", 10)
+    .attr("r", 12)
     .attr("fill", fill)
     .attr("stroke", stroke)
     .attr("stroke-width", 2.5)
+    .attr("stroke-dasharray", dash)
     .on("click", (e, d) => setSelected(d));
 
   node
     .append("text")
     .text((d) => d.canonical)
-    .attr("x", 13)
+    .attr("x", 16)
     .attr("y", 4);
 
   const sim = d3
@@ -485,7 +487,7 @@ function render(container, svgEl, data, setSelected) {
     )
     .force("charge", d3.forceManyBody().strength(-900))
     .force("center", d3.forceCenter(W / 2, H / 2))
-    .force("collide", d3.forceCollide(28))
+    .force("collide", d3.forceCollide(30))
     .on("tick", () => {
       link
         .attr("x1", (d) => d.source.x)
@@ -510,21 +512,22 @@ function render(container, svgEl, data, setSelected) {
     node
       .select("circle")
       .attr("stroke-width", (c) => (c.id === id ? 5 : 2.5))
-      .attr("r", (c) => (c.id === id ? 15 : 10));
+      .attr("r", (c) => (c.id === id ? 18 : 12));
     setSelected(d); // 사이드 패널도 갱신
   }
 
-  // 강조/흐리게: 매칭 노드 opacity 1, 비매칭 0.12. 엣지는 양 끝 모두 매칭일 때만.
+  // 강조/흐리게: 매칭 노드 opacity 1, 비매칭은 흐리게(숨기지 않음).
+  // 엣지는 양 끝 모두 매칭일 때만 표시, 아니면 완전 숨김(화살촉 포함).
   // ids === null → 전체 복원.
   function highlight(ids) {
     if (!ids) {
       node.attr("opacity", 1);
-      link.attr("stroke-opacity", 0.65);
+      link.style("display", null).attr("stroke-opacity", 0.65);
       return;
     }
-    node.attr("opacity", (d) => (ids.has(d.id) ? 1 : 0.12));
-    link.attr("stroke-opacity", (d) =>
-      ids.has(d.source.id) && ids.has(d.target.id) ? 0.65 : 0.06
+    node.attr("opacity", (d) => (ids.has(d.id) ? 1 : 0.18));
+    link.style("display", (d) =>
+      ids.has(d.source.id) && ids.has(d.target.id) ? null : "none"
     );
   }
 
