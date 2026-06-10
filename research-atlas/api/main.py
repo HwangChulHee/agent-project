@@ -324,6 +324,11 @@ def _to_response(thread_id: str, result: dict) -> dict:
         elif stage == "approve":
             out["counts"] = payload.get("counts", {})
             out["actions"] = ["proceed", "cancel"]
+        elif stage == "extract_confirm":
+            out["passed_count"] = payload.get("passed_count")
+            out["to_extract"] = payload.get("to_extract")
+            out["gate_summary"] = payload.get("gate_summary")
+            out["actions"] = ["proceed", "cancel"]
         return out
     return {"thread_id": thread_id, "done": True,
             "extracted": result.get("extracted", []),

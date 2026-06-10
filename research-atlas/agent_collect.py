@@ -643,6 +643,26 @@ def gnode_gate(state):
     return {"gate_results": results}
 
 
+def gnode_confirm_extract(state):
+    """[7.5] 추출 승인 — interrupt. 관문 결과 보여주고 멈춤. resume: 'proceed' | 'cancel'.
+
+    관문(빠름)과 추출(느림·stall 위험)을 분리 — 추출은 여기서 승인한 뒤에만 돈다.
+    """
+    passed = [aid for aid, _v, ok in state["gate_results"] if ok]
+    decision = interrupt({
+        "stage": "extract_confirm",
+        "passed_count": len(passed),
+        "to_extract": passed[:MAX_EXTRACT],   # 상한 적용된 실제 추출 예정 목록
+        "gate_summary": [{"id": aid, "verdict": v, "passed": ok}
+                         for aid, v, ok in state["gate_results"]],
+    })
+    return {"decision": decision}
+
+
+def route_after_confirm_extract(state):
+    return "extract" if state.get("decision") == "proceed" else "report"
+
+
 def gnode_extract(state):
     """[8] 추출 — 통과분 최대 MAX_EXTRACT편."""
     ledger = load_ledger()
@@ -657,8 +677,13 @@ def gnode_extract(state):
 
 
 def gnode_report(state):
+    # cancel은 두 지점에서 옴: approve(관문 전) vs extract_confirm(관문 후·추출만 취소)
     if state.get("decision") == "cancel":
-        return {"report_text": "취소됨 — 관문/추출 안 함."}
+        gr = state.get("gate_results")
+        if gr:
+            passed = sum(1 for _a, _v, ok in gr if ok)
+            return {"report_text": f"추출 취소 — 관문 {len(gr)}편 완료(통과 {passed}편), 추출 안 함."}
+        return {"report_text": "수집 취소 — 관문/추출 안 함."}
     ex = state.get("extracted", [])
     return {"report_text": f"추출 완료 {len(ex)}편: {ex}\n"
                            f"노드 반영하려면: uv run python src/normalize_v2.py"}
@@ -671,6 +696,7 @@ def build_collect_graph():
     g.add_node("expand_search", gnode_expand_search)
     g.add_node("approve", gnode_approve)
     g.add_node("gate", gnode_gate)
+    g.add_node("confirm_extract", gnode_confirm_extract)
     g.add_node("extract", gnode_extract)
     g.add_node("report", gnode_report)
     g.add_edge(START, "parse")
@@ -680,7 +706,9 @@ def build_collect_graph():
     g.add_edge("expand_search", "approve")
     g.add_conditional_edges("approve", route_after_approve,
                             {"gate": "gate", "report": "report"})
-    g.add_edge("gate", "extract")
+    g.add_edge("gate", "confirm_extract")
+    g.add_conditional_edges("confirm_extract", route_after_confirm_extract,
+                            {"extract": "extract", "report": "report"})
     g.add_edge("extract", "report")
     g.add_edge("report", END)
     return g.compile(checkpointer=MemorySaver())
@@ -700,6 +728,8 @@ def _run_scenario(graph, thread_id, query, responses):
         elif payload.get("stage") == "approve":
             c = payload["counts"]
             print(f"\n  [멈춤·물량승인] 신규 {c['new']}편 (발견 {c['found']}/보유제외 {c['owned_excluded']})")
+        elif payload.get("stage") == "extract_confirm":
+            print(f"\n  [멈춤·추출승인] 통과 {payload['passed_count']}편 → 추출 예정 {payload['to_extract']}")
         resume = responses[i] if i < len(responses) else "proceed"
         print(f"   ← 입력: {resume!r}")
         result = graph.invoke(Command(resume=resume), cfg)
@@ -722,8 +752,8 @@ def graph_smoke():
                                  ["revise: RAG robustness to noisy retrieval", "proceed", "cancel"])
 
     print("\n" + "=" * 64)
-    print("시나리오 C: 정상 경로 (proceed → proceed → 추출)")
-    r_norm, s_norm = _run_scenario(graph, "smoke-normal", Q, ["proceed", "proceed"])
+    print("시나리오 C: 정상 경로 (proceed → proceed → proceed → 추출)")
+    r_norm, s_norm = _run_scenario(graph, "smoke-normal", Q, ["proceed", "proceed", "proceed"])
 
     # --- 하드 게이트 ---
     try:
@@ -733,7 +763,12 @@ def graph_smoke():
         assert p_payload["stage"] == "interpret", "첫 멈춤이 해석확인이 아님"
         assert p_vals.get("status_report"), "멈춤 시 status_report 없음"
         assert not p_vals.get("counts"), "멈춤 시 이미 expand됨(counts 존재)"
-        assert len(s_norm) == 2, f"정상경로 멈춤 2회 아님: {len(s_norm)}"
+        # interrupt 3개: interpret → approve → extract_confirm
+        assert len(s_norm) == 3, f"정상경로 멈춤 3회 아님: {len(s_norm)}"
+        assert [s[0]["stage"] for s in s_norm] == ["interpret", "approve", "extract_confirm"], \
+            "멈춤 순서가 interpret→approve→extract_confirm 아님"
+        # 핵심: extract_confirm 멈춤 시점에 추출은 아직 0편(관문·추출 분리 증거)
+        assert not s_norm[2][1].get("extracted"), "추출승인 멈춤인데 이미 추출됨"
         # 3: cancel → 추출 0
         assert r_cancel.get("extracted", []) == [], f"취소인데 추출됨: {r_cancel.get('extracted')}"
         # 4: 정상 → 추출 ≤ 상한, 파일 생성
@@ -748,7 +783,7 @@ def graph_smoke():
     except AssertionError as e:
         print(f"\n게이트 실패: {e}", file=sys.stderr)
         sys.exit(1)
-    print("\n게이트 통과: compile·interrupt 멈춤(2회)·cancel 추출0·정상 추출≤상한·revise 재해석 OK")
+    print("\n게이트 통과: compile·interrupt 멈춤(3회)·관문/추출 분리·cancel 추출0·정상 추출≤상한·revise 재해석 OK")
 
 
 if __name__ == "__main__":
