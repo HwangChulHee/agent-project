@@ -540,6 +540,7 @@ function render(container, svgEl, data, setSelected) {
     .append("g")
     .selectAll("line")
     .data(links)
+    .join("line")
     // 개념↔개념 builds_on은 색 실선+화살표, 논문→개념(defines·paper_builds_on)은 옅은 점선
     .attr("stroke", (d) =>
       d.kind === "builds_on" ? TYPE_COLOR[d.from_type] || "#888" : "#cbd5e1"
