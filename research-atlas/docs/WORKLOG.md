@@ -2,6 +2,23 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-11 — 수집 에이전트 v2 재배치 (전환 4/4)
+
+`agent_collect.py`를 v2 이중 노드 임베딩 위로 옮기고, 현황 확인을 **두 각도**로 확장 + **현황 보고 + 충분성 추천** 생성. arXiv 실제 수집은 다음 조각.
+
+- 임베딩 로더 v1→v2: `node_embeddings_v2.json`을 개념(`concept:`)·논문(`paper:`)으로 **타입 분리**해 각각 정규화 행렬. v1 파일(node_embeddings.json·normalized.json) 더는 안 읽음.
+- 두 각도 매칭: topic 임베딩 1회 → **개념(definition) 매칭** "관련 기법이 뭐 있나" + **논문(problem) 매칭** "같은 문제 다룬 논문이 뭐 있나"(세렌디피티). floor=0.30 컷, top=8.
+- `build_status_report()`(LLM 1회): 매칭 상위의 definition/problem을 묶어 주제 관점 풀이 + 종합 판정 + 충분성 추천(충분/부분적/비어있음). placeholder 개념은 "정의 미보유"로 짧게. `confirm_message()` 대체.
+- 스모크를 **하드 게이트**로: model·개념73·논문68 assert 실패 시 exit 1.
+
+**스모크 결과**(쿼리당 LLM 2회 + 임베딩 1):
+- 게이트 통과: 개념 73 + 논문 68.
+- "knowledge graph 만들기" → 개념 상위에 **GraphRAG(0.54)·HippoRAG(0.51)·LightRAG(0.43)·HyperGraphRAG** 등장(v2 definition 매칭의 핵심 증거).
+- 논문(problem) 매칭이 개념과 **다른 항목**도 포착: RAG강건성에서 "The Power of Noise"·RAGBench, 멀티에이전트에서 Switch Transformers·Constitutional AI 등 — problem 각도가 definition과 다른 정보 제공.
+- 보고가 나열이 아닌 풀이+종합+추천 형태, floor 아래(<0.30) 노드 미혼입(최저 0.34).
+
+다음 조각: 실제 arXiv 검색/수집/승인 + LangGraph 분기(설명/수집/수정). 충분성은 이번엔 **추천만**, 자동 결정 아님.
+
 ## 2026-06-11 — API·프론트 v1→v2 전환 (전환 3/4)
 
 API가 `normalized_v2.json`(이중 노드)을 읽어 **개념 주도 v1 호환 형태로 변환**해 서빙. 프론트는 최소 수정 + "논문 보기" 토글. 회귀 최소화 우선.
