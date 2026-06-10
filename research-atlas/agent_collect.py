@@ -8,9 +8,14 @@ arXiv 실제 수집/승인/분기는 다음 조각. 이번은 현황 보고까�
 실행: uv run python agent_collect.py
 """
 import json
+import re
 import sys
+import time
+import urllib.parse
+import urllib.request
 from pathlib import Path
 
+import feedparser
 import numpy as np
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -19,6 +24,11 @@ load_dotenv()
 client = OpenAI()
 MODEL = "gpt-5.4-mini"
 EMBED_MODEL = "text-embedding-3-small"
+
+ARXIV_API = "https://export.arxiv.org/api/query"
+NORMALIZED_V2 = Path("data/outputs/normalized_v2.json")
+PAPERS_LEDGER = Path("data/outputs/papers.json")
+REJECT_VERDICTS = {"reject", "rejected", "drop"}  # 관문 탈락으로 보는 verdict
 
 INTENT_TOOL = {
     "type": "function",
@@ -144,6 +154,163 @@ def build_status_report(intent, cm_hits, pm_hits, norm):
     return resp.choices[0].message.content
 
 
+# --- [3] 검색어 확장 ---
+EXPAND_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "expand_queries",
+        "description": "수집 주제를 arXiv 전문 검색에 쓸 검색어 묶음으로 확장한다.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "queries": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "5~8개의 영어 검색어. 동의어·인접 표현·상위/하위 개념을 포함하되 주제에서 벗어나지 않게. 단순 topic 반복 금지.",
+                },
+            },
+            "required": ["queries"],
+        },
+    },
+}
+
+
+def expand_query(topic, related_terms=None):
+    """topic을 arXiv 검색어 5~8개로 확장. related_terms(보유 개념/논문)는 맵 밀착 재료."""
+    system = (
+        "너는 arXiv 검색어 확장기다. 주어진 연구 주제를 arXiv 전문 검색에 쓸 영어 검색어 "
+        "5~8개로 펼친다. 동의어·인접 표현·상위/하위 개념을 포함하되 주제에서 벗어나지 않게 한다. "
+        "단순 반복은 금지. expand_queries로 보고한다."
+    )
+    user = f"주제: {topic}"
+    if related_terms:
+        user += "\n관련 보유 개념/논문(맵 밀착 검색어 재료): " + ", ".join(related_terms)
+    resp = client.chat.completions.create(
+        model=MODEL,
+        messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
+        tools=[EXPAND_TOOL],
+        tool_choice={"type": "function", "function": {"name": "expand_queries"}},
+    )
+    args = json.loads(resp.choices[0].message.tool_calls[0].function.arguments)
+    out, seen = [], set()
+    for q in args.get("queries", []):
+        q = (q or "").strip()
+        if q and q.lower() not in seen:
+            seen.add(q.lower())
+            out.append(q)
+    return out
+
+
+# --- [4] arXiv 검색 ---
+def _norm_arxiv_id(raw):
+    """'http://arxiv.org/abs/2401.12345v2' / '2401.12345v2' -> '2401.12345' (버전 접미사 제거)."""
+    tail = (raw or "").rstrip("/").split("/")[-1]
+    return re.sub(r"v\d+$", "", tail)
+
+
+def search_arxiv(queries, period_from="", period_to="", max_per_query=50):
+    """검색어 묶음으로 arXiv 메타 검색 → {arxivID: meta}. 검색어 간 ID로 dedup.
+
+    rate limit: 요청 사이 3초 sleep(arXiv 규정), 순차. period(YYYY-MM)는 클라이언트단 필터.
+    """
+    found = {}
+    for i, q in enumerate(queries):
+        if i:
+            time.sleep(3)  # arXiv rate limit
+        params = urllib.parse.urlencode({
+            # 구문(phrase) 검색: 따옴표로 묶어야 다단어가 AND/구문으로 잡힘.
+            # 따옴표 없으면 all:이 토큰 OR로 풀려 submittedDate 정렬 시 무관 최신논문이 뜸.
+            "search_query": f'all:"{q}"',
+            "start": 0,
+            "max_results": max_per_query,
+            "sortBy": "submittedDate",
+            "sortOrder": "descending",
+        })
+        req = urllib.request.Request(
+            f"{ARXIV_API}?{params}",
+            headers={"User-Agent": "research-atlas/0.1 (collect agent)"},
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                raw = r.read()
+        except Exception as e:  # 네트워크/타임아웃 — 한 검색어 건너뛰고 계속
+            print(f"  검색 실패 [{q}]: {e}", file=sys.stderr)
+            continue
+        feed = feedparser.parse(raw)
+        for e in feed.entries:
+            aid = _norm_arxiv_id(e.get("id", ""))
+            if not aid:
+                continue
+            published = (e.get("published", "") or "")[:10]  # YYYY-MM-DD
+            ym = published[:7]
+            if period_from and ym and ym < period_from:
+                continue
+            if period_to and ym and ym > period_to:
+                continue
+            if aid in found:
+                continue  # 다른 검색어에 이미 잡힘
+            found[aid] = {
+                "title": " ".join((e.get("title", "") or "").split()),
+                "abstract": " ".join((e.get("summary", "") or "").split()),
+                "published": published,
+                "categories": [t.get("term") for t in e.get("tags", [])],
+                "first_seen_query": q,
+            }
+    return found
+
+
+# --- papers.json 장부 (논문 장부, lexicon의 논문판) ---
+def load_ledger():
+    if PAPERS_LEDGER.exists():
+        return json.loads(PAPERS_LEDGER.read_text())
+    return {}
+
+
+def upsert_ledger(found):
+    """검색 결과를 papers.json에 upsert. gate/extracted/first_seen_query는 기존값 보존."""
+    ledger = load_ledger()
+    for aid, meta in found.items():
+        if aid in ledger:  # 메타만 갱신, 판정 이력 보존
+            ledger[aid].update({
+                "title": meta["title"], "abstract": meta["abstract"],
+                "published": meta["published"], "categories": meta["categories"],
+            })
+        else:
+            ledger[aid] = {
+                "title": meta["title"], "abstract": meta["abstract"],
+                "published": meta["published"], "categories": meta["categories"],
+                "gate": None, "extracted": False,
+                "first_seen_query": meta["first_seen_query"],
+            }
+    PAPERS_LEDGER.write_text(json.dumps(ledger, ensure_ascii=False, indent=2))
+    return ledger
+
+
+# --- [5] 신규 후보 산출 (보유분/관문탈락 제외) ---
+def load_owned_ids():
+    """normalized_v2.json의 paper 노드 키에서 보유 arXiv ID 집합."""
+    nodes = json.loads(NORMALIZED_V2.read_text())["nodes"]
+    return {k.split("paper:", 1)[1] for k in nodes if k.startswith("paper:")}
+
+
+def dedup_new_candidates(found, ledger):
+    """found 중 (1)이미 지도 보유, (2)과거 관문 탈락 을 제외한 신규 후보 id + 카운트."""
+    owned = load_owned_ids()
+    new, owned_excl, gate_excl = [], 0, 0
+    for aid in found:
+        if aid in owned:
+            owned_excl += 1
+            continue
+        gate = (ledger.get(aid) or {}).get("gate") or {}
+        if str(gate.get("verdict", "")).lower() in REJECT_VERDICTS:
+            gate_excl += 1
+            continue
+        new.append(aid)
+    counts = {"found": len(found), "owned_excluded": owned_excl,
+              "gate_excluded": gate_excl, "new": len(new)}
+    return new, counts
+
+
 SMOKE = [
     "2024년 RAG 강건성 논문 가져와줘",
     "knowledge graph 만드는 논문들 찾아와",
@@ -151,10 +318,9 @@ SMOKE = [
 ]
 
 
-if __name__ == "__main__":
+def intent_smoke():
+    """[1][2] 스모크 — 의도파싱 + 현황확인 + 현황보고."""
     model, norm, (ck, cm), (pk, pm) = load_embeddings()
-
-    # --- 하드 게이트: 데이터 정합성 (깨지면 비정상 종료) ---
     try:
         assert model == EMBED_MODEL, f"model 불일치: {model}"
         assert len(ck) == 73, f"개념 임베딩 73 기대, 실제 {len(ck)}"
@@ -163,13 +329,69 @@ if __name__ == "__main__":
         print(f"게이트 실패: {e}", file=sys.stderr)
         sys.exit(1)
     print(f"게이트 통과: 개념 {len(ck)} + 논문 {len(pk)} (model={model})\n")
-
     for query in SMOKE:
         intent = parse_intent(query)
         q = embed_query(intent["topic"], model)
-        cm_hits = match(q, ck, cm)   # [(concept:key, score)]
-        pm_hits = match(q, pk, pm)   # [(paper:key, score)]
-        report = build_status_report(intent, cm_hits, pm_hits, norm)  # LLM 1회
+        cm_hits = match(q, ck, cm)
+        pm_hits = match(q, pk, pm)
+        report = build_status_report(intent, cm_hits, pm_hits, norm)
         print(f'"{query}"\n  topic: {intent["topic"]}')
         print(report)
         print()
+
+
+def collect_smoke():
+    """[3][4][5] 스모크 — 검색어 확장 → arXiv 검색 → 장부 upsert → 신규 후보."""
+    model, norm, (ck, cm), (pk, pm) = load_embeddings()
+    query = "RAG 강건성 논문 찾아줘"  # period 없음(전체 기간) — 결과 비어있지 않게
+    intent = parse_intent(query)
+    topic = intent["topic"]
+
+    # [2] 관련어 추출 — 보유 개념/논문을 검색어 확장 재료로
+    qv = embed_query(topic, model)
+    cm_hits, pm_hits = match(qv, ck, cm), match(qv, pk, pm)
+    related = [norm[k]["canonical"] for k, _ in cm_hits if k in norm]
+    related += [norm[k].get("title", "") for k, _ in pm_hits if k in norm]
+    related = [r for r in related if r][:10]
+
+    queries = expand_query(topic, related)            # [3]
+    found = search_arxiv(queries, intent.get("period_from", ""),
+                         intent.get("period_to", ""))  # [4]
+    ledger = upsert_ledger(found)
+    new, counts = dedup_new_candidates(found, ledger)  # [5]
+
+    # --- 출력 (게이트보다 먼저 — 실패해도 출력은 보이게) ---
+    print(f'"{query}"  →  topic: {topic}\n')
+    print(f"[3] 검색어 {len(queries)}개:")
+    for q in queries:
+        print(f"   • {q}")
+    print(f"\n[4] arXiv 발견 {counts['found']}편 (검색어 {len(queries)}개, 검색어당 max 50)")
+    print("   샘플 3편:")
+    for aid in list(found)[:3]:
+        m = found[aid]
+        print(f"   • {aid} [{m['published']}] {m['title']}")
+        print(f"     {m['abstract'][:160]}…")
+    print(f"\n[5] dedup: 발견 {counts['found']} / 보유제외 {counts['owned_excluded']} / "
+          f"관문탈락제외 {counts['gate_excluded']} / 신규 {counts['new']}")
+    print(f"   장부: {PAPERS_LEDGER} (총 {len(ledger)}편 누적)")
+
+    # --- 하드 게이트 ---
+    try:
+        assert isinstance(queries, list) and all(isinstance(x, str) for x in queries) \
+            and len(queries) >= 3, f"검색어 확장 실패: {queries}"
+        assert len(found) > 0, "arXiv 검색 결과 0편 (네트워크/파싱 실패 의심)"
+        complete = sum(1 for m in found.values()
+                       if m["title"] and m["abstract"] and m["published"])
+        assert complete * 2 >= len(found), f"메타 완전성 과반 미달: {complete}/{len(found)}"
+        assert isinstance(json.loads(PAPERS_LEDGER.read_text()), dict), "papers.json 파싱 실패"
+    except AssertionError as e:
+        print(f"\n게이트 실패: {e}", file=sys.stderr)
+        sys.exit(1)
+    print("\n게이트 통과: 검색어 확장·arXiv 검색·메타 완전성·장부 OK")
+
+
+if __name__ == "__main__":
+    if "--collect-smoke" in sys.argv:
+        collect_smoke()
+    else:
+        intent_smoke()

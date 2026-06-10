@@ -2,6 +2,21 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-11 — 수집 에이전트 [3][4][5]: 검색어 확장 + arXiv 검색 + 장부/중복제거
+
+의도 파싱(topic) → arXiv 신규 후보 목록까지. PDF·관문·추출은 다음 조각.
+
+- **[3] `expand_query(topic, related_terms)`**: LLM 1회로 topic을 arXiv 검색어 5~8개로 확장. [2] 현황확인의 보유 개념/논문 canonical을 재료로 넘겨 맵 밀착.
+- **[4] `search_arxiv(queries, period_from, period_to, max_per_query=50)`**: export.arxiv.org Atom API(feedparser 파싱). 요청 사이 3초 sleep(rate limit), 순차. arXiv ID 버전접미사(`v\d+`) 제거 정규화, 검색어 간 ID dedup, period는 클라이언트단 필터.
+  - **함정 발견·수정**: 핸드오프 스펙 `all:<검색어>`(따옴표 없음)는 다단어를 토큰 OR로 풀어, submittedDate 정렬 시 **무관한 최신 논문 firehose**가 떴음(첫 스모크 184편 전부 노이즈: Low-Light Video, Lattice QCD…). → **구문 검색 `all:"<검색어>"`**(따옴표)로 수정. 재스모크 22편 전부 RAG robustness 관련. 변형 A/B/C 직접 대조로 확인.
+- **papers.json 장부**(신규): "한 번이라도 검색에 걸린 논문" 장부(lexicon의 논문판). upsert로 메타 갱신, gate/extracted/first_seen_query 보존.
+- **[5] `dedup_new_candidates`**: found에서 (1)지도 보유(normalized_v2 paper 노드), (2)관문 탈락(gate.verdict∈reject) 제외 → 신규 후보 + 카운트.
+- `--collect-smoke` 플래그로 [1][2] 스모크(`intent_smoke`)와 분리.
+
+**스모크 결과**: 검색어 8개(robust RAG·failure modes·self-correcting·benchmarking reliability 등 다양). arXiv 발견 22편, 샘플 3편 모두 RAG robustness 주제, 메타 정상. dedup: 발견 22/보유제외 0/신규 22. 게이트 4종 통과. 보유 dedup은 이번 검색에 보유 논문이 안 걸려 자연 관찰 불가 → **주입 테스트로 로직 검증**(보유 1706.03762 제외·관문탈락 제외·신규 산출 OK).
+
+다음 조각: [6]물량승인 + [7]관문 + [8]추출(PDF 받기 시작). papers.json의 gate/extracted를 거기서 채움.
+
 ## 2026-06-11 — 논문 보기: 정의없는 논문 닻 내리기
 
 "논문 보기 ON인데 일부 논문이 안 보인다" 지적. 원인: 논문은 `defines`(논문→개념)로만 그래프에 붙는데, survey/analysis처럼 새 기법을 정의하지 않는 논문 4편은 엣지가 없어 고립(라벨 없는 r6 회색 점이라 사실상 안 보임).

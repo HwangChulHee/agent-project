@@ -1,0 +1,260 @@
+{
+  "2605.14478": {
+    "title": "When Retrieval Hurts Code Completion: A Diagnostic Study of Stale Repository Context",
+    "abstract": "Context: Retrieval-augmented code generation relies on cross-file repository context, but retrieved snippets may come from obsolete project states. Objectives: We study whether temporally stale repository snippets act as harmless noise or actively induce current-state-incompatible code. Methods: We conduct a controlled diagnostic study on a curated 17-sample set of production-helper signature changes from five Python repositories. For each sample, we compare current-only, stale-only, no-retrieval, and mixed current/stale retrieval conditions under prompts that hide commit freshness and expected current signatures. Results: Under neutralized prompts, stale-only retrieval induces stale helper references on 15/17 Qwen2.5-Coder-7B-Instruct samples and 13/17 gpt-4.1-mini samples, corresponding to 88.2 and 76.5 percentage-point increases over current-only retrieval. No retrieval produces zero stale references but only 1/17 passing completions. The two models share 75.0% Jaccard overlap among stale-triggering samples, and mixed conditions show that adding valid current evidence largely rescues stale-only failures. Conclusion: Temporal validity of retrieved repository context is a distinct diagnostic variable for Code RAG robustness: stale context can actively bias models toward obsolete repository state rather than merely removing useful evidence.",
+    "published": "2026-05-14",
+    "categories": [
+      "cs.SE",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "RAG robustness"
+  },
+  "2604.10745": {
+    "title": "How You Ask Matters! Adaptive RAG Robustness to Query Variations",
+    "abstract": "Adaptive Retrieval-Augmented Generation (RAG) promises accuracy and efficiency by dynamically triggering retrieval only when needed and is widely used in practice. However, real-world queries vary in surface form even with the same intent, and their impact on Adaptive RAG remains under-explored. We introduce the first large-scale benchmark of diverse yet semantically identical query variations, combining human-written and model-generated rewrites. Our benchmark facilitates a systematic evaluation of Adaptive RAG robustness by examining its key components across three dimensions: answer quality, computational cost, and retrieval decisions. We discover a critical robustness gap, where small surface-level changes in queries dramatically alter retrieval behavior and accuracy. Although larger models show better performance, robustness does not improve accordingly. These findings reveal that Adaptive RAG methods are highly vulnerable to query variations that preserve identical semantics, exposing a critical robustness challenge.",
+    "published": "2026-04-12",
+    "categories": [
+      "cs.CL"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "RAG robustness"
+  },
+  "2512.01335": {
+    "title": "EmoRAG: Evaluating RAG Robustness to Symbolic Perturbations",
+    "abstract": "Retrieval-Augmented Generation (RAG) systems are increasingly central to robust AI, enhancing large language model (LLM) faithfulness by incorporating external knowledge. However, our study unveils a critical, overlooked vulnerability: their profound susceptibility to subtle symbolic perturbations, particularly through near-imperceptible emoticon tokens such as \"(@_@)\" that can catastrophically mislead retrieval, termed EmoRAG. We demonstrate that injecting a single emoticon into a query makes it nearly 100% likely to retrieve semantically unrelated texts that contain a matching emoticon. Our extensive experiment across general question-answering and code domains, using a range of state-of-the-art retrievers and generators, reveals three key findings: (I) Single-Emoticon Disaster: Minimal emoticon injections cause maximal disruptions, with a single emoticon almost 100% dominating RAG output. (II) Positional Sensitivity: Placing an emoticon at the beginning of a query can cause severe perturbation, with F1-Scores exceeding 0.92 across all datasets. (III) Parameter-Scale Vulnerability: Counterintuitively, models with larger parameters exhibit greater vulnerability to the interference. We provide an in-depth analysis to uncover the underlying mechanisms of these phenomena. Furthermore, we raise a critical concern regarding the robustness assumption of current RAG systems, envisioning a threat scenario where an adversary exploits this vulnerability to manipulate the RAG system. We evaluate standard defenses and find them insufficient against EmoRAG. To address this, we propose targeted defenses, analyzing their strengths and limitations in mitigating emoticon-based perturbations. Finally, we outline future directions for building robust RAG systems.",
+    "published": "2025-12-01",
+    "categories": [
+      "cs.CR",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "RAG robustness"
+  },
+  "2512.01183": {
+    "title": "TempPerturb-Eval: On the Joint Effects of Internal Temperature and External Perturbations in RAG Robustness",
+    "abstract": "The evaluation of Retrieval-Augmented Generation (RAG) systems typically examines retrieval quality and generation parameters like temperature in isolation, overlooking their interaction. This work presents a systematic investigation of how text perturbations (simulating noisy retrieval) interact with temperature settings across multiple LLM runs. We propose a comprehensive RAG Perturbation-Temperature Analysis Framework that subjects retrieved documents to three distinct perturbation types across varying temperature settings. Through extensive experiments on HotpotQA with both open-source and proprietary LLMs, we demonstrate that performance degradation follows distinct patterns: high-temperature settings consistently amplify vulnerability to perturbations, while certain perturbation types exhibit non-linear sensitivity across the temperature range. Our work yields three key contributions: (1) a diagnostic benchmark for assessing RAG robustness, (2) an analytical framework for quantifying perturbation-temperature interactions, and (3) practical guidelines for model selection and parameter tuning under noisy retrieval conditions.",
+    "published": "2025-12-01",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "RAG robustness"
+  },
+  "2509.03787": {
+    "title": "Evaluating the Robustness of Retrieval-Augmented Generation to Adversarial Evidence in the Health Domain",
+    "abstract": "Retrieval augmented generation (RAG) systems provide a method for factually grounding the responses of a Large Language Model (LLM) by providing retrieved evidence, or context, as support. Guided by this context, RAG systems can reduce hallucinations and expand the ability of LLMs to accurately answer questions outside the scope of their training data. Unfortunately, this design introduces a critical vulnerability: LLMs may absorb and reproduce misinformation present in retrieved evidence. This problem is magnified if retrieved evidence contains adversarial material explicitly intended to promulgate misinformation. This paper presents a systematic evaluation of RAG robustness in the health domain and examines alignment between model outputs and ground-truth answers. We focus on the health domain due to the potential for harm caused by incorrect responses, as well as the availability of evidence-based ground truth for many common health-related questions. We conduct controlled experiments using common health questions, varying both the type and composition of the retrieved documents (helpful, harmful, and adversarial) as well as the framing of the question by the user (consistent, neutral, and inconsistent). Our findings reveal that adversarial documents substantially degrade alignment, but robustness can be preserved when helpful evidence is also present in the retrieval pool. These findings offer actionable insights for designing safer RAG systems in high-stakes domains by highlighting the need for retrieval safeguards. To enable reproducibility and facilitate future research, all experimental results are publicly available in our github repository. https://github.com/shakibaam/RAG_ROBUSTNESS_EVAL",
+    "published": "2025-09-04",
+    "categories": [
+      "cs.IR",
+      "cs.CL"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "RAG robustness"
+  },
+  "2504.02411": {
+    "title": "Adapting Large Language Models for Multi-Domain Retrieval-Augmented-Generation",
+    "abstract": "Retrieval-Augmented Generation (RAG) enhances LLM factuality, but multi-domain applications face challenges like lack of diverse benchmarks and poor out-of-domain generalization. The first contribution of this work is to introduce a diverse benchmark comprising a variety of question-answering tasks from 8 sources and covering 13 domains. Our second contribution consists in systematically testing out-of-domain generalization for typical RAG tuning strategies. While our findings reveal that standard fine-tuning fails to generalize effectively, we show that sequence-level distillation with teacher-generated labels improves out-of-domain performance by providing more coherent supervision. Our findings highlight key strategies for improving multi-domain RAG robustness.",
+    "published": "2025-04-03",
+    "categories": [
+      "cs.CL"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "RAG robustness"
+  },
+  "2404.13948": {
+    "title": "Typos that Broke the RAG's Back: Genetic Attack on RAG Pipeline by Simulating Documents in the Wild via Low-level Perturbations",
+    "abstract": "The robustness of recent Large Language Models (LLMs) has become increasingly crucial as their applicability expands across various domains and real-world applications. Retrieval-Augmented Generation (RAG) is a promising solution for addressing the limitations of LLMs, yet existing studies on the robustness of RAG often overlook the interconnected relationships between RAG components or the potential threats prevalent in real-world databases, such as minor textual errors. In this work, we investigate two underexplored aspects when assessing the robustness of RAG: 1) vulnerability to noisy documents through low-level perturbations and 2) a holistic evaluation of RAG robustness. Furthermore, we introduce a novel attack method, the Genetic Attack on RAG (\\textit{GARAG}), which targets these aspects. Specifically, GARAG is designed to reveal vulnerabilities within each component and test the overall system functionality against noisy documents. We validate RAG robustness by applying our \\textit{GARAG} to standard QA datasets, incorporating diverse retrievers and LLMs. The experimental results show that GARAG consistently achieves high attack success rates. Also, it significantly devastates the performance of each component and their synergy, highlighting the substantial risk that minor textual inaccuracies pose in disrupting RAG systems in the real world.",
+    "published": "2024-04-22",
+    "categories": [
+      "cs.CL"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "RAG robustness"
+  },
+  "2605.01302": {
+    "title": "Beyond Semantic Relevance: Counterfactual Risk Minimization for Robust Retrieval-Augmented Generation",
+    "abstract": "Standard Retrieval-Augmented Generation (RAG) systems predominantly rely on semantic relevance as a proxy for utility. However, this assumption collapses in realistic decision-making scenarios where user queries are laden with cognitive biases, such as false premises or confirmation bias. In such cases, maximizing relevance paradoxically promotes the retrieval of sycophantic evidence that reinforces hallucinations, a critical failure we term the ``Relevance-Robustness Gap''. To bridge this gap, we propose CoRM-RAG (Counterfactual Risk Minimization for RAG), a framework that aligns retrieval with decision safety rather than mere similarity. Grounded in causal intervention, we introduce a Cognitive Perturbation Protocol to simulate user biases during training, which is then distilled into a lightweight Evidence Critic. This scoring module learns to identify documents that possess sufficient evidential strength to steer the model toward correctness despite adversarial query perturbations. Extensive experiments on decision-making benchmarks demonstrate that CoRM-RAG significantly outperforms strong dense retrievers and LLM-based rerankers in adversarial settings, while enabling effective risk-aware abstention through reliable robustness scoring. Our code is available at https://github.com/PeiYangLiu/CoRM-RAG.git.",
+    "published": "2026-05-02",
+    "categories": [
+      "cs.CL",
+      "cs.IR"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2603.05698": {
+    "title": "Towards Robust Retrieval-Augmented Generation Based on Knowledge Graph: A Comparative Analysis",
+    "abstract": "Retrieval-Augmented Generation (RAG) was introduced to enhance the capabilities of Large Language Models (LLMs) beyond their encoded prior knowledge. This is achieved by providing LLMs with an external source of knowledge, which helps reduce factual hallucinations and enables access to new information not available during pretraining. However, inconsistent retrieved information can negatively affect LLM responses. The Retrieval-Augmented Generation Benchmark (RGB) was introduced to evaluate the robustness of RAG systems under such conditions. In this work, we use the RGB corpus to evaluate LLMs in four scenarios: noise robustness, information integration, negative rejection, and counterfactual robustness. We perform a comparative analysis between the RGB RAG baseline and GraphRAG, a knowledge graph based retrieval system. We test three GraphRAG customizations to improve robustness. Results show improvements over the RGB baseline and provide insights for designing more reliable RAG systems for real world scenarios.",
+    "published": "2026-03-05",
+    "categories": [
+      "cs.CL"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2602.03689": {
+    "title": "Rethinking the Reranker: Boundary-Aware Evidence Selection for Robust Retrieval-Augmented Generation",
+    "abstract": "Retrieval-Augmented Generation (RAG) systems remain brittle under realistic retrieval noise, even when the required evidence appears in the top-K results. A key reason is that retrievers and rerankers optimize solely for relevance, often selecting either trivial, answer-revealing passages or evidence that lacks the critical information required to answer the question, without considering whether the evidence is suitable for the generator. We propose BAR-RAG, which reframes the reranker as a boundary-aware evidence selector that targets the generator's Goldilocks Zone -- evidence that is neither trivially easy nor fundamentally unanswerable for the generator, but is challenging yet sufficient for inference and thus provides the strongest learning signal. BAR-RAG trains the selector with reinforcement learning using generator feedback, and adopts a two-stage pipeline that fine-tunes the generator under the induced evidence distribution to mitigate the distribution mismatch between training and inference. Experiments on knowledge-intensive question answering benchmarks show that BAR-RAG consistently improves end-to-end performance under noisy retrieval, achieving an average gain of 10.3 percent over strong RAG and reranking baselines while substantially improving robustness. Code is publicly avaliable at https://github.com/GasolSun36/BAR-RAG.",
+    "published": "2026-02-03",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2602.01965": {
+    "title": "Breaking the Static Graph: Context-Aware Traversal for Robust Retrieval-Augmented Generation",
+    "abstract": "Recent advances in Retrieval-Augmented Generation (RAG) have shifted from simple vector similarity to structure-aware approaches like HippoRAG, which leverage Knowledge Graphs (KGs) and Personalized PageRank (PPR) to capture multi-hop dependencies. However, these methods suffer from a \"Static Graph Fallacy\": they rely on fixed transition probabilities determined during indexing. This rigidity ignores the query-dependent nature of edge relevance, causing semantic drift where random walks are diverted into high-degree \"hub\" nodes before reaching critical downstream evidence. Consequently, models often achieve high partial recall but fail to retrieve the complete evidence chain required for multi-hop queries. To address this, we propose CatRAG, Context-Aware Traversal for robust RAG, a framework that builds on the HippoRAG 2 architecture and transforms the static KG into a query-adaptive navigation structure. We introduce a multi-faceted framework to steer the random walk: (1) Symbolic Anchoring, which injects weak entity constraints to regularize the random walk; (2) Query-Aware Dynamic Edge Weighting, which dynamically modulates graph structure, to prune irrelevant paths while amplifying those aligned with the query's intent; and (3) Key-Fact Passage Weight Enhancement, a cost-efficient bias that structurally anchors the random walk to likely evidence. Experiments across four multi-hop benchmarks demonstrate that CatRAG consistently outperforms state of the art baselines. Our analysis reveals that while standard Recall metrics show modest gains, CatRAG achieves substantial improvements in reasoning completeness, the capacity to recover the entire evidence path without gaps. These results reveal that our approach effectively bridges the gap between retrieving partial context and enabling fully grounded reasoning. Resources are available at https://github.com/kwunhang/CatRAG.",
+    "published": "2026-02-02",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2506.17188": {
+    "title": "Towards AI Search Paradigm",
+    "abstract": "In this paper, we introduce the AI Search Paradigm, a comprehensive blueprint for next-generation search systems capable of emulating human information processing and decision-making. The paradigm employs a modular architecture of four LLM-powered agents (Master, Planner, Executor and Writer) that dynamically adapt to the full spectrum of information needs, from simple factual queries to complex multi-stage reasoning tasks. These agents collaborate dynamically through coordinated workflows to evaluate query complexity, decompose problems into executable plans, and orchestrate tool usage, task execution, and content synthesis. We systematically present key methodologies for realizing this paradigm, including task planning and tool integration, execution strategies, aligned and robust retrieval-augmented generation, and efficient LLM inference, spanning both algorithmic techniques and infrastructure-level optimizations. By providing an in-depth guide to these foundational components, this work aims to inform the development of trustworthy, adaptive, and scalable AI search systems.",
+    "published": "2025-06-20",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.IR"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2506.12071": {
+    "title": "T$^2$-RAGBench: Text-and-Table Benchmark for Evaluating Retrieval-Augmented Generation",
+    "abstract": "Since many real-world documents combine textual and tabular data, robust Retrieval Augmented Generation (RAG) systems are essential for effectively accessing and analyzing such content to support complex reasoning tasks. Therefore, this paper introduces $\\textbf{$T^2$-RAGBench}$, a benchmark comprising $\\textbf{23,088}$ question-context-answer triples, designed to evaluate RAG methods on real-world text-and-table data. Unlike typical QA datasets that operate under $\\textit{Oracle Context}$ settings, $\\textbf{$T^2$-RAGBench}$ challenges models to first retrieve the correct context before conducting numerical reasoning. Existing QA datasets containing text-and-table data typically contain context-dependent questions, which may yield multiple correct answers depending on the provided context. To address this, we transform SOTA datasets into a context-independent format, validated by experts as 91.3% context-independent questions, enabling reliable RAG evaluation. Our comprehensive evaluation identifies $\\textit{Hybrid BM25}$ , a technique that combines dense and sparse vectors, as the most effective approach for text-and-table data. However, results demonstrate that $\\textbf{$T^2$-RAGBench}$ remains challenging even for SOTA LLMs and RAG methods. Further ablation studies examine the impact of embedding models and corpus size on retrieval performance. $\\textbf{$T^2$-RAGBench}$ provides a realistic and rigorous benchmark for existing RAG methods on text-and-table data. Code and dataset are available online: https://github.com/uhh-hcds/g4kmu-paper",
+    "published": "2025-06-04",
+    "categories": [
+      "cs.IR"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2504.04062": {
+    "title": "QE-RAG: A Robust Retrieval-Augmented Generation Benchmark for Query Entry Errors",
+    "abstract": "Retriever-augmented generation (RAG) has become a widely adopted approach for enhancing the factual accuracy of large language models (LLMs). While current benchmarks evaluate the performance of RAG methods from various perspectives, they share a common assumption that user queries used for retrieval are error-free. However, in real-world interactions between users and LLMs, query entry errors such as keyboard proximity errors, visual similarity errors, and spelling errors are frequent. The impact of these errors on current RAG methods against such errors remains largely unexplored. To bridge this gap, we propose QE-RAG, the first robust RAG benchmark designed specifically to evaluate performance against query entry errors. We augment six widely used datasets by injecting three common types of query entry errors into randomly selected user queries at rates of 20\\% and 40\\%, simulating typical user behavior in real-world scenarios. We analyze the impact of these errors on LLM outputs and find that corrupted queries degrade model performance, which can be mitigated through query correction and training a robust retriever for retrieving relevant documents. Based on these insights, we propose a contrastive learning-based robust retriever training method and a retrieval-augmented query correction method. Extensive in-domain and cross-domain experiments reveal that: (1) state-of-the-art RAG methods including sequential, branching, and iterative methods, exhibit poor robustness to query entry errors; (2) our method significantly enhances the robustness of RAG when handling query entry errors and it's compatible with existing RAG methods, further improving their robustness.",
+    "published": "2025-04-05",
+    "categories": [
+      "cs.IR"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2503.04789": {
+    "title": "Aligning Extraction and Generation for Robust Retrieval-Augmented Generation",
+    "abstract": "Retrieval-augmented generation (RAG) enhances LLMs with external knowledge, yet generation remains vulnerable to retrieval-induced noise and uncertain placement of relevant chunks, often causing hallucinations. We present Ext2Gen, an extract-then-generate framework that strengthens LLMs via joint evidence selection and answer generation, dynamically identifying query-relevant content while suppressing noise, thereby removing the need for any independent pre-generation compression module. Optimized through preference alignment with well-curated pairwise feedback, Ext2Gen produces accurate and faithful answers even under noisy or imprecise retrieval. Experiments demonstrate that it substantially enhances the robustness of the generation backbone and yields greater performance gains than methods relying on independent compression models, e.g., Recomp, CompAct, EXIT). It further benefits from improved retrieval techniques such as query rewriting, underscoring that generation-side enhancements address limitations that retrieval alone cannot overcome.",
+    "published": "2025-02-28",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2502.10993": {
+    "title": "RoseRAG: Robust Retrieval-augmented Generation with Small-scale LLMs via Margin-aware Preference Optimization",
+    "abstract": "Large language models (LLMs) have achieved impressive performance but face high computational costs and latency, limiting their deployment in resource-constrained settings. In contrast, small-scale LLMs (SLMs) are more efficient yet struggle to capture evolving real-world knowledge. Retrieval-augmented generation (RAG) helps by integrating external knowledge, but imperfect retrieval can introduce distracting noise that misleads SLMs. We propose RoseRAG, a robust RAG framework for SLMs via Margin-aware Preference Optimization. RoseRAG employs multi-turn prompting for detailed reasoning, rejection sampling for high-quality explanations, and contrastive preference selection to refine responses by maximizing the likelihood gap between preferred and non-preferred outputs. By integrating these components into a margin-aware optimization process, RoseRAG robustly enhances the accuracy and reliability of SLMs for RAG applications. Extensive experiments on three open-domain question answering benchmarks indicate that our innovative RoseRAG surpasses state-of-the-art baselines significantly.",
+    "published": "2025-02-16",
+    "categories": [
+      "cs.CL",
+      "cs.LG"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2501.13726": {
+    "title": "RPO: Retrieval Preference Optimization for Robust Retrieval-Augmented Generation",
+    "abstract": "While Retrieval-Augmented Generation (RAG) has exhibited promise in utilizing external knowledge, its generation process heavily depends on the quality and accuracy of the retrieved context. Large language models (LLMs) struggle to evaluate the correctness of non-parametric knowledge retrieved externally when it differs from internal memorization, leading to knowledge conflicts during response generation. To this end, we introduce the Retrieval Preference Optimization (RPO), a lightweight and effective alignment method to adaptively leverage multi-source knowledge based on retrieval relevance. An implicit representation of retrieval relevance is derived and incorporated into the reward model to integrate retrieval evaluation and response generation into a single model, solving the problem that previous methods necessitate the additional procedure to assess the retrieval quality. Notably, RPO is the only RAG-dedicated alignment approach that quantifies the awareness of retrieval relevance in training, overcoming mathematical obstacles. Experiments on four datasets demonstrate that RPO outperforms RAG by 4-10% in accuracy without any extra component, exhibiting its robust generalization.",
+    "published": "2025-01-23",
+    "categories": [
+      "cs.CL"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2412.16708": {
+    "title": "Towards More Robust Retrieval-Augmented Generation: Evaluating RAG Under Adversarial Poisoning Attacks",
+    "abstract": "Retrieval-Augmented Generation (RAG) systems have emerged as a promising solution to mitigate LLM hallucinations and enhance their performance in knowledge-intensive domains. However, these systems are vulnerable to adversarial poisoning attacks, where malicious passages injected into the retrieval corpus can mislead models into producing factually incorrect outputs. In this paper, we present a rigorously controlled empirical study of how RAG systems behave under such attacks and how their robustness can be improved. On the generation side, we introduce a structured taxonomy of context types-adversarial, untouched, and guiding-and systematically analyze their individual and combined effects on model outputs. On the retrieval side, we evaluate several retrievers to measure how easily they expose LLMs to adversarial contexts. Our findings also reveal that \"skeptical prompting\" can activate LLMs' internal reasoning, enabling partial self-defense against adversarial passages, though its effectiveness depends strongly on the model's reasoning capacity. Together, our experiments (code available at https://github.com/JinyanSu1/eval_PoisonRaG) and analysis provide actionable insights for designing safer and more resilient RAG systems, paving the way for more reliable real-world deployments.",
+    "published": "2024-12-21",
+    "categories": [
+      "cs.IR"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2412.14581": {
+    "title": "CORD: Balancing COnsistency and Rank Distillation for Robust Retrieval-Augmented Generation",
+    "abstract": "With the adoption of retrieval-augmented generation (RAG), large language models (LLMs) are expected to ground their generation to the retrieved contexts. Yet, this is hindered by position bias of LLMs, failing to evenly attend to all contexts. Previous work has addressed this by synthesizing contexts with perturbed positions of gold segment, creating a position-diversified train set. We extend this intuition to propose consistency regularization with augmentation and distillation. First, we augment each training instance with its position perturbation to encourage consistent predictions, regardless of ordering. We also distill behaviors of this pair, although it can be counterproductive in certain RAG scenarios where the given order from the retriever is crucial for generation quality. We thus propose CORD, balancing COnsistency and Rank Distillation. CORD adaptively samples noise-controlled perturbations from an interpolation space, ensuring both consistency and respect for the rank prior. Empirical results show this balance enables CORD to outperform consistently in diverse RAG benchmarks.",
+    "published": "2024-12-19",
+    "categories": [
+      "cs.CL"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2405.18111": {
+    "title": "ATM: Adversarial Tuning Multi-agent System Makes a Robust Retrieval-Augmented Generator",
+    "abstract": "Large language models (LLMs) are proven to benefit a lot from retrieval-augmented generation (RAG) in alleviating hallucinations confronted with knowledge-intensive questions. RAG adopts information retrieval techniques to inject external knowledge from semantic-relevant documents as input contexts. However, since today's Internet is flooded with numerous noisy and fabricating content, it is inevitable that RAG systems are vulnerable to these noises and prone to respond incorrectly. To this end, we propose to optimize the retrieval-augmented Generator with an Adversarial Tuning Multi-agent system (ATM). The ATM steers the Generator to have a robust perspective of useful documents for question answering with the help of an auxiliary Attacker agent through adversarially tuning the agents for several iterations. After rounds of multi-agent iterative tuning, the Generator can eventually better discriminate useful documents amongst fabrications. The experimental results verify the effectiveness of ATM and we also observe that the Generator can achieve better performance compared to the state-of-the-art baselines.",
+    "published": "2024-05-28",
+    "categories": [
+      "cs.CL"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2312.11361": {
+    "title": "\"Knowing When You Don't Know\": A Multilingual Relevance Assessment Dataset for Robust Retrieval-Augmented Generation",
+    "abstract": "Retrieval-Augmented Generation (RAG) grounds Large Language Model (LLM) output by leveraging external knowledge sources to reduce factual hallucinations. However, prior work lacks a comprehensive evaluation of different language families, making it challenging to evaluate LLM robustness against errors in external retrieved knowledge. To overcome this, we establish NoMIRACL, a human-annotated dataset for evaluating LLM robustness in RAG across 18 typologically diverse languages. NoMIRACL includes both a non-relevant and a relevant subset. Queries in the non-relevant subset contain passages judged as non-relevant, whereas queries in the relevant subset include at least a single judged relevant passage. We measure relevance assessment using: (i) hallucination rate, measuring model tendency to hallucinate, when the answer is not present in passages in the non-relevant subset, and (ii) error rate, measuring model inaccuracy to recognize relevant passages in the relevant subset.In our work, we observe that most models struggle to balance the two capacities. Models such as LLAMA-2 and Orca-2 achieve over 88% hallucination rate on the non-relevant subset. Mistral and LLAMA-3 hallucinate less but can achieve up to a 74.9% error rate on the relevant subset. Overall, GPT-4 is observed to provide the best tradeoff on both subsets, highlighting future work necessary to improve LLM robustness. NoMIRACL dataset and evaluation code are available at: https://github.com/project-miracl/nomiracl.",
+    "published": "2023-12-18",
+    "categories": [
+      "cs.CL",
+      "cs.IR"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  },
+  "2108.13934": {
+    "title": "Robust Retrieval Augmented Generation for Zero-shot Slot Filling",
+    "abstract": "Automatically inducing high quality knowledge graphs from a given collection of documents still remains a challenging problem in AI. One way to make headway for this problem is through advancements in a related task known as slot filling. In this task, given an entity query in form of [Entity, Slot, ?], a system is asked to fill the slot by generating or extracting the missing value exploiting evidence extracted from relevant passage(s) in the given document collection. The recent works in the field try to solve this task in an end-to-end fashion using retrieval-based language models. In this paper, we present a novel approach to zero-shot slot filling that extends dense passage retrieval with hard negatives and robust training procedures for retrieval augmented generation models. Our model reports large improvements on both T-REx and zsRE slot filling datasets, improving both passage retrieval and slot value generation, and ranking at the top-1 position in the KILT leaderboard. Moreover, we demonstrate the robustness of our system showing its domain adaptation capability on a new variant of the TACRED dataset for slot filling, through a combination of zero/few-shot learning. We release the source code and pre-trained models.",
+    "published": "2021-08-31",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.IR"
+    ],
+    "gate": null,
+    "extracted": false,
+    "first_seen_query": "robust retrieval-augmented generation"
+  }
+}
