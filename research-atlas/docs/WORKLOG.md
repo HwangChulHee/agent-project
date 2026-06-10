@@ -2,6 +2,19 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-10 — embed_nodes_v2: 이중 노드 타입별 임베딩 (전환 2/4)
+
+`normalized_v2.json`(190노드)를 타입별로 임베딩. 개념→definition, 논문→problem.
+
+- `src/embed_nodes_v2.py` 신규. 개념 노드는 **순수 definition 텍스트만** 임베딩(canonical 이름 미부착 — "RAG" 류 철자 오염 방지), 논문 노드는 problem 임베딩.
+- placeholder 개념(정의 없음, 49개)은 제외. 수집으로 정의 채워지면 자동 합류(증분).
+- 모델명을 파일에 기록 → 같은 모델이면 영구 재사용, 바뀌면 전체 재생성(Neo4j 이관 시 재계산 불필요). 증분 캐시: 이미 임베딩된 id 건너뜀, `--force`로 전체.
+- 출력: `data/outputs/node_embeddings_v2.json` = `{model, dim, vectors}`. v1 `node_embeddings.json`은 무변경(3/4에서 전환).
+
+**검증**: `uv run python src/embed_nodes_v2.py` → 논문 68 + 개념 73 = 141 / dim 1536. 수용 기준 6종 통과: 임베딩 개념수=정의있는개념수(73=122−49), 임베딩 논문수=전체논문(68), dim 1536, model 기록됨, 재실행 시 "신규 0개", `--force`로 141개 재생성. normalize.py·normalized.json·lexicon.json 무변경.
+
+다음: API/프론트 v1→v2 전환(3/4) → 수집 재배치(4/4).
+
 ## 2026-06-10 — normalize_v2: 이중 노드(논문+개념) 데이터 토대 (전환 1/4)
 
 개념 단일 노드 → **이중 노드(paper + concept)** 전환의 데이터 재조립 단계. LLM 호출 없음, 기존 파일 무변경.
