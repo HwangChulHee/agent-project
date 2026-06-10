@@ -6,6 +6,7 @@ requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.136.3",
     "feedparser>=6.0.12",
+    "langgraph>=1.2.4",
     "numpy>=2.4.6",
     "openai>=2.41.0",
     "pymupdf4llm>=1.27.2.3",

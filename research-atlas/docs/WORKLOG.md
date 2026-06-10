@@ -2,6 +2,26 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-11 — 수집 에이전트 LangGraph 묶기 (흐름 엔진)
+
+[1]~[8] 단위 함수를 LangGraph 그래프로 묶고 사람 개입 2곳(interrupt)을 넣음. **기존 함수 로직 변경 없음 — 노드는 호출 래퍼.** 채팅 UI 연결은 다음 조각.
+
+- 의존성 `langgraph` 1.2.4. checkpointer = MemorySaver(인메모리), interrupt/resume에 thread_id 필요.
+- **State**: `CollectState`(TypedDict) — query/intent/related/status_report/queries/found/candidates/counts/gate_results/extracted/decision/report_text.
+- **그래프**: parse → [interrupt 해석확인] → expand_search → [interrupt 물량승인] → gate → extract → report. 조건분기: 해석확인 `revise:` → parse 루프, 물량승인 `cancel` → report 직행(추출 0).
+- interrupt는 `langgraph.types.interrupt()` 노드 안 호출 → 일시정지, `Command(resume=값)`으로 재개. resume: 해석확인 `proceed`|`revise:<텍스트>`, 물량승인 `proceed`|`cancel`.
+- `--graph-smoke`. 기존 `collect_extract_smoke()`도 회귀 비교용으로 유지.
+
+**스모크(3 시나리오, 스크립트 resume)**:
+- A 취소: proceed→cancel → extracted []. 두 지점 멈춤 확인. (dedup 보유제외 2 = 직전 반영분이 이제 보유라 정상 제외)
+- B 수정: `revise: RAG robustness to noisy retrieval` → 재parse(topic 재해석)→해석확인 재멈춤 → proceed → cancel. (재해석된 구체 topic은 `all:"긴 구문"` 정확매칭이라 발견 0 — phrase 검색이 과구체 주제에 취약함 관찰)
+- C 정상: proceed→proceed → 관문→추출 1편(≤MAX_EXTRACT). 파일 생성 확인.
+- 하드 게이트 4종 통과(compile·interrupt 멈춤2회·cancel 추출0·정상 추출≤상한·revise 재해석).
+
+**커밋 범위**: 흐름 엔진 코드만(agent_collect.py + langgraph 의존성). 정상경로 스모크가 byproduct로 추출한 2602.12709(ReFilter)와 papers.json 장부 변경은 되돌림 — 이 chunk는 엔진 검증이고 수집 반영은 범위 밖(사용자 결정).
+
+다음 조각: API/프론트에 그래프 흐름 연결 + 채팅 [진행]/[취소] 버튼. 영속 checkpointer 고려.
+
 ## 2026-06-11 — 수집 에이전트 [6][7][8]: 물량승인(임시) + 관문 + 추출
 
 [5] 신규 후보 → [6] CLI 승인 → [7] 관문(초록만 보고 분류) → [8] 통과분 PDF 추출. LangGraph 묶기·채팅 버튼은 다음 조각.

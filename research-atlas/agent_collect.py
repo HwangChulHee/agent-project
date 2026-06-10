@@ -15,10 +15,14 @@ import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from typing import TypedDict
 
 import feedparser
 import numpy as np
 from dotenv import load_dotenv
+from langgraph.checkpoint.memory import MemorySaver
+from langgraph.graph import END, START, StateGraph
+from langgraph.types import Command, interrupt
 from openai import OpenAI
 
 # 기존 추출 파이프라인 재사용 (src/) — 호출만, 로직 수정 안 함
@@ -562,8 +566,195 @@ def collect_extract_smoke():
     print("게이트 통과: 관문 전체 기록·추출 상한·추출 파일 생성 OK")
 
 
+# ============ LangGraph 흐름 엔진 ============
+# 위 단위 함수들을 그래프로 묶고, 사람 개입 2곳(interrupt)을 넣는다.
+# 노드는 기존 함수를 부르는 얇은 래퍼 — 로직 변경 없음. 채팅 연결은 다음 조각.
+
+
+class CollectState(TypedDict, total=False):
+    query: str            # 최초 사용자 명령
+    intent: dict          # parse_intent 결과
+    related: list          # 현황 매칭에서 뽑은 관련 용어(검색어 확장 재료)
+    status_report: str    # build_status_report (interrupt 1에서 보여줄 것)
+    queries: list          # expand_query 결과
+    found: dict           # search_arxiv 결과
+    candidates: list       # dedup 후 신규 후보 id
+    counts: dict          # dedup 카운트 (interrupt 2에서 보여줄 것)
+    gate_results: list     # 관문 판정 [(aid, verdict, ok)]
+    extracted: list        # 추출된 aid
+    decision: str         # 사람 입력 주입용 (resume value)
+    report_text: str      # 최종 요약
+
+
+def gnode_parse(state):
+    """[1]의도파싱 + [2]현황매칭 → status_report·related."""
+    model, norm, (ck, cm), (pk, pm) = load_embeddings()
+    intent = parse_intent(state["query"])
+    qv = embed_query(intent["topic"], model)
+    cm_hits, pm_hits = match(qv, ck, cm), match(qv, pk, pm)
+    related = [norm[k]["canonical"] for k, _ in cm_hits if k in norm]
+    related += [norm[k].get("title", "") for k, _ in pm_hits if k in norm]
+    related = [r for r in related if r][:10]
+    report = build_status_report(intent, cm_hits, pm_hits, norm)
+    return {"intent": intent, "related": related, "status_report": report}
+
+
+def gnode_confirm_interpret(state):
+    """[2.5] 해석 확인 — interrupt. resume: 'proceed' | 'revise:<텍스트>'."""
+    decision = interrupt({"stage": "interpret",
+                          "status_report": state["status_report"],
+                          "topic": state["intent"]["topic"]})
+    upd = {"decision": decision}
+    if isinstance(decision, str) and decision.startswith("revise:"):
+        upd["query"] = decision.split("revise:", 1)[1].strip()  # 재해석용 새 명령
+    return upd
+
+
+def route_after_interpret(state):
+    d = state.get("decision", "")
+    return "parse" if isinstance(d, str) and d.startswith("revise:") else "expand_search"
+
+
+def gnode_expand_search(state):
+    """[3]검색어확장 [4]arXiv [5]장부·dedup."""
+    intent = state["intent"]
+    queries = expand_query(intent["topic"], state.get("related"))
+    found = search_arxiv(queries, intent.get("period_from", ""), intent.get("period_to", ""))
+    ledger = upsert_ledger(found)
+    candidates, counts = dedup_new_candidates(found, ledger)
+    return {"queries": queries, "found": found, "candidates": candidates, "counts": counts}
+
+
+def gnode_approve(state):
+    """[6] 물량 승인 — interrupt. resume: 'proceed' | 'cancel'."""
+    decision = interrupt({"stage": "approve", "counts": state["counts"]})
+    return {"decision": decision}
+
+
+def route_after_approve(state):
+    return "gate" if state.get("decision") == "proceed" else "report"
+
+
+def gnode_gate(state):
+    """[7] 관문 — 후보 전체 분류."""
+    ledger = load_ledger()
+    results = [(aid, *gate_one(aid, ledger)[:2]) for aid in state["candidates"]]
+    save_ledger(ledger)
+    return {"gate_results": results}
+
+
+def gnode_extract(state):
+    """[8] 추출 — 통과분 최대 MAX_EXTRACT편."""
+    ledger = load_ledger()
+    passed = [aid for aid, _v, ok in state["gate_results"] if ok]
+    extracted = []
+    for aid in passed[:MAX_EXTRACT]:
+        ok, _msg, _c = extract_pipeline(aid, ledger)
+        if ok:
+            extracted.append(aid)
+    save_ledger(ledger)
+    return {"extracted": extracted}
+
+
+def gnode_report(state):
+    if state.get("decision") == "cancel":
+        return {"report_text": "취소됨 — 관문/추출 안 함."}
+    ex = state.get("extracted", [])
+    return {"report_text": f"추출 완료 {len(ex)}편: {ex}\n"
+                           f"노드 반영하려면: uv run python src/normalize_v2.py"}
+
+
+def build_collect_graph():
+    g = StateGraph(CollectState)
+    g.add_node("parse", gnode_parse)
+    g.add_node("confirm_interpret", gnode_confirm_interpret)
+    g.add_node("expand_search", gnode_expand_search)
+    g.add_node("approve", gnode_approve)
+    g.add_node("gate", gnode_gate)
+    g.add_node("extract", gnode_extract)
+    g.add_node("report", gnode_report)
+    g.add_edge(START, "parse")
+    g.add_edge("parse", "confirm_interpret")
+    g.add_conditional_edges("confirm_interpret", route_after_interpret,
+                            {"parse": "parse", "expand_search": "expand_search"})
+    g.add_edge("expand_search", "approve")
+    g.add_conditional_edges("approve", route_after_approve,
+                            {"gate": "gate", "report": "report"})
+    g.add_edge("gate", "extract")
+    g.add_edge("extract", "report")
+    g.add_edge("report", END)
+    return g.compile(checkpointer=MemorySaver())
+
+
+def _run_scenario(graph, thread_id, query, responses):
+    """interrupt마다 멈춤 payload 출력 + responses[i]로 재개. (최종 state, 멈춤 스냅샷들) 반환."""
+    cfg = {"configurable": {"thread_id": thread_id}}
+    result = graph.invoke({"query": query}, cfg)
+    snapshots, i = [], 0
+    while "__interrupt__" in result:
+        payload = result["__interrupt__"][0].value
+        snapshots.append((payload, graph.get_state(cfg).values))
+        if payload.get("stage") == "interpret":
+            head = payload["status_report"].splitlines()[0] if payload["status_report"] else ""
+            print(f"\n  [멈춤·해석확인] topic={payload['topic']} | 보고 첫줄: {head[:60]}")
+        elif payload.get("stage") == "approve":
+            c = payload["counts"]
+            print(f"\n  [멈춤·물량승인] 신규 {c['new']}편 (발견 {c['found']}/보유제외 {c['owned_excluded']})")
+        resume = responses[i] if i < len(responses) else "proceed"
+        print(f"   ← 입력: {resume!r}")
+        result = graph.invoke(Command(resume=resume), cfg)
+        i += 1
+    print(f"  [결과] {result.get('report_text', '')}")
+    return result, snapshots
+
+
+def graph_smoke():
+    graph = build_collect_graph()
+    Q = "RAG 강건성 논문 찾아줘"
+
+    print("=" * 64)
+    print("시나리오 A: 취소 경로 (proceed → cancel)")
+    r_cancel, s_cancel = _run_scenario(graph, "smoke-cancel", Q, ["proceed", "cancel"])
+
+    print("\n" + "=" * 64)
+    print("시나리오 B: 수정 경로 (revise → 재해석 → proceed → cancel)")
+    r_rev, s_rev = _run_scenario(graph, "smoke-revise", Q,
+                                 ["revise: RAG robustness to noisy retrieval", "proceed", "cancel"])
+
+    print("\n" + "=" * 64)
+    print("시나리오 C: 정상 경로 (proceed → proceed → 추출)")
+    r_norm, s_norm = _run_scenario(graph, "smoke-normal", Q, ["proceed", "proceed"])
+
+    # --- 하드 게이트 ---
+    try:
+        # 1: compile 성공 (여기 도달했으면 OK)
+        # 2: interrupt 1에서 멈춤 — status_report 있고 expand 아직 안 됨
+        p_payload, p_vals = s_norm[0]
+        assert p_payload["stage"] == "interpret", "첫 멈춤이 해석확인이 아님"
+        assert p_vals.get("status_report"), "멈춤 시 status_report 없음"
+        assert not p_vals.get("counts"), "멈춤 시 이미 expand됨(counts 존재)"
+        assert len(s_norm) == 2, f"정상경로 멈춤 2회 아님: {len(s_norm)}"
+        # 3: cancel → 추출 0
+        assert r_cancel.get("extracted", []) == [], f"취소인데 추출됨: {r_cancel.get('extracted')}"
+        # 4: 정상 → 추출 ≤ 상한, 파일 생성
+        ex = r_norm.get("extracted", [])
+        assert len(ex) <= MAX_EXTRACT, f"추출 상한 초과: {ex}"
+        for a in ex:
+            assert (config.OUT_DIR / f"{a}.concepts.json").exists(), f"{a} 추출 파일 없음"
+        # revise: 재해석으로 돌아가 interrupt 1 재멈춤(깨지지 않음)
+        assert len(s_rev) >= 2 and s_rev[0][0]["stage"] == "interpret" \
+            and s_rev[1][0]["stage"] == "interpret", "수정 후 재해석 재멈춤 아님"
+        assert r_rev.get("extracted", []) == [], "수정→취소인데 추출됨"
+    except AssertionError as e:
+        print(f"\n게이트 실패: {e}", file=sys.stderr)
+        sys.exit(1)
+    print("\n게이트 통과: compile·interrupt 멈춤(2회)·cancel 추출0·정상 추출≤상한·revise 재해석 OK")
+
+
 if __name__ == "__main__":
-    if "--collect-extract-smoke" in sys.argv:
+    if "--graph-smoke" in sys.argv:
+        graph_smoke()
+    elif "--collect-extract-smoke" in sys.argv:
         collect_extract_smoke()
     elif "--collect-smoke" in sys.argv:
         collect_smoke()
