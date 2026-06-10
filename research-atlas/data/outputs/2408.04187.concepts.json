@@ -1,0 +1,28 @@
+{
+  "title": "MedGraphRAG: Towards Safe Medical LLM via Graph RAG",
+  "task": [
+    "medical question answering",
+    "health fact checking",
+    "long-form medical response generation"
+  ],
+  "defines": [
+    {
+      "name": "MedGraphRAG",
+      "definition": "A graph-based retrieval-augmented generation framework for the medical domain that improves large language model responses with evidence-based retrieval and source-linked explanations."
+    }
+  ],
+  "uses": [
+    "GraphRAG",
+    "triple graph construction",
+    "U-Retrieval",
+    "top-down precise retrieval",
+    "bottom-up response refinement",
+    "medical tags",
+    "credible medical sources",
+    "controlled vocabularies",
+    "medical dictionaries"
+  ],
+  "problem": "Standard RAG and general-purpose GraphRAG are insufficient for medical use because they do not reliably produce evidence-based, source-backed responses and are too costly or complex to adapt directly.",
+  "domain": "medical",
+  "paper_type": "technique"
+}

@@ -1,0 +1,27 @@
+{
+  "title": "LightRAG",
+  "task": [
+    "retrieval-augmented generation",
+    "information retrieval",
+    "question answering"
+  ],
+  "defines": [
+    {
+      "name": "LightRAG",
+      "definition": "A graph-empowered RAG framework that combines graph-based text indexing with dual-level retrieval to improve comprehensiveness, efficiency, and adaptability."
+    }
+  ],
+  "uses": [
+    "graph structures",
+    "text indexing",
+    "dual-level retrieval",
+    "low-level retrieval",
+    "high-level retrieval",
+    "vector representations",
+    "incremental update algorithm",
+    "knowledge graph"
+  ],
+  "problem": "Existing RAG systems rely on flat representations and weak contextual awareness, leading to fragmented answers that miss complex interdependencies and are inefficient to update.",
+  "domain": "general",
+  "paper_type": "technique"
+}

@@ -1,0 +1,33 @@
+{
+  "title": "RAGBench: A Comprehensive RAG Benchmark with Fine-Grained Evaluation Metrics",
+  "task": [
+    "benchmarking",
+    "RAG evaluation",
+    "dataset construction"
+  ],
+  "defines": [
+    {
+      "name": "RAGBench",
+      "definition": "A large-scale benchmark dataset for training and evaluating retrieval-augmented generation systems across multiple industry domains and task types."
+    },
+    {
+      "name": "TRACe",
+      "definition": "An explainable and actionable RAG evaluation framework based on a suite of cross-domain metrics."
+    }
+  ],
+  "uses": [
+    "context relevance",
+    "answer faithfulness",
+    "context utilization",
+    "answer completeness",
+    "RoBERTa",
+    "DeBERTa-large",
+    "LLM judges",
+    "RAGAS",
+    "TruLens",
+    "ARES"
+  ],
+  "problem": "Comprehensive evaluation of RAG systems is difficult because existing benchmarks are small, inconsistent, and lack unified, explainable metrics.",
+  "domain": "general",
+  "paper_type": "benchmark"
+}

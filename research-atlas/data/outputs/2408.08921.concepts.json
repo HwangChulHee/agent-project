@@ -1,0 +1,21 @@
+{
+  "title": "Graph Retrieval-Augmented Generation: A Survey",
+  "task": [
+    "survey",
+    "retrieval-augmented generation",
+    "graph-based information retrieval"
+  ],
+  "defines": [],
+  "uses": [
+    "Retrieval-Augmented Generation",
+    "graph databases",
+    "knowledge graphs",
+    "graph neural networks",
+    "graph-based indexing",
+    "graph-guided retrieval",
+    "graph-enhanced generation"
+  ],
+  "problem": "Traditional RAG misses structured relationships, introduces redundant context, and lacks global information needed for more accurate and comprehensive generation.",
+  "domain": "general",
+  "paper_type": "survey"
+}

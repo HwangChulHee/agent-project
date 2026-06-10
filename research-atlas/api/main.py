@@ -134,3 +134,56 @@ def rebuild():
         "builds_on": len(norm.get("builds_on", [])),
         "stdout": proc.stdout,
     }
+
+
+# --- 자연어 명령 (필터 에이전트) ---
+sys.path.insert(0, str(ROOT))  # agent_filter import용 (uvicorn 실행 위치 무관하게)
+from dotenv import load_dotenv
+from openai import OpenAI
+
+from agent_filter import TOOLS, build_system_prompt
+
+load_dotenv(ROOT / ".env")
+_oai = OpenAI()
+COMMAND_MODEL = "gpt-5.4-mini"
+
+
+@app.post("/api/command")
+def command(payload: dict = Body(...)):
+    """자연어 명령 -> tool call 번역. 실행은 프론트가 한다.
+
+    반환: {"tool": "filter|focus_lineage|reset", "args": {...}}
+          tool call이 안 나오면 {"tool": null, "message": "..."}
+    """
+    text = (payload.get("text") or "").strip()
+    if not text:
+        raise HTTPException(400, "text가 비어 있음")
+
+    norm = json.loads(NORMALIZED_PATH.read_text())
+    names = sorted(v["canonical"] for v in norm["nodes"].values())
+
+    resp = _oai.chat.completions.create(
+        model=COMMAND_MODEL,
+        messages=[
+            {"role": "system", "content": build_system_prompt(names)},
+            {"role": "user", "content": text},
+        ],
+        tools=TOOLS,
+    )
+    msg = resp.choices[0].message
+    if not msg.tool_calls:
+        return {"tool": None, "message": (msg.content or "")[:200]}
+
+    tc = msg.tool_calls[0]
+    try:
+        args = json.loads(tc.function.arguments or "{}")
+    except json.JSONDecodeError:
+        raise HTTPException(502, f"tool 인자 파싱 실패: {tc.function.arguments}")
+
+    # focus_lineage의 node가 실재하는지 백엔드에서 한 번 더 검증
+    if tc.function.name == "focus_lineage":
+        canon_set = {n.lower() for n in names}
+        if (args.get("node") or "").lower() not in canon_set:
+            return {"tool": None, "message": f"'{args.get('node')}' 노드를 찾지 못함"}
+
+    return {"tool": tc.function.name, "args": args}

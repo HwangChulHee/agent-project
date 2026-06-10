@@ -1,0 +1,24 @@
+{
+  "title": "Retrieval-Augmented Generation Benchmark (RGB)",
+  "task": [
+    "retrieval-augmented generation evaluation",
+    "large language model benchmarking",
+    "question answering"
+  ],
+  "defines": [
+    {
+      "name": "RGB",
+      "definition": "A bilingual benchmark for evaluating retrieval-augmented generation in large language models across four fundamental abilities: noise robustness, negative rejection, information integration, and counterfactual robustness."
+    }
+  ],
+  "uses": [
+    "search API",
+    "retrieved documents",
+    "news information",
+    "noise ratio",
+    "testbeds"
+  ],
+  "problem": "Existing RAG evaluation lacks a rigorous, comprehensive benchmark for diagnosing how different LLMs handle noise, missing evidence, multi-document reasoning, and false information.",
+  "domain": "general",
+  "paper_type": "benchmark"
+}

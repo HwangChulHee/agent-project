@@ -191,7 +191,9 @@
       "first_seen": ""
     },
     "LLaMA": {
-      "aliases": [],
+      "aliases": [
+        "Llama 1"
+      ],
       "status": "approved",
       "definition": "",
       "source": "seed",
@@ -558,479 +560,577 @@
     },
     "RNN": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "1706.03762"
     },
     "LSTM": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "1706.03762"
     },
     "GRU": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "1706.03762"
     },
     "attention mechanisms": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "1706.03762"
     },
     "ELMo": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "1810.04805"
     },
     "OpenAI GPT": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "1810.04805"
     },
     "RoBERTa": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2002.08909"
     },
     "kNN-LM": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2002.08909"
     },
     "BM25": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.04906"
     },
     "TF-IDF": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.04906"
     },
     "ORQA": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.04906"
     },
     "Transformer-XL": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.05150"
     },
     "Adaptive Span": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.05150"
     },
     "Compressive": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.05150"
     },
     "Reformer": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.05150"
     },
     "Sparse": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.05150"
     },
     "Routing": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.05150"
     },
     "BP-Transformer": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.05150"
     },
     "Blockwise": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.05150"
     },
     "KNRM": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.12832"
     },
     "DRMM": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.12832"
     },
     "Duet": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.12832"
     },
     "DSSM": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.12832"
     },
     "SNRM": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.12832"
     },
     "Conv-KNRM": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2004.12832"
     },
     "Mixture of Experts": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2101.03961"
     },
     "mT5": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2101.03961"
     },
     "fine-tuning": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2106.09685"
     },
     "adapter": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2106.09685"
     },
     "prefix-tuning": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2106.09685"
     },
     "Brown et al. (2020)": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2201.11903"
     },
     "Cobbe et al. (2021)": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2201.11903"
     },
     "greedy decoding": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2203.11171"
     },
     "sample-and-rank": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2203.11171"
     },
     "beam search": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2203.11171"
     },
     "ensemble-based approaches": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2203.11171"
     },
     "Kaplan et al.": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2203.15556"
     },
     "Pathways": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2204.02311"
     },
     "standard attention": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2205.14135"
     },
     "approximate attention": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2205.14135"
     },
     "sparse attention": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2205.14135"
     },
     "low-rank approximation": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2205.14135"
     },
     "OPT": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2302.13971"
     },
     "GPT-NeoX": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2302.13971"
     },
     "BLOOM": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2302.13971"
     },
     "GLM": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2302.13971"
     },
     "SayCan": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2303.11366"
     },
     "WebGPT": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2303.11366"
     },
     "monoT5": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2304.09542"
     },
     "RankNet": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2304.09542"
     },
     "Zero-shot-CoT": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2305.04091"
     },
     "Few-shot chain-of-thought prompting": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2305.04091"
     },
     "Zero-shot-Program-of-Thought Prompting": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2305.04091"
     },
     "retrieve-then-read": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2305.14283"
     },
     "GPT-4": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2305.16291"
     },
     "novelty search": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2305.16291"
     },
-    "Llama 1": {
-      "aliases": [],
-      "status": "pending",
-      "definition": "",
-      "source": "builds_on",
-      "first_seen": "2307.09288"
-    },
     "AutoGPT": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2308.00352"
     },
     "LangChain": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2308.00352"
     },
     "AgentVerse": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2308.00352"
     },
     "ChatDev": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2308.00352"
     },
     "Monte Carlo Tree Search": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2310.04406"
     },
     "ALiBi": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2310.19923"
     },
     "Jina Embeddings v1": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2310.19923"
     },
     "E5": {
       "aliases": [],
-      "status": "pending",
+      "status": "approved",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2310.19923"
     },
     "structured state space models": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2312.00752"
     },
     "linear attention": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2312.00752"
     },
     "Dense retrieval": {
       "aliases": [],
-      "status": "pending",
+      "status": "rejected",
       "definition": "",
       "source": "builds_on",
       "first_seen": "2312.06648"
+    },
+    "RGB": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A bilingual benchmark for evaluating retrieval-augmented generation in large language models across four fundamental abilities: noise robustness, negative rejection, information integration, and counterfactual robustness.",
+      "source": "defines",
+      "first_seen": "2309.01431"
+    },
+    "RAFT": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A training recipe that fine-tunes LLMs to answer questions using relevant retrieved documents while ignoring distractor documents and citing supporting text verbatim.",
+      "source": "defines",
+      "first_seen": "2403.10131"
+    },
+    "RAGBench": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A large-scale benchmark dataset for training and evaluating retrieval-augmented generation systems across multiple industry domains and task types.",
+      "source": "defines",
+      "first_seen": "2407.11005"
+    },
+    "TRACe": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "An explainable and actionable RAG evaluation framework based on a suite of cross-domain metrics.",
+      "source": "defines",
+      "first_seen": "2407.11005"
+    },
+    "RAG taxonomy": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A taxonomy that conceptualizes and categorizes the core characteristics of retrieval-augmented generation applications across domains.",
+      "source": "defines",
+      "first_seen": "2408.02854"
+    },
+    "MedGraphRAG": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A graph-based retrieval-augmented generation framework for the medical domain that improves large language model responses with evidence-based retrieval and source-linked explanations.",
+      "source": "defines",
+      "first_seen": "2408.04187"
+    },
+    "MedRAG": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "A retrieval-augmented generation framework for medical diagnosis that combines knowledge graph-elicited reasoning with retrieved electronic health records to improve diagnostic accuracy and specificity.",
+      "source": "defines",
+      "first_seen": "2502.04413"
+    },
+    "AMG-RAG": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "An agentic graph-RAG framework that automatically constructs and continuously updates medical knowledge graphs to support evidence-grounded medical QA.",
+      "source": "defines",
+      "first_seen": "2502.13010"
+    },
+    "RAGAS": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2407.11005"
+    },
+    "TruLens": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2407.11005"
+    },
+    "ARES": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2407.11005"
+    },
+    "AttributionBench": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2407.11005"
+    },
+    "RAGTruth": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2407.11005"
+    },
+    "FL-RAG": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2502.04413"
+    },
+    "DRAGIN": {
+      "aliases": [],
+      "status": "pending",
+      "definition": "",
+      "source": "builds_on",
+      "first_seen": "2502.04413"
     }
   }
 }

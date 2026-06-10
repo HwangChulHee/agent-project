@@ -1,0 +1,25 @@
+{
+  "title": "HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models",
+  "task": [
+    "multi-hop question answering",
+    "knowledge integration",
+    "retrieval-augmented generation"
+  ],
+  "defines": [
+    {
+      "name": "HippoRAG",
+      "definition": "A retrieval framework that uses a knowledge graph and Personalized PageRank to enable efficient long-term memory and multi-hop knowledge integration for LLMs."
+    }
+  ],
+  "uses": [
+    "large language models",
+    "knowledge graphs",
+    "Personalized PageRank",
+    "schemaless knowledge graph",
+    "query concept extraction",
+    "graph-based retrieval"
+  ],
+  "problem": "Current RAG methods encode passages in isolation and therefore struggle to integrate new knowledge across passage boundaries for complex multi-hop retrieval and reasoning tasks.",
+  "domain": "general",
+  "paper_type": "technique"
+}

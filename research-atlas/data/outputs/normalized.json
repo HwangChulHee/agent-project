@@ -588,6 +588,18 @@
       "status": "approved",
       "def_status": "ok"
     },
+    "rgb": {
+      "canonical": "RGB",
+      "definition": "A bilingual benchmark for evaluating retrieval-augmented generation in large language models across four fundamental abilities: noise robustness, negative rejection, information integration, and counterfactual robustness.",
+      "def_source": "2309.01431",
+      "papers": [
+        "2309.01431"
+      ],
+      "domain": "general",
+      "ptype": "benchmark",
+      "status": "unreviewed",
+      "def_status": "n/a"
+    },
     "lats": {
       "canonical": "LATS",
       "definition": "A general language-agent framework that uses Monte Carlo Tree Search to combine reasoning, acting, planning, external feedback, and self-reflection for improved decision-making.",
@@ -672,6 +684,18 @@
       "status": "approved",
       "def_status": "n/a"
     },
+    "paper:2401.14887": {
+      "canonical": "The Power of Noise: Redefining Retrieval",
+      "definition": "Current RAG retrievers are assumed to surface the most relevant passages, but this paper shows that the type of retrieved documents can significantly affect LLM effectiveness and that standard retrieval assumptions may not hold in RAG settings.",
+      "def_source": "2401.14887",
+      "papers": [
+        "2401.14887"
+      ],
+      "domain": "general",
+      "ptype": "analysis",
+      "status": "approved",
+      "def_status": "n/a"
+    },
     "crag": {
       "canonical": "CRAG",
       "definition": "A plug-and-play corrective retrieval-augmented generation framework that self-corrects poor retrieval results to improve robustness and document utilization.",
@@ -690,6 +714,42 @@
       "def_source": "2401.18059",
       "papers": [
         "2401.18059"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "raft": {
+      "canonical": "RAFT",
+      "definition": "A training recipe that fine-tunes LLMs to answer questions using relevant retrieved documents while ignoring distractor documents and citing supporting text verbatim.",
+      "def_source": "2403.10131",
+      "papers": [
+        "2403.10131"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "graphrag": {
+      "canonical": "GraphRAG",
+      "definition": "A graph-based retrieval-augmented generation framework that enables global question answering over large private text corpora by organizing corpus content into a knowledge graph and community summaries.",
+      "def_source": "2404.16130",
+      "papers": [
+        "2404.16130"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "hipporag": {
+      "canonical": "HippoRAG",
+      "definition": "A retrieval framework that uses a knowledge graph and Personalized PageRank to enable efficient long-term memory and multi-hop knowledge integration for LLMs.",
+      "def_source": "2405.14831",
+      "papers": [
+        "2405.14831"
       ],
       "domain": "general",
       "ptype": "technique",
@@ -720,12 +780,84 @@
       "status": "unreviewed",
       "def_status": "ok"
     },
+    "ragbench": {
+      "canonical": "RAGBench",
+      "definition": "A large-scale benchmark dataset for training and evaluating retrieval-augmented generation systems across multiple industry domains and task types.",
+      "def_source": "2407.11005",
+      "papers": [
+        "2407.11005"
+      ],
+      "domain": "general",
+      "ptype": "benchmark",
+      "status": "unreviewed",
+      "def_status": "n/a"
+    },
+    "trace": {
+      "canonical": "TRACe",
+      "definition": "An explainable and actionable RAG evaluation framework based on a suite of cross-domain metrics.",
+      "def_source": "2407.11005",
+      "papers": [
+        "2407.11005"
+      ],
+      "domain": "general",
+      "ptype": "benchmark",
+      "status": "unreviewed",
+      "def_status": "n/a"
+    },
+    "rag taxonomy": {
+      "canonical": "RAG taxonomy",
+      "definition": "A taxonomy that conceptualizes and categorizes the core characteristics of retrieval-augmented generation applications across domains.",
+      "def_source": "2408.02854",
+      "papers": [
+        "2408.02854"
+      ],
+      "domain": "general",
+      "ptype": "survey",
+      "status": "unreviewed",
+      "def_status": "n/a"
+    },
+    "medgraphrag": {
+      "canonical": "MedGraphRAG",
+      "definition": "A graph-based retrieval-augmented generation framework for the medical domain that improves large language model responses with evidence-based retrieval and source-linked explanations.",
+      "def_source": "2408.04187",
+      "papers": [
+        "2408.04187"
+      ],
+      "domain": "medical",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "paper:2408.08921": {
+      "canonical": "Graph Retrieval-Augmented Generation: A ",
+      "definition": "Traditional RAG misses structured relationships, introduces redundant context, and lacks global information needed for more accurate and comprehensive generation.",
+      "def_source": "2408.08921",
+      "papers": [
+        "2408.08921"
+      ],
+      "domain": "general",
+      "ptype": "survey",
+      "status": "approved",
+      "def_status": "n/a"
+    },
     "late chunking": {
       "canonical": "Late Chunking",
       "definition": "A chunking method that embeds an entire long document first and applies chunking only after the transformer encoder, before mean pooling, so each chunk embedding retains full document context.",
       "def_source": "2409.04701",
       "papers": [
         "2409.04701"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "lightrag": {
+      "canonical": "LightRAG",
+      "definition": "A graph-empowered RAG framework that combines graph-based text indexing with dual-level retrieval to improve comprehensiveness, efficiency, and adaptability.",
+      "def_source": "2410.05779",
+      "papers": [
+        "2410.05779"
       ],
       "domain": "general",
       "ptype": "technique",
@@ -744,8 +876,286 @@
       "status": "approved",
       "def_status": "ok"
     },
+    "medrag": {
+      "canonical": "MedRAG",
+      "definition": "A retrieval-augmented generation framework for medical diagnosis that combines knowledge graph-elicited reasoning with retrieved electronic health records to improve diagnostic accuracy and specificity.",
+      "def_source": "2502.04413",
+      "papers": [
+        "2502.04413"
+      ],
+      "domain": "medical",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "amg rag": {
+      "canonical": "AMG-RAG",
+      "definition": "An agentic graph-RAG framework that automatically constructs and continuously updates medical knowledge graphs to support evidence-grounded medical QA.",
+      "def_source": "2502.13010",
+      "papers": [
+        "2502.13010"
+      ],
+      "domain": "medical",
+      "ptype": "technique",
+      "status": "unreviewed",
+      "def_status": "ok"
+    },
+    "hipporag 2": {
+      "canonical": "HippoRAG 2",
+      "definition": "A retrieval-augmented generation framework that improves non-parametric continual learning by combining Personalized PageRank with deeper passage integration and more effective online LLM use.",
+      "def_source": "2502.14802",
+      "papers": [
+        "2502.14802"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "hypergraphrag": {
+      "canonical": "HyperGraphRAG",
+      "definition": "A hypergraph-based RAG framework that represents and retrieves n-ary relational facts with hyperedges to improve knowledge-intensive generation.",
+      "def_source": "2503.21322",
+      "papers": [
+        "2503.21322"
+      ],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "ok"
+    },
+    "rnn": {
+      "canonical": "RNN",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "lstm": {
+      "canonical": "LSTM",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "gru": {
+      "canonical": "GRU",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "elmo": {
+      "canonical": "ELMo",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "openai gpt": {
+      "canonical": "OpenAI GPT",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "roberta": {
+      "canonical": "RoBERTa",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "knn lm": {
+      "canonical": "kNN-LM",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "bm25": {
+      "canonical": "BM25",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "tf idf": {
+      "canonical": "TF-IDF",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "orqa": {
+      "canonical": "ORQA",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "transformer xl": {
+      "canonical": "Transformer-XL",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "reformer": {
+      "canonical": "Reformer",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "bp transformer": {
+      "canonical": "BP-Transformer",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "knrm": {
+      "canonical": "KNRM",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "drmm": {
+      "canonical": "DRMM",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "duet": {
+      "canonical": "Duet",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "dssm": {
+      "canonical": "DSSM",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "snrm": {
+      "canonical": "SNRM",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "conv knrm": {
+      "canonical": "Conv-KNRM",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
     "dpr": {
       "canonical": "DPR",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "mixture of experts": {
+      "canonical": "Mixture of Experts",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "mt5": {
+      "canonical": "mT5",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "adapter": {
+      "canonical": "adapter",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "prefix tuning": {
+      "canonical": "prefix-tuning",
       "definition": "",
       "def_source": "",
       "papers": [],
@@ -774,8 +1184,228 @@
       "status": "approved",
       "def_status": "placeholder"
     },
+    "pathways": {
+      "canonical": "Pathways",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
     "contriever": {
       "canonical": "Contriever",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "opt": {
+      "canonical": "OPT",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "gpt neox": {
+      "canonical": "GPT-NeoX",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "bloom": {
+      "canonical": "BLOOM",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "glm": {
+      "canonical": "GLM",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "saycan": {
+      "canonical": "SayCan",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "webgpt": {
+      "canonical": "WebGPT",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "monot5": {
+      "canonical": "monoT5",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "ranknet": {
+      "canonical": "RankNet",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "zero shot cot": {
+      "canonical": "Zero-shot-CoT",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "few shot chain of thought prompting": {
+      "canonical": "Few-shot chain-of-thought prompting",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "zero shot program of thought prompting": {
+      "canonical": "Zero-shot-Program-of-Thought Prompting",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "gpt 4": {
+      "canonical": "GPT-4",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "autogpt": {
+      "canonical": "AutoGPT",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "langchain": {
+      "canonical": "LangChain",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "agentverse": {
+      "canonical": "AgentVerse",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "chatdev": {
+      "canonical": "ChatDev",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "monte carlo tree search": {
+      "canonical": "Monte Carlo Tree Search",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "alibi": {
+      "canonical": "ALiBi",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "jina embeddings v1": {
+      "canonical": "Jina Embeddings v1",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "e5": {
+      "canonical": "E5",
+      "definition": "",
+      "def_source": "",
+      "papers": [],
+      "domain": "general",
+      "ptype": "technique",
+      "status": "approved",
+      "def_status": "placeholder"
+    },
+    "ircot": {
+      "canonical": "IRCoT",
       "definition": "",
       "def_source": "",
       "papers": [],
@@ -787,6 +1417,26 @@
   },
   "builds_on": [
     {
+      "from": "transformer",
+      "to": "rnn"
+    },
+    {
+      "from": "transformer",
+      "to": "lstm"
+    },
+    {
+      "from": "transformer",
+      "to": "gru"
+    },
+    {
+      "from": "bert",
+      "to": "elmo"
+    },
+    {
+      "from": "bert",
+      "to": "openai gpt"
+    },
+    {
       "from": "t5",
       "to": "rag"
     },
@@ -796,15 +1446,75 @@
     },
     {
       "from": "realm",
+      "to": "roberta"
+    },
+    {
+      "from": "realm",
       "to": "t5"
+    },
+    {
+      "from": "realm",
+      "to": "knn lm"
+    },
+    {
+      "from": "dense passage retriever (dpr)",
+      "to": "bm25"
+    },
+    {
+      "from": "dense passage retriever (dpr)",
+      "to": "tf idf"
+    },
+    {
+      "from": "dense passage retriever (dpr)",
+      "to": "orqa"
+    },
+    {
+      "from": "longformer",
+      "to": "transformer xl"
+    },
+    {
+      "from": "longformer",
+      "to": "reformer"
+    },
+    {
+      "from": "longformer",
+      "to": "bp transformer"
     },
     {
       "from": "longformer",
       "to": "transformer"
     },
     {
+      "from": "longformer",
+      "to": "roberta"
+    },
+    {
       "from": "colbert",
       "to": "bert"
+    },
+    {
+      "from": "colbert",
+      "to": "knrm"
+    },
+    {
+      "from": "colbert",
+      "to": "drmm"
+    },
+    {
+      "from": "colbert",
+      "to": "duet"
+    },
+    {
+      "from": "colbert",
+      "to": "dssm"
+    },
+    {
+      "from": "colbert",
+      "to": "snrm"
+    },
+    {
+      "from": "colbert",
+      "to": "conv knrm"
     },
     {
       "from": "rag",
@@ -812,7 +1522,23 @@
     },
     {
       "from": "switch transformer",
+      "to": "mixture of experts"
+    },
+    {
+      "from": "switch transformer",
       "to": "t5"
+    },
+    {
+      "from": "switch transformer",
+      "to": "mt5"
+    },
+    {
+      "from": "lora",
+      "to": "adapter"
+    },
+    {
+      "from": "lora",
+      "to": "prefix tuning"
     },
     {
       "from": "flan",
@@ -845,6 +1571,10 @@
     {
       "from": "palm",
       "to": "transformer"
+    },
+    {
+      "from": "palm",
+      "to": "pathways"
     },
     {
       "from": "least to most prompting",
@@ -903,8 +1633,28 @@
       "to": "palm"
     },
     {
+      "from": "llama",
+      "to": "opt"
+    },
+    {
+      "from": "llama",
+      "to": "gpt neox"
+    },
+    {
+      "from": "llama",
+      "to": "bloom"
+    },
+    {
+      "from": "llama",
+      "to": "glm"
+    },
+    {
       "from": "reflexion",
       "to": "react"
+    },
+    {
+      "from": "reflexion",
+      "to": "saycan"
     },
     {
       "from": "reflexion",
@@ -917,6 +1667,34 @@
     {
       "from": "reflexion",
       "to": "generative agents"
+    },
+    {
+      "from": "reflexion",
+      "to": "webgpt"
+    },
+    {
+      "from": "rankgpt",
+      "to": "monot5"
+    },
+    {
+      "from": "rankgpt",
+      "to": "ranknet"
+    },
+    {
+      "from": "rankgpt",
+      "to": "bm25"
+    },
+    {
+      "from": "plan and solve (ps) prompting",
+      "to": "zero shot cot"
+    },
+    {
+      "from": "plan and solve (ps) prompting",
+      "to": "few shot chain of thought prompting"
+    },
+    {
+      "from": "plan and solve (ps) prompting",
+      "to": "zero shot program of thought prompting"
     },
     {
       "from": "flare",
@@ -939,6 +1717,10 @@
       "to": "lora"
     },
     {
+      "from": "voyager",
+      "to": "gpt 4"
+    },
+    {
       "from": "direct preference optimization",
       "to": "rlhf"
     },
@@ -951,8 +1733,32 @@
       "to": "llama"
     },
     {
+      "from": "metagpt",
+      "to": "autogpt"
+    },
+    {
+      "from": "metagpt",
+      "to": "langchain"
+    },
+    {
+      "from": "metagpt",
+      "to": "agentverse"
+    },
+    {
+      "from": "metagpt",
+      "to": "chatdev"
+    },
+    {
+      "from": "rgb",
+      "to": "rag"
+    },
+    {
       "from": "lats",
       "to": "react"
+    },
+    {
+      "from": "lats",
+      "to": "monte carlo tree search"
     },
     {
       "from": "self rag",
@@ -963,11 +1769,27 @@
       "to": "bert"
     },
     {
+      "from": "jina embeddings v2",
+      "to": "alibi"
+    },
+    {
+      "from": "jina embeddings v2",
+      "to": "jina embeddings v1"
+    },
+    {
+      "from": "jina embeddings v2",
+      "to": "e5"
+    },
+    {
       "from": "mamba",
       "to": "transformer"
     },
     {
       "from": "paper:2312.10997",
+      "to": "rag"
+    },
+    {
+      "from": "paper:2401.14887",
       "to": "rag"
     },
     {
@@ -983,7 +1805,47 @@
       "to": "rag"
     },
     {
+      "from": "raft",
+      "to": "rag"
+    },
+    {
+      "from": "graphrag",
+      "to": "rag"
+    },
+    {
+      "from": "hipporag",
+      "to": "rag"
+    },
+    {
+      "from": "hipporag",
+      "to": "ircot"
+    },
+    {
       "from": "lumberchunker",
+      "to": "rag"
+    },
+    {
+      "from": "ragbench",
+      "to": "rag"
+    },
+    {
+      "from": "ragbench",
+      "to": "rgb"
+    },
+    {
+      "from": "rag taxonomy",
+      "to": "rag"
+    },
+    {
+      "from": "medgraphrag",
+      "to": "rag"
+    },
+    {
+      "from": "medgraphrag",
+      "to": "graphrag"
+    },
+    {
+      "from": "paper:2408.08921",
       "to": "rag"
     },
     {
@@ -991,8 +1853,36 @@
       "to": "rag"
     },
     {
+      "from": "lightrag",
+      "to": "rag"
+    },
+    {
       "from": "meta chunking",
       "to": "rag"
+    },
+    {
+      "from": "medrag",
+      "to": "rag"
+    },
+    {
+      "from": "amg rag",
+      "to": "rag"
+    },
+    {
+      "from": "hipporag 2",
+      "to": "hipporag"
+    },
+    {
+      "from": "hipporag 2",
+      "to": "raptor"
+    },
+    {
+      "from": "hypergraphrag",
+      "to": "rag"
+    },
+    {
+      "from": "hypergraphrag",
+      "to": "graphrag"
     }
   ]
 }
