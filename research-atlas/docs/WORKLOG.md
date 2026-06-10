@@ -2,6 +2,13 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-10 — UI 미세조정: 뷰포트 꽉채움 + 채팅 확대 + 브랜드 확대
+
+`styles.css`만. 스크롤바/잘림 원인은 `.graph-page`의 `width:100vw`(스크롤바 폭 포함→가로바)와 하드코딩 `calc(100vh-41px)`(14px 폰트로 nav 실제 높이>41px→세로 오버플로).
+- 앱 셸을 세로 플렉스로: `html,body,#root{height:100%}`, `body{overflow:hidden}`, `#root{display:flex;flex-direction:column}`. nav `flex:0 0 auto`. 라우트 컨테이너(`.graph-page`/`.lex-wrap`/`.center-msg`)는 `flex:1; min-height:0`로 잔여 공간 정확히 채우고 내부 스크롤. `.graph-page`의 100vw·calc 제거 → `width:100%`.
+- Playwright로 /graph·/lexicon 모두 scrollWidth==clientWidth·scrollHeight==clientHeight(오버플로 없음) 확인.
+- 채팅 패널 320→420px. 브랜드 `.nav .brand` 19px bold.
+
 ## 2026-06-10 — UI 개선: 라이트 테마 + 스케일업 + 레이아웃 정리
 
 스타일·표시만. 채팅/필터/계보 동작 로직 미변경. `web/src/styles.css` · `routes/Graph.jsx`.
