@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import { getGraph, postCommand } from "../api.js";
+import { getGraph, postCommand, collectStart, collectResume } from "../api.js";
 
 const TYPE_COLOR = {
   technique: "#2563eb",
@@ -49,6 +49,13 @@ export default function Graph() {
   const [pending, setPending] = useState(false);
   const [chips, setChips] = useState([]); // 활성 조건 칩 라벨들
   const msgEndRef = useRef(null);
+
+  // --- 수집 에이전트 흐름 상태 ---
+  // null = 수집중 아님 / {thread_id, stage, data, busy, timedOut}
+  const [collect, setCollect] = useState(null);
+  const [reviseOpen, setReviseOpen] = useState(false);
+  const [reviseText, setReviseText] = useState("");
+  const EXTRACT_TIMEOUT_MS = 120000;
 
   // 최초 로드 + "논문 보기" 토글 시 재로드/재렌더. 토글은 개념 강조/선택을 초기화.
   useEffect(() => {
@@ -223,16 +230,72 @@ export default function Graph() {
   }
 
   async function runCommand(text) {
-    if (!text || pending || !apiRef.current) return;
+    if (!text || pending || collect || !apiRef.current) return; // 수집 흐름 중엔 입력 잠금
     setMessages((m) => [...m, { role: "user", text }]);
     setPending(true);
     try {
       const res = await postCommand(text);
-      handleResult(res);
+      if (res.tool === "collect") {
+        await startCollect((res.args && res.args.topic_text) || text);
+      } else {
+        handleResult(res);
+      }
     } catch (err) {
       addAgent(`요청 실패: ${err.message}`);
     } finally {
       setPending(false);
+    }
+  }
+
+  // --- 수집 흐름: start → interrupt 카드 → resume … ---
+  function applyCollectResponse(res) {
+    if (res.done) {
+      addAgent(res.summary || "수집 종료");
+      if ((res.extracted || []).length) {
+        addAgent(`추출 ${res.extracted.length}편 — 지도에 반영하려면 재빌드가 필요해요.`);
+      }
+      setCollect(null);
+      setReviseOpen(false);
+      return;
+    }
+    setCollect({ thread_id: res.thread_id, stage: res.stage, data: res, busy: false });
+  }
+
+  async function startCollect(text) {
+    try {
+      applyCollectResponse(await collectStart(text));
+    } catch (err) {
+      addAgent(`수집 시작 실패: ${err.message}`);
+      setCollect(null);
+    }
+  }
+
+  async function resumeCollect(decision) {
+    if (!collect || collect.busy) return;
+    setReviseOpen(false);
+    const isExtract = collect.stage === "extract_confirm" && decision === "proceed";
+    setCollect((c) => ({ ...c, busy: true, timedOut: false }));
+
+    let signal, timer;
+    if (isExtract) {
+      const ctrl = new AbortController();
+      signal = ctrl.signal;
+      timer = setTimeout(() => ctrl.abort(), EXTRACT_TIMEOUT_MS);
+    }
+    try {
+      const res = await collectResume(collect.thread_id, decision, signal);
+      if (timer) clearTimeout(timer);
+      applyCollectResponse(res);
+    } catch (err) {
+      if (timer) clearTimeout(timer);
+      if (err.name === "AbortError") {
+        // 타임아웃 — 흐름은 살아있음(서버는 계속 추출 중일 수 있음). 안내 후 재시도/취소.
+        addAgent("추출이 지연됩니다. 서버에서 계속 진행 중일 수 있어요. 잠시 후 [재시도] 또는 [취소].");
+        setCollect((c) => ({ ...c, busy: false, timedOut: true }));
+      } else {
+        addAgent(`수집 재개 실패: ${err.message}`);
+        setCollect(null);
+      }
     }
   }
 
@@ -458,16 +521,25 @@ export default function Graph() {
                 {m.text}
               </div>
             ))}
-            {pending && <div className="chat-bubble agent">…</div>}
+            {pending && !collect && <div className="chat-bubble agent">…</div>}
+            {collect && <CollectCard
+              collect={collect}
+              onResume={resumeCollect}
+              reviseOpen={reviseOpen}
+              setReviseOpen={setReviseOpen}
+              reviseText={reviseText}
+              setReviseText={setReviseText}
+            />}
             <div ref={msgEndRef} />
           </div>
           <form className="chat-input" onSubmit={sendCommand}>
             <input
-              placeholder="명령을 입력…"
+              placeholder={collect ? "수집 흐름 중 — 카드 버튼으로 응답하세요" : "명령을 입력…"}
               value={chatInput}
               onChange={(e) => setChatInput(e.target.value)}
+              disabled={pending || !!collect}
             />
-            <button type="submit" disabled={pending}>
+            <button type="submit" disabled={pending || !!collect}>
               전송
             </button>
           </form>
@@ -475,6 +547,119 @@ export default function Graph() {
       )}
     </div>
   );
+}
+
+// 수집 흐름 interrupt 카드 — stage별 버튼. resume은 onResume(decision)로.
+function CollectCard({ collect, onResume, reviseOpen, setReviseOpen, reviseText, setReviseText }) {
+  const { stage, data, busy, timedOut } = collect;
+
+  if (busy) {
+    return (
+      <div className="collect-card">
+        <div className="collect-busy">
+          <span className="spinner" /> 추출 중… (최대 수 분 걸릴 수 있어요)
+        </div>
+      </div>
+    );
+  }
+
+  if (stage === "interpret") {
+    return (
+      <div className="collect-card">
+        <div className="collect-stage">해석 확인</div>
+        <div className="collect-report">{data.report}</div>
+        {reviseOpen ? (
+          <form
+            className="collect-revise"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const t = reviseText.trim();
+              if (!t) return;
+              onResume(`revise:${t}`);
+              setReviseText("");
+            }}
+          >
+            <input
+              autoFocus
+              placeholder="어떻게 좁힐까요… (예: 검색 노이즈 쪽으로)"
+              value={reviseText}
+              onChange={(e) => setReviseText(e.target.value)}
+            />
+            <button type="submit">적용</button>
+          </form>
+        ) : (
+          <div className="collect-actions">
+            <button onClick={() => onResume("proceed")}>진행</button>
+            <button onClick={() => setReviseOpen(true)}>수정</button>
+            <button className="ghost" onClick={() => onResume("cancel")}>
+              취소
+            </button>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  if (stage === "approve") {
+    const c = data.counts || {};
+    return (
+      <div className="collect-card">
+        <div className="collect-stage">물량 승인</div>
+        <div className="collect-counts">
+          발견 {c.found ?? 0} · 신규 <b>{c.new ?? 0}</b> · 보유제외 {c.owned_excluded ?? 0}
+        </div>
+        <div className="collect-actions">
+          <button onClick={() => onResume("proceed")}>진행</button>
+          <button className="ghost" onClick={() => onResume("cancel")}>
+            취소
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (stage === "extract_confirm") {
+    const summary = data.gate_summary || [];
+    const passed = summary.filter((s) => s.passed);
+    const failed = summary.filter((s) => !s.passed);
+    const toExtract = data.to_extract || [];
+    return (
+      <div className="collect-card">
+        <div className="collect-stage">추출 승인</div>
+        <div className="collect-counts">
+          통과 <b>{passed.length}</b>편 · {toExtract.length}편 추출 예정
+        </div>
+        <ul className="collect-gate">
+          {passed.map((s) => (
+            <li key={s.id} className="pass">
+              ✓ {s.id} <span className="muted">{s.verdict}</span>
+            </li>
+          ))}
+        </ul>
+        {failed.length > 0 && (
+          <div className="muted collect-failed">
+            그 외 {failed.length}편 미통과 (benchmark/analysis/survey 등)
+          </div>
+        )}
+        {timedOut ? (
+          <div className="collect-actions">
+            <button onClick={() => onResume("proceed")}>재시도</button>
+            <button className="ghost" onClick={() => onResume("cancel")}>
+              취소
+            </button>
+          </div>
+        ) : (
+          <div className="collect-actions">
+            <button onClick={() => onResume("proceed")}>추출</button>
+            <button className="ghost" onClick={() => onResume("cancel")}>
+              그만
+            </button>
+          </div>
+        )}
+      </div>
+    );
+  }
+  return null;
 }
 
 function render(container, svgEl, data, setSelected) {

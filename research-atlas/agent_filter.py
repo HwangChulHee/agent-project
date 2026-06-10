@@ -66,6 +66,21 @@ TOOLS = [
             "parameters": {"type": "object", "properties": {}},
         },
     },
+    {
+        "type": "function",
+        "function": {
+            "name": "collect",
+            "description": "arXiv에서 특정 주제의 논문을 검색·수집해 지도에 추가하려는 요청. "
+                           "'~논문 가져와/수집해/찾아와/모아줘' 류. 화면 조작(보여줘/강조)과 구분된다.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "topic_text": {"type": "string", "description": "수집 요청 원문(그대로)"},
+                },
+                "required": ["topic_text"],
+            },
+        },
+    },
 ]
 
 
@@ -78,6 +93,7 @@ def build_system_prompt(names):
     return (
         "너는 논문 지식그래프 화면을 조작하는 에이전트다. "
         "사용자의 한국어/영어 명령을 tool call로 번역한다. 말로 답하지 말고 반드시 tool을 호출한다.\n"
+        "보여줘/강조/필터/계보는 filter·focus_lineage·reset로, 가져와/수집/찾아와/모아줘(arXiv에서 새 논문을 지도에 추가)는 collect로 보낸다.\n"
         "사용자가 노드를 지칭하면 아래 목록에서 가장 가까운 canonical 이름을 골라 그대로 쓴다. 단, 목록에 명백히 대응하는 이름이 없으면(오타·무관한 단어) 절대 임의의 노드로 대체하지 말고 tool을 호출하지 말고 '해당 노드를 찾지 못했다'고 한 문장으로 답한다.\n"
         f"노드 목록: {', '.join(names)}"
     )

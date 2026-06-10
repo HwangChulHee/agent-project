@@ -2,6 +2,36 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-11 — 프론트 채팅: 수집 에이전트 연결 (라우팅 + interrupt 카드)
+
+같은 채팅 패널에서 필터 명령과 수집 명령을 둘 다 받음. 수집이면 LangGraph 흐름(start/resume)을 타고 interrupt 3개를 버튼 카드로. "말로 부리는 수집" 데모의 마지막 표면.
+
+- **라우팅(agent_filter.py)**: TOOLS에 `collect{topic_text}` 추가 + 시스템 프롬프트 한 줄("가져와/수집/찾아와→collect"). 새 라우터 안 만들고 기존 분류기로 흡수. /api/command 변경 없음(collect도 generic 반환).
+- **api.js**: `collectStart(text)`, `collectResume(thread_id, decision, signal)`.
+- **Graph.jsx**: runCommand가 tool==="collect"면 collectStart로 흐름 진입. `collect` state{thread_id, stage, data, busy, timedOut}. interrupt 카드(`CollectCard`) stage별:
+  - interpret: status_report + [진행][수정][취소]. 수정은 입력→`revise:<텍스트>`.
+  - approve: counts(발견/신규/보유제외) + [진행][취소].
+  - extract_confirm: gate_summary(통과 강조·탈락 흐림) + N편 추출예정 + [추출][그만].
+  - 수집 흐름 중 입력창 잠금. done이면 summary 버블 + 잠금 해제, 추출분 있으면 재빌드 안내.
+  - 추출 단계만 AbortController 120초 타임아웃 → 초과 시 [재시도][취소]+안내(흐름 안 죽임).
+- styles.css: collect-card/스피너 등.
+
+**검증**: `/api/command` 라우팅 — 필터 회귀 없음(벤치마크→filter, RAG계보→focus_lineage, 다보여줘→reset), 수집 3종 모두 collect{topic_text}. `npm run build` 성공. 카드 상호작용(버튼/잠금/스피너/타임아웃)은 빌드+로직 검증, 브라우저 클릭 검증은 미수행(원하면 /run으로 실연 가능).
+
+## 2026-06-11 — 추출 승인 interrupt 추가 (gate ↔ extract 분리)
+
+proceed→proceed가 관문(빠름)+추출(느림·11분 stall 실증)을 한 번에 돌려 HTTP가 오래 hang하던 문제. gate와 extract 사이에 interrupt를 하나 더 넣어 관문 결과를 먼저 보여주고 멈춘 뒤 추출을 따로 승인.
+
+- **`gnode_confirm_extract`(agent_collect.py)**: gate→[extract_confirm]→extract. interrupt payload `{stage:"extract_confirm", passed_count, to_extract(상한적용), gate_summary}`. resume proceed→extract, cancel→report. 흐름 interrupt 3개: interpret/approve/extract_confirm.
+- **`gnode_report` cancel 구분**: approve cancel→"수집 취소(관문 안 함)", extract_confirm cancel→"추출 취소 — 관문 N편 완료(통과 M편)". gate_results 유무로 판단.
+- **`_to_response`(api/main.py)**: extract_confirm stage 추가(passed_count/to_extract/gate_summary/actions). start/resume 로직 불변.
+- graph_smoke 갱신: 정상경로 interrupt 3회·순서 검증 + extract_confirm 멈춤 시점에 extracted 비어있음(분리 증거) assert.
+- 기존 함수(gate_one/extract_pipeline) 로직 무수정 — 노드 배선만.
+
+**curl 스모크**: start→interpret / proceed→approve(new 23) / proceed→**extract_confirm(done=false, passed 9, to_extract 2편, concepts 70 그대로=추출 안 됨)** / cancel→done·extracted []·"추출 취소 관문 23편(통과 9)". 하드 게이트 1~3 통과. 핵심: **두 번째 proceed가 추출 없이 멈춤** = 관문/추출 분리.
+
+**효과**: hang 구간이 "마지막 [추출] 승인 이후"로 좁아짐. 추출 자체의 stall은 그대로 — 6-2 프론트에서 그 구간 진행표시/타임아웃 또는 비동기 잡 필요.
+
 ## 2026-06-11 — 수집 에이전트 채팅 백엔드 (start/resume API)
 
 LangGraph 수집 흐름을 HTTP로 노출. 그래프는 interrupt까지만 실행 → 멈춤을 응답으로 → 결정으로 재개. 프론트 버튼은 다음 조각.

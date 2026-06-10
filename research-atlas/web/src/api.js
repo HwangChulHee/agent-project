@@ -35,3 +35,20 @@ export const postCommand = (text) =>
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ text }),
   }).then(jsonOrThrow);
+
+// --- 수집 에이전트 (LangGraph 흐름) ---
+export const collectStart = (text) =>
+  fetch("/api/collect/start", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text }),
+  }).then(jsonOrThrow);
+
+// signal: AbortController.signal (추출 단계 타임아웃용, 선택)
+export const collectResume = (thread_id, decision, signal) =>
+  fetch("/api/collect/resume", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ thread_id, decision }),
+    signal,
+  }).then(jsonOrThrow);
