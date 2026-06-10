@@ -503,11 +503,12 @@ function render(container, svgEl, data, setSelected) {
       kind: "builds_on",
       from_type: data.nodes[b.from].ptype || "technique",
     }));
-  // 논문 보기 ON: defines 엣지(논문→개념)를 옅은 점선으로 추가
-  if (data.defines) {
-    for (const e of data.defines) {
+  // 논문 보기 ON: 논문→개념 엣지(defines, 그리고 정의없는 논문의 builds_on)를 옅은 점선으로 추가
+  for (const key of ["defines", "paper_builds_on"]) {
+    if (!data[key]) continue;
+    for (const e of data[key]) {
       if (nodeIds.has(e.from) && nodeIds.has(e.to))
-        links.push({ source: e.from, target: e.to, kind: "defines" });
+        links.push({ source: e.from, target: e.to, kind: key });
     }
   }
 
@@ -539,15 +540,15 @@ function render(container, svgEl, data, setSelected) {
     .append("g")
     .selectAll("line")
     .data(links)
-    .join("line")
+    // 개념↔개념 builds_on은 색 실선+화살표, 논문→개념(defines·paper_builds_on)은 옅은 점선
     .attr("stroke", (d) =>
-      d.kind === "defines" ? "#cbd5e1" : TYPE_COLOR[d.from_type] || "#888"
+      d.kind === "builds_on" ? TYPE_COLOR[d.from_type] || "#888" : "#cbd5e1"
     )
-    .attr("stroke-width", (d) => (d.kind === "defines" ? 1 : 1.8))
-    .attr("stroke-opacity", (d) => (d.kind === "defines" ? 0.5 : 0.65))
-    .attr("stroke-dasharray", (d) => (d.kind === "defines" ? "2 3" : null))
+    .attr("stroke-width", (d) => (d.kind === "builds_on" ? 1.8 : 1))
+    .attr("stroke-opacity", (d) => (d.kind === "builds_on" ? 0.65 : 0.5))
+    .attr("stroke-dasharray", (d) => (d.kind === "builds_on" ? null : "2 3"))
     .attr("marker-end", (d) =>
-      d.kind === "defines" ? null : `url(#arr-${d.from_type || "technique"})`
+      d.kind === "builds_on" ? `url(#arr-${d.from_type || "technique"})` : null
     );
 
   const node = root

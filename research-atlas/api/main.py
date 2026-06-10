@@ -137,6 +137,17 @@ def build_graph_view(include_papers: bool) -> dict:
                 defines.append({"from": e["from"], "to": _strip(e["to"])})
         view["defines"] = defines
 
+        # 정의 없는 논문(survey/analysis 등)은 defines 엣지가 없어 고립됨.
+        # 그런 논문만 builds_on(논문→개념)으로 닻을 내려준다(이미 연결된 논문은 화면 유지).
+        papers_with_defines = {e["from"] for e in edges if e["type"] == "defines"}
+        paper_builds_on = []
+        for e in edges:
+            if (e["type"] == "builds_on"
+                    and e["from"] not in papers_with_defines
+                    and _strip(e["to"]) in out_nodes):
+                paper_builds_on.append({"from": e["from"], "to": _strip(e["to"])})
+        view["paper_builds_on"] = paper_builds_on
+
     return view
 
 
