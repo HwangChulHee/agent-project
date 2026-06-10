@@ -297,3 +297,64 @@ def command(payload: dict = Body(...)):
             return {"tool": None, "message": f"'{args.get('node')}' 노드를 찾지 못함"}
 
     return {"tool": tc.function.name, "args": args}
+
+
+# --- 수집 에이전트 (LangGraph 흐름, start/resume) ---
+# 그래프는 모듈 로드 시 1회 컴파일해 전역 보관 — 매 요청 compile하면 MemorySaver 상태가
+# 초기화돼 resume이 깨진다(핵심 함정). thread_id별로 세션 격리됨.
+import uuid
+
+from langgraph.types import Command
+
+from agent_collect import build_collect_graph
+
+_collect_graph = build_collect_graph()
+
+
+def _to_response(thread_id: str, result: dict) -> dict:
+    """그래프 결과 → 프론트용. interrupt 멈춤이면 stage별 payload, 완료면 최종 요약."""
+    if "__interrupt__" in result:
+        payload = result["__interrupt__"][0].value  # agent_collect의 interrupt({...})
+        stage = payload.get("stage")
+        out = {"thread_id": thread_id, "done": False, "stage": stage}
+        if stage == "interpret":
+            out["topic"] = payload.get("topic", "")
+            out["report"] = payload.get("status_report", "")
+            out["actions"] = ["proceed", "revise", "cancel"]
+        elif stage == "approve":
+            out["counts"] = payload.get("counts", {})
+            out["actions"] = ["proceed", "cancel"]
+        return out
+    return {"thread_id": thread_id, "done": True,
+            "extracted": result.get("extracted", []),
+            "summary": result.get("report_text", "")}
+
+
+@app.post("/api/collect/start")
+def collect_start(payload: dict = Body(...)):
+    """수집 명령 → 첫 interrupt(해석 확인)까지 실행."""
+    text = (payload.get("text") or "").strip()
+    if not text:
+        raise HTTPException(400, "text 비어 있음")
+    thread_id = uuid.uuid4().hex
+    cfg = {"configurable": {"thread_id": thread_id}}
+    result = _collect_graph.invoke({"query": text}, cfg)
+    return _to_response(thread_id, result)
+
+
+@app.post("/api/collect/resume")
+def collect_resume(payload: dict = Body(...)):
+    """결정(proceed|cancel|revise:<텍스트>) → 다음 interrupt 또는 완료까지 재개."""
+    thread_id = payload.get("thread_id")
+    decision = payload.get("decision")
+    if not thread_id or not decision:
+        raise HTTPException(400, "thread_id/decision 필요")
+    cfg = {"configurable": {"thread_id": thread_id}}
+    # 존재하지 않는 thread_id면 상태가 없어 조용히 새 실행처럼 돌 수 있음 → 명시적으로 거른다.
+    if _collect_graph.get_state(cfg).created_at is None:
+        raise HTTPException(404, "세션 없음(서버 재시작/만료) — 다시 시작하세요")
+    try:
+        result = _collect_graph.invoke(Command(resume=decision), cfg)
+    except Exception as e:
+        raise HTTPException(500, f"재개 실패(세션 만료 가능): {e}")
+    return _to_response(thread_id, result)

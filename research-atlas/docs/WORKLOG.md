@@ -2,6 +2,27 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-11 — 수집 에이전트 채팅 백엔드 (start/resume API)
+
+LangGraph 수집 흐름을 HTTP로 노출. 그래프는 interrupt까지만 실행 → 멈춤을 응답으로 → 결정으로 재개. 프론트 버튼은 다음 조각.
+
+- **그래프 모듈 로드 시 1회 컴파일·전역 보관**(`_collect_graph = build_collect_graph()`). 매 요청 compile하면 MemorySaver 상태가 날아가 resume이 깨짐(핵심 함정). thread_id별 세션 격리.
+- `POST /api/collect/start {text}` → uuid4 thread_id 발급, 첫 interrupt(해석확인)까지. `_to_response`로 `{thread_id, done, stage, report/counts, actions}`.
+- `POST /api/collect/resume {thread_id, decision}` → `Command(resume=decision)`로 재개. decision: proceed|cancel|revise:<텍스트>.
+- **세션 가드**: 없는 thread_id는 `get_state(cfg).created_at is None` → **404**(조용히 새 실행 방지).
+- checkpointer는 인메모리 MemorySaver 유지(데모 충분, 영속은 과투자).
+
+**curl 스모크(하드 게이트 4종 통과)**:
+1. invalid thread_id resume → 404 ✓
+2. start → done=false·stage=interpret·actions[proceed,revise,cancel] ✓
+3. resume proceed → done=false·stage=approve·counts(new 32) ✓
+4. resume cancel → done=true·extracted [] ✓
+- 정상경로(proceed/proceed): done=true·extracted ['2602.03689','2602.01965'](≤MAX_EXTRACT) ✓.
+
+**⚠️ 관찰(다음 조각 과제)**: proceed→proceed는 동기 응답 안에서 관문(후보 20편)+PDF추출2편이 다 돌아 수십초~분 지연. 이번엔 `relate` LLM 호출 하나가 ~11분 stall(API 일시 지연/재시도)해 HTTP가 그만큼 hang. **동기 추출은 장시간 hang 위험** → 프론트 연결 시 비동기/백그라운드 잡 + 폴링, 또는 타임아웃·진행표시 필요.
+
+**커밋 범위**: API 코드만(api/main.py). 정상경로 스모크 byproduct(추출 2편·papers.json 변경)는 되돌림(직전 조각과 동일 원칙).
+
 ## 2026-06-11 — 수집 에이전트 LangGraph 묶기 (흐름 엔진)
 
 [1]~[8] 단위 함수를 LangGraph 그래프로 묶고 사람 개입 2곳(interrupt)을 넣음. **기존 함수 로직 변경 없음 — 노드는 호출 래퍼.** 채팅 UI 연결은 다음 조각.
