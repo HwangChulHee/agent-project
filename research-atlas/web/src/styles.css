@@ -313,6 +313,19 @@ textarea {
   margin-right: 6px;
   vertical-align: middle;
 }
+.paper-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+  user-select: none;
+}
+.paper-toggle input {
+  margin: 0 2px 0 0;
+  cursor: pointer;
+}
 .graph-fit {
   position: absolute;
   top: 12px;

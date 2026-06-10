@@ -36,6 +36,7 @@ export default function Graph() {
   const lastQ = useRef(""); // 같은 검색어 Enter → 다음 매칭 순회
   const [selected, setSelected] = useState(null);
   const [error, setError] = useState(null);
+  const [showPapers, setShowPapers] = useState(false); // "논문 보기" 토글
   const [query, setQuery] = useState("");
   const [matches, setMatches] = useState([]); // [{id, canonical}]
   const [matchIdx, setMatchIdx] = useState(0);
@@ -49,15 +50,18 @@ export default function Graph() {
   const [chips, setChips] = useState([]); // 활성 조건 칩 라벨들
   const msgEndRef = useRef(null);
 
+  // 최초 로드 + "논문 보기" 토글 시 재로드/재렌더. 토글은 개념 강조/선택을 초기화.
   useEffect(() => {
-    getGraph()
+    setSelected(null);
+    setChips([]);
+    getGraph(showPapers)
       .then((data) => {
         dataRef.current = data;
         apiRef.current = render(areaRef.current, svgRef.current, data, setSelected);
       })
       .catch((e) => setError(e.message));
     return () => apiRef.current && apiRef.current.sim.stop();
-  }, []);
+  }, [showPapers]);
 
   // 그래프 영역 크기 변화(패널 접기/펴기, 윈도우 리사이즈) → svg/force 갱신
   useEffect(() => {
@@ -109,6 +113,7 @@ export default function Graph() {
     const nodes = dataRef.current.nodes;
     const ids = new Set();
     for (const [id, n] of Object.entries(nodes)) {
+      if (n.type === "paper") continue; // 필터/계보는 개념만 대상(논문은 표시용)
       if (args.ptype && n.ptype !== args.ptype) continue;
       if (args.domain && n.domain !== args.domain) continue;
       if (args.date_after) {
@@ -313,6 +318,15 @@ export default function Graph() {
             />
             빈 원(점선) = 정의 없음
           </div>
+          <label className="paper-toggle" style={{ marginTop: 6 }}>
+            <input
+              type="checkbox"
+              checked={showPapers}
+              onChange={(e) => setShowPapers(e.target.checked)}
+            />
+            <span className="dot" style={{ background: "#9ca3af" }} />
+            논문 보기
+          </label>
         </div>
         {error && (
           <div className="graph-panel">
@@ -328,39 +342,71 @@ export default function Graph() {
             >
               ✕
             </button>
-            <h3>{selected.canonical}</h3>
-            <div className="detail-meta">
-              <span
-                className="type-badge"
-                style={{ background: TYPE_COLOR[selected.ptype] || "#888" }}
-              >
-                {selected.ptype}
-              </span>
-              {selected.domain && selected.domain !== "general" && (
-                <span className="muted">domain: {selected.domain}</span>
-              )}
-            </div>
-            <div className="detail-def">
-              {selected.definition ||
-                (selected.def_status === "placeholder"
-                  ? "정의 없음 — 원논문 미수록"
-                  : "정의 없음")}
-            </div>
-            <div className="muted detail-papers">
-              등장 {selected.papers.length}편:{" "}
-              {selected.papers.map((p, i) => (
-                <span key={p}>
-                  {i > 0 ? ", " : ""}
+            {selected.type === "paper" ? (
+              <>
+                <h3>{selected.title}</h3>
+                <div className="detail-meta">
+                  <span
+                    className="type-badge"
+                    style={{ background: TYPE_COLOR[selected.paper_type] || "#888" }}
+                  >
+                    {selected.paper_type}
+                  </span>
+                  {selected.domain && selected.domain !== "general" && (
+                    <span className="muted">domain: {selected.domain}</span>
+                  )}
+                </div>
+                <div className="detail-def">
+                  {selected.problem || "문제 설명 없음"}
+                </div>
+                <div className="muted detail-papers">
+                  논문:{" "}
                   <a
-                    href={`https://arxiv.org/abs/${p}`}
+                    href={`https://arxiv.org/abs/${selected.id.replace("paper:", "")}`}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {p}
+                    {selected.id.replace("paper:", "")}
                   </a>
-                </span>
-              ))}
-            </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <h3>{selected.canonical}</h3>
+                <div className="detail-meta">
+                  <span
+                    className="type-badge"
+                    style={{ background: TYPE_COLOR[selected.ptype] || "#888" }}
+                  >
+                    {selected.ptype}
+                  </span>
+                  {selected.domain && selected.domain !== "general" && (
+                    <span className="muted">domain: {selected.domain}</span>
+                  )}
+                </div>
+                <div className="detail-def">
+                  {selected.definition ||
+                    (selected.def_status === "placeholder"
+                      ? "정의 없음 — 원논문 미수록"
+                      : "정의 없음")}
+                </div>
+                <div className="muted detail-papers">
+                  등장 {selected.papers.length}편:{" "}
+                  {selected.papers.map((p, i) => (
+                    <span key={p}>
+                      {i > 0 ? ", " : ""}
+                      <a
+                        href={`https://arxiv.org/abs/${p}`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {p}
+                      </a>
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         )}
       </div>
@@ -434,12 +480,19 @@ export default function Graph() {
 function render(container, svgEl, data, setSelected) {
   const W = container.clientWidth;
   const H = container.clientHeight;
+  const isPaper = (d) => d.type === "paper";
+  const radius = (d) => (isPaper(d) ? 6 : 12);
   const fill = (d) =>
-    d.def_status === "placeholder" ? "#ffffff" : TYPE_COLOR[d.ptype] || "#2563eb";
-  const stroke = (d) => TYPE_COLOR[d.ptype] || "#2563eb";
-  const dash = (d) => (d.def_status === "placeholder" ? "3 2" : null);
+    isPaper(d)
+      ? "#9ca3af"
+      : d.def_status === "placeholder"
+      ? "#ffffff"
+      : TYPE_COLOR[d.ptype] || "#2563eb";
+  const stroke = (d) => (isPaper(d) ? "#6b7280" : TYPE_COLOR[d.ptype] || "#2563eb");
+  const dash = (d) =>
+    !isPaper(d) && d.def_status === "placeholder" ? "3 2" : null;
 
-  // normalized.json(객체 nodes + builds_on) → d3 배열 형태로 변환
+  // normalized_v2 변환본(객체 nodes + builds_on[, defines]) → d3 배열 형태로 변환
   const nodes = Object.entries(data.nodes).map(([id, n]) => ({ id, ...n }));
   const nodeIds = new Set(nodes.map((n) => n.id));
   const links = data.builds_on
@@ -447,8 +500,16 @@ function render(container, svgEl, data, setSelected) {
     .map((b) => ({
       source: b.from,
       target: b.to,
+      kind: "builds_on",
       from_type: data.nodes[b.from].ptype || "technique",
     }));
+  // 논문 보기 ON: defines 엣지(논문→개념)를 옅은 점선으로 추가
+  if (data.defines) {
+    for (const e of data.defines) {
+      if (nodeIds.has(e.from) && nodeIds.has(e.to))
+        links.push({ source: e.from, target: e.to, kind: "defines" });
+    }
+  }
 
   const svg = d3.select(svgEl).attr("width", W).attr("height", H);
   svg.selectAll("*").remove();
@@ -479,10 +540,15 @@ function render(container, svgEl, data, setSelected) {
     .selectAll("line")
     .data(links)
     .join("line")
-    .attr("stroke", (d) => TYPE_COLOR[d.from_type] || "#888")
-    .attr("stroke-width", 1.8)
-    .attr("stroke-opacity", 0.65)
-    .attr("marker-end", (d) => `url(#arr-${d.from_type || "technique"})`);
+    .attr("stroke", (d) =>
+      d.kind === "defines" ? "#cbd5e1" : TYPE_COLOR[d.from_type] || "#888"
+    )
+    .attr("stroke-width", (d) => (d.kind === "defines" ? 1 : 1.8))
+    .attr("stroke-opacity", (d) => (d.kind === "defines" ? 0.5 : 0.65))
+    .attr("stroke-dasharray", (d) => (d.kind === "defines" ? "2 3" : null))
+    .attr("marker-end", (d) =>
+      d.kind === "defines" ? null : `url(#arr-${d.from_type || "technique"})`
+    );
 
   const node = root
     .append("g")
@@ -510,16 +576,16 @@ function render(container, svgEl, data, setSelected) {
 
   node
     .append("circle")
-    .attr("r", 12)
+    .attr("r", radius)
     .attr("fill", fill)
     .attr("stroke", stroke)
-    .attr("stroke-width", 2.5)
+    .attr("stroke-width", (d) => (isPaper(d) ? 1.5 : 2.5))
     .attr("stroke-dasharray", dash)
     .on("click", (e, d) => setSelected(d));
 
   node
     .append("text")
-    .text((d) => d.canonical)
+    .text((d) => (isPaper(d) ? "" : d.canonical)) // 논문 노드는 라벨 없이(점만)
     .attr("x", 16)
     .attr("y", 4);
 
@@ -593,8 +659,10 @@ function render(container, svgEl, data, setSelected) {
     svg.transition().duration(500).call(zoom.transform, t);
     node
       .select("circle")
-      .attr("stroke-width", (c) => (c.id === id ? 5 : 2.5))
-      .attr("r", (c) => (c.id === id ? 18 : 12));
+      .attr("stroke-width", (c) =>
+        c.id === id ? 5 : isPaper(c) ? 1.5 : 2.5
+      )
+      .attr("r", (c) => (c.id === id ? 18 : radius(c)));
     setSelected(d); // 사이드 패널도 갱신
   }
 
@@ -623,6 +691,9 @@ function render(container, svgEl, data, setSelected) {
     sim.alpha(0.2).restart();
   }
 
-  const names = nodes.map((n) => ({ id: n.id, canonical: n.canonical }));
+  // 검색 대상은 개념만(논문 노드 제외)
+  const names = nodes
+    .filter((n) => !isPaper(n))
+    .map((n) => ({ id: n.id, canonical: n.canonical }));
   return { sim, focus, names, highlight, resize, fitView };
 }

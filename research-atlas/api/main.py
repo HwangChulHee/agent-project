@@ -16,7 +16,8 @@ from fastapi.middleware.cors import CORSMiddleware
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 LEX_PATH = DATA_DIR / "lexicon.json"
-NORMALIZED_PATH = DATA_DIR / "outputs" / "normalized.json"
+NORMALIZED_PATH = DATA_DIR / "outputs" / "normalized.json"        # v1 (롤백용으로만 생성 유지)
+NORMALIZED_V2_PATH = DATA_DIR / "outputs" / "normalized_v2.json"  # v2 이중 노드 — 현재 소스
 
 app = FastAPI(title="research-atlas")
 
@@ -45,12 +46,107 @@ def save_lexicon(lex: dict) -> None:
 
 
 # --- 그래프 ---
+def _strip(nid: str) -> str:
+    """'concept:rk' / 'paper:id' -> 접두사 제거. 접두사 없으면 그대로."""
+    return nid.split(":", 1)[1] if ":" in nid else nid
+
+
+def build_graph_view(include_papers: bool) -> dict:
+    """normalized_v2.json(이중 노드) -> 개념 주도 v1 호환 형태로 변환.
+
+    기본(include_papers=False): 개념 노드만 + 개념간 builds_on(유도).
+      v1 normalized.json과 호환되는 키/필드 → 프론트 기존 코드 그대로 동작.
+    include_papers=True: 위에 더해 논문 노드(paper: 접두사 유지)와 defines 엣지 추가.
+    """
+    if not NORMALIZED_V2_PATH.exists():
+        raise HTTPException(500, f"normalized_v2.json 없음: {NORMALIZED_V2_PATH} (먼저 재빌드 필요)")
+    raw = json.loads(NORMALIZED_V2_PATH.read_text())
+    v2_nodes, edges = raw["nodes"], raw["edges"]
+    papers_meta = {pid: n for pid, n in v2_nodes.items() if n["type"] == "paper"}
+
+    # 개념 노드 → v1 호환 키(접두사 제거)
+    out_nodes = {}
+    for cid, n in v2_nodes.items():
+        if n["type"] != "concept":
+            continue
+        out_nodes[_strip(cid)] = {
+            "canonical": n["canonical"],
+            "definition": n.get("definition", ""),
+            "def_status": n.get("def_status", "ok"),
+            "status": n.get("status"),
+            "papers": [],          # 아래에서 채움
+            "ptype": "technique",  # defines 논문 paper_type로 유도(없으면 기본)
+            "domain": "general",
+        }
+
+    # 엣지 순회: 개념별 papers/유도용 그룹 수집
+    concept_papers = {}        # rk -> [paper id(접두사 제거), 순서/중복제거]
+    concept_home_paper = {}    # rk -> 처음 defines한 paper:id (ptype/domain 유도용)
+    defines_first = {}         # paper:id -> 그 논문이 처음 defines한 개념 rk (builds_on source)
+    builds_by_paper = {}       # paper:id -> [builds_on 대상 개념 rk]
+
+    for e in edges:
+        pid_full, cid_full = e["from"], e["to"]
+        pid, rk = _strip(pid_full), _strip(cid_full)
+        lst = concept_papers.setdefault(rk, [])
+        if pid not in lst:
+            lst.append(pid)
+        if e["type"] == "defines":
+            concept_home_paper.setdefault(rk, pid_full)
+            defines_first.setdefault(pid_full, rk)
+        elif e["type"] == "builds_on":
+            builds_by_paper.setdefault(pid_full, []).append(rk)
+
+    # 개념 노드에 papers/ptype/domain 채우기
+    for rk, node in out_nodes.items():
+        node["papers"] = concept_papers.get(rk, [])
+        home = concept_home_paper.get(rk)
+        if home and home in papers_meta:
+            node["ptype"] = papers_meta[home].get("paper_type") or "technique"
+            node["domain"] = papers_meta[home].get("domain") or "general"
+
+    # 개념간 builds_on 유도: 각 논문의 '첫 정의 개념' → builds_on 대상들.
+    # (v1 normalize.py와 동일 규칙: home concept = defs[0]. 자기 루프 제외, 중복 제거)
+    seen, builds_on = set(), []
+    for pid_full, targets in builds_by_paper.items():
+        src = defines_first.get(pid_full)
+        if src is None:          # defines 없는 논문 → 개념간 계보 없음
+            continue
+        for tgt in targets:
+            if tgt == src or tgt not in out_nodes:
+                continue
+            key = (src, tgt)
+            if key not in seen:
+                seen.add(key)
+                builds_on.append({"from": src, "to": tgt})
+
+    view = {"nodes": out_nodes, "builds_on": builds_on}
+
+    if include_papers:
+        for pid, n in papers_meta.items():  # pid 예: "paper:1706.03762"
+            view["nodes"][pid] = {
+                "type": "paper",
+                "title": n.get("title", ""),
+                "paper_type": n.get("paper_type", "other"),
+                "domain": n.get("domain", "general"),
+                "problem": n.get("problem", ""),
+            }
+        defines = []
+        for e in edges:
+            if e["type"] == "defines" and _strip(e["to"]) in out_nodes:
+                defines.append({"from": e["from"], "to": _strip(e["to"])})
+        view["defines"] = defines
+
+    return view
+
+
 @app.get("/api/graph")
-def get_graph():
-    """data/outputs/normalized.json 그대로 반환."""
-    if not NORMALIZED_PATH.exists():
-        raise HTTPException(500, f"normalized.json 없음: {NORMALIZED_PATH} (먼저 재빌드 필요)")
-    return json.loads(NORMALIZED_PATH.read_text())
+def get_graph(papers: bool = False):
+    """normalized_v2.json을 개념 주도 형태로 변환해 반환.
+
+    ?papers=true 면 논문 노드 + defines 엣지 추가(토글 표시용).
+    """
+    return build_graph_view(include_papers=papers)
 
 
 # --- 사전 ---
@@ -118,21 +214,24 @@ def merge_lexicon(body: dict = Body(...)):
 # --- 재빌드 ---
 @app.post("/api/rebuild")
 def rebuild():
-    """src/normalize.py 실행 → 사전 편집 결과를 그래프에 반영(LLM 호출 없음)."""
-    proc = subprocess.run(
-        [sys.executable, str(ROOT / "src" / "normalize.py")],
-        cwd=str(ROOT),
-        capture_output=True,
-        text=True,
-    )
-    if proc.returncode != 0:
-        raise HTTPException(500, f"normalize 실패:\n{proc.stderr or proc.stdout}")
-    norm = json.loads(NORMALIZED_PATH.read_text())
+    """normalize.py(v1) + normalize_v2.py(v2) 실행 → 사전 편집을 그래프에 반영(LLM 없음).
+
+    v1 normalized.json도 함께 생성해 롤백 가능 상태 유지. 화면은 v2 변환을 본다.
+    """
+    for script in ("normalize.py", "normalize_v2.py"):
+        proc = subprocess.run(
+            [sys.executable, str(ROOT / "src" / script)],
+            cwd=str(ROOT),
+            capture_output=True,
+            text=True,
+        )
+        if proc.returncode != 0:
+            raise HTTPException(500, f"{script} 실패:\n{proc.stderr or proc.stdout}")
+    view = build_graph_view(include_papers=False)
     return {
         "ok": True,
-        "nodes": len(norm.get("nodes", {})),
-        "builds_on": len(norm.get("builds_on", [])),
-        "stdout": proc.stdout,
+        "nodes": len(view["nodes"]),
+        "builds_on": len(view["builds_on"]),
     }
 
 
@@ -159,8 +258,8 @@ def command(payload: dict = Body(...)):
     if not text:
         raise HTTPException(400, "text가 비어 있음")
 
-    norm = json.loads(NORMALIZED_PATH.read_text())
-    names = sorted(v["canonical"] for v in norm["nodes"].values())
+    view = build_graph_view(include_papers=False)
+    names = sorted(v["canonical"] for v in view["nodes"].values())
 
     resp = _oai.chat.completions.create(
         model=COMMAND_MODEL,

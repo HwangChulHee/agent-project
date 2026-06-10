@@ -7,7 +7,8 @@ async function jsonOrThrow(res) {
   return res.json();
 }
 
-export const getGraph = () => fetch("/api/graph").then(jsonOrThrow);
+export const getGraph = (withPapers = false) =>
+  fetch(`/api/graph?papers=${withPapers ? "true" : "false"}`).then(jsonOrThrow);
 
 export const getLexicon = () => fetch("/api/lexicon").then(jsonOrThrow);
 

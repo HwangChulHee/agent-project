@@ -2,6 +2,26 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-11 — API·프론트 v1→v2 전환 (전환 3/4)
+
+API가 `normalized_v2.json`(이중 노드)을 읽어 **개념 주도 v1 호환 형태로 변환**해 서빙. 프론트는 최소 수정 + "논문 보기" 토글. 회귀 최소화 우선.
+
+**API (`api/main.py`)**
+- `build_graph_view(include_papers)` 신설: v2 → 개념 노드(접두사 제거) + 개념간 builds_on 유도.
+  - **builds_on 유도 결정**: 핸드오프는 D×B 교차곱을 명시했으나, v1 normalize.py는 실제로 **'첫 정의 개념'(defs[0])만 source**로 씀을 확인. 교차곱은 v1과 +17 엣지(다중정의 논문 9개에서) 차이 → 시각 회귀. 사용자 확인 후 **첫 정의(defs[0]×B)** 채택. 결과 113 엣지 = v1과 113/113 정확 일치(파생-only 0). v1-only 4는 paper 의사노드 소스 3 + `replug→replug` 자기루프 1(v2가 올바르게 제거).
+  - ptype/domain: 그 개념을 defines한 첫 home 논문의 paper_type/domain(없으면 technique/general). papers: defines·builds_on로 언급한 논문 id.
+- `GET /api/graph?papers=true`: 논문 노드(`paper:` 접두사 유지) + defines 엣지 추가. 기본 응답엔 defines 키 없음.
+- `/api/rebuild`: normalize.py + normalize_v2.py **둘 다** 실행(v1 normalized.json도 생성 → 롤백 가능). `/api/command`: 노드명 소스를 v1 normalized.json → v2 변환본으로 교체. **코드가 더는 v1 파일을 읽지 않음**(NORMALIZED_PATH는 정의만 남음).
+
+**프론트 (`web/src/`)**
+- `api.js`: `getGraph(withPapers)` → `?papers=`.
+- `Graph.jsx`: "논문 보기" 토글(범례 내, 기본 OFF). ON이면 재로드 → 논문=작은 회색 점(r6), defines=옅은 점선. 논문 클릭 시 디테일 패널에 title/paper_type/problem/arXiv. 검색·필터·계보는 **개념만**(applyFilter가 `type==='paper'` 스킵, names 개념만). 토글 시 강조/선택 초기화.
+
+**검증**: `npm run build` 성공. 라이브 서버: 기본 `/api/graph` = 개념 122·builds_on 113·defines 키 없음·paper 키 없음. `?papers=true` = 논문 68·defines 73. `/api/command` 다보여줘→reset, RAG 계보→focus_lineage(RAG), asdf→tool:null. 보호 파일(normalize*.py·normalized.json·lexicon.json·v1 임베딩) 무변경.
+- **기본뷰 122 vs v1 126 = 의사노드 4 차이**: v1이 개념처럼 그리던 define-없는 논문 4개(2001.08361·2312.10997·2401.14887·2408.08921)가 이제 "논문 보기" 토글의 진짜 논문 노드로 이동. 개념 지형도는 동일 — 전환의 의도된 결과.
+
+다음: 수집 에이전트 재배치(4/4) — agent_collect.py를 v2 위에, 현황 확인을 개념+논문 이중 매칭으로.
+
 ## 2026-06-10 — embed_nodes_v2: 이중 노드 타입별 임베딩 (전환 2/4)
 
 `normalized_v2.json`(190노드)를 타입별로 임베딩. 개념→definition, 논문→problem.
