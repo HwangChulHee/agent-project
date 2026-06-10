@@ -1459,6 +1459,25 @@
       "def_status": "ok",
       "status": "unreviewed"
     },
+    "paper:2404.13948": {
+      "type": "paper",
+      "title": "GARAG: Genetic Attack on RAG for Robustness Evaluation against Minor Textual Errors",
+      "problem": "Existing RAG robustness evaluations overlook low-level textual noise and the coupled behavior of retriever and reader, missing real-world vulnerabilities to minor document errors.",
+      "task": [
+        "robustness evaluation",
+        "adversarial attack",
+        "question answering"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:garag": {
+      "type": "concept",
+      "canonical": "GARAG",
+      "definition": "A black-box adversarial attack method that uses a genetic algorithm to search for perturbed documents that simultaneously degrade retriever and reader performance in RAG systems.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
     "paper:2404.16130": {
       "type": "paper",
       "title": "GraphRAG",
@@ -1745,6 +1764,34 @@
       "definition": "A hypergraph-based RAG framework that represents and retrieves n-ary relational facts with hyperedges to improve knowledge-intensive generation.",
       "def_status": "ok",
       "status": "approved"
+    },
+    "paper:2605.01302": {
+      "type": "paper",
+      "title": "Beyond Semantic Relevance: Counterfactual Risk Minimization for Robust Retrieval-Augmented Generation",
+      "problem": "Standard semantic relevance-based RAG can retrieve sycophantic evidence under biased or false-premise queries, worsening hallucinations instead of improving decision reliability.",
+      "task": [
+        "retrieval-augmented generation",
+        "question answering",
+        "decision support",
+        "robust retrieval",
+        "risk-aware abstention"
+      ],
+      "domain": "general",
+      "paper_type": "technique"
+    },
+    "concept:corm rag": {
+      "type": "concept",
+      "canonical": "CoRM-RAG",
+      "definition": "A retrieval-augmented generation framework that uses counterfactual risk minimization to align retrieval with decision safety under biased or misleading queries.",
+      "def_status": "ok",
+      "status": "unreviewed"
+    },
+    "concept:evidence critic": {
+      "type": "concept",
+      "canonical": "Evidence Critic",
+      "definition": "A lightweight scoring model that predicts the robustness utility of a document-query pair for supporting correct decisions under query perturbations.",
+      "def_status": "ok",
+      "status": "unreviewed"
     }
   },
   "edges": [
@@ -2535,6 +2582,16 @@
     },
     {
       "type": "defines",
+      "from": "paper:2404.13948",
+      "to": "concept:garag"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2404.13948",
+      "to": "concept:rag"
+    },
+    {
+      "type": "defines",
       "from": "paper:2404.16130",
       "to": "concept:graphrag"
     },
@@ -2702,6 +2759,21 @@
       "type": "builds_on",
       "from": "paper:2503.21322",
       "to": "concept:graphrag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2605.01302",
+      "to": "concept:corm rag"
+    },
+    {
+      "type": "defines",
+      "from": "paper:2605.01302",
+      "to": "concept:evidence critic"
+    },
+    {
+      "type": "builds_on",
+      "from": "paper:2605.01302",
+      "to": "concept:rag"
     }
   ]
 }

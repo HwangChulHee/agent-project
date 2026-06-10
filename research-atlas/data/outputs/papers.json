@@ -8,7 +8,13 @@
       "cs.AI",
       "cs.CL"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "analysis",
+      "reason": "조작된 retrieval 조건에서 오래된 저장소 문맥의 영향과 Code RAG의 진단적 현상을 분석하는 연구로, 새로운 방법/벤치마크 제안이 아니라 기존 기법의 동작을 실증적으로 분석한다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "RAG robustness"
   },
@@ -19,7 +25,13 @@
     "categories": [
       "cs.CL"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "benchmark",
+      "reason": "Introduces a first large-scale benchmark of semantically identical query variations to evaluate Adaptive RAG robustness across answer quality, cost, and retrieval decisions.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "RAG robustness"
   },
@@ -32,7 +44,13 @@
       "cs.AI",
       "cs.CL"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "benchmark",
+      "reason": "RAG robustness evaluation with a named perturbation setting (EmoRAG), reporting experimental findings and defenses rather than proposing a new core method.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "RAG robustness"
   },
@@ -44,7 +62,13 @@
       "cs.CL",
       "cs.AI"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "benchmark",
+      "reason": "RAG robustness를 평가하기 위한 진단적 벤치마크/프레임워크를 제안하며, 새 모델보다 평가 설정과 분석 체계를 중심으로 한다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "RAG robustness"
   },
@@ -56,7 +80,13 @@
       "cs.IR",
       "cs.CL"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "analysis",
+      "reason": "기존 RAG 시스템의 강건성을 평가하는 실험 연구로, 새로운 방법을 제안하기보다 성능/취약성을 분석한다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "RAG robustness"
   },
@@ -67,7 +97,13 @@
     "categories": [
       "cs.CL"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "benchmark",
+      "reason": "다양한 QA 소스와 13개 도메인을 포함한 새로운 벤치마크를 제안하고, RAG 방법의 일반화를 평가하는 프레임워크가 핵심이다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "RAG robustness"
   },
@@ -78,8 +114,14 @@
     "categories": [
       "cs.CL"
     ],
-    "gate": null,
-    "extracted": false,
+    "gate": {
+      "verdict": "technique",
+      "reason": "제안하는 새로운 공격 방법 GARAG를 통해 RAG 파이프라인의 취약성을 평가하는 방법론 논문이다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
+    "extracted": true,
     "first_seen_query": "RAG robustness"
   },
   "2605.01302": {
@@ -90,8 +132,14 @@
       "cs.CL",
       "cs.IR"
     ],
-    "gate": null,
-    "extracted": false,
+    "gate": {
+      "verdict": "technique",
+      "reason": "새로운 RAG 프레임워크 CoRM-RAG와 Evidence Critic, Cognitive Perturbation Protocol을 제안하는 방법론 논문이다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
+    "extracted": true,
     "first_seen_query": "robust retrieval-augmented generation"
   },
   "2603.05698": {
@@ -101,7 +149,13 @@
     "categories": [
       "cs.CL"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "benchmark",
+      "reason": "The abstract centers on evaluating robustness using the RGB benchmark across scenarios and comparing retrieval systems, rather than proposing a new method or survey.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -113,7 +167,13 @@
       "cs.CL",
       "cs.AI"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "technique",
+      "reason": "새로운 RAG용 reranker/evidence selector 방법(BAR-RAG)과 학습 파이프라인을 제안하는 논문이다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -125,7 +185,13 @@
       "cs.CL",
       "cs.AI"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "technique",
+      "reason": "제안하는 CatRAG는 query-aware dynamic edge weighting, symbolic anchoring 등 새로운 RAG 탐색 기법/프레임워크를 제안하므로 technique이다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -138,7 +204,13 @@
       "cs.AI",
       "cs.IR"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "survey",
+      "reason": "AI Search Paradigm를 포괄적으로 소개하고 핵심 방법들을 정리하는 가이드 성격으로, 새로운 단일 방법 제안보다 분야 개요/분류에 가깝다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -149,7 +221,13 @@
     "categories": [
       "cs.IR"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "benchmark",
+      "reason": "텍스트-테이블 RAG 성능을 평가하기 위한 새로운 벤치마크 T^2-RAGBench를 제안하며, 질문-컨텍스트-정답 트리플과 평가 프레임워크를 제공한다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -160,7 +238,13 @@
     "categories": [
       "cs.IR"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "benchmark",
+      "reason": "제안하는 QE-RAG는 쿼리 입력 오류에 대한 RAG 성능을 평가하기 위한 새로운 벤치마크/평가 프레임워크이며, 방법도 포함하지만 핵심 기여는 benchmark이다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -172,7 +256,13 @@
       "cs.CL",
       "cs.AI"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "technique",
+      "reason": "Ext2Gen is presented as a new extract-then-generate framework for robust RAG, proposing a method rather than a benchmark or survey.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -184,7 +274,13 @@
       "cs.CL",
       "cs.LG"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "technique",
+      "reason": "제목/초록에서 RoseRAG라는 새로운 RAG 프레임워크와 margin-aware preference optimization 방법을 제안하므로 technique에 해당한다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -195,7 +291,13 @@
     "categories": [
       "cs.CL"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "technique",
+      "reason": "RPO proposes a new alignment method for RAG that adaptively leverages retrieval relevance; this is a new method/system rather than a benchmark, survey, or analysis.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -206,7 +308,13 @@
     "categories": [
       "cs.IR"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "analysis",
+      "reason": "제목과 초록이 RAG 시스템의 적대적 poisoning 공격에 대한 실증적 평가와 분석을 다루며, 새로운 모델/벤치마크 제안보다는 기존 방법들의 취약성과 방어 효과를 분석한다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -217,7 +325,13 @@
     "categories": [
       "cs.CL"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "technique",
+      "reason": "제안된 CORD는 RAG에서 위치 교란 증강과 일관성 정규화, rank distillation을 결합한 새로운 학습 방법을 제안한다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -228,7 +342,13 @@
     "categories": [
       "cs.CL"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "technique",
+      "reason": "제목/초록에서 Adversarial Tuning Multi-agent System(ATM)이라는 새로운 RAG 강건화 학습 방법을 제안하고 성능 향상을 보이므로 technique로 분류한다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -240,7 +360,13 @@
       "cs.CL",
       "cs.IR"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "benchmark",
+      "reason": "제목과 초록이 NoMIRACL라는 인간 주석 데이터셋과 RAG 평가를 위한 언어별 관련성 평가 프레임워크/지표를 제안하므로 benchmark에 해당한다.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   },
@@ -253,7 +379,13 @@
       "cs.AI",
       "cs.IR"
     ],
-    "gate": null,
+    "gate": {
+      "verdict": "technique",
+      "reason": "제목과 초록이 새로운 retrieval-augmented generation 기반 zero-shot slot filling 방법과 학습 절차를 제안하며, 평가 벤치마크 자체를 제안하지는 않음.",
+      "model": "gpt-5.4-mini",
+      "prompt_ver": "gate-v1",
+      "date": "2026-06-11"
+    },
     "extracted": false,
     "first_seen_query": "robust retrieval-augmented generation"
   }

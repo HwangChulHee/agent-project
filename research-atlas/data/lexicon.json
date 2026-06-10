@@ -1131,6 +1131,27 @@
       "definition": "",
       "source": "builds_on",
       "first_seen": "2502.04413"
+    },
+    "GARAG": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "",
+      "source": "defines",
+      "first_seen": "2404.13948"
+    },
+    "CoRM-RAG": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "",
+      "source": "defines",
+      "first_seen": "2605.01302"
+    },
+    "Evidence Critic": {
+      "aliases": [],
+      "status": "unreviewed",
+      "definition": "",
+      "source": "defines",
+      "first_seen": "2605.01302"
     }
   }
 }

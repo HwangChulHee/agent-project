@@ -1,0 +1,30 @@
+{
+  "title": "Beyond Semantic Relevance: Counterfactual Risk Minimization for Robust Retrieval-Augmented Generation",
+  "task": [
+    "retrieval-augmented generation",
+    "question answering",
+    "decision support",
+    "robust retrieval",
+    "risk-aware abstention"
+  ],
+  "defines": [
+    {
+      "name": "CoRM-RAG",
+      "definition": "A retrieval-augmented generation framework that uses counterfactual risk minimization to align retrieval with decision safety under biased or misleading queries."
+    },
+    {
+      "name": "Evidence Critic",
+      "definition": "A lightweight scoring model that predicts the robustness utility of a document-query pair for supporting correct decisions under query perturbations."
+    }
+  ],
+  "uses": [
+    "cognitive perturbation protocol",
+    "teacher-student distillation",
+    "counterfactual intervention",
+    "risk-aware reranking",
+    "confidence thresholding"
+  ],
+  "problem": "Standard semantic relevance-based RAG can retrieve sycophantic evidence under biased or false-premise queries, worsening hallucinations instead of improving decision reliability.",
+  "domain": "general",
+  "paper_type": "technique"
+}

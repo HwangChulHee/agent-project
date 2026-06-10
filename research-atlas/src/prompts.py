@@ -1,4 +1,15 @@
-"""추출 프롬프트. extract(내용+domain) / relate(builds_on+applies)."""
+"""추출 프롬프트. extract(내용+domain) / relate(builds_on+applies).
+
+PAPER_TYPE_CRITERIA: paper_type 분류 기준(한 곳). extract와 관문(gate)이 함께 참조.
+"""
+
+# paper_type 분류 기준 — 추출(extract)과 관문(gate)이 공유하는 단일 출처.
+PAPER_TYPE_CRITERIA = """\
+    "technique"  - proposes a new method/system (most papers)
+    "benchmark"  - proposes an evaluation benchmark/framework/metric
+    "analysis"   - studies/analyzes existing methods, reports findings, no new method
+    "survey"     - reviews/categorizes a field
+    "other"      - none of the above"""
 
 EXTRACT_SYSTEM = """You extract the CONTENT of an LLM/NLP/RAG/agent paper.
 Given title, abstract, introduction, extract these fields. Do NOT judge relations to other papers here.
@@ -13,11 +24,7 @@ Given title, abstract, introduction, extract these fields. Do NOT judge relation
 - domain: the application domain this paper targets, as ONE short lowercase word/phrase
     (e.g. "medical", "legal", "finance", "code"). If general-purpose, output "general".
 - paper_type: what KIND of paper this is. EXACTLY one of:
-    "technique"  - proposes a new method/system (most papers)
-    "benchmark"  - proposes an evaluation benchmark/framework/metric
-    "analysis"   - studies/analyzes existing methods, reports findings, no new method
-    "survey"     - reviews/categorizes a field
-    "other"      - none of the above
+""" + PAPER_TYPE_CRITERIA + """
 
 Example (MedGraphRAG — a medical application of GraphRAG):
 {

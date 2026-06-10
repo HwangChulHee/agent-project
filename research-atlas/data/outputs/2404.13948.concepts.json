@@ -1,0 +1,26 @@
+{
+  "title": "GARAG: Genetic Attack on RAG for Robustness Evaluation against Minor Textual Errors",
+  "task": [
+    "robustness evaluation",
+    "adversarial attack",
+    "question answering"
+  ],
+  "defines": [
+    {
+      "name": "GARAG",
+      "definition": "A black-box adversarial attack method that uses a genetic algorithm to search for perturbed documents that simultaneously degrade retriever and reader performance in RAG systems."
+    }
+  ],
+  "uses": [
+    "genetic algorithm",
+    "mutation",
+    "crossover",
+    "selection",
+    "black-box attack",
+    "retriever",
+    "reader"
+  ],
+  "problem": "Existing RAG robustness evaluations overlook low-level textual noise and the coupled behavior of retriever and reader, missing real-world vulnerabilities to minor document errors.",
+  "domain": "general",
+  "paper_type": "technique"
+}

@@ -2,6 +2,20 @@
 
 세션 인계용 개선 로그. 최신이 위.
 
+## 2026-06-11 — 수집 에이전트 [6][7][8]: 물량승인(임시) + 관문 + 추출
+
+[5] 신규 후보 → [6] CLI 승인 → [7] 관문(초록만 보고 분류) → [8] 통과분 PDF 추출. LangGraph 묶기·채팅 버튼은 다음 조각.
+
+- **기준표 분리(`src/prompts.py`)**: EXTRACT_SYSTEM 안의 paper_type 정의를 `PAPER_TYPE_CRITERIA` 상수로 추출, extract와 관문이 공유(단일 출처). **EXTRACT_SYSTEM 재조립 결과 byte-identical 확인**(sha256 동일) → extract 동작 불변.
+- **[7] 관문(`gate_one`/`gate_classify`)**: LLM 1회, 제목+초록만 보고 paper_type 분류. **이진 판정**(technique=통과). papers.json gate에 `{verdict, reason, model, prompt_ver:"gate-v1", date}` 기록. **캐시**: 같은 prompt_ver 있으면 LLM 재호출 안 함(프롬프트 바뀌면 재판정).
+- **[8] 추출(`extract_pipeline`)**: 통과분만 `fetch.download_one`(PDF 첫 다운로드)→`parse.parse_one`→`extract.extract_one`→`relate.relate_one`, `{pid}.parsed/concepts/relations.json` 생성, ledger.extracted=true. 다운로드 실패 시 스킵(중단 안 함). 기존 파이프라인 호출만, 로직 수정 없음.
+- **[6] 물량승인**: CLI y/N 임시 게이트. 스모크 추출 상한 `MAX_EXTRACT=2`(수백 편 PDF 사고 방지).
+- `--collect-extract-smoke` 플래그.
+
+**스모크 결과**(`echo y |`): 신규 22편 → 관문 22편 분류(통과 10/22). 분류 갈림 정상: technique(GARAG·RoseRAG·RPO·CORD·ATM 등), benchmark(EmoRAG·T²-RAGBench·QE-RAG), analysis(When Retrieval Hurts·Evaluating Robustness), survey(AI Search Paradigm). 추출 2편(상한): **2404.13948 GARAG**[technique, builds_on RAG], **2605.01302 CoRM-RAG**[technique, builds_on RAG] — 산출 파일 6개 생성. 게이트 4종 통과. 캐시 동작 확인(재호출 cached=True, LLM 0회). PDF는 `data/pdfs/`(gitignore)라 미커밋.
+
+다음 조각: LangGraph로 [2.5]/[6] 대기 묶기 + 채팅 [진행]/[취소] 버튼. 추출분 노드 반영은 `uv run python src/normalize_v2.py` 별도 1회.
+
 ## 2026-06-11 — 수집 에이전트 [3][4][5]: 검색어 확장 + arXiv 검색 + 장부/중복제거
 
 의도 파싱(topic) → arXiv 신규 후보 목록까지. PDF·관문·추출은 다음 조각.
